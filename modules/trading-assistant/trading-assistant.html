@@ -360,6 +360,12 @@
     }
 
     async function loadData() {
+      if (!isLocalRuntime && window.TRADING_ASSISTANT_DATA) {
+        data = JSON.parse(JSON.stringify(window.TRADING_ASSISTANT_DATA));
+        data.loadSource = "GitHub Pages 静态快照 data/trading-assistant.js";
+        data.loadWarning = "";
+        return;
+      }
       try {
         const res = await fetch(apiUrl("/api/snapshot?_=" + Date.now()));
         if (!res.ok) throw new Error(await res.text());
@@ -369,7 +375,7 @@
         if (window.TRADING_ASSISTANT_DATA) {
           data = JSON.parse(JSON.stringify(window.TRADING_ASSISTANT_DATA));
           data.loadSource = "静态快照 data/trading-assistant.js";
-          data.loadWarning = `接口加载失败，已自动使用本地静态快照。接口错误：${error.message || error}`;
+          data.loadWarning = isLocalRuntime ? `接口加载失败，已自动使用本地静态快照。接口错误：${error.message || error}` : "";
           return;
         }
         throw new Error(`接口和静态快照都无法加载。请使用 http://127.0.0.1:8765/ 打开页面。原始错误：${error.message || error}`);
