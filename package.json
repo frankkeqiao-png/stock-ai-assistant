@@ -1,0 +1,17 @@
+{
+  "name": "stock-ai-assistant-prototype",
+  "version": "0.4.0",
+  "private": true,
+  "description": "股票 AI 决策助手原型。各能力按模块隔离开发，当前已完成交易助理模块。",
+  "scripts": {
+    "trade": "node modules/trading-assistant/server.js",
+    "serve": "node server.js",
+    "refresh:trade": "node modules/trading-assistant/scripts/refresh-trading-assistant.js",
+    "audit:trade": "node modules/trading-assistant/scripts/audit-trading-assistant-data.js",
+    "strategy:trade": "node modules/trading-assistant/scripts/update-strategy-review.js",
+    "build:pages": "node scripts/build-github-pages.js"
+  },
+  "modules": {
+    "trading-assistant": "modules/trading-assistant"
+  }
+}

@@ -1,0 +1,27452 @@
+window.TRADING_ASSISTANT_DATA = {
+  "version": "trading-assistant-v0.1",
+  "generatedAt": "2026-07-16T10:41:07.475Z",
+  "generatedAtChina": "2026/07/16 18:41:07",
+  "scope": "全板块交易助理：科技最高权重，其它保留板块各约3支候选",
+  "disclaimer": "仅做决策辅助，不构成投资建议；所有买卖点必须结合账户风险承受能力与人工确认。",
+  "sources": [
+    {
+      "name": "东方财富板块与成分股行情",
+      "url": "https://quote.eastmoney.com/center/boardlist.html"
+    },
+    {
+      "name": "东方财富复权K线",
+      "url": "https://quote.eastmoney.com/"
+    },
+    {
+      "name": "东方财富财务报表",
+      "url": "https://data.eastmoney.com/"
+    },
+    {
+      "name": "东方财富公告",
+      "url": "https://data.eastmoney.com/notices/"
+    },
+    {
+      "name": "东方财富F10",
+      "url": "https://data.eastmoney.com/"
+    },
+    {
+      "name": "新浪财经指数与备用行情",
+      "url": "https://finance.sina.com.cn/"
+    },
+    {
+      "name": "新浪财经K线备用源",
+      "url": "https://money.finance.sina.com.cn/"
+    },
+    {
+      "name": "新浪资金流备用源",
+      "url": "https://vip.stock.finance.sina.com.cn/moneyflow/"
+    },
+    {
+      "name": "腾讯证券K线第二备用源",
+      "url": "https://gu.qq.com/"
+    },
+    {
+      "name": "巨潮资讯公告备用源",
+      "url": "http://www.cninfo.com.cn/"
+    },
+    {
+      "name": "新浪财经板块缺口补位实时行情",
+      "url": "https://finance.sina.com.cn/"
+    },
+    {
+      "name": "腾讯证券补位换手率",
+      "url": "https://gu.qq.com/"
+    }
+  ],
+  "preference": {
+    "focus": [
+      "科技",
+      "新能源/电力设备",
+      "机器人/智能制造",
+      "低空经济/航空航天",
+      "高端制造/汽车",
+      "医药医疗",
+      "军工国防",
+      "黄金/贵金属",
+      "资源周期/化工",
+      "大消费"
+    ],
+    "primarySector": "科技",
+    "sectorConfig": [
+      {
+        "name": "科技",
+        "priority": 100,
+        "candidateQuota": 16,
+        "boardQuota": 16
+      },
+      {
+        "name": "新能源/电力设备",
+        "priority": 88,
+        "candidateQuota": 3,
+        "boardQuota": 8
+      },
+      {
+        "name": "机器人/智能制造",
+        "priority": 74,
+        "candidateQuota": 3,
+        "boardQuota": 4
+      },
+      {
+        "name": "低空经济/航空航天",
+        "priority": 72,
+        "candidateQuota": 3,
+        "boardQuota": 4
+      },
+      {
+        "name": "高端制造/汽车",
+        "priority": 70,
+        "candidateQuota": 3,
+        "boardQuota": 5
+      },
+      {
+        "name": "医药医疗",
+        "priority": 62,
+        "candidateQuota": 3,
+        "boardQuota": 5
+      },
+      {
+        "name": "军工国防",
+        "priority": 58,
+        "candidateQuota": 3,
+        "boardQuota": 4
+      },
+      {
+        "name": "黄金/贵金属",
+        "priority": 56,
+        "candidateQuota": 3,
+        "boardQuota": 3
+      },
+      {
+        "name": "资源周期/化工",
+        "priority": 54,
+        "candidateQuota": 3,
+        "boardQuota": 5
+      },
+      {
+        "name": "大消费",
+        "priority": 46,
+        "candidateQuota": 3,
+        "boardQuota": 4
+      }
+    ],
+    "includeKeywords": [
+      "半导体",
+      "芯片",
+      "集成电路",
+      "电子",
+      "软件",
+      "计算机",
+      "通信",
+      "光模块",
+      "算力",
+      "人工智能",
+      "AI",
+      "数据中心",
+      "服务器",
+      "网络安全",
+      "消费电子",
+      "PCB",
+      "元器件",
+      "存储",
+      "先进封装",
+      "互联网",
+      "数据要素",
+      "云计算",
+      "信创",
+      "锂",
+      "锂电",
+      "电池",
+      "储能",
+      "新能源",
+      "固态电池",
+      "钠电池",
+      "光伏",
+      "逆变器",
+      "电网",
+      "智能电网",
+      "电力设备",
+      "发电设备",
+      "电器",
+      "风电",
+      "机器人",
+      "人形机器人",
+      "智能制造",
+      "自动化",
+      "工业母机",
+      "数控",
+      "工业软件",
+      "低空经济",
+      "无人机",
+      "航空",
+      "航天",
+      "卫星",
+      "北斗",
+      "商业航天",
+      "汽车",
+      "新能源车",
+      "汽车零部件",
+      "机械",
+      "工程机械",
+      "通用设备",
+      "专用设备",
+      "仪器仪表",
+      "船舶",
+      "设备",
+      "医药",
+      "医疗",
+      "生物",
+      "创新药",
+      "中药",
+      "化学制药",
+      "医疗器械",
+      "CXO",
+      "疫苗",
+      "军工",
+      "国防",
+      "船舶制造",
+      "黄金",
+      "贵金属",
+      "白银",
+      "有色",
+      "稀土",
+      "小金属",
+      "化工",
+      "化学",
+      "石油",
+      "油气",
+      "资源",
+      "煤炭",
+      "钢铁",
+      "材料",
+      "新材料",
+      "消费",
+      "食品",
+      "饮料",
+      "白酒",
+      "家电",
+      "家居",
+      "旅游",
+      "酒店",
+      "免税",
+      "商业百货"
+    ]
+  },
+  "market": {
+    "indices": [
+      {
+        "symbol": "sh000001",
+        "name": "上证指数",
+        "current": 3882.41,
+        "pct": -1.85,
+        "amountYi": 11242.08,
+        "time": "2026-07-16 15:30:36"
+      },
+      {
+        "symbol": "sz399001",
+        "name": "深证成指",
+        "current": 14488.65,
+        "pct": -1.97,
+        "amountYi": 12793.53,
+        "time": "2026-07-16 15:00:03"
+      },
+      {
+        "symbol": "sz399006",
+        "name": "创业板指",
+        "current": 3692.46,
+        "pct": -2.95,
+        "amountYi": 5774.19,
+        "time": "2026-07-16 15:00:03"
+      },
+      {
+        "symbol": "sh000300",
+        "name": "沪深300",
+        "current": 4698.43,
+        "pct": -1.85,
+        "amountYi": 7988.3,
+        "time": "2026-07-16 15:35:34"
+      },
+      {
+        "symbol": "sh000688",
+        "name": "科创50",
+        "current": 1846.88,
+        "pct": -4.02,
+        "amountYi": 1748.21,
+        "time": "2026-07-16 15:35:40"
+      }
+    ],
+    "note": "宏观与全市场模块暂不展开，本页只保留交易助理需要的市场温度参考。"
+  },
+  "universe": {
+    "boards": [
+      {
+        "code": "sw2_270100",
+        "name": "半导体",
+        "pct": -5.99,
+        "amountYi": 4327.51,
+        "turnover": 6.06,
+        "source": "新浪财经申万二级",
+        "sector": "科技",
+        "sectorPriority": 100,
+        "sectorHits": [
+          "半导体"
+        ],
+        "memberCount": 182,
+        "derived": true
+      },
+      {
+        "code": "chgn_700458",
+        "name": "半导体",
+        "pct": -5.42,
+        "amountYi": 6958.16,
+        "turnover": 4.81,
+        "source": "新浪财经热门概念",
+        "sector": "科技",
+        "sectorPriority": 100,
+        "sectorHits": [
+          "半导体"
+        ],
+        "memberCount": 400,
+        "derived": true
+      },
+      {
+        "code": "sw3_270103",
+        "name": "半导体材料",
+        "pct": -8.77,
+        "amountYi": 483.81,
+        "turnover": 8.21,
+        "source": "新浪财经申万三级",
+        "sector": "科技",
+        "sectorPriority": 100,
+        "sectorHits": [
+          "半导体"
+        ],
+        "memberCount": 29,
+        "derived": true
+      },
+      {
+        "code": "chgn_701383",
+        "name": "半导体材料",
+        "pct": -6.56,
+        "amountYi": 1351.49,
+        "turnover": 5.12,
+        "source": "新浪财经热门概念",
+        "sector": "科技",
+        "sectorPriority": 100,
+        "sectorHits": [
+          "半导体"
+        ],
+        "memberCount": 152,
+        "derived": true
+      },
+      {
+        "code": "chgn_730608",
+        "name": "半导体检测",
+        "pct": -7.96,
+        "amountYi": 166.39,
+        "turnover": 3.95,
+        "source": "新浪财经热门概念",
+        "sector": "科技",
+        "sectorPriority": 100,
+        "sectorHits": [
+          "半导体"
+        ],
+        "memberCount": 22,
+        "derived": true
+      },
+      {
+        "code": "sw3_270108",
+        "name": "半导体设备",
+        "pct": -6.27,
+        "amountYi": 669.13,
+        "turnover": 6.16,
+        "source": "新浪财经申万三级",
+        "sector": "科技",
+        "sectorPriority": 100,
+        "sectorHits": [
+          "半导体"
+        ],
+        "memberCount": 26,
+        "derived": true
+      },
+      {
+        "code": "chgn_701279",
+        "name": "半导体设备",
+        "pct": -6.26,
+        "amountYi": 1665.26,
+        "turnover": 4.81,
+        "source": "新浪财经热门概念",
+        "sector": "科技",
+        "sectorPriority": 100,
+        "sectorHits": [
+          "半导体"
+        ],
+        "memberCount": 171,
+        "derived": true
+      },
+      {
+        "code": "sw3_710401",
+        "name": "垂直应用软件",
+        "pct": 0.31,
+        "amountYi": 302.27,
+        "turnover": 3.05,
+        "source": "新浪财经申万三级",
+        "sector": "科技",
+        "sectorPriority": 100,
+        "sectorHits": [
+          "软件"
+        ],
+        "memberCount": 101,
+        "derived": true
+      },
+      {
+        "code": "chgn_700879",
+        "name": "存储概念",
+        "pct": -5.88,
+        "amountYi": 4723.65,
+        "turnover": 6.33,
+        "source": "新浪财经热门概念",
+        "sector": "科技",
+        "sectorPriority": 100,
+        "sectorHits": [
+          "存储"
+        ],
+        "memberCount": 205,
+        "derived": true
+      },
+      {
+        "code": "chgn_700934",
+        "name": "第三代半导体",
+        "pct": -6.92,
+        "amountYi": 2445.36,
+        "turnover": 4.77,
+        "source": "新浪财经热门概念",
+        "sector": "科技",
+        "sectorPriority": 100,
+        "sectorHits": [
+          "半导体"
+        ],
+        "memberCount": 192,
+        "derived": true
+      },
+      {
+        "code": "sw_dz",
+        "name": "电子",
+        "pct": -4.5,
+        "amountYi": 6844.15,
+        "turnover": 5.16,
+        "source": "新浪财经申万行业",
+        "sector": "科技",
+        "sectorPriority": 100,
+        "sectorHits": [
+          "电子"
+        ],
+        "memberCount": 400,
+        "derived": true
+      },
+      {
+        "code": "sw1_270000",
+        "name": "电子",
+        "pct": -4.5,
+        "amountYi": 6844.15,
+        "turnover": 5.16,
+        "source": "新浪财经申万一级",
+        "sector": "科技",
+        "sectorPriority": 100,
+        "sectorHits": [
+          "电子"
+        ],
+        "memberCount": 400,
+        "derived": true
+      },
+      {
+        "code": "chgn_701359",
+        "name": "电子布",
+        "pct": -7.43,
+        "amountYi": 285.24,
+        "turnover": 4.68,
+        "source": "新浪财经热门概念",
+        "sector": "科技",
+        "sectorPriority": 100,
+        "sectorHits": [
+          "电子"
+        ],
+        "memberCount": 11,
+        "derived": true
+      },
+      {
+        "code": "chgn_730523",
+        "name": "电子车牌",
+        "pct": 0.09,
+        "amountYi": 25.76,
+        "turnover": 2.84,
+        "source": "新浪财经热门概念",
+        "sector": "科技",
+        "sectorPriority": 100,
+        "sectorHits": [
+          "电子"
+        ],
+        "memberCount": 18,
+        "derived": true
+      },
+      {
+        "code": "chgn_730076",
+        "name": "电子发票",
+        "pct": 0.48,
+        "amountYi": 58.77,
+        "turnover": 2.46,
+        "source": "新浪财经热门概念",
+        "sector": "科技",
+        "sectorPriority": 100,
+        "sectorHits": [
+          "电子"
+        ],
+        "memberCount": 18,
+        "derived": true
+      },
+      {
+        "code": "chgn_701151",
+        "name": "电子后视镜",
+        "pct": -2.96,
+        "amountYi": 696.66,
+        "turnover": 3.01,
+        "source": "新浪财经热门概念",
+        "sector": "科技",
+        "sectorPriority": 100,
+        "sectorHits": [
+          "电子"
+        ],
+        "memberCount": 55,
+        "derived": true
+      },
+      {
+        "code": "chgn_701109",
+        "name": "4680电池",
+        "pct": -3.35,
+        "amountYi": 110.76,
+        "turnover": 3.5,
+        "source": "新浪财经热门概念",
+        "sector": "新能源/电力设备",
+        "sectorPriority": 88,
+        "sectorHits": [
+          "电池"
+        ],
+        "memberCount": 19,
+        "derived": true
+      },
+      {
+        "code": "sw3_330401",
+        "name": "厨房电器",
+        "pct": 2.86,
+        "amountYi": 5.19,
+        "turnover": 2.44,
+        "source": "新浪财经申万三级",
+        "sector": "新能源/电力设备",
+        "sectorPriority": 88,
+        "sectorHits": [
+          "电器"
+        ],
+        "memberCount": 5,
+        "derived": true
+      },
+      {
+        "code": "sw2_330400",
+        "name": "厨卫电器",
+        "pct": 2.51,
+        "amountYi": 6.35,
+        "turnover": 1.84,
+        "source": "新浪财经申万二级",
+        "sector": "新能源/电力设备",
+        "sectorPriority": 88,
+        "sectorHits": [
+          "电器"
+        ],
+        "memberCount": 8,
+        "derived": true
+      },
+      {
+        "code": "chgn_700137",
+        "name": "储能",
+        "pct": -2.8,
+        "amountYi": 1681.57,
+        "turnover": 2.3,
+        "source": "新浪财经热门概念",
+        "sector": "新能源/电力设备",
+        "sectorPriority": 88,
+        "sectorHits": [
+          "储能"
+        ],
+        "memberCount": 400,
+        "derived": true
+      },
+      {
+        "code": "chgn_730480",
+        "name": "刀片电池",
+        "pct": -1.71,
+        "amountYi": 193.61,
+        "turnover": 3.82,
+        "source": "新浪财经热门概念",
+        "sector": "新能源/电力设备",
+        "sectorPriority": 88,
+        "sectorHits": [
+          "电池"
+        ],
+        "memberCount": 19,
+        "derived": true
+      },
+      {
+        "code": "sw2_630700",
+        "name": "电池",
+        "pct": -1.85,
+        "amountYi": 585.43,
+        "turnover": 3.85,
+        "source": "新浪财经申万二级",
+        "sector": "新能源/电力设备",
+        "sectorPriority": 88,
+        "sectorHits": [
+          "电池"
+        ],
+        "memberCount": 110,
+        "derived": true
+      },
+      {
+        "code": "chgn_701095",
+        "name": "电池箔",
+        "pct": -2.5,
+        "amountYi": 119.21,
+        "turnover": 2.74,
+        "source": "新浪财经热门概念",
+        "sector": "新能源/电力设备",
+        "sectorPriority": 88,
+        "sectorHits": [
+          "电池"
+        ],
+        "memberCount": 15,
+        "derived": true
+      },
+      {
+        "code": "chgn_730203",
+        "name": "电池管理",
+        "pct": -1.32,
+        "amountYi": 221.02,
+        "turnover": 3.55,
+        "source": "新浪财经热门概念",
+        "sector": "新能源/电力设备",
+        "sectorPriority": 88,
+        "sectorHits": [
+          "电池"
+        ],
+        "memberCount": 22,
+        "derived": true
+      },
+      {
+        "code": "chgn_701016",
+        "name": "工业母机",
+        "pct": -3.59,
+        "amountYi": 620.56,
+        "turnover": 3.29,
+        "source": "新浪财经热门概念",
+        "sector": "机器人/智能制造",
+        "sectorPriority": 74,
+        "sectorHits": [
+          "工业母机"
+        ],
+        "memberCount": 127,
+        "derived": true
+      },
+      {
+        "code": "sw3_640701",
+        "name": "机器人",
+        "pct": 0.09,
+        "amountYi": 148.33,
+        "turnover": 4.4,
+        "source": "新浪财经申万三级",
+        "sector": "机器人/智能制造",
+        "sectorPriority": 74,
+        "sectorHits": [
+          "机器人"
+        ],
+        "memberCount": 20,
+        "derived": true
+      },
+      {
+        "code": "chgn_700124",
+        "name": "机器人概念",
+        "pct": -3.03,
+        "amountYi": 1692.44,
+        "turnover": 2.9,
+        "source": "新浪财经热门概念",
+        "sector": "机器人/智能制造",
+        "sectorPriority": 74,
+        "sectorHits": [
+          "机器人"
+        ],
+        "memberCount": 400,
+        "derived": true
+      },
+      {
+        "code": "gn_zjqrgn",
+        "name": "机器人概念",
+        "pct": 4.33,
+        "amountYi": 296.69,
+        "turnover": 3.24,
+        "source": "新浪财经概念板块",
+        "sector": "机器人/智能制造",
+        "sectorPriority": 74,
+        "sectorHits": [
+          "机器人"
+        ],
+        "memberCount": 41,
+        "derived": true
+      },
+      {
+        "code": "chgn_700199",
+        "name": "北斗导航",
+        "pct": -2.84,
+        "amountYi": 572.55,
+        "turnover": 3.43,
+        "source": "新浪财经热门概念",
+        "sector": "低空经济/航空航天",
+        "sectorPriority": 72,
+        "sectorHits": [
+          "北斗"
+        ],
+        "memberCount": 120,
+        "derived": true
+      },
+      {
+        "code": "chgn_701245",
+        "name": "低空经济",
+        "pct": -2.29,
+        "amountYi": 1905.48,
+        "turnover": 2.91,
+        "source": "新浪财经热门概念",
+        "sector": "低空经济/航空航天",
+        "sectorPriority": 72,
+        "sectorHits": [
+          "低空经济"
+        ],
+        "memberCount": 400,
+        "derived": true
+      },
+      {
+        "code": "chgn_730289",
+        "name": "航空工业集团",
+        "pct": -2.26,
+        "amountYi": 89.98,
+        "turnover": 1.1,
+        "source": "新浪财经热门概念",
+        "sector": "低空经济/航空航天",
+        "sectorPriority": 72,
+        "sectorHits": [
+          "航空"
+        ],
+        "memberCount": 19,
+        "derived": true
+      },
+      {
+        "code": "sw3_421001",
+        "name": "航空运输",
+        "pct": -0.8,
+        "amountYi": 23.25,
+        "turnover": 0.86,
+        "source": "新浪财经申万三级",
+        "sector": "低空经济/航空航天",
+        "sectorPriority": 72,
+        "sectorHits": [
+          "航空"
+        ],
+        "memberCount": 8,
+        "derived": true
+      },
+      {
+        "code": "sw3_710102",
+        "name": "安防设备",
+        "pct": -1.15,
+        "amountYi": 57.36,
+        "turnover": 2.89,
+        "source": "新浪财经申万三级",
+        "sector": "高端制造/汽车",
+        "sectorPriority": 70,
+        "sectorHits": [
+          "设备"
+        ],
+        "memberCount": 26,
+        "derived": true
+      },
+      {
+        "code": "new_cbzz",
+        "name": "船舶制造",
+        "pct": -3.19,
+        "amountYi": 49.86,
+        "turnover": 1.55,
+        "source": "新浪财经新浪行业",
+        "sector": "高端制造/汽车",
+        "sectorPriority": 70,
+        "sectorHits": [
+          "船舶"
+        ],
+        "memberCount": 7,
+        "derived": true
+      },
+      {
+        "code": "sw3_630804",
+        "name": "电工仪器仪表",
+        "pct": 1.73,
+        "amountYi": 33.2,
+        "turnover": 3.04,
+        "source": "新浪财经申万三级",
+        "sector": "高端制造/汽车",
+        "sectorPriority": 70,
+        "sectorHits": [
+          "仪器仪表"
+        ],
+        "memberCount": 15,
+        "derived": true
+      },
+      {
+        "code": "sw3_640206",
+        "name": "纺织服装设备",
+        "pct": -3.49,
+        "amountYi": 14.99,
+        "turnover": 1.96,
+        "source": "新浪财经申万三级",
+        "sector": "高端制造/汽车",
+        "sectorPriority": 70,
+        "sectorHits": [
+          "设备"
+        ],
+        "memberCount": 12,
+        "derived": true
+      },
+      {
+        "code": "new_fzjx",
+        "name": "纺织机械",
+        "pct": -0.51,
+        "amountYi": 5.1,
+        "turnover": 2.05,
+        "source": "新浪财经新浪行业",
+        "sector": "高端制造/汽车",
+        "sectorPriority": 70,
+        "sectorHits": [
+          "机械"
+        ],
+        "memberCount": 7,
+        "derived": true
+      },
+      {
+        "code": "chgn_701247",
+        "name": "创新药",
+        "pct": 0.73,
+        "amountYi": 1737.45,
+        "turnover": 5.8,
+        "source": "新浪财经热门概念",
+        "sector": "医药医疗",
+        "sectorPriority": 62,
+        "sectorHits": [
+          "创新药"
+        ],
+        "memberCount": 282,
+        "derived": true
+      },
+      {
+        "code": "gn_cxy",
+        "name": "创新药",
+        "pct": 0.15,
+        "amountYi": 1210.39,
+        "turnover": 5.89,
+        "source": "新浪财经概念板块",
+        "sector": "医药医疗",
+        "sectorPriority": 62,
+        "sectorHits": [
+          "创新药"
+        ],
+        "memberCount": 144,
+        "derived": true
+      },
+      {
+        "code": "chgn_700738",
+        "name": "动物疫苗",
+        "pct": 1.55,
+        "amountYi": 68.06,
+        "turnover": 2.89,
+        "source": "新浪财经热门概念",
+        "sector": "医药医疗",
+        "sectorPriority": 62,
+        "sectorHits": [
+          "疫苗"
+        ],
+        "memberCount": 24,
+        "derived": true
+      },
+      {
+        "code": "chgn_701234",
+        "name": "合成生物",
+        "pct": 0.16,
+        "amountYi": 654,
+        "turnover": 4.18,
+        "source": "新浪财经热门概念",
+        "sector": "医药医疗",
+        "sectorPriority": 62,
+        "sectorHits": [
+          "生物"
+        ],
+        "memberCount": 169,
+        "derived": true
+      },
+      {
+        "code": "chgn_700208",
+        "name": "互联医疗",
+        "pct": 2.74,
+        "amountYi": 321.79,
+        "turnover": 4.15,
+        "source": "新浪财经热门概念",
+        "sector": "医药医疗",
+        "sectorPriority": 62,
+        "sectorHits": [
+          "医疗"
+        ],
+        "memberCount": 86,
+        "derived": true
+      },
+      {
+        "code": "sw_gfjg",
+        "name": "国防军工",
+        "pct": -2.39,
+        "amountYi": 552.19,
+        "turnover": 2.44,
+        "source": "新浪财经申万行业",
+        "sector": "军工国防",
+        "sectorPriority": 58,
+        "sectorHits": [
+          "军工",
+          "国防"
+        ],
+        "memberCount": 140,
+        "derived": true
+      },
+      {
+        "code": "sw1_650000",
+        "name": "国防军工",
+        "pct": -2.39,
+        "amountYi": 552.19,
+        "turnover": 2.44,
+        "source": "新浪财经申万一级",
+        "sector": "军工国防",
+        "sectorPriority": 58,
+        "sectorHits": [
+          "军工",
+          "国防"
+        ],
+        "memberCount": 140,
+        "derived": true
+      },
+      {
+        "code": "gn_gfjg",
+        "name": "国防军工",
+        "pct": -1.9,
+        "amountYi": 1235.58,
+        "turnover": 3.06,
+        "source": "新浪财经概念板块",
+        "sector": "军工国防",
+        "sectorPriority": 58,
+        "sectorHits": [
+          "军工",
+          "国防"
+        ],
+        "memberCount": 212,
+        "derived": true
+      }
+    ],
+    "stockCount": 2512,
+    "method": "东方财富板块入口不可用，使用新浪财经行业/概念节点筛选科技、锂电、储能相关股票池。行情、K线、财报、公告仍重新抓取。"
+  },
+  "candidates": [
+    {
+      "code": "603228",
+      "name": "景旺电子",
+      "price": 70.79,
+      "pct": 7.94,
+      "change": 5.21,
+      "volumeHands": 641646.69,
+      "amountYi": 45.63,
+      "amplitude": null,
+      "turnover": 6.54,
+      "pe": 54.45,
+      "volumeRatio": null,
+      "high": 72.14,
+      "low": 63.01,
+      "open": 64.01,
+      "prevClose": 65.58,
+      "marketCapYi": 698.22,
+      "floatCapYi": 694.78,
+      "pb": 5.25,
+      "mainNetInflowYi": 8.75,
+      "boards": [
+        {
+          "code": "chgn_700458",
+          "name": "半导体",
+          "pct": -5.42,
+          "amountYi": 6958.16,
+          "turnover": 4.81,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw_dz",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万行业",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw1_270000",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万一级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_701151",
+          "name": "电子后视镜",
+          "pct": -2.96,
+          "amountYi": 696.66,
+          "turnover": 3.01,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 55,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "科技": 4
+      },
+      "sectorGroup": "科技",
+      "sectorPriority": 100,
+      "quick": {
+        "score": 26,
+        "supports": [
+          "成交额 45.63 亿元，流动性较好",
+          "当日涨幅 7.94%，短线强于市场",
+          "PE 54.45，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "科技",
+        "sectorPriority": 100,
+        "sectorQuota": 16,
+        "hits": [
+          "半导体",
+          "电子",
+          "PCB",
+          "电子后视镜"
+        ],
+        "text": "归属板块：科技；命中：半导体、电子、PCB、电子后视镜"
+      },
+      "profile": {
+        "industryPath": "电子设备-电子元件-电子元件",
+        "concepts": [
+          "深圳特区",
+          "特斯拉概念",
+          "5G概念",
+          "无人驾驶",
+          "OLED",
+          "华为概念",
+          "PCB",
+          "商业航天",
+          "CPO概念",
+          "英伟达概念"
+        ],
+        "region": "广东省",
+        "profile": "深圳市景旺电子股份有限公司创立于1993年,上交所主板上市(股票代码:603228),是全球领先的印制电路板及高端电子材料研发、生产和销售的高新技术企业。我们的产品覆盖多层板、类载板、厚铜板、高频高速板、金属基电路板、双面/多层柔性电路板、高密度柔性电路板、HDI板、刚挠结合板、特种材料PCB等,是国内少数产品类型覆盖刚性电路板、柔性线路板和金属基电路板的厂"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 8.75,
+        "smallNetInflowYi": -4.06,
+        "mediumNetInflowYi": -4.69,
+        "largeNetInflowYi": -1.35,
+        "superLargeNetInflowYi": 10.1,
+        "mainNetInflowPct": 19.18,
+        "largeNetInflowPct": -2.95,
+        "superLargeNetInflowPct": 22.13
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 7,
+        "supports": [
+          "营业收入同比增长 16.41%",
+          "经营现金流为正 2.4 亿元",
+          "资产负债率 46.77%，财务压力可控"
+        ],
+        "risks": [
+          "归母净利润同比下降 28.37%"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 38.92,
+        "revenueYoY": 16.41,
+        "netProfitYi": 2.33,
+        "netProfitYoY": -28.37,
+        "operatingCashflowYi": 2.4,
+        "debtAssetRatio": 46.77,
+        "grossMargin": 18.76,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "常规公告",
+        "score": 0,
+        "latest": [
+          {
+            "title": "景旺电子:景旺电子关于重新向香港联交所递交H股发行上市的申请并刊发申请资料的公告",
+            "date": "2026-07-06",
+            "type": "其他",
+            "artCode": "AN202607051826728384",
+            "url": "https://data.eastmoney.com/notices/detail/603228/AN202607051826728384.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "景旺电子:景旺电子关于2024年股票期权与限制性股票激励计划首次授予限制性股票第二个解除限售期及预留授予限制性股票第一个解除限售期解除限售暨上市的公告",
+            "date": "2026-07-04",
+            "type": "限售股份上市流通、股权激励进展公告",
+            "artCode": "AN202607031826703909",
+            "url": "https://data.eastmoney.com/notices/detail/603228/AN202607031826703909.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "景旺电子:景旺电子关于2024年股票期权与限制性股票激励计划2026年第二季度自主行权结果暨股份变动公告",
+            "date": "2026-07-02",
+            "type": "股本变动、股权激励行权结果",
+            "artCode": "AN202607011826635442",
+            "url": "https://data.eastmoney.com/notices/detail/603228/AN202607011826635442.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "景旺电子:景旺电子关于发行境外上市股份(H股)获中国证监会备案的公告",
+            "date": "2026-06-27",
+            "type": "其他",
+            "artCode": "AN202606261824850728",
+            "url": "https://data.eastmoney.com/notices/detail/603228/AN202606261824850728.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "景旺电子:景旺电子关于调整2026年股票期权与限制性股票激励计划相关事项的公告",
+            "date": "2026-06-27",
+            "type": "股权激励进展公告",
+            "artCode": "AN202606261824673911",
+            "url": "https://data.eastmoney.com/notices/detail/603228/AN202606261824673911.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "景旺电子:北京观韬(深圳)律师事务所关于深圳市景旺电子股份有限公司2026年股票期权与限制性股票激励计划调整暨首次授予事项的法律意见书",
+            "date": "2026-06-27",
+            "type": "法律意见书",
+            "artCode": "AN202606261824673910",
+            "url": "https://data.eastmoney.com/notices/detail/603228/AN202606261824673910.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "震荡观察",
+        "score": 7.9,
+        "lastDate": "2026-07-16",
+        "close": 70.79,
+        "ma5": 68.23,
+        "ma20": 70.26,
+        "ma60": 73.28,
+        "high20": 82.44,
+        "low20": 61.54,
+        "mid20": 71.99,
+        "supports": [],
+        "risks": [],
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "momentum": {
+          "r20": -12.35,
+          "r60": 6.93,
+          "r120": -1.2,
+          "rpsProxy": 46.5,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": true,
+          "status": "30分钟确认偏强",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 73.69,
+          "low": 63.01,
+          "mid": 68.35,
+          "ma12": 69.94,
+          "ma48": 68.64,
+          "supports": [
+            "30分钟短均线向上",
+            "30分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 72.14,
+          "low": 63.01,
+          "mid": 67.58,
+          "ma12": 71.15,
+          "ma48": 71.64,
+          "supports": [
+            "5分钟收盘在近 48 根中位上方"
+          ],
+          "risks": [
+            "5分钟收盘低于近 48 根均价"
+          ]
+        },
+        "chan": {
+          "buyType": "潜在一买观察",
+          "action": "只观察，不提前抄底；等待底分型与低级别转强",
+          "entryZone": "68.23-77.84",
+          "firstPosition": "0",
+          "add": 71.99,
+          "stop": 59.69,
+          "takeProfit": 89.04,
+          "conditions": [
+            "接近 20 日低点 61.54 后不再创新低",
+            "5分钟/30分钟出现转强并重新站回中位"
+          ],
+          "invalidation": [
+            "跌破 20 日低点 61.54，一买观察失败"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 26.2,
+          "r60": 76.2,
+          "r120": 66.7,
+          "score": 56.4,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "重点跟踪池",
+        "score": 85.4,
+        "focusArea": "科技",
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "relativeStrength": {
+          "r20": 26.2,
+          "r60": 76.2,
+          "r120": 66.7,
+          "score": 56.4,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "缠论买点：潜在一买观察",
+            "资金流：主力净流入 8.75 亿",
+            "财务质量：基本面支撑",
+            "公告事件：常规公告",
+            "板块权重：科技"
+          ],
+          "failed": [
+            "趋势阶段：阶段1：筑底观察",
+            "相对强度：强度 56.4",
+            "风险收益比：按计划价 70.79 计算，约 1:1.64，最大亏损约 15.68%，目标空间约 25.78%"
+          ],
+          "neutral": [],
+          "passCount": 5,
+          "failCount": 3,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 70.79,
+          "ratio": 1.64,
+          "maxLossPct": 15.68,
+          "targetGainPct": 25.78,
+          "text": "按计划价 70.79 计算，约 1:1.64，最大亏损约 15.68%，目标空间约 25.78%"
+        },
+        "buyType": "潜在一买观察",
+        "action": "只观察，不提前抄底；等待底分型与低级别转强",
+        "nextAction": "加入盘中观察，等待 5分钟确认或回踩关键位。",
+        "entryZone": "68.23-77.84",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 71.99 后，且 30分钟/5分钟继续偏强",
+        "stop": 59.69,
+        "takeProfit": 89.04,
+        "trackingPeriod": "推荐后先按 3-15 个交易日跟踪，未触发条件不执行",
+        "conditions": [
+          "接近 20 日低点 61.54 后不再创新低",
+          "5分钟/30分钟出现转强并重新站回中位"
+        ],
+        "trigger": "等待 30分钟和5分钟同时转强，再按 68.23-77.84 评估；当前不追高。",
+        "support": [
+          "成交额 45.63 亿元，流动性较好",
+          "当日涨幅 7.94%，短线强于市场",
+          "PE 54.45，估值未进入极端异常区",
+          "主力净流入 8.75 亿元",
+          "归属板块：科技；命中：半导体、电子、PCB、电子后视镜",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "营业收入同比增长 16.41%",
+          "经营现金流为正 2.4 亿元",
+          "资产负债率 46.77%，财务压力可控",
+          "策略通过：缠论买点：潜在一买观察"
+        ],
+        "risk": [
+          "归母净利润同比下降 28.37%",
+          "跌破 20 日低点 61.54，一买观察失败",
+          "策略否决：趋势阶段：阶段1：筑底观察",
+          "策略否决：相对强度：强度 56.4",
+          "策略否决：风险收益比：按计划价 70.79 计算，约 1:1.64，最大亏损约 15.68%，目标空间约 25.78%"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "603893",
+      "name": "瑞芯微",
+      "price": 222.24,
+      "pct": 5.58,
+      "change": 11.74,
+      "volumeHands": 321195.18,
+      "amountYi": 72.37,
+      "amplitude": null,
+      "turnover": 7.6,
+      "pe": 89.61,
+      "volumeRatio": null,
+      "high": 231.55,
+      "low": 215,
+      "open": 215,
+      "prevClose": 210.5,
+      "marketCapYi": 939.96,
+      "floatCapYi": 939.84,
+      "pb": 19.91,
+      "mainNetInflowYi": 4.7,
+      "boards": [
+        {
+          "code": "sw2_270100",
+          "name": "半导体",
+          "pct": -5.99,
+          "amountYi": 4327.51,
+          "turnover": 6.06,
+          "source": "新浪财经申万二级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 182,
+          "derived": true
+        },
+        {
+          "code": "sw_dz",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万行业",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw1_270000",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万一级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_700124",
+          "name": "机器人概念",
+          "pct": -3.03,
+          "amountYi": 1692.44,
+          "turnover": 2.9,
+          "source": "新浪财经热门概念",
+          "sector": "机器人/智能制造",
+          "sectorPriority": 74,
+          "sectorHits": [
+            "机器人"
+          ],
+          "memberCount": 400,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "科技": 3,
+        "机器人/智能制造": 1
+      },
+      "sectorGroup": "科技",
+      "sectorPriority": 100,
+      "quick": {
+        "score": 22,
+        "supports": [
+          "成交额 72.37 亿元，流动性较好",
+          "当日涨幅 5.58%，短线强于市场"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "科技",
+        "sectorPriority": 100,
+        "sectorQuota": 16,
+        "hits": [
+          "半导体",
+          "芯片",
+          "集成电路",
+          "电子",
+          "人工智能",
+          "AI"
+        ],
+        "text": "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能"
+      },
+      "profile": {
+        "industryPath": "电子设备-半导体-集成电路",
+        "concepts": [
+          "物联网",
+          "虚拟现实",
+          "人工智能",
+          "国产芯片",
+          "百度概念",
+          "华为概念",
+          "半导体概念",
+          "EDR概念",
+          "机器人概念",
+          "AI芯片"
+        ],
+        "region": "福建省",
+        "profile": "瑞芯微电子股份有限公司(“瑞芯微”,股票代码:603893)成立于2001年,总部位于福州,在深圳、上海、北京、杭州、香港设有分/子公司,专注于集成电路设计与研发,目前已发展为领先的物联网(IoT)及人工智能物联网(AIoT)处理器芯片企业。瑞芯微拥有一支以系统级芯片、模拟电路芯片设计和算法研究为特长的研发团队,在处理器和数模混合芯片设计、多媒体处理、影像算"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 4.7,
+        "smallNetInflowYi": -2.6,
+        "mediumNetInflowYi": -2.1,
+        "largeNetInflowYi": -2.31,
+        "superLargeNetInflowYi": 7.01,
+        "mainNetInflowPct": 6.49,
+        "largeNetInflowPct": -3.19,
+        "superLargeNetInflowPct": 9.69
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 20,
+        "supports": [
+          "归母净利润同比增长 57.15%",
+          "营业收入同比增长 36.22%",
+          "经营现金流为正 3.83 亿元",
+          "资产负债率 17.85%，财务压力可控",
+          "毛利率约 43.04%"
+        ],
+        "risks": [],
+        "reportDate": "2026-03-31",
+        "revenueYi": 12.05,
+        "revenueYoY": 36.22,
+        "netProfitYi": 3.29,
+        "netProfitYoY": 57.15,
+        "operatingCashflowYi": 3.83,
+        "debtAssetRatio": 17.85,
+        "grossMargin": 43.04,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告偏正面",
+        "score": 3,
+        "latest": [
+          {
+            "title": "瑞芯微:2026年半年度业绩预告",
+            "date": "2026-07-08",
+            "type": "业绩预告",
+            "artCode": "AN202607071826773124",
+            "url": "https://data.eastmoney.com/notices/detail/603893/AN202607071826773124.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "瑞芯微:投资者关系活动记录表(2026年6月)",
+            "date": "2026-07-02",
+            "type": "调研活动",
+            "artCode": "AN202607021826658048",
+            "url": "https://data.eastmoney.com/notices/detail/603893/AN202607021826658048.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "瑞芯微:关于股权激励计划2026年第二季度自主行权结果暨股份变动的公告",
+            "date": "2026-07-02",
+            "type": "股本变动、股权激励行权结果",
+            "artCode": "AN202607011826632544",
+            "url": "https://data.eastmoney.com/notices/detail/603893/AN202607011826632544.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "瑞芯微:关于2022年第二期股票期权与限制性股票激励计划首次授予限制性股票第三期解除限售暨上市公告",
+            "date": "2026-07-01",
+            "type": "限售股份上市流通、股权激励进展公告",
+            "artCode": "AN202606301826601220",
+            "url": "https://data.eastmoney.com/notices/detail/603893/AN202606301826601220.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "瑞芯微:北京国枫律师事务所关于瑞芯微电子股份有限公司2025年年度股东会的法律意见书",
+            "date": "2026-06-27",
+            "type": "法律意见书",
+            "artCode": "AN202606261824779117",
+            "url": "https://data.eastmoney.com/notices/detail/603893/AN202606261824779117.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "瑞芯微:2025年年度股东会决议公告",
+            "date": "2026-06-27",
+            "type": "分配方案决议公告、股东大会决议公告",
+            "artCode": "AN202606261824779114",
+            "url": "https://data.eastmoney.com/notices/detail/603893/AN202606261824779114.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [
+          "2026-07-02 瑞芯微:投资者关系活动记录表(2026年6月)"
+        ],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "趋势偏强",
+        "score": 25.4,
+        "lastDate": "2026-07-16",
+        "close": 222.24,
+        "ma5": 215.49,
+        "ma20": 193,
+        "ma60": 183.94,
+        "high20": 231.55,
+        "low20": 171.3,
+        "mid20": 201.43,
+        "supports": [
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "日线 MA20 高于 MA60，中期结构偏强"
+        ],
+        "risks": [],
+        "trendStage": {
+          "stage": "阶段2：上升趋势",
+          "description": "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点",
+          "score": 10
+        },
+        "momentum": {
+          "r20": 26.31,
+          "r60": 30.02,
+          "r120": 15.88,
+          "rpsProxy": 88.5,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟震荡",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 231.55,
+          "low": 193.2,
+          "mid": 212.38,
+          "ma12": 222.68,
+          "ma48": 215.49,
+          "supports": [
+            "30分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 231.55,
+          "low": 215,
+          "mid": 223.28,
+          "ma12": 221.73,
+          "ma48": 227.4,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "中枢上半区观察",
+          "action": "位置不差但低级别未确认，等待 30分钟转强",
+          "entryZone": "190.58-218.3",
+          "firstPosition": "0",
+          "add": 215.49,
+          "stop": 166.16,
+          "takeProfit": 250.07,
+          "conditions": [
+            "30分钟重新站回中位，并形成更高低点"
+          ],
+          "invalidation": [
+            "跌破 20 日中位 201.43，降级为震荡"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 90.5,
+          "r60": 88.1,
+          "r120": 81,
+          "score": 86.5,
+          "rankText": "候选池相对强度强",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 96,
+        "focusArea": "科技",
+        "trendStage": {
+          "stage": "阶段2：上升趋势",
+          "description": "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点",
+          "score": 10
+        },
+        "relativeStrength": {
+          "r20": 90.5,
+          "r60": 88.1,
+          "r120": 81,
+          "score": 86.5,
+          "rankText": "候选池相对强度强",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "趋势阶段：阶段2：上升趋势",
+            "缠论买点：中枢上半区观察",
+            "相对强度：强度 86.5",
+            "资金流：主力净流入 4.7 亿",
+            "财务质量：基本面支撑",
+            "公告事件：公告偏正面",
+            "板块权重：科技"
+          ],
+          "failed": [
+            "风险收益比：按计划价 218.3 计算，约 1:0.61，最大亏损约 23.88%，目标空间约 14.55%"
+          ],
+          "neutral": [],
+          "passCount": 7,
+          "failCount": 1,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 218.3,
+          "ratio": 0.61,
+          "maxLossPct": 23.88,
+          "targetGainPct": 14.55,
+          "text": "按计划价 218.3 计算，约 1:0.61，最大亏损约 23.88%，目标空间约 14.55%"
+        },
+        "buyType": "中枢上半区观察",
+        "action": "位置不差但低级别未确认，等待 30分钟转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "190.58-218.3",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 215.49 后，且 30分钟/5分钟继续偏强",
+        "stop": 166.16,
+        "takeProfit": 250.07,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "30分钟重新站回中位，并形成更高低点"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 215.49 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 72.37 亿元，流动性较好",
+          "当日涨幅 5.58%，短线强于市场",
+          "主力净流入 4.7 亿元",
+          "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+          "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点",
+          "归母净利润同比增长 57.15%",
+          "营业收入同比增长 36.22%",
+          "经营现金流为正 3.83 亿元",
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "日线 MA20 高于 MA60，中期结构偏强"
+        ],
+        "risk": [
+          "跌破 20 日中位 201.43，降级为震荡",
+          "策略否决：风险收益比：按计划价 218.3 计算，约 1:0.61，最大亏损约 23.88%，目标空间约 14.55%"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "603501",
+      "name": "豪威集团",
+      "price": 109.85,
+      "pct": -1.14,
+      "change": -1.27,
+      "volumeHands": 455227.22,
+      "amountYi": 50.83,
+      "amplitude": null,
+      "turnover": 3.77,
+      "pe": 32.6,
+      "volumeRatio": null,
+      "high": 113.77,
+      "low": 108,
+      "open": 108.08,
+      "prevClose": 111.12,
+      "marketCapYi": 1381.37,
+      "floatCapYi": 1325.63,
+      "pb": 4.21,
+      "mainNetInflowYi": 0.91,
+      "boards": [
+        {
+          "code": "sw2_270100",
+          "name": "半导体",
+          "pct": -5.99,
+          "amountYi": 4327.51,
+          "turnover": 6.06,
+          "source": "新浪财经申万二级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 182,
+          "derived": true
+        },
+        {
+          "code": "chgn_700458",
+          "name": "半导体",
+          "pct": -5.42,
+          "amountYi": 6958.16,
+          "turnover": 4.81,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw_dz",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万行业",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw1_270000",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万一级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_701151",
+          "name": "电子后视镜",
+          "pct": -2.96,
+          "amountYi": 696.66,
+          "turnover": 3.01,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 55,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "科技": 5
+      },
+      "sectorGroup": "科技",
+      "sectorPriority": 100,
+      "quick": {
+        "score": 18,
+        "supports": [
+          "成交额 50.83 亿元，流动性较好",
+          "PE 32.6，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "科技",
+        "sectorPriority": 100,
+        "sectorQuota": 16,
+        "hits": [
+          "半导体",
+          "芯片",
+          "集成电路",
+          "电子",
+          "电子后视镜"
+        ],
+        "text": "归属板块：科技；命中：半导体、芯片、集成电路、电子、电子后视镜"
+      },
+      "profile": {
+        "industryPath": "电子设备-半导体-集成电路",
+        "concepts": [
+          "长江三角",
+          "无人驾驶",
+          "国产芯片",
+          "小米概念",
+          "华为概念",
+          "超清视频",
+          "无线耳机",
+          "3D摄像头",
+          "传感器",
+          "半导体概念"
+        ],
+        "region": "上海市",
+        "profile": "豪威集成电路(集团)股份有限公司(豪威集团,603501.SH)是全球排名前列的Fabless半导体设计公司。集团研发中心与业务网络遍布全球。豪威集团致力于提供传感器解决方案、模拟解决方案和显示解决方案,助力客户在智能手机、汽车电子、安防/物联网,医疗,电脑/平板,工业/机器视觉以及新兴领域解决技术挑战,满足与日俱增的人工智能与绿色能源需求。“赋能科技,感知"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 0.91,
+        "smallNetInflowYi": 0.37,
+        "mediumNetInflowYi": -1.28,
+        "largeNetInflowYi": 2.35,
+        "superLargeNetInflowYi": -1.44,
+        "mainNetInflowPct": 1.79,
+        "largeNetInflowPct": 4.62,
+        "superLargeNetInflowPct": -2.83
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 2,
+        "supports": [
+          "经营现金流为正 7.37 亿元",
+          "资产负债率 33.13%，财务压力可控",
+          "毛利率约 29.38%"
+        ],
+        "risks": [
+          "归母净利润同比下降 41.92%",
+          "营业收入同比下降 0.9%"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 64.14,
+        "revenueYoY": -0.9,
+        "netProfitYi": 5.03,
+        "netProfitYoY": -41.92,
+        "operatingCashflowYi": 7.37,
+        "debtAssetRatio": 33.13,
+        "grossMargin": 29.38,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "常规公告",
+        "score": 0,
+        "latest": [
+          {
+            "title": "豪威集团:关于控股股东部分股权质押及解除质押的公告",
+            "date": "2026-07-17",
+            "type": "股份质押、冻结、其它",
+            "artCode": "AN202607161827023772",
+            "url": "https://data.eastmoney.com/notices/detail/603501/AN202607161827023772.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "豪威集团:北京市天元律师事务所关于豪威集成电路(集团)股份有限公司2026年第一次临时股东会的法律意见",
+            "date": "2026-07-16",
+            "type": "法律意见书",
+            "artCode": "AN202607151826996365",
+            "url": "https://data.eastmoney.com/notices/detail/603501/AN202607151826996365.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "豪威集团:2026年第一次临时股东会决议公告",
+            "date": "2026-07-16",
+            "type": "股东大会决议公告、其它",
+            "artCode": "AN202607151826996364",
+            "url": "https://data.eastmoney.com/notices/detail/603501/AN202607151826996364.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "豪威集团:第七届董事会第十八次会议决议公告",
+            "date": "2026-07-16",
+            "type": "董事会决议公告、其它",
+            "artCode": "AN202607151826996363",
+            "url": "https://data.eastmoney.com/notices/detail/603501/AN202607151826996363.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "豪威集团:H股公告-根据2026年H股激励计划授予奖励",
+            "date": "2026-07-16",
+            "type": "股权激励进展公告、其他",
+            "artCode": "AN202607151826995837",
+            "url": "https://data.eastmoney.com/notices/detail/603501/AN202607151826995837.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "豪威集团:关于控股股东部分股权质押的公告",
+            "date": "2026-07-15",
+            "type": "股份质押、冻结、其它",
+            "artCode": "AN202607141826956485",
+            "url": "https://data.eastmoney.com/notices/detail/603501/AN202607141826956485.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "趋势偏强",
+        "score": 28.3,
+        "lastDate": "2026-07-16",
+        "close": 109.85,
+        "ma5": 106.56,
+        "ma20": 97.81,
+        "ma60": 97.74,
+        "high20": 113.77,
+        "low20": 84.63,
+        "mid20": 99.2,
+        "supports": [
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "日线 MA20 高于 MA60，中期结构偏强",
+          "收盘接近 20 日高位，趋势保持强势"
+        ],
+        "risks": [],
+        "trendStage": {
+          "stage": "阶段2：上升趋势",
+          "description": "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点",
+          "score": 10
+        },
+        "momentum": {
+          "r20": 21.89,
+          "r60": 18.07,
+          "r120": -13.98,
+          "rpsProxy": 63.9,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟震荡",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 113.77,
+          "low": 98.35,
+          "mid": 106.06,
+          "ma12": 111.46,
+          "ma48": 106.37,
+          "supports": [
+            "30分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 113.77,
+          "low": 108,
+          "mid": 110.88,
+          "ma12": 110.26,
+          "ma48": 111.57,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "中枢上半区观察",
+          "action": "位置不差但低级别未确认，等待 30分钟转强",
+          "entryZone": "93.95-107.36",
+          "firstPosition": "0",
+          "add": 106.56,
+          "stop": 82.09,
+          "takeProfit": 122.87,
+          "conditions": [
+            "30分钟重新站回中位，并形成更高低点"
+          ],
+          "invalidation": [
+            "跌破 20 日中位 99.2，降级为震荡"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 85.7,
+          "r60": 81,
+          "r120": 52.4,
+          "score": 73,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 96,
+        "focusArea": "科技",
+        "trendStage": {
+          "stage": "阶段2：上升趋势",
+          "description": "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点",
+          "score": 10
+        },
+        "relativeStrength": {
+          "r20": 85.7,
+          "r60": 81,
+          "r120": 52.4,
+          "score": 73,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "趋势阶段：阶段2：上升趋势",
+            "缠论买点：中枢上半区观察",
+            "相对强度：强度 73",
+            "资金流：主力净流入 0.91 亿",
+            "财务质量：基本面支撑",
+            "公告事件：常规公告",
+            "板块权重：科技"
+          ],
+          "failed": [
+            "风险收益比：按计划价 107.36 计算，约 1:0.61，最大亏损约 23.54%，目标空间约 14.45%"
+          ],
+          "neutral": [],
+          "passCount": 7,
+          "failCount": 1,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 107.36,
+          "ratio": 0.61,
+          "maxLossPct": 23.54,
+          "targetGainPct": 14.45,
+          "text": "按计划价 107.36 计算，约 1:0.61，最大亏损约 23.54%，目标空间约 14.45%"
+        },
+        "buyType": "中枢上半区观察",
+        "action": "位置不差但低级别未确认，等待 30分钟转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "93.95-107.36",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 106.56 后，且 30分钟/5分钟继续偏强",
+        "stop": 82.09,
+        "takeProfit": 122.87,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "30分钟重新站回中位，并形成更高低点"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 106.56 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 50.83 亿元，流动性较好",
+          "PE 32.6，估值未进入极端异常区",
+          "主力净流入 0.91 亿元",
+          "归属板块：科技；命中：半导体、芯片、集成电路、电子、电子后视镜",
+          "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点",
+          "经营现金流为正 7.37 亿元",
+          "资产负债率 33.13%，财务压力可控",
+          "毛利率约 29.38%",
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "日线 MA20 高于 MA60，中期结构偏强"
+        ],
+        "risk": [
+          "归母净利润同比下降 41.92%",
+          "营业收入同比下降 0.9%",
+          "跌破 20 日中位 99.2，降级为震荡",
+          "策略否决：风险收益比：按计划价 107.36 计算，约 1:0.61，最大亏损约 23.54%，目标空间约 14.45%"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "688036",
+      "name": "传音控股",
+      "price": 65.43,
+      "pct": 6.56,
+      "change": 4.03,
+      "volumeHands": 334915.27,
+      "amountYi": 22.11,
+      "amplitude": null,
+      "turnover": 2.91,
+      "pe": 28.95,
+      "volumeRatio": null,
+      "high": 68.51,
+      "low": 61.41,
+      "open": 62,
+      "prevClose": 61.4,
+      "marketCapYi": 753.22,
+      "floatCapYi": 753.22,
+      "pb": 3.55,
+      "mainNetInflowYi": -1.4,
+      "boards": [
+        {
+          "code": "sw_dz",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万行业",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw1_270000",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万一级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_700137",
+          "name": "储能",
+          "pct": -2.8,
+          "amountYi": 1681.57,
+          "turnover": 2.3,
+          "source": "新浪财经热门概念",
+          "sector": "新能源/电力设备",
+          "sectorPriority": 88,
+          "sectorHits": [
+            "储能"
+          ],
+          "memberCount": 400,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "科技": 2,
+        "新能源/电力设备": 1
+      },
+      "sectorGroup": "科技",
+      "sectorPriority": 100,
+      "quick": {
+        "score": 26,
+        "supports": [
+          "成交额 22.11 亿元，流动性较好",
+          "当日涨幅 6.56%，短线强于市场",
+          "PE 28.95，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "科技",
+        "sectorPriority": 100,
+        "sectorQuota": 16,
+        "hits": [
+          "电子",
+          "AI",
+          "消费电子"
+        ],
+        "text": "归属板块：科技；命中：电子、AI、消费电子"
+      },
+      "profile": {
+        "industryPath": "电子设备-消费电子设备-消费电子设备",
+        "concepts": [
+          "深圳特区",
+          "一带一路",
+          "MLOps概念",
+          "AI手机",
+          "AIPC",
+          "AI眼镜",
+          "AI智能体",
+          "DeepSeek概念",
+          "HS300_",
+          "股权激励"
+        ],
+        "region": "广东省",
+        "profile": "深圳传音控股股份有限公司(以下简称“传音控股”或“传音”)致力于成为新兴市场消费者最喜爱的智能终端产品和移动互联服务提供商。自公司成立以来,传音一直着力为用户提供优质的以手机为核心的多品牌智能终端,并基于自主研发的智能终端操作系统和流量入口,为用户提供移动互联网服务。传音旗下拥有新兴市场知名手机品牌TECNO、itel及Infinix,还包括数码配件品牌or"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": -1.4,
+        "smallNetInflowYi": 0.74,
+        "mediumNetInflowYi": 0.66,
+        "largeNetInflowYi": -1.22,
+        "superLargeNetInflowYi": -0.18,
+        "mainNetInflowPct": -6.35,
+        "largeNetInflowPct": -5.51,
+        "superLargeNetInflowPct": -0.83
+      },
+      "financial": {
+        "status": "基本面待验证",
+        "score": 3,
+        "supports": [
+          "归母净利润同比增长 42.9%",
+          "营业收入同比增长 24.58%"
+        ],
+        "risks": [
+          "经营现金流为负 -40.94 亿元"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 162,
+        "revenueYoY": 24.58,
+        "netProfitYi": 7,
+        "netProfitYoY": 42.9,
+        "operatingCashflowYi": -40.94,
+        "debtAssetRatio": 55.15,
+        "grossMargin": 22,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告偏正面",
+        "score": 3,
+        "latest": [
+          {
+            "title": "传音控股:传音控股关于重新向香港联交所递交H股发行上市的申请并刊发申请资料的公告",
+            "date": "2026-06-22",
+            "type": "其他",
+            "artCode": "AN202606211823708396",
+            "url": "https://data.eastmoney.com/notices/detail/688036/AN202606211823708396.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "传音控股:2026年5月14日投资者关系活动记录表",
+            "date": "2026-05-15",
+            "type": "调研活动",
+            "artCode": "AN202605151822343811",
+            "url": "https://data.eastmoney.com/notices/detail/688036/AN202605151822343811.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "传音控股:传音控股2025年度权益分派实施公告",
+            "date": "2026-05-15",
+            "type": "分配方案实施",
+            "artCode": "AN202605141822314973",
+            "url": "https://data.eastmoney.com/notices/detail/688036/AN202605141822314973.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "传音控股:传音控股2025年年度股东会决议公告",
+            "date": "2026-05-08",
+            "type": "分配方案决议公告、股东大会决议公告",
+            "artCode": "AN202605071822034222",
+            "url": "https://data.eastmoney.com/notices/detail/688036/AN202605071822034222.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "传音控股:上海市锦天城(深圳)律师事务所关于传音控股2025年年度股东会法律意见书",
+            "date": "2026-05-08",
+            "type": "法律意见书",
+            "artCode": "AN202605071822034221",
+            "url": "https://data.eastmoney.com/notices/detail/688036/AN202605071822034221.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "传音控股:传音控股关于参加十五五·科创惠民——科创板企业成果转化与民生赋能之2025年度智能消费行业集体业绩说明会暨召开2026年第一季度业绩说明会的公告",
+            "date": "2026-04-30",
+            "type": "其他",
+            "artCode": "AN202604291821739432",
+            "url": "https://data.eastmoney.com/notices/detail/688036/AN202604291821739432.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [
+          "2026-05-15 传音控股:2026年5月14日投资者关系活动记录表"
+        ],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "趋势偏强",
+        "score": 15.8,
+        "lastDate": "2026-07-16",
+        "close": 65.43,
+        "ma5": 64.43,
+        "ma20": 59.72,
+        "ma60": 58.99,
+        "high20": 71.58,
+        "low20": 53,
+        "mid20": 62.29,
+        "supports": [
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "日线 MA20 高于 MA60，中期结构偏强"
+        ],
+        "risks": [],
+        "trendStage": {
+          "stage": "阶段3：高位震荡",
+          "description": "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+          "score": 2
+        },
+        "momentum": {
+          "r20": 17.01,
+          "r60": 24.56,
+          "r120": -4.55,
+          "rpsProxy": 69.7,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 71.58,
+          "low": 61.01,
+          "mid": 66.3,
+          "ma12": 64.59,
+          "ma48": 64.9,
+          "supports": [],
+          "risks": [
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 68.51,
+          "low": 61.41,
+          "mid": 64.96,
+          "ma12": 65.61,
+          "ma48": 66.07,
+          "supports": [
+            "5分钟收盘在近 48 根中位上方"
+          ],
+          "risks": [
+            "5分钟收盘低于近 48 根均价"
+          ]
+        },
+        "chan": {
+          "buyType": "中枢上半区观察",
+          "action": "位置不差但低级别未确认，等待 30分钟转强",
+          "entryZone": "58.95-67.49",
+          "firstPosition": "0",
+          "add": 64.43,
+          "stop": 51.41,
+          "takeProfit": 77.31,
+          "conditions": [
+            "30分钟重新站回中位，并形成更高低点"
+          ],
+          "invalidation": [
+            "跌破 20 日中位 62.29，降级为震荡"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 83.3,
+          "r60": 83.3,
+          "r120": 64.3,
+          "score": 77,
+          "rankText": "候选池相对强度强",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 83.8,
+        "focusArea": "科技",
+        "trendStage": {
+          "stage": "阶段3：高位震荡",
+          "description": "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+          "score": 2
+        },
+        "relativeStrength": {
+          "r20": 83.3,
+          "r60": 83.3,
+          "r120": 64.3,
+          "score": 77,
+          "rankText": "候选池相对强度强",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "趋势阶段：阶段3：高位震荡",
+            "缠论买点：中枢上半区观察",
+            "相对强度：强度 77",
+            "财务质量：基本面待验证",
+            "公告事件：公告偏正面",
+            "板块权重：科技"
+          ],
+          "failed": [
+            "资金流：主力净流入 -1.4 亿",
+            "风险收益比：按计划价 65.43 计算，约 1:0.85，最大亏损约 21.43%，目标空间约 18.16%"
+          ],
+          "neutral": [],
+          "passCount": 6,
+          "failCount": 2,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 65.43,
+          "ratio": 0.85,
+          "maxLossPct": 21.43,
+          "targetGainPct": 18.16,
+          "text": "按计划价 65.43 计算，约 1:0.85，最大亏损约 21.43%，目标空间约 18.16%"
+        },
+        "buyType": "中枢上半区观察",
+        "action": "位置不差但低级别未确认，等待 30分钟转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "58.95-67.49",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 64.43 后，且 30分钟/5分钟继续偏强",
+        "stop": 51.41,
+        "takeProfit": 77.31,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "30分钟重新站回中位，并形成更高低点"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 64.43 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 22.11 亿元，流动性较好",
+          "当日涨幅 6.56%，短线强于市场",
+          "PE 28.95，估值未进入极端异常区",
+          "归属板块：科技；命中：电子、AI、消费电子",
+          "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+          "归母净利润同比增长 42.9%",
+          "营业收入同比增长 24.58%",
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "日线 MA20 高于 MA60，中期结构偏强",
+          "2026-05-15 传音控股:2026年5月14日投资者关系活动记录表"
+        ],
+        "risk": [
+          "主力净流出 1.4 亿元",
+          "经营现金流为负 -40.94 亿元",
+          "跌破 20 日中位 62.29，降级为震荡",
+          "策略否决：资金流：主力净流入 -1.4 亿",
+          "策略否决：风险收益比：按计划价 65.43 计算，约 1:0.85，最大亏损约 21.43%，目标空间约 18.16%"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "603991",
+      "name": "领先股份",
+      "price": 156.43,
+      "pct": 5.51,
+      "change": 8.17,
+      "volumeHands": 82360.76,
+      "amountYi": 12.71,
+      "amplitude": null,
+      "turnover": 9.2,
+      "pe": -269.71,
+      "volumeRatio": null,
+      "high": 161.66,
+      "low": 140.73,
+      "open": 141.82,
+      "prevClose": 148.26,
+      "marketCapYi": 238.88,
+      "floatCapYi": 140.06,
+      "pb": 6.8,
+      "mainNetInflowYi": 0.08,
+      "boards": [
+        {
+          "code": "sw2_270100",
+          "name": "半导体",
+          "pct": -5.99,
+          "amountYi": 4327.51,
+          "turnover": 6.06,
+          "source": "新浪财经申万二级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 182,
+          "derived": true
+        },
+        {
+          "code": "chgn_700458",
+          "name": "半导体",
+          "pct": -5.42,
+          "amountYi": 6958.16,
+          "turnover": 4.81,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw3_270108",
+          "name": "半导体设备",
+          "pct": -6.27,
+          "amountYi": 669.13,
+          "turnover": 6.16,
+          "source": "新浪财经申万三级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 26,
+          "derived": true
+        },
+        {
+          "code": "chgn_701279",
+          "name": "半导体设备",
+          "pct": -6.26,
+          "amountYi": 1665.26,
+          "turnover": 4.81,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 171,
+          "derived": true
+        },
+        {
+          "code": "chgn_700879",
+          "name": "存储概念",
+          "pct": -5.88,
+          "amountYi": 4723.65,
+          "turnover": 6.33,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "存储"
+          ],
+          "memberCount": 205,
+          "derived": true
+        },
+        {
+          "code": "sw_dz",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万行业",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "科技": 7
+      },
+      "sectorGroup": "科技",
+      "sectorPriority": 100,
+      "quick": {
+        "score": 22,
+        "supports": [
+          "成交额 12.71 亿元，流动性较好",
+          "当日涨幅 5.51%，短线强于市场"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "科技",
+        "sectorPriority": 100,
+        "sectorQuota": 16,
+        "hits": [
+          "半导体",
+          "芯片",
+          "电子",
+          "通信",
+          "存储",
+          "先进封装",
+          "半导体设备",
+          "存储概念"
+        ],
+        "text": "归属板块：科技；命中：半导体、芯片、电子、通信、存储"
+      },
+      "profile": {
+        "industryPath": "电子设备-半导体-半导体材料",
+        "concepts": [
+          "新材料",
+          "5G概念",
+          "半导体概念",
+          "先进封装",
+          "存储芯片",
+          "并购重组概念",
+          "通信技术",
+          "沪股通",
+          "百元股",
+          "昨日高振幅"
+        ],
+        "region": "广东省",
+        "profile": "深圳市领先半导体科技产业股份有限公司成立于2004年12月,是国内领先的线缆用高分子材料制造企业。公司是上海市高新技术企业,上海市科技小巨人企业,上海市专利试点单位。公司是中国电器工业协会理事单位、电线电缆分会橡塑材料工作部副主任委员单位、热缩材料分会副理事长单位,中国电子元件行业协会光电线缆分会光电线缆材料专业委员会副主任委员单位,上海市电线电缆行业协会理"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 0.08,
+        "smallNetInflowYi": 0.33,
+        "mediumNetInflowYi": -0.41,
+        "largeNetInflowYi": -0.11,
+        "superLargeNetInflowYi": 0.2,
+        "mainNetInflowPct": 0.66,
+        "largeNetInflowPct": -0.9,
+        "superLargeNetInflowPct": 1.56
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 16,
+        "supports": [
+          "归母净利润同比增长 458.1%",
+          "营业收入同比增长 1649.93%",
+          "经营现金流为正 0.62 亿元",
+          "资产负债率 26.51%，财务压力可控"
+        ],
+        "risks": [],
+        "reportDate": "2026-03-31",
+        "revenueYi": 8.96,
+        "revenueYoY": 1649.93,
+        "netProfitYi": 0.51,
+        "netProfitYoY": 458.1,
+        "operatingCashflowYi": 0.62,
+        "debtAssetRatio": 26.51,
+        "grossMargin": 16.04,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告风险待核查",
+        "score": -16,
+        "latest": [
+          {
+            "title": "领先股份:2026年半年度业绩预盈公告",
+            "date": "2026-07-15",
+            "type": "业绩预告",
+            "artCode": "AN202607141826955222",
+            "url": "https://data.eastmoney.com/notices/detail/603991/AN202607141826955222.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "领先股份:关于重大仲裁的进展公告",
+            "date": "2026-07-11",
+            "type": "诉讼仲裁",
+            "artCode": "AN202607101826877191",
+            "url": "https://data.eastmoney.com/notices/detail/603991/AN202607101826877191.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "领先股份:关于上海证券交易所对公司2025年年度报告的信息披露监管问询函回复的公告",
+            "date": "2026-07-08",
+            "type": "回复问询函公告",
+            "artCode": "AN202607071826773643",
+            "url": "https://data.eastmoney.com/notices/detail/603991/AN202607071826773643.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "领先股份:德勤华永会计师事务所(特殊普通合伙)关于上海证券交易所《关于深圳市领先半导体科技产业股份有限公司2025年年度报告的信息披露监管问询函》的回复",
+            "date": "2026-07-08",
+            "type": "会计师事务所问询函回复公告",
+            "artCode": "AN202607071826773644",
+            "url": "https://data.eastmoney.com/notices/detail/603991/AN202607071826773644.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "领先股份:股票交易异常波动公告",
+            "date": "2026-07-02",
+            "type": "股票交易异常波动",
+            "artCode": "AN202607011826633637",
+            "url": "https://data.eastmoney.com/notices/detail/603991/AN202607011826633637.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "领先股份:华泰联合证券有限责任公司关于深圳市领先半导体科技产业股份有限公司重大资产置换、发行股份及支付现金购买资产并募集配套资金暨关联交易之部分限售股上市流通的核查意见",
+            "date": "2026-06-22",
+            "type": "保荐/核查意见",
+            "artCode": "AN202606211823708345",
+            "url": "https://data.eastmoney.com/notices/detail/603991/AN202606211823708345.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [
+          "2026-07-08 领先股份:关于上海证券交易所对公司2025年年度报告的信息披露监管问询函回复的公告",
+          "2026-07-08 领先股份:德勤华永会计师事务所(特殊普通合伙)关于上海证券交易所《关于深圳市领先半导体科技产业股份有限公司2025年年度报告的信息披露监管问询函》的回复"
+        ],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "趋势偏强",
+        "score": 18.3,
+        "lastDate": "2026-07-16",
+        "close": 156.43,
+        "ma5": 157.14,
+        "ma20": 146.09,
+        "ma60": 126.25,
+        "high20": 178,
+        "low20": 116.47,
+        "mid20": 147.24,
+        "supports": [
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "日线 MA20 高于 MA60，中期结构偏强"
+        ],
+        "risks": [],
+        "trendStage": {
+          "stage": "阶段3：高位震荡",
+          "description": "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+          "score": 2
+        },
+        "momentum": {
+          "r20": 32.68,
+          "r60": 35.18,
+          "r120": 110.09,
+          "rpsProxy": 100,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 178,
+          "low": 140.73,
+          "mid": 159.37,
+          "ma12": 154.43,
+          "ma48": 160.29,
+          "supports": [],
+          "risks": [
+            "30分钟收盘低于近 48 根均价",
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟震荡",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 161.66,
+          "low": 140.73,
+          "mid": 151.19,
+          "ma12": 156.6,
+          "ma48": 156.25,
+          "supports": [
+            "5分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "chan": {
+          "buyType": "中枢上半区观察",
+          "action": "位置不差但低级别未确认，等待 30分钟转强",
+          "entryZone": "136.16-164.46",
+          "firstPosition": "0",
+          "add": 157.14,
+          "stop": 112.98,
+          "takeProfit": 192.24,
+          "conditions": [
+            "30分钟重新站回中位，并形成更高低点"
+          ],
+          "invalidation": [
+            "跌破 20 日中位 147.24，降级为震荡"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 92.9,
+          "r60": 92.9,
+          "r120": 97.6,
+          "score": 94.5,
+          "rankText": "候选池相对强度强",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 76.2,
+        "focusArea": "科技",
+        "trendStage": {
+          "stage": "阶段3：高位震荡",
+          "description": "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+          "score": 2
+        },
+        "relativeStrength": {
+          "r20": 92.9,
+          "r60": 92.9,
+          "r120": 97.6,
+          "score": 94.5,
+          "rankText": "候选池相对强度强",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "趋势阶段：阶段3：高位震荡",
+            "缠论买点：中枢上半区观察",
+            "相对强度：强度 94.5",
+            "资金流：主力净流入 0.08 亿",
+            "财务质量：基本面支撑",
+            "板块权重：科技"
+          ],
+          "failed": [
+            "公告事件：公告风险待核查",
+            "风险收益比：按计划价 156.43 计算，约 1:0.82，最大亏损约 27.78%，目标空间约 22.89%"
+          ],
+          "neutral": [],
+          "passCount": 6,
+          "failCount": 2,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 156.43,
+          "ratio": 0.82,
+          "maxLossPct": 27.78,
+          "targetGainPct": 22.89,
+          "text": "按计划价 156.43 计算，约 1:0.82，最大亏损约 27.78%，目标空间约 22.89%"
+        },
+        "buyType": "中枢上半区观察",
+        "action": "位置不差但低级别未确认，等待 30分钟转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "136.16-164.46",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 157.14 后，且 30分钟/5分钟继续偏强",
+        "stop": 112.98,
+        "takeProfit": 192.24,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "30分钟重新站回中位，并形成更高低点"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 157.14 且 5分钟震荡，才重新评估。",
+        "support": [
+          "成交额 12.71 亿元，流动性较好",
+          "当日涨幅 5.51%，短线强于市场",
+          "主力净流入 0.08 亿元",
+          "归属板块：科技；命中：半导体、芯片、电子、通信、存储",
+          "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+          "归母净利润同比增长 458.1%",
+          "营业收入同比增长 1649.93%",
+          "经营现金流为正 0.62 亿元",
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "日线 MA20 高于 MA60，中期结构偏强"
+        ],
+        "risk": [
+          "2026-07-08 领先股份:关于上海证券交易所对公司2025年年度报告的信息披露监管问询函回复的公告",
+          "2026-07-08 领先股份:德勤华永会计师事务所(特殊普通合伙)关于上海证券交易所《关于深圳市领先半导体科技产业股份有限公司2025年年度报告的信息披露监管问询函》的回复",
+          "跌破 20 日中位 147.24，降级为震荡",
+          "策略否决：公告事件：公告风险待核查",
+          "策略否决：风险收益比：按计划价 156.43 计算，约 1:0.82，最大亏损约 27.78%，目标空间约 22.89%"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "300373",
+      "name": "扬杰科技",
+      "price": 101.7,
+      "pct": -3.66,
+      "change": -3.86,
+      "volumeHands": 190300.87,
+      "amountYi": 19.83,
+      "amplitude": null,
+      "turnover": 3.51,
+      "pe": 43.65,
+      "volumeRatio": null,
+      "high": 109.08,
+      "low": 100.31,
+      "open": 103.88,
+      "prevClose": 105.56,
+      "marketCapYi": 552.58,
+      "floatCapYi": 551.35,
+      "pb": 5.58,
+      "mainNetInflowYi": -1.18,
+      "boards": [
+        {
+          "code": "sw2_270100",
+          "name": "半导体",
+          "pct": -5.99,
+          "amountYi": 4327.51,
+          "turnover": 6.06,
+          "source": "新浪财经申万二级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 182,
+          "derived": true
+        },
+        {
+          "code": "chgn_700458",
+          "name": "半导体",
+          "pct": -5.42,
+          "amountYi": 6958.16,
+          "turnover": 4.81,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_701383",
+          "name": "半导体材料",
+          "pct": -6.56,
+          "amountYi": 1351.49,
+          "turnover": 5.12,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 152,
+          "derived": true
+        },
+        {
+          "code": "chgn_700934",
+          "name": "第三代半导体",
+          "pct": -6.92,
+          "amountYi": 2445.36,
+          "turnover": 4.77,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 192,
+          "derived": true
+        },
+        {
+          "code": "sw_dz",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万行业",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw1_270000",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万一级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "科技": 6
+      },
+      "sectorGroup": "科技",
+      "sectorPriority": 100,
+      "quick": {
+        "score": 18,
+        "supports": [
+          "成交额 19.83 亿元，流动性较好",
+          "PE 43.65，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "科技",
+        "sectorPriority": 100,
+        "sectorQuota": 16,
+        "hits": [
+          "半导体",
+          "芯片",
+          "电子",
+          "数据中心",
+          "半导体材料",
+          "第三代半导体"
+        ],
+        "text": "归属板块：科技；命中：半导体、芯片、电子、数据中心、半导体材料"
+      },
+      "profile": {
+        "industryPath": "电子设备-半导体-半导体分立器件",
+        "concepts": [
+          "光伏概念",
+          "充电桩",
+          "5G概念",
+          "国产芯片",
+          "华为概念",
+          "氮化镓",
+          "半导体概念",
+          "数据中心",
+          "中芯概念",
+          "第三代半导体"
+        ],
+        "region": "江苏省",
+        "profile": "扬州扬杰电子科技股份有限公司是国内少数集半导体分立器件芯片设计制造、器件封装测试、终端销售与服务等产业链垂直一体化(IDM)的杰出厂商。产品线含盖分立器件芯片、MOSFET、IGBT&功率模块、SiC、整流器件、保护器件、小信号等,为客户提供一揽子产品解决方案。公司产品广泛应用于汽车电子、人工智能、清洁能源、5G通讯、智能家居、工业、消费类电子等诸多领域。公"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": -1.18,
+        "smallNetInflowYi": 1.21,
+        "mediumNetInflowYi": -0.03,
+        "largeNetInflowYi": -0.76,
+        "superLargeNetInflowYi": -0.42,
+        "mainNetInflowPct": -5.96,
+        "largeNetInflowPct": -3.81,
+        "superLargeNetInflowPct": -2.14
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 20,
+        "supports": [
+          "归母净利润同比增长 41.01%",
+          "营业收入同比增长 34.87%",
+          "经营现金流为正 1.73 亿元",
+          "资产负债率 39.43%，财务压力可控",
+          "毛利率约 36.81%"
+        ],
+        "risks": [],
+        "reportDate": "2026-03-31",
+        "revenueYi": 21.3,
+        "revenueYoY": 34.87,
+        "netProfitYi": 3.85,
+        "netProfitYoY": 41.01,
+        "operatingCashflowYi": 1.73,
+        "debtAssetRatio": 39.43,
+        "grossMargin": 36.81,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告偏正面",
+        "score": 3,
+        "latest": [
+          {
+            "title": "扬杰科技:关于董事离任的公告",
+            "date": "2026-07-13",
+            "type": "高管人员任职变动",
+            "artCode": "AN202607131826933095",
+            "url": "https://data.eastmoney.com/notices/detail/300373/AN202607131826933095.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "扬杰科技:2026年第一次临时股东会决议公告",
+            "date": "2026-07-03",
+            "type": "股东大会决议公告",
+            "artCode": "AN202607031826703846",
+            "url": "https://data.eastmoney.com/notices/detail/300373/AN202607031826703846.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "扬杰科技:江苏泰和律师事务所关于公司2026年第一次临时股东会的法律意见书",
+            "date": "2026-07-03",
+            "type": "法律意见书",
+            "artCode": "AN202607031826703717",
+            "url": "https://data.eastmoney.com/notices/detail/300373/AN202607031826703717.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "扬杰科技:300373扬杰科技投资者关系管理信息20260701",
+            "date": "2026-07-01",
+            "type": "调研活动",
+            "artCode": "AN202607011826634827",
+            "url": "https://data.eastmoney.com/notices/detail/300373/AN202607011826634827.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "扬杰科技:关于获得欧盟理事会九个月豁免期的公告",
+            "date": "2026-06-16",
+            "type": "其他",
+            "artCode": "AN202606161823607280",
+            "url": "https://data.eastmoney.com/notices/detail/300373/AN202606161823607280.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "扬杰科技:关于变更部分募集资金投资项目的公告",
+            "date": "2026-06-16",
+            "type": "变更募集资金投资项目",
+            "artCode": "AN202606161823587513",
+            "url": "https://data.eastmoney.com/notices/detail/300373/AN202606161823587513.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [
+          "2026-07-01 扬杰科技:300373扬杰科技投资者关系管理信息20260701"
+        ],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": 1.2,
+        "lastDate": "2026-07-16",
+        "close": 101.7,
+        "ma5": 110.51,
+        "ma20": 129.91,
+        "ma60": 103.94,
+        "high20": 162,
+        "low20": 100.31,
+        "mid20": 131.16,
+        "supports": [
+          "日线 MA20 高于 MA60，中期结构偏强"
+        ],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "momentum": {
+          "r20": -10.87,
+          "r60": 29.24,
+          "r120": 50.71,
+          "rpsProxy": 86.8,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 139.13,
+          "low": 100.31,
+          "mid": 119.72,
+          "ma12": 105.01,
+          "ma48": 116.34,
+          "supports": [],
+          "risks": [
+            "30分钟收盘低于近 48 根均价",
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 109.08,
+          "low": 100.31,
+          "mid": 104.69,
+          "ma12": 101.61,
+          "ma48": 104.27,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 131.16,
+          "stop": 97.3,
+          "takeProfit": 174.96,
+          "conditions": [
+            "重新站回 MA20 129.91，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 100.31，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 33.3,
+          "r60": 85.7,
+          "r120": 88.1,
+          "score": 69,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 74,
+        "focusArea": "科技",
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "relativeStrength": {
+          "r20": 33.3,
+          "r60": 85.7,
+          "r120": 88.1,
+          "score": 69,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "相对强度：强度 69",
+            "财务质量：基本面支撑",
+            "公告事件：公告偏正面",
+            "风险收益比：按计划价 101.7 计算，约 1:16.64，最大亏损约 4.33%，目标空间约 72.04%",
+            "板块权重：科技"
+          ],
+          "failed": [
+            "趋势阶段：阶段1：筑底观察",
+            "缠论买点：无买点/风险段",
+            "资金流：主力净流入 -1.18 亿"
+          ],
+          "neutral": [],
+          "passCount": 5,
+          "failCount": 3,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 101.7,
+          "ratio": 16.64,
+          "maxLossPct": 4.33,
+          "targetGainPct": 72.04,
+          "text": "按计划价 101.7 计算，约 1:16.64，最大亏损约 4.33%，目标空间约 72.04%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 131.16 后，且 30分钟/5分钟继续偏强",
+        "stop": 97.3,
+        "takeProfit": 174.96,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 129.91，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 131.16 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 19.83 亿元，流动性较好",
+          "PE 43.65，估值未进入极端异常区",
+          "归属板块：科技；命中：半导体、芯片、电子、数据中心、半导体材料",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "归母净利润同比增长 41.01%",
+          "营业收入同比增长 34.87%",
+          "经营现金流为正 1.73 亿元",
+          "日线 MA20 高于 MA60，中期结构偏强",
+          "2026-07-01 扬杰科技:300373扬杰科技投资者关系管理信息20260701",
+          "策略通过：相对强度：强度 69"
+        ],
+        "risk": [
+          "主力净流出 1.18 亿元",
+          "收盘低于 MA20，买点需要降级",
+          "有效跌破 20 日低点 100.31，技术面继续减分",
+          "策略否决：趋势阶段：阶段1：筑底观察",
+          "策略否决：缠论买点：无买点/风险段",
+          "策略否决：资金流：主力净流入 -1.18 亿"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "688213",
+      "name": "思特威",
+      "price": 98.04,
+      "pct": 2.81,
+      "change": 2.68,
+      "volumeHands": 149930.43,
+      "amountYi": 14.91,
+      "amplitude": null,
+      "turnover": 4.63,
+      "pe": 39.37,
+      "volumeRatio": null,
+      "high": 102.62,
+      "low": 97,
+      "open": 97.6,
+      "prevClose": 95.36,
+      "marketCapYi": 394.42,
+      "floatCapYi": 317.17,
+      "pb": 7.22,
+      "mainNetInflowYi": -0.12,
+      "boards": [
+        {
+          "code": "sw2_270100",
+          "name": "半导体",
+          "pct": -5.99,
+          "amountYi": 4327.51,
+          "turnover": 6.06,
+          "source": "新浪财经申万二级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 182,
+          "derived": true
+        },
+        {
+          "code": "chgn_700458",
+          "name": "半导体",
+          "pct": -5.42,
+          "amountYi": 6958.16,
+          "turnover": 4.81,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw_dz",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万行业",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw1_270000",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万一级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_701151",
+          "name": "电子后视镜",
+          "pct": -2.96,
+          "amountYi": 696.66,
+          "turnover": 3.01,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 55,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "科技": 5
+      },
+      "sectorGroup": "科技",
+      "sectorPriority": 100,
+      "quick": {
+        "score": 18,
+        "supports": [
+          "成交额 14.91 亿元，流动性较好",
+          "PE 39.37，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "科技",
+        "sectorPriority": 100,
+        "sectorQuota": 16,
+        "hits": [
+          "半导体",
+          "芯片",
+          "集成电路",
+          "电子",
+          "人工智能",
+          "电子后视镜"
+        ],
+        "text": "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能"
+      },
+      "profile": {
+        "industryPath": "电子设备-半导体-集成电路",
+        "concepts": [
+          "智能穿戴",
+          "安防概念",
+          "医疗器械概念",
+          "无人机",
+          "虚拟现实",
+          "人工智能",
+          "无人驾驶",
+          "国产芯片",
+          "工业互联",
+          "小米概念"
+        ],
+        "region": "上海市",
+        "profile": "思特威(上海)电子科技股份有限公司SmartSens Technology(股票简称:思特威,股票代码:688213)是一家从事CMOS图像传感器芯片产品研发、设计和销售的高新技术企业,总部设立于中国上海,在多个城市及国家设有研发中心。自成立以来,思特威始终专注于高端成像技术的创新与研发,凭借自身性能优势得到了众多客户的认可和青睐。作为致力于提供多场景应用、"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": -0.12,
+        "smallNetInflowYi": -0.09,
+        "mediumNetInflowYi": 0.2,
+        "largeNetInflowYi": 0.58,
+        "superLargeNetInflowYi": -0.7,
+        "mainNetInflowPct": -0.77,
+        "largeNetInflowPct": 3.91,
+        "superLargeNetInflowPct": -4.69
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 20,
+        "supports": [
+          "归母净利润同比增长 23.66%",
+          "营业收入同比增长 20.68%",
+          "经营现金流为正 4.42 亿元",
+          "资产负债率 47.4%，财务压力可控",
+          "毛利率约 25.74%"
+        ],
+        "risks": [],
+        "reportDate": "2026-03-31",
+        "revenueYi": 21.12,
+        "revenueYoY": 20.68,
+        "netProfitYi": 2.37,
+        "netProfitYoY": 23.66,
+        "operatingCashflowYi": 4.42,
+        "debtAssetRatio": 47.4,
+        "grossMargin": 25.74,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "常规公告",
+        "score": 0,
+        "latest": [
+          {
+            "title": "思特威:2026年半年度业绩预告的自愿性披露公告",
+            "date": "2026-07-16",
+            "type": "业绩预告",
+            "artCode": "AN202607151826993399",
+            "url": "https://data.eastmoney.com/notices/detail/688213/AN202607151826993399.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "思特威:关于向特定对象发行股票申请获得中国证券监督管理委员会同意注册批复的公告",
+            "date": "2026-06-05",
+            "type": "增发获准公告",
+            "artCode": "AN202606041823245949",
+            "url": "https://data.eastmoney.com/notices/detail/688213/AN202606041823245949.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "关于同意思特威(上海)电子科技股份有限公司向特定对象发行股票注册的批复",
+            "date": "2026-06-01",
+            "type": "科创板再融资审核注册结果通知",
+            "artCode": "AN202606031823214492",
+            "url": "https://data.eastmoney.com/notices/detail/688213/AN202606031823214492.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "思特威:关于向特定对象发行股票申请收到上海证券交易所审核意见通知的公告",
+            "date": "2026-05-20",
+            "type": "保荐/核查意见",
+            "artCode": "AN202605191822445743",
+            "url": "https://data.eastmoney.com/notices/detail/688213/AN202605191822445743.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "思特威:2025年年度权益分派实施公告",
+            "date": "2026-05-15",
+            "type": "分配方案实施",
+            "artCode": "AN202605141822317507",
+            "url": "https://data.eastmoney.com/notices/detail/688213/AN202605141822317507.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "思特威:北京市竞天公诚律师事务所关于思特威(上海)电子科技股份有限公司差异化权益分派事项的法律意见书",
+            "date": "2026-05-15",
+            "type": "法律意见书",
+            "artCode": "AN202605141822317508",
+            "url": "https://data.eastmoney.com/notices/detail/688213/AN202605141822317508.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": -1.8,
+        "lastDate": "2026-07-16",
+        "close": 98.04,
+        "ma5": 96.93,
+        "ma20": 99.62,
+        "ma60": 98.51,
+        "high20": 109.5,
+        "low20": 90.11,
+        "mid20": 99.81,
+        "supports": [
+          "日线 MA20 高于 MA60，中期结构偏强"
+        ],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "momentum": {
+          "r20": -3.82,
+          "r60": 2.85,
+          "r120": 2.57,
+          "rpsProxy": 50.9,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 108.7,
+          "low": 90.11,
+          "mid": 99.41,
+          "ma12": 98.45,
+          "ma48": 99.26,
+          "supports": [],
+          "risks": [
+            "30分钟收盘低于近 48 根均价",
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 102.62,
+          "low": 97,
+          "mid": 99.81,
+          "ma12": 98.4,
+          "ma48": 99.57,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 99.81,
+          "stop": 87.41,
+          "takeProfit": 118.26,
+          "conditions": [
+            "重新站回 MA20 99.62，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 90.11，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 50,
+          "r60": 64.3,
+          "r120": 73.8,
+          "score": 62.7,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 66.4,
+        "focusArea": "科技",
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "relativeStrength": {
+          "r20": 50,
+          "r60": 64.3,
+          "r120": 73.8,
+          "score": 62.7,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "相对强度：强度 62.7",
+            "财务质量：基本面支撑",
+            "公告事件：常规公告",
+            "风险收益比：按计划价 98.04 计算，约 1:1.9，最大亏损约 10.84%，目标空间约 20.62%",
+            "板块权重：科技"
+          ],
+          "failed": [
+            "趋势阶段：阶段1：筑底观察",
+            "缠论买点：无买点/风险段",
+            "资金流：主力净流入 -0.12 亿"
+          ],
+          "neutral": [],
+          "passCount": 5,
+          "failCount": 3,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 98.04,
+          "ratio": 1.9,
+          "maxLossPct": 10.84,
+          "targetGainPct": 20.62,
+          "text": "按计划价 98.04 计算，约 1:1.9，最大亏损约 10.84%，目标空间约 20.62%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 99.81 后，且 30分钟/5分钟继续偏强",
+        "stop": 87.41,
+        "takeProfit": 118.26,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 99.62，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 99.81 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 14.91 亿元，流动性较好",
+          "PE 39.37，估值未进入极端异常区",
+          "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "归母净利润同比增长 23.66%",
+          "营业收入同比增长 20.68%",
+          "经营现金流为正 4.42 亿元",
+          "日线 MA20 高于 MA60，中期结构偏强",
+          "策略通过：相对强度：强度 62.7",
+          "策略通过：财务质量：基本面支撑"
+        ],
+        "risk": [
+          "收盘低于 MA20，买点需要降级",
+          "有效跌破 20 日低点 90.11，技术面继续减分",
+          "策略否决：趋势阶段：阶段1：筑底观察",
+          "策略否决：缠论买点：无买点/风险段",
+          "策略否决：资金流：主力净流入 -0.12 亿"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "605111",
+      "name": "新洁能",
+      "price": 59.11,
+      "pct": -8.75,
+      "change": -5.67,
+      "volumeHands": 221256.18,
+      "amountYi": 13.66,
+      "amplitude": null,
+      "turnover": 5.33,
+      "pe": 62.22,
+      "volumeRatio": null,
+      "high": 64.46,
+      "low": 58.98,
+      "open": 63.8,
+      "prevClose": 64.78,
+      "marketCapYi": 245.5,
+      "floatCapYi": 245.5,
+      "pb": 5.65,
+      "mainNetInflowYi": -0.99,
+      "boards": [
+        {
+          "code": "sw2_270100",
+          "name": "半导体",
+          "pct": -5.99,
+          "amountYi": 4327.51,
+          "turnover": 6.06,
+          "source": "新浪财经申万二级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 182,
+          "derived": true
+        },
+        {
+          "code": "chgn_700458",
+          "name": "半导体",
+          "pct": -5.42,
+          "amountYi": 6958.16,
+          "turnover": 4.81,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_700934",
+          "name": "第三代半导体",
+          "pct": -6.92,
+          "amountYi": 2445.36,
+          "turnover": 4.77,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 192,
+          "derived": true
+        },
+        {
+          "code": "sw_dz",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万行业",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw1_270000",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万一级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_700124",
+          "name": "机器人概念",
+          "pct": -3.03,
+          "amountYi": 1692.44,
+          "turnover": 2.9,
+          "source": "新浪财经热门概念",
+          "sector": "机器人/智能制造",
+          "sectorPriority": 74,
+          "sectorHits": [
+            "机器人"
+          ],
+          "memberCount": 400,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "科技": 5,
+        "机器人/智能制造": 1,
+        "低空经济/航空航天": 1
+      },
+      "sectorGroup": "科技",
+      "sectorPriority": 100,
+      "quick": {
+        "score": 12,
+        "supports": [
+          "成交额 13.66 亿元，流动性较好",
+          "PE 62.22，估值未进入极端异常区"
+        ],
+        "risks": [
+          "当日跌幅 -8.75%，需确认是否有利空或破位"
+        ]
+      },
+      "focus": {
+        "area": "科技",
+        "sectorPriority": 100,
+        "sectorQuota": 16,
+        "hits": [
+          "半导体",
+          "芯片",
+          "电子",
+          "第三代半导体"
+        ],
+        "text": "归属板块：科技；命中：半导体、芯片、电子、第三代半导体"
+      },
+      "profile": {
+        "industryPath": "电子设备-半导体-半导体分立器件",
+        "concepts": [
+          "物联网",
+          "光伏概念",
+          "充电桩",
+          "无人机",
+          "无人驾驶",
+          "国产芯片",
+          "新能源车",
+          "半导体概念",
+          "第三代半导体",
+          "汽车芯片"
+        ],
+        "region": "江苏省",
+        "profile": "无锡新洁能股份有限公司(以下简称“公司”)成立于2013年1月,拥有新洁能香港、电基集成、金兰功率半导体、国硅集成电路四家子公司以及深圳分公司、宁波分公司。公司成立以来即专注于MOSFET、IGBT等半导体芯片和功率器件的研发、设计及销售,产品优质且系列齐全,广泛应用于消费电子、汽车电子、工业电子、新能源汽车及充电桩、智能装备制造、轨道交通、光伏新能源、5G"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": -0.99,
+        "smallNetInflowYi": 1.44,
+        "mediumNetInflowYi": -0.45,
+        "largeNetInflowYi": 0.05,
+        "superLargeNetInflowYi": -1.04,
+        "mainNetInflowPct": -7.25,
+        "largeNetInflowPct": 0.33,
+        "superLargeNetInflowPct": -7.59
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 11,
+        "supports": [
+          "营业收入同比增长 15.14%",
+          "经营现金流为正 0.6 亿元",
+          "资产负债率 11.64%，财务压力可控",
+          "毛利率约 28.75%"
+        ],
+        "risks": [
+          "归母净利润同比下降 12.68%"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 5.17,
+        "revenueYoY": 15.14,
+        "netProfitYi": 0.95,
+        "netProfitYoY": -12.68,
+        "operatingCashflowYi": 0.6,
+        "debtAssetRatio": 11.64,
+        "grossMargin": 28.75,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "常规公告",
+        "score": 0,
+        "latest": [
+          {
+            "title": "新洁能:关于闲置募集资金现金管理赎回的公告",
+            "date": "2026-07-01",
+            "type": "投资理财",
+            "artCode": "AN202606301826599443",
+            "url": "https://data.eastmoney.com/notices/detail/605111/AN202606301826599443.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "新洁能:股票交易异常波动暨风险提示公告",
+            "date": "2026-07-01",
+            "type": "股票交易异常波动",
+            "artCode": "AN202606301826599442",
+            "url": "https://data.eastmoney.com/notices/detail/605111/AN202606301826599442.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "新洁能:关于闲置募集资金现金管理赎回的公告",
+            "date": "2026-06-26",
+            "type": "投资理财",
+            "artCode": "AN202606251823857315",
+            "url": "https://data.eastmoney.com/notices/detail/605111/AN202606251823857315.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "新洁能:2025年年度权益分派实施公告",
+            "date": "2026-06-10",
+            "type": "分配方案实施",
+            "artCode": "AN202606091823399072",
+            "url": "https://data.eastmoney.com/notices/detail/605111/AN202606091823399072.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "新洁能:江苏世纪同仁律师事务所关于无锡新洁能股份有限公司差异化分红事项之专项法律意见书",
+            "date": "2026-06-10",
+            "type": "法律意见书",
+            "artCode": "AN202606091823399073",
+            "url": "https://data.eastmoney.com/notices/detail/605111/AN202606091823399073.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "新洁能:关于闲置募集资金现金管理赎回的公告",
+            "date": "2026-06-02",
+            "type": "投资理财",
+            "artCode": "AN202606011823130791",
+            "url": "https://data.eastmoney.com/notices/detail/605111/AN202606011823130791.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": 2.3,
+        "lastDate": "2026-07-16",
+        "close": 59.11,
+        "ma5": 66.94,
+        "ma20": 78.51,
+        "ma60": 61.74,
+        "high20": 104.43,
+        "low20": 58.98,
+        "mid20": 81.7,
+        "supports": [
+          "日线 MA20 高于 MA60，中期结构偏强"
+        ],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "momentum": {
+          "r20": -16.92,
+          "r60": 56.75,
+          "r120": 63.33,
+          "rpsProxy": 100,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 82.5,
+          "low": 58.98,
+          "mid": 70.74,
+          "ma12": 62.87,
+          "ma48": 69.78,
+          "supports": [],
+          "risks": [
+            "30分钟收盘低于近 48 根均价",
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 64.46,
+          "low": 58.98,
+          "mid": 61.72,
+          "ma12": 59.73,
+          "ma48": 61.76,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 81.7,
+          "stop": 57.21,
+          "takeProfit": 112.78,
+          "conditions": [
+            "重新站回 MA20 78.51，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 58.98，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 11.9,
+          "r60": 100,
+          "r120": 90.5,
+          "score": 67.5,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 60.9,
+        "focusArea": "科技",
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "relativeStrength": {
+          "r20": 11.9,
+          "r60": 100,
+          "r120": 90.5,
+          "score": 67.5,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "相对强度：强度 67.5",
+            "财务质量：基本面支撑",
+            "公告事件：常规公告",
+            "风险收益比：按计划价 59.11 计算，约 1:28.29，最大亏损约 3.21%，目标空间约 90.8%",
+            "板块权重：科技"
+          ],
+          "failed": [
+            "趋势阶段：阶段1：筑底观察",
+            "缠论买点：无买点/风险段",
+            "资金流：主力净流入 -0.99 亿"
+          ],
+          "neutral": [],
+          "passCount": 5,
+          "failCount": 3,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 59.11,
+          "ratio": 28.29,
+          "maxLossPct": 3.21,
+          "targetGainPct": 90.8,
+          "text": "按计划价 59.11 计算，约 1:28.29，最大亏损约 3.21%，目标空间约 90.8%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 81.7 后，且 30分钟/5分钟继续偏强",
+        "stop": 57.21,
+        "takeProfit": 112.78,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 78.51，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 81.7 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 13.66 亿元，流动性较好",
+          "PE 62.22，估值未进入极端异常区",
+          "归属板块：科技；命中：半导体、芯片、电子、第三代半导体",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "营业收入同比增长 15.14%",
+          "经营现金流为正 0.6 亿元",
+          "资产负债率 11.64%，财务压力可控",
+          "日线 MA20 高于 MA60，中期结构偏强",
+          "策略通过：相对强度：强度 67.5",
+          "策略通过：财务质量：基本面支撑"
+        ],
+        "risk": [
+          "当日跌幅 -8.75%，需确认是否有利空或破位",
+          "归母净利润同比下降 12.68%",
+          "收盘低于 MA20，买点需要降级",
+          "有效跌破 20 日低点 58.98，技术面继续减分",
+          "策略否决：趋势阶段：阶段1：筑底观察",
+          "策略否决：缠论买点：无买点/风险段",
+          "策略否决：资金流：主力净流入 -0.99 亿"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "688608",
+      "name": "恒玄科技",
+      "price": 125.33,
+      "pct": 3.16,
+      "change": 3.84,
+      "volumeHands": 114308.62,
+      "amountYi": 14.47,
+      "amplitude": null,
+      "turnover": 4.83,
+      "pe": 35.39,
+      "volumeRatio": null,
+      "high": 131.24,
+      "low": 122.6,
+      "open": 124,
+      "prevClose": 121.49,
+      "marketCapYi": 296.89,
+      "floatCapYi": 296.89,
+      "pb": 4.15,
+      "mainNetInflowYi": 0.83,
+      "boards": [
+        {
+          "code": "sw2_270100",
+          "name": "半导体",
+          "pct": -5.99,
+          "amountYi": 4327.51,
+          "turnover": 6.06,
+          "source": "新浪财经申万二级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 182,
+          "derived": true
+        },
+        {
+          "code": "sw_dz",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万行业",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw1_270000",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万一级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "科技": 3
+      },
+      "sectorGroup": "科技",
+      "sectorPriority": 100,
+      "quick": {
+        "score": 26,
+        "supports": [
+          "成交额 14.47 亿元，流动性较好",
+          "当日涨幅 3.16%，短线强于市场",
+          "PE 35.39，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "科技",
+        "sectorPriority": 100,
+        "sectorQuota": 16,
+        "hits": [
+          "半导体",
+          "芯片",
+          "电子",
+          "AI",
+          "消费电子"
+        ],
+        "text": "归属板块：科技；命中：半导体、芯片、电子、AI、消费电子"
+      },
+      "profile": {
+        "industryPath": "电子设备-电子设备制造-电子设备制造",
+        "concepts": [
+          "国产芯片",
+          "小米概念",
+          "华为概念",
+          "无线耳机",
+          "半导体概念",
+          "荣耀概念",
+          "AI眼镜",
+          "消费电子概念",
+          "融资融券",
+          "中证500"
+        ],
+        "region": "上海市",
+        "profile": "恒玄科技(上海)股份有限公司成立于2015年,专注于超低功耗技术、智能音视频交互技术和无线通信连接技术的研发,面向未来智能可穿戴和智能家居市场,打造无线超低功耗计算SoC芯片。恒玄科技拥有优秀的射频/模拟/电源管理、无线通信、声学/音频、图像/视觉、NPU技术、超低功耗SoC,完整软件协议栈和复杂操作系统的综合研发能力。产品成功打入国内外知名品牌,在无线超低"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 0.83,
+        "smallNetInflowYi": -0.29,
+        "mediumNetInflowYi": -0.54,
+        "largeNetInflowYi": 0.58,
+        "superLargeNetInflowYi": 0.25,
+        "mainNetInflowPct": 5.75,
+        "largeNetInflowPct": 4.02,
+        "superLargeNetInflowPct": 1.74
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 2,
+        "supports": [
+          "经营现金流为正 0.01 亿元",
+          "资产负债率 4.85%，财务压力可控",
+          "毛利率约 42.55%"
+        ],
+        "risks": [
+          "归母净利润同比下降 53.26%",
+          "营业收入同比下降 32.72%"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 6.69,
+        "revenueYoY": -32.72,
+        "netProfitYi": 0.89,
+        "netProfitYoY": -53.26,
+        "operatingCashflowYi": 0.01,
+        "debtAssetRatio": 4.85,
+        "grossMargin": 42.55,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "常规公告",
+        "score": 0,
+        "latest": [
+          {
+            "title": "恒玄科技:关于变更办公地址的公告",
+            "date": "2026-06-26",
+            "type": "公司办公地址变更",
+            "artCode": "AN202606251823845100",
+            "url": "https://data.eastmoney.com/notices/detail/688608/AN202606251823845100.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "恒玄科技:2025年年度权益分派实施公告",
+            "date": "2026-06-24",
+            "type": "分配方案实施",
+            "artCode": "AN202606231823776474",
+            "url": "https://data.eastmoney.com/notices/detail/688608/AN202606231823776474.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "恒玄科技:2022年限制性股票激励计划首次授予部分第四个归属期及2023年限制性股票激励计划预留授予部分第二个归属期归属结果暨股份上市的公告",
+            "date": "2026-06-11",
+            "type": "限售股份上市流通、股权激励进展公告",
+            "artCode": "AN202606101823426901",
+            "url": "https://data.eastmoney.com/notices/detail/688608/AN202606101823426901.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "恒玄科技:关于调整2025年度利润分配现金分红总额及资本公积转增股本总额的公告",
+            "date": "2026-06-11",
+            "type": "分配方案调整",
+            "artCode": "AN202606101823426902",
+            "url": "https://data.eastmoney.com/notices/detail/688608/AN202606101823426902.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "恒玄科技:上海市锦天城律师事务所关于恒玄科技(上海)股份有限公司2025年年度股东会的法律意见书",
+            "date": "2026-05-21",
+            "type": "法律意见书",
+            "artCode": "AN202605201822499902",
+            "url": "https://data.eastmoney.com/notices/detail/688608/AN202605201822499902.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "恒玄科技:2025年年度股东会决议公告",
+            "date": "2026-05-21",
+            "type": "分配方案决议公告、股东大会决议公告",
+            "artCode": "AN202605201822499903",
+            "url": "https://data.eastmoney.com/notices/detail/688608/AN202605201822499903.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": -11,
+        "lastDate": "2026-07-16",
+        "close": 125.33,
+        "ma5": 122.67,
+        "ma20": 134.68,
+        "ma60": 159.5,
+        "high20": 167.6,
+        "low20": 107.75,
+        "mid20": 137.68,
+        "supports": [],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "momentum": {
+          "r20": -19.91,
+          "r60": -25,
+          "r120": -48.86,
+          "rpsProxy": 0,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": true,
+          "status": "30分钟确认偏强",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 136.61,
+          "low": 112,
+          "mid": 124.31,
+          "ma12": 124.98,
+          "ma48": 122.02,
+          "supports": [
+            "30分钟短均线向上",
+            "30分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 131.24,
+          "low": 122.6,
+          "mid": 126.92,
+          "ma12": 125.58,
+          "ma48": 126.6,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 137.68,
+          "stop": 104.52,
+          "takeProfit": 181.01,
+          "conditions": [
+            "重新站回 MA20 134.68，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 107.75，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 7.1,
+          "r60": 26.2,
+          "r120": 2.4,
+          "score": 11.9,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 49.6,
+        "focusArea": "科技",
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "relativeStrength": {
+          "r20": 7.1,
+          "r60": 26.2,
+          "r120": 2.4,
+          "score": 11.9,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "资金流：主力净流入 0.83 亿",
+            "财务质量：基本面支撑",
+            "公告事件：常规公告",
+            "风险收益比：按计划价 125.33 计算，约 1:2.68，最大亏损约 16.6%，目标空间约 44.43%",
+            "板块权重：科技"
+          ],
+          "failed": [
+            "趋势阶段：阶段4：下降趋势",
+            "缠论买点：无买点/风险段",
+            "相对强度：强度 11.9"
+          ],
+          "neutral": [],
+          "passCount": 5,
+          "failCount": 3,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 125.33,
+          "ratio": 2.68,
+          "maxLossPct": 16.6,
+          "targetGainPct": 44.43,
+          "text": "按计划价 125.33 计算，约 1:2.68，最大亏损约 16.6%，目标空间约 44.43%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 137.68 后，且 30分钟/5分钟继续偏强",
+        "stop": 104.52,
+        "takeProfit": 181.01,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 134.68，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 137.68 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 14.47 亿元，流动性较好",
+          "当日涨幅 3.16%，短线强于市场",
+          "PE 35.39，估值未进入极端异常区",
+          "主力净流入 0.83 亿元",
+          "归属板块：科技；命中：半导体、芯片、电子、AI、消费电子",
+          "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "经营现金流为正 0.01 亿元",
+          "资产负债率 4.85%，财务压力可控",
+          "毛利率约 42.55%",
+          "策略通过：资金流：主力净流入 0.83 亿"
+        ],
+        "risk": [
+          "归母净利润同比下降 53.26%",
+          "营业收入同比下降 32.72%",
+          "收盘低于 MA20，买点需要降级",
+          "有效跌破 20 日低点 107.75，技术面继续减分",
+          "策略否决：趋势阶段：阶段4：下降趋势",
+          "策略否决：缠论买点：无买点/风险段",
+          "策略否决：相对强度：强度 11.9"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "600171",
+      "name": "上海贝岭",
+      "price": 25.2,
+      "pct": -2.48,
+      "change": -0.64,
+      "volumeHands": 202323.52,
+      "amountYi": 5.14,
+      "amplitude": null,
+      "turnover": 2.85,
+      "pe": 76.36,
+      "volumeRatio": null,
+      "high": 25.88,
+      "low": 25.15,
+      "open": 25.38,
+      "prevClose": 25.84,
+      "marketCapYi": 178.65,
+      "floatCapYi": 178.65,
+      "pb": 3.93,
+      "mainNetInflowYi": -0.64,
+      "boards": [
+        {
+          "code": "sw2_270100",
+          "name": "半导体",
+          "pct": -5.99,
+          "amountYi": 4327.51,
+          "turnover": 6.06,
+          "source": "新浪财经申万二级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 182,
+          "derived": true
+        },
+        {
+          "code": "chgn_700458",
+          "name": "半导体",
+          "pct": -5.42,
+          "amountYi": 6958.16,
+          "turnover": 4.81,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_700879",
+          "name": "存储概念",
+          "pct": -5.88,
+          "amountYi": 4723.65,
+          "turnover": 6.33,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "存储"
+          ],
+          "memberCount": 205,
+          "derived": true
+        },
+        {
+          "code": "chgn_700934",
+          "name": "第三代半导体",
+          "pct": -6.92,
+          "amountYi": 2445.36,
+          "turnover": 4.77,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 192,
+          "derived": true
+        },
+        {
+          "code": "sw_dz",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万行业",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw1_270000",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万一级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "科技": 6,
+        "低空经济/航空航天": 1
+      },
+      "sectorGroup": "科技",
+      "sectorPriority": 100,
+      "quick": {
+        "score": 12,
+        "supports": [
+          "成交额 5.14 亿元，具备跟踪流动性",
+          "PE 76.36，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "科技",
+        "sectorPriority": 100,
+        "sectorQuota": 16,
+        "hits": [
+          "半导体",
+          "芯片",
+          "集成电路",
+          "电子",
+          "存储",
+          "存储概念",
+          "第三代半导体"
+        ],
+        "text": "归属板块：科技；命中：半导体、芯片、集成电路、电子、存储"
+      },
+      "profile": {
+        "industryPath": "电子设备-半导体-集成电路",
+        "concepts": [
+          "参股券商",
+          "物联网",
+          "LED概念",
+          "智能电网",
+          "长江三角",
+          "央国企改革",
+          "充电桩",
+          "国产芯片",
+          "华为概念",
+          "无线耳机"
+        ],
+        "region": "上海市",
+        "profile": "上海贝岭股份有限公司前身是上海贝岭微电子制造有限公司,1988年由上海市仪表局、上海贝尔公司合资设立,是国内集成电路行业的首家中外合资企业,也是国家改革开放初期成功吸引外资和引进国外先进技术的标志性企业。1998年9月公司改制上市,是国内集成电路行业首家上市公司。1999年,华虹集团成为公司控股股东。2009年,中国电子信息产业集团有限公司(CEC)成为公司"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": -0.64,
+        "smallNetInflowYi": 0.59,
+        "mediumNetInflowYi": 0.05,
+        "largeNetInflowYi": -0.25,
+        "superLargeNetInflowYi": -0.39,
+        "mainNetInflowPct": -12.4,
+        "largeNetInflowPct": -4.84,
+        "superLargeNetInflowPct": -7.55
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 2,
+        "supports": [
+          "营业收入同比增长 28.93%",
+          "资产负债率 13.61%，财务压力可控",
+          "毛利率约 28.94%"
+        ],
+        "risks": [
+          "归母净利润同比下降 41.6%",
+          "经营现金流为负 -0.9 亿元"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 6.04,
+        "revenueYoY": 28.93,
+        "netProfitYi": 0.22,
+        "netProfitYoY": -41.6,
+        "operatingCashflowYi": -0.9,
+        "debtAssetRatio": 13.61,
+        "grossMargin": 28.94,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "常规公告",
+        "score": 0,
+        "latest": [
+          {
+            "title": "上海贝岭:上海贝岭2025年年度权益分派实施公告",
+            "date": "2026-06-11",
+            "type": "分配方案实施",
+            "artCode": "AN202606101823430414",
+            "url": "https://data.eastmoney.com/notices/detail/600171/AN202606101823430414.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "上海贝岭:2026年5月19日、21日上海贝岭股份有限公司现场调研会纪要",
+            "date": "2026-05-21",
+            "type": "调研活动",
+            "artCode": "AN202605211822643972",
+            "url": "https://data.eastmoney.com/notices/detail/600171/AN202605211822643972.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "上海贝岭:2026年5月15日上海贝岭2026年上海辖区上市公司年报集体业绩说明会内容",
+            "date": "2026-05-15",
+            "type": "调研活动",
+            "artCode": "AN202605151822350479",
+            "url": "https://data.eastmoney.com/notices/detail/600171/AN202605151822350479.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "上海贝岭:2026年5月12日上海贝岭股份有限公司12人次现场调研会纪要",
+            "date": "2026-05-14",
+            "type": "调研活动",
+            "artCode": "AN202605141822312472",
+            "url": "https://data.eastmoney.com/notices/detail/600171/AN202605141822312472.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "上海贝岭:上海贝岭关于参加2026年上海辖区上市公司年报集体业绩说明会活动的公告",
+            "date": "2026-05-08",
+            "type": "其他",
+            "artCode": "AN202605071822026736",
+            "url": "https://data.eastmoney.com/notices/detail/600171/AN202605071822026736.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "上海贝岭:上海贝岭2026年第一季度报告",
+            "date": "2026-04-25",
+            "type": "一季度报告全文",
+            "artCode": "AN202604241821552767",
+            "url": "https://data.eastmoney.com/notices/detail/600171/AN202604241821552767.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": -3.7,
+        "lastDate": "2026-07-16",
+        "close": 25.2,
+        "ma5": 26.56,
+        "ma20": 28.96,
+        "ma60": 28.72,
+        "high20": 32.86,
+        "low20": 25.15,
+        "mid20": 29,
+        "supports": [
+          "日线 MA20 高于 MA60，中期结构偏强"
+        ],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "momentum": {
+          "r20": -9.9,
+          "r60": -9.58,
+          "r120": -22.17,
+          "rpsProxy": 27.8,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 29.78,
+          "low": 25.15,
+          "mid": 27.46,
+          "ma12": 25.59,
+          "ma48": 27.14,
+          "supports": [],
+          "risks": [
+            "30分钟收盘低于近 48 根均价",
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 25.88,
+          "low": 25.15,
+          "mid": 25.52,
+          "ma12": 25.24,
+          "ma48": 25.41,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 29,
+          "stop": 24.4,
+          "takeProfit": 35.49,
+          "conditions": [
+            "重新站回 MA20 28.96，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 25.15，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 35.7,
+          "r60": 45.2,
+          "r120": 40.5,
+          "score": 40.5,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 36.7,
+        "focusArea": "科技",
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "relativeStrength": {
+          "r20": 35.7,
+          "r60": 45.2,
+          "r120": 40.5,
+          "score": 40.5,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "财务质量：基本面支撑",
+            "公告事件：常规公告",
+            "风险收益比：按计划价 25.2 计算，约 1:12.88，最大亏损约 3.17%，目标空间约 40.83%",
+            "板块权重：科技"
+          ],
+          "failed": [
+            "趋势阶段：阶段1：筑底观察",
+            "缠论买点：无买点/风险段",
+            "相对强度：强度 40.5",
+            "资金流：主力净流入 -0.64 亿"
+          ],
+          "neutral": [],
+          "passCount": 4,
+          "failCount": 4,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 25.2,
+          "ratio": 12.88,
+          "maxLossPct": 3.17,
+          "targetGainPct": 40.83,
+          "text": "按计划价 25.2 计算，约 1:12.88，最大亏损约 3.17%，目标空间约 40.83%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 29 后，且 30分钟/5分钟继续偏强",
+        "stop": 24.4,
+        "takeProfit": 35.49,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 28.96，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 29 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 5.14 亿元，具备跟踪流动性",
+          "PE 76.36，估值未进入极端异常区",
+          "归属板块：科技；命中：半导体、芯片、集成电路、电子、存储",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "营业收入同比增长 28.93%",
+          "资产负债率 13.61%，财务压力可控",
+          "毛利率约 28.94%",
+          "日线 MA20 高于 MA60，中期结构偏强",
+          "策略通过：财务质量：基本面支撑",
+          "策略通过：公告事件：常规公告"
+        ],
+        "risk": [
+          "归母净利润同比下降 41.6%",
+          "经营现金流为负 -0.9 亿元",
+          "收盘低于 MA20，买点需要降级",
+          "有效跌破 20 日低点 25.15，技术面继续减分",
+          "策略否决：趋势阶段：阶段1：筑底观察",
+          "策略否决：缠论买点：无买点/风险段",
+          "策略否决：相对强度：强度 40.5",
+          "策略否决：资金流：主力净流入 -0.64 亿"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "600641",
+      "name": "先导基电",
+      "price": 35.73,
+      "pct": -10,
+      "change": -3.97,
+      "volumeHands": 692618.24,
+      "amountYi": 25.77,
+      "amplitude": null,
+      "turnover": 7.44,
+      "pe": -257.05,
+      "volumeRatio": null,
+      "high": 39.18,
+      "low": 35.73,
+      "open": 38,
+      "prevClose": 39.7,
+      "marketCapYi": 338.32,
+      "floatCapYi": 332.51,
+      "pb": 4.16,
+      "mainNetInflowYi": -3.25,
+      "boards": [
+        {
+          "code": "sw2_270100",
+          "name": "半导体",
+          "pct": -5.99,
+          "amountYi": 4327.51,
+          "turnover": 6.06,
+          "source": "新浪财经申万二级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 182,
+          "derived": true
+        },
+        {
+          "code": "chgn_700458",
+          "name": "半导体",
+          "pct": -5.42,
+          "amountYi": 6958.16,
+          "turnover": 4.81,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw3_270103",
+          "name": "半导体材料",
+          "pct": -8.77,
+          "amountYi": 483.81,
+          "turnover": 8.21,
+          "source": "新浪财经申万三级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 29,
+          "derived": true
+        },
+        {
+          "code": "chgn_701383",
+          "name": "半导体材料",
+          "pct": -6.56,
+          "amountYi": 1351.49,
+          "turnover": 5.12,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 152,
+          "derived": true
+        },
+        {
+          "code": "chgn_701279",
+          "name": "半导体设备",
+          "pct": -6.26,
+          "amountYi": 1665.26,
+          "turnover": 4.81,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 171,
+          "derived": true
+        },
+        {
+          "code": "chgn_700879",
+          "name": "存储概念",
+          "pct": -5.88,
+          "amountYi": 4723.65,
+          "turnover": 6.33,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "存储"
+          ],
+          "memberCount": 205,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "科技": 9
+      },
+      "sectorGroup": "科技",
+      "sectorPriority": 100,
+      "quick": {
+        "score": 8,
+        "supports": [
+          "成交额 25.77 亿元，流动性较好"
+        ],
+        "risks": [
+          "当日跌幅 -10%，需确认是否有利空或破位"
+        ]
+      },
+      "focus": {
+        "area": "科技",
+        "sectorPriority": 100,
+        "sectorQuota": 16,
+        "hits": [
+          "半导体",
+          "芯片",
+          "电子",
+          "存储",
+          "半导体材料",
+          "半导体设备",
+          "存储概念",
+          "第三代半导体"
+        ],
+        "text": "归属板块：科技；命中：半导体、芯片、电子、存储、半导体材料"
+      },
+      "profile": {
+        "industryPath": "电子设备-半导体-半导体材料",
+        "concepts": [
+          "创投",
+          "稀缺资源",
+          "参股银行",
+          "光伏概念",
+          "长江三角",
+          "小金属概念",
+          "OLED",
+          "国产芯片",
+          "半导体概念",
+          "存储芯片"
+        ],
+        "region": "上海市",
+        "profile": "上海先导基电科技股份有限公司(曾用名:上海万业企业股份有限公司),自1991年成立并于1993年在上海证券交易所主板上市以来,始终秉持卓越的创新实力和坚定的自主研发精神。作为一家具有新兴产业基因的高科技上市公司,公司近年来通过“外延并购+产业整合”的双轮驱动战略,积极布局半导体设备材料等赛道,持续加大集成电路在整体业务中的比重,致力于支持国产设备的发展与成长"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": -3.25,
+        "smallNetInflowYi": 2.4,
+        "mediumNetInflowYi": 0.85,
+        "largeNetInflowYi": -0.07,
+        "superLargeNetInflowYi": -3.18,
+        "mainNetInflowPct": -12.63,
+        "largeNetInflowPct": -0.28,
+        "superLargeNetInflowPct": -12.34
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 16,
+        "supports": [
+          "归母净利润同比增长 17.49%",
+          "营业收入同比增长 178.17%",
+          "经营现金流为正 0.32 亿元",
+          "资产负债率 31.23%，财务压力可控"
+        ],
+        "risks": [],
+        "reportDate": "2026-03-31",
+        "revenueYi": 5.35,
+        "revenueYoY": 178.17,
+        "netProfitYi": -0.17,
+        "netProfitYoY": 17.49,
+        "operatingCashflowYi": 0.32,
+        "debtAssetRatio": 31.23,
+        "grossMargin": 18.5,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告风险待核查",
+        "score": -8,
+        "latest": [
+          {
+            "title": "先导基电:上海先导基电科技股份有限公司2026年半年度业绩预告",
+            "date": "2026-07-15",
+            "type": "业绩预告",
+            "artCode": "AN202607141826960281",
+            "url": "https://data.eastmoney.com/notices/detail/600641/AN202607141826960281.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "先导基电:上海先导基电科技股份有限公司第十二届董事会2026年第七次临时会议决议公告",
+            "date": "2026-07-14",
+            "type": "董事会决议公告",
+            "artCode": "AN202607131826936016",
+            "url": "https://data.eastmoney.com/notices/detail/600641/AN202607131826936016.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "先导基电:上海先导基电科技股份有限公司银行间债券市场非金融企业债务融资工具信息披露事务管理制度",
+            "date": "2026-07-14",
+            "type": "管理办法/制度",
+            "artCode": "AN202607131826936017",
+            "url": "https://data.eastmoney.com/notices/detail/600641/AN202607131826936017.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "先导基电:广东先导微电子科技有限公司模拟审计报告",
+            "date": "2026-07-14",
+            "type": "其他",
+            "artCode": "AN202607131826936018",
+            "url": "https://data.eastmoney.com/notices/detail/600641/AN202607131826936018.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "先导基电:上海先导基电科技股份有限公司关于召开2026年第三次临时股东会的通知",
+            "date": "2026-07-14",
+            "type": "召开股东大会通知",
+            "artCode": "AN202607131826936014",
+            "url": "https://data.eastmoney.com/notices/detail/600641/AN202607131826936014.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "先导基电:上海先导基电科技股份有限公司关于上海证券交易所《关于对上海先导基电科技股份有限公司有关股价波动及收购资产事项的问询函》的回复公告",
+            "date": "2026-07-14",
+            "type": "回复问询函公告",
+            "artCode": "AN202607131826936012",
+            "url": "https://data.eastmoney.com/notices/detail/600641/AN202607131826936012.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [
+          "2026-07-14 先导基电:上海先导基电科技股份有限公司关于上海证券交易所《关于对上海先导基电科技股份有限公司有关股价波动及收购资产事项的问询函》的回复公告"
+        ],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": 2.3,
+        "lastDate": "2026-07-16",
+        "close": 35.73,
+        "ma5": 39.53,
+        "ma20": 40.24,
+        "ma60": 32.05,
+        "high20": 50.99,
+        "low20": 32.81,
+        "mid20": 41.9,
+        "supports": [
+          "日线 MA20 高于 MA60，中期结构偏强"
+        ],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "momentum": {
+          "r20": 8.27,
+          "r60": 47.1,
+          "r120": 89.55,
+          "rpsProxy": 100,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 46.48,
+          "low": 35.73,
+          "mid": 41.1,
+          "ma12": 37.82,
+          "ma48": 40.55,
+          "supports": [],
+          "risks": [
+            "30分钟收盘低于近 48 根均价",
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 39.18,
+          "low": 35.73,
+          "mid": 37.45,
+          "ma12": 35.73,
+          "ma48": 36.8,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 41.9,
+          "stop": 31.83,
+          "takeProfit": 55.07,
+          "conditions": [
+            "重新站回 MA20 40.24，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 32.81，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 81,
+          "r60": 97.6,
+          "r120": 95.2,
+          "score": 91.3,
+          "rankText": "候选池相对强度强",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 32.9,
+        "focusArea": "科技",
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "relativeStrength": {
+          "r20": 81,
+          "r60": 97.6,
+          "r120": 95.2,
+          "score": 91.3,
+          "rankText": "候选池相对强度强",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "相对强度：强度 91.3",
+            "财务质量：基本面支撑",
+            "风险收益比：按计划价 35.73 计算，约 1:4.96，最大亏损约 10.92%，目标空间约 54.13%",
+            "板块权重：科技"
+          ],
+          "failed": [
+            "趋势阶段：阶段1：筑底观察",
+            "缠论买点：无买点/风险段",
+            "资金流：主力净流入 -3.25 亿",
+            "公告事件：公告风险待核查"
+          ],
+          "neutral": [],
+          "passCount": 4,
+          "failCount": 4,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 35.73,
+          "ratio": 4.96,
+          "maxLossPct": 10.92,
+          "targetGainPct": 54.13,
+          "text": "按计划价 35.73 计算，约 1:4.96，最大亏损约 10.92%，目标空间约 54.13%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 41.9 后，且 30分钟/5分钟继续偏强",
+        "stop": 31.83,
+        "takeProfit": 55.07,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 40.24，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 41.9 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 25.77 亿元，流动性较好",
+          "归属板块：科技；命中：半导体、芯片、电子、存储、半导体材料",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "归母净利润同比增长 17.49%",
+          "营业收入同比增长 178.17%",
+          "经营现金流为正 0.32 亿元",
+          "日线 MA20 高于 MA60，中期结构偏强",
+          "策略通过：相对强度：强度 91.3",
+          "策略通过：财务质量：基本面支撑",
+          "策略通过：风险收益比：按计划价 35.73 计算，约 1:4.96，最大亏损约 10.92%，目标空间约 54.13%"
+        ],
+        "risk": [
+          "当日跌幅 -10%，需确认是否有利空或破位",
+          "主力净流出 3.25 亿元",
+          "收盘低于 MA20，买点需要降级",
+          "2026-07-14 先导基电:上海先导基电科技股份有限公司关于上海证券交易所《关于对上海先导基电科技股份有限公司有关股价波动及收购资产事项的问询函》的回复公告",
+          "有效跌破 20 日低点 32.81，技术面继续减分",
+          "策略否决：趋势阶段：阶段1：筑底观察",
+          "策略否决：缠论买点：无买点/风险段",
+          "策略否决：资金流：主力净流入 -3.25 亿",
+          "策略否决：公告事件：公告风险待核查"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "688099",
+      "name": "晶晨股份",
+      "price": 97.99,
+      "pct": 1.63,
+      "change": 1.57,
+      "volumeHands": 197074.84,
+      "amountYi": 19.64,
+      "amplitude": null,
+      "turnover": 4.66,
+      "pe": 47.11,
+      "volumeRatio": null,
+      "high": 103.68,
+      "low": 95.17,
+      "open": 97.01,
+      "prevClose": 96.42,
+      "marketCapYi": 414.81,
+      "floatCapYi": 414.81,
+      "pb": 5.51,
+      "mainNetInflowYi": 0.48,
+      "boards": [
+        {
+          "code": "sw2_270100",
+          "name": "半导体",
+          "pct": -5.99,
+          "amountYi": 4327.51,
+          "turnover": 6.06,
+          "source": "新浪财经申万二级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 182,
+          "derived": true
+        },
+        {
+          "code": "chgn_700458",
+          "name": "半导体",
+          "pct": -5.42,
+          "amountYi": 6958.16,
+          "turnover": 4.81,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw_dz",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万行业",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw1_270000",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万一级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_700124",
+          "name": "机器人概念",
+          "pct": -3.03,
+          "amountYi": 1692.44,
+          "turnover": 2.9,
+          "source": "新浪财经热门概念",
+          "sector": "机器人/智能制造",
+          "sectorPriority": 74,
+          "sectorHits": [
+            "机器人"
+          ],
+          "memberCount": 400,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "科技": 4,
+        "机器人/智能制造": 1
+      },
+      "sectorGroup": "科技",
+      "sectorPriority": 100,
+      "quick": {
+        "score": 18,
+        "supports": [
+          "成交额 19.64 亿元，流动性较好",
+          "PE 47.11，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "科技",
+        "sectorPriority": 100,
+        "sectorQuota": 16,
+        "hits": [
+          "半导体",
+          "芯片",
+          "集成电路",
+          "电子",
+          "人工智能",
+          "AI"
+        ],
+        "text": "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能"
+      },
+      "profile": {
+        "industryPath": "电子设备-半导体-集成电路",
+        "concepts": [
+          "人工智能",
+          "国产芯片",
+          "超清视频",
+          "半导体概念",
+          "科创板做市股",
+          "AI芯片",
+          "融资融券",
+          "中证500",
+          "上证380",
+          "沪股通"
+        ],
+        "region": "上海市",
+        "profile": "晶晨半导体(上海)股份有限公司是全球布局、国内领先的无晶圆半导体系统设计厂商,为智能机顶盒、智能电视、音视频系统终端、无线连接及车载信息娱乐系统等多个产品领域提供多媒体SoC芯片和系统级解决方案,业务覆盖全球主要经济区域,积累了全球知名的客户群。产品技术先进性和市场覆盖率位居行业前列,为智能机顶盒芯片的领导者、智能电视芯片的引领者和音视频系统终端芯片的开拓者"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 0.48,
+        "smallNetInflowYi": -0.89,
+        "mediumNetInflowYi": 0.41,
+        "largeNetInflowYi": 0.45,
+        "superLargeNetInflowYi": 0.03,
+        "mainNetInflowPct": 2.42,
+        "largeNetInflowPct": 2.29,
+        "superLargeNetInflowPct": 0.13
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 2,
+        "supports": [
+          "营业收入同比增长 23.91%",
+          "资产负债率 14.31%，财务压力可控",
+          "毛利率约 37.51%"
+        ],
+        "risks": [
+          "归母净利润同比下降 7.95%",
+          "经营现金流为负 -4.81 亿元"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 18.95,
+        "revenueYoY": 23.91,
+        "netProfitYi": 1.73,
+        "netProfitYoY": -7.95,
+        "operatingCashflowYi": -4.81,
+        "debtAssetRatio": 14.31,
+        "grossMargin": 37.51,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "常规公告",
+        "score": 0,
+        "latest": [
+          {
+            "title": "晶晨股份:晶晨股份2021年限制性股票激励计划预留授予部分第二批次第四个归属期、2023年第二期限制性股票激励计划第二个归属期及2025年限制性股票激励计划第一个归属期归属结果暨股份上市的公告",
+            "date": "2026-06-05",
+            "type": "限售股份上市流通",
+            "artCode": "AN202606041823251947",
+            "url": "https://data.eastmoney.com/notices/detail/688099/AN202606041823251947.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "晶晨股份:晶晨股份2023年第二期限制性股票激励计划第二个归属期符合归属条件的公告",
+            "date": "2026-05-26",
+            "type": "股权激励进展公告",
+            "artCode": "AN202605251822854024",
+            "url": "https://data.eastmoney.com/notices/detail/688099/AN202605251822854024.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "晶晨股份:晶晨股份董事会薪酬与考核委员会关于2023年第二期限制性股票激励计划第二个归属期归属名单的核查意见",
+            "date": "2026-05-26",
+            "type": "专项说明/独立意见",
+            "artCode": "AN202605251822854028",
+            "url": "https://data.eastmoney.com/notices/detail/688099/AN202605251822854028.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "晶晨股份:北京市嘉源律师事务所关于晶晨半导体(上海)股份有限公司2023年第二期限制性股票激励计划第二个归属期归属条件成就及部分限制性股票作废事项的法律意见书",
+            "date": "2026-05-26",
+            "type": "法律意见书",
+            "artCode": "AN202605251822854016",
+            "url": "https://data.eastmoney.com/notices/detail/688099/AN202605251822854016.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "晶晨股份:北京市嘉源律师事务所关于晶晨半导体(上海)股份有限公司2021年限制性股票激励计划预留授予部分第二批次第四个归属期归属条件成就及部分限制性股票作废事项的法律意见书",
+            "date": "2026-05-26",
+            "type": "法律意见书",
+            "artCode": "AN202605251822854018",
+            "url": "https://data.eastmoney.com/notices/detail/688099/AN202605251822854018.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "晶晨股份:晶晨股份关于作废处理部分限制性股票的公告",
+            "date": "2026-05-26",
+            "type": "股权激励进展公告",
+            "artCode": "AN202605251822854029",
+            "url": "https://data.eastmoney.com/notices/detail/688099/AN202605251822854029.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": -15.8,
+        "lastDate": "2026-07-16",
+        "close": 97.99,
+        "ma5": 98.42,
+        "ma20": 98.56,
+        "ma60": 101.31,
+        "high20": 108.55,
+        "low20": 89.83,
+        "mid20": 99.19,
+        "supports": [],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "momentum": {
+          "r20": 1.37,
+          "r60": 17.64,
+          "r120": 4.26,
+          "rpsProxy": 62.4,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 108.55,
+          "low": 92.86,
+          "mid": 100.7,
+          "ma12": 98.55,
+          "ma48": 99.44,
+          "supports": [],
+          "risks": [
+            "30分钟收盘低于近 48 根均价",
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 103.68,
+          "low": 95.17,
+          "mid": 99.43,
+          "ma12": 98.11,
+          "ma48": 99.37,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 99.19,
+          "stop": 87.14,
+          "takeProfit": 117.23,
+          "conditions": [
+            "重新站回 MA20 98.56，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 89.83，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 64.3,
+          "r60": 78.6,
+          "r120": 76.2,
+          "score": 73,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 29.3,
+        "focusArea": "科技",
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "relativeStrength": {
+          "r20": 64.3,
+          "r60": 78.6,
+          "r120": 76.2,
+          "score": 73,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "相对强度：强度 73",
+            "资金流：主力净流入 0.48 亿",
+            "财务质量：基本面支撑",
+            "公告事件：常规公告",
+            "板块权重：科技"
+          ],
+          "failed": [
+            "趋势阶段：阶段4：下降趋势",
+            "缠论买点：无买点/风险段",
+            "风险收益比：按计划价 97.99 计算，约 1:1.77，最大亏损约 11.07%，目标空间约 19.63%"
+          ],
+          "neutral": [],
+          "passCount": 5,
+          "failCount": 3,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 97.99,
+          "ratio": 1.77,
+          "maxLossPct": 11.07,
+          "targetGainPct": 19.63,
+          "text": "按计划价 97.99 计算，约 1:1.77，最大亏损约 11.07%，目标空间约 19.63%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 99.19 后，且 30分钟/5分钟继续偏强",
+        "stop": 87.14,
+        "takeProfit": 117.23,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 98.56，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 99.19 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 19.64 亿元，流动性较好",
+          "PE 47.11，估值未进入极端异常区",
+          "主力净流入 0.48 亿元",
+          "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+          "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "营业收入同比增长 23.91%",
+          "资产负债率 14.31%，财务压力可控",
+          "毛利率约 37.51%",
+          "策略通过：相对强度：强度 73",
+          "策略通过：资金流：主力净流入 0.48 亿"
+        ],
+        "risk": [
+          "归母净利润同比下降 7.95%",
+          "经营现金流为负 -4.81 亿元",
+          "收盘低于 MA20，买点需要降级",
+          "有效跌破 20 日低点 89.83，技术面继续减分",
+          "策略否决：趋势阶段：阶段4：下降趋势",
+          "策略否决：缠论买点：无买点/风险段",
+          "策略否决：风险收益比：按计划价 97.99 计算，约 1:1.77，最大亏损约 11.07%，目标空间约 19.63%"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "002049",
+      "name": "紫光国微",
+      "price": 70.16,
+      "pct": -2.88,
+      "change": -2.08,
+      "volumeHands": 495820.62,
+      "amountYi": 35.65,
+      "amplitude": null,
+      "turnover": 5.84,
+      "pe": 41.1,
+      "volumeRatio": null,
+      "high": 74.33,
+      "low": 69.55,
+      "open": 72.07,
+      "prevClose": 72.24,
+      "marketCapYi": 596.1,
+      "floatCapYi": 596.02,
+      "pb": 4.28,
+      "mainNetInflowYi": -1.68,
+      "boards": [
+        {
+          "code": "sw2_270100",
+          "name": "半导体",
+          "pct": -5.99,
+          "amountYi": 4327.51,
+          "turnover": 6.06,
+          "source": "新浪财经申万二级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 182,
+          "derived": true
+        },
+        {
+          "code": "chgn_700458",
+          "name": "半导体",
+          "pct": -5.42,
+          "amountYi": 6958.16,
+          "turnover": 4.81,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_700879",
+          "name": "存储概念",
+          "pct": -5.88,
+          "amountYi": 4723.65,
+          "turnover": 6.33,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "存储"
+          ],
+          "memberCount": 205,
+          "derived": true
+        },
+        {
+          "code": "chgn_700934",
+          "name": "第三代半导体",
+          "pct": -6.92,
+          "amountYi": 2445.36,
+          "turnover": 4.77,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 192,
+          "derived": true
+        },
+        {
+          "code": "sw_dz",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万行业",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw1_270000",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万一级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "科技": 6,
+        "军工国防": 1
+      },
+      "sectorGroup": "科技",
+      "sectorPriority": 100,
+      "quick": {
+        "score": 18,
+        "supports": [
+          "成交额 35.65 亿元，流动性较好",
+          "PE 41.1，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "科技",
+        "sectorPriority": 100,
+        "sectorQuota": 16,
+        "hits": [
+          "半导体",
+          "芯片",
+          "集成电路",
+          "电子",
+          "人工智能",
+          "存储",
+          "存储概念",
+          "第三代半导体"
+        ],
+        "text": "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能"
+      },
+      "profile": {
+        "industryPath": "电子设备-半导体-集成电路",
+        "concepts": [
+          "军工",
+          "移动支付",
+          "蓝宝石",
+          "5G概念",
+          "人工智能",
+          "区块链",
+          "国产芯片",
+          "车联网(车路云)",
+          "大飞机",
+          "ETC"
+        ],
+        "region": "河北省",
+        "profile": "紫光国芯微电子股份有限公司(股票代码:002049.SZ)隶属新紫光集团旗下,是国内领先的综合性半导体上市企业,亦是中证100指数成份股企业。在新紫光集团具有全球竞争力的智能科技产业布局下,紫光国微积极践行新紫光“志高行远、创造价值”的价值观,聚焦特种集成电路、智能安全芯片两大主业,并涵盖石英晶体频率器件、功率半导体等重要业务,以芯片、系统解决方案赋能千行百"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": -1.68,
+        "smallNetInflowYi": 1.81,
+        "mediumNetInflowYi": -0.13,
+        "largeNetInflowYi": 0.17,
+        "superLargeNetInflowYi": -1.86,
+        "mainNetInflowPct": -4.72,
+        "largeNetInflowPct": 0.49,
+        "superLargeNetInflowPct": -5.21
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 11,
+        "supports": [
+          "归母净利润同比增长 180.27%",
+          "营业收入同比增长 46.11%",
+          "资产负债率 25.47%，财务压力可控",
+          "毛利率约 52.58%"
+        ],
+        "risks": [
+          "经营现金流为负 -3.5 亿元"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 14.99,
+        "revenueYoY": 46.11,
+        "netProfitYi": 3.34,
+        "netProfitYoY": 180.27,
+        "operatingCashflowYi": -3.5,
+        "debtAssetRatio": 25.47,
+        "grossMargin": 52.58,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告风险待核查",
+        "score": -5,
+        "latest": [
+          {
+            "title": "紫光国微:关于注销部分回购股份并减少注册资本暨通知债权人的公告",
+            "date": "2026-07-10",
+            "type": "公司注册资本变更、通知债权人公告、注册资本变更",
+            "artCode": "AN202607091826848962",
+            "url": "https://data.eastmoney.com/notices/detail/002049/AN202607091826848962.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "紫光国微:北京德恒律师事务所关于紫光国芯微电子股份有限公司2026年第三次临时股东会的法律意见",
+            "date": "2026-07-10",
+            "type": "法律意见书",
+            "artCode": "AN202607091826848945",
+            "url": "https://data.eastmoney.com/notices/detail/002049/AN202607091826848945.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "紫光国微:2026年第三次临时股东会决议公告",
+            "date": "2026-07-10",
+            "type": "股东大会决议公告、其它",
+            "artCode": "AN202607091826848926",
+            "url": "https://data.eastmoney.com/notices/detail/002049/AN202607091826848926.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "紫光国微:关于召开2026年第三次临时股东会通知的提示性公告",
+            "date": "2026-07-04",
+            "type": "召开股东大会提示性公告、其它",
+            "artCode": "AN202607031826706031",
+            "url": "https://data.eastmoney.com/notices/detail/002049/AN202607031826706031.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "紫光国微:关于收到深圳证券交易所《关于紫光国芯微电子股份有限公司发行股份及支付现金购买资产并募集配套资金申请的审核问询函》的公告",
+            "date": "2026-07-02",
+            "type": "收到问询函公告、其它",
+            "artCode": "AN202607011826638051",
+            "url": "https://data.eastmoney.com/notices/detail/002049/AN202607011826638051.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "紫光国微:关于2026年第二季度可转换公司债券转股情况的公告",
+            "date": "2026-07-02",
+            "type": "其他、债转股",
+            "artCode": "AN202607011826638017",
+            "url": "https://data.eastmoney.com/notices/detail/002049/AN202607011826638017.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [
+          "2026-07-10 紫光国微:关于注销部分回购股份并减少注册资本暨通知债权人的公告"
+        ],
+        "risks": [
+          "2026-07-02 紫光国微:关于收到深圳证券交易所《关于紫光国芯微电子股份有限公司发行股份及支付现金购买资产并募集配套资金申请的审核问询函》的公告"
+        ],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": -3,
+        "lastDate": "2026-07-16",
+        "close": 70.16,
+        "ma5": 77.64,
+        "ma20": 82.46,
+        "ma60": 78.89,
+        "high20": 91.79,
+        "low20": 69.55,
+        "mid20": 80.67,
+        "supports": [
+          "日线 MA20 高于 MA60，中期结构偏强"
+        ],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "momentum": {
+          "r20": -12.3,
+          "r60": -3.75,
+          "r120": -10.98,
+          "rpsProxy": 35.6,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 90.2,
+          "low": 69.55,
+          "mid": 79.88,
+          "ma12": 72.23,
+          "ma48": 79.81,
+          "supports": [],
+          "risks": [
+            "30分钟收盘低于近 48 根均价",
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 74.33,
+          "low": 69.55,
+          "mid": 71.94,
+          "ma12": 70.3,
+          "ma48": 71.83,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 82.46,
+          "stop": 67.46,
+          "takeProfit": 99.13,
+          "conditions": [
+            "重新站回 MA20 82.46，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 69.55，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 28.6,
+          "r60": 61.9,
+          "r120": 57.1,
+          "score": 49.2,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 25.1,
+        "focusArea": "科技",
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "relativeStrength": {
+          "r20": 28.6,
+          "r60": 61.9,
+          "r120": 57.1,
+          "score": 49.2,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "财务质量：基本面支撑",
+            "风险收益比：按计划价 70.16 计算，约 1:10.72，最大亏损约 3.85%，目标空间约 41.29%",
+            "板块权重：科技"
+          ],
+          "failed": [
+            "趋势阶段：阶段1：筑底观察",
+            "缠论买点：无买点/风险段",
+            "相对强度：强度 49.2",
+            "资金流：主力净流入 -1.68 亿",
+            "公告事件：公告风险待核查"
+          ],
+          "neutral": [],
+          "passCount": 3,
+          "failCount": 5,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 70.16,
+          "ratio": 10.72,
+          "maxLossPct": 3.85,
+          "targetGainPct": 41.29,
+          "text": "按计划价 70.16 计算，约 1:10.72，最大亏损约 3.85%，目标空间约 41.29%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 82.46 后，且 30分钟/5分钟继续偏强",
+        "stop": 67.46,
+        "takeProfit": 99.13,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 82.46，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 82.46 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 35.65 亿元，流动性较好",
+          "PE 41.1，估值未进入极端异常区",
+          "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "归母净利润同比增长 180.27%",
+          "营业收入同比增长 46.11%",
+          "资产负债率 25.47%，财务压力可控",
+          "日线 MA20 高于 MA60，中期结构偏强",
+          "2026-07-10 紫光国微:关于注销部分回购股份并减少注册资本暨通知债权人的公告",
+          "策略通过：财务质量：基本面支撑"
+        ],
+        "risk": [
+          "主力净流出 1.68 亿元",
+          "经营现金流为负 -3.5 亿元",
+          "收盘低于 MA20，买点需要降级",
+          "2026-07-02 紫光国微:关于收到深圳证券交易所《关于紫光国芯微电子股份有限公司发行股份及支付现金购买资产并募集配套资金申请的审核问询函》的公告",
+          "有效跌破 20 日低点 69.55，技术面继续减分",
+          "策略否决：趋势阶段：阶段1：筑底观察",
+          "策略否决：缠论买点：无买点/风险段",
+          "策略否决：相对强度：强度 49.2",
+          "策略否决：资金流：主力净流入 -1.68 亿",
+          "策略否决：公告事件：公告风险待核查"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "605358",
+      "name": "XD立昂微",
+      "price": 48.88,
+      "pct": -7.49,
+      "change": -3.96,
+      "volumeHands": 586861.61,
+      "amountYi": 29.73,
+      "amplitude": null,
+      "turnover": 7.6,
+      "pe": -232.76,
+      "volumeRatio": null,
+      "high": 52.96,
+      "low": 48.36,
+      "open": 51.48,
+      "prevClose": 52.84,
+      "marketCapYi": 377.45,
+      "floatCapYi": 377.45,
+      "pb": 5.41,
+      "mainNetInflowYi": -2.76,
+      "boards": [
+        {
+          "code": "sw2_270100",
+          "name": "半导体",
+          "pct": -5.99,
+          "amountYi": 4327.51,
+          "turnover": 6.06,
+          "source": "新浪财经申万二级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 182,
+          "derived": true
+        },
+        {
+          "code": "chgn_700458",
+          "name": "半导体",
+          "pct": -5.42,
+          "amountYi": 6958.16,
+          "turnover": 4.81,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw3_270103",
+          "name": "半导体材料",
+          "pct": -8.77,
+          "amountYi": 483.81,
+          "turnover": 8.21,
+          "source": "新浪财经申万三级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 29,
+          "derived": true
+        },
+        {
+          "code": "chgn_701383",
+          "name": "半导体材料",
+          "pct": -6.56,
+          "amountYi": 1351.49,
+          "turnover": 5.12,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 152,
+          "derived": true
+        },
+        {
+          "code": "chgn_700879",
+          "name": "存储概念",
+          "pct": -5.88,
+          "amountYi": 4723.65,
+          "turnover": 6.33,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "存储"
+          ],
+          "memberCount": 205,
+          "derived": true
+        },
+        {
+          "code": "chgn_700934",
+          "name": "第三代半导体",
+          "pct": -6.92,
+          "amountYi": 2445.36,
+          "turnover": 4.77,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 192,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "科技": 8,
+        "机器人/智能制造": 1
+      },
+      "sectorGroup": "科技",
+      "sectorPriority": 100,
+      "quick": {
+        "score": 8,
+        "supports": [
+          "成交额 29.73 亿元，流动性较好"
+        ],
+        "risks": [
+          "当日跌幅 -7.49%，需确认是否有利空或破位"
+        ]
+      },
+      "focus": {
+        "area": "科技",
+        "sectorPriority": 100,
+        "sectorQuota": 16,
+        "hits": [
+          "半导体",
+          "芯片",
+          "电子",
+          "人工智能",
+          "存储",
+          "互联网",
+          "半导体材料",
+          "存储概念"
+        ],
+        "text": "归属板块：科技；命中：半导体、芯片、电子、人工智能、存储"
+      },
+      "profile": {
+        "industryPath": "电子设备-半导体-半导体材料",
+        "concepts": [
+          "物联网",
+          "智能电网",
+          "充电桩",
+          "5G概念",
+          "人工智能",
+          "国产芯片",
+          "新能源车",
+          "氮化镓",
+          "半导体概念",
+          "卫星互联网"
+        ],
+        "region": "浙江省",
+        "profile": "杭州立昂微电子股份有限公司是2002年3月在杭州经济技术开发区注册成立的专注于集成电路用半导体材料、半导体功率芯片、集成电路芯片设计、开发、制造、销售的高新技术企业,创始人为我国半导体材料学科开拓者阙端麟院士,法定代表人王敏文。公司于2020年9月11日在上海证券交易所主板A股挂牌上市(证券简称:立昂微,证券代码:605358),拥有杭州、宁波、衢州、嘉兴、"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": -2.76,
+        "smallNetInflowYi": 3.05,
+        "mediumNetInflowYi": -0.28,
+        "largeNetInflowYi": -0.85,
+        "superLargeNetInflowYi": -1.92,
+        "mainNetInflowPct": -9.3,
+        "largeNetInflowPct": -2.85,
+        "superLargeNetInflowPct": -6.45
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 12,
+        "supports": [
+          "归母净利润同比增长 108.92%",
+          "营业收入同比增长 21.81%",
+          "经营现金流为正 0.2 亿元"
+        ],
+        "risks": [],
+        "reportDate": "2026-03-31",
+        "revenueYi": 9.99,
+        "revenueYoY": 21.81,
+        "netProfitYi": 0.07,
+        "netProfitYoY": 108.92,
+        "operatingCashflowYi": 0.2,
+        "debtAssetRatio": 57.16,
+        "grossMargin": 15.56,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告风险待核查",
+        "score": -8,
+        "latest": [
+          {
+            "title": "立昂微:立昂微2026年半年度业绩预告",
+            "date": "2026-07-14",
+            "type": "业绩预告、其它",
+            "artCode": "AN202607131826930735",
+            "url": "https://data.eastmoney.com/notices/detail/605358/AN202607131826930735.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "立昂微:立昂微关于调整2025年度利润分配方案现金分红总额的公告",
+            "date": "2026-07-10",
+            "type": "分配方案调整",
+            "artCode": "AN202607091826848871",
+            "url": "https://data.eastmoney.com/notices/detail/605358/AN202607091826848871.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "立昂微:立昂微2025年度权益分派实施公告",
+            "date": "2026-07-10",
+            "type": "分配方案实施",
+            "artCode": "AN202607091826848865",
+            "url": "https://data.eastmoney.com/notices/detail/605358/AN202607091826848865.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "立昂微:国浩律师(上海)事务所关于杭州立昂微电子股份有限公司差异化分红事项之法律意见书",
+            "date": "2026-07-10",
+            "type": "法律意见书",
+            "artCode": "AN202607091826848868",
+            "url": "https://data.eastmoney.com/notices/detail/605358/AN202607091826848868.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "立昂微:立昂微股东减持股份计划公告",
+            "date": "2026-07-10",
+            "type": "股东/实际控制人股份减持",
+            "artCode": "AN202607091826848652",
+            "url": "https://data.eastmoney.com/notices/detail/605358/AN202607091826848652.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "立昂微:立昂微关于变更持续督导保荐代表人的公告",
+            "date": "2026-07-09",
+            "type": "保荐代表人（机构）变更",
+            "artCode": "AN202607081826819548",
+            "url": "https://data.eastmoney.com/notices/detail/605358/AN202607081826819548.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [
+          "2026-07-10 立昂微:立昂微股东减持股份计划公告"
+        ],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": -0.9,
+        "lastDate": "2026-07-16",
+        "close": 48.88,
+        "ma5": 55.84,
+        "ma20": 65.62,
+        "ma60": 57.61,
+        "high20": 83.29,
+        "low20": 48.36,
+        "mid20": 65.83,
+        "supports": [
+          "日线 MA20 高于 MA60，中期结构偏强"
+        ],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "momentum": {
+          "r20": -31.11,
+          "r60": 33.55,
+          "r120": 19.69,
+          "rpsProxy": 61.8,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 68.18,
+          "low": 48.36,
+          "mid": 58.27,
+          "ma12": 51.6,
+          "ma48": 58.06,
+          "supports": [],
+          "risks": [
+            "30分钟收盘低于近 48 根均价",
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 52.96,
+          "low": 48.36,
+          "mid": 50.66,
+          "ma12": 49.02,
+          "ma48": 50.64,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 65.83,
+          "stop": 46.91,
+          "takeProfit": 89.95,
+          "conditions": [
+            "重新站回 MA20 65.62，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 48.36，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 0,
+          "r60": 90.5,
+          "r120": 83.3,
+          "score": 57.9,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 15.9,
+        "focusArea": "科技",
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "relativeStrength": {
+          "r20": 0,
+          "r60": 90.5,
+          "r120": 83.3,
+          "score": 57.9,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "财务质量：基本面支撑",
+            "风险收益比：按计划价 48.88 计算，约 1:20.85，最大亏损约 4.03%，目标空间约 84.02%",
+            "板块权重：科技"
+          ],
+          "failed": [
+            "趋势阶段：阶段1：筑底观察",
+            "缠论买点：无买点/风险段",
+            "相对强度：强度 57.9",
+            "资金流：主力净流入 -2.76 亿",
+            "公告事件：公告风险待核查"
+          ],
+          "neutral": [],
+          "passCount": 3,
+          "failCount": 5,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 48.88,
+          "ratio": 20.85,
+          "maxLossPct": 4.03,
+          "targetGainPct": 84.02,
+          "text": "按计划价 48.88 计算，约 1:20.85，最大亏损约 4.03%，目标空间约 84.02%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 65.83 后，且 30分钟/5分钟继续偏强",
+        "stop": 46.91,
+        "takeProfit": 89.95,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 65.62，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 65.83 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 29.73 亿元，流动性较好",
+          "归属板块：科技；命中：半导体、芯片、电子、人工智能、存储",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "归母净利润同比增长 108.92%",
+          "营业收入同比增长 21.81%",
+          "经营现金流为正 0.2 亿元",
+          "日线 MA20 高于 MA60，中期结构偏强",
+          "策略通过：财务质量：基本面支撑",
+          "策略通过：风险收益比：按计划价 48.88 计算，约 1:20.85，最大亏损约 4.03%，目标空间约 84.02%",
+          "策略通过：板块权重：科技"
+        ],
+        "risk": [
+          "当日跌幅 -7.49%，需确认是否有利空或破位",
+          "主力净流出 2.76 亿元",
+          "收盘低于 MA20，买点需要降级",
+          "2026-07-10 立昂微:立昂微股东减持股份计划公告",
+          "有效跌破 20 日低点 48.36，技术面继续减分",
+          "策略否决：趋势阶段：阶段1：筑底观察",
+          "策略否决：缠论买点：无买点/风险段",
+          "策略否决：相对强度：强度 57.9",
+          "策略否决：资金流：主力净流入 -2.76 亿",
+          "策略否决：公告事件：公告风险待核查"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "688018",
+      "name": "乐鑫科技",
+      "price": 120.61,
+      "pct": 3.17,
+      "change": 3.7,
+      "volumeHands": 123889.7,
+      "amountYi": 15.22,
+      "amplitude": null,
+      "turnover": 5.29,
+      "pe": 38.27,
+      "volumeRatio": null,
+      "high": 127.76,
+      "low": 116.91,
+      "open": 116.91,
+      "prevClose": 116.91,
+      "marketCapYi": 282.69,
+      "floatCapYi": 282.69,
+      "pb": 6.29,
+      "mainNetInflowYi": 0.21,
+      "boards": [
+        {
+          "code": "sw2_270100",
+          "name": "半导体",
+          "pct": -5.99,
+          "amountYi": 4327.51,
+          "turnover": 6.06,
+          "source": "新浪财经申万二级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 182,
+          "derived": true
+        },
+        {
+          "code": "sw_dz",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万行业",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw1_270000",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "turnover": 5.16,
+          "source": "新浪财经申万一级",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "电子"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_700124",
+          "name": "机器人概念",
+          "pct": -3.03,
+          "amountYi": 1692.44,
+          "turnover": 2.9,
+          "source": "新浪财经热门概念",
+          "sector": "机器人/智能制造",
+          "sectorPriority": 74,
+          "sectorHits": [
+            "机器人"
+          ],
+          "memberCount": 400,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "科技": 3,
+        "机器人/智能制造": 1
+      },
+      "sectorGroup": "科技",
+      "sectorPriority": 100,
+      "quick": {
+        "score": 26,
+        "supports": [
+          "成交额 15.22 亿元，流动性较好",
+          "当日涨幅 3.17%，短线强于市场",
+          "PE 38.27，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "科技",
+        "sectorPriority": 100,
+        "sectorQuota": 16,
+        "hits": [
+          "半导体",
+          "芯片",
+          "集成电路",
+          "电子",
+          "通信",
+          "人工智能",
+          "消费电子"
+        ],
+        "text": "归属板块：科技；命中：半导体、芯片、集成电路、电子、通信"
+      },
+      "profile": {
+        "industryPath": "电子设备-半导体-集成电路",
+        "concepts": [
+          "物联网",
+          "智能穿戴",
+          "智能家居",
+          "人工智能",
+          "国产芯片",
+          "小米概念",
+          "WiFi",
+          "半导体概念",
+          "消费电子概念",
+          "通信技术"
+        ],
+        "region": "上海市",
+        "profile": "乐鑫信息科技(上海)股份有限公司(688018.SH)率先开创全栈AIoT平台,驱动新一代智能、低功耗物联网与边缘AI设备的持续演进。我们以开源技术为核心,赋能从消费电子到工业物联网(IIoT)等领域构建可扩展、安全且高性价比的智能应用,正在重塑各行业的技术格局。通过在SoC中深度融合计算与连接能力,乐鑫重构物联网生态,推动智能设备大规模普及。作为全球半导体"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 0.21,
+        "smallNetInflowYi": -0.31,
+        "mediumNetInflowYi": 0.1,
+        "largeNetInflowYi": 0.11,
+        "superLargeNetInflowYi": 0.11,
+        "mainNetInflowPct": 1.41,
+        "largeNetInflowPct": 0.69,
+        "superLargeNetInflowPct": 0.72
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 20,
+        "supports": [
+          "归母净利润同比增长 44.76%",
+          "营业收入同比增长 16.16%",
+          "经营现金流为正 0.03 亿元",
+          "资产负债率 10.2%，财务压力可控",
+          "毛利率约 48.51%"
+        ],
+        "risks": [],
+        "reportDate": "2026-03-31",
+        "revenueYi": 6.48,
+        "revenueYoY": 16.16,
+        "netProfitYi": 1.36,
+        "netProfitYoY": 44.76,
+        "operatingCashflowYi": 0.03,
+        "debtAssetRatio": 10.2,
+        "grossMargin": 48.51,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告风险待核查",
+        "score": -16,
+        "latest": [
+          {
+            "title": "乐鑫科技:中信证券股份有限公司关于乐鑫信息科技(上海)股份有限公司核心技术人员离职的核查意见",
+            "date": "2026-07-17",
+            "type": "保荐/核查意见",
+            "artCode": "AN202607161827025949",
+            "url": "https://data.eastmoney.com/notices/detail/688018/AN202607161827025949.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "乐鑫科技:乐鑫科技关于核心技术人员离职的公告",
+            "date": "2026-07-17",
+            "type": "高管人员任职变动",
+            "artCode": "AN202607161827025946",
+            "url": "https://data.eastmoney.com/notices/detail/688018/AN202607161827025946.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "乐鑫科技:乐鑫科技关于使用自有资金支付募投项目所需资金并以募集资金等额置换的公告",
+            "date": "2026-07-01",
+            "type": "募集资金使用情况报告",
+            "artCode": "AN202606301826601027",
+            "url": "https://data.eastmoney.com/notices/detail/688018/AN202606301826601027.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "乐鑫科技:中信证券股份有限公司关于乐鑫信息科技(上海)股份有限公司使用自有资金支付募投项目所需资金并以募集资金等额置换的核查意见",
+            "date": "2026-07-01",
+            "type": "保荐/核查意见",
+            "artCode": "AN202606301826601023",
+            "url": "https://data.eastmoney.com/notices/detail/688018/AN202606301826601023.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "乐鑫科技:乐鑫科技关于收到上海证监局行政监管措施决定书的公告",
+            "date": "2026-06-19",
+            "type": "其他",
+            "artCode": "AN202606181823669521",
+            "url": "https://data.eastmoney.com/notices/detail/688018/AN202606181823669521.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "关于对乐鑫信息科技(上海)股份有限公司予以监管警示的决定",
+            "date": "2026-06-18",
+            "type": "上交所股票监管关注",
+            "artCode": "AN202606181823668902",
+            "url": "https://data.eastmoney.com/notices/detail/688018/AN202606181823668902.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [
+          "2026-06-19 乐鑫科技:乐鑫科技关于收到上海证监局行政监管措施决定书的公告",
+          "2026-06-18 关于对乐鑫信息科技(上海)股份有限公司予以监管警示的决定"
+        ],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": -19.3,
+        "lastDate": "2026-07-16",
+        "close": 120.61,
+        "ma5": 121.55,
+        "ma20": 121.6,
+        "ma60": 148.62,
+        "high20": 133.07,
+        "low20": 110.95,
+        "mid20": 122.01,
+        "supports": [],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "momentum": {
+          "r20": -1.46,
+          "r60": -21.02,
+          "r120": -33,
+          "rpsProxy": 20.4,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 133.07,
+          "low": 112.64,
+          "mid": 122.85,
+          "ma12": 120.72,
+          "ma48": 121.87,
+          "supports": [],
+          "risks": [
+            "30分钟收盘低于近 48 根均价",
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 127.76,
+          "low": 116.91,
+          "mid": 122.34,
+          "ma12": 120.41,
+          "ma48": 122.16,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 122.01,
+          "stop": 107.62,
+          "takeProfit": 143.72,
+          "conditions": [
+            "重新站回 MA20 121.6，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 110.95，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 57.1,
+          "r60": 33.3,
+          "r120": 21.4,
+          "score": 37.3,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 5.6,
+        "focusArea": "科技",
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "relativeStrength": {
+          "r20": 57.1,
+          "r60": 33.3,
+          "r120": 21.4,
+          "score": 37.3,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "资金流：主力净流入 0.21 亿",
+            "财务质量：基本面支撑",
+            "板块权重：科技"
+          ],
+          "failed": [
+            "趋势阶段：阶段4：下降趋势",
+            "缠论买点：无买点/风险段",
+            "相对强度：强度 37.3",
+            "公告事件：公告风险待核查",
+            "风险收益比：按计划价 120.61 计算，约 1:1.78，最大亏损约 10.77%，目标空间约 19.16%"
+          ],
+          "neutral": [],
+          "passCount": 3,
+          "failCount": 5,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 120.61,
+          "ratio": 1.78,
+          "maxLossPct": 10.77,
+          "targetGainPct": 19.16,
+          "text": "按计划价 120.61 计算，约 1:1.78，最大亏损约 10.77%，目标空间约 19.16%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 122.01 后，且 30分钟/5分钟继续偏强",
+        "stop": 107.62,
+        "takeProfit": 143.72,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 121.6，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 122.01 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 15.22 亿元，流动性较好",
+          "当日涨幅 3.17%，短线强于市场",
+          "PE 38.27，估值未进入极端异常区",
+          "主力净流入 0.21 亿元",
+          "归属板块：科技；命中：半导体、芯片、集成电路、电子、通信",
+          "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "归母净利润同比增长 44.76%",
+          "营业收入同比增长 16.16%",
+          "经营现金流为正 0.03 亿元",
+          "策略通过：资金流：主力净流入 0.21 亿"
+        ],
+        "risk": [
+          "收盘低于 MA20，买点需要降级",
+          "2026-06-19 乐鑫科技:乐鑫科技关于收到上海证监局行政监管措施决定书的公告",
+          "2026-06-18 关于对乐鑫信息科技(上海)股份有限公司予以监管警示的决定",
+          "有效跌破 20 日低点 110.95，技术面继续减分",
+          "策略否决：趋势阶段：阶段4：下降趋势",
+          "策略否决：缠论买点：无买点/风险段",
+          "策略否决：相对强度：强度 37.3",
+          "策略否决：公告事件：公告风险待核查",
+          "策略否决：风险收益比：按计划价 120.61 计算，约 1:1.78，最大亏损约 10.77%，目标空间约 19.16%"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "000034",
+      "name": "神州数码",
+      "price": 26.93,
+      "pct": 4.58,
+      "change": 1.18,
+      "volumeHands": 854191.32,
+      "amountYi": 23.28,
+      "amplitude": null,
+      "turnover": 10.06,
+      "pe": 34.92,
+      "volumeRatio": null,
+      "high": 28.33,
+      "low": 25.01,
+      "open": 25.01,
+      "prevClose": 25.75,
+      "marketCapYi": 273.81,
+      "floatCapYi": 228.68,
+      "pb": 2.44,
+      "mainNetInflowYi": 0.88,
+      "boards": [
+        {
+          "code": "chgn_700879",
+          "name": "存储概念",
+          "pct": -5.88,
+          "amountYi": 4723.65,
+          "turnover": 6.33,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "存储"
+          ],
+          "memberCount": 205,
+          "derived": true
+        },
+        {
+          "code": "chgn_700137",
+          "name": "储能",
+          "pct": -2.8,
+          "amountYi": 1681.57,
+          "turnover": 2.3,
+          "source": "新浪财经热门概念",
+          "sector": "新能源/电力设备",
+          "sectorPriority": 88,
+          "sectorHits": [
+            "储能"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_701245",
+          "name": "低空经济",
+          "pct": -2.29,
+          "amountYi": 1905.48,
+          "turnover": 2.91,
+          "source": "新浪财经热门概念",
+          "sector": "低空经济/航空航天",
+          "sectorPriority": 72,
+          "sectorHits": [
+            "低空经济"
+          ],
+          "memberCount": 400,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "科技": 1,
+        "新能源/电力设备": 1,
+        "低空经济/航空航天": 1
+      },
+      "sectorGroup": "科技",
+      "sectorPriority": 100,
+      "quick": {
+        "score": 26,
+        "supports": [
+          "成交额 23.28 亿元，流动性较好",
+          "当日涨幅 4.58%，短线强于市场",
+          "PE 34.92，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "科技",
+        "sectorPriority": 100,
+        "sectorQuota": 16,
+        "hits": [
+          "软件",
+          "计算机",
+          "人工智能",
+          "网络安全",
+          "存储",
+          "云计算",
+          "存储概念"
+        ],
+        "text": "归属板块：科技；命中：软件、计算机、人工智能、网络安全、存储"
+      },
+      "profile": {
+        "industryPath": "信息技术-计算机软件-其他软件服务",
+        "concepts": [
+          "深圳特区",
+          "物联网",
+          "云计算",
+          "网络安全",
+          "阿里概念",
+          "人工智能",
+          "无人驾驶",
+          "区块链",
+          "华为概念",
+          "边缘计算"
+        ],
+        "region": "广东省",
+        "profile": "神州数码集团股份有限公司(简称:神州数码;股票代码:000034.SZ)。从2000年成立伊始,神州数码以“数字中国”为使命,锐意变革,砥砺前行,始终坚持以全球领先科技和自主创新核心技术赋能产业数字化转型和数字经济发展。数字时代,围绕企业数字化转型的关键要素,神州数码开创性的提出“数云融合”战略和技术体系框架,着力在云原生、数字原生、AI原生和信创产业上架构"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 0.88,
+        "smallNetInflowYi": -0.39,
+        "mediumNetInflowYi": -0.49,
+        "largeNetInflowYi": 0.03,
+        "superLargeNetInflowYi": 0.84,
+        "mainNetInflowPct": 3.76,
+        "largeNetInflowPct": 0.14,
+        "superLargeNetInflowPct": 3.63
+      },
+      "financial": {
+        "status": "基本面减分",
+        "score": -7,
+        "supports": [
+          "归母净利润同比增长 8.62%",
+          "营业收入同比增长 27.62%"
+        ],
+        "risks": [
+          "经营现金流为负 -24.98 亿元",
+          "资产负债率 78.54%，财务压力偏高",
+          "毛利率约 3.37%，盈利弹性偏弱"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 405.57,
+        "revenueYoY": 27.62,
+        "netProfitYi": 2.36,
+        "netProfitYoY": 8.62,
+        "operatingCashflowYi": -24.98,
+        "debtAssetRatio": 78.54,
+        "grossMargin": 3.37,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告风险待核查",
+        "score": -8,
+        "latest": [
+          {
+            "title": "神州数码:关于股票期权注销完成的公告",
+            "date": "2026-07-14",
+            "type": "股权激励进展公告",
+            "artCode": "AN202607131826930765",
+            "url": "https://data.eastmoney.com/notices/detail/000034/AN202607131826930765.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "神州数码:关于为子公司担保的进展公告",
+            "date": "2026-07-09",
+            "type": "提供/对外担保公告",
+            "artCode": "AN202607081826817965",
+            "url": "https://data.eastmoney.com/notices/detail/000034/AN202607081826817965.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "神州数码:关于公司部分董事、高级管理人员减持计划期限届满暨实施情况的公告",
+            "date": "2026-07-08",
+            "type": "股东/实际控制人股份减持",
+            "artCode": "AN202607071826778984",
+            "url": "https://data.eastmoney.com/notices/detail/000034/AN202607071826778984.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "神州数码:关于注销部分股票期权的公告",
+            "date": "2026-07-07",
+            "type": "股权激励进展公告",
+            "artCode": "AN202607061826753583",
+            "url": "https://data.eastmoney.com/notices/detail/000034/AN202607061826753583.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "神州数码:公司章程(2026年7月)",
+            "date": "2026-07-07",
+            "type": "公司章程",
+            "artCode": "AN202607061826753581",
+            "url": "https://data.eastmoney.com/notices/detail/000034/AN202607061826753581.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "神州数码:《公司章程》修订案",
+            "date": "2026-07-07",
+            "type": "公司章程修订",
+            "artCode": "AN202607061826753595",
+            "url": "https://data.eastmoney.com/notices/detail/000034/AN202607061826753595.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [
+          "2026-07-08 神州数码:关于公司部分董事、高级管理人员减持计划期限届满暨实施情况的公告"
+        ],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": -14.6,
+        "lastDate": "2026-07-16",
+        "close": 26.93,
+        "ma5": 27.18,
+        "ma20": 27.18,
+        "ma60": 30.38,
+        "high20": 30.58,
+        "low20": 24.46,
+        "mid20": 27.52,
+        "supports": [
+          "日线 MA5 高于 MA20，短线趋势偏强"
+        ],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "momentum": {
+          "r20": 0.9,
+          "r60": -26.6,
+          "r120": -35.7,
+          "rpsProxy": 17.3,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 30.58,
+          "low": 25,
+          "mid": 27.79,
+          "ma12": 26.77,
+          "ma48": 27.52,
+          "supports": [],
+          "risks": [
+            "30分钟收盘低于近 48 根均价",
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 28.33,
+          "low": 25.01,
+          "mid": 26.67,
+          "ma12": 26.89,
+          "ma48": 27.21,
+          "supports": [
+            "5分钟收盘在近 48 根中位上方"
+          ],
+          "risks": [
+            "5分钟收盘低于近 48 根均价"
+          ]
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 27.52,
+          "stop": 23.73,
+          "takeProfit": 33.03,
+          "conditions": [
+            "重新站回 MA20 27.18，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 24.46，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 61.9,
+          "r60": 21.4,
+          "r120": 16.7,
+          "score": 33.3,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 0,
+        "focusArea": "科技",
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "relativeStrength": {
+          "r20": 61.9,
+          "r60": 21.4,
+          "r120": 16.7,
+          "score": 33.3,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "资金流：主力净流入 0.88 亿",
+            "风险收益比：按计划价 26.93 计算，约 1:1.91，最大亏损约 11.88%，目标空间约 22.65%",
+            "板块权重：科技"
+          ],
+          "failed": [
+            "趋势阶段：阶段4：下降趋势",
+            "缠论买点：无买点/风险段",
+            "相对强度：强度 33.3",
+            "财务质量：基本面减分",
+            "公告事件：公告风险待核查"
+          ],
+          "neutral": [],
+          "passCount": 3,
+          "failCount": 5,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 26.93,
+          "ratio": 1.91,
+          "maxLossPct": 11.88,
+          "targetGainPct": 22.65,
+          "text": "按计划价 26.93 计算，约 1:1.91，最大亏损约 11.88%，目标空间约 22.65%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 27.52 后，且 30分钟/5分钟继续偏强",
+        "stop": 23.73,
+        "takeProfit": 33.03,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 27.18，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 27.52 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 23.28 亿元，流动性较好",
+          "当日涨幅 4.58%，短线强于市场",
+          "PE 34.92，估值未进入极端异常区",
+          "主力净流入 0.88 亿元",
+          "归属板块：科技；命中：软件、计算机、人工智能、网络安全、存储",
+          "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "归母净利润同比增长 8.62%",
+          "营业收入同比增长 27.62%",
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "策略通过：资金流：主力净流入 0.88 亿"
+        ],
+        "risk": [
+          "经营现金流为负 -24.98 亿元",
+          "资产负债率 78.54%，财务压力偏高",
+          "毛利率约 3.37%，盈利弹性偏弱",
+          "收盘低于 MA20，买点需要降级",
+          "2026-07-08 神州数码:关于公司部分董事、高级管理人员减持计划期限届满暨实施情况的公告",
+          "有效跌破 20 日低点 24.46，技术面继续减分",
+          "策略否决：趋势阶段：阶段4：下降趋势",
+          "策略否决：缠论买点：无买点/风险段",
+          "策略否决：相对强度：强度 33.3",
+          "策略否决：财务质量：基本面减分"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "603236",
+      "name": "移远通信",
+      "price": 53.18,
+      "pct": 4.83,
+      "change": 2.45,
+      "volumeHands": 171166.05,
+      "amountYi": 9.07,
+      "amplitude": null,
+      "turnover": 4.25,
+      "pe": 16.62,
+      "volumeRatio": null,
+      "high": 55.2,
+      "low": 50.72,
+      "open": 50.74,
+      "prevClose": 50.73,
+      "marketCapYi": 214.29,
+      "floatCapYi": 214.29,
+      "pb": 3.06,
+      "mainNetInflowYi": 0.55,
+      "boards": [
+        {
+          "code": "chgn_700137",
+          "name": "储能",
+          "pct": -2.8,
+          "amountYi": 1681.57,
+          "turnover": 2.3,
+          "source": "新浪财经热门概念",
+          "sector": "新能源/电力设备",
+          "sectorPriority": 88,
+          "sectorHits": [
+            "储能"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_700124",
+          "name": "机器人概念",
+          "pct": -3.03,
+          "amountYi": 1692.44,
+          "turnover": 2.9,
+          "source": "新浪财经热门概念",
+          "sector": "机器人/智能制造",
+          "sectorPriority": 74,
+          "sectorHits": [
+            "机器人"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_700199",
+          "name": "北斗导航",
+          "pct": -2.84,
+          "amountYi": 572.55,
+          "turnover": 3.43,
+          "source": "新浪财经热门概念",
+          "sector": "低空经济/航空航天",
+          "sectorPriority": 72,
+          "sectorHits": [
+            "北斗"
+          ],
+          "memberCount": 120,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "新能源/电力设备": 1,
+        "机器人/智能制造": 1,
+        "低空经济/航空航天": 1
+      },
+      "sectorGroup": "新能源/电力设备",
+      "sectorPriority": 88,
+      "quick": {
+        "score": 20,
+        "supports": [
+          "成交额 9.07 亿元，具备跟踪流动性",
+          "当日涨幅 4.83%，短线强于市场",
+          "PE 16.62，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "新能源/电力设备",
+        "sectorPriority": 88,
+        "sectorQuota": 3,
+        "hits": [
+          "通信",
+          "储能"
+        ],
+        "text": "归属板块：新能源/电力设备；命中：通信、储能"
+      },
+      "profile": {
+        "industryPath": "信息技术-通信设备-通信配套服务",
+        "concepts": [
+          "物联网",
+          "移动支付",
+          "智能电网",
+          "智慧城市",
+          "智能穿戴",
+          "5G概念",
+          "无人驾驶",
+          "车联网(车路云)",
+          "华为概念",
+          "边缘计算"
+        ],
+        "region": "上海市",
+        "profile": "上海移远通信技术股份有限公司成立于2010年,是全球领先的物联网整体解决方案供应商。2019年7月16日,移远通信在上海证券交易所主板上市,股票代码603236。公司拥有完备的IoT产品和服务,涵盖蜂窝模组(5G/4G/3G/2G/LPWA)、车载前装模组、智能模组(5G/4G/边缘计算)、短距离通信模组(Wi-Fi&BT)、GNSS定位模组、卫星通信模组、"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 0.55,
+        "smallNetInflowYi": -0.33,
+        "mediumNetInflowYi": -0.22,
+        "largeNetInflowYi": 0.23,
+        "superLargeNetInflowYi": 0.31,
+        "mainNetInflowPct": 6.01,
+        "largeNetInflowPct": 2.54,
+        "superLargeNetInflowPct": 3.47
+      },
+      "financial": {
+        "status": "基本面减分",
+        "score": -6,
+        "supports": [
+          "营业收入同比增长 29.26%"
+        ],
+        "risks": [
+          "归母净利润同比下降 33.3%",
+          "经营现金流为负 -4.22 亿元"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 67.49,
+        "revenueYoY": 29.26,
+        "netProfitYi": 1.41,
+        "netProfitYoY": -33.3,
+        "operatingCashflowYi": -4.22,
+        "debtAssetRatio": 63.25,
+        "grossMargin": 17.09,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告偏正面",
+        "score": 3,
+        "latest": [
+          {
+            "title": "移远通信:关于使用闲置募集资金进行现金管理赎回的公告",
+            "date": "2026-07-17",
+            "type": "投资理财",
+            "artCode": "AN202607161827024435",
+            "url": "https://data.eastmoney.com/notices/detail/603236/AN202607161827024435.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "移远通信:第四届董事会第十四次会议决议公告",
+            "date": "2026-07-15",
+            "type": "高管人员任职变动、董事会决议公告",
+            "artCode": "AN202607141826955365",
+            "url": "https://data.eastmoney.com/notices/detail/603236/AN202607141826955365.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "移远通信:关于高级管理人员辞职暨聘任董事会秘书、财务负责人的公告",
+            "date": "2026-07-15",
+            "type": "高管人员任职变动",
+            "artCode": "AN202607141826955367",
+            "url": "https://data.eastmoney.com/notices/detail/603236/AN202607141826955367.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "移远通信:关于使用闲置募集资金进行现金管理赎回的公告",
+            "date": "2026-07-02",
+            "type": "投资理财",
+            "artCode": "AN202607011826632916",
+            "url": "https://data.eastmoney.com/notices/detail/603236/AN202607011826632916.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "移远通信:投资者关系活动记录表2026年6月",
+            "date": "2026-07-01",
+            "type": "调研活动",
+            "artCode": "AN202607011826632455",
+            "url": "https://data.eastmoney.com/notices/detail/603236/AN202607011826632455.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "移远通信:关于2023年股票期权激励计划第二个行权期自主行权实施公告",
+            "date": "2026-06-30",
+            "type": "股权激励进展公告",
+            "artCode": "AN202606291826545946",
+            "url": "https://data.eastmoney.com/notices/detail/603236/AN202606291826545946.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [
+          "2026-07-01 移远通信:投资者关系活动记录表2026年6月"
+        ],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "趋势偏强",
+        "score": 17.5,
+        "lastDate": "2026-07-16",
+        "close": 53.18,
+        "ma5": 52.22,
+        "ma20": 50.64,
+        "ma60": 63.2,
+        "high20": 55.2,
+        "low20": 45.37,
+        "mid20": 50.28,
+        "supports": [
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "收盘接近 20 日高位，趋势保持强势"
+        ],
+        "risks": [],
+        "trendStage": {
+          "stage": "震荡过渡",
+          "description": "趋势阶段不够清晰，等待方向选择",
+          "score": -1
+        },
+        "momentum": {
+          "r20": -3.45,
+          "r60": -30.94,
+          "r120": -48.02,
+          "rpsProxy": 6,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": true,
+          "status": "30分钟确认偏强",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 55.2,
+          "low": 48.24,
+          "mid": 51.72,
+          "ma12": 52.53,
+          "ma48": 51.65,
+          "supports": [
+            "30分钟短均线向上",
+            "30分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 55.2,
+          "low": 50.72,
+          "mid": 52.96,
+          "ma12": 52.99,
+          "ma48": 53.21,
+          "supports": [
+            "5分钟收盘在近 48 根中位上方"
+          ],
+          "risks": [
+            "5分钟收盘低于近 48 根均价"
+          ]
+        },
+        "chan": {
+          "buyType": "类二买/趋势延续观察",
+          "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+          "entryZone": "48.52-53.04",
+          "firstPosition": "0%-10%观察仓",
+          "add": 52.22,
+          "stop": 48.62,
+          "takeProfit": 59.62,
+          "conditions": [
+            "回踩不破 MA20 50.64 或 20 日中位 50.28",
+            "缩量回踩后重新放量向上，才考虑加仓"
+          ],
+          "invalidation": [
+            "跌破 MA20 且 30分钟转弱，取消买点"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 52.4,
+          "r60": 11.9,
+          "r120": 4.8,
+          "score": 23,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 54,
+        "focusArea": "新能源/电力设备",
+        "trendStage": {
+          "stage": "震荡过渡",
+          "description": "趋势阶段不够清晰，等待方向选择",
+          "score": -1
+        },
+        "relativeStrength": {
+          "r20": 52.4,
+          "r60": 11.9,
+          "r120": 4.8,
+          "score": 23,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "缠论买点：类二买/趋势延续观察",
+            "资金流：主力净流入 0.55 亿",
+            "公告事件：公告偏正面",
+            "板块权重：新能源/电力设备"
+          ],
+          "failed": [
+            "趋势阶段：震荡过渡",
+            "相对强度：强度 23",
+            "财务质量：基本面减分",
+            "风险收益比：按计划价 53.04 计算，约 1:1.49，最大亏损约 8.33%，目标空间约 12.41%"
+          ],
+          "neutral": [],
+          "passCount": 4,
+          "failCount": 4,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 53.04,
+          "ratio": 1.49,
+          "maxLossPct": 8.33,
+          "targetGainPct": 12.41,
+          "text": "按计划价 53.04 计算，约 1:1.49，最大亏损约 8.33%，目标空间约 12.41%"
+        },
+        "buyType": "类二买/趋势延续观察",
+        "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "48.52-53.04",
+        "firstPosition": "0%-10%观察仓",
+        "addCondition": "站稳或回踩不破 52.22 后，且 30分钟/5分钟继续偏强",
+        "stop": 48.62,
+        "takeProfit": 59.62,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "回踩不破 MA20 50.64 或 20 日中位 50.28",
+          "缩量回踩后重新放量向上，才考虑加仓"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 52.22 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 9.07 亿元，具备跟踪流动性",
+          "当日涨幅 4.83%，短线强于市场",
+          "PE 16.62，估值未进入极端异常区",
+          "主力净流入 0.55 亿元",
+          "归属板块：新能源/电力设备；命中：通信、储能",
+          "趋势阶段不够清晰，等待方向选择",
+          "营业收入同比增长 29.26%",
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "收盘接近 20 日高位，趋势保持强势",
+          "2026-07-01 移远通信:投资者关系活动记录表2026年6月"
+        ],
+        "risk": [
+          "归母净利润同比下降 33.3%",
+          "经营现金流为负 -4.22 亿元",
+          "跌破 MA20 且 30分钟转弱，取消买点",
+          "策略否决：趋势阶段：震荡过渡",
+          "策略否决：相对强度：强度 23",
+          "策略否决：财务质量：基本面减分",
+          "策略否决：风险收益比：按计划价 53.04 计算，约 1:1.49，最大亏损约 8.33%，目标空间约 12.41%"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "603757",
+      "name": "大元泵业",
+      "price": 79.5,
+      "pct": 3.25,
+      "change": 2.5,
+      "volumeHands": 177430.06,
+      "amountYi": 14,
+      "amplitude": null,
+      "turnover": 9.51,
+      "pe": 93.53,
+      "volumeRatio": null,
+      "high": 83.97,
+      "low": 71.08,
+      "open": 74.67,
+      "prevClose": 77,
+      "marketCapYi": 148.31,
+      "floatCapYi": 148.31,
+      "pb": 6.99,
+      "mainNetInflowYi": 0.17,
+      "boards": [
+        {
+          "code": "chgn_700137",
+          "name": "储能",
+          "pct": -2.8,
+          "amountYi": 1681.57,
+          "turnover": 2.3,
+          "source": "新浪财经热门概念",
+          "sector": "新能源/电力设备",
+          "sectorPriority": 88,
+          "sectorHits": [
+            "储能"
+          ],
+          "memberCount": 400,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "新能源/电力设备": 1
+      },
+      "sectorGroup": "新能源/电力设备",
+      "sectorPriority": 88,
+      "quick": {
+        "score": 22,
+        "supports": [
+          "成交额 14 亿元，流动性较好",
+          "当日涨幅 3.25%，短线强于市场"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "新能源/电力设备",
+        "sectorPriority": 88,
+        "sectorQuota": 3,
+        "hits": [
+          "电池",
+          "储能"
+        ],
+        "text": "归属板块：新能源/电力设备；命中：电池、储能"
+      },
+      "profile": {
+        "industryPath": "机械设备-通用设备-其他通用机械",
+        "concepts": [
+          "水利建设",
+          "燃料电池概念",
+          "空气能热泵",
+          "液冷概念",
+          "电池技术",
+          "沪股通",
+          "标准普尔",
+          "专精特新",
+          "昨日高振幅",
+          "趋势股"
+        ],
+        "region": "浙江省",
+        "profile": "浙江大元泵业股份有限公司(以下简称“大元泵业”)起源于1990年,是拥有近30年品牌历史的全球知名品牌民用水泵提供商,同时也是国内屏蔽泵行业的高新技术及领军企业。公司产品主要分为民用泵和屏蔽泵两大类。民用泵分为农泵和商泵,其中农泵主要以小型潜水电泵、井用潜水电泵、陆上泵为主,该类产品被广泛应用于农林畜牧等领域;商泵主要以管道泵、多级泵、排污泵等产品为主,主要"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 0.17,
+        "smallNetInflowYi": 0.06,
+        "mediumNetInflowYi": -0.22,
+        "largeNetInflowYi": -0.04,
+        "superLargeNetInflowYi": 0.2,
+        "mainNetInflowPct": 1.18,
+        "largeNetInflowPct": -0.27,
+        "superLargeNetInflowPct": 1.45
+      },
+      "financial": {
+        "status": "基本面减分",
+        "score": -11,
+        "supports": [
+          "资产负债率 24.82%，财务压力可控"
+        ],
+        "risks": [
+          "归母净利润同比下降 70.78%",
+          "营业收入同比下降 4.27%",
+          "经营现金流为负 -0.34 亿元"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 3.64,
+        "revenueYoY": -4.27,
+        "netProfitYi": 0.11,
+        "netProfitYoY": -70.78,
+        "operatingCashflowYi": -0.34,
+        "debtAssetRatio": 24.82,
+        "grossMargin": 23.35,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告风险待核查",
+        "score": -8,
+        "latest": [
+          {
+            "title": "大元泵业:浙江大元泵业股份有限公司2026年半年度业绩预告",
+            "date": "2026-07-14",
+            "type": "业绩预告",
+            "artCode": "AN202607131826926640",
+            "url": "https://data.eastmoney.com/notices/detail/603757/AN202607131826926640.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "大元泵业:浙江大元泵业股份有限公司关于股东协议转让过户完成的公告",
+            "date": "2026-07-14",
+            "type": "股权转让",
+            "artCode": "AN202607131826926639",
+            "url": "https://data.eastmoney.com/notices/detail/603757/AN202607131826926639.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "大元泵业:浙江大元泵业股份有限公司股票交易异常波动公告",
+            "date": "2026-06-24",
+            "type": "股票交易异常波动",
+            "artCode": "AN202606231823770562",
+            "url": "https://data.eastmoney.com/notices/detail/603757/AN202606231823770562.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "大元泵业:浙江大元泵业股份有限公司股东减持股份结果公告",
+            "date": "2026-06-17",
+            "type": "股东/实际控制人股份减持",
+            "artCode": "AN202606161823601487",
+            "url": "https://data.eastmoney.com/notices/detail/603757/AN202606161823601487.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "大元泵业:浙江大元泵业股份有限公司关于持股5%以上股东权益变动触及1%刻度的提示性公告",
+            "date": "2026-06-10",
+            "type": "权益变动报告书",
+            "artCode": "AN202606091823393193",
+            "url": "https://data.eastmoney.com/notices/detail/603757/AN202606091823393193.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "大元泵业:浙江大元泵业股份有限公司2025年年度权益分派实施公告",
+            "date": "2026-06-02",
+            "type": "分配方案实施",
+            "artCode": "AN202606011823125677",
+            "url": "https://data.eastmoney.com/notices/detail/603757/AN202606011823125677.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [
+          "2026-06-17 大元泵业:浙江大元泵业股份有限公司股东减持股份结果公告"
+        ],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "趋势偏强",
+        "score": 26.3,
+        "lastDate": "2026-07-16",
+        "close": 79.5,
+        "ma5": 77.35,
+        "ma20": 72.89,
+        "ma60": 61.38,
+        "high20": 84.66,
+        "low20": 52.01,
+        "mid20": 68.33,
+        "supports": [
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "日线 MA20 高于 MA60，中期结构偏强"
+        ],
+        "risks": [],
+        "trendStage": {
+          "stage": "阶段2：上升趋势",
+          "description": "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点",
+          "score": 10
+        },
+        "momentum": {
+          "r20": 49.75,
+          "r60": 42.32,
+          "r120": 85.53,
+          "rpsProxy": 100,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟震荡",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 83.97,
+          "low": 68.55,
+          "mid": 76.26,
+          "ma12": 79.61,
+          "ma48": 77.17,
+          "supports": [
+            "30分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 83.97,
+          "low": 71.08,
+          "mid": 77.53,
+          "ma12": 79.89,
+          "ma48": 79.97,
+          "supports": [
+            "5分钟收盘在近 48 根中位上方"
+          ],
+          "risks": [
+            "5分钟收盘低于近 48 根均价"
+          ]
+        },
+        "chan": {
+          "buyType": "中枢上半区观察",
+          "action": "位置不差但低级别未确认，等待 30分钟转强",
+          "entryZone": "62.46-77.48",
+          "firstPosition": "0",
+          "add": 77.35,
+          "stop": 50.45,
+          "takeProfit": 91.43,
+          "conditions": [
+            "30分钟重新站回中位，并形成更高低点"
+          ],
+          "invalidation": [
+            "跌破 20 日中位 68.33，降级为震荡"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 100,
+          "r60": 95.2,
+          "r120": 92.9,
+          "score": 96,
+          "rankText": "候选池相对强度强",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 49.5,
+        "focusArea": "新能源/电力设备",
+        "trendStage": {
+          "stage": "阶段2：上升趋势",
+          "description": "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点",
+          "score": 10
+        },
+        "relativeStrength": {
+          "r20": 100,
+          "r60": 95.2,
+          "r120": 92.9,
+          "score": 96,
+          "rankText": "候选池相对强度强",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "趋势阶段：阶段2：上升趋势",
+            "缠论买点：中枢上半区观察",
+            "相对强度：强度 96",
+            "资金流：主力净流入 0.17 亿",
+            "板块权重：新能源/电力设备"
+          ],
+          "failed": [
+            "财务质量：基本面减分",
+            "公告事件：公告风险待核查",
+            "风险收益比：按计划价 77.48 计算，约 1:0.52，最大亏损约 34.89%，目标空间约 18%"
+          ],
+          "neutral": [],
+          "passCount": 5,
+          "failCount": 3,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 77.48,
+          "ratio": 0.52,
+          "maxLossPct": 34.89,
+          "targetGainPct": 18,
+          "text": "按计划价 77.48 计算，约 1:0.52，最大亏损约 34.89%，目标空间约 18%"
+        },
+        "buyType": "中枢上半区观察",
+        "action": "位置不差但低级别未确认，等待 30分钟转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "62.46-77.48",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 77.35 后，且 30分钟/5分钟继续偏强",
+        "stop": 50.45,
+        "takeProfit": 91.43,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "30分钟重新站回中位，并形成更高低点"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 77.35 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 14 亿元，流动性较好",
+          "当日涨幅 3.25%，短线强于市场",
+          "主力净流入 0.17 亿元",
+          "归属板块：新能源/电力设备；命中：电池、储能",
+          "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点",
+          "资产负债率 24.82%，财务压力可控",
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "日线 MA20 高于 MA60，中期结构偏强",
+          "策略通过：趋势阶段：阶段2：上升趋势",
+          "策略通过：缠论买点：中枢上半区观察"
+        ],
+        "risk": [
+          "归母净利润同比下降 70.78%",
+          "营业收入同比下降 4.27%",
+          "经营现金流为负 -0.34 亿元",
+          "2026-06-17 大元泵业:浙江大元泵业股份有限公司股东减持股份结果公告",
+          "跌破 20 日中位 68.33，降级为震荡",
+          "策略否决：财务质量：基本面减分",
+          "策略否决：公告事件：公告风险待核查",
+          "策略否决：风险收益比：按计划价 77.48 计算，约 1:0.52，最大亏损约 34.89%，目标空间约 18%"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "600839",
+      "name": "四川长虹",
+      "price": 7.31,
+      "pct": -1.75,
+      "change": -0.13,
+      "volumeHands": 2046393.88,
+      "amountYi": 15.15,
+      "amplitude": null,
+      "turnover": 4.43,
+      "pe": 34.13,
+      "volumeRatio": null,
+      "high": 7.59,
+      "low": 7.28,
+      "open": 7.36,
+      "prevClose": 7.44,
+      "marketCapYi": 337.45,
+      "floatCapYi": 337.35,
+      "pb": 2.19,
+      "mainNetInflowYi": -2.02,
+      "boards": [
+        {
+          "code": "chgn_700137",
+          "name": "储能",
+          "pct": -2.8,
+          "amountYi": 1681.57,
+          "turnover": 2.3,
+          "source": "新浪财经热门概念",
+          "sector": "新能源/电力设备",
+          "sectorPriority": 88,
+          "sectorHits": [
+            "储能"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_700124",
+          "name": "机器人概念",
+          "pct": -3.03,
+          "amountYi": 1692.44,
+          "turnover": 2.9,
+          "source": "新浪财经热门概念",
+          "sector": "机器人/智能制造",
+          "sectorPriority": 74,
+          "sectorHits": [
+            "机器人"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_701245",
+          "name": "低空经济",
+          "pct": -2.29,
+          "amountYi": 1905.48,
+          "turnover": 2.91,
+          "source": "新浪财经热门概念",
+          "sector": "低空经济/航空航天",
+          "sectorPriority": 72,
+          "sectorHits": [
+            "低空经济"
+          ],
+          "memberCount": 400,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "新能源/电力设备": 1,
+        "机器人/智能制造": 1,
+        "低空经济/航空航天": 1
+      },
+      "sectorGroup": "新能源/电力设备",
+      "sectorPriority": 88,
+      "quick": {
+        "score": 18,
+        "supports": [
+          "成交额 15.15 亿元，流动性较好",
+          "PE 34.13，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "新能源/电力设备",
+        "sectorPriority": 88,
+        "sectorQuota": 3,
+        "hits": [
+          "电子",
+          "消费电子",
+          "储能"
+        ],
+        "text": "归属板块：新能源/电力设备；命中：电子、消费电子、储能"
+      },
+      "profile": {
+        "industryPath": "电子设备-消费电子设备-消费电子设备",
+        "concepts": [
+          "军工",
+          "成渝特区",
+          "物联网",
+          "锂电池概念",
+          "西部大开发",
+          "智能电视",
+          "医疗器械概念",
+          "智能家居",
+          "央国企改革",
+          "虚拟现实"
+        ],
+        "region": "四川省",
+        "profile": "四川长虹电器股份有限公司(以下简称“公司”)前身始创于1958年,1988年以电视业务为基础,由国营长虹机器厂发起设立,并于1994年3月在上海证券交易所挂牌上市交易。公司坚守“以用户为中心”的核心价值观,以市场为导向,强化技术创新,持续为消费者与企业级客户提供卓越的产品与服务。历经数十年的发展,从彩电立业、兴业,到如今的信息电子相关多元拓展,已成为集智慧家"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": -2.02,
+        "smallNetInflowYi": 2,
+        "mediumNetInflowYi": 0.02,
+        "largeNetInflowYi": -1.37,
+        "superLargeNetInflowYi": -0.65,
+        "mainNetInflowPct": -13.34,
+        "largeNetInflowPct": -9.07,
+        "superLargeNetInflowPct": -4.28
+      },
+      "financial": {
+        "status": "基本面减分",
+        "score": -16,
+        "supports": [
+          "营业收入同比增长 1.64%"
+        ],
+        "risks": [
+          "归母净利润同比下降 71.5%",
+          "经营现金流为负 -35.37 亿元",
+          "资产负债率 73.71%，财务压力偏高",
+          "毛利率约 8.42%，盈利弹性偏弱"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 272.76,
+        "revenueYoY": 1.64,
+        "netProfitYi": 0.98,
+        "netProfitYoY": -71.5,
+        "operatingCashflowYi": -35.37,
+        "debtAssetRatio": 73.71,
+        "grossMargin": 8.42,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "常规公告",
+        "score": 0,
+        "latest": [
+          {
+            "title": "四川长虹:四川长虹第十二届董事会第五十次会议决议公告",
+            "date": "2026-07-16",
+            "type": "高管人员任职变动、董事会决议公告",
+            "artCode": "AN202607151826995625",
+            "url": "https://data.eastmoney.com/notices/detail/600839/AN202607151826995625.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "四川长虹:四川长虹独立董事候选人声明与承诺(邢春晓)",
+            "date": "2026-07-16",
+            "type": "独立董事候选人声明",
+            "artCode": "AN202607151826995620",
+            "url": "https://data.eastmoney.com/notices/detail/600839/AN202607151826995620.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "四川长虹:四川长虹独立董事提名人声明与承诺",
+            "date": "2026-07-16",
+            "type": "独立董事提名人声明",
+            "artCode": "AN202607151826995622",
+            "url": "https://data.eastmoney.com/notices/detail/600839/AN202607151826995622.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "四川长虹:四川长虹内部审计管理制度",
+            "date": "2026-07-16",
+            "type": "管理办法/制度",
+            "artCode": "AN202607151826995619",
+            "url": "https://data.eastmoney.com/notices/detail/600839/AN202607151826995619.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "四川长虹:四川长虹关于召开2026年第二次临时股东会的通知",
+            "date": "2026-07-16",
+            "type": "召开股东大会通知",
+            "artCode": "AN202607151826995621",
+            "url": "https://data.eastmoney.com/notices/detail/600839/AN202607151826995621.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "四川长虹:四川长虹2026年半年度业绩预告",
+            "date": "2026-07-15",
+            "type": "业绩预告",
+            "artCode": "AN202607141826965566",
+            "url": "https://data.eastmoney.com/notices/detail/600839/AN202607141826965566.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "趋势偏强",
+        "score": 9.2,
+        "lastDate": "2026-07-16",
+        "close": 7.31,
+        "ma5": 7.22,
+        "ma20": 6.86,
+        "ma60": 7.68,
+        "high20": 7.59,
+        "low20": 6.22,
+        "mid20": 6.9,
+        "supports": [
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "收盘接近 20 日高位，趋势保持强势"
+        ],
+        "risks": [],
+        "trendStage": {
+          "stage": "震荡过渡",
+          "description": "趋势阶段不够清晰，等待方向选择",
+          "score": -1
+        },
+        "momentum": {
+          "r20": 5.64,
+          "r60": -20.63,
+          "r120": -28.26,
+          "rpsProxy": 26.9,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟震荡",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 7.59,
+          "low": 6.43,
+          "mid": 7.01,
+          "ma12": 7.37,
+          "ma48": 7.1,
+          "supports": [
+            "30分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 7.59,
+          "low": 7.28,
+          "mid": 7.44,
+          "ma12": 7.32,
+          "ma48": 7.37,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "中枢上半区观察",
+          "action": "位置不差但低级别未确认，等待 30分钟转强",
+          "entryZone": "6.66-7.29",
+          "firstPosition": "0",
+          "add": 7.22,
+          "stop": 6.03,
+          "takeProfit": 8.2,
+          "conditions": [
+            "30分钟重新站回中位，并形成更高低点"
+          ],
+          "invalidation": [
+            "跌破 20 日中位 6.9，降级为震荡"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 76.2,
+          "r60": 35.7,
+          "r120": 26.2,
+          "score": 46,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 9.6,
+        "focusArea": "新能源/电力设备",
+        "trendStage": {
+          "stage": "震荡过渡",
+          "description": "趋势阶段不够清晰，等待方向选择",
+          "score": -1
+        },
+        "relativeStrength": {
+          "r20": 76.2,
+          "r60": 35.7,
+          "r120": 26.2,
+          "score": 46,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "缠论买点：中枢上半区观察",
+            "公告事件：常规公告",
+            "板块权重：新能源/电力设备"
+          ],
+          "failed": [
+            "趋势阶段：震荡过渡",
+            "相对强度：强度 46",
+            "资金流：主力净流入 -2.02 亿",
+            "财务质量：基本面减分",
+            "风险收益比：按计划价 7.29 计算，约 1:0.72，最大亏损约 17.28%，目标空间约 12.48%"
+          ],
+          "neutral": [],
+          "passCount": 3,
+          "failCount": 5,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 7.29,
+          "ratio": 0.72,
+          "maxLossPct": 17.28,
+          "targetGainPct": 12.48,
+          "text": "按计划价 7.29 计算，约 1:0.72，最大亏损约 17.28%，目标空间约 12.48%"
+        },
+        "buyType": "中枢上半区观察",
+        "action": "位置不差但低级别未确认，等待 30分钟转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "6.66-7.29",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 7.22 后，且 30分钟/5分钟继续偏强",
+        "stop": 6.03,
+        "takeProfit": 8.2,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "30分钟重新站回中位，并形成更高低点"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 7.22 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 15.15 亿元，流动性较好",
+          "PE 34.13，估值未进入极端异常区",
+          "归属板块：新能源/电力设备；命中：电子、消费电子、储能",
+          "趋势阶段不够清晰，等待方向选择",
+          "营业收入同比增长 1.64%",
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "收盘接近 20 日高位，趋势保持强势",
+          "策略通过：缠论买点：中枢上半区观察",
+          "策略通过：公告事件：常规公告",
+          "策略通过：板块权重：新能源/电力设备"
+        ],
+        "risk": [
+          "主力净流出 2.02 亿元",
+          "归母净利润同比下降 71.5%",
+          "经营现金流为负 -35.37 亿元",
+          "资产负债率 73.71%，财务压力偏高",
+          "跌破 20 日中位 6.9，降级为震荡",
+          "策略否决：趋势阶段：震荡过渡",
+          "策略否决：相对强度：强度 46",
+          "策略否决：资金流：主力净流入 -2.02 亿",
+          "策略否决：财务质量：基本面减分",
+          "策略否决：风险收益比：按计划价 7.29 计算，约 1:0.72，最大亏损约 17.28%，目标空间约 12.48%"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "600031",
+      "name": "三一重工",
+      "price": 18.95,
+      "pct": -1.1,
+      "change": -0.21,
+      "volumeHands": 706611.88,
+      "amountYi": 13.43,
+      "amplitude": null,
+      "turnover": 0.83,
+      "pe": 19.27,
+      "volumeRatio": null,
+      "high": 19.39,
+      "low": 18.84,
+      "open": 19.2,
+      "prevClose": 19.16,
+      "marketCapYi": 1742.45,
+      "floatCapYi": 1605.9,
+      "pb": 1.92,
+      "mainNetInflowYi": 0.08,
+      "boards": [
+        {
+          "code": "chgn_700124",
+          "name": "机器人概念",
+          "pct": -3.03,
+          "amountYi": 1692.44,
+          "turnover": 2.9,
+          "source": "新浪财经热门概念",
+          "sector": "机器人/智能制造",
+          "sectorPriority": 74,
+          "sectorHits": [
+            "机器人"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "gn_gfjg",
+          "name": "国防军工",
+          "pct": -1.9,
+          "amountYi": 1235.58,
+          "turnover": 3.06,
+          "source": "新浪财经概念板块",
+          "sector": "军工国防",
+          "sectorPriority": 58,
+          "sectorHits": [
+            "军工",
+            "国防"
+          ],
+          "memberCount": 212,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "机器人/智能制造": 1,
+        "军工国防": 1
+      },
+      "sectorGroup": "机器人/智能制造",
+      "sectorPriority": 74,
+      "quick": {
+        "score": 18,
+        "supports": [
+          "成交额 13.43 亿元，流动性较好",
+          "PE 19.27，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "机器人/智能制造",
+        "sectorPriority": 74,
+        "sectorQuota": 3,
+        "hits": [
+          "新能源",
+          "机器人概念"
+        ],
+        "text": "归属板块：机器人/智能制造；命中：新能源、机器人概念"
+      },
+      "profile": {
+        "industryPath": "机械设备-专用设备-工程机械",
+        "concepts": [
+          "参股银行",
+          "一带一路",
+          "新能源车",
+          "军民融合",
+          "工业互联",
+          "工程机械概念",
+          "雅下水电概念",
+          "AH股",
+          "HS300_",
+          "机构重仓"
+        ],
+        "region": "北京市",
+        "profile": "三一重工股份有限公司(600031.SH)于2003年7月3日上市,是中国股权分置改革首家成功并实现全流通的企业。2011年7月,三一重工首次入围FT全球市值500强,是唯一上榜的中国工程机械企业。2012年,三一重工跨国并购“全球混凝土机械第一品牌”德国普茨迈斯特、持股“全球随车起重机械巨头”奥地利帕尔菲格。“2021年首次跻身福布斯全球企业500强”。三"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 0.08,
+        "smallNetInflowYi": -0.89,
+        "mediumNetInflowYi": 0.81,
+        "largeNetInflowYi": 0.67,
+        "superLargeNetInflowYi": -0.59,
+        "mainNetInflowPct": 0.59,
+        "largeNetInflowPct": 4.97,
+        "superLargeNetInflowPct": -4.38
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 20,
+        "supports": [
+          "归母净利润同比增长 0.46%",
+          "营业收入同比增长 14.03%",
+          "经营现金流为正 35.41 亿元",
+          "资产负债率 47.44%，财务压力可控",
+          "毛利率约 27.79%"
+        ],
+        "risks": [],
+        "reportDate": "2026-03-31",
+        "revenueYi": 241.47,
+        "revenueYoY": 14.03,
+        "netProfitYi": 24.81,
+        "netProfitYoY": 0.46,
+        "operatingCashflowYi": 35.41,
+        "debtAssetRatio": 47.44,
+        "grossMargin": 27.79,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "常规公告",
+        "score": 0,
+        "latest": [
+          {
+            "title": "三一重工:三一重工股份有限公司2026年第一次临时股东会决议公告",
+            "date": "2026-07-15",
+            "type": "股东大会决议公告",
+            "artCode": "AN202607141826961961",
+            "url": "https://data.eastmoney.com/notices/detail/600031/AN202607141826961961.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "三一重工:湖南启元律师事务所关于三一重工股份有限公司2026年第一次临时股东会的法律意见书",
+            "date": "2026-07-15",
+            "type": "法律意见书",
+            "artCode": "AN202607141826961962",
+            "url": "https://data.eastmoney.com/notices/detail/600031/AN202607141826961962.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "三一重工:湖南启元律师事务所关于三一重工股份有限公司差异化分红的法律意见书",
+            "date": "2026-07-10",
+            "type": "法律意见书",
+            "artCode": "AN202607091826845600",
+            "url": "https://data.eastmoney.com/notices/detail/600031/AN202607091826845600.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "三一重工:三一重工股份有限公司2025年年度权益分派实施公告",
+            "date": "2026-07-10",
+            "type": "分配方案实施",
+            "artCode": "AN202607091826845603",
+            "url": "https://data.eastmoney.com/notices/detail/600031/AN202607091826845603.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "三一重工:三一重工股份有限公司H股公告-证券变动月报表(6月)",
+            "date": "2026-07-04",
+            "type": "其他",
+            "artCode": "AN202607031826695540",
+            "url": "https://data.eastmoney.com/notices/detail/600031/AN202607031826695540.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "三一重工:上海嘉坦律师事务所关于三一重工股份有限公司2026年A股员工持股计划(草案)之法律意见书",
+            "date": "2026-06-25",
+            "type": "法律意见书",
+            "artCode": "AN202606241823812802",
+            "url": "https://data.eastmoney.com/notices/detail/600031/AN202606241823812802.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "震荡观察",
+        "score": 5.3,
+        "lastDate": "2026-07-16",
+        "close": 18.95,
+        "ma5": 18.86,
+        "ma20": 18.38,
+        "ma60": 19.1,
+        "high20": 19.98,
+        "low20": 16.68,
+        "mid20": 18.33,
+        "supports": [
+          "日线 MA5 高于 MA20，短线趋势偏强"
+        ],
+        "risks": [],
+        "trendStage": {
+          "stage": "震荡过渡",
+          "description": "趋势阶段不够清晰，等待方向选择",
+          "score": -1
+        },
+        "momentum": {
+          "r20": 0.21,
+          "r60": -6,
+          "r120": -14.79,
+          "rpsProxy": 39,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟震荡",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 19.47,
+          "low": 18.1,
+          "mid": 18.79,
+          "ma12": 19.07,
+          "ma48": 18.75,
+          "supports": [
+            "30分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 19.39,
+          "low": 18.84,
+          "mid": 19.12,
+          "ma12": 18.93,
+          "ma48": 18.99,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "中枢上半区观察",
+          "action": "位置不差但低级别未确认，等待 30分钟转强",
+          "entryZone": "17.74-19.25",
+          "firstPosition": "0",
+          "add": 18.86,
+          "stop": 16.18,
+          "takeProfit": 21.58,
+          "conditions": [
+            "30分钟重新站回中位，并形成更高低点"
+          ],
+          "invalidation": [
+            "跌破 20 日中位 18.33，降级为震荡"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 59.5,
+          "r60": 54.8,
+          "r120": 47.6,
+          "score": 54,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 69.2,
+        "focusArea": "机器人/智能制造",
+        "trendStage": {
+          "stage": "震荡过渡",
+          "description": "趋势阶段不够清晰，等待方向选择",
+          "score": -1
+        },
+        "relativeStrength": {
+          "r20": 59.5,
+          "r60": 54.8,
+          "r120": 47.6,
+          "score": 54,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "缠论买点：中枢上半区观察",
+            "资金流：主力净流入 0.08 亿",
+            "财务质量：基本面支撑",
+            "公告事件：常规公告",
+            "板块权重：机器人/智能制造"
+          ],
+          "failed": [
+            "趋势阶段：震荡过渡",
+            "相对强度：强度 54",
+            "风险收益比：按计划价 18.95 计算，约 1:0.95，最大亏损约 14.62%，目标空间约 13.88%"
+          ],
+          "neutral": [],
+          "passCount": 5,
+          "failCount": 3,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 18.95,
+          "ratio": 0.95,
+          "maxLossPct": 14.62,
+          "targetGainPct": 13.88,
+          "text": "按计划价 18.95 计算，约 1:0.95，最大亏损约 14.62%，目标空间约 13.88%"
+        },
+        "buyType": "中枢上半区观察",
+        "action": "位置不差但低级别未确认，等待 30分钟转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "17.74-19.25",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 18.86 后，且 30分钟/5分钟继续偏强",
+        "stop": 16.18,
+        "takeProfit": 21.58,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "30分钟重新站回中位，并形成更高低点"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 18.86 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 13.43 亿元，流动性较好",
+          "PE 19.27，估值未进入极端异常区",
+          "主力净流入 0.08 亿元",
+          "归属板块：机器人/智能制造；命中：新能源、机器人概念",
+          "趋势阶段不够清晰，等待方向选择",
+          "归母净利润同比增长 0.46%",
+          "营业收入同比增长 14.03%",
+          "经营现金流为正 35.41 亿元",
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "策略通过：缠论买点：中枢上半区观察"
+        ],
+        "risk": [
+          "跌破 20 日中位 18.33，降级为震荡",
+          "策略否决：趋势阶段：震荡过渡",
+          "策略否决：相对强度：强度 54",
+          "策略否决：风险收益比：按计划价 18.95 计算，约 1:0.95，最大亏损约 14.62%，目标空间约 13.88%"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "300124",
+      "name": "汇川技术",
+      "price": 60.31,
+      "pct": -1.2,
+      "change": -0.73,
+      "volumeHands": 231000.36,
+      "amountYi": 14.04,
+      "amplitude": null,
+      "turnover": 0.96,
+      "pe": 32.25,
+      "volumeRatio": null,
+      "high": 61.52,
+      "low": 60.11,
+      "open": 60.84,
+      "prevClose": 61.04,
+      "marketCapYi": 1632.96,
+      "floatCapYi": 1453.66,
+      "pb": 4.49,
+      "mainNetInflowYi": -1.04,
+      "boards": [
+        {
+          "code": "chgn_701016",
+          "name": "工业母机",
+          "pct": -3.59,
+          "amountYi": 620.56,
+          "turnover": 3.29,
+          "source": "新浪财经热门概念",
+          "sector": "机器人/智能制造",
+          "sectorPriority": 74,
+          "sectorHits": [
+            "工业母机"
+          ],
+          "memberCount": 127,
+          "derived": true
+        },
+        {
+          "code": "gn_zjqrgn",
+          "name": "机器人概念",
+          "pct": 4.33,
+          "amountYi": 296.69,
+          "turnover": 3.24,
+          "source": "新浪财经概念板块",
+          "sector": "机器人/智能制造",
+          "sectorPriority": 74,
+          "sectorHits": [
+            "机器人"
+          ],
+          "memberCount": 41,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "机器人/智能制造": 2
+      },
+      "sectorGroup": "机器人/智能制造",
+      "sectorPriority": 74,
+      "quick": {
+        "score": 18,
+        "supports": [
+          "成交额 14.04 亿元，流动性较好",
+          "PE 32.25，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "机器人/智能制造",
+        "sectorPriority": 74,
+        "sectorQuota": 3,
+        "hits": [
+          "储能",
+          "新能源",
+          "工业母机",
+          "机器人概念"
+        ],
+        "text": "归属板块：机器人/智能制造；命中：储能、新能源、工业母机、机器人概念"
+      },
+      "profile": {
+        "industryPath": "机械设备-机器人-工业机器人",
+        "concepts": [
+          "深圳特区",
+          "新能源车",
+          "工业互联",
+          "储能概念",
+          "工业母机",
+          "机器人概念",
+          "PLC概念",
+          "新型工业化",
+          "小米汽车",
+          "人形机器人"
+        ],
+        "region": "广东省",
+        "profile": "深圳市汇川技术股份有限公司(简称“汇川技术”)创立于2003年,聚焦工业领域的自动化、数字化、智能化,专注“信息层、控制层、驱动层、执行层、传感层”核心技术,专注于工业自动化控制产品的研发、生产和销售,定位服务于高端设备制造商,以拥有自主知识产权的工业自动化控制技术为基础,以快速为客户提供个性化的解决方案为主要经营模式,持续致力于以领先技术推进工业文明,快速"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": -1.04,
+        "smallNetInflowYi": 0.51,
+        "mediumNetInflowYi": 0.53,
+        "largeNetInflowYi": -0.76,
+        "superLargeNetInflowYi": -0.27,
+        "mainNetInflowPct": -7.39,
+        "largeNetInflowPct": -5.45,
+        "superLargeNetInflowPct": -1.94
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 11,
+        "supports": [
+          "营业收入同比增长 12.98%",
+          "经营现金流为正 0.94 亿元",
+          "资产负债率 45.55%，财务压力可控",
+          "毛利率约 29.08%"
+        ],
+        "risks": [
+          "归母净利润同比下降 23.39%"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 101.43,
+        "revenueYoY": 12.98,
+        "netProfitYi": 10.13,
+        "netProfitYoY": -23.39,
+        "operatingCashflowYi": 0.94,
+        "debtAssetRatio": 45.55,
+        "grossMargin": 29.08,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告偏正面",
+        "score": 9,
+        "latest": [
+          {
+            "title": "汇川技术:关于回购公司股份的进展公告",
+            "date": "2026-07-01",
+            "type": "回购进展情况",
+            "artCode": "AN202607011826630877",
+            "url": "https://data.eastmoney.com/notices/detail/300124/AN202607011826630877.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "汇川技术:第六届董事会第十五次会议决议公告",
+            "date": "2026-06-03",
+            "type": "董事会决议公告",
+            "artCode": "AN202606031823206860",
+            "url": "https://data.eastmoney.com/notices/detail/300124/AN202606031823206860.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "汇川技术:关于深圳市汇川技术股份有限公司第七期股权激励计划相关价格调整的法律意见书",
+            "date": "2026-06-03",
+            "type": "法律意见书",
+            "artCode": "AN202606031823206855",
+            "url": "https://data.eastmoney.com/notices/detail/300124/AN202606031823206855.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "汇川技术:关于调整第六期股权激励计划、第七期股权激励计划所涉权益工具回购价格、授予价格及行权价格的公告",
+            "date": "2026-06-03",
+            "type": "股权激励行权价（数量）调整、股权激励进展公告、回购方案修订",
+            "artCode": "AN202606031823206859",
+            "url": "https://data.eastmoney.com/notices/detail/300124/AN202606031823206859.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "汇川技术:关于深圳市汇川技术股份有限公司第六期股权激励计划相关价格调整的法律意见书",
+            "date": "2026-06-03",
+            "type": "法律意见书",
+            "artCode": "AN202606031823206781",
+            "url": "https://data.eastmoney.com/notices/detail/300124/AN202606031823206781.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "汇川技术:关于回购公司股份的进展公告",
+            "date": "2026-06-01",
+            "type": "回购进展情况",
+            "artCode": "AN202606011823128601",
+            "url": "https://data.eastmoney.com/notices/detail/300124/AN202606011823128601.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [
+          "2026-07-01 汇川技术:关于回购公司股份的进展公告",
+          "2026-06-03 汇川技术:关于调整第六期股权激励计划、第七期股权激励计划所涉权益工具回购价格、授予价格及行权价格的公告",
+          "2026-06-01 汇川技术:关于回购公司股份的进展公告"
+        ],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": -18.8,
+        "lastDate": "2026-07-16",
+        "close": 60.31,
+        "ma5": 61.2,
+        "ma20": 65.58,
+        "ma60": 70.43,
+        "high20": 74.63,
+        "low20": 58.85,
+        "mid20": 66.74,
+        "supports": [],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "momentum": {
+          "r20": -13.53,
+          "r60": -8.15,
+          "r120": -22.63,
+          "rpsProxy": 26.4,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 65.9,
+          "low": 58.85,
+          "mid": 62.38,
+          "ma12": 60.9,
+          "ma48": 61.85,
+          "supports": [],
+          "risks": [
+            "30分钟收盘低于近 48 根均价",
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 61.52,
+          "low": 60.11,
+          "mid": 60.81,
+          "ma12": 60.33,
+          "ma48": 60.79,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 66.74,
+          "stop": 57.08,
+          "takeProfit": 80.6,
+          "conditions": [
+            "重新站回 MA20 65.58，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 58.85，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 19,
+          "r60": 50,
+          "r120": 38.1,
+          "score": 35.7,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 29.6,
+        "focusArea": "机器人/智能制造",
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "relativeStrength": {
+          "r20": 19,
+          "r60": 50,
+          "r120": 38.1,
+          "score": 35.7,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "财务质量：基本面支撑",
+            "公告事件：公告偏正面",
+            "风险收益比：按计划价 60.31 计算，约 1:6.28，最大亏损约 5.36%，目标空间约 33.64%",
+            "板块权重：机器人/智能制造"
+          ],
+          "failed": [
+            "趋势阶段：阶段4：下降趋势",
+            "缠论买点：无买点/风险段",
+            "相对强度：强度 35.7",
+            "资金流：主力净流入 -1.04 亿"
+          ],
+          "neutral": [],
+          "passCount": 4,
+          "failCount": 4,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 60.31,
+          "ratio": 6.28,
+          "maxLossPct": 5.36,
+          "targetGainPct": 33.64,
+          "text": "按计划价 60.31 计算，约 1:6.28，最大亏损约 5.36%，目标空间约 33.64%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 66.74 后，且 30分钟/5分钟继续偏强",
+        "stop": 57.08,
+        "takeProfit": 80.6,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 65.58，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 66.74 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 14.04 亿元，流动性较好",
+          "PE 32.25，估值未进入极端异常区",
+          "归属板块：机器人/智能制造；命中：储能、新能源、工业母机、机器人概念",
+          "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "营业收入同比增长 12.98%",
+          "经营现金流为正 0.94 亿元",
+          "资产负债率 45.55%，财务压力可控",
+          "2026-07-01 汇川技术:关于回购公司股份的进展公告",
+          "2026-06-03 汇川技术:关于调整第六期股权激励计划、第七期股权激励计划所涉权益工具回购价格、授予价格及行权价格的公告",
+          "策略通过：财务质量：基本面支撑"
+        ],
+        "risk": [
+          "主力净流出 1.04 亿元",
+          "归母净利润同比下降 23.39%",
+          "收盘低于 MA20，买点需要降级",
+          "有效跌破 20 日低点 58.85，技术面继续减分",
+          "策略否决：趋势阶段：阶段4：下降趋势",
+          "策略否决：缠论买点：无买点/风险段",
+          "策略否决：相对强度：强度 35.7",
+          "策略否决：资金流：主力净流入 -1.04 亿"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "603596",
+      "name": "伯特利",
+      "price": 23.76,
+      "pct": 3.44,
+      "change": 0.79,
+      "volumeHands": 216527.27,
+      "amountYi": 5.11,
+      "amplitude": null,
+      "turnover": 2.41,
+      "pe": 11,
+      "volumeRatio": null,
+      "high": 24.33,
+      "low": 22.59,
+      "open": 22.71,
+      "prevClose": 22.97,
+      "marketCapYi": 213.28,
+      "floatCapYi": 213.28,
+      "pb": 2.65,
+      "mainNetInflowYi": 0.25,
+      "boards": [
+        {
+          "code": "chgn_700124",
+          "name": "机器人概念",
+          "pct": -3.03,
+          "amountYi": 1692.44,
+          "turnover": 2.9,
+          "source": "新浪财经热门概念",
+          "sector": "机器人/智能制造",
+          "sectorPriority": 74,
+          "sectorHits": [
+            "机器人"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_701245",
+          "name": "低空经济",
+          "pct": -2.29,
+          "amountYi": 1905.48,
+          "turnover": 2.91,
+          "source": "新浪财经热门概念",
+          "sector": "低空经济/航空航天",
+          "sectorPriority": 72,
+          "sectorHits": [
+            "低空经济"
+          ],
+          "memberCount": 400,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "机器人/智能制造": 1,
+        "低空经济/航空航天": 1
+      },
+      "sectorGroup": "机器人/智能制造",
+      "sectorPriority": 74,
+      "quick": {
+        "score": 20,
+        "supports": [
+          "成交额 5.11 亿元，具备跟踪流动性",
+          "当日涨幅 3.44%，短线强于市场",
+          "PE 11，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "机器人/智能制造",
+        "sectorPriority": 74,
+        "sectorQuota": 3,
+        "hits": [
+          "新能源",
+          "机器人概念"
+        ],
+        "text": "归属板块：机器人/智能制造；命中：新能源、机器人概念"
+      },
+      "profile": {
+        "industryPath": "交运设备-汽车-汽车零部件",
+        "concepts": [
+          "创投",
+          "无人驾驶",
+          "新能源车",
+          "飞行汽车(eVTOL)",
+          "人形机器人",
+          "转债标的",
+          "融资融券",
+          "中证500",
+          "上证380",
+          "沪股通"
+        ],
+        "region": "安徽省",
+        "profile": "芜湖伯特利汽车安全系统股份有限公司创立于2004年6月,专业从事汽车底盘系统及智能驾驶系统研发、制造与销售的中国零部件百强企业、国家知识产权示范企业、高新技术企业,2018年A股主板上市(股票代码603596)。公司以“让出行更安全”为企业愿景,构建汽车智能驾驶、电子电控、制动系统、悬架系统、转向系统、轻量化铸铝的自主开发与制造能力,为移动出行提供安全系统的"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 0.25,
+        "smallNetInflowYi": -0.18,
+        "mediumNetInflowYi": -0.07,
+        "largeNetInflowYi": 0.23,
+        "superLargeNetInflowYi": 0.01,
+        "mainNetInflowPct": 4.84,
+        "largeNetInflowPct": 4.55,
+        "superLargeNetInflowPct": 0.29
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 7,
+        "supports": [
+          "营业收入同比增长 1.38%",
+          "经营现金流为正 1.18 亿元",
+          "资产负债率 50%，财务压力可控"
+        ],
+        "risks": [
+          "归母净利润同比下降 0.64%"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 26.74,
+        "revenueYoY": 1.38,
+        "netProfitYi": 2.69,
+        "netProfitYoY": -0.64,
+        "operatingCashflowYi": 1.18,
+        "debtAssetRatio": 50,
+        "grossMargin": 19.43,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "常规公告",
+        "score": 0,
+        "latest": [
+          {
+            "title": "伯特利:伯特利关于部分募集资金投资项目延期的公告",
+            "date": "2026-07-14",
+            "type": "变更募集资金投资项目、其它",
+            "artCode": "AN202607131826928595",
+            "url": "https://data.eastmoney.com/notices/detail/603596/AN202607131826928595.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "伯特利:伯特利第四届董事会第十八次会议决议公告",
+            "date": "2026-07-14",
+            "type": "董事会决议公告、其它",
+            "artCode": "AN202607131826928597",
+            "url": "https://data.eastmoney.com/notices/detail/603596/AN202607131826928597.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "伯特利:中国国际金融股份有限公司关于芜湖伯特利汽车安全系统股份有限公司部分募集资金投资项目延期的核查意见",
+            "date": "2026-07-14",
+            "type": "保荐/核查意见",
+            "artCode": "AN202607131826928596",
+            "url": "https://data.eastmoney.com/notices/detail/603596/AN202607131826928596.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "伯特利:伯特利关于可转债转股结果暨股份变动的公告",
+            "date": "2026-07-03",
+            "type": "股本变动",
+            "artCode": "AN202607021826662026",
+            "url": "https://data.eastmoney.com/notices/detail/603596/AN202607021826662026.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "伯特利:伯特利关于2022年第一期员工持股计划第一个锁定期届满暨解锁条件成就的公告",
+            "date": "2026-06-30",
+            "type": "员工持股计划、其它",
+            "artCode": "AN202606291826541529",
+            "url": "https://data.eastmoney.com/notices/detail/603596/AN202606291826541529.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "伯特利:中国国际金融股份有限公司关于芜湖伯特利汽车安全系统股份有限公司使用暂时闲置募集资金进行现金管理事项的核查意见",
+            "date": "2026-06-30",
+            "type": "保荐/核查意见",
+            "artCode": "AN202606291826541528",
+            "url": "https://data.eastmoney.com/notices/detail/603596/AN202606291826541528.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": -21,
+        "lastDate": "2026-07-16",
+        "close": 23.76,
+        "ma5": 23.65,
+        "ma20": 25.28,
+        "ma60": 32.24,
+        "high20": 29.2,
+        "low20": 22.18,
+        "mid20": 25.69,
+        "supports": [],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "momentum": {
+          "r20": -17.81,
+          "r60": -48.3,
+          "r120": -57.18,
+          "rpsProxy": 0,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 26.27,
+          "low": 22.18,
+          "mid": 24.23,
+          "ma12": 23.47,
+          "ma48": 24.07,
+          "supports": [],
+          "risks": [
+            "30分钟收盘低于近 48 根均价",
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟震荡",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 24.33,
+          "low": 22.59,
+          "mid": 23.46,
+          "ma12": 23.78,
+          "ma48": 23.66,
+          "supports": [
+            "5分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 25.69,
+          "stop": 21.51,
+          "takeProfit": 31.54,
+          "conditions": [
+            "重新站回 MA20 25.28，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 22.18，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 9.5,
+          "r60": 0,
+          "r120": 0,
+          "score": 3.2,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 28.7,
+        "focusArea": "机器人/智能制造",
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "relativeStrength": {
+          "r20": 9.5,
+          "r60": 0,
+          "r120": 0,
+          "score": 3.2,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "资金流：主力净流入 0.25 亿",
+            "财务质量：基本面支撑",
+            "公告事件：常规公告",
+            "风险收益比：按计划价 23.76 计算，约 1:3.46，最大亏损约 9.47%，目标空间约 32.74%",
+            "板块权重：机器人/智能制造"
+          ],
+          "failed": [
+            "趋势阶段：阶段4：下降趋势",
+            "缠论买点：无买点/风险段",
+            "相对强度：强度 3.2"
+          ],
+          "neutral": [],
+          "passCount": 5,
+          "failCount": 3,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 23.76,
+          "ratio": 3.46,
+          "maxLossPct": 9.47,
+          "targetGainPct": 32.74,
+          "text": "按计划价 23.76 计算，约 1:3.46，最大亏损约 9.47%，目标空间约 32.74%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 25.69 后，且 30分钟/5分钟继续偏强",
+        "stop": 21.51,
+        "takeProfit": 31.54,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 25.28，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 25.69 且 5分钟震荡，才重新评估。",
+        "support": [
+          "成交额 5.11 亿元，具备跟踪流动性",
+          "当日涨幅 3.44%，短线强于市场",
+          "PE 11，估值未进入极端异常区",
+          "主力净流入 0.25 亿元",
+          "归属板块：机器人/智能制造；命中：新能源、机器人概念",
+          "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "营业收入同比增长 1.38%",
+          "经营现金流为正 1.18 亿元",
+          "资产负债率 50%，财务压力可控",
+          "策略通过：资金流：主力净流入 0.25 亿"
+        ],
+        "risk": [
+          "归母净利润同比下降 0.64%",
+          "收盘低于 MA20，买点需要降级",
+          "有效跌破 20 日低点 22.18，技术面继续减分",
+          "策略否决：趋势阶段：阶段4：下降趋势",
+          "策略否决：缠论买点：无买点/风险段",
+          "策略否决：相对强度：强度 3.2"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "603300",
+      "name": "海南华铁",
+      "price": 4.72,
+      "pct": 6.31,
+      "change": 0.28,
+      "volumeHands": 1013297.21,
+      "amountYi": 4.71,
+      "amplitude": null,
+      "turnover": 5.07,
+      "pe": 18.15,
+      "volumeRatio": null,
+      "high": 4.83,
+      "low": 4.38,
+      "open": 4.42,
+      "prevClose": 4.44,
+      "marketCapYi": 94.36,
+      "floatCapYi": 94.36,
+      "pb": 1.41,
+      "mainNetInflowYi": 0.38,
+      "boards": [
+        {
+          "code": "chgn_701245",
+          "name": "低空经济",
+          "pct": -2.29,
+          "amountYi": 1905.48,
+          "turnover": 2.91,
+          "source": "新浪财经热门概念",
+          "sector": "低空经济/航空航天",
+          "sectorPriority": 72,
+          "sectorHits": [
+            "低空经济"
+          ],
+          "memberCount": 400,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "低空经济/航空航天": 1
+      },
+      "sectorGroup": "低空经济/航空航天",
+      "sectorPriority": 72,
+      "quick": {
+        "score": 20,
+        "supports": [
+          "成交额 4.71 亿元，具备跟踪流动性",
+          "当日涨幅 6.31%，短线强于市场",
+          "PE 18.15，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "低空经济/航空航天",
+        "sectorPriority": 72,
+        "sectorQuota": 3,
+        "hits": [
+          "算力",
+          "低空经济"
+        ],
+        "text": "归属板块：低空经济/航空航天；命中：算力、低空经济"
+      },
+      "profile": {
+        "industryPath": "休闲、生活及专业服务-专业服务-其他专业服务",
+        "concepts": [
+          "央国企改革",
+          "无人机",
+          "乡村振兴",
+          "数字货币",
+          "蚂蚁概念",
+          "数字经济",
+          "算力概念",
+          "低空经济",
+          "雅下水电概念",
+          "海南自贸"
+        ],
+        "region": "浙江省",
+        "profile": "浙江海控南科华铁数智科技股份有限公司(简称“海南华铁”)是海南省属资产规模最大的国有综合性投资运营平台海南省发展控股有限公司(简称“海南控股”)控股子公司,位于浙江省杭州市,2008年成立,于2015年5月在上海证券交易所主板上市,股票代码603300。公司主要提供高空作业平台、建筑支护设备、地下维修维护设备及算力设备等多品类设备运营服务,广泛应用于地铁等轨"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 0.38,
+        "smallNetInflowYi": -0.3,
+        "mediumNetInflowYi": -0.08,
+        "largeNetInflowYi": -0.11,
+        "superLargeNetInflowYi": 0.49,
+        "mainNetInflowPct": 8.1,
+        "largeNetInflowPct": -2.33,
+        "superLargeNetInflowPct": 10.43
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 2,
+        "supports": [
+          "营业收入同比增长 17.88%",
+          "经营现金流为正 8.74 亿元",
+          "毛利率约 32.36%"
+        ],
+        "risks": [
+          "归母净利润同比下降 42.87%",
+          "资产负债率 74.84%，财务压力偏高"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 15.18,
+        "revenueYoY": 17.88,
+        "netProfitYi": 1.09,
+        "netProfitYoY": -42.87,
+        "operatingCashflowYi": 8.74,
+        "debtAssetRatio": 74.84,
+        "grossMargin": 32.36,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告偏正面",
+        "score": 3,
+        "latest": [
+          {
+            "title": "海南华铁:浙江海控南科华铁数智科技股份有限公司关于2021年股票期权激励计划2026年第二季度自主行权结果暨股本变动公告",
+            "date": "2026-07-02",
+            "type": "股权激励行权结果",
+            "artCode": "AN202607011826630558",
+            "url": "https://data.eastmoney.com/notices/detail/603300/AN202607011826630558.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "海南华铁:浙江海控南科华铁数智科技股份有限公司对外担保进展公告",
+            "date": "2026-06-27",
+            "type": "提供/对外担保公告",
+            "artCode": "AN202606261824563680",
+            "url": "https://data.eastmoney.com/notices/detail/603300/AN202606261824563680.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "海南华铁:浙江海控南科华铁数智科技股份有限公司对外担保进展公告",
+            "date": "2026-05-28",
+            "type": "提供/对外担保公告",
+            "artCode": "AN202605271822916257",
+            "url": "https://data.eastmoney.com/notices/detail/603300/AN202605271822916257.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "海南华铁:浙江海控南科华铁数智科技股份有限公司关于回购子公司股权暨子公司引入战略投资者增资扩股事项的进展公告",
+            "date": "2026-05-20",
+            "type": "增资扩股、回购进展情况",
+            "artCode": "AN202605191822446488",
+            "url": "https://data.eastmoney.com/notices/detail/603300/AN202605191822446488.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "海南华铁:浙江海控南科华铁数智科技股份有限公司2025年年度股东会决议公告",
+            "date": "2026-05-13",
+            "type": "分配方案决议公告、股东大会决议公告",
+            "artCode": "AN202605121822220375",
+            "url": "https://data.eastmoney.com/notices/detail/603300/AN202605121822220375.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "海南华铁:国浩律师(杭州)事务所关于浙江海控南科华铁数智科技股份有限公司2025年年度股东会之法律意见书",
+            "date": "2026-05-13",
+            "type": "法律意见书",
+            "artCode": "AN202605121822220374",
+            "url": "https://data.eastmoney.com/notices/detail/603300/AN202605121822220374.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [
+          "2026-05-20 海南华铁:浙江海控南科华铁数智科技股份有限公司关于回购子公司股权暨子公司引入战略投资者增资扩股事项的进展公告"
+        ],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "震荡观察",
+        "score": 7.5,
+        "lastDate": "2026-07-16",
+        "close": 4.72,
+        "ma5": 4.46,
+        "ma20": 4.6,
+        "ma60": 5.6,
+        "high20": 5.04,
+        "low20": 4.25,
+        "mid20": 4.64,
+        "supports": [],
+        "risks": [],
+        "trendStage": {
+          "stage": "震荡过渡",
+          "description": "趋势阶段不够清晰，等待方向选择",
+          "score": -1
+        },
+        "momentum": {
+          "r20": -6.35,
+          "r60": -34.17,
+          "r120": -41.37,
+          "rpsProxy": 6.3,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": true,
+          "status": "30分钟确认偏强",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 4.83,
+          "low": 4.25,
+          "mid": 4.54,
+          "ma12": 4.58,
+          "ma48": 4.44,
+          "supports": [
+            "30分钟短均线向上",
+            "30分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟震荡",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 4.83,
+          "low": 4.38,
+          "mid": 4.61,
+          "ma12": 4.73,
+          "ma48": 4.62,
+          "supports": [
+            "5分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "chan": {
+          "buyType": "类二买/趋势延续观察",
+          "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+          "entryZone": "4.5-4.87",
+          "firstPosition": "0%-10%观察仓",
+          "add": 4.64,
+          "stop": 4.42,
+          "takeProfit": 5.44,
+          "conditions": [
+            "回踩不破 MA20 4.6 或 20 日中位 4.64",
+            "缩量回踩后重新放量向上，才考虑加仓"
+          ],
+          "invalidation": [
+            "跌破 MA20 且 30分钟转弱，取消买点"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 40.5,
+          "r60": 9.5,
+          "r120": 14.3,
+          "score": 21.4,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "重点跟踪池",
+        "score": 79.5,
+        "focusArea": "低空经济/航空航天",
+        "trendStage": {
+          "stage": "震荡过渡",
+          "description": "趋势阶段不够清晰，等待方向选择",
+          "score": -1
+        },
+        "relativeStrength": {
+          "r20": 40.5,
+          "r60": 9.5,
+          "r120": 14.3,
+          "score": 21.4,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "缠论买点：类二买/趋势延续观察",
+            "资金流：主力净流入 0.38 亿",
+            "财务质量：基本面支撑",
+            "公告事件：公告偏正面",
+            "风险收益比：按计划价 4.72 计算，约 1:2.4，最大亏损约 6.36%，目标空间约 15.25%",
+            "板块权重：低空经济/航空航天"
+          ],
+          "failed": [
+            "趋势阶段：震荡过渡",
+            "相对强度：强度 21.4"
+          ],
+          "neutral": [],
+          "passCount": 6,
+          "failCount": 2,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 4.72,
+          "ratio": 2.4,
+          "maxLossPct": 6.36,
+          "targetGainPct": 15.25,
+          "text": "按计划价 4.72 计算，约 1:2.4，最大亏损约 6.36%，目标空间约 15.25%"
+        },
+        "buyType": "类二买/趋势延续观察",
+        "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+        "nextAction": "加入盘中观察，等待 5分钟确认或回踩关键位。",
+        "entryZone": "4.5-4.87",
+        "firstPosition": "0%-10%观察仓",
+        "addCondition": "站稳或回踩不破 4.64 后，且 30分钟/5分钟继续偏强",
+        "stop": 4.42,
+        "takeProfit": 5.44,
+        "trackingPeriod": "推荐后先按 3-15 个交易日跟踪，未触发条件不执行",
+        "conditions": [
+          "回踩不破 MA20 4.6 或 20 日中位 4.64",
+          "缩量回踩后重新放量向上，才考虑加仓"
+        ],
+        "trigger": "等待回踩 4.6 附近缩量企稳，并在 30分钟/5分钟转强后试仓；跌破 4.42 取消。",
+        "support": [
+          "成交额 4.71 亿元，具备跟踪流动性",
+          "当日涨幅 6.31%，短线强于市场",
+          "PE 18.15，估值未进入极端异常区",
+          "主力净流入 0.38 亿元",
+          "归属板块：低空经济/航空航天；命中：算力、低空经济",
+          "趋势阶段不够清晰，等待方向选择",
+          "营业收入同比增长 17.88%",
+          "经营现金流为正 8.74 亿元",
+          "毛利率约 32.36%",
+          "2026-05-20 海南华铁:浙江海控南科华铁数智科技股份有限公司关于回购子公司股权暨子公司引入战略投资者增资扩股事项的进展公告"
+        ],
+        "risk": [
+          "归母净利润同比下降 42.87%",
+          "资产负债率 74.84%，财务压力偏高",
+          "跌破 MA20 且 30分钟转弱，取消买点",
+          "策略否决：趋势阶段：震荡过渡",
+          "策略否决：相对强度：强度 21.4"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "603950",
+      "name": "长源东谷",
+      "price": 67.52,
+      "pct": 6.95,
+      "change": 4.39,
+      "volumeHands": 127116.28,
+      "amountYi": 8.63,
+      "amplitude": null,
+      "turnover": 3.92,
+      "pe": 56.27,
+      "volumeRatio": null,
+      "high": 69.44,
+      "low": 61.24,
+      "open": 62.34,
+      "prevClose": 63.13,
+      "marketCapYi": 218.85,
+      "floatCapYi": 218.68,
+      "pb": 7.07,
+      "mainNetInflowYi": 1.26,
+      "boards": [
+        {
+          "code": "chgn_701245",
+          "name": "低空经济",
+          "pct": -2.29,
+          "amountYi": 1905.48,
+          "turnover": 2.91,
+          "source": "新浪财经热门概念",
+          "sector": "低空经济/航空航天",
+          "sectorPriority": 72,
+          "sectorHits": [
+            "低空经济"
+          ],
+          "memberCount": 400,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "低空经济/航空航天": 1
+      },
+      "sectorGroup": "低空经济/航空航天",
+      "sectorPriority": 72,
+      "quick": {
+        "score": 20,
+        "supports": [
+          "成交额 8.63 亿元，具备跟踪流动性",
+          "当日涨幅 6.95%，短线强于市场",
+          "PE 56.27，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "低空经济/航空航天",
+        "sectorPriority": 72,
+        "sectorQuota": 3,
+        "hits": [
+          "汽车",
+          "汽车零部件",
+          "设备",
+          "低空经济"
+        ],
+        "text": "归属板块：低空经济/航空航天；命中：汽车、汽车零部件、设备、低空经济"
+      },
+      "profile": {
+        "industryPath": "交运设备-汽车-汽车零部件",
+        "concepts": [
+          "湖北自贸",
+          "飞行汽车(eVTOL)",
+          "低空经济",
+          "沪股通",
+          "专精特新",
+          "昨日高振幅",
+          "小盘股",
+          "小盘成长"
+        ],
+        "region": "湖北省",
+        "profile": "襄阳长源东谷实业股份有限公司成立于2001年12月,于2011年10月整体变更为股份公司,并于2020年5月26日完成首次公开发行股票并在上海证券交易所主板上市,股票代码为603950。公司总部位于湖北省襄阳市,目前下设4家子公司,分别是北京长源朗弘科技有限公司、武汉长源朗弘科技有限公司、襄阳长源朗弘科技有限公司、襄阳长源东谷物流有限公司。 公司主营业务为柴"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 1.26,
+        "smallNetInflowYi": -0.83,
+        "mediumNetInflowYi": -0.43,
+        "largeNetInflowYi": 0.34,
+        "superLargeNetInflowYi": 0.92,
+        "mainNetInflowPct": 14.64,
+        "largeNetInflowPct": 3.97,
+        "superLargeNetInflowPct": 10.67
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 11,
+        "supports": [
+          "归母净利润同比增长 6.65%",
+          "经营现金流为正 2.17 亿元",
+          "资产负债率 47.73%，财务压力可控",
+          "毛利率约 25.69%"
+        ],
+        "risks": [
+          "营业收入同比下降 0.07%"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 5.01,
+        "revenueYoY": -0.07,
+        "netProfitYi": 0.83,
+        "netProfitYoY": 6.65,
+        "operatingCashflowYi": 2.17,
+        "debtAssetRatio": 47.73,
+        "grossMargin": 25.69,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "常规公告",
+        "score": 0,
+        "latest": [
+          {
+            "title": "长源东谷:襄阳长源东谷实业股份有限公司股票交易异常波动公告",
+            "date": "2026-07-14",
+            "type": "股票交易异常波动",
+            "artCode": "AN202607131826928941",
+            "url": "https://data.eastmoney.com/notices/detail/603950/AN202607131826928941.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "长源东谷:襄阳长源东谷实业股份有限公司关于筹划发行股份购买资产并募集配套资金暨关联交易事项的进展公告",
+            "date": "2026-07-07",
+            "type": "关联交易",
+            "artCode": "AN202607061826746984",
+            "url": "https://data.eastmoney.com/notices/detail/603950/AN202607061826746984.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "长源东谷:襄阳长源东谷实业股份有限公司关于参加湖北辖区上市公司2026年投资者网上集体接待日活动的公告",
+            "date": "2026-07-02",
+            "type": "调研活动",
+            "artCode": "AN202607011826634649",
+            "url": "https://data.eastmoney.com/notices/detail/603950/AN202607011826634649.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "长源东谷:襄阳长源东谷实业股份有限公司股票交易异常波动公告",
+            "date": "2026-07-02",
+            "type": "股票交易异常波动",
+            "artCode": "AN202607011826634648",
+            "url": "https://data.eastmoney.com/notices/detail/603950/AN202607011826634648.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "长源东谷:襄阳长源东谷实业股份有限公司股票交易异常波动公告",
+            "date": "2026-06-24",
+            "type": "股票交易异常波动",
+            "artCode": "AN202606231823775255",
+            "url": "https://data.eastmoney.com/notices/detail/603950/AN202606231823775255.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "长源东谷:襄阳长源东谷实业股份有限公司关于2025年限制性股票激励计划第一个解除限售期限售股份上市流通的公告",
+            "date": "2026-06-11",
+            "type": "限售股份上市流通",
+            "artCode": "AN202606101823426600",
+            "url": "https://data.eastmoney.com/notices/detail/603950/AN202606101823426600.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": 2.3,
+        "lastDate": "2026-07-16",
+        "close": 67.52,
+        "ma5": 66.31,
+        "ma20": 75.58,
+        "ma60": 68.97,
+        "high20": 92.87,
+        "low20": 61.24,
+        "mid20": 77.06,
+        "supports": [
+          "日线 MA20 高于 MA60，中期结构偏强"
+        ],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "momentum": {
+          "r20": 7.84,
+          "r60": 3.54,
+          "r120": 131.79,
+          "rpsProxy": 100,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 86.88,
+          "low": 61.24,
+          "mid": 74.06,
+          "ma12": 67.23,
+          "ma48": 69.86,
+          "supports": [],
+          "risks": [
+            "30分钟收盘低于近 48 根均价",
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 69.44,
+          "low": 61.24,
+          "mid": 65.34,
+          "ma12": 68.52,
+          "ma48": 68.81,
+          "supports": [
+            "5分钟收盘在近 48 根中位上方"
+          ],
+          "risks": [
+            "5分钟收盘低于近 48 根均价"
+          ]
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 77.06,
+          "stop": 59.4,
+          "takeProfit": 100.3,
+          "conditions": [
+            "重新站回 MA20 75.58，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 61.24，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 78.6,
+          "r60": 66.7,
+          "r120": 100,
+          "score": 81.8,
+          "rankText": "候选池相对强度强",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 68.3,
+        "focusArea": "低空经济/航空航天",
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "relativeStrength": {
+          "r20": 78.6,
+          "r60": 66.7,
+          "r120": 100,
+          "score": 81.8,
+          "rankText": "候选池相对强度强",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "相对强度：强度 81.8",
+            "资金流：主力净流入 1.26 亿",
+            "财务质量：基本面支撑",
+            "公告事件：常规公告",
+            "风险收益比：按计划价 67.52 计算，约 1:4.04，最大亏损约 12.03%，目标空间约 48.55%",
+            "板块权重：低空经济/航空航天"
+          ],
+          "failed": [
+            "趋势阶段：阶段1：筑底观察",
+            "缠论买点：无买点/风险段"
+          ],
+          "neutral": [],
+          "passCount": 6,
+          "failCount": 2,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 67.52,
+          "ratio": 4.04,
+          "maxLossPct": 12.03,
+          "targetGainPct": 48.55,
+          "text": "按计划价 67.52 计算，约 1:4.04，最大亏损约 12.03%，目标空间约 48.55%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 77.06 后，且 30分钟/5分钟继续偏强",
+        "stop": 59.4,
+        "takeProfit": 100.3,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 75.58，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 77.06 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 8.63 亿元，具备跟踪流动性",
+          "当日涨幅 6.95%，短线强于市场",
+          "PE 56.27，估值未进入极端异常区",
+          "主力净流入 1.26 亿元",
+          "归属板块：低空经济/航空航天；命中：汽车、汽车零部件、设备、低空经济",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "归母净利润同比增长 6.65%",
+          "经营现金流为正 2.17 亿元",
+          "资产负债率 47.73%，财务压力可控",
+          "日线 MA20 高于 MA60，中期结构偏强"
+        ],
+        "risk": [
+          "营业收入同比下降 0.07%",
+          "收盘低于 MA20，买点需要降级",
+          "有效跌破 20 日低点 61.24，技术面继续减分",
+          "策略否决：趋势阶段：阶段1：筑底观察",
+          "策略否决：缠论买点：无买点/风险段"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "002065",
+      "name": "东华软件",
+      "price": 7.04,
+      "pct": 1.73,
+      "change": 0.12,
+      "volumeHands": 481216.22,
+      "amountYi": 3.39,
+      "amplitude": null,
+      "turnover": 1.65,
+      "pe": 47.28,
+      "volumeRatio": null,
+      "high": 7.18,
+      "low": 6.85,
+      "open": 6.89,
+      "prevClose": 6.92,
+      "marketCapYi": 225.67,
+      "floatCapYi": 204.72,
+      "pb": 1.82,
+      "mainNetInflowYi": -0.01,
+      "boards": [
+        {
+          "code": "chgn_701245",
+          "name": "低空经济",
+          "pct": -2.29,
+          "amountYi": 1905.48,
+          "turnover": 2.91,
+          "source": "新浪财经热门概念",
+          "sector": "低空经济/航空航天",
+          "sectorPriority": 72,
+          "sectorHits": [
+            "低空经济"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_700208",
+          "name": "互联医疗",
+          "pct": 2.74,
+          "amountYi": 321.79,
+          "turnover": 4.15,
+          "source": "新浪财经热门概念",
+          "sector": "医药医疗",
+          "sectorPriority": 62,
+          "sectorHits": [
+            "医疗"
+          ],
+          "memberCount": 86,
+          "derived": true
+        },
+        {
+          "code": "gn_gfjg",
+          "name": "国防军工",
+          "pct": -1.9,
+          "amountYi": 1235.58,
+          "turnover": 3.06,
+          "source": "新浪财经概念板块",
+          "sector": "军工国防",
+          "sectorPriority": 58,
+          "sectorHits": [
+            "军工",
+            "国防"
+          ],
+          "memberCount": 212,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "低空经济/航空航天": 1,
+        "医药医疗": 1,
+        "军工国防": 1
+      },
+      "sectorGroup": "低空经济/航空航天",
+      "sectorPriority": 72,
+      "quick": {
+        "score": 12,
+        "supports": [
+          "成交额 3.39 亿元，具备跟踪流动性",
+          "PE 47.28，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "低空经济/航空航天",
+        "sectorPriority": 72,
+        "sectorQuota": 3,
+        "hits": [
+          "软件",
+          "计算机",
+          "人工智能",
+          "网络安全",
+          "互联网",
+          "云计算",
+          "低空经济"
+        ],
+        "text": "归属板块：低空经济/航空航天；命中：软件、计算机、人工智能、网络安全、互联网"
+      },
+      "profile": {
+        "industryPath": "信息技术-计算机软件-行业应用软件",
+        "concepts": [
+          "云计算",
+          "水利建设",
+          "智慧城市",
+          "大数据",
+          "互联网金融",
+          "网络安全",
+          "国产软件",
+          "虚拟现实",
+          "人工智能",
+          "增强现实"
+        ],
+        "region": "北京市",
+        "profile": "东华软件股份公司2001年1月成立,总部位于北京中关村,东华软件是国家规划布局内重点软件企业、国家火炬计划重点高新技术企业、计算机服务及软件特大型企业。东华软件于2006年8月在深圳主板上市,股票代码002065。东华软件自成立以来,不断加大技术创新、产品创新和业务模式创新的力度,已为数千个用户提供了优秀的软件和信息系统解决方案,涵盖多种应用与技术平台,用户"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": -0.01,
+        "smallNetInflowYi": 0.15,
+        "mediumNetInflowYi": -0.15,
+        "largeNetInflowYi": -0.01,
+        "superLargeNetInflowYi": 0,
+        "mainNetInflowPct": -0.21,
+        "largeNetInflowPct": -0.3,
+        "superLargeNetInflowPct": 0.1
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 7,
+        "supports": [
+          "归母净利润同比增长 12.17%",
+          "经营现金流为正 1.2 亿元",
+          "资产负债率 46.44%，财务压力可控"
+        ],
+        "risks": [
+          "营业收入同比下降 7.42%"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 28.78,
+        "revenueYoY": -7.42,
+        "netProfitYi": 0.62,
+        "netProfitYoY": 12.17,
+        "operatingCashflowYi": 1.2,
+        "debtAssetRatio": 46.44,
+        "grossMargin": 19.04,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "常规公告",
+        "score": 0,
+        "latest": [
+          {
+            "title": "东华软件:2025年年度权益分派实施公告",
+            "date": "2026-07-03",
+            "type": "分配方案实施",
+            "artCode": "AN202607021826662725",
+            "url": "https://data.eastmoney.com/notices/detail/002065/AN202607021826662725.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "东华软件:第九届董事会独立董事专门会议第三次会议决议",
+            "date": "2026-06-27",
+            "type": "董事会决议公告",
+            "artCode": "AN202606261824595826",
+            "url": "https://data.eastmoney.com/notices/detail/002065/AN202606261824595826.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "东华软件:关于下属公司向银行申请综合授信及担保的公告",
+            "date": "2026-06-27",
+            "type": "借贷、其他担保公告",
+            "artCode": "AN202606261824595824",
+            "url": "https://data.eastmoney.com/notices/detail/002065/AN202606261824595824.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "东华软件:关于转让参股公司股权暨关联交易的公告",
+            "date": "2026-06-27",
+            "type": "股权转让、关联交易",
+            "artCode": "AN202606261824595825",
+            "url": "https://data.eastmoney.com/notices/detail/002065/AN202606261824595825.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "东华软件:第九届董事会第五次会议决议公告",
+            "date": "2026-06-27",
+            "type": "董事会决议公告",
+            "artCode": "AN202606261824594019",
+            "url": "https://data.eastmoney.com/notices/detail/002065/AN202606261824594019.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "东华软件:北京市天元律师事务所关于东华软件股份公司2025年年度股东会的法律意见",
+            "date": "2026-05-12",
+            "type": "法律意见书",
+            "artCode": "AN202605111822166492",
+            "url": "https://data.eastmoney.com/notices/detail/002065/AN202605111822166492.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": -9.3,
+        "lastDate": "2026-07-16",
+        "close": 7.04,
+        "ma5": 7,
+        "ma20": 7.1,
+        "ma60": 7.67,
+        "high20": 7.58,
+        "low20": 6.74,
+        "mid20": 7.16,
+        "supports": [],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "momentum": {
+          "r20": -4.48,
+          "r60": -16.69,
+          "r120": -35.35,
+          "rpsProxy": 19.9,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": true,
+          "status": "30分钟确认偏强",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 7.31,
+          "low": 6.74,
+          "mid": 7.03,
+          "ma12": 7.03,
+          "ma48": 7,
+          "supports": [
+            "30分钟短均线向上",
+            "30分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 7.18,
+          "low": 6.85,
+          "mid": 7.01,
+          "ma12": 7.05,
+          "ma48": 7.08,
+          "supports": [
+            "5分钟收盘在近 48 根中位上方"
+          ],
+          "risks": [
+            "5分钟收盘低于近 48 根均价"
+          ]
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 7.16,
+          "stop": 6.54,
+          "takeProfit": 8.19,
+          "conditions": [
+            "重新站回 MA20 7.1，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 6.74，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 45.2,
+          "r60": 38.1,
+          "r120": 19,
+          "score": 34.1,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 20.1,
+        "focusArea": "低空经济/航空航天",
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "relativeStrength": {
+          "r20": 45.2,
+          "r60": 38.1,
+          "r120": 19,
+          "score": 34.1,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "财务质量：基本面支撑",
+            "公告事件：常规公告",
+            "风险收益比：按计划价 7.04 计算，约 1:2.3，最大亏损约 7.1%，目标空间约 16.34%",
+            "板块权重：低空经济/航空航天"
+          ],
+          "failed": [
+            "趋势阶段：阶段4：下降趋势",
+            "缠论买点：无买点/风险段",
+            "相对强度：强度 34.1",
+            "资金流：主力净流入 -0.01 亿"
+          ],
+          "neutral": [],
+          "passCount": 4,
+          "failCount": 4,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 7.04,
+          "ratio": 2.3,
+          "maxLossPct": 7.1,
+          "targetGainPct": 16.34,
+          "text": "按计划价 7.04 计算，约 1:2.3，最大亏损约 7.1%，目标空间约 16.34%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 7.16 后，且 30分钟/5分钟继续偏强",
+        "stop": 6.54,
+        "takeProfit": 8.19,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 7.1，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 7.16 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 3.39 亿元，具备跟踪流动性",
+          "PE 47.28，估值未进入极端异常区",
+          "归属板块：低空经济/航空航天；命中：软件、计算机、人工智能、网络安全、互联网",
+          "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "归母净利润同比增长 12.17%",
+          "经营现金流为正 1.2 亿元",
+          "资产负债率 46.44%，财务压力可控",
+          "策略通过：财务质量：基本面支撑",
+          "策略通过：公告事件：常规公告",
+          "策略通过：风险收益比：按计划价 7.04 计算，约 1:2.3，最大亏损约 7.1%，目标空间约 16.34%"
+        ],
+        "risk": [
+          "营业收入同比下降 7.42%",
+          "收盘低于 MA20，买点需要降级",
+          "有效跌破 20 日低点 6.74，技术面继续减分",
+          "策略否决：趋势阶段：阶段4：下降趋势",
+          "策略否决：缠论买点：无买点/风险段",
+          "策略否决：相对强度：强度 34.1",
+          "策略否决：资金流：主力净流入 -0.01 亿"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "300588",
+      "name": "熙菱信息",
+      "price": 23.06,
+      "pct": 5.54,
+      "change": 1.21,
+      "volumeHands": 69657.75,
+      "amountYi": 1.55,
+      "amplitude": null,
+      "turnover": 3.94,
+      "pe": -113.6,
+      "volumeRatio": null,
+      "high": 23.07,
+      "low": 21.5,
+      "open": 21.86,
+      "prevClose": 21.85,
+      "marketCapYi": 44.15,
+      "floatCapYi": 40.78,
+      "pb": 17.23,
+      "mainNetInflowYi": 0.17,
+      "boards": [
+        {
+          "code": "sw3_710102",
+          "name": "安防设备",
+          "pct": -1.15,
+          "amountYi": 57.36,
+          "turnover": 2.89,
+          "source": "新浪财经申万三级",
+          "sector": "高端制造/汽车",
+          "sectorPriority": 70,
+          "sectorHits": [
+            "设备"
+          ],
+          "memberCount": 26,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "高端制造/汽车": 1
+      },
+      "sectorGroup": "高端制造/汽车",
+      "sectorPriority": 70,
+      "quick": {
+        "score": 8,
+        "supports": [
+          "当日涨幅 5.54%，短线强于市场"
+        ],
+        "risks": [
+          "成交额偏低，实盘滑点和波动风险更高"
+        ]
+      },
+      "focus": {
+        "area": "高端制造/汽车",
+        "sectorPriority": 70,
+        "sectorQuota": 3,
+        "hits": [
+          "软件",
+          "计算机",
+          "人工智能",
+          "网络安全",
+          "信创",
+          "安防设备"
+        ],
+        "text": "归属板块：高端制造/汽车；命中：软件、计算机、人工智能、网络安全、信创"
+      },
+      "profile": {
+        "industryPath": "信息技术-计算机软件-行业应用软件",
+        "concepts": [
+          "西部大开发",
+          "智慧城市",
+          "大数据",
+          "网络安全",
+          "安防概念",
+          "国产软件",
+          "人工智能",
+          "华为概念",
+          "数字经济",
+          "信创"
+        ],
+        "region": "新疆维吾尔自治区",
+        "profile": "新疆熙菱信息技术股份有限公司(股票代码:300588)是一家专注于大数据智能应用服务的国家级专精特新“小巨人”企业、“中国大数据50强”企业,也是新疆首批在A股上市的信息化软件高新技术企业,深耕政企大数据分析20年+,为政企用户提供大数据智能应用全生命周期服务,迄今服务国内外公安、政务、文旅、园区、医疗、烟草等30+业务场景,500余家政府机构及事业单位,最"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 0.17,
+        "smallNetInflowYi": -0.07,
+        "mediumNetInflowYi": -0.1,
+        "largeNetInflowYi": 0.08,
+        "superLargeNetInflowYi": 0.09,
+        "mainNetInflowPct": 11,
+        "largeNetInflowPct": 5.03,
+        "superLargeNetInflowPct": 5.97
+      },
+      "financial": {
+        "status": "基本面减分",
+        "score": -7,
+        "supports": [
+          "资产负债率 54.18%，财务压力可控",
+          "毛利率约 27.57%"
+        ],
+        "risks": [
+          "归母净利润同比下降 43.72%",
+          "营业收入同比下降 33.23%",
+          "经营现金流为负 -0.37 亿元"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 0.29,
+        "revenueYoY": -33.23,
+        "netProfitYi": -0.22,
+        "netProfitYoY": -43.72,
+        "operatingCashflowYi": -0.37,
+        "debtAssetRatio": 54.18,
+        "grossMargin": 27.57,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "常规公告",
+        "score": 0,
+        "latest": [
+          {
+            "title": "熙菱信息:董事会薪酬与考核委员会关于公司2026年限制性股票激励计划首次授予相关事项的核查意见",
+            "date": "2026-07-16",
+            "type": "专项说明/独立意见、保荐/核查意见",
+            "artCode": "AN202607161827026318",
+            "url": "https://data.eastmoney.com/notices/detail/300588/AN202607161827026318.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "熙菱信息:关于向2026年限制性股票激励计划激励对象首次授予限制性股票的公告",
+            "date": "2026-07-16",
+            "type": "股权激励进展公告",
+            "artCode": "AN202607161827026320",
+            "url": "https://data.eastmoney.com/notices/detail/300588/AN202607161827026320.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "熙菱信息:关于调整2026年限制性股票激励计划相关事项的公告",
+            "date": "2026-07-16",
+            "type": "股权激励进展公告",
+            "artCode": "AN202607161827026319",
+            "url": "https://data.eastmoney.com/notices/detail/300588/AN202607161827026319.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "熙菱信息:上海嘉坦律师事务所关于新疆熙菱信息技术股份有限公司2026年限制性股票激励计划调整及首次授予相关事项之法律意见书",
+            "date": "2026-07-16",
+            "type": "法律意见书",
+            "artCode": "AN202607161827026275",
+            "url": "https://data.eastmoney.com/notices/detail/300588/AN202607161827026275.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "熙菱信息:第五届董事会第十九次会议决议公告",
+            "date": "2026-07-16",
+            "type": "董事会决议公告",
+            "artCode": "AN202607161827026277",
+            "url": "https://data.eastmoney.com/notices/detail/300588/AN202607161827026277.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "熙菱信息:关于控股股东股份协议转让的进展公告",
+            "date": "2026-07-10",
+            "type": "股权转让",
+            "artCode": "AN202607101826878490",
+            "url": "https://data.eastmoney.com/notices/detail/300588/AN202607101826878490.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "趋势偏强",
+        "score": 12,
+        "lastDate": "2026-07-16",
+        "close": 23.06,
+        "ma5": 23.22,
+        "ma20": 22.8,
+        "ma60": 22.01,
+        "high20": 26.32,
+        "low20": 20.07,
+        "mid20": 23.2,
+        "supports": [
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "日线 MA20 高于 MA60，中期结构偏强"
+        ],
+        "risks": [],
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "momentum": {
+          "r20": 3.78,
+          "r60": -8.64,
+          "r120": -22.12,
+          "rpsProxy": 35.6,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 25.29,
+          "low": 21.5,
+          "mid": 23.39,
+          "ma12": 22.04,
+          "ma48": 23.06,
+          "supports": [],
+          "risks": [
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": true,
+          "status": "5分钟确认偏强",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 23.07,
+          "low": 21.5,
+          "mid": 22.29,
+          "ma12": 22.3,
+          "ma48": 22.07,
+          "supports": [
+            "5分钟短均线向上",
+            "5分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "chan": {
+          "buyType": "潜在一买观察",
+          "action": "只观察，不提前抄底；等待底分型与低级别转强",
+          "entryZone": "22.07-24.95",
+          "firstPosition": "0",
+          "add": 23.22,
+          "stop": 19.47,
+          "takeProfit": 28.43,
+          "conditions": [
+            "接近 20 日低点 20.07 后不再创新低",
+            "5分钟/30分钟出现转强并重新站回中位"
+          ],
+          "invalidation": [
+            "跌破 20 日低点 20.07，一买观察失败"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 73.8,
+          "r60": 47.6,
+          "r120": 42.9,
+          "score": 54.8,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 28.8,
+        "focusArea": "高端制造/汽车",
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "relativeStrength": {
+          "r20": 73.8,
+          "r60": 47.6,
+          "r120": 42.9,
+          "score": 54.8,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "缠论买点：潜在一买观察",
+            "资金流：主力净流入 0.17 亿",
+            "公告事件：常规公告",
+            "板块权重：高端制造/汽车"
+          ],
+          "failed": [
+            "趋势阶段：阶段1：筑底观察",
+            "相对强度：强度 54.8",
+            "财务质量：基本面减分",
+            "风险收益比：按计划价 23.06 计算，约 1:1.5，最大亏损约 15.57%，目标空间约 23.29%"
+          ],
+          "neutral": [],
+          "passCount": 4,
+          "failCount": 4,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 23.06,
+          "ratio": 1.5,
+          "maxLossPct": 15.57,
+          "targetGainPct": 23.29,
+          "text": "按计划价 23.06 计算，约 1:1.5，最大亏损约 15.57%，目标空间约 23.29%"
+        },
+        "buyType": "潜在一买观察",
+        "action": "只观察，不提前抄底；等待底分型与低级别转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "22.07-24.95",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 23.22 后，且 30分钟/5分钟继续偏强",
+        "stop": 19.47,
+        "takeProfit": 28.43,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "接近 20 日低点 20.07 后不再创新低",
+          "5分钟/30分钟出现转强并重新站回中位"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 23.22 且 5分钟确认偏强，才重新评估。",
+        "support": [
+          "当日涨幅 5.54%，短线强于市场",
+          "主力净流入 0.17 亿元",
+          "归属板块：高端制造/汽车；命中：软件、计算机、人工智能、网络安全、信创",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "资产负债率 54.18%，财务压力可控",
+          "毛利率约 27.57%",
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "日线 MA20 高于 MA60，中期结构偏强",
+          "策略通过：缠论买点：潜在一买观察",
+          "策略通过：资金流：主力净流入 0.17 亿"
+        ],
+        "risk": [
+          "成交额偏低，实盘滑点和波动风险更高",
+          "归母净利润同比下降 43.72%",
+          "营业收入同比下降 33.23%",
+          "经营现金流为负 -0.37 亿元",
+          "跌破 20 日低点 20.07，一买观察失败",
+          "策略否决：趋势阶段：阶段1：筑底观察",
+          "策略否决：相对强度：强度 54.8",
+          "策略否决：财务质量：基本面减分",
+          "策略否决：风险收益比：按计划价 23.06 计算，约 1:1.5，最大亏损约 15.57%，目标空间约 23.29%"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "688619",
+      "name": "罗普特",
+      "price": 14.83,
+      "pct": 12.09,
+      "change": 1.6,
+      "volumeHands": 77440.6,
+      "amountYi": 1.11,
+      "amplitude": null,
+      "turnover": 4.18,
+      "pe": -11.59,
+      "volumeRatio": null,
+      "high": 15.5,
+      "low": 12.85,
+      "open": 12.99,
+      "prevClose": 13.23,
+      "marketCapYi": 27.5,
+      "floatCapYi": 27.5,
+      "pb": 4.18,
+      "mainNetInflowYi": 0.05,
+      "boards": [
+        {
+          "code": "sw3_710102",
+          "name": "安防设备",
+          "pct": -1.15,
+          "amountYi": 57.36,
+          "turnover": 2.89,
+          "source": "新浪财经申万三级",
+          "sector": "高端制造/汽车",
+          "sectorPriority": 70,
+          "sectorHits": [
+            "设备"
+          ],
+          "memberCount": 26,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "高端制造/汽车": 1
+      },
+      "sectorGroup": "高端制造/汽车",
+      "sectorPriority": 70,
+      "quick": {
+        "score": 8,
+        "supports": [
+          "当日涨幅 12.09%，短线强于市场"
+        ],
+        "risks": [
+          "成交额偏低，实盘滑点和波动风险更高"
+        ]
+      },
+      "focus": {
+        "area": "高端制造/汽车",
+        "sectorPriority": 70,
+        "sectorQuota": 3,
+        "hits": [
+          "软件",
+          "计算机",
+          "人工智能",
+          "网络安全",
+          "安防设备"
+        ],
+        "text": "归属板块：高端制造/汽车；命中：软件、计算机、人工智能、网络安全、安防设备"
+      },
+      "profile": {
+        "industryPath": "信息技术-计算机软件-其他软件服务",
+        "concepts": [
+          "军工",
+          "物联网",
+          "智慧城市",
+          "网络安全",
+          "安防概念",
+          "虚拟现实",
+          "人工智能",
+          "边缘计算",
+          "机器视觉",
+          "机器人概念"
+        ],
+        "region": "福建省",
+        "profile": "罗普特科技集团股份有限公司成立于2006年,长期从事计算机视觉、语义分析、元素感知、边缘计算、数据挖掘、机器深度学习及逻辑推理等核心技术的研究,让机器“看得见听得懂,会思考能决策”,致力于人工智能产品研发和行业实战应用。立足安全,服务国家安全战略;立足行业,服务城市、交通、工业、医疗、教育、生活等各个领域让人工智能赋能行业发展,科技创造美好未来!"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 0.05,
+        "smallNetInflowYi": -0.14,
+        "mediumNetInflowYi": 0.08,
+        "largeNetInflowYi": 0.08,
+        "superLargeNetInflowYi": -0.03,
+        "mainNetInflowPct": 4.9,
+        "largeNetInflowPct": 7.53,
+        "superLargeNetInflowPct": -2.62
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 11,
+        "supports": [
+          "归母净利润同比增长 59.38%",
+          "营业收入同比增长 18.29%",
+          "经营现金流为正 0.26 亿元",
+          "资产负债率 46.19%，财务压力可控"
+        ],
+        "risks": [
+          "毛利率约 4.98%，盈利弹性偏弱"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 0.24,
+        "revenueYoY": 18.29,
+        "netProfitYi": -0.1,
+        "netProfitYoY": 59.38,
+        "operatingCashflowYi": 0.26,
+        "debtAssetRatio": 46.19,
+        "grossMargin": 4.98,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告偏正面",
+        "score": 3,
+        "latest": [
+          {
+            "title": "罗普特:罗普特科技集团股份有限公司股票交易异常波动公告",
+            "date": "2026-07-17",
+            "type": "股票交易异常波动",
+            "artCode": "AN202607161827028955",
+            "url": "https://data.eastmoney.com/notices/detail/688619/AN202607161827028955.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "罗普特:罗普特科技集团股份有限公司关于2025年股票期权激励计划部分股票期权注销完成的公告",
+            "date": "2026-07-11",
+            "type": "股权激励进展公告",
+            "artCode": "AN202607101826873653",
+            "url": "https://data.eastmoney.com/notices/detail/688619/AN202607101826873653.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "罗普特:罗普特科技集团股份有限公司关于公司股东部分股份质押的公告",
+            "date": "2026-07-10",
+            "type": "股份质押、冻结",
+            "artCode": "AN202607091826847958",
+            "url": "https://data.eastmoney.com/notices/detail/688619/AN202607091826847958.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "罗普特:罗普特科技集团股份有限公司关于注销部分已授予但尚未行权的股票期权的公告",
+            "date": "2026-07-07",
+            "type": "股权激励进展公告",
+            "artCode": "AN202607061826747049",
+            "url": "https://data.eastmoney.com/notices/detail/688619/AN202607061826747049.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "罗普特:上海国仕律师事务所关于罗普特科技集团股份有限公司2025年股票期权激励计划注销部分已授予但尚未行权的股票期权事项的法律意见书",
+            "date": "2026-07-07",
+            "type": "法律意见书",
+            "artCode": "AN202607061826747047",
+            "url": "https://data.eastmoney.com/notices/detail/688619/AN202607061826747047.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "罗普特:罗普特科技集团股份有限公司关于以集中竞价交易方式出售已回购股份的进展公告",
+            "date": "2026-07-03",
+            "type": "股东/实际控制人股份减持",
+            "artCode": "AN202607021826664544",
+            "url": "https://data.eastmoney.com/notices/detail/688619/AN202607021826664544.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [
+          "2026-07-03 罗普特:罗普特科技集团股份有限公司关于以集中竞价交易方式出售已回购股份的进展公告"
+        ],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": -2.7,
+        "lastDate": "2026-07-16",
+        "close": 14.83,
+        "ma5": 13.36,
+        "ma20": 15.12,
+        "ma60": 16.47,
+        "high20": 18.25,
+        "low20": 11.05,
+        "mid20": 14.65,
+        "supports": [],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "momentum": {
+          "r20": -14.38,
+          "r60": -5.78,
+          "r120": 1.09,
+          "rpsProxy": 39.8,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": true,
+          "status": "30分钟确认偏强",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 15.5,
+          "low": 11.05,
+          "mid": 13.28,
+          "ma12": 14.12,
+          "ma48": 13.37,
+          "supports": [
+            "30分钟短均线向上",
+            "30分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": true,
+          "status": "5分钟确认偏强",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 15.5,
+          "low": 12.85,
+          "mid": 14.18,
+          "ma12": 14.79,
+          "ma48": 14.39,
+          "supports": [
+            "5分钟短均线向上",
+            "5分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 15.12,
+          "stop": 10.72,
+          "takeProfit": 19.71,
+          "conditions": [
+            "重新站回 MA20 15.12，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 11.05，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 14.3,
+          "r60": 57.1,
+          "r120": 71.4,
+          "score": 47.6,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 22.5,
+        "focusArea": "高端制造/汽车",
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "relativeStrength": {
+          "r20": 14.3,
+          "r60": 57.1,
+          "r120": 71.4,
+          "score": 47.6,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "资金流：主力净流入 0.05 亿",
+            "财务质量：基本面支撑",
+            "公告事件：公告偏正面",
+            "板块权重：高端制造/汽车"
+          ],
+          "failed": [
+            "趋势阶段：阶段4：下降趋势",
+            "缠论买点：无买点/风险段",
+            "相对强度：强度 47.6",
+            "风险收益比：按计划价 14.83 计算，约 1:1.19，最大亏损约 27.71%，目标空间约 32.91%"
+          ],
+          "neutral": [],
+          "passCount": 4,
+          "failCount": 4,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 14.83,
+          "ratio": 1.19,
+          "maxLossPct": 27.71,
+          "targetGainPct": 32.91,
+          "text": "按计划价 14.83 计算，约 1:1.19，最大亏损约 27.71%，目标空间约 32.91%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 15.12 后，且 30分钟/5分钟继续偏强",
+        "stop": 10.72,
+        "takeProfit": 19.71,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 15.12，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 15.12 且 5分钟确认偏强，才重新评估。",
+        "support": [
+          "当日涨幅 12.09%，短线强于市场",
+          "主力净流入 0.05 亿元",
+          "归属板块：高端制造/汽车；命中：软件、计算机、人工智能、网络安全、安防设备",
+          "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "归母净利润同比增长 59.38%",
+          "营业收入同比增长 18.29%",
+          "经营现金流为正 0.26 亿元",
+          "2026-07-03 罗普特:罗普特科技集团股份有限公司关于以集中竞价交易方式出售已回购股份的进展公告",
+          "策略通过：资金流：主力净流入 0.05 亿",
+          "策略通过：财务质量：基本面支撑"
+        ],
+        "risk": [
+          "成交额偏低，实盘滑点和波动风险更高",
+          "毛利率约 4.98%，盈利弹性偏弱",
+          "收盘低于 MA20，买点需要降级",
+          "有效跌破 20 日低点 11.05，技术面继续减分",
+          "策略否决：趋势阶段：阶段4：下降趋势",
+          "策略否决：缠论买点：无买点/风险段",
+          "策略否决：相对强度：强度 47.6",
+          "策略否决：风险收益比：按计划价 14.83 计算，约 1:1.19，最大亏损约 27.71%，目标空间约 32.91%"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "600843",
+      "name": "上工申贝",
+      "price": 6.76,
+      "pct": 0.59,
+      "change": 0.04,
+      "volumeHands": 75060.7,
+      "amountYi": 0.51,
+      "amplitude": null,
+      "turnover": 1.6,
+      "pe": -33.38,
+      "volumeRatio": null,
+      "high": 6.86,
+      "low": 6.63,
+      "open": 6.68,
+      "prevClose": 6.72,
+      "marketCapYi": 48.21,
+      "floatCapYi": 31.72,
+      "pb": 1.78,
+      "mainNetInflowYi": -0.01,
+      "boards": [
+        {
+          "code": "chgn_700124",
+          "name": "机器人概念",
+          "pct": -3.03,
+          "amountYi": 1692.44,
+          "turnover": 2.9,
+          "source": "新浪财经热门概念",
+          "sector": "机器人/智能制造",
+          "sectorPriority": 74,
+          "sectorHits": [
+            "机器人"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_701245",
+          "name": "低空经济",
+          "pct": -2.29,
+          "amountYi": 1905.48,
+          "turnover": 2.91,
+          "source": "新浪财经热门概念",
+          "sector": "低空经济/航空航天",
+          "sectorPriority": 72,
+          "sectorHits": [
+            "低空经济"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw3_640206",
+          "name": "纺织服装设备",
+          "pct": -3.49,
+          "amountYi": 14.99,
+          "turnover": 1.96,
+          "source": "新浪财经申万三级",
+          "sector": "高端制造/汽车",
+          "sectorPriority": 70,
+          "sectorHits": [
+            "设备"
+          ],
+          "memberCount": 12,
+          "derived": true
+        },
+        {
+          "code": "new_fzjx",
+          "name": "纺织机械",
+          "pct": -0.51,
+          "amountYi": 5.1,
+          "turnover": 2.05,
+          "source": "新浪财经新浪行业",
+          "sector": "高端制造/汽车",
+          "sectorPriority": 70,
+          "sectorHits": [
+            "机械"
+          ],
+          "memberCount": 7,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "机器人/智能制造": 1,
+        "低空经济/航空航天": 1,
+        "高端制造/汽车": 2
+      },
+      "sectorGroup": "高端制造/汽车",
+      "sectorPriority": 70,
+      "quick": {
+        "score": 0,
+        "supports": [],
+        "risks": [
+          "成交额偏低，实盘滑点和波动风险更高"
+        ]
+      },
+      "focus": {
+        "area": "高端制造/汽车",
+        "sectorPriority": 70,
+        "sectorQuota": 3,
+        "hits": [
+          "机械",
+          "专用设备",
+          "设备",
+          "纺织服装设备",
+          "纺织机械"
+        ],
+        "text": "归属板块：高端制造/汽车；命中：机械、专用设备、设备、纺织服装设备、纺织机械"
+      },
+      "profile": {
+        "industryPath": "机械设备-专用设备-纺织服装机械",
+        "concepts": [
+          "长江三角",
+          "沪企改革",
+          "工业互联",
+          "机器人概念",
+          "低空经济",
+          "碳纤维",
+          "AB股",
+          "机构重仓",
+          "融资融券",
+          "沪股通"
+        ],
+        "region": "上海市",
+        "profile": "上工申贝(集团)股份有限公司(以下简称“上工集团”或“公司”)是一家在上海证券交易所上市的混合所有制企业(证券代码:A股:600843、B股:900924)。公司主要从事各类材料连接加工工艺设备的研发、生产和销售,业务还涉及商贸物流、科技投资等领域。产品涵盖缝纫、绣花、裁切等缝制工艺设备,超声波焊接设备、汽车内外饰件,以及碳纤维复材轻型运动飞机等。上工集团总"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": -0.01,
+        "smallNetInflowYi": 0,
+        "mediumNetInflowYi": 0.01,
+        "largeNetInflowYi": 0.01,
+        "superLargeNetInflowYi": -0.02,
+        "mainNetInflowPct": -2.4,
+        "largeNetInflowPct": 2.38,
+        "superLargeNetInflowPct": -4.78
+      },
+      "financial": {
+        "status": "基本面待验证",
+        "score": -2,
+        "supports": [
+          "归母净利润同比增长 104.52%",
+          "资产负债率 53.34%，财务压力可控"
+        ],
+        "risks": [
+          "营业收入同比下降 3.9%",
+          "经营现金流为负 -3.22 亿元"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 10.56,
+        "revenueYoY": -3.9,
+        "netProfitYi": 0.01,
+        "netProfitYoY": 104.52,
+        "operatingCashflowYi": -3.22,
+        "debtAssetRatio": 53.34,
+        "grossMargin": 16.87,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "常规公告",
+        "score": 0,
+        "latest": [
+          {
+            "title": "上工申贝:2026年半年度业绩预亏公告",
+            "date": "2026-07-15",
+            "type": "业绩预告",
+            "artCode": "AN202607141826961269",
+            "url": "https://data.eastmoney.com/notices/detail/600843/AN202607141826961269.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "上工申贝:关于政府征收公司部分房屋的公告",
+            "date": "2026-06-30",
+            "type": "其他",
+            "artCode": "AN202606291826541080",
+            "url": "https://data.eastmoney.com/notices/detail/600843/AN202606291826541080.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "上工申贝:2025年年度股东会决议公告",
+            "date": "2026-06-19",
+            "type": "分配方案决议公告、股东大会决议公告、高管人员任职变动",
+            "artCode": "AN202606181823672038",
+            "url": "https://data.eastmoney.com/notices/detail/600843/AN202606181823672038.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "上工申贝:上工申贝(集团)股份有限公司简式权益变动报告书-上海浦东资本投资运营有限公司",
+            "date": "2026-06-19",
+            "type": "权益变动报告书",
+            "artCode": "AN202606181823672042",
+            "url": "https://data.eastmoney.com/notices/detail/600843/AN202606181823672042.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "上工申贝:北京市天元律师事务所上海分所关于上工申贝(集团)股份有限公司2025年年度股东会的法律意见",
+            "date": "2026-06-19",
+            "type": "法律意见书",
+            "artCode": "AN202606181823672041",
+            "url": "https://data.eastmoney.com/notices/detail/600843/AN202606181823672041.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "上工申贝:关于国有股份非公开协议转让的提示性公告",
+            "date": "2026-06-19",
+            "type": "股权转让",
+            "artCode": "AN202606181823672040",
+            "url": "https://data.eastmoney.com/notices/detail/600843/AN202606181823672040.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": -20.7,
+        "lastDate": "2026-07-16",
+        "close": 6.76,
+        "ma5": 6.92,
+        "ma20": 7.98,
+        "ma60": 8.3,
+        "high20": 9.08,
+        "low20": 6.61,
+        "mid20": 7.85,
+        "supports": [],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "momentum": {
+          "r20": -14.32,
+          "r60": -29.29,
+          "r120": -44.22,
+          "rpsProxy": 3.2,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 7.71,
+          "low": 6.61,
+          "mid": 7.16,
+          "ma12": 6.78,
+          "ma48": 6.99,
+          "supports": [],
+          "risks": [
+            "30分钟收盘低于近 48 根均价",
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 6.86,
+          "low": 6.63,
+          "mid": 6.75,
+          "ma12": 6.77,
+          "ma48": 6.79,
+          "supports": [
+            "5分钟收盘在近 48 根中位上方"
+          ],
+          "risks": [
+            "5分钟收盘低于近 48 根均价"
+          ]
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 7.98,
+          "stop": 6.41,
+          "takeProfit": 9.81,
+          "conditions": [
+            "重新站回 MA20 7.98，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 6.61，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 16.7,
+          "r60": 16.7,
+          "r120": 11.9,
+          "score": 15.1,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 0,
+        "focusArea": "高端制造/汽车",
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "relativeStrength": {
+          "r20": 16.7,
+          "r60": 16.7,
+          "r120": 11.9,
+          "score": 15.1,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "财务质量：基本面待验证",
+            "公告事件：常规公告",
+            "风险收益比：按计划价 6.76 计算，约 1:8.71，最大亏损约 5.18%，目标空间约 45.12%",
+            "板块权重：高端制造/汽车"
+          ],
+          "failed": [
+            "趋势阶段：阶段4：下降趋势",
+            "缠论买点：无买点/风险段",
+            "相对强度：强度 15.1",
+            "资金流：主力净流入 -0.01 亿"
+          ],
+          "neutral": [],
+          "passCount": 4,
+          "failCount": 4,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 6.76,
+          "ratio": 8.71,
+          "maxLossPct": 5.18,
+          "targetGainPct": 45.12,
+          "text": "按计划价 6.76 计算，约 1:8.71，最大亏损约 5.18%，目标空间约 45.12%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 7.98 后，且 30分钟/5分钟继续偏强",
+        "stop": 6.41,
+        "takeProfit": 9.81,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 7.98，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 7.98 且 5分钟转强，才重新评估。",
+        "support": [
+          "归属板块：高端制造/汽车；命中：机械、专用设备、设备、纺织服装设备、纺织机械",
+          "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "归母净利润同比增长 104.52%",
+          "资产负债率 53.34%，财务压力可控",
+          "策略通过：财务质量：基本面待验证",
+          "策略通过：公告事件：常规公告",
+          "策略通过：风险收益比：按计划价 6.76 计算，约 1:8.71，最大亏损约 5.18%，目标空间约 45.12%",
+          "策略通过：板块权重：高端制造/汽车"
+        ],
+        "risk": [
+          "成交额偏低，实盘滑点和波动风险更高",
+          "营业收入同比下降 3.9%",
+          "经营现金流为负 -3.22 亿元",
+          "收盘低于 MA20，买点需要降级",
+          "有效跌破 20 日低点 6.61，技术面继续减分",
+          "策略否决：趋势阶段：阶段4：下降趋势",
+          "策略否决：缠论买点：无买点/风险段",
+          "策略否决：相对强度：强度 15.1",
+          "策略否决：资金流：主力净流入 -0.01 亿"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "600521",
+      "name": "华海药业",
+      "price": 17.63,
+      "pct": 4.38,
+      "change": 0.74,
+      "volumeHands": 861929.41,
+      "amountYi": 14.92,
+      "amplitude": null,
+      "turnover": 5.76,
+      "pe": 97.94,
+      "volumeRatio": null,
+      "high": 17.8,
+      "low": 16.52,
+      "open": 16.61,
+      "prevClose": 16.89,
+      "marketCapYi": 263.97,
+      "floatCapYi": 263.97,
+      "pb": 2.75,
+      "mainNetInflowYi": -0.16,
+      "boards": [
+        {
+          "code": "chgn_701247",
+          "name": "创新药",
+          "pct": 0.73,
+          "amountYi": 1737.45,
+          "turnover": 5.8,
+          "source": "新浪财经热门概念",
+          "sector": "医药医疗",
+          "sectorPriority": 62,
+          "sectorHits": [
+            "创新药"
+          ],
+          "memberCount": 282,
+          "derived": true
+        },
+        {
+          "code": "gn_cxy",
+          "name": "创新药",
+          "pct": 0.15,
+          "amountYi": 1210.39,
+          "turnover": 5.89,
+          "source": "新浪财经概念板块",
+          "sector": "医药医疗",
+          "sectorPriority": 62,
+          "sectorHits": [
+            "创新药"
+          ],
+          "memberCount": 144,
+          "derived": true
+        },
+        {
+          "code": "chgn_701234",
+          "name": "合成生物",
+          "pct": 0.16,
+          "amountYi": 654,
+          "turnover": 4.18,
+          "source": "新浪财经热门概念",
+          "sector": "医药医疗",
+          "sectorPriority": 62,
+          "sectorHits": [
+            "生物"
+          ],
+          "memberCount": 169,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "医药医疗": 3
+      },
+      "sectorGroup": "医药医疗",
+      "sectorPriority": 62,
+      "quick": {
+        "score": 22,
+        "supports": [
+          "成交额 14.92 亿元，流动性较好",
+          "当日涨幅 4.38%，短线强于市场"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "医药医疗",
+        "sectorPriority": 62,
+        "sectorQuota": 3,
+        "hits": [
+          "AI",
+          "创新药",
+          "合成生物"
+        ],
+        "text": "归属板块：医药医疗；命中：AI、创新药、合成生物"
+      },
+      "profile": {
+        "industryPath": "医药生物-化学制药-化学原料药",
+        "concepts": [
+          "长江三角",
+          "免疫治疗",
+          "单抗概念",
+          "流感",
+          "创新药",
+          "AI制药（医疗）",
+          "病原体防治",
+          "转债标的",
+          "融资融券",
+          "中证500"
+        ],
+        "region": "浙江省",
+        "profile": "浙江华海药业股份有限公司以人类健康事业为己任,致力于向全球患者提供高品质的医疗健康产品并不断提升产品的可及度,改善大众的生活质量。华海药业创立于1989年,总部位于中国浙江。主要业务覆盖化学药、生物药、细胞治疗、贸易流通等多个领域,与全球近千家制药企业建立了长期合作关系,近200个国家和地区提供医疗健康产品。公司产品涵盖:心血管类、精神障碍类、神经系统类、抗"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": -0.16,
+        "smallNetInflowYi": 0.71,
+        "mediumNetInflowYi": -0.55,
+        "largeNetInflowYi": 0.13,
+        "superLargeNetInflowYi": -0.29,
+        "mainNetInflowPct": -1.09,
+        "largeNetInflowPct": 0.85,
+        "superLargeNetInflowPct": -1.94
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 7,
+        "supports": [
+          "归母净利润同比增长 35.9%",
+          "经营现金流为正 3.99 亿元",
+          "毛利率约 57.67%"
+        ],
+        "risks": [
+          "营业收入同比下降 1.4%"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 23.35,
+        "revenueYoY": -1.4,
+        "netProfitYi": 4.04,
+        "netProfitYoY": 35.9,
+        "operatingCashflowYi": 3.99,
+        "debtAssetRatio": 55.64,
+        "grossMargin": 57.67,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告偏正面",
+        "score": 3,
+        "latest": [
+          {
+            "title": "华海药业:浙江华海药业股份有限公司关于聘任公司高级管理人员的公告",
+            "date": "2026-07-16",
+            "type": "高管人员任职变动、其它",
+            "artCode": "AN202607151826995775",
+            "url": "https://data.eastmoney.com/notices/detail/600521/AN202607151826995775.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "华海药业:浙江华海药业股份有限公司九届董事会第十四次临时会议决议公告",
+            "date": "2026-07-16",
+            "type": "高管人员任职变动、董事会决议公告、其它",
+            "artCode": "AN202607151826994773",
+            "url": "https://data.eastmoney.com/notices/detail/600521/AN202607151826994773.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "华海药业:浙江华海药业股份有限公司关于授权择机出售公司金融资产的进展公告",
+            "date": "2026-07-14",
+            "type": "收购出售资产/股权、其它",
+            "artCode": "AN202607131826930011",
+            "url": "https://data.eastmoney.com/notices/detail/600521/AN202607131826930011.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "华海药业:浙江华海药业股份有限公司关于公司产品进入国家基本药物目录的公告",
+            "date": "2026-07-11",
+            "type": "其他、其它",
+            "artCode": "AN202607101826877638",
+            "url": "https://data.eastmoney.com/notices/detail/600521/AN202607101826877638.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "华海药业:浙江华海药业股份有限公司关于获得美国关税退税的公告",
+            "date": "2026-07-09",
+            "type": "其他、其它",
+            "artCode": "AN202607081826818597",
+            "url": "https://data.eastmoney.com/notices/detail/600521/AN202607081826818597.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "华海药业:浙江华海药业股份有限公司2026年半年度业绩预增公告",
+            "date": "2026-07-06",
+            "type": "业绩预告、其它",
+            "artCode": "AN202607051826728118",
+            "url": "https://data.eastmoney.com/notices/detail/600521/AN202607051826728118.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [
+          "2026-07-06 华海药业:浙江华海药业股份有限公司2026年半年度业绩预增公告"
+        ],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "趋势偏强",
+        "score": 30.4,
+        "lastDate": "2026-07-16",
+        "close": 17.63,
+        "ma5": 17.03,
+        "ma20": 15.58,
+        "ma60": 15.75,
+        "high20": 17.8,
+        "low20": 13.73,
+        "mid20": 15.77,
+        "supports": [
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "收盘接近 20 日高位，趋势保持强势"
+        ],
+        "risks": [],
+        "trendStage": {
+          "stage": "阶段3：高位震荡",
+          "description": "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+          "score": 2
+        },
+        "momentum": {
+          "r20": 23.37,
+          "r60": 4.44,
+          "r120": 0.46,
+          "rpsProxy": 65.1,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": true,
+          "status": "30分钟确认偏强",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 17.8,
+          "low": 15.82,
+          "mid": 16.81,
+          "ma12": 17.28,
+          "ma48": 16.88,
+          "supports": [
+            "30分钟短均线向上",
+            "30分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": true,
+          "status": "5分钟确认偏强",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 17.8,
+          "low": 16.52,
+          "mid": 17.16,
+          "ma12": 17.5,
+          "ma48": 17.39,
+          "supports": [
+            "5分钟短均线向上",
+            "5分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "chan": {
+          "buyType": "类三买观察",
+          "action": "不追高，等待突破后回踩不破再试仓",
+          "entryZone": "15.03-16.9",
+          "firstPosition": "10%-20%试仓",
+          "add": 17.03,
+          "stop": 16.01,
+          "takeProfit": 19.22,
+          "conditions": [
+            "放量突破或站稳 20 日高点 17.8 后，回踩不破 17.03",
+            "5分钟结构已确认，可小仓试错"
+          ],
+          "invalidation": [
+            "跌回 20 日中位 15.77 下方，类三买观察失效"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 88.1,
+          "r60": 71.4,
+          "r120": 69,
+          "score": 76.2,
+          "rankText": "候选池相对强度强",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "交易准备池",
+        "score": 96,
+        "focusArea": "医药医疗",
+        "trendStage": {
+          "stage": "阶段3：高位震荡",
+          "description": "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+          "score": 2
+        },
+        "relativeStrength": {
+          "r20": 88.1,
+          "r60": 71.4,
+          "r120": 69,
+          "score": 76.2,
+          "rankText": "候选池相对强度强",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "趋势阶段：阶段3：高位震荡",
+            "缠论买点：类三买观察",
+            "相对强度：强度 76.2",
+            "财务质量：基本面支撑",
+            "公告事件：公告偏正面",
+            "风险收益比：按计划价 16.9 计算，约 1:2.61，最大亏损约 5.27%，目标空间约 13.73%",
+            "板块权重：医药医疗"
+          ],
+          "failed": [
+            "资金流：主力净流入 -0.16 亿"
+          ],
+          "neutral": [],
+          "passCount": 7,
+          "failCount": 1,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 16.9,
+          "ratio": 2.61,
+          "maxLossPct": 5.27,
+          "targetGainPct": 13.73,
+          "text": "按计划价 16.9 计算，约 1:2.61，最大亏损约 5.27%，目标空间约 13.73%"
+        },
+        "buyType": "类三买观察",
+        "action": "不追高，等待突破后回踩不破再试仓",
+        "nextAction": "只在回踩不破触发条件时试仓；高开急拉不追。",
+        "entryZone": "15.03-16.9",
+        "firstPosition": "10%-20%试仓",
+        "addCondition": "站稳或回踩不破 17.03 后，且 30分钟/5分钟继续偏强",
+        "stop": 16.01,
+        "takeProfit": 19.22,
+        "trackingPeriod": "推荐后先按 3-15 个交易日跟踪，未触发条件不执行",
+        "conditions": [
+          "放量突破或站稳 20 日高点 17.8 后，回踩不破 17.03",
+          "5分钟结构已确认，可小仓试错"
+        ],
+        "trigger": "等待突破或站稳 17.8 后回踩不破 17.03；若跌破 16.01 或风险收益比低于 1:1.8，取消交易计划。",
+        "support": [
+          "成交额 14.92 亿元，流动性较好",
+          "当日涨幅 4.38%，短线强于市场",
+          "归属板块：医药医疗；命中：AI、创新药、合成生物",
+          "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+          "归母净利润同比增长 35.9%",
+          "经营现金流为正 3.99 亿元",
+          "毛利率约 57.67%",
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "收盘接近 20 日高位，趋势保持强势",
+          "2026-07-06 华海药业:浙江华海药业股份有限公司2026年半年度业绩预增公告"
+        ],
+        "risk": [
+          "营业收入同比下降 1.4%",
+          "跌回 20 日中位 15.77 下方，类三买观察失效",
+          "策略否决：资金流：主力净流入 -0.16 亿"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "300347",
+      "name": "泰格医药",
+      "price": 53.99,
+      "pct": 4.03,
+      "change": 2.09,
+      "volumeHands": 375708.14,
+      "amountYi": 19.89,
+      "amplitude": null,
+      "turnover": 6.63,
+      "pe": 51.91,
+      "volumeRatio": null,
+      "high": 55.53,
+      "low": 49.96,
+      "open": 50.9,
+      "prevClose": 51.9,
+      "marketCapYi": 464.87,
+      "floatCapYi": 305.84,
+      "pb": 2.22,
+      "mainNetInflowYi": 1.04,
+      "boards": [
+        {
+          "code": "chgn_701247",
+          "name": "创新药",
+          "pct": 0.73,
+          "amountYi": 1737.45,
+          "turnover": 5.8,
+          "source": "新浪财经热门概念",
+          "sector": "医药医疗",
+          "sectorPriority": 62,
+          "sectorHits": [
+            "创新药"
+          ],
+          "memberCount": 282,
+          "derived": true
+        },
+        {
+          "code": "gn_cxy",
+          "name": "创新药",
+          "pct": 0.15,
+          "amountYi": 1210.39,
+          "turnover": 5.89,
+          "source": "新浪财经概念板块",
+          "sector": "医药医疗",
+          "sectorPriority": 62,
+          "sectorHits": [
+            "创新药"
+          ],
+          "memberCount": 144,
+          "derived": true
+        },
+        {
+          "code": "chgn_700208",
+          "name": "互联医疗",
+          "pct": 2.74,
+          "amountYi": 321.79,
+          "turnover": 4.15,
+          "source": "新浪财经热门概念",
+          "sector": "医药医疗",
+          "sectorPriority": 62,
+          "sectorHits": [
+            "医疗"
+          ],
+          "memberCount": 86,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "医药医疗": 3
+      },
+      "sectorGroup": "医药医疗",
+      "sectorPriority": 62,
+      "quick": {
+        "score": 26,
+        "supports": [
+          "成交额 19.89 亿元，流动性较好",
+          "当日涨幅 4.03%，短线强于市场",
+          "PE 51.91，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "医药医疗",
+        "sectorPriority": 62,
+        "sectorQuota": 3,
+        "hits": [
+          "人工智能",
+          "创新药",
+          "互联医疗"
+        ],
+        "text": "归属板块：医药医疗；命中：人工智能、创新药、互联医疗"
+      },
+      "profile": {
+        "industryPath": "医药生物-医疗服务-医疗服务",
+        "concepts": [
+          "生物疫苗",
+          "医疗器械概念",
+          "病毒防治",
+          "人工智能",
+          "互联医疗",
+          "CRO",
+          "肝炎概念",
+          "创新药",
+          "病原体防治",
+          "创新医疗服务"
+        ],
+        "region": "浙江省",
+        "profile": "杭州泰格医药科技股份有限公司(股票代码:300347.SZ/3347.HK)是行业领先的一体化生物医药研发服务平台,为全球制药和医疗器械行业提供跨越全周期的创新研发解决方案。通过全面的服务体系和顶尖的质量标准,我们助力生物医药产业提升研发效率、降低研发风险,确保研究项目高质量交付,加速医药产品市场化进程,履行对行业和患者的承诺。同时,我们也通过覆盖各领域的1"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 1.04,
+        "smallNetInflowYi": -0.74,
+        "mediumNetInflowYi": -0.3,
+        "largeNetInflowYi": 0.54,
+        "superLargeNetInflowYi": 0.5,
+        "mainNetInflowPct": 5.23,
+        "largeNetInflowPct": 2.73,
+        "superLargeNetInflowPct": 2.5
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 11,
+        "supports": [
+          "营业收入同比增长 15.17%",
+          "经营现金流为正 3.18 亿元",
+          "资产负债率 14.71%，财务压力可控",
+          "毛利率约 26.64%"
+        ],
+        "risks": [
+          "归母净利润同比下降 70.36%"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 18.01,
+        "revenueYoY": 15.17,
+        "netProfitYi": 0.49,
+        "netProfitYoY": -70.36,
+        "operatingCashflowYi": 3.18,
+        "debtAssetRatio": 14.71,
+        "grossMargin": 26.64,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告偏正面",
+        "score": 3,
+        "latest": [
+          {
+            "title": "泰格医药:H股公告-证券变动月报表",
+            "date": "2026-07-06",
+            "type": "其他",
+            "artCode": "AN202607061826751353",
+            "url": "https://data.eastmoney.com/notices/detail/300347/AN202607061826751353.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "泰格医药:2025年度权益分派实施公告",
+            "date": "2026-07-02",
+            "type": "分配方案实施",
+            "artCode": "AN202607021826662896",
+            "url": "https://data.eastmoney.com/notices/detail/300347/AN202607021826662896.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "泰格医药:关于回购公司股份的进展公告",
+            "date": "2026-07-02",
+            "type": "回购进展情况",
+            "artCode": "AN202607021826662899",
+            "url": "https://data.eastmoney.com/notices/detail/300347/AN202607021826662899.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "泰格医药:H股公告-翌日披露报表",
+            "date": "2026-06-25",
+            "type": "其他",
+            "artCode": "AN202606251823850666",
+            "url": "https://data.eastmoney.com/notices/detail/300347/AN202606251823850666.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "泰格医药:H股公告-翌日披露报表",
+            "date": "2026-06-22",
+            "type": "其他",
+            "artCode": "AN202606221823739017",
+            "url": "https://data.eastmoney.com/notices/detail/300347/AN202606221823739017.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "泰格医药:H股公告-翌日披露报表",
+            "date": "2026-06-18",
+            "type": "其他",
+            "artCode": "AN202606181823671603",
+            "url": "https://data.eastmoney.com/notices/detail/300347/AN202606181823671603.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [
+          "2026-07-02 泰格医药:关于回购公司股份的进展公告"
+        ],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "趋势偏强",
+        "score": 24.8,
+        "lastDate": "2026-07-16",
+        "close": 53.99,
+        "ma5": 49.55,
+        "ma20": 46.07,
+        "ma60": 46.21,
+        "high20": 55.53,
+        "low20": 38.72,
+        "mid20": 47.13,
+        "supports": [
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "收盘接近 20 日高位，趋势保持强势"
+        ],
+        "risks": [],
+        "trendStage": {
+          "stage": "阶段3：高位震荡",
+          "description": "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+          "score": 2
+        },
+        "momentum": {
+          "r20": 34.34,
+          "r60": -6.27,
+          "r120": -14.3,
+          "rpsProxy": 57.3,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": true,
+          "status": "30分钟确认偏强",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 55.53,
+          "low": 42.2,
+          "mid": 48.87,
+          "ma12": 53.13,
+          "ma48": 48.25,
+          "supports": [
+            "30分钟短均线向上",
+            "30分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟震荡",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 55.53,
+          "low": 49.96,
+          "mid": 52.75,
+          "ma12": 53.49,
+          "ma48": 53.54,
+          "supports": [
+            "5分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "chan": {
+          "buyType": "类三买观察",
+          "action": "不追高，等待突破后回踩不破再试仓",
+          "entryZone": "44.1-51.83",
+          "firstPosition": "0%-10%观察仓",
+          "add": 49.55,
+          "stop": 46.58,
+          "takeProfit": 59.97,
+          "conditions": [
+            "放量突破或站稳 20 日高点 55.53 后，回踩不破 49.55",
+            "等待 5分钟确认后再动手"
+          ],
+          "invalidation": [
+            "跌回 20 日中位 47.13 下方，类三买观察失效"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 95.2,
+          "r60": 52.4,
+          "r120": 50,
+          "score": 65.9,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "重点跟踪池",
+        "score": 96,
+        "focusArea": "医药医疗",
+        "trendStage": {
+          "stage": "阶段3：高位震荡",
+          "description": "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+          "score": 2
+        },
+        "relativeStrength": {
+          "r20": 95.2,
+          "r60": 52.4,
+          "r120": 50,
+          "score": 65.9,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "趋势阶段：阶段3：高位震荡",
+            "缠论买点：类三买观察",
+            "相对强度：强度 65.9",
+            "资金流：主力净流入 1.04 亿",
+            "财务质量：基本面支撑",
+            "公告事件：公告偏正面",
+            "板块权重：医药医疗"
+          ],
+          "failed": [
+            "风险收益比：按计划价 51.83 计算，约 1:1.55，最大亏损约 10.13%，目标空间约 15.71%"
+          ],
+          "neutral": [],
+          "passCount": 7,
+          "failCount": 1,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 51.83,
+          "ratio": 1.55,
+          "maxLossPct": 10.13,
+          "targetGainPct": 15.71,
+          "text": "按计划价 51.83 计算，约 1:1.55，最大亏损约 10.13%，目标空间约 15.71%"
+        },
+        "buyType": "类三买观察",
+        "action": "不追高，等待突破后回踩不破再试仓",
+        "nextAction": "加入盘中观察，等待 5分钟确认或回踩关键位。",
+        "entryZone": "44.1-51.83",
+        "firstPosition": "0%-10%观察仓",
+        "addCondition": "站稳或回踩不破 49.55 后，且 30分钟/5分钟继续偏强",
+        "stop": 46.58,
+        "takeProfit": 59.97,
+        "trackingPeriod": "推荐后先按 3-15 个交易日跟踪，未触发条件不执行",
+        "conditions": [
+          "放量突破或站稳 20 日高点 55.53 后，回踩不破 49.55",
+          "等待 5分钟确认后再动手"
+        ],
+        "trigger": "等待突破或站稳 55.53 后回踩不破 49.55；若跌破 46.58 或风险收益比低于 1:1.8，取消交易计划。",
+        "support": [
+          "成交额 19.89 亿元，流动性较好",
+          "当日涨幅 4.03%，短线强于市场",
+          "PE 51.91，估值未进入极端异常区",
+          "主力净流入 1.04 亿元",
+          "归属板块：医药医疗；命中：人工智能、创新药、互联医疗",
+          "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+          "营业收入同比增长 15.17%",
+          "经营现金流为正 3.18 亿元",
+          "资产负债率 14.71%，财务压力可控",
+          "日线 MA5 高于 MA20，短线趋势偏强"
+        ],
+        "risk": [
+          "归母净利润同比下降 70.36%",
+          "跌回 20 日中位 47.13 下方，类三买观察失效",
+          "策略否决：风险收益比：按计划价 51.83 计算，约 1:1.55，最大亏损约 10.13%，目标空间约 15.71%"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "002294",
+      "name": "信立泰",
+      "price": 41.37,
+      "pct": 7.04,
+      "change": 2.72,
+      "volumeHands": 658828.43,
+      "amountYi": 26.07,
+      "amplitude": null,
+      "turnover": 5.91,
+      "pe": 71.33,
+      "volumeRatio": null,
+      "high": 42.2,
+      "low": 36.8,
+      "open": 38.09,
+      "prevClose": 38.65,
+      "marketCapYi": 461.2,
+      "floatCapYi": 461.1,
+      "pb": 5.04,
+      "mainNetInflowYi": 1.22,
+      "boards": [
+        {
+          "code": "chgn_701247",
+          "name": "创新药",
+          "pct": 0.73,
+          "amountYi": 1737.45,
+          "turnover": 5.8,
+          "source": "新浪财经热门概念",
+          "sector": "医药医疗",
+          "sectorPriority": 62,
+          "sectorHits": [
+            "创新药"
+          ],
+          "memberCount": 282,
+          "derived": true
+        },
+        {
+          "code": "gn_cxy",
+          "name": "创新药",
+          "pct": 0.15,
+          "amountYi": 1210.39,
+          "turnover": 5.89,
+          "source": "新浪财经概念板块",
+          "sector": "医药医疗",
+          "sectorPriority": 62,
+          "sectorHits": [
+            "创新药"
+          ],
+          "memberCount": 144,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "医药医疗": 2
+      },
+      "sectorGroup": "医药医疗",
+      "sectorPriority": 62,
+      "quick": {
+        "score": 26,
+        "supports": [
+          "成交额 26.07 亿元，流动性较好",
+          "当日涨幅 7.04%，短线强于市场",
+          "PE 71.33，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "医药医疗",
+        "sectorPriority": 62,
+        "sectorQuota": 3,
+        "hits": [
+          "医药",
+          "医疗",
+          "生物",
+          "创新药",
+          "化学制药",
+          "医疗器械"
+        ],
+        "text": "归属板块：医药医疗；命中：医药、医疗、生物、创新药、化学制药"
+      },
+      "profile": {
+        "industryPath": "医药生物-化学制药-化学制剂",
+        "concepts": [
+          "深圳特区",
+          "参股保险",
+          "医疗器械概念",
+          "单抗概念",
+          "创新药",
+          "减肥药",
+          "基金重仓",
+          "深成500",
+          "融资融券",
+          "央视50_"
+        ],
+        "region": "广东省",
+        "profile": "深圳信立泰药业股份有限公司(以下简称“信立泰”)成立于1998年,2009年在深交所上市(股票代码:002294),是一家立足中国、面向全球、研产销一体化的创新驱动型医药企业。信立泰坚持“为人类健康提供卓越的医药产品”的神圣使命,以优质创新产品和循证医学推广为核心竞争力,努力打造成为以心脑血管为主的慢病领域龙头企业。信立泰先后承担“十一五”“十二五”“十三五"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 1.22,
+        "smallNetInflowYi": -0.77,
+        "mediumNetInflowYi": -0.45,
+        "largeNetInflowYi": 0.68,
+        "superLargeNetInflowYi": 0.54,
+        "mainNetInflowPct": 4.68,
+        "largeNetInflowPct": 2.62,
+        "superLargeNetInflowPct": 2.05
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 20,
+        "supports": [
+          "归母净利润同比增长 12.45%",
+          "营业收入同比增长 15.65%",
+          "经营现金流为正 1.85 亿元",
+          "资产负债率 18.72%，财务压力可控",
+          "毛利率约 76.58%"
+        ],
+        "risks": [],
+        "reportDate": "2026-03-31",
+        "revenueYi": 12.28,
+        "revenueYoY": 15.65,
+        "netProfitYi": 2.25,
+        "netProfitYoY": 12.45,
+        "operatingCashflowYi": 1.85,
+        "debtAssetRatio": 18.72,
+        "grossMargin": 76.58,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告偏正面",
+        "score": 9,
+        "latest": [
+          {
+            "title": "信立泰:关于SAL0167获得临床试验批准通知书的公告",
+            "date": "2026-07-09",
+            "type": "其他",
+            "artCode": "AN202607081826814005",
+            "url": "https://data.eastmoney.com/notices/detail/002294/AN202607081826814005.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "信立泰:股票交易异常波动公告",
+            "date": "2026-07-04",
+            "type": "股票交易异常波动",
+            "artCode": "AN202607031826701458",
+            "url": "https://data.eastmoney.com/notices/detail/002294/AN202607031826701458.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "信立泰:关于回购公司股份的进展公告",
+            "date": "2026-07-02",
+            "type": "回购进展情况",
+            "artCode": "AN202607011826635820",
+            "url": "https://data.eastmoney.com/notices/detail/002294/AN202607011826635820.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "信立泰:关于控股股东部分股份质押的公告",
+            "date": "2026-06-30",
+            "type": "股份质押、冻结",
+            "artCode": "AN202606291826539369",
+            "url": "https://data.eastmoney.com/notices/detail/002294/AN202606291826539369.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "信立泰:关于首次回购公司股份的公告",
+            "date": "2026-06-18",
+            "type": "回购实施公告",
+            "artCode": "AN202606171823636083",
+            "url": "https://data.eastmoney.com/notices/detail/002294/AN202606171823636083.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "信立泰:回购报告书",
+            "date": "2026-06-13",
+            "type": "回购报告书",
+            "artCode": "AN202606121823517793",
+            "url": "https://data.eastmoney.com/notices/detail/002294/AN202606121823517793.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [
+          "2026-07-02 信立泰:关于回购公司股份的进展公告",
+          "2026-06-18 信立泰:关于首次回购公司股份的公告",
+          "2026-06-13 信立泰:回购报告书"
+        ],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "震荡观察",
+        "score": 23.6,
+        "lastDate": "2026-07-16",
+        "close": 41.37,
+        "ma5": 37.71,
+        "ma20": 34.94,
+        "ma60": 38.13,
+        "high20": 44,
+        "low20": 29.25,
+        "mid20": 36.63,
+        "supports": [
+          "日线 MA5 高于 MA20，短线趋势偏强"
+        ],
+        "risks": [],
+        "trendStage": {
+          "stage": "阶段3：高位震荡",
+          "description": "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+          "score": 2
+        },
+        "momentum": {
+          "r20": 37.17,
+          "r60": -29.58,
+          "r120": -20.91,
+          "rpsProxy": 42.9,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": true,
+          "status": "30分钟确认偏强",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 42.2,
+          "low": 34,
+          "mid": 38.1,
+          "ma12": 39.38,
+          "ma48": 37.08,
+          "supports": [
+            "30分钟短均线向上",
+            "30分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": true,
+          "status": "5分钟确认偏强",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 42.2,
+          "low": 36.8,
+          "mid": 39.5,
+          "ma12": 40.88,
+          "ma48": 39.75,
+          "supports": [
+            "5分钟短均线向上",
+            "5分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "chan": {
+          "buyType": "类二买/趋势延续观察",
+          "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+          "entryZone": "33.97-40.76",
+          "firstPosition": "10%-20%试仓",
+          "add": 37.71,
+          "stop": 33.55,
+          "takeProfit": 47.52,
+          "conditions": [
+            "回踩不破 MA20 34.94 或 20 日中位 36.63",
+            "缩量回踩后重新放量向上，才考虑加仓"
+          ],
+          "invalidation": [
+            "跌破 MA20 且 30分钟转弱，取消买点"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 97.6,
+          "r60": 14.3,
+          "r120": 45.2,
+          "score": 52.4,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 96,
+        "focusArea": "医药医疗",
+        "trendStage": {
+          "stage": "阶段3：高位震荡",
+          "description": "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+          "score": 2
+        },
+        "relativeStrength": {
+          "r20": 97.6,
+          "r60": 14.3,
+          "r120": 45.2,
+          "score": 52.4,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "趋势阶段：阶段3：高位震荡",
+            "缠论买点：类二买/趋势延续观察",
+            "资金流：主力净流入 1.22 亿",
+            "财务质量：基本面支撑",
+            "公告事件：公告偏正面",
+            "板块权重：医药医疗"
+          ],
+          "failed": [
+            "相对强度：强度 52.4",
+            "风险收益比：按计划价 40.76 计算，约 1:0.94，最大亏损约 17.69%，目标空间约 16.58%"
+          ],
+          "neutral": [],
+          "passCount": 6,
+          "failCount": 2,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 40.76,
+          "ratio": 0.94,
+          "maxLossPct": 17.69,
+          "targetGainPct": 16.58,
+          "text": "按计划价 40.76 计算，约 1:0.94，最大亏损约 17.69%，目标空间约 16.58%"
+        },
+        "buyType": "类二买/趋势延续观察",
+        "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "33.97-40.76",
+        "firstPosition": "10%-20%试仓",
+        "addCondition": "站稳或回踩不破 37.71 后，且 30分钟/5分钟继续偏强",
+        "stop": 33.55,
+        "takeProfit": 47.52,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "回踩不破 MA20 34.94 或 20 日中位 36.63",
+          "缩量回踩后重新放量向上，才考虑加仓"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 37.71 且 5分钟确认偏强，才重新评估。",
+        "support": [
+          "成交额 26.07 亿元，流动性较好",
+          "当日涨幅 7.04%，短线强于市场",
+          "PE 71.33，估值未进入极端异常区",
+          "主力净流入 1.22 亿元",
+          "归属板块：医药医疗；命中：医药、医疗、生物、创新药、化学制药",
+          "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+          "归母净利润同比增长 12.45%",
+          "营业收入同比增长 15.65%",
+          "经营现金流为正 1.85 亿元",
+          "日线 MA5 高于 MA20，短线趋势偏强"
+        ],
+        "risk": [
+          "跌破 MA20 且 30分钟转弱，取消买点",
+          "策略否决：相对强度：强度 52.4",
+          "策略否决：风险收益比：按计划价 40.76 计算，约 1:0.94，最大亏损约 17.69%，目标空间约 16.58%"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "600562",
+      "name": "国睿科技",
+      "price": 22.29,
+      "pct": 5.39,
+      "change": 1.14,
+      "volumeHands": 172136.49,
+      "amountYi": 3.76,
+      "amplitude": null,
+      "turnover": 1.39,
+      "pe": 43.71,
+      "volumeRatio": null,
+      "high": 22.71,
+      "low": 20.83,
+      "open": 21.03,
+      "prevClose": 21.15,
+      "marketCapYi": 276.81,
+      "floatCapYi": 276.81,
+      "pb": 4.12,
+      "mainNetInflowYi": 0.13,
+      "boards": [
+        {
+          "code": "chgn_701245",
+          "name": "低空经济",
+          "pct": -2.29,
+          "amountYi": 1905.48,
+          "turnover": 2.91,
+          "source": "新浪财经热门概念",
+          "sector": "低空经济/航空航天",
+          "sectorPriority": 72,
+          "sectorHits": [
+            "低空经济"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw_gfjg",
+          "name": "国防军工",
+          "pct": -2.39,
+          "amountYi": 552.19,
+          "turnover": 2.44,
+          "source": "新浪财经申万行业",
+          "sector": "军工国防",
+          "sectorPriority": 58,
+          "sectorHits": [
+            "军工",
+            "国防"
+          ],
+          "memberCount": 140,
+          "derived": true
+        },
+        {
+          "code": "sw1_650000",
+          "name": "国防军工",
+          "pct": -2.39,
+          "amountYi": 552.19,
+          "turnover": 2.44,
+          "source": "新浪财经申万一级",
+          "sector": "军工国防",
+          "sectorPriority": 58,
+          "sectorHits": [
+            "军工",
+            "国防"
+          ],
+          "memberCount": 140,
+          "derived": true
+        },
+        {
+          "code": "gn_gfjg",
+          "name": "国防军工",
+          "pct": -1.9,
+          "amountYi": 1235.58,
+          "turnover": 3.06,
+          "source": "新浪财经概念板块",
+          "sector": "军工国防",
+          "sectorPriority": 58,
+          "sectorHits": [
+            "军工",
+            "国防"
+          ],
+          "memberCount": 212,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "低空经济/航空航天": 1,
+        "军工国防": 3
+      },
+      "sectorGroup": "军工国防",
+      "sectorPriority": 58,
+      "quick": {
+        "score": 20,
+        "supports": [
+          "成交额 3.76 亿元，具备跟踪流动性",
+          "当日涨幅 5.39%，短线强于市场",
+          "PE 43.71，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "军工国防",
+        "sectorPriority": 58,
+        "sectorQuota": 3,
+        "hits": [
+          "电子",
+          "国防军工"
+        ],
+        "text": "归属板块：军工国防；命中：电子、国防军工"
+      },
+      "profile": {
+        "industryPath": "电子设备-电子设备制造-电子设备制造",
+        "concepts": [
+          "军工",
+          "长江三角",
+          "央国企改革",
+          "5G概念",
+          "PPP模式",
+          "无人驾驶",
+          "军民融合",
+          "大飞机",
+          "华为概念",
+          "商业航天"
+        ],
+        "region": "江苏省",
+        "profile": "国睿科技股份有限公司是由中国电子科技集团公司第十四研究所整合旗下优质产业资源组建而成,于2013年在上海证券交易所上市,证券代码:600562,证券简称:国睿科技。 公司立足“军工电子主力军、网信事业国家队、国家战略科技力量”的定位,以“建设具有全球竞争力的世界一流企业”为愿景,聚集雷达装备及相关系统、工业软件及数字化解决方案等朝阳产业,致力于成为技术领先、"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 0.13,
+        "smallNetInflowYi": -0.28,
+        "mediumNetInflowYi": 0.15,
+        "largeNetInflowYi": 0.22,
+        "superLargeNetInflowYi": -0.09,
+        "mainNetInflowPct": 3.43,
+        "largeNetInflowPct": 5.94,
+        "superLargeNetInflowPct": -2.51
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 11,
+        "supports": [
+          "归母净利润同比增长 2.49%",
+          "营业收入同比增长 39.66%",
+          "资产负债率 32.63%，财务压力可控",
+          "毛利率约 36.75%"
+        ],
+        "risks": [
+          "经营现金流为负 -2.12 亿元"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 5.07,
+        "revenueYoY": 39.66,
+        "netProfitYi": 0.77,
+        "netProfitYoY": 2.49,
+        "operatingCashflowYi": -2.12,
+        "debtAssetRatio": 32.63,
+        "grossMargin": 36.75,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "常规公告",
+        "score": 0,
+        "latest": [
+          {
+            "title": "国睿科技:国睿科技股份有限公司2025年年度权益分派实施公告",
+            "date": "2026-07-03",
+            "type": "分配方案实施",
+            "artCode": "AN202607021826661687",
+            "url": "https://data.eastmoney.com/notices/detail/600562/AN202607021826661687.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "国睿科技:国睿科技股份有限公司2025年年度股东会决议公告",
+            "date": "2026-05-15",
+            "type": "分配方案决议公告、股东大会决议公告",
+            "artCode": "AN202605141822316478",
+            "url": "https://data.eastmoney.com/notices/detail/600562/AN202605141822316478.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "国睿科技:上海锦天城(南京)律师事务所关于国睿科技股份有限公司2025年年度股东会法律意见书",
+            "date": "2026-05-15",
+            "type": "法律意见书",
+            "artCode": "AN202605141822316479",
+            "url": "https://data.eastmoney.com/notices/detail/600562/AN202605141822316479.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "国睿科技:国睿科技股份有限公司2025年年度业绩说明会召开情况总结",
+            "date": "2026-05-08",
+            "type": "调研活动",
+            "artCode": "AN202605081822072175",
+            "url": "https://data.eastmoney.com/notices/detail/600562/AN202605081822072175.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "国睿科技:国睿科技股份有限公司2025年年度股东会资料",
+            "date": "2026-05-07",
+            "type": "股东大会资料",
+            "artCode": "AN202605061821987713",
+            "url": "https://data.eastmoney.com/notices/detail/600562/AN202605061821987713.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "国睿科技:国睿科技股份有限公司关于董事、高级管理人员2026年度薪酬方案的公告",
+            "date": "2026-04-23",
+            "type": "其他",
+            "artCode": "AN202604221821446074",
+            "url": "https://data.eastmoney.com/notices/detail/600562/AN202604221821446074.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "震荡观察",
+        "score": 14.1,
+        "lastDate": "2026-07-16",
+        "close": 22.29,
+        "ma5": 21.05,
+        "ma20": 21.52,
+        "ma60": 23.93,
+        "high20": 24.32,
+        "low20": 19.36,
+        "mid20": 21.84,
+        "supports": [],
+        "risks": [],
+        "trendStage": {
+          "stage": "震荡过渡",
+          "description": "趋势阶段不够清晰，等待方向选择",
+          "score": -1
+        },
+        "momentum": {
+          "r20": 2.06,
+          "r60": -21.79,
+          "r120": -27.61,
+          "rpsProxy": 24.8,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": true,
+          "status": "30分钟确认偏强",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 22.71,
+          "low": 19.36,
+          "mid": 21.04,
+          "ma12": 21.49,
+          "ma48": 20.96,
+          "supports": [
+            "30分钟短均线向上",
+            "30分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": true,
+          "status": "5分钟确认偏强",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 22.71,
+          "low": 20.83,
+          "mid": 21.77,
+          "ma12": 22,
+          "ma48": 21.56,
+          "supports": [
+            "5分钟短均线向上",
+            "5分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "chan": {
+          "buyType": "类二买/趋势延续观察",
+          "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+          "entryZone": "20.95-23.23",
+          "firstPosition": "10%-20%试仓",
+          "add": 21.84,
+          "stop": 20.66,
+          "takeProfit": 26.27,
+          "conditions": [
+            "回踩不破 MA20 21.52 或 20 日中位 21.84",
+            "缩量回踩后重新放量向上，才考虑加仓"
+          ],
+          "invalidation": [
+            "跌破 MA20 且 30分钟转弱，取消买点"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 69,
+          "r60": 31,
+          "r120": 31,
+          "score": 43.7,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "交易准备池",
+        "score": 96,
+        "focusArea": "军工国防",
+        "trendStage": {
+          "stage": "震荡过渡",
+          "description": "趋势阶段不够清晰，等待方向选择",
+          "score": -1
+        },
+        "relativeStrength": {
+          "r20": 69,
+          "r60": 31,
+          "r120": 31,
+          "score": 43.7,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "缠论买点：类二买/趋势延续观察",
+            "资金流：主力净流入 0.13 亿",
+            "财务质量：基本面支撑",
+            "公告事件：常规公告",
+            "风险收益比：按计划价 22.29 计算，约 1:2.44，最大亏损约 7.31%，目标空间约 17.86%",
+            "板块权重：军工国防"
+          ],
+          "failed": [
+            "趋势阶段：震荡过渡",
+            "相对强度：强度 43.7"
+          ],
+          "neutral": [],
+          "passCount": 6,
+          "failCount": 2,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 22.29,
+          "ratio": 2.44,
+          "maxLossPct": 7.31,
+          "targetGainPct": 17.86,
+          "text": "按计划价 22.29 计算，约 1:2.44，最大亏损约 7.31%，目标空间约 17.86%"
+        },
+        "buyType": "类二买/趋势延续观察",
+        "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+        "nextAction": "只在回踩不破触发条件时试仓；高开急拉不追。",
+        "entryZone": "20.95-23.23",
+        "firstPosition": "10%-20%试仓",
+        "addCondition": "站稳或回踩不破 21.84 后，且 30分钟/5分钟继续偏强",
+        "stop": 20.66,
+        "takeProfit": 26.27,
+        "trackingPeriod": "推荐后先按 3-15 个交易日跟踪，未触发条件不执行",
+        "conditions": [
+          "回踩不破 MA20 21.52 或 20 日中位 21.84",
+          "缩量回踩后重新放量向上，才考虑加仓"
+        ],
+        "trigger": "等待回踩 21.52 附近缩量企稳，并在 30分钟/5分钟转强后试仓；跌破 20.66 取消。",
+        "support": [
+          "成交额 3.76 亿元，具备跟踪流动性",
+          "当日涨幅 5.39%，短线强于市场",
+          "PE 43.71，估值未进入极端异常区",
+          "主力净流入 0.13 亿元",
+          "归属板块：军工国防；命中：电子、国防军工",
+          "趋势阶段不够清晰，等待方向选择",
+          "归母净利润同比增长 2.49%",
+          "营业收入同比增长 39.66%",
+          "资产负债率 32.63%，财务压力可控",
+          "策略通过：缠论买点：类二买/趋势延续观察"
+        ],
+        "risk": [
+          "经营现金流为负 -2.12 亿元",
+          "跌破 MA20 且 30分钟转弱，取消买点",
+          "策略否决：趋势阶段：震荡过渡",
+          "策略否决：相对强度：强度 43.7"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "688002",
+      "name": "睿创微纳",
+      "price": 135.88,
+      "pct": -3.97,
+      "change": -5.62,
+      "volumeHands": 106976.02,
+      "amountYi": 14.82,
+      "amplitude": null,
+      "turnover": 2.28,
+      "pe": 54.35,
+      "volumeRatio": null,
+      "high": 143.86,
+      "low": 133.8,
+      "open": 139.28,
+      "prevClose": 141.5,
+      "marketCapYi": 638.57,
+      "floatCapYi": 638.57,
+      "pb": 8.97,
+      "mainNetInflowYi": 0.08,
+      "boards": [
+        {
+          "code": "chgn_700458",
+          "name": "半导体",
+          "pct": -5.42,
+          "amountYi": 6958.16,
+          "turnover": 4.81,
+          "source": "新浪财经热门概念",
+          "sector": "科技",
+          "sectorPriority": 100,
+          "sectorHits": [
+            "半导体"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_700124",
+          "name": "机器人概念",
+          "pct": -3.03,
+          "amountYi": 1692.44,
+          "turnover": 2.9,
+          "source": "新浪财经热门概念",
+          "sector": "机器人/智能制造",
+          "sectorPriority": 74,
+          "sectorHits": [
+            "机器人"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_701245",
+          "name": "低空经济",
+          "pct": -2.29,
+          "amountYi": 1905.48,
+          "turnover": 2.91,
+          "source": "新浪财经热门概念",
+          "sector": "低空经济/航空航天",
+          "sectorPriority": 72,
+          "sectorHits": [
+            "低空经济"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "sw_gfjg",
+          "name": "国防军工",
+          "pct": -2.39,
+          "amountYi": 552.19,
+          "turnover": 2.44,
+          "source": "新浪财经申万行业",
+          "sector": "军工国防",
+          "sectorPriority": 58,
+          "sectorHits": [
+            "军工",
+            "国防"
+          ],
+          "memberCount": 140,
+          "derived": true
+        },
+        {
+          "code": "sw1_650000",
+          "name": "国防军工",
+          "pct": -2.39,
+          "amountYi": 552.19,
+          "turnover": 2.44,
+          "source": "新浪财经申万一级",
+          "sector": "军工国防",
+          "sectorPriority": 58,
+          "sectorHits": [
+            "军工",
+            "国防"
+          ],
+          "memberCount": 140,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "科技": 1,
+        "机器人/智能制造": 1,
+        "低空经济/航空航天": 1,
+        "军工国防": 2
+      },
+      "sectorGroup": "军工国防",
+      "sectorPriority": 58,
+      "quick": {
+        "score": 18,
+        "supports": [
+          "成交额 14.82 亿元，流动性较好",
+          "PE 54.35，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "军工国防",
+        "sectorPriority": 58,
+        "sectorQuota": 3,
+        "hits": [
+          "半导体",
+          "芯片",
+          "电子",
+          "人工智能",
+          "互联网",
+          "国防军工"
+        ],
+        "text": "归属板块：军工国防；命中：半导体、芯片、电子、人工智能、互联网"
+      },
+      "profile": {
+        "industryPath": "电子设备-电子设备制造-电子设备制造",
+        "concepts": [
+          "军工",
+          "无人机",
+          "人工智能",
+          "无人驾驶",
+          "国产芯片",
+          "军民融合",
+          "传感器",
+          "卫星互联网",
+          "商业航天",
+          "机器人概念"
+        ],
+        "region": "山东省",
+        "profile": "烟台睿创微纳技术股份有限公司(股票代码:688002)是全球领先的、专业从事专用集成电路、感知芯片与AI智能整机产品与解决方案研发的国家级高新技术企业。公司深耕红外、微波、激光等多维感知领域,掌握多光谱感知芯片研发的核心技术与AI智能算法深度研发等能力,为全球客户提供性能卓越的红外热成像、微波、激光芯片,应用终端及行业感知解决方案,以技术进步为客户创造增量价"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 0.08,
+        "smallNetInflowYi": 0.54,
+        "mediumNetInflowYi": -0.62,
+        "largeNetInflowYi": 0.21,
+        "superLargeNetInflowYi": -0.13,
+        "mainNetInflowPct": 0.54,
+        "largeNetInflowPct": 1.44,
+        "superLargeNetInflowPct": -0.89
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 20,
+        "supports": [
+          "归母净利润同比增长 228.31%",
+          "营业收入同比增长 71.12%",
+          "经营现金流为正 9.34 亿元",
+          "资产负债率 36.07%，财务压力可控",
+          "毛利率约 53.4%"
+        ],
+        "risks": [],
+        "reportDate": "2026-03-31",
+        "revenueYi": 19.45,
+        "revenueYoY": 71.12,
+        "netProfitYi": 4.79,
+        "netProfitYoY": 228.31,
+        "operatingCashflowYi": 9.34,
+        "debtAssetRatio": 36.07,
+        "grossMargin": 53.4,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "常规公告",
+        "score": 0,
+        "latest": [
+          {
+            "title": "睿创微纳:关于调整2025年限制性股票激励计划授予价格及2026年员工持股计划购买价格及规模的公告",
+            "date": "2026-07-10",
+            "type": "股权激励行权价（数量）调整、股权激励进展公告、员工持股计划、其它",
+            "artCode": "AN202607091826849812",
+            "url": "https://data.eastmoney.com/notices/detail/688002/AN202607091826849812.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "睿创微纳:关于作废部分已授予尚未归属的限制性股票的公告",
+            "date": "2026-07-10",
+            "type": "股权激励进展公告、其它",
+            "artCode": "AN202607091826849811",
+            "url": "https://data.eastmoney.com/notices/detail/688002/AN202607091826849811.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "睿创微纳:关于公司拟与关联方设立合资公司、并向合资公司出售资产暨关联交易的公告",
+            "date": "2026-07-10",
+            "type": "投资设立公司、收购出售资产/股权、关联交易、其它",
+            "artCode": "AN202607091826849810",
+            "url": "https://data.eastmoney.com/notices/detail/688002/AN202607091826849810.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "睿创微纳:北京金诚同达(沈阳)律师事务所关于烟台睿创微纳技术股份有限公司2025年限制性股票激励计划授予价格调整、作废部分已授予但尚未归属的限制性股票、第一个归属期符合归属条件的法律意见书",
+            "date": "2026-07-10",
+            "type": "法律意见书",
+            "artCode": "AN202607091826849805",
+            "url": "https://data.eastmoney.com/notices/detail/688002/AN202607091826849805.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "睿创微纳:第四届董事会第七次会议决议公告",
+            "date": "2026-07-10",
+            "type": "董事会决议公告、其它",
+            "artCode": "AN202607091826849808",
+            "url": "https://data.eastmoney.com/notices/detail/688002/AN202607091826849808.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "睿创微纳:关于公司2025年限制性股票激励计划第一个归属期符合归属条件的公告",
+            "date": "2026-07-10",
+            "type": "股权激励进展公告、其它",
+            "artCode": "AN202607091826849807",
+            "url": "https://data.eastmoney.com/notices/detail/688002/AN202607091826849807.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": -0.6,
+        "lastDate": "2026-07-16",
+        "close": 135.88,
+        "ma5": 142.53,
+        "ma20": 148.03,
+        "ma60": 138.96,
+        "high20": 168.45,
+        "low20": 133.8,
+        "mid20": 151.13,
+        "supports": [
+          "日线 MA20 高于 MA60，中期结构偏强"
+        ],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "momentum": {
+          "r20": -6.8,
+          "r60": 4.76,
+          "r120": 29.66,
+          "rpsProxy": 64.7,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 168.45,
+          "low": 133.8,
+          "mid": 151.13,
+          "ma12": 139.62,
+          "ma48": 147.7,
+          "supports": [],
+          "risks": [
+            "30分钟收盘低于近 48 根均价",
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 143.86,
+          "low": 133.8,
+          "mid": 138.83,
+          "ma12": 135.46,
+          "ma48": 138.56,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 151.13,
+          "stop": 129.79,
+          "takeProfit": 181.93,
+          "conditions": [
+            "重新站回 MA20 148.03，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 133.8，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 38.1,
+          "r60": 73.8,
+          "r120": 85.7,
+          "score": 65.9,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 75.9,
+        "focusArea": "军工国防",
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "relativeStrength": {
+          "r20": 38.1,
+          "r60": 73.8,
+          "r120": 85.7,
+          "score": 65.9,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "相对强度：强度 65.9",
+            "资金流：主力净流入 0.08 亿",
+            "财务质量：基本面支撑",
+            "公告事件：常规公告",
+            "风险收益比：按计划价 135.88 计算，约 1:7.56，最大亏损约 4.48%，目标空间约 33.89%",
+            "板块权重：军工国防"
+          ],
+          "failed": [
+            "趋势阶段：阶段1：筑底观察",
+            "缠论买点：无买点/风险段"
+          ],
+          "neutral": [],
+          "passCount": 6,
+          "failCount": 2,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 135.88,
+          "ratio": 7.56,
+          "maxLossPct": 4.48,
+          "targetGainPct": 33.89,
+          "text": "按计划价 135.88 计算，约 1:7.56，最大亏损约 4.48%，目标空间约 33.89%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 151.13 后，且 30分钟/5分钟继续偏强",
+        "stop": 129.79,
+        "takeProfit": 181.93,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 148.03，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 151.13 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 14.82 亿元，流动性较好",
+          "PE 54.35，估值未进入极端异常区",
+          "主力净流入 0.08 亿元",
+          "归属板块：军工国防；命中：半导体、芯片、电子、人工智能、互联网",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "归母净利润同比增长 228.31%",
+          "营业收入同比增长 71.12%",
+          "经营现金流为正 9.34 亿元",
+          "日线 MA20 高于 MA60，中期结构偏强",
+          "策略通过：相对强度：强度 65.9"
+        ],
+        "risk": [
+          "收盘低于 MA20，买点需要降级",
+          "有效跌破 20 日低点 133.8，技术面继续减分",
+          "策略否决：趋势阶段：阶段1：筑底观察",
+          "策略否决：缠论买点：无买点/风险段"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "002179",
+      "name": "中航光电",
+      "price": 34.01,
+      "pct": -2.61,
+      "change": -0.91,
+      "volumeHands": 360386.38,
+      "amountYi": 12.38,
+      "amplitude": null,
+      "turnover": 1.72,
+      "pe": 33.22,
+      "volumeRatio": null,
+      "high": 35.03,
+      "low": 33.8,
+      "open": 34.4,
+      "prevClose": 34.92,
+      "marketCapYi": 714.29,
+      "floatCapYi": 713,
+      "pb": 2.9,
+      "mainNetInflowYi": 0.59,
+      "boards": [
+        {
+          "code": "chgn_701245",
+          "name": "低空经济",
+          "pct": -2.29,
+          "amountYi": 1905.48,
+          "turnover": 2.91,
+          "source": "新浪财经热门概念",
+          "sector": "低空经济/航空航天",
+          "sectorPriority": 72,
+          "sectorHits": [
+            "低空经济"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "code": "chgn_730289",
+          "name": "航空工业集团",
+          "pct": -2.26,
+          "amountYi": 89.98,
+          "turnover": 1.1,
+          "source": "新浪财经热门概念",
+          "sector": "低空经济/航空航天",
+          "sectorPriority": 72,
+          "sectorHits": [
+            "航空"
+          ],
+          "memberCount": 19,
+          "derived": true
+        },
+        {
+          "code": "sw_gfjg",
+          "name": "国防军工",
+          "pct": -2.39,
+          "amountYi": 552.19,
+          "turnover": 2.44,
+          "source": "新浪财经申万行业",
+          "sector": "军工国防",
+          "sectorPriority": 58,
+          "sectorHits": [
+            "军工",
+            "国防"
+          ],
+          "memberCount": 140,
+          "derived": true
+        },
+        {
+          "code": "sw1_650000",
+          "name": "国防军工",
+          "pct": -2.39,
+          "amountYi": 552.19,
+          "turnover": 2.44,
+          "source": "新浪财经申万一级",
+          "sector": "军工国防",
+          "sectorPriority": 58,
+          "sectorHits": [
+            "军工",
+            "国防"
+          ],
+          "memberCount": 140,
+          "derived": true
+        },
+        {
+          "code": "gn_gfjg",
+          "name": "国防军工",
+          "pct": -1.9,
+          "amountYi": 1235.58,
+          "turnover": 3.06,
+          "source": "新浪财经概念板块",
+          "sector": "军工国防",
+          "sectorPriority": 58,
+          "sectorHits": [
+            "军工",
+            "国防"
+          ],
+          "memberCount": 212,
+          "derived": true
+        }
+      ],
+      "sectorScores": {
+        "低空经济/航空航天": 2,
+        "军工国防": 3
+      },
+      "sectorGroup": "军工国防",
+      "sectorPriority": 58,
+      "quick": {
+        "score": 18,
+        "supports": [
+          "成交额 12.38 亿元，流动性较好",
+          "PE 33.22，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "军工国防",
+        "sectorPriority": 58,
+        "sectorQuota": 3,
+        "hits": [
+          "电子",
+          "国防军工"
+        ],
+        "text": "归属板块：军工国防；命中：电子、国防军工"
+      },
+      "profile": {
+        "industryPath": "电子设备-电子设备制造-电子设备制造",
+        "concepts": [
+          "军工",
+          "特斯拉概念",
+          "央国企改革",
+          "充电桩",
+          "5G概念",
+          "新能源车",
+          "军民融合",
+          "大飞机",
+          "华为概念",
+          "北交所概念"
+        ],
+        "region": "河南省",
+        "profile": "中航光电科技股份有限公司是专业为航空及防务和高端制造提供互连解决方案的高科技企业。总部位于洛阳,在北京、深圳、广州、上海、沈阳、泰兴、西安、青岛、东莞、合肥、南昌、成都、无锡、武汉等地设有分公司和子公司,并在德国、越南、韩国及北美地区设有海外分支机构。2007年在深交所上市(股票代码:002179)。公司专业从事中高端光、电、流体连接技术与产品的研究与开发,"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 0.59,
+        "smallNetInflowYi": -0.44,
+        "mediumNetInflowYi": -0.15,
+        "largeNetInflowYi": 0.1,
+        "superLargeNetInflowYi": 0.49,
+        "mainNetInflowPct": 4.78,
+        "largeNetInflowPct": 0.82,
+        "superLargeNetInflowPct": 3.96
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 2,
+        "supports": [
+          "营业收入同比增长 0.69%",
+          "资产负债率 35.11%，财务压力可控",
+          "毛利率约 28%"
+        ],
+        "risks": [
+          "归母净利润同比下降 37.75%",
+          "经营现金流为负 -20.61 亿元"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 48.72,
+        "revenueYoY": 0.69,
+        "netProfitYi": 3.98,
+        "netProfitYoY": -37.75,
+        "operatingCashflowYi": -20.61,
+        "debtAssetRatio": 35.11,
+        "grossMargin": 28,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告偏正面",
+        "score": 9,
+        "latest": [
+          {
+            "title": "中航光电:2026年6月22-24日中航光电投资者关系活动记录表",
+            "date": "2026-06-25",
+            "type": "调研活动",
+            "artCode": "AN202606251823853206",
+            "url": "https://data.eastmoney.com/notices/detail/002179/AN202606251823853206.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "中航光电:关于回购注销限制性股票完成的公告",
+            "date": "2026-06-25",
+            "type": "股本变动、回购实施公告",
+            "artCode": "AN202606241823812964",
+            "url": "https://data.eastmoney.com/notices/detail/002179/AN202606241823812964.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "中航光电:关于选举职工代表董事及调整董事会部分专业委员会委员的公告",
+            "date": "2026-06-18",
+            "type": "高管人员任职变动",
+            "artCode": "AN202606171823640025",
+            "url": "https://data.eastmoney.com/notices/detail/002179/AN202606171823640025.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "中航光电:第八届董事会第五次会议决议公告",
+            "date": "2026-06-18",
+            "type": "董事会决议公告",
+            "artCode": "AN202606171823640038",
+            "url": "https://data.eastmoney.com/notices/detail/002179/AN202606171823640038.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "中航光电:2026年6月11日中航光电投资者关系活动记录表",
+            "date": "2026-06-12",
+            "type": "调研活动",
+            "artCode": "AN202606121823488662",
+            "url": "https://data.eastmoney.com/notices/detail/002179/AN202606121823488662.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "中航光电:关于职工代表董事辞职的公告",
+            "date": "2026-06-09",
+            "type": "高管人员任职变动",
+            "artCode": "AN202606081823367152",
+            "url": "https://data.eastmoney.com/notices/detail/002179/AN202606081823367152.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [
+          "2026-06-25 中航光电:2026年6月22-24日中航光电投资者关系活动记录表",
+          "2026-06-25 中航光电:关于回购注销限制性股票完成的公告",
+          "2026-06-12 中航光电:2026年6月11日中航光电投资者关系活动记录表"
+        ],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": -3.1,
+        "lastDate": "2026-07-16",
+        "close": 34.01,
+        "ma5": 35.82,
+        "ma20": 41.04,
+        "ma60": 39.01,
+        "high20": 47.21,
+        "low20": 33.8,
+        "mid20": 40.5,
+        "supports": [
+          "日线 MA20 高于 MA60，中期结构偏强"
+        ],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "momentum": {
+          "r20": -12.39,
+          "r60": -4.63,
+          "r120": -10.69,
+          "rpsProxy": 35.2,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 41.69,
+          "low": 33.8,
+          "mid": 37.74,
+          "ma12": 34.66,
+          "ma48": 36.86,
+          "supports": [],
+          "risks": [
+            "30分钟收盘低于近 48 根均价",
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 35.03,
+          "low": 33.8,
+          "mid": 34.41,
+          "ma12": 34,
+          "ma48": 34.46,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 41.04,
+          "stop": 32.79,
+          "takeProfit": 50.99,
+          "conditions": [
+            "重新站回 MA20 41.04，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 33.8，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 21.4,
+          "r60": 59.5,
+          "r120": 59.5,
+          "score": 46.8,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 55.8,
+        "focusArea": "军工国防",
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "relativeStrength": {
+          "r20": 21.4,
+          "r60": 59.5,
+          "r120": 59.5,
+          "score": 46.8,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "资金流：主力净流入 0.59 亿",
+            "财务质量：基本面支撑",
+            "公告事件：公告偏正面",
+            "风险收益比：按计划价 34.01 计算，约 1:13.91，最大亏损约 3.59%，目标空间约 49.93%",
+            "板块权重：军工国防"
+          ],
+          "failed": [
+            "趋势阶段：阶段1：筑底观察",
+            "缠论买点：无买点/风险段",
+            "相对强度：强度 46.8"
+          ],
+          "neutral": [],
+          "passCount": 5,
+          "failCount": 3,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 34.01,
+          "ratio": 13.91,
+          "maxLossPct": 3.59,
+          "targetGainPct": 49.93,
+          "text": "按计划价 34.01 计算，约 1:13.91，最大亏损约 3.59%，目标空间约 49.93%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 41.04 后，且 30分钟/5分钟继续偏强",
+        "stop": 32.79,
+        "takeProfit": 50.99,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 41.04，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 41.04 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 12.38 亿元，流动性较好",
+          "PE 33.22，估值未进入极端异常区",
+          "主力净流入 0.59 亿元",
+          "归属板块：军工国防；命中：电子、国防军工",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "营业收入同比增长 0.69%",
+          "资产负债率 35.11%，财务压力可控",
+          "毛利率约 28%",
+          "日线 MA20 高于 MA60，中期结构偏强",
+          "2026-06-25 中航光电:2026年6月22-24日中航光电投资者关系活动记录表"
+        ],
+        "risk": [
+          "归母净利润同比下降 37.75%",
+          "经营现金流为负 -20.61 亿元",
+          "收盘低于 MA20，买点需要降级",
+          "有效跌破 20 日低点 33.8，技术面继续减分",
+          "策略否决：趋势阶段：阶段1：筑底观察",
+          "策略否决：缠论买点：无买点/风险段",
+          "策略否决：相对强度：强度 46.8"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "601899",
+      "name": "紫金矿业",
+      "price": 29.25,
+      "pct": 1.46,
+      "change": 0.42,
+      "amountYi": 77.73,
+      "volumeHands": 2654389.76,
+      "high": 29.59,
+      "low": 28.79,
+      "open": 28.82,
+      "prevClose": 28.83,
+      "turnover": 1.29,
+      "pe": 12.61,
+      "pb": null,
+      "mainNetInflowYi": 2.86,
+      "amplitude": 2.77,
+      "marketCapYi": 7777.78,
+      "boards": [
+        {
+          "name": "黄金/贵金属维护型补位池",
+          "code": "seed-黄金/贵金属",
+          "source": "新浪财经实时行情"
+        }
+      ],
+      "sectorScores": {
+        "黄金/贵金属": 3
+      },
+      "sectorGroup": "黄金/贵金属",
+      "sectorPriority": 56,
+      "quick": {
+        "score": 18,
+        "supports": [
+          "成交额 77.73 亿元，流动性较好",
+          "PE 12.61，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "黄金/贵金属",
+        "sectorPriority": 56,
+        "sectorQuota": 3,
+        "hits": [
+          "锂"
+        ],
+        "text": "归属板块：黄金/贵金属；命中：锂"
+      },
+      "profile": {
+        "industryPath": "有色金属-贵金属-黄金",
+        "concepts": [
+          "稀缺资源",
+          "黄金概念",
+          "央国企改革",
+          "小金属概念",
+          "一带一路",
+          "贬值受益",
+          "锂矿概念",
+          "AH股",
+          "HS300_",
+          "机构重仓"
+        ],
+        "region": "福建省",
+        "profile": "紫金矿业集团股份有限公司是一家在全球范围内从事金属矿产资源勘查和开发为主、上海A股(601899.SH)和香港H股(2899.HK)两地整体上市的大型跨国矿业集团。在以营收、利润、资产和市值多维度指标综合排名的《福布斯》2025全球上市企业2000强榜单中,紫金矿业位居全球上榜黄金企业第1位,全球金属矿企第4位。净资产收益率居《财富》世界500强榜全球金属矿"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 2.86,
+        "smallNetInflowYi": -4.09,
+        "mediumNetInflowYi": 1.24,
+        "largeNetInflowYi": 4.6,
+        "superLargeNetInflowYi": -1.75,
+        "mainNetInflowPct": 3.67,
+        "largeNetInflowPct": 5.92,
+        "superLargeNetInflowPct": -2.25
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 20,
+        "supports": [
+          "归母净利润同比增长 97.5%",
+          "营业收入同比增长 24.79%",
+          "经营现金流为正 278.32 亿元",
+          "资产负债率 51.37%，财务压力可控",
+          "毛利率约 36.33%"
+        ],
+        "risks": [],
+        "reportDate": "2026-03-31",
+        "revenueYi": 984.98,
+        "revenueYoY": 24.79,
+        "netProfitYi": 200.79,
+        "netProfitYoY": 97.5,
+        "operatingCashflowYi": 278.32,
+        "debtAssetRatio": 51.37,
+        "grossMargin": 36.33,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告偏正面",
+        "score": 3,
+        "latest": [
+          {
+            "title": "紫金矿业:紫金矿业自然相关财务披露工作报告",
+            "date": "2026-07-11",
+            "type": "其他",
+            "artCode": "AN202607101826879209",
+            "url": "https://data.eastmoney.com/notices/detail/601899/AN202607101826879209.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "紫金矿业:紫金矿业集团股份有限公司第九届董事会临时会议决议公告",
+            "date": "2026-07-11",
+            "type": "分配预案、董事会决议公告",
+            "artCode": "AN202607101826879019",
+            "url": "https://data.eastmoney.com/notices/detail/601899/AN202607101826879019.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "紫金矿业:紫金矿业集团股份有限公司2026年中期利润分配方案公告",
+            "date": "2026-07-11",
+            "type": "分配预案",
+            "artCode": "AN202607101826879020",
+            "url": "https://data.eastmoney.com/notices/detail/601899/AN202607101826879020.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "紫金矿业:紫金矿业集团股份有限公司2026年半年度业绩预增公告",
+            "date": "2026-07-10",
+            "type": "业绩预告",
+            "artCode": "AN202607091826849528",
+            "url": "https://data.eastmoney.com/notices/detail/601899/AN202607091826849528.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "紫金矿业:紫金矿业H股市场公告",
+            "date": "2026-07-03",
+            "type": "其他",
+            "artCode": "AN202607021826665573",
+            "url": "https://data.eastmoney.com/notices/detail/601899/AN202607021826665573.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "紫金矿业:紫金矿业集团股份有限公司2025年年度权益分派实施公告",
+            "date": "2026-06-22",
+            "type": "分配方案实施",
+            "artCode": "AN202606211823708387",
+            "url": "https://data.eastmoney.com/notices/detail/601899/AN202606211823708387.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [
+          "2026-07-10 紫金矿业:紫金矿业集团股份有限公司2026年半年度业绩预增公告"
+        ],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "震荡观察",
+        "score": 14.2,
+        "lastDate": "2026-07-16",
+        "close": 29.25,
+        "ma5": 28.44,
+        "ma20": 27.49,
+        "ma60": 30.46,
+        "high20": 30.98,
+        "low20": 24.42,
+        "mid20": 27.7,
+        "supports": [
+          "日线 MA5 高于 MA20，短线趋势偏强"
+        ],
+        "risks": [],
+        "trendStage": {
+          "stage": "震荡过渡",
+          "description": "趋势阶段不够清晰，等待方向选择",
+          "score": -1
+        },
+        "momentum": {
+          "r20": -3.88,
+          "r60": -15.78,
+          "r120": -24.03,
+          "rpsProxy": 26.7,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": true,
+          "status": "30分钟确认偏强",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 29.59,
+          "low": 26.55,
+          "mid": 28.07,
+          "ma12": 29.2,
+          "ma48": 28.12,
+          "supports": [
+            "30分钟短均线向上",
+            "30分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 29.59,
+          "low": 28.79,
+          "mid": 29.19,
+          "ma12": 29.28,
+          "ma48": 29.32,
+          "supports": [
+            "5分钟收盘在近 48 根中位上方"
+          ],
+          "risks": [
+            "5分钟收盘低于近 48 根均价"
+          ]
+        },
+        "chan": {
+          "buyType": "类二买/趋势延续观察",
+          "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+          "entryZone": "26.52-29.54",
+          "firstPosition": "0%-10%观察仓",
+          "add": 28.44,
+          "stop": 26.39,
+          "takeProfit": 33.46,
+          "conditions": [
+            "回踩不破 MA20 27.49 或 20 日中位 27.7",
+            "缩量回踩后重新放量向上，才考虑加仓"
+          ],
+          "invalidation": [
+            "跌破 MA20 且 30分钟转弱，取消买点"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 47.6,
+          "r60": 40.5,
+          "r120": 33.3,
+          "score": 40.5,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "重点跟踪池",
+        "score": 86.8,
+        "focusArea": "黄金/贵金属",
+        "trendStage": {
+          "stage": "震荡过渡",
+          "description": "趋势阶段不够清晰，等待方向选择",
+          "score": -1
+        },
+        "relativeStrength": {
+          "r20": 47.6,
+          "r60": 40.5,
+          "r120": 33.3,
+          "score": 40.5,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "缠论买点：类二买/趋势延续观察",
+            "资金流：主力净流入 2.86 亿",
+            "财务质量：基本面支撑",
+            "公告事件：公告偏正面",
+            "板块权重：黄金/贵金属"
+          ],
+          "failed": [
+            "趋势阶段：震荡过渡",
+            "相对强度：强度 40.5",
+            "风险收益比：按计划价 29.25 计算，约 1:1.47，最大亏损约 9.78%，目标空间约 14.39%"
+          ],
+          "neutral": [],
+          "passCount": 5,
+          "failCount": 3,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 29.25,
+          "ratio": 1.47,
+          "maxLossPct": 9.78,
+          "targetGainPct": 14.39,
+          "text": "按计划价 29.25 计算，约 1:1.47，最大亏损约 9.78%，目标空间约 14.39%"
+        },
+        "buyType": "类二买/趋势延续观察",
+        "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+        "nextAction": "加入盘中观察，等待 5分钟确认或回踩关键位。",
+        "entryZone": "26.52-29.54",
+        "firstPosition": "0%-10%观察仓",
+        "addCondition": "站稳或回踩不破 28.44 后，且 30分钟/5分钟继续偏强",
+        "stop": 26.39,
+        "takeProfit": 33.46,
+        "trackingPeriod": "推荐后先按 3-15 个交易日跟踪，未触发条件不执行",
+        "conditions": [
+          "回踩不破 MA20 27.49 或 20 日中位 27.7",
+          "缩量回踩后重新放量向上，才考虑加仓"
+        ],
+        "trigger": "等待回踩 27.49 附近缩量企稳，并在 30分钟/5分钟转强后试仓；跌破 26.39 取消。",
+        "support": [
+          "成交额 77.73 亿元，流动性较好",
+          "PE 12.61，估值未进入极端异常区",
+          "主力净流入 2.86 亿元",
+          "归属板块：黄金/贵金属；命中：锂",
+          "趋势阶段不够清晰，等待方向选择",
+          "归母净利润同比增长 97.5%",
+          "营业收入同比增长 24.79%",
+          "经营现金流为正 278.32 亿元",
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "2026-07-10 紫金矿业:紫金矿业集团股份有限公司2026年半年度业绩预增公告"
+        ],
+        "risk": [
+          "跌破 MA20 且 30分钟转弱，取消买点",
+          "策略否决：趋势阶段：震荡过渡",
+          "策略否决：相对强度：强度 40.5",
+          "策略否决：风险收益比：按计划价 29.25 计算，约 1:1.47，最大亏损约 9.78%，目标空间约 14.39%"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "600547",
+      "name": "山东黄金",
+      "price": 24.76,
+      "pct": 0.28,
+      "change": 0.07,
+      "amountYi": 13.93,
+      "volumeHands": 559900.84,
+      "high": 25.5,
+      "low": 24.3,
+      "open": 24.39,
+      "prevClose": 24.69,
+      "turnover": 1.55,
+      "pe": 22.13,
+      "pb": null,
+      "mainNetInflowYi": 0.68,
+      "amplitude": 4.86,
+      "marketCapYi": 1141.42,
+      "boards": [
+        {
+          "name": "黄金/贵金属维护型补位池",
+          "code": "seed-黄金/贵金属",
+          "source": "新浪财经实时行情"
+        }
+      ],
+      "sectorScores": {
+        "黄金/贵金属": 3
+      },
+      "sectorGroup": "黄金/贵金属",
+      "sectorPriority": 56,
+      "quick": {
+        "score": 18,
+        "supports": [
+          "成交额 13.93 亿元，流动性较好",
+          "PE 22.13，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "黄金/贵金属",
+        "sectorPriority": 56,
+        "sectorQuota": 3,
+        "hits": [
+          "黄金",
+          "贵金属"
+        ],
+        "text": "归属板块：黄金/贵金属；命中：黄金、贵金属"
+      },
+      "profile": {
+        "industryPath": "有色金属-贵金属-黄金",
+        "concepts": [
+          "稀缺资源",
+          "黄金概念",
+          "央国企改革",
+          "贬值受益",
+          "AH股",
+          "HS300_",
+          "机构重仓",
+          "融资融券",
+          "上证180_",
+          "沪股通"
+        ],
+        "region": "山东省",
+        "profile": "山东黄金矿业股份有限公司是山东黄金集团有限公司控股的上市企业,成立于2000年,2003年在上海证券交易所主板上市(600547.SH),2018年在香港联合交易所主板上市(1787.HK),控股在深圳证券交易所主板上市的山金国际黄金股份有限公司(000975.SZ),实现沪、港、深三地资本市场布局。公司以实现企业价值创造和维护广大股东合法权益为目标,多次入"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 0.68,
+        "smallNetInflowYi": -0.76,
+        "mediumNetInflowYi": 0.08,
+        "largeNetInflowYi": 0.75,
+        "superLargeNetInflowYi": -0.07,
+        "mainNetInflowPct": 4.85,
+        "largeNetInflowPct": 5.35,
+        "superLargeNetInflowPct": -0.5
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 12,
+        "supports": [
+          "归母净利润同比增长 40.87%",
+          "营业收入同比增长 25.37%",
+          "经营现金流为正 60.95 亿元"
+        ],
+        "risks": [],
+        "reportDate": "2026-03-31",
+        "revenueYi": 325.16,
+        "revenueYoY": 25.37,
+        "netProfitYi": 14.46,
+        "netProfitYoY": 40.87,
+        "operatingCashflowYi": 60.95,
+        "debtAssetRatio": 62.57,
+        "grossMargin": 18.3,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "常规公告",
+        "score": 0,
+        "latest": [
+          {
+            "title": "山东黄金:国浩律师(济南)事务所关于山东黄金矿业股份有限公司2026年第二次临时股东会的法律意见书",
+            "date": "2026-07-11",
+            "type": "法律意见书",
+            "artCode": "AN202607101826877754",
+            "url": "https://data.eastmoney.com/notices/detail/600547/AN202607101826877754.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "山东黄金:山东黄金矿业股份有限公司2026年第二次临时股东会决议公告",
+            "date": "2026-07-11",
+            "type": "股东大会决议公告、高管人员任职变动",
+            "artCode": "AN202607101826877756",
+            "url": "https://data.eastmoney.com/notices/detail/600547/AN202607101826877756.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "山东黄金:山东黄金矿业股份有限公司第七届董事会第十四次会议决议公告",
+            "date": "2026-07-11",
+            "type": "高管人员任职变动、董事会决议公告",
+            "artCode": "AN202607101826877752",
+            "url": "https://data.eastmoney.com/notices/detail/600547/AN202607101826877752.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "山东黄金:山东黄金矿业股份有限公司关于选举董事长及变更法定代表人的公告",
+            "date": "2026-07-11",
+            "type": "法定代表人变更、高管人员任职变动",
+            "artCode": "AN202607101826877757",
+            "url": "https://data.eastmoney.com/notices/detail/600547/AN202607101826877757.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "山东黄金:山东黄金矿业股份有限公司关于董事长、法定代表人离任的公告",
+            "date": "2026-07-11",
+            "type": "高管人员任职变动",
+            "artCode": "AN202607101826877755",
+            "url": "https://data.eastmoney.com/notices/detail/600547/AN202607101826877755.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "山东黄金:山东黄金矿业股份有限公司关于应用套期会计的公告",
+            "date": "2026-07-11",
+            "type": "其他",
+            "artCode": "AN202607101826877753",
+            "url": "https://data.eastmoney.com/notices/detail/600547/AN202607101826877753.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "震荡观察",
+        "score": -1,
+        "lastDate": "2026-07-16",
+        "close": 24.76,
+        "ma5": 24.73,
+        "ma20": 24.7,
+        "ma60": 29.41,
+        "high20": 28.09,
+        "low20": 22.55,
+        "mid20": 25.32,
+        "supports": [
+          "日线 MA5 高于 MA20，短线趋势偏强"
+        ],
+        "risks": [],
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "momentum": {
+          "r20": -12.38,
+          "r60": -35.59,
+          "r120": -46.58,
+          "rpsProxy": 0,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟震荡",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 25.96,
+          "low": 23.23,
+          "mid": 24.59,
+          "ma12": 24.82,
+          "ma48": 24.51,
+          "supports": [
+            "30分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 25.5,
+          "low": 24.3,
+          "mid": 24.9,
+          "ma12": 24.74,
+          "ma48": 24.87,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "潜在一买观察",
+          "action": "只观察，不提前抄底；等待底分型与低级别转强",
+          "entryZone": "24.32-26.87",
+          "firstPosition": "0",
+          "add": 25.32,
+          "stop": 21.87,
+          "takeProfit": 30.34,
+          "conditions": [
+            "接近 20 日低点 22.55 后不再创新低",
+            "5分钟/30分钟出现转强并重新站回中位"
+          ],
+          "invalidation": [
+            "跌破 20 日低点 22.55，一买观察失败"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 23.8,
+          "r60": 7.1,
+          "r120": 9.5,
+          "score": 13.5,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "观察池",
+        "score": 75.3,
+        "focusArea": "黄金/贵金属",
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "relativeStrength": {
+          "r20": 23.8,
+          "r60": 7.1,
+          "r120": 9.5,
+          "score": 13.5,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "缠论买点：潜在一买观察",
+            "资金流：主力净流入 0.68 亿",
+            "财务质量：基本面支撑",
+            "公告事件：常规公告",
+            "风险收益比：按计划价 24.76 计算，约 1:1.93，最大亏损约 11.67%，目标空间约 22.54%",
+            "板块权重：黄金/贵金属"
+          ],
+          "failed": [
+            "趋势阶段：阶段1：筑底观察",
+            "相对强度：强度 13.5"
+          ],
+          "neutral": [],
+          "passCount": 6,
+          "failCount": 2,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 24.76,
+          "ratio": 1.93,
+          "maxLossPct": 11.67,
+          "targetGainPct": 22.54,
+          "text": "按计划价 24.76 计算，约 1:1.93，最大亏损约 11.67%，目标空间约 22.54%"
+        },
+        "buyType": "潜在一买观察",
+        "action": "只观察，不提前抄底；等待底分型与低级别转强",
+        "nextAction": "保留观察，等待评分或买点改善。",
+        "entryZone": "24.32-26.87",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 25.32 后，且 30分钟/5分钟继续偏强",
+        "stop": 21.87,
+        "takeProfit": 30.34,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "接近 20 日低点 22.55 后不再创新低",
+          "5分钟/30分钟出现转强并重新站回中位"
+        ],
+        "trigger": "等待 30分钟和5分钟同时转强，再按 24.32-26.87 评估；当前不追高。",
+        "support": [
+          "成交额 13.93 亿元，流动性较好",
+          "PE 22.13，估值未进入极端异常区",
+          "主力净流入 0.68 亿元",
+          "归属板块：黄金/贵金属；命中：黄金、贵金属",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "归母净利润同比增长 40.87%",
+          "营业收入同比增长 25.37%",
+          "经营现金流为正 60.95 亿元",
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "策略通过：缠论买点：潜在一买观察"
+        ],
+        "risk": [
+          "跌破 20 日低点 22.55，一买观察失败",
+          "策略否决：趋势阶段：阶段1：筑底观察",
+          "策略否决：相对强度：强度 13.5"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "600489",
+      "name": "中金黄金",
+      "price": 19.99,
+      "pct": -0.65,
+      "change": -0.13,
+      "amountYi": 15.61,
+      "volumeHands": 773828.38,
+      "high": 20.57,
+      "low": 19.84,
+      "open": 19.99,
+      "prevClose": 20.12,
+      "turnover": 1.6,
+      "pe": 15.44,
+      "pb": null,
+      "mainNetInflowYi": 0.55,
+      "amplitude": 3.63,
+      "marketCapYi": 968.98,
+      "boards": [
+        {
+          "name": "黄金/贵金属维护型补位池",
+          "code": "seed-黄金/贵金属",
+          "source": "新浪财经实时行情"
+        }
+      ],
+      "sectorScores": {
+        "黄金/贵金属": 3
+      },
+      "sectorGroup": "黄金/贵金属",
+      "sectorPriority": 56,
+      "quick": {
+        "score": 18,
+        "supports": [
+          "成交额 15.61 亿元，流动性较好",
+          "PE 15.44，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "黄金/贵金属",
+        "sectorPriority": 56,
+        "sectorQuota": 3,
+        "hits": [
+          "黄金",
+          "贵金属"
+        ],
+        "text": "归属板块：黄金/贵金属；命中：黄金、贵金属"
+      },
+      "profile": {
+        "industryPath": "有色金属-贵金属-黄金",
+        "concepts": [
+          "稀缺资源",
+          "黄金概念",
+          "央国企改革",
+          "化债(AMC)概念",
+          "贬值受益",
+          "HS300_",
+          "中字头",
+          "融资融券",
+          "上证180_",
+          "沪股通"
+        ],
+        "region": "北京市",
+        "profile": "中金黄金股份有限公司(以下简称股份公司或公司)成立于2000年6月23日,由中国黄金集团有限公司(以下简称集团公司)的前身中国黄金总公司作为主发起人,联合其它6家企业共同发起设立。2003年8月14日,公司在全国黄金行业率先上市,被业界誉为“中国黄金第一股”,股票简称“中金黄金”,股票代码“600489”。公司是国内黄金矿业目前唯一一家央企控股的矿业上市公司"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": 0.55,
+        "smallNetInflowYi": -0.65,
+        "mediumNetInflowYi": 0.1,
+        "largeNetInflowYi": -0.11,
+        "superLargeNetInflowYi": 0.66,
+        "mainNetInflowPct": 3.54,
+        "largeNetInflowPct": -0.71,
+        "superLargeNetInflowPct": 4.25
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 7,
+        "supports": [
+          "归母净利润同比增长 129.23%",
+          "营业收入同比增长 52.01%",
+          "资产负债率 43.01%，财务压力可控"
+        ],
+        "risks": [
+          "经营现金流为负 -21.68 亿元"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 225.88,
+        "revenueYoY": 52.01,
+        "netProfitYi": 23.81,
+        "netProfitYoY": 129.23,
+        "operatingCashflowYi": -21.68,
+        "debtAssetRatio": 43.01,
+        "grossMargin": 20.47,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告偏正面",
+        "score": 3,
+        "latest": [
+          {
+            "title": "中金黄金:中金黄金股份有限公司第八届董事会第十一次会议决议公告",
+            "date": "2026-07-14",
+            "type": "董事会决议公告",
+            "artCode": "AN202607131826928075",
+            "url": "https://data.eastmoney.com/notices/detail/600489/AN202607131826928075.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "中金黄金:中金黄金股份有限公司2026年半年度业绩预增公告",
+            "date": "2026-07-14",
+            "type": "业绩预告",
+            "artCode": "AN202607131826928076",
+            "url": "https://data.eastmoney.com/notices/detail/600489/AN202607131826928076.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "中金黄金:中金黄金股份有限公司关于全资子公司河南中原黄金冶炼厂有限责任公司开展套期保值业务的公告",
+            "date": "2026-07-14",
+            "type": "其他",
+            "artCode": "AN202607131826928074",
+            "url": "https://data.eastmoney.com/notices/detail/600489/AN202607131826928074.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "中金黄金:北京大成律师事务所关于中金黄金股份有限公司2025年年度股东会之法律意见书",
+            "date": "2026-06-24",
+            "type": "法律意见书",
+            "artCode": "AN202606231823777146",
+            "url": "https://data.eastmoney.com/notices/detail/600489/AN202606231823777146.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "中金黄金:中金黄金股份有限公司2025年年度股东会决议公告",
+            "date": "2026-06-24",
+            "type": "分配方案决议公告、股东大会决议公告",
+            "artCode": "AN202606231823777143",
+            "url": "https://data.eastmoney.com/notices/detail/600489/AN202606231823777143.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "中金黄金:中金黄金股份有限公司2025年年度股东会会议资料",
+            "date": "2026-06-10",
+            "type": "股东大会资料",
+            "artCode": "AN202606091823389628",
+            "url": "https://data.eastmoney.com/notices/detail/600489/AN202606091823389628.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [
+          "2026-07-14 中金黄金:中金黄金股份有限公司2026年半年度业绩预增公告"
+        ],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "震荡观察",
+        "score": 0.5,
+        "lastDate": "2026-07-16",
+        "close": 19.99,
+        "ma5": 20.12,
+        "ma20": 19.79,
+        "ma60": 22.75,
+        "high20": 22.78,
+        "low20": 17.56,
+        "mid20": 20.17,
+        "supports": [
+          "日线 MA5 高于 MA20，短线趋势偏强"
+        ],
+        "risks": [],
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "momentum": {
+          "r20": -11.94,
+          "r60": -25.69,
+          "r120": -23.56,
+          "rpsProxy": 17.4,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 21.06,
+          "low": 18.95,
+          "mid": 20,
+          "ma12": 20.16,
+          "ma48": 19.99,
+          "supports": [],
+          "risks": [
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 20.57,
+          "low": 19.84,
+          "mid": 20.2,
+          "ma12": 19.98,
+          "ma48": 20.16,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "潜在一买观察",
+          "action": "只观察，不提前抄底；等待底分型与低级别转强",
+          "entryZone": "19.23-21.63",
+          "firstPosition": "0",
+          "add": 20.17,
+          "stop": 17.03,
+          "takeProfit": 24.6,
+          "conditions": [
+            "接近 20 日低点 17.56 后不再创新低",
+            "5分钟/30分钟出现转强并重新站回中位"
+          ],
+          "invalidation": [
+            "跌破 20 日低点 17.56，一买观察失败"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 31,
+          "r60": 23.8,
+          "r120": 35.7,
+          "score": 30.2,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "观察池",
+        "score": 59.2,
+        "focusArea": "黄金/贵金属",
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "relativeStrength": {
+          "r20": 31,
+          "r60": 23.8,
+          "r120": 35.7,
+          "score": 30.2,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "缠论买点：潜在一买观察",
+            "资金流：主力净流入 0.55 亿",
+            "财务质量：基本面支撑",
+            "公告事件：公告偏正面",
+            "板块权重：黄金/贵金属"
+          ],
+          "failed": [
+            "趋势阶段：阶段1：筑底观察",
+            "相对强度：强度 30.2",
+            "风险收益比：按计划价 19.99 计算，约 1:1.56，最大亏损约 14.81%，目标空间约 23.06%"
+          ],
+          "neutral": [],
+          "passCount": 5,
+          "failCount": 3,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 19.99,
+          "ratio": 1.56,
+          "maxLossPct": 14.81,
+          "targetGainPct": 23.06,
+          "text": "按计划价 19.99 计算，约 1:1.56，最大亏损约 14.81%，目标空间约 23.06%"
+        },
+        "buyType": "潜在一买观察",
+        "action": "只观察，不提前抄底；等待底分型与低级别转强",
+        "nextAction": "保留观察，等待评分或买点改善。",
+        "entryZone": "19.23-21.63",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 20.17 后，且 30分钟/5分钟继续偏强",
+        "stop": 17.03,
+        "takeProfit": 24.6,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "接近 20 日低点 17.56 后不再创新低",
+          "5分钟/30分钟出现转强并重新站回中位"
+        ],
+        "trigger": "等待 30分钟和5分钟同时转强，再按 19.23-21.63 评估；当前不追高。",
+        "support": [
+          "成交额 15.61 亿元，流动性较好",
+          "PE 15.44，估值未进入极端异常区",
+          "主力净流入 0.55 亿元",
+          "归属板块：黄金/贵金属；命中：黄金、贵金属",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "归母净利润同比增长 129.23%",
+          "营业收入同比增长 52.01%",
+          "资产负债率 43.01%，财务压力可控",
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "2026-07-14 中金黄金:中金黄金股份有限公司2026年半年度业绩预增公告"
+        ],
+        "risk": [
+          "经营现金流为负 -21.68 亿元",
+          "跌破 20 日低点 17.56，一买观察失败",
+          "策略否决：趋势阶段：阶段1：筑底观察",
+          "策略否决：相对强度：强度 30.2",
+          "策略否决：风险收益比：按计划价 19.99 计算，约 1:1.56，最大亏损约 14.81%，目标空间约 23.06%"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "600309",
+      "name": "万华化学",
+      "price": 68.36,
+      "pct": -2.47,
+      "change": -1.73,
+      "volumeHands": 357405.17,
+      "amountYi": 24.67,
+      "amplitude": null,
+      "turnover": 1.14,
+      "pe": 17.13,
+      "volumeRatio": null,
+      "high": 70.8,
+      "low": 68.24,
+      "open": 69.69,
+      "prevClose": 70.09,
+      "marketCapYi": 2139.99,
+      "floatCapYi": 2139.99,
+      "pb": 1.92,
+      "mainNetInflowYi": -0.91,
+      "boards": [
+        {
+          "code": "chgn_701245",
+          "name": "低空经济",
+          "pct": -2.29,
+          "amountYi": 1905.48,
+          "turnover": 2.91,
+          "source": "新浪财经热门概念",
+          "sector": "低空经济/航空航天",
+          "sectorPriority": 72,
+          "sectorHits": [
+            "低空经济"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "name": "资源周期/化工维护型补位池",
+          "code": "seed-资源周期/化工",
+          "source": "新浪财经实时行情"
+        }
+      ],
+      "sectorScores": {
+        "低空经济/航空航天": 1,
+        "资源周期/化工": 3
+      },
+      "sectorGroup": "资源周期/化工",
+      "sectorPriority": 54,
+      "quick": {
+        "score": 18,
+        "supports": [
+          "成交额 24.67 亿元，流动性较好",
+          "PE 17.13，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "资源周期/化工",
+        "sectorPriority": 54,
+        "sectorQuota": 3,
+        "hits": [
+          "锂",
+          "锂电",
+          "电池"
+        ],
+        "text": "归属板块：资源周期/化工；命中：锂、锂电、电池"
+      },
+      "profile": {
+        "industryPath": "基础化工-化学原料-聚氨酯",
+        "concepts": [
+          "煤化工概念",
+          "创投",
+          "化工原料",
+          "新材料",
+          "锂电池概念",
+          "央国企改革",
+          "环氧丙烷",
+          "电池技术",
+          "HS300_",
+          "机构重仓"
+        ],
+        "region": "山东省",
+        "profile": "万华化学集团股份有限公司是一家全球化运营的化工新材料公司,依托不断创新的核心技术、产业化装置及高效的运营模式,为客户提供更具竞争力的产品及解决方案。万华化学始终坚持以技术创新为第一核心竞争力,持续优化产业结构,业务涵盖聚氨酯、石化、精细化学品、新兴材料、未来产业五大产业集群。所服务的行业主要包括:生活家居、运动休闲、汽车交通、建筑工业、电子电气、个人护理和绿"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": -0.91,
+        "smallNetInflowYi": 1.45,
+        "mediumNetInflowYi": -0.54,
+        "largeNetInflowYi": -0.2,
+        "superLargeNetInflowYi": -0.71,
+        "mainNetInflowPct": -3.69,
+        "largeNetInflowPct": -0.8,
+        "superLargeNetInflowPct": -2.89
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 12,
+        "supports": [
+          "归母净利润同比增长 20.62%",
+          "营业收入同比增长 25.5%",
+          "经营现金流为正 68.57 亿元"
+        ],
+        "risks": [],
+        "reportDate": "2026-03-31",
+        "revenueYi": 540.52,
+        "revenueYoY": 25.5,
+        "netProfitYi": 37.18,
+        "netProfitYoY": 20.62,
+        "operatingCashflowYi": 68.57,
+        "debtAssetRatio": 64.32,
+        "grossMargin": 14.73,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告偏正面",
+        "score": 3,
+        "latest": [
+          {
+            "title": "万华化学:万华化学关于子公司匈牙利宝思德化学公司装置停产检修的公告",
+            "date": "2026-07-15",
+            "type": "其他",
+            "artCode": "AN202607141826956222",
+            "url": "https://data.eastmoney.com/notices/detail/600309/AN202607141826956222.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "万华化学:万华化学2026年半年度业绩预增公告",
+            "date": "2026-07-07",
+            "type": "业绩预告",
+            "artCode": "AN202607061826746921",
+            "url": "https://data.eastmoney.com/notices/detail/600309/AN202607061826746921.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "万华化学:万华化学关于持股5%以上股东部分股份解除质押公告",
+            "date": "2026-06-24",
+            "type": "股份质押、冻结",
+            "artCode": "AN202606231823771683",
+            "url": "https://data.eastmoney.com/notices/detail/600309/AN202606231823771683.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "万华化学:万华化学关于董事会换届完成选举董事长、聘任总裁及其他高级管理人员、证券事务代表的公告",
+            "date": "2026-06-23",
+            "type": "高管人员任职变动",
+            "artCode": "AN202606221823743361",
+            "url": "https://data.eastmoney.com/notices/detail/600309/AN202606221823743361.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "万华化学:万华化学2026年第一次临时股东会决议公告",
+            "date": "2026-06-23",
+            "type": "股东大会决议公告、高管人员任职变动",
+            "artCode": "AN202606221823743360",
+            "url": "https://data.eastmoney.com/notices/detail/600309/AN202606221823743360.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "万华化学:万华化学福建工业园MDI装置停产检修公告",
+            "date": "2026-06-23",
+            "type": "其他",
+            "artCode": "AN202606221823743359",
+            "url": "https://data.eastmoney.com/notices/detail/600309/AN202606221823743359.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [
+          "2026-07-07 万华化学:万华化学2026年半年度业绩预增公告"
+        ],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": -18.5,
+        "lastDate": "2026-07-16",
+        "close": 68.36,
+        "ma5": 68.74,
+        "ma20": 70.37,
+        "ma60": 76.3,
+        "high20": 76.84,
+        "low20": 66,
+        "mid20": 71.42,
+        "supports": [],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "momentum": {
+          "r20": -3.43,
+          "r60": -22.11,
+          "r120": -12.13,
+          "rpsProxy": 29.9,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 70.8,
+          "low": 66.48,
+          "mid": 68.64,
+          "ma12": 69.25,
+          "ma48": 68.69,
+          "supports": [],
+          "risks": [
+            "30分钟收盘低于近 48 根均价",
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 70.8,
+          "low": 68.24,
+          "mid": 69.52,
+          "ma12": 68.62,
+          "ma48": 68.92,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 71.42,
+          "stop": 64.02,
+          "takeProfit": 82.99,
+          "conditions": [
+            "重新站回 MA20 70.37，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 66，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 54.8,
+          "r60": 28.6,
+          "r120": 54.8,
+          "score": 46.1,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 29.7,
+        "focusArea": "资源周期/化工",
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "relativeStrength": {
+          "r20": 54.8,
+          "r60": 28.6,
+          "r120": 54.8,
+          "score": 46.1,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "财务质量：基本面支撑",
+            "公告事件：公告偏正面",
+            "风险收益比：按计划价 68.36 计算，约 1:3.37，最大亏损约 6.35%，目标空间约 21.4%",
+            "板块权重：资源周期/化工"
+          ],
+          "failed": [
+            "趋势阶段：阶段4：下降趋势",
+            "缠论买点：无买点/风险段",
+            "相对强度：强度 46.1",
+            "资金流：主力净流入 -0.91 亿"
+          ],
+          "neutral": [],
+          "passCount": 4,
+          "failCount": 4,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 68.36,
+          "ratio": 3.37,
+          "maxLossPct": 6.35,
+          "targetGainPct": 21.4,
+          "text": "按计划价 68.36 计算，约 1:3.37，最大亏损约 6.35%，目标空间约 21.4%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 71.42 后，且 30分钟/5分钟继续偏强",
+        "stop": 64.02,
+        "takeProfit": 82.99,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 70.37，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 71.42 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 24.67 亿元，流动性较好",
+          "PE 17.13，估值未进入极端异常区",
+          "归属板块：资源周期/化工；命中：锂、锂电、电池",
+          "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "归母净利润同比增长 20.62%",
+          "营业收入同比增长 25.5%",
+          "经营现金流为正 68.57 亿元",
+          "2026-07-07 万华化学:万华化学2026年半年度业绩预增公告",
+          "策略通过：财务质量：基本面支撑",
+          "策略通过：公告事件：公告偏正面"
+        ],
+        "risk": [
+          "收盘低于 MA20，买点需要降级",
+          "有效跌破 20 日低点 66，技术面继续减分",
+          "策略否决：趋势阶段：阶段4：下降趋势",
+          "策略否决：缠论买点：无买点/风险段",
+          "策略否决：相对强度：强度 46.1",
+          "策略否决：资金流：主力净流入 -0.91 亿"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "603799",
+      "name": "华友钴业",
+      "price": 38.82,
+      "pct": -2.66,
+      "change": -1.06,
+      "volumeHands": 491331.02,
+      "amountYi": 19.24,
+      "amplitude": null,
+      "turnover": 2.6,
+      "pe": 11.62,
+      "volumeRatio": null,
+      "high": 39.75,
+      "low": 38.63,
+      "open": 39,
+      "prevClose": 39.88,
+      "marketCapYi": 735.07,
+      "floatCapYi": 732.77,
+      "pb": 1.46,
+      "mainNetInflowYi": -0.49,
+      "boards": [
+        {
+          "code": "chgn_700137",
+          "name": "储能",
+          "pct": -2.8,
+          "amountYi": 1681.57,
+          "turnover": 2.3,
+          "source": "新浪财经热门概念",
+          "sector": "新能源/电力设备",
+          "sectorPriority": 88,
+          "sectorHits": [
+            "储能"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "name": "资源周期/化工维护型补位池",
+          "code": "seed-资源周期/化工",
+          "source": "新浪财经实时行情"
+        }
+      ],
+      "sectorScores": {
+        "新能源/电力设备": 1,
+        "资源周期/化工": 3
+      },
+      "sectorGroup": "资源周期/化工",
+      "sectorPriority": 54,
+      "quick": {
+        "score": 18,
+        "supports": [
+          "成交额 19.24 亿元，流动性较好",
+          "PE 11.62，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "资源周期/化工",
+        "sectorPriority": 54,
+        "sectorQuota": 3,
+        "hits": [
+          "锂",
+          "锂电",
+          "电池",
+          "储能",
+          "新能源",
+          "固态电池"
+        ],
+        "text": "归属板块：资源周期/化工；命中：锂、锂电、电池、储能、新能源"
+      },
+      "profile": {
+        "industryPath": "有色金属-稀有金属-其他稀有小金属",
+        "concepts": [
+          "新材料",
+          "锂电池概念",
+          "小金属概念",
+          "新能源车",
+          "固态电池",
+          "动力电池回收",
+          "锂矿概念",
+          "电池技术",
+          "HS300_",
+          "融资融券"
+        ],
+        "region": "浙江省",
+        "profile": "浙江华友钴业股份有限公司(SH603799)成立于2002年,总部位于浙江桐乡,中国企业500强,是一家从事新能源锂电材料研发、制造的高新技术企业。经过二十多年的发展,公司构建了海外资源、国际制造、全球市场的经营格局;打造了新能源产业、新材料产业、印尼镍产业、非洲资源产业以及循环产业五大事业板块;业务涵盖镍钴锂资源开发、有色金属绿色精炼、锂电材料研发制造、资"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": -0.49,
+        "smallNetInflowYi": 0.87,
+        "mediumNetInflowYi": -0.38,
+        "largeNetInflowYi": -0.19,
+        "superLargeNetInflowYi": -0.3,
+        "mainNetInflowPct": -2.54,
+        "largeNetInflowPct": -1,
+        "superLargeNetInflowPct": -1.54
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 12,
+        "supports": [
+          "归母净利润同比增长 99.45%",
+          "营业收入同比增长 44.62%",
+          "经营现金流为正 11.75 亿元"
+        ],
+        "risks": [],
+        "reportDate": "2026-03-31",
+        "revenueYi": 258.04,
+        "revenueYoY": 44.62,
+        "netProfitYi": 24.97,
+        "netProfitYoY": 99.45,
+        "operatingCashflowYi": 11.75,
+        "debtAssetRatio": 63.57,
+        "grossMargin": 20.69,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告偏正面",
+        "score": 3,
+        "latest": [
+          {
+            "title": "华友钴业:华友钴业2022年员工持股计划第二次持有人会议决议公告",
+            "date": "2026-07-17",
+            "type": "员工持股计划",
+            "artCode": "AN202607161827023192",
+            "url": "https://data.eastmoney.com/notices/detail/603799/AN202607161827023192.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "华友钴业:华友钴业关于控股股东部分股份质押的公告",
+            "date": "2026-07-16",
+            "type": "股份质押、冻结",
+            "artCode": "AN202607151826991280",
+            "url": "https://data.eastmoney.com/notices/detail/603799/AN202607151826991280.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "华友钴业:华友钴业关于控股股东及其一致行动人部分股份质押的公告",
+            "date": "2026-07-11",
+            "type": "股份质押、冻结",
+            "artCode": "AN202607101826876160",
+            "url": "https://data.eastmoney.com/notices/detail/603799/AN202607101826876160.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "华友钴业:华友钴业关于对外担保的进展公告",
+            "date": "2026-07-10",
+            "type": "提供/对外担保公告",
+            "artCode": "AN202607091826844563",
+            "url": "https://data.eastmoney.com/notices/detail/603799/AN202607091826844563.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "华友钴业:华友钴业关于股权激励限制性股票回购注销实施公告",
+            "date": "2026-06-26",
+            "type": "回购实施公告",
+            "artCode": "AN202606251823850678",
+            "url": "https://data.eastmoney.com/notices/detail/603799/AN202606251823850678.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "华友钴业:华友钴业2026年度第七期科技创新债券发行结果公告",
+            "date": "2026-06-13",
+            "type": "其他、一般债券发行结果",
+            "artCode": "AN202606121823506473",
+            "url": "https://data.eastmoney.com/notices/detail/603799/AN202606121823506473.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [
+          "2026-06-26 华友钴业:华友钴业关于股权激励限制性股票回购注销实施公告"
+        ],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": -21,
+        "lastDate": "2026-07-16",
+        "close": 38.82,
+        "ma5": 40.21,
+        "ma20": 46.16,
+        "ma60": 54.22,
+        "high20": 55.5,
+        "low20": 38.63,
+        "mid20": 47.06,
+        "supports": [],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "momentum": {
+          "r20": -26.18,
+          "r60": -41.37,
+          "r120": -47.53,
+          "rpsProxy": 0,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 43.09,
+          "low": 38.63,
+          "mid": 40.86,
+          "ma12": 39.49,
+          "ma48": 40.5,
+          "supports": [],
+          "risks": [
+            "30分钟收盘低于近 48 根均价",
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 39.75,
+          "low": 38.63,
+          "mid": 39.19,
+          "ma12": 38.95,
+          "ma48": 39.2,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 47.06,
+          "stop": 37.47,
+          "takeProfit": 59.94,
+          "conditions": [
+            "重新站回 MA20 46.16，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 38.63，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 4.8,
+          "r60": 2.4,
+          "r120": 7.1,
+          "score": 4.8,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 23.8,
+        "focusArea": "资源周期/化工",
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "relativeStrength": {
+          "r20": 4.8,
+          "r60": 2.4,
+          "r120": 7.1,
+          "score": 4.8,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "财务质量：基本面支撑",
+            "公告事件：公告偏正面",
+            "风险收益比：按计划价 38.82 计算，约 1:15.63，最大亏损约 3.48%，目标空间约 54.4%",
+            "板块权重：资源周期/化工"
+          ],
+          "failed": [
+            "趋势阶段：阶段4：下降趋势",
+            "缠论买点：无买点/风险段",
+            "相对强度：强度 4.8",
+            "资金流：主力净流入 -0.49 亿"
+          ],
+          "neutral": [],
+          "passCount": 4,
+          "failCount": 4,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 38.82,
+          "ratio": 15.63,
+          "maxLossPct": 3.48,
+          "targetGainPct": 54.4,
+          "text": "按计划价 38.82 计算，约 1:15.63，最大亏损约 3.48%，目标空间约 54.4%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 47.06 后，且 30分钟/5分钟继续偏强",
+        "stop": 37.47,
+        "takeProfit": 59.94,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 46.16，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 47.06 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 19.24 亿元，流动性较好",
+          "PE 11.62，估值未进入极端异常区",
+          "归属板块：资源周期/化工；命中：锂、锂电、电池、储能、新能源",
+          "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "归母净利润同比增长 99.45%",
+          "营业收入同比增长 44.62%",
+          "经营现金流为正 11.75 亿元",
+          "2026-06-26 华友钴业:华友钴业关于股权激励限制性股票回购注销实施公告",
+          "策略通过：财务质量：基本面支撑",
+          "策略通过：公告事件：公告偏正面"
+        ],
+        "risk": [
+          "收盘低于 MA20，买点需要降级",
+          "有效跌破 20 日低点 38.63，技术面继续减分",
+          "策略否决：趋势阶段：阶段4：下降趋势",
+          "策略否决：缠论买点：无买点/风险段",
+          "策略否决：相对强度：强度 4.8",
+          "策略否决：资金流：主力净流入 -0.49 亿"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "002460",
+      "name": "赣锋锂业",
+      "price": 49.97,
+      "pct": -2.97,
+      "change": -1.53,
+      "volumeHands": 672465.45,
+      "amountYi": 33.98,
+      "amplitude": null,
+      "turnover": 5.55,
+      "pe": 62.46,
+      "volumeRatio": null,
+      "high": 52.49,
+      "low": 49.44,
+      "open": 50.6,
+      "prevClose": 51.5,
+      "marketCapYi": 1047.72,
+      "floatCapYi": 605.25,
+      "pb": 2.25,
+      "mainNetInflowYi": -1.32,
+      "boards": [
+        {
+          "code": "chgn_701245",
+          "name": "低空经济",
+          "pct": -2.29,
+          "amountYi": 1905.48,
+          "turnover": 2.91,
+          "source": "新浪财经热门概念",
+          "sector": "低空经济/航空航天",
+          "sectorPriority": 72,
+          "sectorHits": [
+            "低空经济"
+          ],
+          "memberCount": 400,
+          "derived": true
+        },
+        {
+          "name": "资源周期/化工维护型补位池",
+          "code": "seed-资源周期/化工",
+          "source": "新浪财经实时行情"
+        }
+      ],
+      "sectorScores": {
+        "低空经济/航空航天": 1,
+        "资源周期/化工": 3
+      },
+      "sectorGroup": "资源周期/化工",
+      "sectorPriority": 54,
+      "quick": {
+        "score": 18,
+        "supports": [
+          "成交额 33.98 亿元，流动性较好",
+          "PE 62.46，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "资源周期/化工",
+        "sectorPriority": 54,
+        "sectorQuota": 3,
+        "hits": [
+          "锂",
+          "锂电",
+          "电池",
+          "储能",
+          "新能源",
+          "固态电池"
+        ],
+        "text": "归属板块：资源周期/化工；命中：锂、锂电、电池、储能、新能源"
+      },
+      "profile": {
+        "industryPath": "有色金属-稀有金属-锂",
+        "concepts": [
+          "新材料",
+          "锂电池概念",
+          "特斯拉概念",
+          "小金属概念",
+          "新能源车",
+          "无线耳机",
+          "固态电池",
+          "储能概念",
+          "动力电池回收",
+          "锂矿概念"
+        ],
+        "region": "江西省",
+        "profile": "江西赣锋锂业集团股份有限公司业务贯穿资源开采、提炼加工、电池制造回收全产业链,产品被广泛应用于电动汽车、储能、3C产品、化学品及制药等领域。集团锂矿资源遍及全球,同时拥有“卤水提锂”、“矿石提锂”和“回收提锂”产业化技术;锂化合物、金属锂产能充足,在海内外设有多处生产基地;拥有完整的电池制造及回收技术,为电池生产商及电动汽车生产商提供可持续的增值解决方案。"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": -1.32,
+        "smallNetInflowYi": 0.23,
+        "mediumNetInflowYi": 1.09,
+        "largeNetInflowYi": -1.02,
+        "superLargeNetInflowYi": -0.3,
+        "mainNetInflowPct": -3.88,
+        "largeNetInflowPct": -3.01,
+        "superLargeNetInflowPct": -0.87
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 16,
+        "supports": [
+          "归母净利润同比增长 616.34%",
+          "营业收入同比增长 143.81%",
+          "经营现金流为正 7.87 亿元",
+          "毛利率约 29.72%"
+        ],
+        "risks": [],
+        "reportDate": "2026-03-31",
+        "revenueYi": 91.96,
+        "revenueYoY": 143.81,
+        "netProfitYi": 18.37,
+        "netProfitYoY": 616.34,
+        "operatingCashflowYi": 7.87,
+        "debtAssetRatio": 55.26,
+        "grossMargin": 29.72,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "常规公告",
+        "score": 0,
+        "latest": [
+          {
+            "title": "赣锋锂业:2026年半年度业绩预告",
+            "date": "2026-07-15",
+            "type": "业绩预告",
+            "artCode": "AN202607141826957400",
+            "url": "https://data.eastmoney.com/notices/detail/002460/AN202607141826957400.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "赣锋锂业:关于收到检察机关《不起诉决定书》的公告",
+            "date": "2026-07-11",
+            "type": "其他",
+            "artCode": "AN202607101826878491",
+            "url": "https://data.eastmoney.com/notices/detail/002460/AN202607101826878491.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "赣锋锂业:2025年度A股权益分派实施公告",
+            "date": "2026-07-07",
+            "type": "分配方案实施",
+            "artCode": "AN202607061826752487",
+            "url": "https://data.eastmoney.com/notices/detail/002460/AN202607061826752487.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "赣锋锂业:关于股东部分股份解除质押的公告",
+            "date": "2026-07-04",
+            "type": "股份质押、冻结",
+            "artCode": "AN202607031826703329",
+            "url": "https://data.eastmoney.com/notices/detail/002460/AN202607031826703329.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "赣锋锂业:H股公告",
+            "date": "2026-07-03",
+            "type": "其他",
+            "artCode": "AN202607021826659241",
+            "url": "https://data.eastmoney.com/notices/detail/002460/AN202607021826659241.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "赣锋锂业:关于股东部分股份质押的公告",
+            "date": "2026-07-02",
+            "type": "股份质押、冻结",
+            "artCode": "AN202607011826635692",
+            "url": "https://data.eastmoney.com/notices/detail/002460/AN202607011826635692.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "技术待确认",
+        "score": -21,
+        "lastDate": "2026-07-16",
+        "close": 49.97,
+        "ma5": 51.76,
+        "ma20": 61.52,
+        "ma60": 71.74,
+        "high20": 72.76,
+        "low20": 49.44,
+        "mid20": 61.1,
+        "supports": [],
+        "risks": [
+          "收盘低于 MA20，买点需要降级"
+        ],
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "momentum": {
+          "r20": -29.94,
+          "r60": -40.55,
+          "r120": -27.64,
+          "rpsProxy": 0,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 56.96,
+          "low": 49.44,
+          "mid": 53.2,
+          "ma12": 50.72,
+          "ma48": 52.49,
+          "supports": [],
+          "risks": [
+            "30分钟收盘低于近 48 根均价",
+            "30分钟仍在中位下方"
+          ]
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 52.49,
+          "low": 49.44,
+          "mid": 50.97,
+          "ma12": 50.52,
+          "ma48": 50.26,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "entryZone": "暂无",
+          "firstPosition": "0",
+          "add": 61.52,
+          "stop": 47.96,
+          "takeProfit": 78.58,
+          "conditions": [
+            "重新站回 MA20 61.52，且 30分钟/5分钟重新转强"
+          ],
+          "invalidation": [
+            "有效跌破 20 日低点 49.44，技术面继续减分"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 2.4,
+          "r60": 4.8,
+          "r120": 28.6,
+          "score": 11.9,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 21.4,
+        "focusArea": "资源周期/化工",
+        "trendStage": {
+          "stage": "阶段4：下降趋势",
+          "description": "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "score": -14
+        },
+        "relativeStrength": {
+          "r20": 2.4,
+          "r60": 4.8,
+          "r120": 28.6,
+          "score": 11.9,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "财务质量：基本面支撑",
+            "公告事件：常规公告",
+            "风险收益比：按计划价 49.97 计算，约 1:14.24，最大亏损约 4.02%，目标空间约 57.25%",
+            "板块权重：资源周期/化工"
+          ],
+          "failed": [
+            "趋势阶段：阶段4：下降趋势",
+            "缠论买点：无买点/风险段",
+            "相对强度：强度 11.9",
+            "资金流：主力净流入 -1.32 亿"
+          ],
+          "neutral": [],
+          "passCount": 4,
+          "failCount": 4,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 49.97,
+          "ratio": 14.24,
+          "maxLossPct": 4.02,
+          "targetGainPct": 57.25,
+          "text": "按计划价 49.97 计算，约 1:14.24，最大亏损约 4.02%，目标空间约 57.25%"
+        },
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "暂无",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 61.52 后，且 30分钟/5分钟继续偏强",
+        "stop": 47.96,
+        "takeProfit": 78.58,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "重新站回 MA20 61.52，且 30分钟/5分钟重新转强"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 61.52 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 33.98 亿元，流动性较好",
+          "PE 62.46，估值未进入极端异常区",
+          "归属板块：资源周期/化工；命中：锂、锂电、电池、储能、新能源",
+          "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "归母净利润同比增长 616.34%",
+          "营业收入同比增长 143.81%",
+          "经营现金流为正 7.87 亿元",
+          "策略通过：财务质量：基本面支撑",
+          "策略通过：公告事件：常规公告",
+          "策略通过：风险收益比：按计划价 49.97 计算，约 1:14.24，最大亏损约 4.02%，目标空间约 57.25%"
+        ],
+        "risk": [
+          "主力净流出 1.32 亿元",
+          "收盘低于 MA20，买点需要降级",
+          "有效跌破 20 日低点 49.44，技术面继续减分",
+          "策略否决：趋势阶段：阶段4：下降趋势",
+          "策略否决：缠论买点：无买点/风险段",
+          "策略否决：相对强度：强度 11.9",
+          "策略否决：资金流：主力净流入 -1.32 亿"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "600519",
+      "name": "贵州茅台",
+      "price": 1258.99,
+      "pct": 0.63,
+      "change": 7.93,
+      "amountYi": 59.88,
+      "volumeHands": 47611.14,
+      "high": 1267.97,
+      "low": 1245.05,
+      "open": 1252,
+      "prevClose": 1251.06,
+      "turnover": 0.38,
+      "pe": 19.03,
+      "pb": null,
+      "mainNetInflowYi": -0.79,
+      "amplitude": 1.83,
+      "marketCapYi": 15738.4,
+      "boards": [
+        {
+          "name": "大消费维护型补位池",
+          "code": "seed-大消费",
+          "source": "新浪财经实时行情"
+        }
+      ],
+      "sectorScores": {
+        "大消费": 3
+      },
+      "sectorGroup": "大消费",
+      "sectorPriority": 46,
+      "quick": {
+        "score": 18,
+        "supports": [
+          "成交额 59.88 亿元，流动性较好",
+          "PE 19.03，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "大消费",
+        "sectorPriority": 46,
+        "sectorQuota": 3,
+        "hits": [
+          "消费",
+          "食品",
+          "饮料",
+          "白酒"
+        ],
+        "text": "归属板块：大消费；命中：消费、食品、饮料、白酒"
+      },
+      "profile": {
+        "industryPath": "食品饮料-饮料-白酒",
+        "concepts": [
+          "西部大开发",
+          "电商概念",
+          "央国企改革",
+          "超级品牌",
+          "白酒",
+          "酿酒概念",
+          "味蕾经济",
+          "HS300_",
+          "机构重仓",
+          "融资融券"
+        ],
+        "region": "贵州省",
+        "profile": "贵州茅台酒股份有限公司(以下简称“公司”)成立于1999年11月20日,由中国贵州茅台酒厂(集团)有限责任公司(以下简称“茅台集团”)作为主发起人,联合另外七家单位共同发起设立,目前控股股东为茅台集团。公司总部位于贵州省北部风光旖旎的赤水河畔茅台镇,主营茅台酒及茅台酱香系列酒的生产与销售,主导产品贵州茅台酒是我国大曲酱香型白酒的鼻祖和典型代表,是有机食品和国"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": -0.79,
+        "smallNetInflowYi": 0,
+        "mediumNetInflowYi": 0.8,
+        "largeNetInflowYi": 0.82,
+        "superLargeNetInflowYi": -1.61,
+        "mainNetInflowPct": -1.32,
+        "largeNetInflowPct": 1.37,
+        "superLargeNetInflowPct": -2.69
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 20,
+        "supports": [
+          "归母净利润同比增长 1.47%",
+          "营业收入同比增长 6.34%",
+          "经营现金流为正 269.1 亿元",
+          "资产负债率 12.12%，财务压力可控",
+          "毛利率约 89.91%"
+        ],
+        "risks": [],
+        "reportDate": "2026-03-31",
+        "revenueYi": 547.03,
+        "revenueYoY": 6.34,
+        "netProfitYi": 272.43,
+        "netProfitYoY": 1.47,
+        "operatingCashflowYi": 269.1,
+        "debtAssetRatio": 12.12,
+        "grossMargin": 89.91,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "常规公告",
+        "score": 0,
+        "latest": [
+          {
+            "title": "贵州茅台:贵州茅台2025年年度权益分派实施公告",
+            "date": "2026-06-22",
+            "type": "分配方案实施",
+            "artCode": "AN202606211823708334",
+            "url": "https://data.eastmoney.com/notices/detail/600519/AN202606211823708334.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "贵州茅台:贵州茅台关于聘任董事会秘书的公告",
+            "date": "2026-06-12",
+            "type": "高管人员任职变动",
+            "artCode": "AN202606111823465368",
+            "url": "https://data.eastmoney.com/notices/detail/600519/AN202606111823465368.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "贵州茅台:北京市金杜律师事务所关于贵州茅台酒股份有限公司2025年度股东会之法律意见书",
+            "date": "2026-06-12",
+            "type": "法律意见书",
+            "artCode": "AN202606111823465367",
+            "url": "https://data.eastmoney.com/notices/detail/600519/AN202606111823465367.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "贵州茅台:贵州茅台第五届董事会2026年度第一次会议决议公告",
+            "date": "2026-06-12",
+            "type": "高管人员任职变动、董事会决议公告",
+            "artCode": "AN202606111823465369",
+            "url": "https://data.eastmoney.com/notices/detail/600519/AN202606111823465369.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "贵州茅台:贵州茅台关于职工董事选举结果的公告",
+            "date": "2026-06-12",
+            "type": "高管人员任职变动",
+            "artCode": "AN202606111823465370",
+            "url": "https://data.eastmoney.com/notices/detail/600519/AN202606111823465370.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "贵州茅台:贵州茅台2025年度股东会决议公告",
+            "date": "2026-06-12",
+            "type": "分配方案决议公告、股东大会决议公告、高管人员任职变动",
+            "artCode": "AN202606111823465366",
+            "url": "https://data.eastmoney.com/notices/detail/600519/AN202606111823465366.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "趋势偏强",
+        "score": 20.3,
+        "lastDate": "2026-07-16",
+        "close": 1258.99,
+        "ma5": 1228.18,
+        "ma20": 1207.81,
+        "ma60": 1288.57,
+        "high20": 1267.97,
+        "low20": 1151.01,
+        "mid20": 1209.49,
+        "supports": [
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "收盘接近 20 日高位，趋势保持强势"
+        ],
+        "risks": [],
+        "trendStage": {
+          "stage": "震荡过渡",
+          "description": "趋势阶段不够清晰，等待方向选择",
+          "score": -1
+        },
+        "momentum": {
+          "r20": 1.53,
+          "r60": -10.53,
+          "r120": -9.94,
+          "rpsProxy": 39.9,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": true,
+          "status": "30分钟确认偏强",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 1267.97,
+          "low": 1170.28,
+          "mid": 1219.13,
+          "ma12": 1255.6,
+          "ma48": 1217.62,
+          "supports": [
+            "30分钟短均线向上",
+            "30分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟震荡",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 1267.97,
+          "low": 1245.05,
+          "mid": 1256.51,
+          "ma12": 1260.39,
+          "ma48": 1258.55,
+          "supports": [
+            "5分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "chan": {
+          "buyType": "类三买观察",
+          "action": "不追高，等待突破后回踩不破再试仓",
+          "entryZone": "1188.44-1242.24",
+          "firstPosition": "0%-10%观察仓",
+          "add": 1228.18,
+          "stop": 1185.3,
+          "takeProfit": 1369.41,
+          "conditions": [
+            "放量突破或站稳 20 日高点 1267.97 后，回踩不破 1228.18",
+            "等待 5分钟确认后再动手"
+          ],
+          "invalidation": [
+            "跌回 20 日中位 1209.49 下方，类三买观察失效"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 66.7,
+          "r60": 42.9,
+          "r120": 61.9,
+          "score": 57.2,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "重点跟踪池",
+        "score": 90.3,
+        "focusArea": "大消费",
+        "trendStage": {
+          "stage": "震荡过渡",
+          "description": "趋势阶段不够清晰，等待方向选择",
+          "score": -1
+        },
+        "relativeStrength": {
+          "r20": 66.7,
+          "r60": 42.9,
+          "r120": 61.9,
+          "score": 57.2,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "缠论买点：类三买观察",
+            "财务质量：基本面支撑",
+            "公告事件：常规公告",
+            "风险收益比：按计划价 1242.24 计算，约 1:2.24，最大亏损约 4.58%，目标空间约 10.24%"
+          ],
+          "failed": [
+            "趋势阶段：震荡过渡",
+            "相对强度：强度 57.2",
+            "资金流：主力净流入 -0.79 亿",
+            "板块权重：大消费"
+          ],
+          "neutral": [],
+          "passCount": 4,
+          "failCount": 4,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 1242.24,
+          "ratio": 2.24,
+          "maxLossPct": 4.58,
+          "targetGainPct": 10.24,
+          "text": "按计划价 1242.24 计算，约 1:2.24，最大亏损约 4.58%，目标空间约 10.24%"
+        },
+        "buyType": "类三买观察",
+        "action": "不追高，等待突破后回踩不破再试仓",
+        "nextAction": "加入盘中观察，等待 5分钟确认或回踩关键位。",
+        "entryZone": "1188.44-1242.24",
+        "firstPosition": "0%-10%观察仓",
+        "addCondition": "站稳或回踩不破 1228.18 后，且 30分钟/5分钟继续偏强",
+        "stop": 1185.3,
+        "takeProfit": 1369.41,
+        "trackingPeriod": "推荐后先按 3-15 个交易日跟踪，未触发条件不执行",
+        "conditions": [
+          "放量突破或站稳 20 日高点 1267.97 后，回踩不破 1228.18",
+          "等待 5分钟确认后再动手"
+        ],
+        "trigger": "等待突破或站稳 1267.97 后回踩不破 1228.18；若跌破 1185.3 或风险收益比低于 1:1.8，取消交易计划。",
+        "support": [
+          "成交额 59.88 亿元，流动性较好",
+          "PE 19.03，估值未进入极端异常区",
+          "归属板块：大消费；命中：消费、食品、饮料、白酒",
+          "趋势阶段不够清晰，等待方向选择",
+          "归母净利润同比增长 1.47%",
+          "营业收入同比增长 6.34%",
+          "经营现金流为正 269.1 亿元",
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "收盘接近 20 日高位，趋势保持强势",
+          "策略通过：缠论买点：类三买观察"
+        ],
+        "risk": [
+          "跌回 20 日中位 1209.49 下方，类三买观察失效",
+          "策略否决：趋势阶段：震荡过渡",
+          "策略否决：相对强度：强度 57.2",
+          "策略否决：资金流：主力净流入 -0.79 亿",
+          "策略否决：板块权重：大消费"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "000858",
+      "name": "五 粮 液",
+      "price": 73.9,
+      "pct": 0.11,
+      "change": 0.08,
+      "amountYi": 35.99,
+      "volumeHands": 488920.65,
+      "high": 74.59,
+      "low": 72.6,
+      "open": 73.33,
+      "prevClose": 73.82,
+      "turnover": 1.26,
+      "pe": 22.76,
+      "pb": null,
+      "mainNetInflowYi": -0.19,
+      "amplitude": 2.7,
+      "marketCapYi": 2868.51,
+      "boards": [
+        {
+          "name": "大消费维护型补位池",
+          "code": "seed-大消费",
+          "source": "新浪财经实时行情"
+        }
+      ],
+      "sectorScores": {
+        "大消费": 3
+      },
+      "sectorGroup": "大消费",
+      "sectorPriority": 46,
+      "quick": {
+        "score": 18,
+        "supports": [
+          "成交额 35.99 亿元，流动性较好",
+          "PE 22.76，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "大消费",
+        "sectorPriority": 46,
+        "sectorQuota": 3,
+        "hits": [
+          "消费",
+          "食品",
+          "饮料",
+          "白酒"
+        ],
+        "text": "归属板块：大消费；命中：消费、食品、饮料、白酒"
+      },
+      "profile": {
+        "industryPath": "食品饮料-饮料-白酒",
+        "concepts": [
+          "参股银行",
+          "成渝特区",
+          "西部大开发",
+          "电商概念",
+          "央国企改革",
+          "超级品牌",
+          "新零售",
+          "白酒",
+          "酿酒概念",
+          "味蕾经济"
+        ],
+        "region": "四川省",
+        "profile": "宜宾五粮液股份有限公司(以下简称公司)成立于1998年4月21日,公司位于有四千多年酿酒史的世界十大烈酒产区之一、长江首城、中国酒都宜宾,被联合国教科文及粮农组织誉为“在地球同纬度上最适合酿造优质纯正蒸馏白酒的地区”。主要产品“五粮液酒”是我国浓香型白酒的典型代表,是国家地理标志产品和首批受欧盟保护的中国首批地理标志产品,并根据生产工艺特点和市场需求开发了五"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": -0.19,
+        "smallNetInflowYi": 0.26,
+        "mediumNetInflowYi": -0.08,
+        "largeNetInflowYi": -0.28,
+        "superLargeNetInflowYi": 0.09,
+        "mainNetInflowPct": -0.52,
+        "largeNetInflowPct": -0.77,
+        "superLargeNetInflowPct": 0.25
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 11,
+        "supports": [
+          "归母净利润同比增长 82.57%",
+          "营业收入同比增长 33.67%",
+          "资产负债率 34.31%，财务压力可控",
+          "毛利率约 81.43%"
+        ],
+        "risks": [
+          "经营现金流为负 -25.35 亿元"
+        ],
+        "reportDate": "2026-03-31",
+        "revenueYi": 228.38,
+        "revenueYoY": 33.67,
+        "netProfitYi": 80.63,
+        "netProfitYoY": 82.57,
+        "operatingCashflowYi": -25.35,
+        "debtAssetRatio": 34.31,
+        "grossMargin": 81.43,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告偏正面",
+        "score": 9,
+        "latest": [
+          {
+            "title": "五粮液:关于2025年度分红派息实施后调整回购股份价格上限的公告",
+            "date": "2026-07-16",
+            "type": "回购方案修订",
+            "artCode": "AN202607151826995006",
+            "url": "https://data.eastmoney.com/notices/detail/000858/AN202607151826995006.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "五粮液:2026年半年度业绩预告",
+            "date": "2026-07-15",
+            "type": "业绩预告",
+            "artCode": "AN202607141826963195",
+            "url": "https://data.eastmoney.com/notices/detail/000858/AN202607141826963195.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "五粮液:2025年度分红派息实施公告",
+            "date": "2026-07-10",
+            "type": "分配方案实施",
+            "artCode": "AN202607091826850562",
+            "url": "https://data.eastmoney.com/notices/detail/000858/AN202607091826850562.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "五粮液:关于回购公司股份进展的公告",
+            "date": "2026-07-03",
+            "type": "回购进展情况",
+            "artCode": "AN202607021826662721",
+            "url": "https://data.eastmoney.com/notices/detail/000858/AN202607021826662721.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "五粮液:2026年6月26日投资者关系活动记录表",
+            "date": "2026-06-30",
+            "type": "调研活动",
+            "artCode": "AN202606301826601270",
+            "url": "https://data.eastmoney.com/notices/detail/000858/AN202606301826601270.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "五粮液:第七届董事会2026年第7次会议决议公告",
+            "date": "2026-06-27",
+            "type": "高管人员任职变动、董事会决议公告",
+            "artCode": "AN202606261824706780",
+            "url": "https://data.eastmoney.com/notices/detail/000858/AN202606261824706780.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [
+          "2026-07-16 五粮液:关于2025年度分红派息实施后调整回购股份价格上限的公告",
+          "2026-07-03 五粮液:关于回购公司股份进展的公告",
+          "2026-06-30 五粮液:2026年6月26日投资者关系活动记录表"
+        ],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "震荡观察",
+        "score": 5.4,
+        "lastDate": "2026-07-16",
+        "close": 73.9,
+        "ma5": 74.04,
+        "ma20": 73.8,
+        "ma60": 83.16,
+        "high20": 78.32,
+        "low20": 70.52,
+        "mid20": 74.42,
+        "supports": [
+          "日线 MA5 高于 MA20，短线趋势偏强"
+        ],
+        "risks": [],
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "momentum": {
+          "r20": -4.63,
+          "r60": -27.45,
+          "r120": -30.96,
+          "rpsProxy": 16.4,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟震荡",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 76.47,
+          "low": 70.52,
+          "mid": 73.5,
+          "ma12": 74.55,
+          "ma48": 73.26,
+          "supports": [
+            "30分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": true,
+          "status": "5分钟确认偏强",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 74.59,
+          "low": 72.6,
+          "mid": 73.59,
+          "ma12": 73.89,
+          "ma48": 73.71,
+          "supports": [
+            "5分钟短均线向上",
+            "5分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "chan": {
+          "buyType": "潜在一买观察",
+          "action": "只观察，不提前抄底；等待底分型与低级别转强",
+          "entryZone": "73.02-76.6",
+          "firstPosition": "0",
+          "add": 74.42,
+          "stop": 68.4,
+          "takeProfit": 84.59,
+          "conditions": [
+            "接近 20 日低点 70.52 后不再创新低",
+            "5分钟/30分钟出现转强并重新站回中位"
+          ],
+          "invalidation": [
+            "跌破 20 日低点 70.52，一买观察失败"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 42.9,
+          "r60": 19,
+          "r120": 23.8,
+          "score": 28.6,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "观察池",
+        "score": 73,
+        "focusArea": "大消费",
+        "trendStage": {
+          "stage": "阶段1：筑底观察",
+          "description": "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "score": -4
+        },
+        "relativeStrength": {
+          "r20": 42.9,
+          "r60": 19,
+          "r120": 23.8,
+          "score": 28.6,
+          "rankText": "候选池相对强度偏弱",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "缠论买点：潜在一买观察",
+            "财务质量：基本面支撑",
+            "公告事件：公告偏正面",
+            "风险收益比：按计划价 73.9 计算，约 1:1.94，最大亏损约 7.44%，目标空间约 14.47%"
+          ],
+          "failed": [
+            "趋势阶段：阶段1：筑底观察",
+            "相对强度：强度 28.6",
+            "资金流：主力净流入 -0.19 亿",
+            "板块权重：大消费"
+          ],
+          "neutral": [],
+          "passCount": 4,
+          "failCount": 4,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 73.9,
+          "ratio": 1.94,
+          "maxLossPct": 7.44,
+          "targetGainPct": 14.47,
+          "text": "按计划价 73.9 计算，约 1:1.94，最大亏损约 7.44%，目标空间约 14.47%"
+        },
+        "buyType": "潜在一买观察",
+        "action": "只观察，不提前抄底；等待底分型与低级别转强",
+        "nextAction": "保留观察，等待评分或买点改善。",
+        "entryZone": "73.02-76.6",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 74.42 后，且 30分钟/5分钟继续偏强",
+        "stop": 68.4,
+        "takeProfit": 84.59,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "接近 20 日低点 70.52 后不再创新低",
+          "5分钟/30分钟出现转强并重新站回中位"
+        ],
+        "trigger": "等待 30分钟和5分钟同时转强，再按 73.02-76.6 评估；当前不追高。",
+        "support": [
+          "成交额 35.99 亿元，流动性较好",
+          "PE 22.76，估值未进入极端异常区",
+          "归属板块：大消费；命中：消费、食品、饮料、白酒",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "归母净利润同比增长 82.57%",
+          "营业收入同比增长 33.67%",
+          "资产负债率 34.31%，财务压力可控",
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "2026-07-16 五粮液:关于2025年度分红派息实施后调整回购股份价格上限的公告",
+          "2026-07-03 五粮液:关于回购公司股份进展的公告"
+        ],
+        "risk": [
+          "经营现金流为负 -25.35 亿元",
+          "跌破 20 日低点 70.52，一买观察失败",
+          "策略否决：趋势阶段：阶段1：筑底观察",
+          "策略否决：相对强度：强度 28.6",
+          "策略否决：资金流：主力净流入 -0.19 亿",
+          "策略否决：板块权重：大消费"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    },
+    {
+      "code": "000333",
+      "name": "美的集团",
+      "price": 81.8,
+      "pct": -1.05,
+      "change": -0.87,
+      "amountYi": 29.83,
+      "volumeHands": 362382.35,
+      "high": 83.45,
+      "low": 81.8,
+      "open": 82.15,
+      "prevClose": 82.67,
+      "turnover": 0.53,
+      "pe": 14.1,
+      "pb": null,
+      "mainNetInflowYi": -2.26,
+      "amplitude": 2,
+      "marketCapYi": 6232.06,
+      "boards": [
+        {
+          "name": "大消费维护型补位池",
+          "code": "seed-大消费",
+          "source": "新浪财经实时行情"
+        }
+      ],
+      "sectorScores": {
+        "大消费": 3
+      },
+      "sectorGroup": "大消费",
+      "sectorPriority": 46,
+      "quick": {
+        "score": 18,
+        "supports": [
+          "成交额 29.83 亿元，流动性较好",
+          "PE 14.1，估值未进入极端异常区"
+        ],
+        "risks": []
+      },
+      "focus": {
+        "area": "大消费",
+        "sectorPriority": 46,
+        "sectorQuota": 3,
+        "hits": [
+          "芯片",
+          "数据中心"
+        ],
+        "text": "归属板块：大消费；命中：芯片、数据中心"
+      },
+      "profile": {
+        "industryPath": "家电-白色家电-白色家电",
+        "concepts": [
+          "参股银行",
+          "物联网",
+          "医疗器械概念",
+          "智能家居",
+          "国产芯片",
+          "新能源车",
+          "超级品牌",
+          "工业互联",
+          "数据中心",
+          "鸿蒙概念"
+        ],
+        "region": "广东省",
+        "profile": "美的集团股份有限公司是一家覆盖智能家居、工业技术、智能建筑科技、机器人与自动化、能源、健康医疗、智慧物流等业务的全球化科技集团,过去五年研发资金超600亿元,形成美的、小天鹅,华凌、COLMO,库卡,威灵、合康、科陆、万东和菱王等多个品牌组合,每年为全球超过5亿用户,各领域的重要客户与战略合作伙伴提供满意的产品和服务。"
+      },
+      "capitalFlow": {
+        "source": "东方财富资金流",
+        "status": "已取得",
+        "date": "2026-07-16",
+        "mainNetInflowYi": -2.26,
+        "smallNetInflowYi": 0.57,
+        "mediumNetInflowYi": 1.69,
+        "largeNetInflowYi": -2.41,
+        "superLargeNetInflowYi": 0.15,
+        "mainNetInflowPct": -7.58,
+        "largeNetInflowPct": -8.09,
+        "superLargeNetInflowPct": 0.52
+      },
+      "financial": {
+        "status": "基本面支撑",
+        "score": 16,
+        "supports": [
+          "归母净利润同比增长 2.03%",
+          "营业收入同比增长 2.45%",
+          "经营现金流为正 145.29 亿元",
+          "毛利率约 25.84%"
+        ],
+        "risks": [],
+        "reportDate": "2026-03-31",
+        "revenueYi": 1315.81,
+        "revenueYoY": 2.45,
+        "netProfitYi": 126.75,
+        "netProfitYoY": 2.03,
+        "operatingCashflowYi": 145.29,
+        "debtAssetRatio": 60.02,
+        "grossMargin": 25.84,
+        "source": "东方财富财务报表"
+      },
+      "announcements": {
+        "status": "公告偏正面",
+        "score": 6,
+        "latest": [
+          {
+            "title": "美的集团:关于2023年限制性股票激励计划的第三次解除限售期解锁上市流通的提示性公告",
+            "date": "2026-07-16",
+            "type": "限售股份上市流通",
+            "artCode": "AN202607151826995372",
+            "url": "https://data.eastmoney.com/notices/detail/000333/AN202607151826995372.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "美的集团:关于自主行权模式下第九期股权激励计划第三个行权期符合行权条件开始行权的提示性公告",
+            "date": "2026-07-14",
+            "type": "股权激励进展公告",
+            "artCode": "AN202607131826930580",
+            "url": "https://data.eastmoney.com/notices/detail/000333/AN202607131826930580.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "美的集团:关于2022年限制性股票激励计划的第三次解除限售期解锁上市流通的提示性公告",
+            "date": "2026-07-09",
+            "type": "限售股份上市流通",
+            "artCode": "AN202607081826819756",
+            "url": "https://data.eastmoney.com/notices/detail/000333/AN202607081826819756.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "美的集团:关于以集中竞价交易方式回购A股股份达总股本1%的进展公告",
+            "date": "2026-07-09",
+            "type": "回购进展情况",
+            "artCode": "AN202607081826818798",
+            "url": "https://data.eastmoney.com/notices/detail/000333/AN202607081826818798.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "美的集团:关于以集中竞价交易方式回购A股股份进展情况的公告",
+            "date": "2026-07-03",
+            "type": "回购进展情况",
+            "artCode": "AN202607021826664192",
+            "url": "https://data.eastmoney.com/notices/detail/000333/AN202607021826664192.html",
+            "source": "东方财富公告"
+          },
+          {
+            "title": "美的集团:北京市嘉源律师事务所关于美的集团股份有限公司相关股票激励计划涉及的价格调整的法律意见书",
+            "date": "2026-07-01",
+            "type": "法律意见书",
+            "artCode": "AN202606301826596274",
+            "url": "https://data.eastmoney.com/notices/detail/000333/AN202606301826596274.html",
+            "source": "东方财富公告"
+          }
+        ],
+        "positives": [
+          "2026-07-09 美的集团:关于以集中竞价交易方式回购A股股份达总股本1%的进展公告",
+          "2026-07-03 美的集团:关于以集中竞价交易方式回购A股股份进展情况的公告"
+        ],
+        "risks": [],
+        "source": "东方财富公告"
+      },
+      "technical": {
+        "status": "趋势偏强",
+        "score": 14.8,
+        "lastDate": "2026-07-16",
+        "close": 81.8,
+        "ma5": 81.01,
+        "ma20": 78.71,
+        "ma60": 80.24,
+        "high20": 83.45,
+        "low20": 73.62,
+        "mid20": 78.53,
+        "supports": [
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "收盘接近 20 日高位，趋势保持强势"
+        ],
+        "risks": [],
+        "trendStage": {
+          "stage": "阶段3：高位震荡",
+          "description": "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+          "score": 2
+        },
+        "momentum": {
+          "r20": 3.26,
+          "r60": 4.01,
+          "r120": 6.03,
+          "rpsProxy": 57.1,
+          "note": "基于个股20/60/120日涨跌幅计算的动量代理；候选池相对排名在全部候选 enrich 完成后生成"
+        },
+        "m30": {
+          "label": "30分钟",
+          "confirmed": false,
+          "status": "30分钟震荡",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 83.45,
+          "low": 77.86,
+          "mid": 80.66,
+          "ma12": 82.24,
+          "ma48": 80.61,
+          "supports": [
+            "30分钟收盘在近 48 根中位上方"
+          ],
+          "risks": []
+        },
+        "m5": {
+          "label": "5分钟",
+          "confirmed": false,
+          "status": "5分钟待确认",
+          "lastDate": "2026-07-16 15:00:00",
+          "high": 83.45,
+          "low": 81.8,
+          "mid": 82.63,
+          "ma12": 81.92,
+          "ma48": 82.15,
+          "supports": [],
+          "risks": [
+            "5分钟收盘低于近 48 根均价",
+            "5分钟仍在中位下方"
+          ]
+        },
+        "chan": {
+          "buyType": "中枢上半区观察",
+          "action": "位置不差但低级别未确认，等待 30分钟转强",
+          "entryZone": "76.77-81.29",
+          "firstPosition": "0",
+          "add": 81.01,
+          "stop": 71.41,
+          "takeProfit": 90.13,
+          "conditions": [
+            "30分钟重新站回中位，并形成更高低点"
+          ],
+          "invalidation": [
+            "跌破 20 日中位 78.53，降级为震荡"
+          ],
+          "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+        },
+        "source": "东方财富复权日K、30分钟K、5分钟K",
+        "relativeStrength": {
+          "r20": 71.4,
+          "r60": 69,
+          "r120": 78.6,
+          "score": 73,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        }
+      },
+      "tradePlan": {
+        "state": "暂不交易",
+        "score": 73.1,
+        "focusArea": "大消费",
+        "trendStage": {
+          "stage": "阶段3：高位震荡",
+          "description": "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+          "score": 2
+        },
+        "relativeStrength": {
+          "r20": 71.4,
+          "r60": 69,
+          "r120": 78.6,
+          "score": 73,
+          "rankText": "候选池相对强度中等",
+          "source": "基于当前候选池20/60/120日涨跌幅排名，不等同全市场RPS"
+        },
+        "strategyVotes": {
+          "passed": [
+            "趋势阶段：阶段3：高位震荡",
+            "缠论买点：中枢上半区观察",
+            "相对强度：强度 73",
+            "财务质量：基本面支撑",
+            "公告事件：公告偏正面"
+          ],
+          "failed": [
+            "资金流：主力净流入 -2.26 亿",
+            "风险收益比：按计划价 81.29 计算，约 1:0.89，最大亏损约 12.15%，目标空间约 10.87%",
+            "板块权重：大消费"
+          ],
+          "neutral": [],
+          "passCount": 5,
+          "failCount": 3,
+          "neutralCount": 0
+        },
+        "riskReward": {
+          "entry": 81.29,
+          "ratio": 0.89,
+          "maxLossPct": 12.15,
+          "targetGainPct": 10.87,
+          "text": "按计划价 81.29 计算，约 1:0.89，最大亏损约 12.15%，目标空间约 10.87%"
+        },
+        "buyType": "中枢上半区观察",
+        "action": "位置不差但低级别未确认，等待 30分钟转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "entryZone": "76.77-81.29",
+        "firstPosition": "0",
+        "addCondition": "站稳或回踩不破 81.01 后，且 30分钟/5分钟继续偏强",
+        "stop": 71.41,
+        "takeProfit": 90.13,
+        "trackingPeriod": "暂不进入交易跟踪",
+        "conditions": [
+          "30分钟重新站回中位，并形成更高低点"
+        ],
+        "trigger": "暂不操作；只有重新站回关键位 81.01 且 5分钟转强，才重新评估。",
+        "support": [
+          "成交额 29.83 亿元，流动性较好",
+          "PE 14.1，估值未进入极端异常区",
+          "归属板块：大消费；命中：芯片、数据中心",
+          "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+          "归母净利润同比增长 2.03%",
+          "营业收入同比增长 2.45%",
+          "经营现金流为正 145.29 亿元",
+          "日线 MA5 高于 MA20，短线趋势偏强",
+          "收盘接近 20 日高位，趋势保持强势",
+          "2026-07-09 美的集团:关于以集中竞价交易方式回购A股股份达总股本1%的进展公告"
+        ],
+        "risk": [
+          "主力净流出 2.26 亿元",
+          "跌破 20 日中位 78.53，降级为震荡",
+          "策略否决：资金流：主力净流入 -2.26 亿",
+          "策略否决：风险收益比：按计划价 81.29 计算，约 1:0.89，最大亏损约 12.15%，目标空间约 10.87%",
+          "策略否决：板块权重：大消费"
+        ],
+        "caveat": "当前为实用版缠论近似判断：已使用日K、30分钟K、5分钟K做多周期确认；严格笔、线段、中枢、背驰自动识别后续再增强。"
+      }
+    }
+  ],
+  "candidateGroups": [
+    {
+      "name": "科技",
+      "priority": 100,
+      "candidates": [
+        "603228",
+        "603893",
+        "603501",
+        "688036",
+        "603991",
+        "300373",
+        "688213",
+        "605111",
+        "688608",
+        "600171",
+        "600641",
+        "688099",
+        "002049",
+        "605358",
+        "688018",
+        "000034"
+      ],
+      "count": 16
+    },
+    {
+      "name": "新能源/电力设备",
+      "priority": 88,
+      "candidates": [
+        "603236",
+        "603757",
+        "600839"
+      ],
+      "count": 3
+    },
+    {
+      "name": "机器人/智能制造",
+      "priority": 74,
+      "candidates": [
+        "600031",
+        "300124",
+        "603596"
+      ],
+      "count": 3
+    },
+    {
+      "name": "低空经济/航空航天",
+      "priority": 72,
+      "candidates": [
+        "603300",
+        "603950",
+        "002065"
+      ],
+      "count": 3
+    },
+    {
+      "name": "高端制造/汽车",
+      "priority": 70,
+      "candidates": [
+        "300588",
+        "688619",
+        "600843"
+      ],
+      "count": 3
+    },
+    {
+      "name": "医药医疗",
+      "priority": 62,
+      "candidates": [
+        "600521",
+        "300347",
+        "002294"
+      ],
+      "count": 3
+    },
+    {
+      "name": "军工国防",
+      "priority": 58,
+      "candidates": [
+        "600562",
+        "688002",
+        "002179"
+      ],
+      "count": 3
+    },
+    {
+      "name": "黄金/贵金属",
+      "priority": 56,
+      "candidates": [
+        "601899",
+        "600547",
+        "600489"
+      ],
+      "count": 3
+    },
+    {
+      "name": "资源周期/化工",
+      "priority": 54,
+      "candidates": [
+        "600309",
+        "603799",
+        "002460"
+      ],
+      "count": 3
+    },
+    {
+      "name": "大消费",
+      "priority": 46,
+      "candidates": [
+        "600519",
+        "000858",
+        "000333"
+      ],
+      "count": 3
+    }
+  ],
+  "sectorGroups": [
+    {
+      "name": "科技",
+      "priority": 100,
+      "count": 16,
+      "boards": [
+        {
+          "code": "sw2_270100",
+          "name": "半导体",
+          "pct": -5.99,
+          "amountYi": 4327.51,
+          "memberCount": 182,
+          "source": "新浪财经申万二级",
+          "derived": true
+        },
+        {
+          "code": "chgn_700458",
+          "name": "半导体",
+          "pct": -5.42,
+          "amountYi": 6958.16,
+          "memberCount": 400,
+          "source": "新浪财经热门概念",
+          "derived": true
+        },
+        {
+          "code": "sw3_270103",
+          "name": "半导体材料",
+          "pct": -8.77,
+          "amountYi": 483.81,
+          "memberCount": 29,
+          "source": "新浪财经申万三级",
+          "derived": true
+        },
+        {
+          "code": "chgn_701383",
+          "name": "半导体材料",
+          "pct": -6.56,
+          "amountYi": 1351.49,
+          "memberCount": 152,
+          "source": "新浪财经热门概念",
+          "derived": true
+        },
+        {
+          "code": "chgn_730608",
+          "name": "半导体检测",
+          "pct": -7.96,
+          "amountYi": 166.39,
+          "memberCount": 22,
+          "source": "新浪财经热门概念",
+          "derived": true
+        },
+        {
+          "code": "sw3_270108",
+          "name": "半导体设备",
+          "pct": -6.27,
+          "amountYi": 669.13,
+          "memberCount": 26,
+          "source": "新浪财经申万三级",
+          "derived": true
+        },
+        {
+          "code": "chgn_701279",
+          "name": "半导体设备",
+          "pct": -6.26,
+          "amountYi": 1665.26,
+          "memberCount": 171,
+          "source": "新浪财经热门概念",
+          "derived": true
+        },
+        {
+          "code": "sw3_710401",
+          "name": "垂直应用软件",
+          "pct": 0.31,
+          "amountYi": 302.27,
+          "memberCount": 101,
+          "source": "新浪财经申万三级",
+          "derived": true
+        },
+        {
+          "code": "chgn_700879",
+          "name": "存储概念",
+          "pct": -5.88,
+          "amountYi": 4723.65,
+          "memberCount": 205,
+          "source": "新浪财经热门概念",
+          "derived": true
+        },
+        {
+          "code": "chgn_700934",
+          "name": "第三代半导体",
+          "pct": -6.92,
+          "amountYi": 2445.36,
+          "memberCount": 192,
+          "source": "新浪财经热门概念",
+          "derived": true
+        },
+        {
+          "code": "sw_dz",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "memberCount": 400,
+          "source": "新浪财经申万行业",
+          "derived": true
+        },
+        {
+          "code": "sw1_270000",
+          "name": "电子",
+          "pct": -4.5,
+          "amountYi": 6844.15,
+          "memberCount": 400,
+          "source": "新浪财经申万一级",
+          "derived": true
+        }
+      ]
+    },
+    {
+      "name": "新能源/电力设备",
+      "priority": 88,
+      "count": 8,
+      "boards": [
+        {
+          "code": "chgn_701109",
+          "name": "4680电池",
+          "pct": -3.35,
+          "amountYi": 110.76,
+          "memberCount": 19,
+          "source": "新浪财经热门概念",
+          "derived": true
+        },
+        {
+          "code": "sw3_330401",
+          "name": "厨房电器",
+          "pct": 2.86,
+          "amountYi": 5.19,
+          "memberCount": 5,
+          "source": "新浪财经申万三级",
+          "derived": true
+        },
+        {
+          "code": "sw2_330400",
+          "name": "厨卫电器",
+          "pct": 2.51,
+          "amountYi": 6.35,
+          "memberCount": 8,
+          "source": "新浪财经申万二级",
+          "derived": true
+        },
+        {
+          "code": "chgn_700137",
+          "name": "储能",
+          "pct": -2.8,
+          "amountYi": 1681.57,
+          "memberCount": 400,
+          "source": "新浪财经热门概念",
+          "derived": true
+        },
+        {
+          "code": "chgn_730480",
+          "name": "刀片电池",
+          "pct": -1.71,
+          "amountYi": 193.61,
+          "memberCount": 19,
+          "source": "新浪财经热门概念",
+          "derived": true
+        },
+        {
+          "code": "sw2_630700",
+          "name": "电池",
+          "pct": -1.85,
+          "amountYi": 585.43,
+          "memberCount": 110,
+          "source": "新浪财经申万二级",
+          "derived": true
+        },
+        {
+          "code": "chgn_701095",
+          "name": "电池箔",
+          "pct": -2.5,
+          "amountYi": 119.21,
+          "memberCount": 15,
+          "source": "新浪财经热门概念",
+          "derived": true
+        },
+        {
+          "code": "chgn_730203",
+          "name": "电池管理",
+          "pct": -1.32,
+          "amountYi": 221.02,
+          "memberCount": 22,
+          "source": "新浪财经热门概念",
+          "derived": true
+        }
+      ]
+    },
+    {
+      "name": "机器人/智能制造",
+      "priority": 74,
+      "count": 4,
+      "boards": [
+        {
+          "code": "chgn_701016",
+          "name": "工业母机",
+          "pct": -3.59,
+          "amountYi": 620.56,
+          "memberCount": 127,
+          "source": "新浪财经热门概念",
+          "derived": true
+        },
+        {
+          "code": "sw3_640701",
+          "name": "机器人",
+          "pct": 0.09,
+          "amountYi": 148.33,
+          "memberCount": 20,
+          "source": "新浪财经申万三级",
+          "derived": true
+        },
+        {
+          "code": "chgn_700124",
+          "name": "机器人概念",
+          "pct": -3.03,
+          "amountYi": 1692.44,
+          "memberCount": 400,
+          "source": "新浪财经热门概念",
+          "derived": true
+        },
+        {
+          "code": "gn_zjqrgn",
+          "name": "机器人概念",
+          "pct": 4.33,
+          "amountYi": 296.69,
+          "memberCount": 41,
+          "source": "新浪财经概念板块",
+          "derived": true
+        }
+      ]
+    },
+    {
+      "name": "低空经济/航空航天",
+      "priority": 72,
+      "count": 4,
+      "boards": [
+        {
+          "code": "chgn_700199",
+          "name": "北斗导航",
+          "pct": -2.84,
+          "amountYi": 572.55,
+          "memberCount": 120,
+          "source": "新浪财经热门概念",
+          "derived": true
+        },
+        {
+          "code": "chgn_701245",
+          "name": "低空经济",
+          "pct": -2.29,
+          "amountYi": 1905.48,
+          "memberCount": 400,
+          "source": "新浪财经热门概念",
+          "derived": true
+        },
+        {
+          "code": "chgn_730289",
+          "name": "航空工业集团",
+          "pct": -2.26,
+          "amountYi": 89.98,
+          "memberCount": 19,
+          "source": "新浪财经热门概念",
+          "derived": true
+        },
+        {
+          "code": "sw3_421001",
+          "name": "航空运输",
+          "pct": -0.8,
+          "amountYi": 23.25,
+          "memberCount": 8,
+          "source": "新浪财经申万三级",
+          "derived": true
+        }
+      ]
+    },
+    {
+      "name": "高端制造/汽车",
+      "priority": 70,
+      "count": 5,
+      "boards": [
+        {
+          "code": "sw3_710102",
+          "name": "安防设备",
+          "pct": -1.15,
+          "amountYi": 57.36,
+          "memberCount": 26,
+          "source": "新浪财经申万三级",
+          "derived": true
+        },
+        {
+          "code": "new_cbzz",
+          "name": "船舶制造",
+          "pct": -3.19,
+          "amountYi": 49.86,
+          "memberCount": 7,
+          "source": "新浪财经新浪行业",
+          "derived": true
+        },
+        {
+          "code": "sw3_630804",
+          "name": "电工仪器仪表",
+          "pct": 1.73,
+          "amountYi": 33.2,
+          "memberCount": 15,
+          "source": "新浪财经申万三级",
+          "derived": true
+        },
+        {
+          "code": "sw3_640206",
+          "name": "纺织服装设备",
+          "pct": -3.49,
+          "amountYi": 14.99,
+          "memberCount": 12,
+          "source": "新浪财经申万三级",
+          "derived": true
+        },
+        {
+          "code": "new_fzjx",
+          "name": "纺织机械",
+          "pct": -0.51,
+          "amountYi": 5.1,
+          "memberCount": 7,
+          "source": "新浪财经新浪行业",
+          "derived": true
+        }
+      ]
+    },
+    {
+      "name": "医药医疗",
+      "priority": 62,
+      "count": 5,
+      "boards": [
+        {
+          "code": "chgn_701247",
+          "name": "创新药",
+          "pct": 0.73,
+          "amountYi": 1737.45,
+          "memberCount": 282,
+          "source": "新浪财经热门概念",
+          "derived": true
+        },
+        {
+          "code": "gn_cxy",
+          "name": "创新药",
+          "pct": 0.15,
+          "amountYi": 1210.39,
+          "memberCount": 144,
+          "source": "新浪财经概念板块",
+          "derived": true
+        },
+        {
+          "code": "chgn_700738",
+          "name": "动物疫苗",
+          "pct": 1.55,
+          "amountYi": 68.06,
+          "memberCount": 24,
+          "source": "新浪财经热门概念",
+          "derived": true
+        },
+        {
+          "code": "chgn_701234",
+          "name": "合成生物",
+          "pct": 0.16,
+          "amountYi": 654,
+          "memberCount": 169,
+          "source": "新浪财经热门概念",
+          "derived": true
+        },
+        {
+          "code": "chgn_700208",
+          "name": "互联医疗",
+          "pct": 2.74,
+          "amountYi": 321.79,
+          "memberCount": 86,
+          "source": "新浪财经热门概念",
+          "derived": true
+        }
+      ]
+    },
+    {
+      "name": "军工国防",
+      "priority": 58,
+      "count": 3,
+      "boards": [
+        {
+          "code": "sw_gfjg",
+          "name": "国防军工",
+          "pct": -2.39,
+          "amountYi": 552.19,
+          "memberCount": 140,
+          "source": "新浪财经申万行业",
+          "derived": true
+        },
+        {
+          "code": "sw1_650000",
+          "name": "国防军工",
+          "pct": -2.39,
+          "amountYi": 552.19,
+          "memberCount": 140,
+          "source": "新浪财经申万一级",
+          "derived": true
+        },
+        {
+          "code": "gn_gfjg",
+          "name": "国防军工",
+          "pct": -1.9,
+          "amountYi": 1235.58,
+          "memberCount": 212,
+          "source": "新浪财经概念板块",
+          "derived": true
+        }
+      ]
+    }
+  ],
+  "actionList": [
+    {
+      "level": "可准备",
+      "code": "600521",
+      "name": "华海药业",
+      "text": "华海药业：类三买观察，只在回踩不破触发条件时试仓；高开急拉不追。",
+      "price": 17.63,
+      "score": 96
+    },
+    {
+      "level": "可准备",
+      "code": "600562",
+      "name": "国睿科技",
+      "text": "国睿科技：类二买/趋势延续观察，只在回踩不破触发条件时试仓；高开急拉不追。",
+      "price": 22.29,
+      "score": 96
+    },
+    {
+      "level": "跟踪",
+      "code": "603228",
+      "name": "景旺电子",
+      "text": "景旺电子：等待触发条件，建仓区间 68.23-77.84",
+      "price": 70.79,
+      "score": 85.4
+    },
+    {
+      "level": "跟踪",
+      "code": "603300",
+      "name": "海南华铁",
+      "text": "海南华铁：等待触发条件，建仓区间 4.5-4.87",
+      "price": 4.72,
+      "score": 79.5
+    },
+    {
+      "level": "跟踪",
+      "code": "300347",
+      "name": "泰格医药",
+      "text": "泰格医药：等待触发条件，建仓区间 44.1-51.83",
+      "price": 53.99,
+      "score": 96
+    },
+    {
+      "level": "跟踪",
+      "code": "601899",
+      "name": "紫金矿业",
+      "text": "紫金矿业：等待触发条件，建仓区间 26.52-29.54",
+      "price": 29.25,
+      "score": 86.8
+    },
+    {
+      "level": "跟踪",
+      "code": "600519",
+      "name": "贵州茅台",
+      "text": "贵州茅台：等待触发条件，建仓区间 1188.44-1242.24",
+      "price": 1258.99,
+      "score": 90.3
+    },
+    {
+      "level": "回避",
+      "code": "603893",
+      "name": "瑞芯微",
+      "text": "瑞芯微：跌破 20 日中位 201.43，降级为震荡",
+      "price": 222.24,
+      "score": 96
+    },
+    {
+      "level": "回避",
+      "code": "603501",
+      "name": "豪威集团",
+      "text": "豪威集团：归母净利润同比下降 41.92%",
+      "price": 109.85,
+      "score": 96
+    },
+    {
+      "level": "回避",
+      "code": "688036",
+      "name": "传音控股",
+      "text": "传音控股：主力净流出 1.4 亿元",
+      "price": 65.43,
+      "score": 83.8
+    },
+    {
+      "level": "回避",
+      "code": "603991",
+      "name": "领先股份",
+      "text": "领先股份：2026-07-08 领先股份:关于上海证券交易所对公司2025年年度报告的信息披露监管问询函回复的公告",
+      "price": 156.43,
+      "score": 76.2
+    },
+    {
+      "level": "回避",
+      "code": "300373",
+      "name": "扬杰科技",
+      "text": "扬杰科技：主力净流出 1.18 亿元",
+      "price": 101.7,
+      "score": 74
+    }
+  ],
+  "continuity": {
+    "previousRefresh": "2026/07/16 18:35:33",
+    "pendingRemovalCount": 0,
+    "pendingRemovals": [],
+    "retainedByUser": [],
+    "confirmedRemovedCount": 0,
+    "confirmedRemoved": [],
+    "retained": []
+  },
+  "audit": {
+    "generatedAt": "2026-07-16T10:38:35.117Z",
+    "sources": [
+      {
+        "name": "新浪财经A股指数",
+        "ok": true
+      },
+      {
+        "name": "东方财富概念板块",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富行业板块",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富科技/能源板块股票池",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 半导体材料",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 半导体检测",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 半导体",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 半导体材料",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 半导体",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 半导体设备",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 垂直应用软件",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 半导体设备",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 存储概念",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 第三代半导体",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 电子车牌",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 电子布",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 电子发票",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 电子",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 电子",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 厨卫电器",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 厨房电器",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 4680电池",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 电子后视镜",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 储能",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 刀片电池",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 电池箔",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 电池管理",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 电池",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 工业母机",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 机器人",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 机器人概念",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 北斗导航",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 低空经济",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 机器人概念",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 航空工业集团",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 船舶制造",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 航空运输",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 电工仪器仪表",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 安防设备",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 纺织服装设备",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 纺织机械",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 动物疫苗",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 创新药",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 创新药",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 国防军工",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 互联医疗",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 国防军工",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 合成生物",
+        "ok": true
+      },
+      {
+        "name": "新浪板块成分 国防军工",
+        "ok": true
+      },
+      {
+        "name": "新浪财经科技/能源行业股票池",
+        "ok": true
+      },
+      {
+        "name": "新浪财经板块缺口补位实时行情",
+        "ok": true
+      },
+      {
+        "name": "腾讯实时行情补位换手率",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 603991 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "资产负债表 603991",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 603991 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "利润表 603991",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 002049 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 002049 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 002049 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603991 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "现金流量表 603991",
+        "ok": true
+      },
+      {
+        "name": "利润表 002049",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 002049",
+        "ok": true
+      },
+      {
+        "name": "F10 603991",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 002049",
+        "ok": true
+      },
+      {
+        "name": "公告 002049",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 603991",
+        "ok": true
+      },
+      {
+        "name": "公告 603991",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603991 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 603991",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603991 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 603991",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 002049",
+        "ok": true
+      },
+      {
+        "name": "F10 002049",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 002049 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 002049",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 002049 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 002049",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 002049 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 002049",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603991 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 603991",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 688018",
+        "ok": true
+      },
+      {
+        "name": "公告 688018",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 603228",
+        "ok": true
+      },
+      {
+        "name": "公告 603228",
+        "ok": true
+      },
+      {
+        "name": "利润表 688018",
+        "ok": true
+      },
+      {
+        "name": "利润表 603228",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 603228",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 603228",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 688018",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 688018",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 603228 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 688018 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 688018 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603228 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 688018 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603228 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 603228",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603228 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 603228",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688018 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 688018",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688018 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 688018",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603228 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 603228",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688018 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 688018",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603228 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 603228",
+        "ok": true
+      },
+      {
+        "name": "F10 688018",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 300373",
+        "ok": true
+      },
+      {
+        "name": "公告 300373",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 600641",
+        "ok": true
+      },
+      {
+        "name": "公告 600641",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 300373",
+        "ok": true
+      },
+      {
+        "name": "利润表 600641",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 600641",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 600641",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 300373",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 300373 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 300373 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 300373 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "利润表 300373",
+        "ok": true
+      },
+      {
+        "name": "F10 300373",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 600641 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600641 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600641 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "新浪K线备用源 300373 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 300373",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 300373 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 300373",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 300373 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 300373",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600641 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 600641",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600641 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 600641",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600641 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 600641",
+        "ok": true
+      },
+      {
+        "name": "F10 600641",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 605358",
+        "ok": true
+      },
+      {
+        "name": "公告 605358",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 688608",
+        "ok": true
+      },
+      {
+        "name": "公告 688608",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 605358",
+        "ok": true
+      },
+      {
+        "name": "利润表 688608",
+        "ok": true
+      },
+      {
+        "name": "利润表 605358",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 605358",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 688608",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 688608",
+        "ok": true
+      },
+      {
+        "name": "F10 605358",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 605358 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 688608 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 688608 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 605358 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 688608 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 605358 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 688608",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688608 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 688608",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 605358 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 605358",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688608 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 688608",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 605358 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 605358",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688608 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 688608",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 605358 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 605358",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 000034",
+        "ok": true
+      },
+      {
+        "name": "公告 000034",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 688036",
+        "ok": true
+      },
+      {
+        "name": "公告 688036",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 688036",
+        "ok": true
+      },
+      {
+        "name": "利润表 688036",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 688036",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 000034",
+        "ok": true
+      },
+      {
+        "name": "利润表 000034",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 000034 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 000034 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 688036 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 688036 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 000034 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 688036 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 688036",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 000034 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 000034",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 000034 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 000034",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688036 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 688036",
+        "ok": true
+      },
+      {
+        "name": "F10 000034",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 000034",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688036 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 688036",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 000034 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 000034",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688036 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 688036",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 603893",
+        "ok": true
+      },
+      {
+        "name": "公告 603893",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 600171",
+        "ok": true
+      },
+      {
+        "name": "公告 600171",
+        "ok": true
+      },
+      {
+        "name": "利润表 603893",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 603893",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 600171",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 603893",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 600171",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 603893 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600171 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600171 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603893 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600171 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603893 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 600171",
+        "ok": true
+      },
+      {
+        "name": "F10 603893",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600171 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 600171",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600171 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 600171",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603893 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 603893",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603893 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 603893",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600171 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 600171",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603893 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 603893",
+        "ok": true
+      },
+      {
+        "name": "利润表 600171",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 603501",
+        "ok": true
+      },
+      {
+        "name": "公告 603501",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 605111",
+        "ok": true
+      },
+      {
+        "name": "公告 605111",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 603501",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 605111",
+        "ok": true
+      },
+      {
+        "name": "利润表 603501",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 603501",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 605111",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 605111 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603501 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603501 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 605111 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "利润表 605111",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 605111 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603501 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 603501",
+        "ok": true
+      },
+      {
+        "name": "F10 605111",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 605111 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 605111",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 605111 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 605111",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603501 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 603501",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603501 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 603501",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603501 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 603501",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 605111 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 605111",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 688099",
+        "ok": true
+      },
+      {
+        "name": "公告 688099",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 688213",
+        "ok": true
+      },
+      {
+        "name": "公告 688213",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 688213",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 688099",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 688099",
+        "ok": true
+      },
+      {
+        "name": "利润表 688099",
+        "ok": true
+      },
+      {
+        "name": "利润表 688213",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 688099 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 688099 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 688099 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 688213 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 688213 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 688213 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 688213",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 688213",
+        "ok": true
+      },
+      {
+        "name": "F10 688099",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688099 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 688099",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688099 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 688099",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688099 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 688099",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688213 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 688213",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688213 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 688213",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688213 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 688213",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 603236",
+        "ok": true
+      },
+      {
+        "name": "公告 603236",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 600839",
+        "ok": true
+      },
+      {
+        "name": "公告 600839",
+        "ok": true
+      },
+      {
+        "name": "利润表 603236",
+        "ok": true
+      },
+      {
+        "name": "利润表 600839",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 603236",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 600839",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 603236 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603236 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603236 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 603236",
+        "ok": true
+      },
+      {
+        "name": "F10 600839",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 600839 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600839 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600839 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "新浪K线备用源 603236 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 603236",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603236 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 603236",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 603236",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603236 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 603236",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600839 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 600839",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 600839",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600839 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 600839",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600839 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 600839",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 603757",
+        "ok": true
+      },
+      {
+        "name": "公告 603757",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 603596",
+        "ok": true
+      },
+      {
+        "name": "公告 603596",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 603757",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 603596",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 603757",
+        "ok": true
+      },
+      {
+        "name": "利润表 603596",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 603757 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603757 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603757 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603596 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603596 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 603757",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 603596 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 603596",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603757 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 603757",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603596 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 603596",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603757 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 603757",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603596 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 603596",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603596 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 603596",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603757 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 603757",
+        "ok": true
+      },
+      {
+        "name": "利润表 603757",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 603596",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 300124",
+        "ok": true
+      },
+      {
+        "name": "公告 300124",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 600031",
+        "ok": true
+      },
+      {
+        "name": "公告 600031",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 300124",
+        "ok": true
+      },
+      {
+        "name": "利润表 300124",
+        "ok": true
+      },
+      {
+        "name": "利润表 600031",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 600031",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 600031",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 300124",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 300124 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600031 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 300124 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600031 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 300124",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 600031 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 300124 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "新浪K线备用源 300124 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 300124",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600031 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 600031",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 300124 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 300124",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600031 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 600031",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 300124 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 300124",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600031 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 600031",
+        "ok": true
+      },
+      {
+        "name": "F10 600031",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 603300",
+        "ok": true
+      },
+      {
+        "name": "公告 603300",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 603950",
+        "ok": true
+      },
+      {
+        "name": "公告 603950",
+        "ok": true
+      },
+      {
+        "name": "利润表 603300",
+        "ok": true
+      },
+      {
+        "name": "利润表 603950",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 603300",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 603950",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 603950",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 603300",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 603950 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603300 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603300 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603950 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603300 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603950 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 603950",
+        "ok": true
+      },
+      {
+        "name": "F10 603300",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603300 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 603300",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603950 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 603950",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603300 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 603300",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603950 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 603950",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603300 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 603300",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603950 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 603950",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 002065",
+        "ok": true
+      },
+      {
+        "name": "公告 002065",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 600843",
+        "ok": true
+      },
+      {
+        "name": "公告 600843",
+        "ok": true
+      },
+      {
+        "name": "利润表 600843",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 600843",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 002065",
+        "ok": true
+      },
+      {
+        "name": "利润表 002065",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 002065",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 600843 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600843 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "资产负债表 600843",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 600843 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 002065 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 002065 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 002065 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 600843",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600843 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 600843",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600843 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 600843",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600843 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 600843",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 002065 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 002065",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 002065 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 002065",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 002065 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 002065",
+        "ok": true
+      },
+      {
+        "name": "F10 002065",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 688619",
+        "ok": true
+      },
+      {
+        "name": "公告 688619",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 300588",
+        "ok": true
+      },
+      {
+        "name": "公告 300588",
+        "ok": true
+      },
+      {
+        "name": "利润表 300588",
+        "ok": true
+      },
+      {
+        "name": "利润表 688619",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 688619",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 300588",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 300588",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 688619 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 300588 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 688619 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 300588 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 688619 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 300588 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 688619",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 300588 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 300588",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688619 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 688619",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688619 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 688619",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 688619",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 300588 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 300588",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688619 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 688619",
+        "ok": true
+      },
+      {
+        "name": "F10 300588",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 300588 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 300588",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 300347",
+        "ok": true
+      },
+      {
+        "name": "公告 300347",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 002294",
+        "ok": true
+      },
+      {
+        "name": "公告 002294",
+        "ok": true
+      },
+      {
+        "name": "利润表 300347",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 300347",
+        "ok": true
+      },
+      {
+        "name": "利润表 002294",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 002294",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 002294",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 300347",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 300347 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 300347 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 300347 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 002294 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 002294 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 002294 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 300347",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 300347 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 300347",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 300347 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 300347",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 300347 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 300347",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 002294 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 002294",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 002294 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 002294",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 002294 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 002294",
+        "ok": true
+      },
+      {
+        "name": "F10 002294",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 600521",
+        "ok": true
+      },
+      {
+        "name": "公告 600521",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 688002",
+        "ok": true
+      },
+      {
+        "name": "公告 688002",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 600521",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 688002",
+        "ok": true
+      },
+      {
+        "name": "利润表 600521",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 688002",
+        "ok": true
+      },
+      {
+        "name": "利润表 688002",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 600521",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 600521 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600521 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 688002 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 688002 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 688002 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600521 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "新浪K线备用源 600521 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 600521",
+        "ok": true
+      },
+      {
+        "name": "F10 600521",
+        "ok": true
+      },
+      {
+        "name": "F10 688002",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600521 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 600521",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688002 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 688002",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688002 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 688002",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 688002 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 688002",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600521 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 600521",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 002179",
+        "ok": true
+      },
+      {
+        "name": "公告 002179",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 600562",
+        "ok": true
+      },
+      {
+        "name": "公告 600562",
+        "ok": true
+      },
+      {
+        "name": "利润表 002179",
+        "ok": true
+      },
+      {
+        "name": "利润表 600562",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 600562",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 002179",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 600562",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 002179",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 002179 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600562 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600562 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600562 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 002179 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 600562",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 002179 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 002179",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 002179 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 002179",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600562 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 600562",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 002179 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 002179",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600562 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 600562",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600562 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 600562",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 002179 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 002179",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 601899",
+        "ok": true
+      },
+      {
+        "name": "公告 601899",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 600547",
+        "ok": true
+      },
+      {
+        "name": "公告 600547",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 601899",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 600547",
+        "ok": true
+      },
+      {
+        "name": "利润表 600547",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 600547",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 601899",
+        "ok": true
+      },
+      {
+        "name": "利润表 601899",
+        "ok": true
+      },
+      {
+        "name": "F10 601899",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 601899 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 601899 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 601899 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600547 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600547 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600547 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 600547",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 601899 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 601899",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 601899 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 601899",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600547 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 600547",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600547 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 600547",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 601899 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 601899",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600547 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 600547",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 600489",
+        "ok": true
+      },
+      {
+        "name": "公告 600489",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 603799",
+        "ok": true
+      },
+      {
+        "name": "公告 603799",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 603799",
+        "ok": true
+      },
+      {
+        "name": "利润表 603799",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 600489",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 603799",
+        "ok": true
+      },
+      {
+        "name": "利润表 600489",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 600489 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603799 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600489 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603799 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 603799 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600489 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 600489",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600489 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 600489",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603799 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 603799",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603799 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 603799",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 603799 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 603799",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600489 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 600489",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600489 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 600489",
+        "ok": true
+      },
+      {
+        "name": "F10 603799",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 600489",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 600309",
+        "ok": true
+      },
+      {
+        "name": "公告 600309",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 002460",
+        "ok": true
+      },
+      {
+        "name": "公告 002460",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 600309",
+        "ok": true
+      },
+      {
+        "name": "利润表 002460",
+        "ok": true
+      },
+      {
+        "name": "利润表 600309",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 002460",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 600309",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 002460",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 600309 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 002460 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 002460 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 002460 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600309 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 600309",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 600309 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 002460",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600309 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 600309",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 002460 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 002460",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 002460 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 002460",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 002460 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 002460",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600309 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 600309",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600309 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 600309",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 000858",
+        "ok": true
+      },
+      {
+        "name": "公告 000858",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 600519",
+        "ok": true
+      },
+      {
+        "name": "公告 600519",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 600519",
+        "ok": true
+      },
+      {
+        "name": "利润表 600519",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 000858",
+        "ok": true
+      },
+      {
+        "name": "利润表 000858",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 600519",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 000858",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 000858 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 000858 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600519 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600519 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 600519 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 000858",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 000858 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 600519",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 000858 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 000858",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600519 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 600519",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600519 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 600519",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 000858 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 000858",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 600519 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 600519",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 000858 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 000858",
+        "ok": true
+      },
+      {
+        "name": "东方财富公告源 000333",
+        "ok": true
+      },
+      {
+        "name": "公告 000333",
+        "ok": true
+      },
+      {
+        "name": "资产负债表 000333",
+        "ok": true
+      },
+      {
+        "name": "利润表 000333",
+        "ok": true
+      },
+      {
+        "name": "现金流量表 000333",
+        "ok": true
+      },
+      {
+        "name": "东方财富K线源 000333 klt=101",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 000333 klt=5",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富K线源 000333 klt=30",
+        "ok": false,
+        "error": "fetch failed"
+      },
+      {
+        "name": "F10 000333",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 000333 scale=5",
+        "ok": true
+      },
+      {
+        "name": "K线（5分钟） 000333",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 000333 scale=240",
+        "ok": true
+      },
+      {
+        "name": "K线（日） 000333",
+        "ok": true
+      },
+      {
+        "name": "新浪K线备用源 000333 scale=30",
+        "ok": true
+      },
+      {
+        "name": "K线（30分钟） 000333",
+        "ok": true
+      }
+    ],
+    "failures": [
+      {
+        "name": "东方财富概念板块",
+        "error": "fetch failed"
+      },
+      {
+        "name": "东方财富行业板块",
+        "error": "fetch failed"
+      }
+    ],
+    "coverage": {
+      "boards": 45,
+      "universeStocks": 2512,
+      "candidates": 43,
+      "withDailyK": 43,
+      "with30mK": 43,
+      "with5mK": 43,
+      "withFinancial": 43,
+      "withAnnouncements": 43,
+      "failures": 2,
+      "states": {
+        "重点跟踪池": 5,
+        "暂不交易": 33,
+        "交易准备池": 2,
+        "观察池": 3
+      }
+    }
+  },
+  "dataQuality": {
+    "unavailable": [
+      {
+        "field": "新浪板块官方涨跌幅/成交额",
+        "count": 45,
+        "total": 45,
+        "reason": "新浪行业/概念节点返回成分股行情，但不直接返回板块级汇总指标。",
+        "impact": "已用成分股真实行情聚合计算板块涨跌幅、成交额、平均换手和成分股数量。"
+      }
+    ]
+  },
+  "recommendationTracking": {
+    "updatedAtChina": "2026/07/16 18:41:07",
+    "total": 43,
+    "active": 43,
+    "stopped": 0,
+    "calendar": {
+      "2026-07-16": [
+        "603228",
+        "603893",
+        "603501",
+        "688036",
+        "603991",
+        "300373",
+        "688213",
+        "605111",
+        "688608",
+        "600171",
+        "600641",
+        "688099",
+        "002049",
+        "605358",
+        "688018",
+        "000034",
+        "603236",
+        "603757",
+        "600839",
+        "600031",
+        "300124",
+        "603596",
+        "603300",
+        "603950",
+        "002065",
+        "300588",
+        "688619",
+        "600843",
+        "600521",
+        "300347",
+        "002294",
+        "600562",
+        "688002",
+        "002179",
+        "601899",
+        "600547",
+        "600489",
+        "600309",
+        "603799",
+        "002460",
+        "600519",
+        "000858",
+        "000333"
+      ]
+    },
+    "records": [
+      {
+        "code": "300124",
+        "name": "汇川技术",
+        "sector": "机器人/智能制造",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 60.31,
+        "firstState": "暂不交易",
+        "firstScore": 29.6,
+        "firstReason": [
+          "成交额 14.04 亿元，流动性较好",
+          "PE 32.25，估值未进入极端异常区",
+          "归属板块：机器人/智能制造；命中：储能、新能源、工业母机、机器人概念",
+          "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓"
+        ],
+        "currentPrice": 60.31,
+        "currentState": "暂不交易",
+        "currentScore": 29.6,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 57.08,
+          "takeProfit": 80.6,
+          "riskReward": 6.28
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 57.08,
+          "takeProfit": 80.6,
+          "riskReward": 6.28
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 60.31
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 60.31,
+            "open": 60.84,
+            "high": 61.52,
+            "low": 60.11,
+            "pct": -1.2,
+            "state": "暂不交易",
+            "score": 29.6,
+            "mainNetInflowYi": -1.04
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 60.31,
+            "pct": -1.2,
+            "state": "暂不交易",
+            "score": 29.6,
+            "sector": "机器人/智能制造",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 14.04 亿元，流动性较好",
+              "PE 32.25，估值未进入极端异常区",
+              "归属板块：机器人/智能制造；命中：储能、新能源、工业母机、机器人概念",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "营业收入同比增长 12.98%"
+            ],
+            "risk": [
+              "主力净流出 1.04 亿元",
+              "归母净利润同比下降 23.39%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 58.85，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 60.31,
+            "pct": -1.2,
+            "state": "暂不交易",
+            "score": 29.6,
+            "sector": "机器人/智能制造",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 14.04 亿元，流动性较好",
+              "PE 32.25，估值未进入极端异常区",
+              "归属板块：机器人/智能制造；命中：储能、新能源、工业母机、机器人概念",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "营业收入同比增长 12.98%"
+            ],
+            "risk": [
+              "主力净流出 1.04 亿元",
+              "归母净利润同比下降 23.39%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 58.85，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 60.31,
+            "pct": -1.2,
+            "state": "暂不交易",
+            "score": 29.6,
+            "sector": "机器人/智能制造",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 14.04 亿元，流动性较好",
+              "PE 32.25，估值未进入极端异常区",
+              "归属板块：机器人/智能制造；命中：储能、新能源、工业母机、机器人概念",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "营业收入同比增长 12.98%"
+            ],
+            "risk": [
+              "主力净流出 1.04 亿元",
+              "归母净利润同比下降 23.39%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 58.85，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 60.31,
+            "pct": -1.2,
+            "state": "暂不交易",
+            "score": 29.6,
+            "sector": "机器人/智能制造",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 14.04 亿元，流动性较好",
+              "PE 32.25，估值未进入极端异常区",
+              "归属板块：机器人/智能制造；命中：储能、新能源、工业母机、机器人概念",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "营业收入同比增长 12.98%"
+            ],
+            "risk": [
+              "主力净流出 1.04 亿元",
+              "归母净利润同比下降 23.39%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 58.85，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "300347",
+        "name": "泰格医药",
+        "sector": "医药医疗",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 53.99,
+        "firstState": "重点跟踪池",
+        "firstScore": 96,
+        "firstReason": [
+          "成交额 19.89 亿元，流动性较好",
+          "当日涨幅 4.03%，短线强于市场",
+          "PE 51.91，估值未进入极端异常区",
+          "主力净流入 1.04 亿元"
+        ],
+        "currentPrice": 53.99,
+        "currentState": "重点跟踪池",
+        "currentScore": 96,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "类三买观察",
+          "entryZone": "44.1-51.83",
+          "stop": 46.58,
+          "takeProfit": 59.97,
+          "riskReward": 1.55
+        },
+        "lastPlan": {
+          "buyType": "类三买观察",
+          "action": "不追高，等待突破后回踩不破再试仓",
+          "nextAction": "加入盘中观察，等待 5分钟确认或回踩关键位。",
+          "stop": 46.58,
+          "takeProfit": 59.97,
+          "riskReward": 1.55
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 53.99
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 53.99,
+            "open": 50.9,
+            "high": 55.53,
+            "low": 49.96,
+            "pct": 4.03,
+            "state": "重点跟踪池",
+            "score": 96,
+            "mainNetInflowYi": 1.04
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 53.99,
+            "pct": 4.03,
+            "state": "重点跟踪池",
+            "score": 96,
+            "sector": "医药医疗",
+            "buyType": "类三买观察",
+            "reason": [
+              "成交额 19.89 亿元，流动性较好",
+              "当日涨幅 4.03%，短线强于市场",
+              "PE 51.91，估值未进入极端异常区",
+              "主力净流入 1.04 亿元",
+              "归属板块：医药医疗；命中：人工智能、创新药、互联医疗"
+            ],
+            "risk": [
+              "归母净利润同比下降 70.36%",
+              "跌回 20 日中位 47.13 下方，类三买观察失效",
+              "策略否决：风险收益比：按计划价 51.83 计算，约 1:1.55，最大亏损约 10.13%，目标空间约 15.71%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 53.99,
+            "pct": 4.03,
+            "state": "重点跟踪池",
+            "score": 96,
+            "sector": "医药医疗",
+            "buyType": "类三买观察",
+            "reason": [
+              "成交额 19.89 亿元，流动性较好",
+              "当日涨幅 4.03%，短线强于市场",
+              "PE 51.91，估值未进入极端异常区",
+              "主力净流入 1.04 亿元",
+              "归属板块：医药医疗；命中：人工智能、创新药、互联医疗"
+            ],
+            "risk": [
+              "归母净利润同比下降 70.36%",
+              "跌回 20 日中位 47.13 下方，类三买观察失效",
+              "策略否决：风险收益比：按计划价 51.83 计算，约 1:1.55，最大亏损约 10.13%，目标空间约 15.71%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 53.99,
+            "pct": 4.03,
+            "state": "重点跟踪池",
+            "score": 96,
+            "sector": "医药医疗",
+            "buyType": "类三买观察",
+            "reason": [
+              "成交额 19.89 亿元，流动性较好",
+              "当日涨幅 4.03%，短线强于市场",
+              "PE 51.91，估值未进入极端异常区",
+              "主力净流入 1.04 亿元",
+              "归属板块：医药医疗；命中：人工智能、创新药、互联医疗"
+            ],
+            "risk": [
+              "归母净利润同比下降 70.36%",
+              "跌回 20 日中位 47.13 下方，类三买观察失效",
+              "策略否决：风险收益比：按计划价 51.83 计算，约 1:1.55，最大亏损约 10.13%，目标空间约 15.71%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 53.99,
+            "pct": 4.03,
+            "state": "重点跟踪池",
+            "score": 96,
+            "sector": "医药医疗",
+            "buyType": "类三买观察",
+            "reason": [
+              "成交额 19.89 亿元，流动性较好",
+              "当日涨幅 4.03%，短线强于市场",
+              "PE 51.91，估值未进入极端异常区",
+              "主力净流入 1.04 亿元",
+              "归属板块：医药医疗；命中：人工智能、创新药、互联医疗"
+            ],
+            "risk": [
+              "归母净利润同比下降 70.36%",
+              "跌回 20 日中位 47.13 下方，类三买观察失效",
+              "策略否决：风险收益比：按计划价 51.83 计算，约 1:1.55，最大亏损约 10.13%，目标空间约 15.71%"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "300373",
+        "name": "扬杰科技",
+        "sector": "科技",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 101.7,
+        "firstState": "暂不交易",
+        "firstScore": 74,
+        "firstReason": [
+          "成交额 19.83 亿元，流动性较好",
+          "PE 43.65，估值未进入极端异常区",
+          "归属板块：科技；命中：半导体、芯片、电子、数据中心、半导体材料",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+        ],
+        "currentPrice": 101.7,
+        "currentState": "暂不交易",
+        "currentScore": 74,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 97.3,
+          "takeProfit": 174.96,
+          "riskReward": 16.64
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 97.3,
+          "takeProfit": 174.96,
+          "riskReward": 16.64
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 101.7
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 101.7,
+            "open": 103.88,
+            "high": 109.08,
+            "low": 100.31,
+            "pct": -3.66,
+            "state": "暂不交易",
+            "score": 74,
+            "mainNetInflowYi": -1.18
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 101.7,
+            "pct": -3.66,
+            "state": "暂不交易",
+            "score": 74,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 19.83 亿元，流动性较好",
+              "PE 43.65，估值未进入极端异常区",
+              "归属板块：科技；命中：半导体、芯片、电子、数据中心、半导体材料",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 41.01%"
+            ],
+            "risk": [
+              "主力净流出 1.18 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 100.31，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 101.7,
+            "pct": -3.66,
+            "state": "暂不交易",
+            "score": 74,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 19.83 亿元，流动性较好",
+              "PE 43.65，估值未进入极端异常区",
+              "归属板块：科技；命中：半导体、芯片、电子、数据中心、半导体材料",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 41.01%"
+            ],
+            "risk": [
+              "主力净流出 1.18 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 100.31，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 101.7,
+            "pct": -3.66,
+            "state": "暂不交易",
+            "score": 74,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 19.83 亿元，流动性较好",
+              "PE 43.65，估值未进入极端异常区",
+              "归属板块：科技；命中：半导体、芯片、电子、数据中心、半导体材料",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 41.01%"
+            ],
+            "risk": [
+              "主力净流出 1.18 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 100.31，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 101.7,
+            "pct": -3.66,
+            "state": "暂不交易",
+            "score": 74,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 19.83 亿元，流动性较好",
+              "PE 43.65，估值未进入极端异常区",
+              "归属板块：科技；命中：半导体、芯片、电子、数据中心、半导体材料",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 41.01%"
+            ],
+            "risk": [
+              "主力净流出 1.18 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 100.31，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "300588",
+        "name": "熙菱信息",
+        "sector": "高端制造/汽车",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 23.06,
+        "firstState": "暂不交易",
+        "firstScore": 28.8,
+        "firstReason": [
+          "当日涨幅 5.54%，短线强于市场",
+          "主力净流入 0.17 亿元",
+          "归属板块：高端制造/汽车；命中：软件、计算机、人工智能、网络安全、信创",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+        ],
+        "currentPrice": 23.06,
+        "currentState": "暂不交易",
+        "currentScore": 28.8,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "潜在一买观察",
+          "entryZone": "22.07-24.95",
+          "stop": 19.47,
+          "takeProfit": 28.43,
+          "riskReward": 1.5
+        },
+        "lastPlan": {
+          "buyType": "潜在一买观察",
+          "action": "只观察，不提前抄底；等待底分型与低级别转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 19.47,
+          "takeProfit": 28.43,
+          "riskReward": 1.5
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 23.06
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 23.06,
+            "open": 21.86,
+            "high": 23.07,
+            "low": 21.5,
+            "pct": 5.54,
+            "state": "暂不交易",
+            "score": 28.8,
+            "mainNetInflowYi": 0.17
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 23.06,
+            "pct": 5.54,
+            "state": "暂不交易",
+            "score": 28.8,
+            "sector": "高端制造/汽车",
+            "buyType": "潜在一买观察",
+            "reason": [
+              "当日涨幅 5.54%，短线强于市场",
+              "主力净流入 0.17 亿元",
+              "归属板块：高端制造/汽车；命中：软件、计算机、人工智能、网络安全、信创",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "资产负债率 54.18%，财务压力可控"
+            ],
+            "risk": [
+              "成交额偏低，实盘滑点和波动风险更高",
+              "归母净利润同比下降 43.72%",
+              "营业收入同比下降 33.23%",
+              "经营现金流为负 -0.37 亿元",
+              "跌破 20 日低点 20.07，一买观察失败"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 23.06,
+            "pct": 5.54,
+            "state": "暂不交易",
+            "score": 28.6,
+            "sector": "高端制造/汽车",
+            "buyType": "潜在一买观察",
+            "reason": [
+              "当日涨幅 5.54%，短线强于市场",
+              "主力净流入 0.17 亿元",
+              "归属板块：高端制造/汽车；命中：软件、计算机、人工智能、网络安全、信创",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "资产负债率 54.18%，财务压力可控"
+            ],
+            "risk": [
+              "成交额偏低，实盘滑点和波动风险更高",
+              "归母净利润同比下降 43.72%",
+              "营业收入同比下降 33.23%",
+              "经营现金流为负 -0.37 亿元",
+              "跌破 20 日低点 20.07，一买观察失败"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 23.06,
+            "pct": 5.54,
+            "state": "暂不交易",
+            "score": 28.8,
+            "sector": "高端制造/汽车",
+            "buyType": "潜在一买观察",
+            "reason": [
+              "当日涨幅 5.54%，短线强于市场",
+              "主力净流入 0.17 亿元",
+              "归属板块：高端制造/汽车；命中：软件、计算机、人工智能、网络安全、信创",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "资产负债率 54.18%，财务压力可控"
+            ],
+            "risk": [
+              "成交额偏低，实盘滑点和波动风险更高",
+              "归母净利润同比下降 43.72%",
+              "营业收入同比下降 33.23%",
+              "经营现金流为负 -0.37 亿元",
+              "跌破 20 日低点 20.07，一买观察失败"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 23.06,
+            "pct": 5.54,
+            "state": "暂不交易",
+            "score": 28.8,
+            "sector": "高端制造/汽车",
+            "buyType": "潜在一买观察",
+            "reason": [
+              "当日涨幅 5.54%，短线强于市场",
+              "主力净流入 0.17 亿元",
+              "归属板块：高端制造/汽车；命中：软件、计算机、人工智能、网络安全、信创",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "资产负债率 54.18%，财务压力可控"
+            ],
+            "risk": [
+              "成交额偏低，实盘滑点和波动风险更高",
+              "归母净利润同比下降 43.72%",
+              "营业收入同比下降 33.23%",
+              "经营现金流为负 -0.37 亿元",
+              "跌破 20 日低点 20.07，一买观察失败"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "600031",
+        "name": "三一重工",
+        "sector": "机器人/智能制造",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 18.95,
+        "firstState": "暂不交易",
+        "firstScore": 69.2,
+        "firstReason": [
+          "成交额 13.43 亿元，流动性较好",
+          "PE 19.27，估值未进入极端异常区",
+          "主力净流入 0.08 亿元",
+          "归属板块：机器人/智能制造；命中：新能源、机器人概念"
+        ],
+        "currentPrice": 18.95,
+        "currentState": "暂不交易",
+        "currentScore": 69.2,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "中枢上半区观察",
+          "entryZone": "17.74-19.25",
+          "stop": 16.18,
+          "takeProfit": 21.58,
+          "riskReward": 0.95
+        },
+        "lastPlan": {
+          "buyType": "中枢上半区观察",
+          "action": "位置不差但低级别未确认，等待 30分钟转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 16.18,
+          "takeProfit": 21.58,
+          "riskReward": 0.95
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 18.95
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 18.95,
+            "open": 19.2,
+            "high": 19.39,
+            "low": 18.84,
+            "pct": -1.1,
+            "state": "暂不交易",
+            "score": 69.2,
+            "mainNetInflowYi": 0.08
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 18.95,
+            "pct": -1.1,
+            "state": "暂不交易",
+            "score": 69.2,
+            "sector": "机器人/智能制造",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 13.43 亿元，流动性较好",
+              "PE 19.27，估值未进入极端异常区",
+              "主力净流入 0.08 亿元",
+              "归属板块：机器人/智能制造；命中：新能源、机器人概念",
+              "趋势阶段不够清晰，等待方向选择"
+            ],
+            "risk": [
+              "跌破 20 日中位 18.33，降级为震荡",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 54",
+              "策略否决：风险收益比：按计划价 18.95 计算，约 1:0.95，最大亏损约 14.62%，目标空间约 13.88%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 18.95,
+            "pct": -1.1,
+            "state": "暂不交易",
+            "score": 69.2,
+            "sector": "机器人/智能制造",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 13.43 亿元，流动性较好",
+              "PE 19.27，估值未进入极端异常区",
+              "主力净流入 0.08 亿元",
+              "归属板块：机器人/智能制造；命中：新能源、机器人概念",
+              "趋势阶段不够清晰，等待方向选择"
+            ],
+            "risk": [
+              "跌破 20 日中位 18.33，降级为震荡",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 54",
+              "策略否决：风险收益比：按计划价 18.95 计算，约 1:0.95，最大亏损约 14.62%，目标空间约 13.88%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 18.95,
+            "pct": -1.1,
+            "state": "暂不交易",
+            "score": 69.2,
+            "sector": "机器人/智能制造",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 13.43 亿元，流动性较好",
+              "PE 19.27，估值未进入极端异常区",
+              "主力净流入 0.08 亿元",
+              "归属板块：机器人/智能制造；命中：新能源、机器人概念",
+              "趋势阶段不够清晰，等待方向选择"
+            ],
+            "risk": [
+              "跌破 20 日中位 18.33，降级为震荡",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 54",
+              "策略否决：风险收益比：按计划价 18.95 计算，约 1:0.95，最大亏损约 14.62%，目标空间约 13.88%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 18.95,
+            "pct": -1.1,
+            "state": "暂不交易",
+            "score": 69.2,
+            "sector": "机器人/智能制造",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 13.43 亿元，流动性较好",
+              "PE 19.27，估值未进入极端异常区",
+              "主力净流入 0.08 亿元",
+              "归属板块：机器人/智能制造；命中：新能源、机器人概念",
+              "趋势阶段不够清晰，等待方向选择"
+            ],
+            "risk": [
+              "跌破 20 日中位 18.33，降级为震荡",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 54",
+              "策略否决：风险收益比：按计划价 18.95 计算，约 1:0.95，最大亏损约 14.62%，目标空间约 13.88%"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "600171",
+        "name": "上海贝岭",
+        "sector": "科技",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 25.2,
+        "firstState": "暂不交易",
+        "firstScore": 36.7,
+        "firstReason": [
+          "成交额 5.14 亿元，具备跟踪流动性",
+          "PE 76.36，估值未进入极端异常区",
+          "归属板块：科技；命中：半导体、芯片、集成电路、电子、存储",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+        ],
+        "currentPrice": 25.2,
+        "currentState": "暂不交易",
+        "currentScore": 36.7,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 24.4,
+          "takeProfit": 35.49,
+          "riskReward": 12.88
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 24.4,
+          "takeProfit": 35.49,
+          "riskReward": 12.88
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 25.2
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 25.2,
+            "open": 25.38,
+            "high": 25.88,
+            "low": 25.15,
+            "pct": -2.48,
+            "state": "暂不交易",
+            "score": 36.7,
+            "mainNetInflowYi": -0.64
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 25.2,
+            "pct": -2.48,
+            "state": "暂不交易",
+            "score": 36.7,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 5.14 亿元，具备跟踪流动性",
+              "PE 76.36，估值未进入极端异常区",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、存储",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "营业收入同比增长 28.93%"
+            ],
+            "risk": [
+              "归母净利润同比下降 41.6%",
+              "经营现金流为负 -0.9 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 25.15，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 25.2,
+            "pct": -2.48,
+            "state": "暂不交易",
+            "score": 36.6,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 5.14 亿元，具备跟踪流动性",
+              "PE 76.36，估值未进入极端异常区",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、存储",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "营业收入同比增长 28.93%"
+            ],
+            "risk": [
+              "归母净利润同比下降 41.6%",
+              "经营现金流为负 -0.9 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 25.15，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 25.2,
+            "pct": -2.48,
+            "state": "暂不交易",
+            "score": 36.7,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 5.14 亿元，具备跟踪流动性",
+              "PE 76.36，估值未进入极端异常区",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、存储",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "营业收入同比增长 28.93%"
+            ],
+            "risk": [
+              "归母净利润同比下降 41.6%",
+              "经营现金流为负 -0.9 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 25.15，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 25.2,
+            "pct": -2.48,
+            "state": "暂不交易",
+            "score": 36.7,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 5.14 亿元，具备跟踪流动性",
+              "PE 76.36，估值未进入极端异常区",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、存储",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "营业收入同比增长 28.93%"
+            ],
+            "risk": [
+              "归母净利润同比下降 41.6%",
+              "经营现金流为负 -0.9 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 25.15，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "600309",
+        "name": "万华化学",
+        "sector": "资源周期/化工",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 68.36,
+        "firstState": "暂不交易",
+        "firstScore": 29.7,
+        "firstReason": [
+          "成交额 24.67 亿元，流动性较好",
+          "PE 17.13，估值未进入极端异常区",
+          "归属板块：资源周期/化工；命中：锂、锂电、电池",
+          "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓"
+        ],
+        "currentPrice": 68.36,
+        "currentState": "暂不交易",
+        "currentScore": 29.7,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 64.02,
+          "takeProfit": 82.99,
+          "riskReward": 3.37
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 64.02,
+          "takeProfit": 82.99,
+          "riskReward": 3.37
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 68.36
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 68.36,
+            "open": 69.69,
+            "high": 70.8,
+            "low": 68.24,
+            "pct": -2.47,
+            "state": "暂不交易",
+            "score": 29.7,
+            "mainNetInflowYi": -0.91
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 68.36,
+            "pct": -2.47,
+            "state": "暂不交易",
+            "score": 29.7,
+            "sector": "资源周期/化工",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 24.67 亿元，流动性较好",
+              "PE 17.13，估值未进入极端异常区",
+              "归属板块：资源周期/化工；命中：锂、锂电、电池",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 20.62%"
+            ],
+            "risk": [
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 66，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势",
+              "策略否决：缠论买点：无买点/风险段",
+              "策略否决：相对强度：强度 46.1"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 68.36,
+            "pct": -2.47,
+            "state": "暂不交易",
+            "score": 29.9,
+            "sector": "资源周期/化工",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 24.67 亿元，流动性较好",
+              "PE 17.13，估值未进入极端异常区",
+              "归属板块：资源周期/化工；命中：锂、锂电、电池",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 20.62%"
+            ],
+            "risk": [
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 66，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势",
+              "策略否决：缠论买点：无买点/风险段",
+              "策略否决：相对强度：强度 46.8"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 68.36,
+            "pct": -2.47,
+            "state": "暂不交易",
+            "score": 29.7,
+            "sector": "资源周期/化工",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 24.67 亿元，流动性较好",
+              "PE 17.13，估值未进入极端异常区",
+              "归属板块：资源周期/化工；命中：锂、锂电、电池",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 20.62%"
+            ],
+            "risk": [
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 66，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势",
+              "策略否决：缠论买点：无买点/风险段",
+              "策略否决：相对强度：强度 46.1"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 68.36,
+            "pct": -2.47,
+            "state": "暂不交易",
+            "score": 29.7,
+            "sector": "资源周期/化工",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 24.67 亿元，流动性较好",
+              "PE 17.13，估值未进入极端异常区",
+              "归属板块：资源周期/化工；命中：锂、锂电、电池",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 20.62%"
+            ],
+            "risk": [
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 66，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势",
+              "策略否决：缠论买点：无买点/风险段",
+              "策略否决：相对强度：强度 46.1"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "600489",
+        "name": "中金黄金",
+        "sector": "黄金/贵金属",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 19.99,
+        "firstState": "观察池",
+        "firstScore": 59.2,
+        "firstReason": [
+          "成交额 15.61 亿元，流动性较好",
+          "PE 15.44，估值未进入极端异常区",
+          "主力净流入 0.55 亿元",
+          "归属板块：黄金/贵金属；命中：黄金、贵金属"
+        ],
+        "currentPrice": 19.99,
+        "currentState": "观察池",
+        "currentScore": 59.2,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "潜在一买观察",
+          "entryZone": "19.23-21.63",
+          "stop": 17.03,
+          "takeProfit": 24.6,
+          "riskReward": 1.56
+        },
+        "lastPlan": {
+          "buyType": "潜在一买观察",
+          "action": "只观察，不提前抄底；等待底分型与低级别转强",
+          "nextAction": "保留观察，等待评分或买点改善。",
+          "stop": 17.03,
+          "takeProfit": 24.6,
+          "riskReward": 1.56
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 19.99
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 19.99,
+            "open": 19.99,
+            "high": 20.57,
+            "low": 19.84,
+            "pct": -0.65,
+            "state": "观察池",
+            "score": 59.2,
+            "mainNetInflowYi": 0.55
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 19.99,
+            "pct": -0.65,
+            "state": "观察池",
+            "score": 59.2,
+            "sector": "黄金/贵金属",
+            "buyType": "潜在一买观察",
+            "reason": [
+              "成交额 15.61 亿元，流动性较好",
+              "PE 15.44，估值未进入极端异常区",
+              "主力净流入 0.55 亿元",
+              "归属板块：黄金/贵金属；命中：黄金、贵金属",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+            ],
+            "risk": [
+              "经营现金流为负 -21.68 亿元",
+              "跌破 20 日低点 17.56，一买观察失败",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：相对强度：强度 30.2",
+              "策略否决：风险收益比：按计划价 19.99 计算，约 1:1.56，最大亏损约 14.81%，目标空间约 23.06%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 19.99,
+            "pct": -0.65,
+            "state": "观察池",
+            "score": 59,
+            "sector": "黄金/贵金属",
+            "buyType": "潜在一买观察",
+            "reason": [
+              "成交额 15.61 亿元，流动性较好",
+              "PE 15.44，估值未进入极端异常区",
+              "主力净流入 0.55 亿元",
+              "归属板块：黄金/贵金属；命中：黄金、贵金属",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+            ],
+            "risk": [
+              "经营现金流为负 -21.68 亿元",
+              "跌破 20 日低点 17.56，一买观察失败",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：相对强度：强度 27",
+              "策略否决：风险收益比：按计划价 19.99 计算，约 1:1.56，最大亏损约 14.81%，目标空间约 23.06%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 19.99,
+            "pct": -0.65,
+            "state": "观察池",
+            "score": 59.2,
+            "sector": "黄金/贵金属",
+            "buyType": "潜在一买观察",
+            "reason": [
+              "成交额 15.61 亿元，流动性较好",
+              "PE 15.44，估值未进入极端异常区",
+              "主力净流入 0.55 亿元",
+              "归属板块：黄金/贵金属；命中：黄金、贵金属",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+            ],
+            "risk": [
+              "经营现金流为负 -21.68 亿元",
+              "跌破 20 日低点 17.56，一买观察失败",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：相对强度：强度 30.2",
+              "策略否决：风险收益比：按计划价 19.99 计算，约 1:1.56，最大亏损约 14.81%，目标空间约 23.06%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 19.99,
+            "pct": -0.65,
+            "state": "观察池",
+            "score": 59.2,
+            "sector": "黄金/贵金属",
+            "buyType": "潜在一买观察",
+            "reason": [
+              "成交额 15.61 亿元，流动性较好",
+              "PE 15.44，估值未进入极端异常区",
+              "主力净流入 0.55 亿元",
+              "归属板块：黄金/贵金属；命中：黄金、贵金属",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+            ],
+            "risk": [
+              "经营现金流为负 -21.68 亿元",
+              "跌破 20 日低点 17.56，一买观察失败",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：相对强度：强度 30.2",
+              "策略否决：风险收益比：按计划价 19.99 计算，约 1:1.56，最大亏损约 14.81%，目标空间约 23.06%"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "600519",
+        "name": "贵州茅台",
+        "sector": "大消费",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 1258.99,
+        "firstState": "重点跟踪池",
+        "firstScore": 90.3,
+        "firstReason": [
+          "成交额 59.88 亿元，流动性较好",
+          "PE 19.03，估值未进入极端异常区",
+          "归属板块：大消费；命中：消费、食品、饮料、白酒",
+          "趋势阶段不够清晰，等待方向选择"
+        ],
+        "currentPrice": 1258.99,
+        "currentState": "重点跟踪池",
+        "currentScore": 90.3,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "类三买观察",
+          "entryZone": "1188.44-1242.24",
+          "stop": 1185.3,
+          "takeProfit": 1369.41,
+          "riskReward": 2.24
+        },
+        "lastPlan": {
+          "buyType": "类三买观察",
+          "action": "不追高，等待突破后回踩不破再试仓",
+          "nextAction": "加入盘中观察，等待 5分钟确认或回踩关键位。",
+          "stop": 1185.3,
+          "takeProfit": 1369.41,
+          "riskReward": 2.24
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 1258.99
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 1258.99,
+            "open": 1252,
+            "high": 1267.97,
+            "low": 1245.05,
+            "pct": 0.63,
+            "state": "重点跟踪池",
+            "score": 90.3,
+            "mainNetInflowYi": -0.79
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 1258.99,
+            "pct": 0.63,
+            "state": "重点跟踪池",
+            "score": 90.3,
+            "sector": "大消费",
+            "buyType": "类三买观察",
+            "reason": [
+              "成交额 59.88 亿元，流动性较好",
+              "PE 19.03，估值未进入极端异常区",
+              "归属板块：大消费；命中：消费、食品、饮料、白酒",
+              "趋势阶段不够清晰，等待方向选择",
+              "归母净利润同比增长 1.47%"
+            ],
+            "risk": [
+              "跌回 20 日中位 1209.49 下方，类三买观察失效",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 57.2",
+              "策略否决：资金流：主力净流入 -0.79 亿",
+              "策略否决：板块权重：大消费"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 1258.99,
+            "pct": 0.63,
+            "state": "重点跟踪池",
+            "score": 90.8,
+            "sector": "大消费",
+            "buyType": "类三买观察",
+            "reason": [
+              "成交额 59.88 亿元，流动性较好",
+              "PE 19.03，估值未进入极端异常区",
+              "归属板块：大消费；命中：消费、食品、饮料、白酒",
+              "趋势阶段不够清晰，等待方向选择",
+              "归母净利润同比增长 1.47%"
+            ],
+            "risk": [
+              "跌回 20 日中位 1209.49 下方，类三买观察失效",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 59.5",
+              "策略否决：资金流：主力净流入 -0.79 亿",
+              "策略否决：板块权重：大消费"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 1258.99,
+            "pct": 0.63,
+            "state": "重点跟踪池",
+            "score": 90.3,
+            "sector": "大消费",
+            "buyType": "类三买观察",
+            "reason": [
+              "成交额 59.88 亿元，流动性较好",
+              "PE 19.03，估值未进入极端异常区",
+              "归属板块：大消费；命中：消费、食品、饮料、白酒",
+              "趋势阶段不够清晰，等待方向选择",
+              "归母净利润同比增长 1.47%"
+            ],
+            "risk": [
+              "跌回 20 日中位 1209.49 下方，类三买观察失效",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 57.2",
+              "策略否决：资金流：主力净流入 -0.79 亿",
+              "策略否决：板块权重：大消费"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 1258.99,
+            "pct": 0.63,
+            "state": "重点跟踪池",
+            "score": 90.3,
+            "sector": "大消费",
+            "buyType": "类三买观察",
+            "reason": [
+              "成交额 59.88 亿元，流动性较好",
+              "PE 19.03，估值未进入极端异常区",
+              "归属板块：大消费；命中：消费、食品、饮料、白酒",
+              "趋势阶段不够清晰，等待方向选择",
+              "归母净利润同比增长 1.47%"
+            ],
+            "risk": [
+              "跌回 20 日中位 1209.49 下方，类三买观察失效",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 57.2",
+              "策略否决：资金流：主力净流入 -0.79 亿",
+              "策略否决：板块权重：大消费"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "600521",
+        "name": "华海药业",
+        "sector": "医药医疗",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 17.63,
+        "firstState": "交易准备池",
+        "firstScore": 96,
+        "firstReason": [
+          "成交额 14.92 亿元，流动性较好",
+          "当日涨幅 4.38%，短线强于市场",
+          "归属板块：医药医疗；命中：AI、创新药、合成生物",
+          "仍在中枢上半区，但趋势延续需要低级别确认和放量"
+        ],
+        "currentPrice": 17.63,
+        "currentState": "交易准备池",
+        "currentScore": 96,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "类三买观察",
+          "entryZone": "15.03-16.9",
+          "stop": 16.01,
+          "takeProfit": 19.22,
+          "riskReward": 2.61
+        },
+        "lastPlan": {
+          "buyType": "类三买观察",
+          "action": "不追高，等待突破后回踩不破再试仓",
+          "nextAction": "只在回踩不破触发条件时试仓；高开急拉不追。",
+          "stop": 16.01,
+          "takeProfit": 19.22,
+          "riskReward": 2.61
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 17.63
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 17.63,
+            "open": 16.61,
+            "high": 17.8,
+            "low": 16.52,
+            "pct": 4.38,
+            "state": "交易准备池",
+            "score": 96,
+            "mainNetInflowYi": -0.16
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 17.63,
+            "pct": 4.38,
+            "state": "交易准备池",
+            "score": 96,
+            "sector": "医药医疗",
+            "buyType": "类三买观察",
+            "reason": [
+              "成交额 14.92 亿元，流动性较好",
+              "当日涨幅 4.38%，短线强于市场",
+              "归属板块：医药医疗；命中：AI、创新药、合成生物",
+              "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+              "归母净利润同比增长 35.9%"
+            ],
+            "risk": [
+              "营业收入同比下降 1.4%",
+              "跌回 20 日中位 15.77 下方，类三买观察失效",
+              "策略否决：资金流：主力净流入 -0.16 亿"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 17.63,
+            "pct": 4.38,
+            "state": "交易准备池",
+            "score": 96,
+            "sector": "医药医疗",
+            "buyType": "类三买观察",
+            "reason": [
+              "成交额 14.92 亿元，流动性较好",
+              "当日涨幅 4.38%，短线强于市场",
+              "归属板块：医药医疗；命中：AI、创新药、合成生物",
+              "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+              "归母净利润同比增长 35.9%"
+            ],
+            "risk": [
+              "营业收入同比下降 1.4%",
+              "跌回 20 日中位 15.77 下方，类三买观察失效",
+              "策略否决：资金流：主力净流入 -0.16 亿"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 17.63,
+            "pct": 4.38,
+            "state": "交易准备池",
+            "score": 96,
+            "sector": "医药医疗",
+            "buyType": "类三买观察",
+            "reason": [
+              "成交额 14.92 亿元，流动性较好",
+              "当日涨幅 4.38%，短线强于市场",
+              "归属板块：医药医疗；命中：AI、创新药、合成生物",
+              "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+              "归母净利润同比增长 35.9%"
+            ],
+            "risk": [
+              "营业收入同比下降 1.4%",
+              "跌回 20 日中位 15.77 下方，类三买观察失效",
+              "策略否决：资金流：主力净流入 -0.16 亿"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 17.63,
+            "pct": 4.38,
+            "state": "交易准备池",
+            "score": 96,
+            "sector": "医药医疗",
+            "buyType": "类三买观察",
+            "reason": [
+              "成交额 14.92 亿元，流动性较好",
+              "当日涨幅 4.38%，短线强于市场",
+              "归属板块：医药医疗；命中：AI、创新药、合成生物",
+              "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+              "归母净利润同比增长 35.9%"
+            ],
+            "risk": [
+              "营业收入同比下降 1.4%",
+              "跌回 20 日中位 15.77 下方，类三买观察失效",
+              "策略否决：资金流：主力净流入 -0.16 亿"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "600547",
+        "name": "山东黄金",
+        "sector": "黄金/贵金属",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 24.76,
+        "firstState": "观察池",
+        "firstScore": 75.3,
+        "firstReason": [
+          "成交额 13.93 亿元，流动性较好",
+          "PE 22.13，估值未进入极端异常区",
+          "主力净流入 0.68 亿元",
+          "归属板块：黄金/贵金属；命中：黄金、贵金属"
+        ],
+        "currentPrice": 24.76,
+        "currentState": "观察池",
+        "currentScore": 75.3,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "潜在一买观察",
+          "entryZone": "24.32-26.87",
+          "stop": 21.87,
+          "takeProfit": 30.34,
+          "riskReward": 1.93
+        },
+        "lastPlan": {
+          "buyType": "潜在一买观察",
+          "action": "只观察，不提前抄底；等待底分型与低级别转强",
+          "nextAction": "保留观察，等待评分或买点改善。",
+          "stop": 21.87,
+          "takeProfit": 30.34,
+          "riskReward": 1.93
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 24.76
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 24.76,
+            "open": 24.39,
+            "high": 25.5,
+            "low": 24.3,
+            "pct": 0.28,
+            "state": "观察池",
+            "score": 75.3,
+            "mainNetInflowYi": 0.68
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 24.76,
+            "pct": 0.28,
+            "state": "观察池",
+            "score": 75.3,
+            "sector": "黄金/贵金属",
+            "buyType": "潜在一买观察",
+            "reason": [
+              "成交额 13.93 亿元，流动性较好",
+              "PE 22.13，估值未进入极端异常区",
+              "主力净流入 0.68 亿元",
+              "归属板块：黄金/贵金属；命中：黄金、贵金属",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+            ],
+            "risk": [
+              "跌破 20 日低点 22.55，一买观察失败",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：相对强度：强度 13.5"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 24.76,
+            "pct": 0.28,
+            "state": "观察池",
+            "score": 58.4,
+            "sector": "黄金/贵金属",
+            "buyType": "潜在一买观察",
+            "reason": [
+              "成交额 13.93 亿元，流动性较好",
+              "PE 22.13，估值未进入极端异常区",
+              "主力净流入 0.68 亿元",
+              "归属板块：黄金/贵金属；命中：黄金、贵金属",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+            ],
+            "risk": [
+              "跌破 20 日低点 22.37，一买观察失败",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：相对强度：强度 14.3",
+              "策略否决：风险收益比：按计划价 24.76 计算，约 1:1.76，最大亏损约 12.36%，目标空间约 21.73%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 24.76,
+            "pct": 0.28,
+            "state": "观察池",
+            "score": 75.3,
+            "sector": "黄金/贵金属",
+            "buyType": "潜在一买观察",
+            "reason": [
+              "成交额 13.93 亿元，流动性较好",
+              "PE 22.13，估值未进入极端异常区",
+              "主力净流入 0.68 亿元",
+              "归属板块：黄金/贵金属；命中：黄金、贵金属",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+            ],
+            "risk": [
+              "跌破 20 日低点 22.55，一买观察失败",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：相对强度：强度 13.5"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 24.76,
+            "pct": 0.28,
+            "state": "观察池",
+            "score": 75.3,
+            "sector": "黄金/贵金属",
+            "buyType": "潜在一买观察",
+            "reason": [
+              "成交额 13.93 亿元，流动性较好",
+              "PE 22.13，估值未进入极端异常区",
+              "主力净流入 0.68 亿元",
+              "归属板块：黄金/贵金属；命中：黄金、贵金属",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+            ],
+            "risk": [
+              "跌破 20 日低点 22.55，一买观察失败",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：相对强度：强度 13.5"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "600562",
+        "name": "国睿科技",
+        "sector": "军工国防",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 22.29,
+        "firstState": "交易准备池",
+        "firstScore": 96,
+        "firstReason": [
+          "成交额 3.76 亿元，具备跟踪流动性",
+          "当日涨幅 5.39%，短线强于市场",
+          "PE 43.71，估值未进入极端异常区",
+          "主力净流入 0.13 亿元"
+        ],
+        "currentPrice": 22.29,
+        "currentState": "交易准备池",
+        "currentScore": 96,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "类二买/趋势延续观察",
+          "entryZone": "20.95-23.23",
+          "stop": 20.66,
+          "takeProfit": 26.27,
+          "riskReward": 2.44
+        },
+        "lastPlan": {
+          "buyType": "类二买/趋势延续观察",
+          "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+          "nextAction": "只在回踩不破触发条件时试仓；高开急拉不追。",
+          "stop": 20.66,
+          "takeProfit": 26.27,
+          "riskReward": 2.44
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 22.29
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 22.29,
+            "open": 21.03,
+            "high": 22.71,
+            "low": 20.83,
+            "pct": 5.39,
+            "state": "交易准备池",
+            "score": 96,
+            "mainNetInflowYi": 0.13
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 22.29,
+            "pct": 5.39,
+            "state": "交易准备池",
+            "score": 96,
+            "sector": "军工国防",
+            "buyType": "类二买/趋势延续观察",
+            "reason": [
+              "成交额 3.76 亿元，具备跟踪流动性",
+              "当日涨幅 5.39%，短线强于市场",
+              "PE 43.71，估值未进入极端异常区",
+              "主力净流入 0.13 亿元",
+              "归属板块：军工国防；命中：电子、国防军工"
+            ],
+            "risk": [
+              "经营现金流为负 -2.12 亿元",
+              "跌破 MA20 且 30分钟转弱，取消买点",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 43.7"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 22.29,
+            "pct": 5.39,
+            "state": "交易准备池",
+            "score": 96,
+            "sector": "军工国防",
+            "buyType": "类二买/趋势延续观察",
+            "reason": [
+              "成交额 3.76 亿元，具备跟踪流动性",
+              "当日涨幅 5.39%，短线强于市场",
+              "PE 43.71，估值未进入极端异常区",
+              "主力净流入 0.13 亿元",
+              "归属板块：军工国防；命中：电子、国防军工"
+            ],
+            "risk": [
+              "经营现金流为负 -2.12 亿元",
+              "跌破 MA20 且 30分钟转弱，取消买点",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 42.1"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 22.29,
+            "pct": 5.39,
+            "state": "交易准备池",
+            "score": 96,
+            "sector": "军工国防",
+            "buyType": "类二买/趋势延续观察",
+            "reason": [
+              "成交额 3.76 亿元，具备跟踪流动性",
+              "当日涨幅 5.39%，短线强于市场",
+              "PE 43.71，估值未进入极端异常区",
+              "主力净流入 0.13 亿元",
+              "归属板块：军工国防；命中：电子、国防军工"
+            ],
+            "risk": [
+              "经营现金流为负 -2.12 亿元",
+              "跌破 MA20 且 30分钟转弱，取消买点",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 43.7"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 22.29,
+            "pct": 5.39,
+            "state": "交易准备池",
+            "score": 96,
+            "sector": "军工国防",
+            "buyType": "类二买/趋势延续观察",
+            "reason": [
+              "成交额 3.76 亿元，具备跟踪流动性",
+              "当日涨幅 5.39%，短线强于市场",
+              "PE 43.71，估值未进入极端异常区",
+              "主力净流入 0.13 亿元",
+              "归属板块：军工国防；命中：电子、国防军工"
+            ],
+            "risk": [
+              "经营现金流为负 -2.12 亿元",
+              "跌破 MA20 且 30分钟转弱，取消买点",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 43.7"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "600641",
+        "name": "先导基电",
+        "sector": "科技",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 35.73,
+        "firstState": "暂不交易",
+        "firstScore": 32.9,
+        "firstReason": [
+          "成交额 25.77 亿元，流动性较好",
+          "归属板块：科技；命中：半导体、芯片、电子、存储、半导体材料",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "归母净利润同比增长 17.49%"
+        ],
+        "currentPrice": 35.73,
+        "currentState": "暂不交易",
+        "currentScore": 32.9,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 31.83,
+          "takeProfit": 55.07,
+          "riskReward": 4.96
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 31.83,
+          "takeProfit": 55.07,
+          "riskReward": 4.96
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 35.73
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 35.73,
+            "open": 38,
+            "high": 39.18,
+            "low": 35.73,
+            "pct": -10,
+            "state": "暂不交易",
+            "score": 32.9,
+            "mainNetInflowYi": -3.25
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 35.73,
+            "pct": -10,
+            "state": "暂不交易",
+            "score": 32.9,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 25.77 亿元，流动性较好",
+              "归属板块：科技；命中：半导体、芯片、电子、存储、半导体材料",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 17.49%",
+              "营业收入同比增长 178.17%"
+            ],
+            "risk": [
+              "当日跌幅 -10%，需确认是否有利空或破位",
+              "主力净流出 3.25 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "2026-07-14 先导基电:上海先导基电科技股份有限公司关于上海证券交易所《关于对上海先导基电科技股份有限公司有关股价波动及收购资产事项的问询函》的回复公告",
+              "有效跌破 20 日低点 32.81，技术面继续减分"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 35.73,
+            "pct": -10,
+            "state": "暂不交易",
+            "score": 32.8,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 25.77 亿元，流动性较好",
+              "归属板块：科技；命中：半导体、芯片、电子、存储、半导体材料",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 17.49%",
+              "营业收入同比增长 178.17%"
+            ],
+            "risk": [
+              "当日跌幅 -10%，需确认是否有利空或破位",
+              "主力净流出 3.25 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "2026-07-14 先导基电:上海先导基电科技股份有限公司关于上海证券交易所《关于对上海先导基电科技股份有限公司有关股价波动及收购资产事项的问询函》的回复公告",
+              "有效跌破 20 日低点 32.81，技术面继续减分"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 35.73,
+            "pct": -10,
+            "state": "暂不交易",
+            "score": 32.9,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 25.77 亿元，流动性较好",
+              "归属板块：科技；命中：半导体、芯片、电子、存储、半导体材料",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 17.49%",
+              "营业收入同比增长 178.17%"
+            ],
+            "risk": [
+              "当日跌幅 -10%，需确认是否有利空或破位",
+              "主力净流出 3.25 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "2026-07-14 先导基电:上海先导基电科技股份有限公司关于上海证券交易所《关于对上海先导基电科技股份有限公司有关股价波动及收购资产事项的问询函》的回复公告",
+              "有效跌破 20 日低点 32.81，技术面继续减分"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 35.73,
+            "pct": -10,
+            "state": "暂不交易",
+            "score": 32.9,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 25.77 亿元，流动性较好",
+              "归属板块：科技；命中：半导体、芯片、电子、存储、半导体材料",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 17.49%",
+              "营业收入同比增长 178.17%"
+            ],
+            "risk": [
+              "当日跌幅 -10%，需确认是否有利空或破位",
+              "主力净流出 3.25 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "2026-07-14 先导基电:上海先导基电科技股份有限公司关于上海证券交易所《关于对上海先导基电科技股份有限公司有关股价波动及收购资产事项的问询函》的回复公告",
+              "有效跌破 20 日低点 32.81，技术面继续减分"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "600839",
+        "name": "四川长虹",
+        "sector": "新能源/电力设备",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 7.31,
+        "firstState": "暂不交易",
+        "firstScore": 9.6,
+        "firstReason": [
+          "成交额 15.15 亿元，流动性较好",
+          "PE 34.13，估值未进入极端异常区",
+          "归属板块：新能源/电力设备；命中：电子、消费电子、储能",
+          "趋势阶段不够清晰，等待方向选择"
+        ],
+        "currentPrice": 7.31,
+        "currentState": "暂不交易",
+        "currentScore": 9.6,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "中枢上半区观察",
+          "entryZone": "6.66-7.29",
+          "stop": 6.03,
+          "takeProfit": 8.2,
+          "riskReward": 0.72
+        },
+        "lastPlan": {
+          "buyType": "中枢上半区观察",
+          "action": "位置不差但低级别未确认，等待 30分钟转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 6.03,
+          "takeProfit": 8.2,
+          "riskReward": 0.72
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 7.31
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 7.31,
+            "open": 7.36,
+            "high": 7.59,
+            "low": 7.28,
+            "pct": -1.75,
+            "state": "暂不交易",
+            "score": 9.6,
+            "mainNetInflowYi": -2.02
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 7.31,
+            "pct": -1.75,
+            "state": "暂不交易",
+            "score": 9.6,
+            "sector": "新能源/电力设备",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 15.15 亿元，流动性较好",
+              "PE 34.13，估值未进入极端异常区",
+              "归属板块：新能源/电力设备；命中：电子、消费电子、储能",
+              "趋势阶段不够清晰，等待方向选择",
+              "营业收入同比增长 1.64%"
+            ],
+            "risk": [
+              "主力净流出 2.02 亿元",
+              "归母净利润同比下降 71.5%",
+              "经营现金流为负 -35.37 亿元",
+              "资产负债率 73.71%，财务压力偏高",
+              "跌破 20 日中位 6.9，降级为震荡"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 7.31,
+            "pct": -1.75,
+            "state": "暂不交易",
+            "score": 9.6,
+            "sector": "新能源/电力设备",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 15.15 亿元，流动性较好",
+              "PE 34.13，估值未进入极端异常区",
+              "归属板块：新能源/电力设备；命中：电子、消费电子、储能",
+              "趋势阶段不够清晰，等待方向选择",
+              "营业收入同比增长 1.64%"
+            ],
+            "risk": [
+              "主力净流出 2.02 亿元",
+              "归母净利润同比下降 71.5%",
+              "经营现金流为负 -35.37 亿元",
+              "资产负债率 73.71%，财务压力偏高",
+              "跌破 20 日中位 6.9，降级为震荡"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 7.31,
+            "pct": -1.75,
+            "state": "暂不交易",
+            "score": 9.6,
+            "sector": "新能源/电力设备",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 15.15 亿元，流动性较好",
+              "PE 34.13，估值未进入极端异常区",
+              "归属板块：新能源/电力设备；命中：电子、消费电子、储能",
+              "趋势阶段不够清晰，等待方向选择",
+              "营业收入同比增长 1.64%"
+            ],
+            "risk": [
+              "主力净流出 2.02 亿元",
+              "归母净利润同比下降 71.5%",
+              "经营现金流为负 -35.37 亿元",
+              "资产负债率 73.71%，财务压力偏高",
+              "跌破 20 日中位 6.9，降级为震荡"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 7.31,
+            "pct": -1.75,
+            "state": "暂不交易",
+            "score": 9.6,
+            "sector": "新能源/电力设备",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 15.15 亿元，流动性较好",
+              "PE 34.13，估值未进入极端异常区",
+              "归属板块：新能源/电力设备；命中：电子、消费电子、储能",
+              "趋势阶段不够清晰，等待方向选择",
+              "营业收入同比增长 1.64%"
+            ],
+            "risk": [
+              "主力净流出 2.02 亿元",
+              "归母净利润同比下降 71.5%",
+              "经营现金流为负 -35.37 亿元",
+              "资产负债率 73.71%，财务压力偏高",
+              "跌破 20 日中位 6.9，降级为震荡"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "600843",
+        "name": "上工申贝",
+        "sector": "高端制造/汽车",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 6.76,
+        "firstState": "暂不交易",
+        "firstScore": 0,
+        "firstReason": [
+          "归属板块：高端制造/汽车；命中：机械、专用设备、设备、纺织服装设备、纺织机械",
+          "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+          "归母净利润同比增长 104.52%",
+          "资产负债率 53.34%，财务压力可控"
+        ],
+        "currentPrice": 6.76,
+        "currentState": "暂不交易",
+        "currentScore": 0,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 6.41,
+          "takeProfit": 9.81,
+          "riskReward": 8.71
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 6.41,
+          "takeProfit": 9.81,
+          "riskReward": 8.71
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 6.76
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 6.76,
+            "open": 6.68,
+            "high": 6.86,
+            "low": 6.63,
+            "pct": 0.59,
+            "state": "暂不交易",
+            "score": 0,
+            "mainNetInflowYi": -0.01
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 6.76,
+            "pct": 0.59,
+            "state": "暂不交易",
+            "score": 0,
+            "sector": "高端制造/汽车",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "归属板块：高端制造/汽车；命中：机械、专用设备、设备、纺织服装设备、纺织机械",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 104.52%",
+              "资产负债率 53.34%，财务压力可控",
+              "策略通过：财务质量：基本面待验证"
+            ],
+            "risk": [
+              "成交额偏低，实盘滑点和波动风险更高",
+              "营业收入同比下降 3.9%",
+              "经营现金流为负 -3.22 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 6.61，技术面继续减分"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 6.76,
+            "pct": 0.59,
+            "state": "暂不交易",
+            "score": 0,
+            "sector": "高端制造/汽车",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "归属板块：高端制造/汽车；命中：机械、专用设备、设备、纺织服装设备、纺织机械",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 104.52%",
+              "资产负债率 53.34%，财务压力可控",
+              "策略通过：财务质量：基本面待验证"
+            ],
+            "risk": [
+              "成交额偏低，实盘滑点和波动风险更高",
+              "营业收入同比下降 3.9%",
+              "经营现金流为负 -3.22 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 6.61，技术面继续减分"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 6.76,
+            "pct": 0.59,
+            "state": "暂不交易",
+            "score": 0,
+            "sector": "高端制造/汽车",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "归属板块：高端制造/汽车；命中：机械、专用设备、设备、纺织服装设备、纺织机械",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 104.52%",
+              "资产负债率 53.34%，财务压力可控",
+              "策略通过：财务质量：基本面待验证"
+            ],
+            "risk": [
+              "成交额偏低，实盘滑点和波动风险更高",
+              "营业收入同比下降 3.9%",
+              "经营现金流为负 -3.22 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 6.61，技术面继续减分"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 6.76,
+            "pct": 0.59,
+            "state": "暂不交易",
+            "score": 0,
+            "sector": "高端制造/汽车",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "归属板块：高端制造/汽车；命中：机械、专用设备、设备、纺织服装设备、纺织机械",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 104.52%",
+              "资产负债率 53.34%，财务压力可控",
+              "策略通过：财务质量：基本面待验证"
+            ],
+            "risk": [
+              "成交额偏低，实盘滑点和波动风险更高",
+              "营业收入同比下降 3.9%",
+              "经营现金流为负 -3.22 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 6.61，技术面继续减分"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "601899",
+        "name": "紫金矿业",
+        "sector": "黄金/贵金属",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 29.25,
+        "firstState": "重点跟踪池",
+        "firstScore": 86.8,
+        "firstReason": [
+          "成交额 77.73 亿元，流动性较好",
+          "PE 12.61，估值未进入极端异常区",
+          "主力净流入 2.86 亿元",
+          "归属板块：黄金/贵金属；命中：锂"
+        ],
+        "currentPrice": 29.25,
+        "currentState": "重点跟踪池",
+        "currentScore": 86.8,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "类二买/趋势延续观察",
+          "entryZone": "26.52-29.54",
+          "stop": 26.39,
+          "takeProfit": 33.46,
+          "riskReward": 1.47
+        },
+        "lastPlan": {
+          "buyType": "类二买/趋势延续观察",
+          "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+          "nextAction": "加入盘中观察，等待 5分钟确认或回踩关键位。",
+          "stop": 26.39,
+          "takeProfit": 33.46,
+          "riskReward": 1.47
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 29.25
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 29.25,
+            "open": 28.82,
+            "high": 29.59,
+            "low": 28.79,
+            "pct": 1.46,
+            "state": "重点跟踪池",
+            "score": 86.8,
+            "mainNetInflowYi": 2.86
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 29.25,
+            "pct": 1.46,
+            "state": "重点跟踪池",
+            "score": 86.8,
+            "sector": "黄金/贵金属",
+            "buyType": "类二买/趋势延续观察",
+            "reason": [
+              "成交额 77.73 亿元，流动性较好",
+              "PE 12.61，估值未进入极端异常区",
+              "主力净流入 2.86 亿元",
+              "归属板块：黄金/贵金属；命中：锂",
+              "趋势阶段不够清晰，等待方向选择"
+            ],
+            "risk": [
+              "跌破 MA20 且 30分钟转弱，取消买点",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 40.5",
+              "策略否决：风险收益比：按计划价 29.25 计算，约 1:1.47，最大亏损约 9.78%，目标空间约 14.39%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 29.25,
+            "pct": 1.46,
+            "state": "重点跟踪池",
+            "score": 87.2,
+            "sector": "黄金/贵金属",
+            "buyType": "类二买/趋势延续观察",
+            "reason": [
+              "成交额 77.73 亿元，流动性较好",
+              "PE 12.61，估值未进入极端异常区",
+              "主力净流入 2.86 亿元",
+              "归属板块：黄金/贵金属；命中：锂",
+              "趋势阶段不够清晰，等待方向选择"
+            ],
+            "risk": [
+              "跌破 MA20 且 30分钟转弱，取消买点",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 42.9",
+              "策略否决：风险收益比：按计划价 29.24 计算，约 1:1.3，最大亏损约 10.05%，目标空间约 13.03%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 29.25,
+            "pct": 1.46,
+            "state": "重点跟踪池",
+            "score": 86.8,
+            "sector": "黄金/贵金属",
+            "buyType": "类二买/趋势延续观察",
+            "reason": [
+              "成交额 77.73 亿元，流动性较好",
+              "PE 12.61，估值未进入极端异常区",
+              "主力净流入 2.86 亿元",
+              "归属板块：黄金/贵金属；命中：锂",
+              "趋势阶段不够清晰，等待方向选择"
+            ],
+            "risk": [
+              "跌破 MA20 且 30分钟转弱，取消买点",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 40.5",
+              "策略否决：风险收益比：按计划价 29.25 计算，约 1:1.47，最大亏损约 9.78%，目标空间约 14.39%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 29.25,
+            "pct": 1.46,
+            "state": "重点跟踪池",
+            "score": 86.8,
+            "sector": "黄金/贵金属",
+            "buyType": "类二买/趋势延续观察",
+            "reason": [
+              "成交额 77.73 亿元，流动性较好",
+              "PE 12.61，估值未进入极端异常区",
+              "主力净流入 2.86 亿元",
+              "归属板块：黄金/贵金属；命中：锂",
+              "趋势阶段不够清晰，等待方向选择"
+            ],
+            "risk": [
+              "跌破 MA20 且 30分钟转弱，取消买点",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 40.5",
+              "策略否决：风险收益比：按计划价 29.25 计算，约 1:1.47，最大亏损约 9.78%，目标空间约 14.39%"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "603228",
+        "name": "景旺电子",
+        "sector": "科技",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 70.79,
+        "firstState": "重点跟踪池",
+        "firstScore": 85.4,
+        "firstReason": [
+          "成交额 45.63 亿元，流动性较好",
+          "当日涨幅 7.94%，短线强于市场",
+          "PE 54.45，估值未进入极端异常区",
+          "主力净流入 8.75 亿元"
+        ],
+        "currentPrice": 70.79,
+        "currentState": "重点跟踪池",
+        "currentScore": 85.4,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "潜在一买观察",
+          "entryZone": "68.23-77.84",
+          "stop": 59.69,
+          "takeProfit": 89.04,
+          "riskReward": 1.64
+        },
+        "lastPlan": {
+          "buyType": "潜在一买观察",
+          "action": "只观察，不提前抄底；等待底分型与低级别转强",
+          "nextAction": "加入盘中观察，等待 5分钟确认或回踩关键位。",
+          "stop": 59.69,
+          "takeProfit": 89.04,
+          "riskReward": 1.64
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 70.79
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 70.79,
+            "open": 64.01,
+            "high": 72.14,
+            "low": 63.01,
+            "pct": 7.94,
+            "state": "重点跟踪池",
+            "score": 85.4,
+            "mainNetInflowYi": 8.75
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 70.79,
+            "pct": 7.94,
+            "state": "重点跟踪池",
+            "score": 85.4,
+            "sector": "科技",
+            "buyType": "潜在一买观察",
+            "reason": [
+              "成交额 45.63 亿元，流动性较好",
+              "当日涨幅 7.94%，短线强于市场",
+              "PE 54.45，估值未进入极端异常区",
+              "主力净流入 8.75 亿元",
+              "归属板块：科技；命中：半导体、电子、PCB、电子后视镜"
+            ],
+            "risk": [
+              "归母净利润同比下降 28.37%",
+              "跌破 20 日低点 61.54，一买观察失败",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：相对强度：强度 56.4",
+              "策略否决：风险收益比：按计划价 70.79 计算，约 1:1.64，最大亏损约 15.68%，目标空间约 25.78%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 70.79,
+            "pct": 7.94,
+            "state": "重点跟踪池",
+            "score": 85.3,
+            "sector": "科技",
+            "buyType": "潜在一买观察",
+            "reason": [
+              "成交额 45.63 亿元，流动性较好",
+              "当日涨幅 7.94%，短线强于市场",
+              "PE 54.45，估值未进入极端异常区",
+              "主力净流入 8.75 亿元",
+              "归属板块：科技；命中：半导体、电子、PCB、电子后视镜"
+            ],
+            "risk": [
+              "归母净利润同比下降 28.37%",
+              "跌破 20 日低点 61.54，一买观察失败",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：相对强度：强度 54.8",
+              "策略否决：风险收益比：按计划价 70.79 计算，约 1:1.64，最大亏损约 15.68%，目标空间约 25.78%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 70.79,
+            "pct": 7.94,
+            "state": "重点跟踪池",
+            "score": 85.4,
+            "sector": "科技",
+            "buyType": "潜在一买观察",
+            "reason": [
+              "成交额 45.63 亿元，流动性较好",
+              "当日涨幅 7.94%，短线强于市场",
+              "PE 54.45，估值未进入极端异常区",
+              "主力净流入 8.75 亿元",
+              "归属板块：科技；命中：半导体、电子、PCB、电子后视镜"
+            ],
+            "risk": [
+              "归母净利润同比下降 28.37%",
+              "跌破 20 日低点 61.54，一买观察失败",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：相对强度：强度 56.4",
+              "策略否决：风险收益比：按计划价 70.79 计算，约 1:1.64，最大亏损约 15.68%，目标空间约 25.78%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 70.79,
+            "pct": 7.94,
+            "state": "重点跟踪池",
+            "score": 85.4,
+            "sector": "科技",
+            "buyType": "潜在一买观察",
+            "reason": [
+              "成交额 45.63 亿元，流动性较好",
+              "当日涨幅 7.94%，短线强于市场",
+              "PE 54.45，估值未进入极端异常区",
+              "主力净流入 8.75 亿元",
+              "归属板块：科技；命中：半导体、电子、PCB、电子后视镜"
+            ],
+            "risk": [
+              "归母净利润同比下降 28.37%",
+              "跌破 20 日低点 61.54，一买观察失败",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：相对强度：强度 56.4",
+              "策略否决：风险收益比：按计划价 70.79 计算，约 1:1.64，最大亏损约 15.68%，目标空间约 25.78%"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "603236",
+        "name": "移远通信",
+        "sector": "新能源/电力设备",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 53.18,
+        "firstState": "暂不交易",
+        "firstScore": 54,
+        "firstReason": [
+          "成交额 9.07 亿元，具备跟踪流动性",
+          "当日涨幅 4.83%，短线强于市场",
+          "PE 16.62，估值未进入极端异常区",
+          "主力净流入 0.55 亿元"
+        ],
+        "currentPrice": 53.18,
+        "currentState": "暂不交易",
+        "currentScore": 54,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "类二买/趋势延续观察",
+          "entryZone": "48.52-53.04",
+          "stop": 48.62,
+          "takeProfit": 59.62,
+          "riskReward": 1.49
+        },
+        "lastPlan": {
+          "buyType": "类二买/趋势延续观察",
+          "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 48.62,
+          "takeProfit": 59.62,
+          "riskReward": 1.49
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 53.18
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 53.18,
+            "open": 50.74,
+            "high": 55.2,
+            "low": 50.72,
+            "pct": 4.83,
+            "state": "暂不交易",
+            "score": 54,
+            "mainNetInflowYi": 0.55
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 53.18,
+            "pct": 4.83,
+            "state": "暂不交易",
+            "score": 54,
+            "sector": "新能源/电力设备",
+            "buyType": "类二买/趋势延续观察",
+            "reason": [
+              "成交额 9.07 亿元，具备跟踪流动性",
+              "当日涨幅 4.83%，短线强于市场",
+              "PE 16.62，估值未进入极端异常区",
+              "主力净流入 0.55 亿元",
+              "归属板块：新能源/电力设备；命中：通信、储能"
+            ],
+            "risk": [
+              "归母净利润同比下降 33.3%",
+              "经营现金流为负 -4.22 亿元",
+              "跌破 MA20 且 30分钟转弱，取消买点",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 23"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 53.18,
+            "pct": 4.83,
+            "state": "暂不交易",
+            "score": 53.8,
+            "sector": "新能源/电力设备",
+            "buyType": "类二买/趋势延续观察",
+            "reason": [
+              "成交额 9.07 亿元，具备跟踪流动性",
+              "当日涨幅 4.83%，短线强于市场",
+              "PE 16.62，估值未进入极端异常区",
+              "主力净流入 0.55 亿元",
+              "归属板块：新能源/电力设备；命中：通信、储能"
+            ],
+            "risk": [
+              "归母净利润同比下降 33.3%",
+              "经营现金流为负 -4.22 亿元",
+              "跌破 MA20 且 30分钟转弱，取消买点",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 19.8"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 53.18,
+            "pct": 4.83,
+            "state": "暂不交易",
+            "score": 54,
+            "sector": "新能源/电力设备",
+            "buyType": "类二买/趋势延续观察",
+            "reason": [
+              "成交额 9.07 亿元，具备跟踪流动性",
+              "当日涨幅 4.83%，短线强于市场",
+              "PE 16.62，估值未进入极端异常区",
+              "主力净流入 0.55 亿元",
+              "归属板块：新能源/电力设备；命中：通信、储能"
+            ],
+            "risk": [
+              "归母净利润同比下降 33.3%",
+              "经营现金流为负 -4.22 亿元",
+              "跌破 MA20 且 30分钟转弱，取消买点",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 23"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 53.18,
+            "pct": 4.83,
+            "state": "暂不交易",
+            "score": 54,
+            "sector": "新能源/电力设备",
+            "buyType": "类二买/趋势延续观察",
+            "reason": [
+              "成交额 9.07 亿元，具备跟踪流动性",
+              "当日涨幅 4.83%，短线强于市场",
+              "PE 16.62，估值未进入极端异常区",
+              "主力净流入 0.55 亿元",
+              "归属板块：新能源/电力设备；命中：通信、储能"
+            ],
+            "risk": [
+              "归母净利润同比下降 33.3%",
+              "经营现金流为负 -4.22 亿元",
+              "跌破 MA20 且 30分钟转弱，取消买点",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 23"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "603300",
+        "name": "海南华铁",
+        "sector": "低空经济/航空航天",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 4.72,
+        "firstState": "重点跟踪池",
+        "firstScore": 79.5,
+        "firstReason": [
+          "成交额 4.71 亿元，具备跟踪流动性",
+          "当日涨幅 6.31%，短线强于市场",
+          "PE 18.15，估值未进入极端异常区",
+          "主力净流入 0.38 亿元"
+        ],
+        "currentPrice": 4.72,
+        "currentState": "重点跟踪池",
+        "currentScore": 79.5,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "类二买/趋势延续观察",
+          "entryZone": "4.5-4.87",
+          "stop": 4.42,
+          "takeProfit": 5.44,
+          "riskReward": 2.4
+        },
+        "lastPlan": {
+          "buyType": "类二买/趋势延续观察",
+          "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+          "nextAction": "加入盘中观察，等待 5分钟确认或回踩关键位。",
+          "stop": 4.42,
+          "takeProfit": 5.44,
+          "riskReward": 2.4
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": true,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 4.72
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 4.72,
+            "open": 4.42,
+            "high": 4.83,
+            "low": 4.38,
+            "pct": 6.31,
+            "state": "重点跟踪池",
+            "score": 79.5,
+            "mainNetInflowYi": 0.38
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 4.72,
+            "pct": 6.31,
+            "state": "重点跟踪池",
+            "score": 79.5,
+            "sector": "低空经济/航空航天",
+            "buyType": "类二买/趋势延续观察",
+            "reason": [
+              "成交额 4.71 亿元，具备跟踪流动性",
+              "当日涨幅 6.31%，短线强于市场",
+              "PE 18.15，估值未进入极端异常区",
+              "主力净流入 0.38 亿元",
+              "归属板块：低空经济/航空航天；命中：算力、低空经济"
+            ],
+            "risk": [
+              "归母净利润同比下降 42.87%",
+              "资产负债率 74.84%，财务压力偏高",
+              "跌破 MA20 且 30分钟转弱，取消买点",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 21.4"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 4.72,
+            "pct": 6.31,
+            "state": "重点跟踪池",
+            "score": 79.4,
+            "sector": "低空经济/航空航天",
+            "buyType": "类二买/趋势延续观察",
+            "reason": [
+              "成交额 4.71 亿元，具备跟踪流动性",
+              "当日涨幅 6.31%，短线强于市场",
+              "PE 18.15，估值未进入极端异常区",
+              "主力净流入 0.38 亿元",
+              "归属板块：低空经济/航空航天；命中：算力、低空经济"
+            ],
+            "risk": [
+              "归母净利润同比下降 42.87%",
+              "资产负债率 74.84%，财务压力偏高",
+              "跌破 MA20 且 30分钟转弱，取消买点",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 19.8"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 4.72,
+            "pct": 6.31,
+            "state": "重点跟踪池",
+            "score": 79.5,
+            "sector": "低空经济/航空航天",
+            "buyType": "类二买/趋势延续观察",
+            "reason": [
+              "成交额 4.71 亿元，具备跟踪流动性",
+              "当日涨幅 6.31%，短线强于市场",
+              "PE 18.15，估值未进入极端异常区",
+              "主力净流入 0.38 亿元",
+              "归属板块：低空经济/航空航天；命中：算力、低空经济"
+            ],
+            "risk": [
+              "归母净利润同比下降 42.87%",
+              "资产负债率 74.84%，财务压力偏高",
+              "跌破 MA20 且 30分钟转弱，取消买点",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 21.4"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 4.72,
+            "pct": 6.31,
+            "state": "重点跟踪池",
+            "score": 79.5,
+            "sector": "低空经济/航空航天",
+            "buyType": "类二买/趋势延续观察",
+            "reason": [
+              "成交额 4.71 亿元，具备跟踪流动性",
+              "当日涨幅 6.31%，短线强于市场",
+              "PE 18.15，估值未进入极端异常区",
+              "主力净流入 0.38 亿元",
+              "归属板块：低空经济/航空航天；命中：算力、低空经济"
+            ],
+            "risk": [
+              "归母净利润同比下降 42.87%",
+              "资产负债率 74.84%，财务压力偏高",
+              "跌破 MA20 且 30分钟转弱，取消买点",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 21.4"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "603501",
+        "name": "豪威集团",
+        "sector": "科技",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 109.85,
+        "firstState": "暂不交易",
+        "firstScore": 96,
+        "firstReason": [
+          "成交额 50.83 亿元，流动性较好",
+          "PE 32.6，估值未进入极端异常区",
+          "主力净流入 0.91 亿元",
+          "归属板块：科技；命中：半导体、芯片、集成电路、电子、电子后视镜"
+        ],
+        "currentPrice": 109.85,
+        "currentState": "暂不交易",
+        "currentScore": 96,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "中枢上半区观察",
+          "entryZone": "93.95-107.36",
+          "stop": 82.09,
+          "takeProfit": 122.87,
+          "riskReward": 0.61
+        },
+        "lastPlan": {
+          "buyType": "中枢上半区观察",
+          "action": "位置不差但低级别未确认，等待 30分钟转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 82.09,
+          "takeProfit": 122.87,
+          "riskReward": 0.61
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 109.85
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 109.85,
+            "open": 108.08,
+            "high": 113.77,
+            "low": 108,
+            "pct": -1.14,
+            "state": "暂不交易",
+            "score": 96,
+            "mainNetInflowYi": 0.91
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 109.85,
+            "pct": -1.14,
+            "state": "暂不交易",
+            "score": 96,
+            "sector": "科技",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 50.83 亿元，流动性较好",
+              "PE 32.6，估值未进入极端异常区",
+              "主力净流入 0.91 亿元",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、电子后视镜",
+              "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点"
+            ],
+            "risk": [
+              "归母净利润同比下降 41.92%",
+              "营业收入同比下降 0.9%",
+              "跌破 20 日中位 99.2，降级为震荡",
+              "策略否决：风险收益比：按计划价 107.36 计算，约 1:0.61，最大亏损约 23.54%，目标空间约 14.45%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 109.85,
+            "pct": -1.14,
+            "state": "暂不交易",
+            "score": 96,
+            "sector": "科技",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 50.83 亿元，流动性较好",
+              "PE 32.6，估值未进入极端异常区",
+              "主力净流入 0.91 亿元",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、电子后视镜",
+              "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点"
+            ],
+            "risk": [
+              "归母净利润同比下降 41.92%",
+              "营业收入同比下降 0.9%",
+              "跌破 20 日中位 99.2，降级为震荡",
+              "策略否决：风险收益比：按计划价 107.36 计算，约 1:0.61，最大亏损约 23.54%，目标空间约 14.45%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 109.85,
+            "pct": -1.14,
+            "state": "暂不交易",
+            "score": 96,
+            "sector": "科技",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 50.83 亿元，流动性较好",
+              "PE 32.6，估值未进入极端异常区",
+              "主力净流入 0.91 亿元",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、电子后视镜",
+              "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点"
+            ],
+            "risk": [
+              "归母净利润同比下降 41.92%",
+              "营业收入同比下降 0.9%",
+              "跌破 20 日中位 99.2，降级为震荡",
+              "策略否决：风险收益比：按计划价 107.36 计算，约 1:0.61，最大亏损约 23.54%，目标空间约 14.45%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 109.85,
+            "pct": -1.14,
+            "state": "暂不交易",
+            "score": 96,
+            "sector": "科技",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 50.83 亿元，流动性较好",
+              "PE 32.6，估值未进入极端异常区",
+              "主力净流入 0.91 亿元",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、电子后视镜",
+              "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点"
+            ],
+            "risk": [
+              "归母净利润同比下降 41.92%",
+              "营业收入同比下降 0.9%",
+              "跌破 20 日中位 99.2，降级为震荡",
+              "策略否决：风险收益比：按计划价 107.36 计算，约 1:0.61，最大亏损约 23.54%，目标空间约 14.45%"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "603596",
+        "name": "伯特利",
+        "sector": "机器人/智能制造",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 23.76,
+        "firstState": "暂不交易",
+        "firstScore": 28.7,
+        "firstReason": [
+          "成交额 5.11 亿元，具备跟踪流动性",
+          "当日涨幅 3.44%，短线强于市场",
+          "PE 11，估值未进入极端异常区",
+          "主力净流入 0.25 亿元"
+        ],
+        "currentPrice": 23.76,
+        "currentState": "暂不交易",
+        "currentScore": 28.7,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 21.51,
+          "takeProfit": 31.54,
+          "riskReward": 3.46
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 21.51,
+          "takeProfit": 31.54,
+          "riskReward": 3.46
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 23.76
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 23.76,
+            "open": 22.71,
+            "high": 24.33,
+            "low": 22.59,
+            "pct": 3.44,
+            "state": "暂不交易",
+            "score": 28.7,
+            "mainNetInflowYi": 0.25
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 23.76,
+            "pct": 3.44,
+            "state": "暂不交易",
+            "score": 28.7,
+            "sector": "机器人/智能制造",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 5.11 亿元，具备跟踪流动性",
+              "当日涨幅 3.44%，短线强于市场",
+              "PE 11，估值未进入极端异常区",
+              "主力净流入 0.25 亿元",
+              "归属板块：机器人/智能制造；命中：新能源、机器人概念"
+            ],
+            "risk": [
+              "归母净利润同比下降 0.64%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 22.18，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 23.76,
+            "pct": 3.44,
+            "state": "暂不交易",
+            "score": 30.5,
+            "sector": "机器人/智能制造",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 5.11 亿元，具备跟踪流动性",
+              "当日涨幅 3.44%，短线强于市场",
+              "PE 11，估值未进入极端异常区",
+              "主力净流入 0.25 亿元",
+              "归属板块：机器人/智能制造；命中：新能源、机器人概念"
+            ],
+            "risk": [
+              "归母净利润同比下降 0.64%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 22.18，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 23.76,
+            "pct": 3.44,
+            "state": "暂不交易",
+            "score": 28.7,
+            "sector": "机器人/智能制造",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 5.11 亿元，具备跟踪流动性",
+              "当日涨幅 3.44%，短线强于市场",
+              "PE 11，估值未进入极端异常区",
+              "主力净流入 0.25 亿元",
+              "归属板块：机器人/智能制造；命中：新能源、机器人概念"
+            ],
+            "risk": [
+              "归母净利润同比下降 0.64%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 22.18，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 23.76,
+            "pct": 3.44,
+            "state": "暂不交易",
+            "score": 28.7,
+            "sector": "机器人/智能制造",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 5.11 亿元，具备跟踪流动性",
+              "当日涨幅 3.44%，短线强于市场",
+              "PE 11，估值未进入极端异常区",
+              "主力净流入 0.25 亿元",
+              "归属板块：机器人/智能制造；命中：新能源、机器人概念"
+            ],
+            "risk": [
+              "归母净利润同比下降 0.64%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 22.18，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "603757",
+        "name": "大元泵业",
+        "sector": "新能源/电力设备",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 79.5,
+        "firstState": "暂不交易",
+        "firstScore": 49.5,
+        "firstReason": [
+          "成交额 14 亿元，流动性较好",
+          "当日涨幅 3.25%，短线强于市场",
+          "主力净流入 0.17 亿元",
+          "归属板块：新能源/电力设备；命中：电池、储能"
+        ],
+        "currentPrice": 79.5,
+        "currentState": "暂不交易",
+        "currentScore": 49.5,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "中枢上半区观察",
+          "entryZone": "62.46-77.48",
+          "stop": 50.45,
+          "takeProfit": 91.43,
+          "riskReward": 0.52
+        },
+        "lastPlan": {
+          "buyType": "中枢上半区观察",
+          "action": "位置不差但低级别未确认，等待 30分钟转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 50.45,
+          "takeProfit": 91.43,
+          "riskReward": 0.52
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 79.5
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 79.5,
+            "open": 74.67,
+            "high": 83.97,
+            "low": 71.08,
+            "pct": 3.25,
+            "state": "暂不交易",
+            "score": 49.5,
+            "mainNetInflowYi": 0.17
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 79.5,
+            "pct": 3.25,
+            "state": "暂不交易",
+            "score": 49.5,
+            "sector": "新能源/电力设备",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 14 亿元，流动性较好",
+              "当日涨幅 3.25%，短线强于市场",
+              "主力净流入 0.17 亿元",
+              "归属板块：新能源/电力设备；命中：电池、储能",
+              "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点"
+            ],
+            "risk": [
+              "归母净利润同比下降 70.78%",
+              "营业收入同比下降 4.27%",
+              "经营现金流为负 -0.34 亿元",
+              "2026-06-17 大元泵业:浙江大元泵业股份有限公司股东减持股份结果公告",
+              "跌破 20 日中位 68.33，降级为震荡"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 79.5,
+            "pct": 3.25,
+            "state": "暂不交易",
+            "score": 49.5,
+            "sector": "新能源/电力设备",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 14 亿元，流动性较好",
+              "当日涨幅 3.25%，短线强于市场",
+              "主力净流入 0.17 亿元",
+              "归属板块：新能源/电力设备；命中：电池、储能",
+              "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点"
+            ],
+            "risk": [
+              "归母净利润同比下降 70.78%",
+              "营业收入同比下降 4.27%",
+              "经营现金流为负 -0.34 亿元",
+              "2026-06-17 大元泵业:浙江大元泵业股份有限公司股东减持股份结果公告",
+              "跌破 20 日中位 68.33，降级为震荡"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 79.5,
+            "pct": 3.25,
+            "state": "暂不交易",
+            "score": 49.5,
+            "sector": "新能源/电力设备",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 14 亿元，流动性较好",
+              "当日涨幅 3.25%，短线强于市场",
+              "主力净流入 0.17 亿元",
+              "归属板块：新能源/电力设备；命中：电池、储能",
+              "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点"
+            ],
+            "risk": [
+              "归母净利润同比下降 70.78%",
+              "营业收入同比下降 4.27%",
+              "经营现金流为负 -0.34 亿元",
+              "2026-06-17 大元泵业:浙江大元泵业股份有限公司股东减持股份结果公告",
+              "跌破 20 日中位 68.33，降级为震荡"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 79.5,
+            "pct": 3.25,
+            "state": "暂不交易",
+            "score": 49.5,
+            "sector": "新能源/电力设备",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 14 亿元，流动性较好",
+              "当日涨幅 3.25%，短线强于市场",
+              "主力净流入 0.17 亿元",
+              "归属板块：新能源/电力设备；命中：电池、储能",
+              "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点"
+            ],
+            "risk": [
+              "归母净利润同比下降 70.78%",
+              "营业收入同比下降 4.27%",
+              "经营现金流为负 -0.34 亿元",
+              "2026-06-17 大元泵业:浙江大元泵业股份有限公司股东减持股份结果公告",
+              "跌破 20 日中位 68.33，降级为震荡"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "603799",
+        "name": "华友钴业",
+        "sector": "资源周期/化工",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 38.82,
+        "firstState": "暂不交易",
+        "firstScore": 23.8,
+        "firstReason": [
+          "成交额 19.24 亿元，流动性较好",
+          "PE 11.62，估值未进入极端异常区",
+          "归属板块：资源周期/化工；命中：锂、锂电、电池、储能、新能源",
+          "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓"
+        ],
+        "currentPrice": 38.82,
+        "currentState": "暂不交易",
+        "currentScore": 23.8,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 37.47,
+          "takeProfit": 59.94,
+          "riskReward": 15.63
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 37.47,
+          "takeProfit": 59.94,
+          "riskReward": 15.63
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 38.82
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 38.82,
+            "open": 39,
+            "high": 39.75,
+            "low": 38.63,
+            "pct": -2.66,
+            "state": "暂不交易",
+            "score": 23.8,
+            "mainNetInflowYi": -0.49
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 38.82,
+            "pct": -2.66,
+            "state": "暂不交易",
+            "score": 23.8,
+            "sector": "资源周期/化工",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 19.24 亿元，流动性较好",
+              "PE 11.62，估值未进入极端异常区",
+              "归属板块：资源周期/化工；命中：锂、锂电、电池、储能、新能源",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 99.45%"
+            ],
+            "risk": [
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 38.63，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势",
+              "策略否决：缠论买点：无买点/风险段",
+              "策略否决：相对强度：强度 4.8"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 38.82,
+            "pct": -2.66,
+            "state": "暂不交易",
+            "score": 23.7,
+            "sector": "资源周期/化工",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 19.24 亿元，流动性较好",
+              "PE 11.62，估值未进入极端异常区",
+              "归属板块：资源周期/化工；命中：锂、锂电、电池、储能、新能源",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 99.45%"
+            ],
+            "risk": [
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 38.63，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势",
+              "策略否决：缠论买点：无买点/风险段",
+              "策略否决：相对强度：强度 3.2"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 38.82,
+            "pct": -2.66,
+            "state": "暂不交易",
+            "score": 23.8,
+            "sector": "资源周期/化工",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 19.24 亿元，流动性较好",
+              "PE 11.62，估值未进入极端异常区",
+              "归属板块：资源周期/化工；命中：锂、锂电、电池、储能、新能源",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 99.45%"
+            ],
+            "risk": [
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 38.63，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势",
+              "策略否决：缠论买点：无买点/风险段",
+              "策略否决：相对强度：强度 4.8"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 38.82,
+            "pct": -2.66,
+            "state": "暂不交易",
+            "score": 23.8,
+            "sector": "资源周期/化工",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 19.24 亿元，流动性较好",
+              "PE 11.62，估值未进入极端异常区",
+              "归属板块：资源周期/化工；命中：锂、锂电、电池、储能、新能源",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 99.45%"
+            ],
+            "risk": [
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 38.63，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势",
+              "策略否决：缠论买点：无买点/风险段",
+              "策略否决：相对强度：强度 4.8"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "603893",
+        "name": "瑞芯微",
+        "sector": "科技",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 222.24,
+        "firstState": "暂不交易",
+        "firstScore": 96,
+        "firstReason": [
+          "成交额 72.37 亿元，流动性较好",
+          "当日涨幅 5.58%，短线强于市场",
+          "主力净流入 4.7 亿元",
+          "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能"
+        ],
+        "currentPrice": 222.24,
+        "currentState": "暂不交易",
+        "currentScore": 96,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "中枢上半区观察",
+          "entryZone": "190.58-218.3",
+          "stop": 166.16,
+          "takeProfit": 250.07,
+          "riskReward": 0.61
+        },
+        "lastPlan": {
+          "buyType": "中枢上半区观察",
+          "action": "位置不差但低级别未确认，等待 30分钟转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 166.16,
+          "takeProfit": 250.07,
+          "riskReward": 0.61
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 222.24
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 222.24,
+            "open": 215,
+            "high": 231.55,
+            "low": 215,
+            "pct": 5.58,
+            "state": "暂不交易",
+            "score": 96,
+            "mainNetInflowYi": 4.7
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 222.24,
+            "pct": 5.58,
+            "state": "暂不交易",
+            "score": 96,
+            "sector": "科技",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 72.37 亿元，流动性较好",
+              "当日涨幅 5.58%，短线强于市场",
+              "主力净流入 4.7 亿元",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+              "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点"
+            ],
+            "risk": [
+              "跌破 20 日中位 201.43，降级为震荡",
+              "策略否决：风险收益比：按计划价 218.3 计算，约 1:0.61，最大亏损约 23.88%，目标空间约 14.55%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 222.24,
+            "pct": 5.58,
+            "state": "暂不交易",
+            "score": 96,
+            "sector": "科技",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 72.37 亿元，流动性较好",
+              "当日涨幅 5.58%，短线强于市场",
+              "主力净流入 4.7 亿元",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+              "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点"
+            ],
+            "risk": [
+              "跌破 20 日中位 201.43，降级为震荡",
+              "策略否决：风险收益比：按计划价 218.3 计算，约 1:0.61，最大亏损约 23.88%，目标空间约 14.55%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 222.24,
+            "pct": 5.58,
+            "state": "暂不交易",
+            "score": 96,
+            "sector": "科技",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 72.37 亿元，流动性较好",
+              "当日涨幅 5.58%，短线强于市场",
+              "主力净流入 4.7 亿元",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+              "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点"
+            ],
+            "risk": [
+              "跌破 20 日中位 201.43，降级为震荡",
+              "策略否决：风险收益比：按计划价 218.3 计算，约 1:0.61，最大亏损约 23.88%，目标空间约 14.55%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 222.24,
+            "pct": 5.58,
+            "state": "暂不交易",
+            "score": 96,
+            "sector": "科技",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 72.37 亿元，流动性较好",
+              "当日涨幅 5.58%，短线强于市场",
+              "主力净流入 4.7 亿元",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+              "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点"
+            ],
+            "risk": [
+              "跌破 20 日中位 201.43，降级为震荡",
+              "策略否决：风险收益比：按计划价 218.3 计算，约 1:0.61，最大亏损约 23.88%，目标空间约 14.55%"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "603950",
+        "name": "长源东谷",
+        "sector": "低空经济/航空航天",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 67.52,
+        "firstState": "暂不交易",
+        "firstScore": 68.3,
+        "firstReason": [
+          "成交额 8.63 亿元，具备跟踪流动性",
+          "当日涨幅 6.95%，短线强于市场",
+          "PE 56.27，估值未进入极端异常区",
+          "主力净流入 1.26 亿元"
+        ],
+        "currentPrice": 67.52,
+        "currentState": "暂不交易",
+        "currentScore": 68.3,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 59.4,
+          "takeProfit": 100.3,
+          "riskReward": 4.04
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 59.4,
+          "takeProfit": 100.3,
+          "riskReward": 4.04
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 67.52
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 67.52,
+            "open": 62.34,
+            "high": 69.44,
+            "low": 61.24,
+            "pct": 6.95,
+            "state": "暂不交易",
+            "score": 68.3,
+            "mainNetInflowYi": 1.26
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 67.52,
+            "pct": 6.95,
+            "state": "暂不交易",
+            "score": 68.3,
+            "sector": "低空经济/航空航天",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 8.63 亿元，具备跟踪流动性",
+              "当日涨幅 6.95%，短线强于市场",
+              "PE 56.27，估值未进入极端异常区",
+              "主力净流入 1.26 亿元",
+              "归属板块：低空经济/航空航天；命中：汽车、汽车零部件、设备、低空经济"
+            ],
+            "risk": [
+              "营业收入同比下降 0.07%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 61.24，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 67.52,
+            "pct": 6.95,
+            "state": "暂不交易",
+            "score": 68.3,
+            "sector": "低空经济/航空航天",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 8.63 亿元，具备跟踪流动性",
+              "当日涨幅 6.95%，短线强于市场",
+              "PE 56.27，估值未进入极端异常区",
+              "主力净流入 1.26 亿元",
+              "归属板块：低空经济/航空航天；命中：汽车、汽车零部件、设备、低空经济"
+            ],
+            "risk": [
+              "营业收入同比下降 0.07%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 61.24，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 67.52,
+            "pct": 6.95,
+            "state": "暂不交易",
+            "score": 68.3,
+            "sector": "低空经济/航空航天",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 8.63 亿元，具备跟踪流动性",
+              "当日涨幅 6.95%，短线强于市场",
+              "PE 56.27，估值未进入极端异常区",
+              "主力净流入 1.26 亿元",
+              "归属板块：低空经济/航空航天；命中：汽车、汽车零部件、设备、低空经济"
+            ],
+            "risk": [
+              "营业收入同比下降 0.07%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 61.24，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 67.52,
+            "pct": 6.95,
+            "state": "暂不交易",
+            "score": 68.3,
+            "sector": "低空经济/航空航天",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 8.63 亿元，具备跟踪流动性",
+              "当日涨幅 6.95%，短线强于市场",
+              "PE 56.27，估值未进入极端异常区",
+              "主力净流入 1.26 亿元",
+              "归属板块：低空经济/航空航天；命中：汽车、汽车零部件、设备、低空经济"
+            ],
+            "risk": [
+              "营业收入同比下降 0.07%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 61.24，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "603991",
+        "name": "领先股份",
+        "sector": "科技",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 156.43,
+        "firstState": "暂不交易",
+        "firstScore": 76.2,
+        "firstReason": [
+          "成交额 12.71 亿元，流动性较好",
+          "当日涨幅 5.51%，短线强于市场",
+          "主力净流入 0.08 亿元",
+          "归属板块：科技；命中：半导体、芯片、电子、通信、存储"
+        ],
+        "currentPrice": 156.43,
+        "currentState": "暂不交易",
+        "currentScore": 76.2,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "中枢上半区观察",
+          "entryZone": "136.16-164.46",
+          "stop": 112.98,
+          "takeProfit": 192.24,
+          "riskReward": 0.82
+        },
+        "lastPlan": {
+          "buyType": "中枢上半区观察",
+          "action": "位置不差但低级别未确认，等待 30分钟转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 112.98,
+          "takeProfit": 192.24,
+          "riskReward": 0.82
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 156.43
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 156.43,
+            "open": 141.82,
+            "high": 161.66,
+            "low": 140.73,
+            "pct": 5.51,
+            "state": "暂不交易",
+            "score": 76.2,
+            "mainNetInflowYi": 0.08
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 156.43,
+            "pct": 5.51,
+            "state": "暂不交易",
+            "score": 76.2,
+            "sector": "科技",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 12.71 亿元，流动性较好",
+              "当日涨幅 5.51%，短线强于市场",
+              "主力净流入 0.08 亿元",
+              "归属板块：科技；命中：半导体、芯片、电子、通信、存储",
+              "仍在中枢上半区，但趋势延续需要低级别确认和放量"
+            ],
+            "risk": [
+              "2026-07-08 领先股份:关于上海证券交易所对公司2025年年度报告的信息披露监管问询函回复的公告",
+              "2026-07-08 领先股份:德勤华永会计师事务所(特殊普通合伙)关于上海证券交易所《关于深圳市领先半导体科技产业股份有限公司2025年年度报告的信息披露监管问询函》的回复",
+              "跌破 20 日中位 147.24，降级为震荡",
+              "策略否决：公告事件：公告风险待核查",
+              "策略否决：风险收益比：按计划价 156.43 计算，约 1:0.82，最大亏损约 27.78%，目标空间约 22.89%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 156.43,
+            "pct": 5.51,
+            "state": "暂不交易",
+            "score": 76.2,
+            "sector": "科技",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 12.71 亿元，流动性较好",
+              "当日涨幅 5.51%，短线强于市场",
+              "主力净流入 0.08 亿元",
+              "归属板块：科技；命中：半导体、芯片、电子、通信、存储",
+              "仍在中枢上半区，但趋势延续需要低级别确认和放量"
+            ],
+            "risk": [
+              "2026-07-08 领先股份:关于上海证券交易所对公司2025年年度报告的信息披露监管问询函回复的公告",
+              "2026-07-08 领先股份:德勤华永会计师事务所(特殊普通合伙)关于上海证券交易所《关于深圳市领先半导体科技产业股份有限公司2025年年度报告的信息披露监管问询函》的回复",
+              "跌破 20 日中位 147.24，降级为震荡",
+              "策略否决：公告事件：公告风险待核查",
+              "策略否决：风险收益比：按计划价 156.43 计算，约 1:0.82，最大亏损约 27.78%，目标空间约 22.89%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 156.43,
+            "pct": 5.51,
+            "state": "暂不交易",
+            "score": 76.2,
+            "sector": "科技",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 12.71 亿元，流动性较好",
+              "当日涨幅 5.51%，短线强于市场",
+              "主力净流入 0.08 亿元",
+              "归属板块：科技；命中：半导体、芯片、电子、通信、存储",
+              "仍在中枢上半区，但趋势延续需要低级别确认和放量"
+            ],
+            "risk": [
+              "2026-07-08 领先股份:关于上海证券交易所对公司2025年年度报告的信息披露监管问询函回复的公告",
+              "2026-07-08 领先股份:德勤华永会计师事务所(特殊普通合伙)关于上海证券交易所《关于深圳市领先半导体科技产业股份有限公司2025年年度报告的信息披露监管问询函》的回复",
+              "跌破 20 日中位 147.24，降级为震荡",
+              "策略否决：公告事件：公告风险待核查",
+              "策略否决：风险收益比：按计划价 156.43 计算，约 1:0.82，最大亏损约 27.78%，目标空间约 22.89%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 156.43,
+            "pct": 5.51,
+            "state": "暂不交易",
+            "score": 76.2,
+            "sector": "科技",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 12.71 亿元，流动性较好",
+              "当日涨幅 5.51%，短线强于市场",
+              "主力净流入 0.08 亿元",
+              "归属板块：科技；命中：半导体、芯片、电子、通信、存储",
+              "仍在中枢上半区，但趋势延续需要低级别确认和放量"
+            ],
+            "risk": [
+              "2026-07-08 领先股份:关于上海证券交易所对公司2025年年度报告的信息披露监管问询函回复的公告",
+              "2026-07-08 领先股份:德勤华永会计师事务所(特殊普通合伙)关于上海证券交易所《关于深圳市领先半导体科技产业股份有限公司2025年年度报告的信息披露监管问询函》的回复",
+              "跌破 20 日中位 147.24，降级为震荡",
+              "策略否决：公告事件：公告风险待核查",
+              "策略否决：风险收益比：按计划价 156.43 计算，约 1:0.82，最大亏损约 27.78%，目标空间约 22.89%"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "605111",
+        "name": "新洁能",
+        "sector": "科技",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 59.11,
+        "firstState": "暂不交易",
+        "firstScore": 60.9,
+        "firstReason": [
+          "成交额 13.66 亿元，流动性较好",
+          "PE 62.22，估值未进入极端异常区",
+          "归属板块：科技；命中：半导体、芯片、电子、第三代半导体",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+        ],
+        "currentPrice": 59.11,
+        "currentState": "暂不交易",
+        "currentScore": 60.9,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 57.21,
+          "takeProfit": 112.78,
+          "riskReward": 28.29
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 57.21,
+          "takeProfit": 112.78,
+          "riskReward": 28.29
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 59.11
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 59.11,
+            "open": 63.8,
+            "high": 64.46,
+            "low": 58.98,
+            "pct": -8.75,
+            "state": "暂不交易",
+            "score": 60.9,
+            "mainNetInflowYi": -0.99
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 59.11,
+            "pct": -8.75,
+            "state": "暂不交易",
+            "score": 60.9,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 13.66 亿元，流动性较好",
+              "PE 62.22，估值未进入极端异常区",
+              "归属板块：科技；命中：半导体、芯片、电子、第三代半导体",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "营业收入同比增长 15.14%"
+            ],
+            "risk": [
+              "当日跌幅 -8.75%，需确认是否有利空或破位",
+              "归母净利润同比下降 12.68%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 58.98，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 59.11,
+            "pct": -8.75,
+            "state": "暂不交易",
+            "score": 60.9,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 13.66 亿元，流动性较好",
+              "PE 62.22，估值未进入极端异常区",
+              "归属板块：科技；命中：半导体、芯片、电子、第三代半导体",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "营业收入同比增长 15.14%"
+            ],
+            "risk": [
+              "当日跌幅 -8.75%，需确认是否有利空或破位",
+              "归母净利润同比下降 12.68%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 58.98，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 59.11,
+            "pct": -8.75,
+            "state": "暂不交易",
+            "score": 60.9,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 13.66 亿元，流动性较好",
+              "PE 62.22，估值未进入极端异常区",
+              "归属板块：科技；命中：半导体、芯片、电子、第三代半导体",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "营业收入同比增长 15.14%"
+            ],
+            "risk": [
+              "当日跌幅 -8.75%，需确认是否有利空或破位",
+              "归母净利润同比下降 12.68%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 58.98，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 59.11,
+            "pct": -8.75,
+            "state": "暂不交易",
+            "score": 60.9,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 13.66 亿元，流动性较好",
+              "PE 62.22，估值未进入极端异常区",
+              "归属板块：科技；命中：半导体、芯片、电子、第三代半导体",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "营业收入同比增长 15.14%"
+            ],
+            "risk": [
+              "当日跌幅 -8.75%，需确认是否有利空或破位",
+              "归母净利润同比下降 12.68%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 58.98，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "605358",
+        "name": "XD立昂微",
+        "sector": "科技",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 48.88,
+        "firstState": "暂不交易",
+        "firstScore": 15.9,
+        "firstReason": [
+          "成交额 29.73 亿元，流动性较好",
+          "归属板块：科技；命中：半导体、芯片、电子、人工智能、存储",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+          "归母净利润同比增长 108.92%"
+        ],
+        "currentPrice": 48.88,
+        "currentState": "暂不交易",
+        "currentScore": 15.9,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 46.91,
+          "takeProfit": 89.95,
+          "riskReward": 20.85
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 46.91,
+          "takeProfit": 89.95,
+          "riskReward": 20.85
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 48.88
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 48.88,
+            "open": 51.48,
+            "high": 52.96,
+            "low": 48.36,
+            "pct": -7.49,
+            "state": "暂不交易",
+            "score": 15.9,
+            "mainNetInflowYi": -2.76
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 48.88,
+            "pct": -7.49,
+            "state": "暂不交易",
+            "score": 15.9,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 29.73 亿元，流动性较好",
+              "归属板块：科技；命中：半导体、芯片、电子、人工智能、存储",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 108.92%",
+              "营业收入同比增长 21.81%"
+            ],
+            "risk": [
+              "当日跌幅 -7.49%，需确认是否有利空或破位",
+              "主力净流出 2.76 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "2026-07-10 立昂微:立昂微股东减持股份计划公告",
+              "有效跌破 20 日低点 48.36，技术面继续减分"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 48.88,
+            "pct": -7.49,
+            "state": "暂不交易",
+            "score": 15.9,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 29.73 亿元，流动性较好",
+              "归属板块：科技；命中：半导体、芯片、电子、人工智能、存储",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 108.92%",
+              "营业收入同比增长 21.81%"
+            ],
+            "risk": [
+              "当日跌幅 -7.49%，需确认是否有利空或破位",
+              "主力净流出 2.76 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "2026-07-10 立昂微:立昂微股东减持股份计划公告",
+              "有效跌破 20 日低点 48.36，技术面继续减分"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 48.88,
+            "pct": -7.49,
+            "state": "暂不交易",
+            "score": 15.9,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 29.73 亿元，流动性较好",
+              "归属板块：科技；命中：半导体、芯片、电子、人工智能、存储",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 108.92%",
+              "营业收入同比增长 21.81%"
+            ],
+            "risk": [
+              "当日跌幅 -7.49%，需确认是否有利空或破位",
+              "主力净流出 2.76 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "2026-07-10 立昂微:立昂微股东减持股份计划公告",
+              "有效跌破 20 日低点 48.36，技术面继续减分"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 48.88,
+            "pct": -7.49,
+            "state": "暂不交易",
+            "score": 15.9,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 29.73 亿元，流动性较好",
+              "归属板块：科技；命中：半导体、芯片、电子、人工智能、存储",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 108.92%",
+              "营业收入同比增长 21.81%"
+            ],
+            "risk": [
+              "当日跌幅 -7.49%，需确认是否有利空或破位",
+              "主力净流出 2.76 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "2026-07-10 立昂微:立昂微股东减持股份计划公告",
+              "有效跌破 20 日低点 48.36，技术面继续减分"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "688002",
+        "name": "睿创微纳",
+        "sector": "军工国防",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 135.88,
+        "firstState": "暂不交易",
+        "firstScore": 75.9,
+        "firstReason": [
+          "成交额 14.82 亿元，流动性较好",
+          "PE 54.35，估值未进入极端异常区",
+          "主力净流入 0.08 亿元",
+          "归属板块：军工国防；命中：半导体、芯片、电子、人工智能、互联网"
+        ],
+        "currentPrice": 135.88,
+        "currentState": "暂不交易",
+        "currentScore": 75.9,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 129.79,
+          "takeProfit": 181.93,
+          "riskReward": 7.56
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 129.79,
+          "takeProfit": 181.93,
+          "riskReward": 7.56
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 135.88
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 135.88,
+            "open": 139.28,
+            "high": 143.86,
+            "low": 133.8,
+            "pct": -3.97,
+            "state": "暂不交易",
+            "score": 75.9,
+            "mainNetInflowYi": 0.08
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 135.88,
+            "pct": -3.97,
+            "state": "暂不交易",
+            "score": 75.9,
+            "sector": "军工国防",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 14.82 亿元，流动性较好",
+              "PE 54.35，估值未进入极端异常区",
+              "主力净流入 0.08 亿元",
+              "归属板块：军工国防；命中：半导体、芯片、电子、人工智能、互联网",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+            ],
+            "risk": [
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 133.8，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 135.88,
+            "pct": -3.97,
+            "state": "暂不交易",
+            "score": 75.8,
+            "sector": "军工国防",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 14.82 亿元，流动性较好",
+              "PE 54.35，估值未进入极端异常区",
+              "主力净流入 0.08 亿元",
+              "归属板块：军工国防；命中：半导体、芯片、电子、人工智能、互联网",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+            ],
+            "risk": [
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 133.8，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 135.88,
+            "pct": -3.97,
+            "state": "暂不交易",
+            "score": 75.9,
+            "sector": "军工国防",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 14.82 亿元，流动性较好",
+              "PE 54.35，估值未进入极端异常区",
+              "主力净流入 0.08 亿元",
+              "归属板块：军工国防；命中：半导体、芯片、电子、人工智能、互联网",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+            ],
+            "risk": [
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 133.8，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 135.88,
+            "pct": -3.97,
+            "state": "暂不交易",
+            "score": 75.9,
+            "sector": "军工国防",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 14.82 亿元，流动性较好",
+              "PE 54.35，估值未进入极端异常区",
+              "主力净流入 0.08 亿元",
+              "归属板块：军工国防；命中：半导体、芯片、电子、人工智能、互联网",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+            ],
+            "risk": [
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 133.8，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "688018",
+        "name": "乐鑫科技",
+        "sector": "科技",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 120.61,
+        "firstState": "暂不交易",
+        "firstScore": 5.6,
+        "firstReason": [
+          "成交额 15.22 亿元，流动性较好",
+          "当日涨幅 3.17%，短线强于市场",
+          "PE 38.27，估值未进入极端异常区",
+          "主力净流入 0.21 亿元"
+        ],
+        "currentPrice": 120.61,
+        "currentState": "暂不交易",
+        "currentScore": 5.6,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 107.62,
+          "takeProfit": 143.72,
+          "riskReward": 1.78
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 107.62,
+          "takeProfit": 143.72,
+          "riskReward": 1.78
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 120.61
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 120.61,
+            "open": 116.91,
+            "high": 127.76,
+            "low": 116.91,
+            "pct": 3.17,
+            "state": "暂不交易",
+            "score": 5.6,
+            "mainNetInflowYi": 0.21
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 120.61,
+            "pct": 3.17,
+            "state": "暂不交易",
+            "score": 5.6,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 15.22 亿元，流动性较好",
+              "当日涨幅 3.17%，短线强于市场",
+              "PE 38.27，估值未进入极端异常区",
+              "主力净流入 0.21 亿元",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、通信"
+            ],
+            "risk": [
+              "收盘低于 MA20，买点需要降级",
+              "2026-06-19 乐鑫科技:乐鑫科技关于收到上海证监局行政监管措施决定书的公告",
+              "2026-06-18 关于对乐鑫信息科技(上海)股份有限公司予以监管警示的决定",
+              "有效跌破 20 日低点 110.95，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 120.61,
+            "pct": 3.17,
+            "state": "暂不交易",
+            "score": 5.5,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 15.22 亿元，流动性较好",
+              "当日涨幅 3.17%，短线强于市场",
+              "PE 38.27，估值未进入极端异常区",
+              "主力净流入 0.21 亿元",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、通信"
+            ],
+            "risk": [
+              "收盘低于 MA20，买点需要降级",
+              "2026-06-19 乐鑫科技:乐鑫科技关于收到上海证监局行政监管措施决定书的公告",
+              "2026-06-18 关于对乐鑫信息科技(上海)股份有限公司予以监管警示的决定",
+              "有效跌破 20 日低点 110.95，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 120.61,
+            "pct": 3.17,
+            "state": "暂不交易",
+            "score": 5.6,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 15.22 亿元，流动性较好",
+              "当日涨幅 3.17%，短线强于市场",
+              "PE 38.27，估值未进入极端异常区",
+              "主力净流入 0.21 亿元",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、通信"
+            ],
+            "risk": [
+              "收盘低于 MA20，买点需要降级",
+              "2026-06-19 乐鑫科技:乐鑫科技关于收到上海证监局行政监管措施决定书的公告",
+              "2026-06-18 关于对乐鑫信息科技(上海)股份有限公司予以监管警示的决定",
+              "有效跌破 20 日低点 110.95，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 120.61,
+            "pct": 3.17,
+            "state": "暂不交易",
+            "score": 5.6,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 15.22 亿元，流动性较好",
+              "当日涨幅 3.17%，短线强于市场",
+              "PE 38.27，估值未进入极端异常区",
+              "主力净流入 0.21 亿元",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、通信"
+            ],
+            "risk": [
+              "收盘低于 MA20，买点需要降级",
+              "2026-06-19 乐鑫科技:乐鑫科技关于收到上海证监局行政监管措施决定书的公告",
+              "2026-06-18 关于对乐鑫信息科技(上海)股份有限公司予以监管警示的决定",
+              "有效跌破 20 日低点 110.95，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "688036",
+        "name": "传音控股",
+        "sector": "科技",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 65.43,
+        "firstState": "暂不交易",
+        "firstScore": 83.8,
+        "firstReason": [
+          "成交额 22.11 亿元，流动性较好",
+          "当日涨幅 6.56%，短线强于市场",
+          "PE 28.95，估值未进入极端异常区",
+          "归属板块：科技；命中：电子、AI、消费电子"
+        ],
+        "currentPrice": 65.43,
+        "currentState": "暂不交易",
+        "currentScore": 83.8,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "中枢上半区观察",
+          "entryZone": "58.95-67.49",
+          "stop": 51.41,
+          "takeProfit": 77.31,
+          "riskReward": 0.85
+        },
+        "lastPlan": {
+          "buyType": "中枢上半区观察",
+          "action": "位置不差但低级别未确认，等待 30分钟转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 51.41,
+          "takeProfit": 77.31,
+          "riskReward": 0.85
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 65.43
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 65.43,
+            "open": 62,
+            "high": 68.51,
+            "low": 61.41,
+            "pct": 6.56,
+            "state": "暂不交易",
+            "score": 83.8,
+            "mainNetInflowYi": -1.4
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 65.43,
+            "pct": 6.56,
+            "state": "暂不交易",
+            "score": 83.8,
+            "sector": "科技",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 22.11 亿元，流动性较好",
+              "当日涨幅 6.56%，短线强于市场",
+              "PE 28.95，估值未进入极端异常区",
+              "归属板块：科技；命中：电子、AI、消费电子",
+              "仍在中枢上半区，但趋势延续需要低级别确认和放量"
+            ],
+            "risk": [
+              "主力净流出 1.4 亿元",
+              "经营现金流为负 -40.94 亿元",
+              "跌破 20 日中位 62.29，降级为震荡",
+              "策略否决：资金流：主力净流入 -1.4 亿",
+              "策略否决：风险收益比：按计划价 65.43 计算，约 1:0.85，最大亏损约 21.43%，目标空间约 18.16%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 65.43,
+            "pct": 6.56,
+            "state": "暂不交易",
+            "score": 83.8,
+            "sector": "科技",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 22.11 亿元，流动性较好",
+              "当日涨幅 6.56%，短线强于市场",
+              "PE 28.95，估值未进入极端异常区",
+              "归属板块：科技；命中：电子、AI、消费电子",
+              "仍在中枢上半区，但趋势延续需要低级别确认和放量"
+            ],
+            "risk": [
+              "主力净流出 1.4 亿元",
+              "经营现金流为负 -40.94 亿元",
+              "跌破 20 日中位 62.29，降级为震荡",
+              "策略否决：资金流：主力净流入 -1.4 亿",
+              "策略否决：风险收益比：按计划价 65.43 计算，约 1:0.85，最大亏损约 21.43%，目标空间约 18.16%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 65.43,
+            "pct": 6.56,
+            "state": "暂不交易",
+            "score": 83.8,
+            "sector": "科技",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 22.11 亿元，流动性较好",
+              "当日涨幅 6.56%，短线强于市场",
+              "PE 28.95，估值未进入极端异常区",
+              "归属板块：科技；命中：电子、AI、消费电子",
+              "仍在中枢上半区，但趋势延续需要低级别确认和放量"
+            ],
+            "risk": [
+              "主力净流出 1.4 亿元",
+              "经营现金流为负 -40.94 亿元",
+              "跌破 20 日中位 62.29，降级为震荡",
+              "策略否决：资金流：主力净流入 -1.4 亿",
+              "策略否决：风险收益比：按计划价 65.43 计算，约 1:0.85，最大亏损约 21.43%，目标空间约 18.16%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 65.43,
+            "pct": 6.56,
+            "state": "暂不交易",
+            "score": 83.8,
+            "sector": "科技",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 22.11 亿元，流动性较好",
+              "当日涨幅 6.56%，短线强于市场",
+              "PE 28.95，估值未进入极端异常区",
+              "归属板块：科技；命中：电子、AI、消费电子",
+              "仍在中枢上半区，但趋势延续需要低级别确认和放量"
+            ],
+            "risk": [
+              "主力净流出 1.4 亿元",
+              "经营现金流为负 -40.94 亿元",
+              "跌破 20 日中位 62.29，降级为震荡",
+              "策略否决：资金流：主力净流入 -1.4 亿",
+              "策略否决：风险收益比：按计划价 65.43 计算，约 1:0.85，最大亏损约 21.43%，目标空间约 18.16%"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "688099",
+        "name": "晶晨股份",
+        "sector": "科技",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 97.99,
+        "firstState": "暂不交易",
+        "firstScore": 29.3,
+        "firstReason": [
+          "成交额 19.64 亿元，流动性较好",
+          "PE 47.11，估值未进入极端异常区",
+          "主力净流入 0.48 亿元",
+          "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能"
+        ],
+        "currentPrice": 97.99,
+        "currentState": "暂不交易",
+        "currentScore": 29.3,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 87.14,
+          "takeProfit": 117.23,
+          "riskReward": 1.77
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 87.14,
+          "takeProfit": 117.23,
+          "riskReward": 1.77
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 97.99
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 97.99,
+            "open": 97.01,
+            "high": 103.68,
+            "low": 95.17,
+            "pct": 1.63,
+            "state": "暂不交易",
+            "score": 29.3,
+            "mainNetInflowYi": 0.48
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 97.99,
+            "pct": 1.63,
+            "state": "暂不交易",
+            "score": 29.3,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 19.64 亿元，流动性较好",
+              "PE 47.11，估值未进入极端异常区",
+              "主力净流入 0.48 亿元",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓"
+            ],
+            "risk": [
+              "归母净利润同比下降 7.95%",
+              "经营现金流为负 -4.81 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 89.83，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 97.99,
+            "pct": 1.63,
+            "state": "暂不交易",
+            "score": 29.3,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 19.64 亿元，流动性较好",
+              "PE 47.11，估值未进入极端异常区",
+              "主力净流入 0.48 亿元",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓"
+            ],
+            "risk": [
+              "归母净利润同比下降 7.95%",
+              "经营现金流为负 -4.81 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 89.83，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 97.99,
+            "pct": 1.63,
+            "state": "暂不交易",
+            "score": 29.3,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 19.64 亿元，流动性较好",
+              "PE 47.11，估值未进入极端异常区",
+              "主力净流入 0.48 亿元",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓"
+            ],
+            "risk": [
+              "归母净利润同比下降 7.95%",
+              "经营现金流为负 -4.81 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 89.83，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 97.99,
+            "pct": 1.63,
+            "state": "暂不交易",
+            "score": 29.3,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 19.64 亿元，流动性较好",
+              "PE 47.11，估值未进入极端异常区",
+              "主力净流入 0.48 亿元",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓"
+            ],
+            "risk": [
+              "归母净利润同比下降 7.95%",
+              "经营现金流为负 -4.81 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 89.83，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "688213",
+        "name": "思特威",
+        "sector": "科技",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 98.04,
+        "firstState": "暂不交易",
+        "firstScore": 66.4,
+        "firstReason": [
+          "成交额 14.91 亿元，流动性较好",
+          "PE 39.37，估值未进入极端异常区",
+          "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+        ],
+        "currentPrice": 98.04,
+        "currentState": "暂不交易",
+        "currentScore": 66.4,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 87.41,
+          "takeProfit": 118.26,
+          "riskReward": 1.9
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 87.41,
+          "takeProfit": 118.26,
+          "riskReward": 1.9
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 98.04
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 98.04,
+            "open": 97.6,
+            "high": 102.62,
+            "low": 97,
+            "pct": 2.81,
+            "state": "暂不交易",
+            "score": 66.4,
+            "mainNetInflowYi": -0.12
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 98.04,
+            "pct": 2.81,
+            "state": "暂不交易",
+            "score": 66.4,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 14.91 亿元，流动性较好",
+              "PE 39.37，估值未进入极端异常区",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 23.66%"
+            ],
+            "risk": [
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 90.11，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：缠论买点：无买点/风险段",
+              "策略否决：资金流：主力净流入 -0.12 亿"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 98.04,
+            "pct": 2.81,
+            "state": "暂不交易",
+            "score": 66.3,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 14.91 亿元，流动性较好",
+              "PE 39.37，估值未进入极端异常区",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 23.66%"
+            ],
+            "risk": [
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 90.11，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：缠论买点：无买点/风险段",
+              "策略否决：资金流：主力净流入 -0.12 亿"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 98.04,
+            "pct": 2.81,
+            "state": "暂不交易",
+            "score": 66.4,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 14.91 亿元，流动性较好",
+              "PE 39.37，估值未进入极端异常区",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 23.66%"
+            ],
+            "risk": [
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 90.11，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：缠论买点：无买点/风险段",
+              "策略否决：资金流：主力净流入 -0.12 亿"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 98.04,
+            "pct": 2.81,
+            "state": "暂不交易",
+            "score": 66.4,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 14.91 亿元，流动性较好",
+              "PE 39.37，估值未进入极端异常区",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 23.66%"
+            ],
+            "risk": [
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 90.11，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：缠论买点：无买点/风险段",
+              "策略否决：资金流：主力净流入 -0.12 亿"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "688608",
+        "name": "恒玄科技",
+        "sector": "科技",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 125.33,
+        "firstState": "暂不交易",
+        "firstScore": 49.6,
+        "firstReason": [
+          "成交额 14.47 亿元，流动性较好",
+          "当日涨幅 3.16%，短线强于市场",
+          "PE 35.39，估值未进入极端异常区",
+          "主力净流入 0.83 亿元"
+        ],
+        "currentPrice": 125.33,
+        "currentState": "暂不交易",
+        "currentScore": 49.6,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 104.52,
+          "takeProfit": 181.01,
+          "riskReward": 2.68
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 104.52,
+          "takeProfit": 181.01,
+          "riskReward": 2.68
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 125.33
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 125.33,
+            "open": 124,
+            "high": 131.24,
+            "low": 122.6,
+            "pct": 3.16,
+            "state": "暂不交易",
+            "score": 49.6,
+            "mainNetInflowYi": 0.83
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 125.33,
+            "pct": 3.16,
+            "state": "暂不交易",
+            "score": 49.6,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 14.47 亿元，流动性较好",
+              "当日涨幅 3.16%，短线强于市场",
+              "PE 35.39，估值未进入极端异常区",
+              "主力净流入 0.83 亿元",
+              "归属板块：科技；命中：半导体、芯片、电子、AI、消费电子"
+            ],
+            "risk": [
+              "归母净利润同比下降 53.26%",
+              "营业收入同比下降 32.72%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 107.75，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 125.33,
+            "pct": 3.16,
+            "state": "暂不交易",
+            "score": 49.5,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 14.47 亿元，流动性较好",
+              "当日涨幅 3.16%，短线强于市场",
+              "PE 35.39，估值未进入极端异常区",
+              "主力净流入 0.83 亿元",
+              "归属板块：科技；命中：半导体、芯片、电子、AI、消费电子"
+            ],
+            "risk": [
+              "归母净利润同比下降 53.26%",
+              "营业收入同比下降 32.72%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 107.75，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 125.33,
+            "pct": 3.16,
+            "state": "暂不交易",
+            "score": 49.6,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 14.47 亿元，流动性较好",
+              "当日涨幅 3.16%，短线强于市场",
+              "PE 35.39，估值未进入极端异常区",
+              "主力净流入 0.83 亿元",
+              "归属板块：科技；命中：半导体、芯片、电子、AI、消费电子"
+            ],
+            "risk": [
+              "归母净利润同比下降 53.26%",
+              "营业收入同比下降 32.72%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 107.75，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 125.33,
+            "pct": 3.16,
+            "state": "暂不交易",
+            "score": 49.6,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 14.47 亿元，流动性较好",
+              "当日涨幅 3.16%，短线强于市场",
+              "PE 35.39，估值未进入极端异常区",
+              "主力净流入 0.83 亿元",
+              "归属板块：科技；命中：半导体、芯片、电子、AI、消费电子"
+            ],
+            "risk": [
+              "归母净利润同比下降 53.26%",
+              "营业收入同比下降 32.72%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 107.75，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "688619",
+        "name": "罗普特",
+        "sector": "高端制造/汽车",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 14.83,
+        "firstState": "暂不交易",
+        "firstScore": 22.5,
+        "firstReason": [
+          "当日涨幅 12.09%，短线强于市场",
+          "主力净流入 0.05 亿元",
+          "归属板块：高端制造/汽车；命中：软件、计算机、人工智能、网络安全、安防设备",
+          "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓"
+        ],
+        "currentPrice": 14.83,
+        "currentState": "暂不交易",
+        "currentScore": 22.5,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 10.72,
+          "takeProfit": 19.71,
+          "riskReward": 1.19
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 10.72,
+          "takeProfit": 19.71,
+          "riskReward": 1.19
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 14.83
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 14.83,
+            "open": 12.99,
+            "high": 15.5,
+            "low": 12.85,
+            "pct": 12.09,
+            "state": "暂不交易",
+            "score": 22.5,
+            "mainNetInflowYi": 0.05
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 14.83,
+            "pct": 12.09,
+            "state": "暂不交易",
+            "score": 22.5,
+            "sector": "高端制造/汽车",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "当日涨幅 12.09%，短线强于市场",
+              "主力净流入 0.05 亿元",
+              "归属板块：高端制造/汽车；命中：软件、计算机、人工智能、网络安全、安防设备",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 59.38%"
+            ],
+            "risk": [
+              "成交额偏低，实盘滑点和波动风险更高",
+              "毛利率约 4.98%，盈利弹性偏弱",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 11.05，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 14.83,
+            "pct": 12.09,
+            "state": "暂不交易",
+            "score": 22.5,
+            "sector": "高端制造/汽车",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "当日涨幅 12.09%，短线强于市场",
+              "主力净流入 0.05 亿元",
+              "归属板块：高端制造/汽车；命中：软件、计算机、人工智能、网络安全、安防设备",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 59.38%"
+            ],
+            "risk": [
+              "成交额偏低，实盘滑点和波动风险更高",
+              "毛利率约 4.98%，盈利弹性偏弱",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 11.05，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 14.83,
+            "pct": 12.09,
+            "state": "暂不交易",
+            "score": 22.5,
+            "sector": "高端制造/汽车",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "当日涨幅 12.09%，短线强于市场",
+              "主力净流入 0.05 亿元",
+              "归属板块：高端制造/汽车；命中：软件、计算机、人工智能、网络安全、安防设备",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 59.38%"
+            ],
+            "risk": [
+              "成交额偏低，实盘滑点和波动风险更高",
+              "毛利率约 4.98%，盈利弹性偏弱",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 11.05，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 14.83,
+            "pct": 12.09,
+            "state": "暂不交易",
+            "score": 22.5,
+            "sector": "高端制造/汽车",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "当日涨幅 12.09%，短线强于市场",
+              "主力净流入 0.05 亿元",
+              "归属板块：高端制造/汽车；命中：软件、计算机、人工智能、网络安全、安防设备",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 59.38%"
+            ],
+            "risk": [
+              "成交额偏低，实盘滑点和波动风险更高",
+              "毛利率约 4.98%，盈利弹性偏弱",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 11.05，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "002049",
+        "name": "紫光国微",
+        "sector": "科技",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 70.16,
+        "firstState": "暂不交易",
+        "firstScore": 25.1,
+        "firstReason": [
+          "成交额 35.65 亿元，流动性较好",
+          "PE 41.1，估值未进入极端异常区",
+          "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+        ],
+        "currentPrice": 70.16,
+        "currentState": "暂不交易",
+        "currentScore": 25.1,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 67.46,
+          "takeProfit": 99.13,
+          "riskReward": 10.72
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 67.46,
+          "takeProfit": 99.13,
+          "riskReward": 10.72
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 70.16
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 70.16,
+            "open": 72.07,
+            "high": 74.33,
+            "low": 69.55,
+            "pct": -2.88,
+            "state": "暂不交易",
+            "score": 25.1,
+            "mainNetInflowYi": -1.68
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 70.16,
+            "pct": -2.88,
+            "state": "暂不交易",
+            "score": 25.1,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 35.65 亿元，流动性较好",
+              "PE 41.1，估值未进入极端异常区",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 180.27%"
+            ],
+            "risk": [
+              "主力净流出 1.68 亿元",
+              "经营现金流为负 -3.5 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "2026-07-02 紫光国微:关于收到深圳证券交易所《关于紫光国芯微电子股份有限公司发行股份及支付现金购买资产并募集配套资金申请的审核问询函》的公告",
+              "有效跌破 20 日低点 69.55，技术面继续减分"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 70.16,
+            "pct": -2.88,
+            "state": "暂不交易",
+            "score": 25,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 35.65 亿元，流动性较好",
+              "PE 41.1，估值未进入极端异常区",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 180.27%"
+            ],
+            "risk": [
+              "主力净流出 1.68 亿元",
+              "经营现金流为负 -3.5 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "2026-07-02 紫光国微:关于收到深圳证券交易所《关于紫光国芯微电子股份有限公司发行股份及支付现金购买资产并募集配套资金申请的审核问询函》的公告",
+              "有效跌破 20 日低点 69.55，技术面继续减分"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 70.16,
+            "pct": -2.88,
+            "state": "暂不交易",
+            "score": 25.1,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 35.65 亿元，流动性较好",
+              "PE 41.1，估值未进入极端异常区",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 180.27%"
+            ],
+            "risk": [
+              "主力净流出 1.68 亿元",
+              "经营现金流为负 -3.5 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "2026-07-02 紫光国微:关于收到深圳证券交易所《关于紫光国芯微电子股份有限公司发行股份及支付现金购买资产并募集配套资金申请的审核问询函》的公告",
+              "有效跌破 20 日低点 69.55，技术面继续减分"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 70.16,
+            "pct": -2.88,
+            "state": "暂不交易",
+            "score": 25.1,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 35.65 亿元，流动性较好",
+              "PE 41.1，估值未进入极端异常区",
+              "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 180.27%"
+            ],
+            "risk": [
+              "主力净流出 1.68 亿元",
+              "经营现金流为负 -3.5 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "2026-07-02 紫光国微:关于收到深圳证券交易所《关于紫光国芯微电子股份有限公司发行股份及支付现金购买资产并募集配套资金申请的审核问询函》的公告",
+              "有效跌破 20 日低点 69.55，技术面继续减分"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "000034",
+        "name": "神州数码",
+        "sector": "科技",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 26.93,
+        "firstState": "暂不交易",
+        "firstScore": 0,
+        "firstReason": [
+          "成交额 23.28 亿元，流动性较好",
+          "当日涨幅 4.58%，短线强于市场",
+          "PE 34.92，估值未进入极端异常区",
+          "主力净流入 0.88 亿元"
+        ],
+        "currentPrice": 26.93,
+        "currentState": "暂不交易",
+        "currentScore": 0,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 23.73,
+          "takeProfit": 33.03,
+          "riskReward": 1.91
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 23.73,
+          "takeProfit": 33.03,
+          "riskReward": 1.91
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 26.93
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 26.93,
+            "open": 25.01,
+            "high": 28.33,
+            "low": 25.01,
+            "pct": 4.58,
+            "state": "暂不交易",
+            "score": 0,
+            "mainNetInflowYi": 0.88
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 26.93,
+            "pct": 4.58,
+            "state": "暂不交易",
+            "score": 0,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 23.28 亿元，流动性较好",
+              "当日涨幅 4.58%，短线强于市场",
+              "PE 34.92，估值未进入极端异常区",
+              "主力净流入 0.88 亿元",
+              "归属板块：科技；命中：软件、计算机、人工智能、网络安全、存储"
+            ],
+            "risk": [
+              "经营现金流为负 -24.98 亿元",
+              "资产负债率 78.54%，财务压力偏高",
+              "毛利率约 3.37%，盈利弹性偏弱",
+              "收盘低于 MA20，买点需要降级",
+              "2026-07-08 神州数码:关于公司部分董事、高级管理人员减持计划期限届满暨实施情况的公告"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 26.93,
+            "pct": 4.58,
+            "state": "暂不交易",
+            "score": 0,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 23.28 亿元，流动性较好",
+              "当日涨幅 4.58%，短线强于市场",
+              "PE 34.92，估值未进入极端异常区",
+              "主力净流入 0.88 亿元",
+              "归属板块：科技；命中：软件、计算机、人工智能、网络安全、存储"
+            ],
+            "risk": [
+              "经营现金流为负 -24.98 亿元",
+              "资产负债率 78.54%，财务压力偏高",
+              "毛利率约 3.37%，盈利弹性偏弱",
+              "收盘低于 MA20，买点需要降级",
+              "2026-07-08 神州数码:关于公司部分董事、高级管理人员减持计划期限届满暨实施情况的公告"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 26.93,
+            "pct": 4.58,
+            "state": "暂不交易",
+            "score": 0,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 23.28 亿元，流动性较好",
+              "当日涨幅 4.58%，短线强于市场",
+              "PE 34.92，估值未进入极端异常区",
+              "主力净流入 0.88 亿元",
+              "归属板块：科技；命中：软件、计算机、人工智能、网络安全、存储"
+            ],
+            "risk": [
+              "经营现金流为负 -24.98 亿元",
+              "资产负债率 78.54%，财务压力偏高",
+              "毛利率约 3.37%，盈利弹性偏弱",
+              "收盘低于 MA20，买点需要降级",
+              "2026-07-08 神州数码:关于公司部分董事、高级管理人员减持计划期限届满暨实施情况的公告"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 26.93,
+            "pct": 4.58,
+            "state": "暂不交易",
+            "score": 0,
+            "sector": "科技",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 23.28 亿元，流动性较好",
+              "当日涨幅 4.58%，短线强于市场",
+              "PE 34.92，估值未进入极端异常区",
+              "主力净流入 0.88 亿元",
+              "归属板块：科技；命中：软件、计算机、人工智能、网络安全、存储"
+            ],
+            "risk": [
+              "经营现金流为负 -24.98 亿元",
+              "资产负债率 78.54%，财务压力偏高",
+              "毛利率约 3.37%，盈利弹性偏弱",
+              "收盘低于 MA20，买点需要降级",
+              "2026-07-08 神州数码:关于公司部分董事、高级管理人员减持计划期限届满暨实施情况的公告"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "002065",
+        "name": "东华软件",
+        "sector": "低空经济/航空航天",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 7.04,
+        "firstState": "暂不交易",
+        "firstScore": 20.1,
+        "firstReason": [
+          "成交额 3.39 亿元，具备跟踪流动性",
+          "PE 47.28，估值未进入极端异常区",
+          "归属板块：低空经济/航空航天；命中：软件、计算机、人工智能、网络安全、互联网",
+          "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓"
+        ],
+        "currentPrice": 7.04,
+        "currentState": "暂不交易",
+        "currentScore": 20.1,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 6.54,
+          "takeProfit": 8.19,
+          "riskReward": 2.3
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 6.54,
+          "takeProfit": 8.19,
+          "riskReward": 2.3
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 7.04
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 7.04,
+            "open": 6.89,
+            "high": 7.18,
+            "low": 6.85,
+            "pct": 1.73,
+            "state": "暂不交易",
+            "score": 20.1,
+            "mainNetInflowYi": -0.01
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 7.04,
+            "pct": 1.73,
+            "state": "暂不交易",
+            "score": 20.1,
+            "sector": "低空经济/航空航天",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 3.39 亿元，具备跟踪流动性",
+              "PE 47.28，估值未进入极端异常区",
+              "归属板块：低空经济/航空航天；命中：软件、计算机、人工智能、网络安全、互联网",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 12.17%"
+            ],
+            "risk": [
+              "营业收入同比下降 7.42%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 6.74，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 7.04,
+            "pct": 1.73,
+            "state": "暂不交易",
+            "score": 20.1,
+            "sector": "低空经济/航空航天",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 3.39 亿元，具备跟踪流动性",
+              "PE 47.28，估值未进入极端异常区",
+              "归属板块：低空经济/航空航天；命中：软件、计算机、人工智能、网络安全、互联网",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 12.17%"
+            ],
+            "risk": [
+              "营业收入同比下降 7.42%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 6.74，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 7.04,
+            "pct": 1.73,
+            "state": "暂不交易",
+            "score": 20.1,
+            "sector": "低空经济/航空航天",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 3.39 亿元，具备跟踪流动性",
+              "PE 47.28，估值未进入极端异常区",
+              "归属板块：低空经济/航空航天；命中：软件、计算机、人工智能、网络安全、互联网",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 12.17%"
+            ],
+            "risk": [
+              "营业收入同比下降 7.42%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 6.74，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 7.04,
+            "pct": 1.73,
+            "state": "暂不交易",
+            "score": 20.1,
+            "sector": "低空经济/航空航天",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 3.39 亿元，具备跟踪流动性",
+              "PE 47.28，估值未进入极端异常区",
+              "归属板块：低空经济/航空航天；命中：软件、计算机、人工智能、网络安全、互联网",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 12.17%"
+            ],
+            "risk": [
+              "营业收入同比下降 7.42%",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 6.74，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "002294",
+        "name": "信立泰",
+        "sector": "医药医疗",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 41.37,
+        "firstState": "暂不交易",
+        "firstScore": 96,
+        "firstReason": [
+          "成交额 26.07 亿元，流动性较好",
+          "当日涨幅 7.04%，短线强于市场",
+          "PE 71.33，估值未进入极端异常区",
+          "主力净流入 1.22 亿元"
+        ],
+        "currentPrice": 41.37,
+        "currentState": "暂不交易",
+        "currentScore": 96,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "类二买/趋势延续观察",
+          "entryZone": "33.97-40.76",
+          "stop": 33.55,
+          "takeProfit": 47.52,
+          "riskReward": 0.94
+        },
+        "lastPlan": {
+          "buyType": "类二买/趋势延续观察",
+          "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 33.55,
+          "takeProfit": 47.52,
+          "riskReward": 0.94
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 41.37
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 41.37,
+            "open": 38.09,
+            "high": 42.2,
+            "low": 36.8,
+            "pct": 7.04,
+            "state": "暂不交易",
+            "score": 96,
+            "mainNetInflowYi": 1.22
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 41.37,
+            "pct": 7.04,
+            "state": "暂不交易",
+            "score": 96,
+            "sector": "医药医疗",
+            "buyType": "类二买/趋势延续观察",
+            "reason": [
+              "成交额 26.07 亿元，流动性较好",
+              "当日涨幅 7.04%，短线强于市场",
+              "PE 71.33，估值未进入极端异常区",
+              "主力净流入 1.22 亿元",
+              "归属板块：医药医疗；命中：医药、医疗、生物、创新药、化学制药"
+            ],
+            "risk": [
+              "跌破 MA20 且 30分钟转弱，取消买点",
+              "策略否决：相对强度：强度 52.4",
+              "策略否决：风险收益比：按计划价 40.76 计算，约 1:0.94，最大亏损约 17.69%，目标空间约 16.58%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 41.37,
+            "pct": 7.04,
+            "state": "暂不交易",
+            "score": 96,
+            "sector": "医药医疗",
+            "buyType": "类二买/趋势延续观察",
+            "reason": [
+              "成交额 26.07 亿元，流动性较好",
+              "当日涨幅 7.04%，短线强于市场",
+              "PE 71.33，估值未进入极端异常区",
+              "主力净流入 1.22 亿元",
+              "归属板块：医药医疗；命中：医药、医疗、生物、创新药、化学制药"
+            ],
+            "risk": [
+              "跌破 MA20 且 30分钟转弱，取消买点",
+              "策略否决：相对强度：强度 52.4",
+              "策略否决：风险收益比：按计划价 40.76 计算，约 1:0.94，最大亏损约 17.69%，目标空间约 16.58%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 41.37,
+            "pct": 7.04,
+            "state": "暂不交易",
+            "score": 96,
+            "sector": "医药医疗",
+            "buyType": "类二买/趋势延续观察",
+            "reason": [
+              "成交额 26.07 亿元，流动性较好",
+              "当日涨幅 7.04%，短线强于市场",
+              "PE 71.33，估值未进入极端异常区",
+              "主力净流入 1.22 亿元",
+              "归属板块：医药医疗；命中：医药、医疗、生物、创新药、化学制药"
+            ],
+            "risk": [
+              "跌破 MA20 且 30分钟转弱，取消买点",
+              "策略否决：相对强度：强度 52.4",
+              "策略否决：风险收益比：按计划价 40.76 计算，约 1:0.94，最大亏损约 17.69%，目标空间约 16.58%"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 41.37,
+            "pct": 7.04,
+            "state": "暂不交易",
+            "score": 96,
+            "sector": "医药医疗",
+            "buyType": "类二买/趋势延续观察",
+            "reason": [
+              "成交额 26.07 亿元，流动性较好",
+              "当日涨幅 7.04%，短线强于市场",
+              "PE 71.33，估值未进入极端异常区",
+              "主力净流入 1.22 亿元",
+              "归属板块：医药医疗；命中：医药、医疗、生物、创新药、化学制药"
+            ],
+            "risk": [
+              "跌破 MA20 且 30分钟转弱，取消买点",
+              "策略否决：相对强度：强度 52.4",
+              "策略否决：风险收益比：按计划价 40.76 计算，约 1:0.94，最大亏损约 17.69%，目标空间约 16.58%"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "002179",
+        "name": "中航光电",
+        "sector": "军工国防",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 34.01,
+        "firstState": "暂不交易",
+        "firstScore": 55.8,
+        "firstReason": [
+          "成交额 12.38 亿元，流动性较好",
+          "PE 33.22，估值未进入极端异常区",
+          "主力净流入 0.59 亿元",
+          "归属板块：军工国防；命中：电子、国防军工"
+        ],
+        "currentPrice": 34.01,
+        "currentState": "暂不交易",
+        "currentScore": 55.8,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 32.79,
+          "takeProfit": 50.99,
+          "riskReward": 13.91
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 32.79,
+          "takeProfit": 50.99,
+          "riskReward": 13.91
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 34.01
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 34.01,
+            "open": 34.4,
+            "high": 35.03,
+            "low": 33.8,
+            "pct": -2.61,
+            "state": "暂不交易",
+            "score": 55.8,
+            "mainNetInflowYi": 0.59
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 34.01,
+            "pct": -2.61,
+            "state": "暂不交易",
+            "score": 55.8,
+            "sector": "军工国防",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 12.38 亿元，流动性较好",
+              "PE 33.22，估值未进入极端异常区",
+              "主力净流入 0.59 亿元",
+              "归属板块：军工国防；命中：电子、国防军工",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+            ],
+            "risk": [
+              "归母净利润同比下降 37.75%",
+              "经营现金流为负 -20.61 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 33.8，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 34.01,
+            "pct": -2.61,
+            "state": "暂不交易",
+            "score": 55.8,
+            "sector": "军工国防",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 12.38 亿元，流动性较好",
+              "PE 33.22，估值未进入极端异常区",
+              "主力净流入 0.59 亿元",
+              "归属板块：军工国防；命中：电子、国防军工",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+            ],
+            "risk": [
+              "归母净利润同比下降 37.75%",
+              "经营现金流为负 -20.61 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 33.8，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 34.01,
+            "pct": -2.61,
+            "state": "暂不交易",
+            "score": 55.8,
+            "sector": "军工国防",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 12.38 亿元，流动性较好",
+              "PE 33.22，估值未进入极端异常区",
+              "主力净流入 0.59 亿元",
+              "归属板块：军工国防；命中：电子、国防军工",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+            ],
+            "risk": [
+              "归母净利润同比下降 37.75%",
+              "经营现金流为负 -20.61 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 33.8，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 34.01,
+            "pct": -2.61,
+            "state": "暂不交易",
+            "score": 55.8,
+            "sector": "军工国防",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 12.38 亿元，流动性较好",
+              "PE 33.22，估值未进入极端异常区",
+              "主力净流入 0.59 亿元",
+              "归属板块：军工国防；命中：电子、国防军工",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+            ],
+            "risk": [
+              "归母净利润同比下降 37.75%",
+              "经营现金流为负 -20.61 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 33.8，技术面继续减分",
+              "策略否决：趋势阶段：阶段1：筑底观察"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "002460",
+        "name": "赣锋锂业",
+        "sector": "资源周期/化工",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 49.97,
+        "firstState": "暂不交易",
+        "firstScore": 21.4,
+        "firstReason": [
+          "成交额 33.98 亿元，流动性较好",
+          "PE 62.46，估值未进入极端异常区",
+          "归属板块：资源周期/化工；命中：锂、锂电、电池、储能、新能源",
+          "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓"
+        ],
+        "currentPrice": 49.97,
+        "currentState": "暂不交易",
+        "currentScore": 21.4,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "无买点/风险段",
+          "entryZone": "暂无",
+          "stop": 47.96,
+          "takeProfit": 78.58,
+          "riskReward": 14.24
+        },
+        "lastPlan": {
+          "buyType": "无买点/风险段",
+          "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 47.96,
+          "takeProfit": 78.58,
+          "riskReward": 14.24
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 49.97
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 49.97,
+            "open": 50.6,
+            "high": 52.49,
+            "low": 49.44,
+            "pct": -2.97,
+            "state": "暂不交易",
+            "score": 21.4,
+            "mainNetInflowYi": -1.32
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 49.97,
+            "pct": -2.97,
+            "state": "暂不交易",
+            "score": 21.4,
+            "sector": "资源周期/化工",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 33.98 亿元，流动性较好",
+              "PE 62.46，估值未进入极端异常区",
+              "归属板块：资源周期/化工；命中：锂、锂电、电池、储能、新能源",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 616.34%"
+            ],
+            "risk": [
+              "主力净流出 1.32 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 49.44，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 49.97,
+            "pct": -2.97,
+            "state": "暂不交易",
+            "score": 21.3,
+            "sector": "资源周期/化工",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 33.98 亿元，流动性较好",
+              "PE 62.46，估值未进入极端异常区",
+              "归属板块：资源周期/化工；命中：锂、锂电、电池、储能、新能源",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 616.34%"
+            ],
+            "risk": [
+              "主力净流出 1.32 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 49.44，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 49.97,
+            "pct": -2.97,
+            "state": "暂不交易",
+            "score": 21.4,
+            "sector": "资源周期/化工",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 33.98 亿元，流动性较好",
+              "PE 62.46，估值未进入极端异常区",
+              "归属板块：资源周期/化工；命中：锂、锂电、电池、储能、新能源",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 616.34%"
+            ],
+            "risk": [
+              "主力净流出 1.32 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 49.44，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 49.97,
+            "pct": -2.97,
+            "state": "暂不交易",
+            "score": 21.4,
+            "sector": "资源周期/化工",
+            "buyType": "无买点/风险段",
+            "reason": [
+              "成交额 33.98 亿元，流动性较好",
+              "PE 62.46，估值未进入极端异常区",
+              "归属板块：资源周期/化工；命中：锂、锂电、电池、储能、新能源",
+              "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+              "归母净利润同比增长 616.34%"
+            ],
+            "risk": [
+              "主力净流出 1.32 亿元",
+              "收盘低于 MA20，买点需要降级",
+              "有效跌破 20 日低点 49.44，技术面继续减分",
+              "策略否决：趋势阶段：阶段4：下降趋势",
+              "策略否决：缠论买点：无买点/风险段"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "000858",
+        "name": "五 粮 液",
+        "sector": "大消费",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 73.9,
+        "firstState": "观察池",
+        "firstScore": 73,
+        "firstReason": [
+          "成交额 35.99 亿元，流动性较好",
+          "PE 22.76，估值未进入极端异常区",
+          "归属板块：大消费；命中：消费、食品、饮料、白酒",
+          "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+        ],
+        "currentPrice": 73.9,
+        "currentState": "观察池",
+        "currentScore": 73,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "潜在一买观察",
+          "entryZone": "73.02-76.6",
+          "stop": 68.4,
+          "takeProfit": 84.59,
+          "riskReward": 1.94
+        },
+        "lastPlan": {
+          "buyType": "潜在一买观察",
+          "action": "只观察，不提前抄底；等待底分型与低级别转强",
+          "nextAction": "保留观察，等待评分或买点改善。",
+          "stop": 68.4,
+          "takeProfit": 84.59,
+          "riskReward": 1.94
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 73.9
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 73.9,
+            "open": 73.33,
+            "high": 74.59,
+            "low": 72.6,
+            "pct": 0.11,
+            "state": "观察池",
+            "score": 73,
+            "mainNetInflowYi": -0.19
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 73.9,
+            "pct": 0.11,
+            "state": "观察池",
+            "score": 73,
+            "sector": "大消费",
+            "buyType": "潜在一买观察",
+            "reason": [
+              "成交额 35.99 亿元，流动性较好",
+              "PE 22.76，估值未进入极端异常区",
+              "归属板块：大消费；命中：消费、食品、饮料、白酒",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 82.57%"
+            ],
+            "risk": [
+              "经营现金流为负 -25.35 亿元",
+              "跌破 20 日低点 70.52，一买观察失败",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：相对强度：强度 28.6",
+              "策略否决：资金流：主力净流入 -0.19 亿"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 73.9,
+            "pct": 0.11,
+            "state": "交易准备池",
+            "score": 91.7,
+            "sector": "大消费",
+            "buyType": "类三买观察",
+            "reason": [
+              "成交额 35.99 亿元，流动性较好",
+              "PE 22.76，估值未进入极端异常区",
+              "归属板块：大消费；命中：消费、食品、饮料、白酒",
+              "趋势阶段不够清晰，等待方向选择",
+              "归母净利润同比增长 82.57%"
+            ],
+            "risk": [
+              "经营现金流为负 -25.35 亿元",
+              "跌回 20 日中位 71.84 下方，类三买观察失效",
+              "策略否决：趋势阶段：震荡过渡",
+              "策略否决：相对强度：强度 34.1",
+              "策略否决：资金流：主力净流入 -0.19 亿"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 73.9,
+            "pct": 0.11,
+            "state": "观察池",
+            "score": 73,
+            "sector": "大消费",
+            "buyType": "潜在一买观察",
+            "reason": [
+              "成交额 35.99 亿元，流动性较好",
+              "PE 22.76，估值未进入极端异常区",
+              "归属板块：大消费；命中：消费、食品、饮料、白酒",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 82.57%"
+            ],
+            "risk": [
+              "经营现金流为负 -25.35 亿元",
+              "跌破 20 日低点 70.52，一买观察失败",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：相对强度：强度 28.6",
+              "策略否决：资金流：主力净流入 -0.19 亿"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 73.9,
+            "pct": 0.11,
+            "state": "观察池",
+            "score": 73,
+            "sector": "大消费",
+            "buyType": "潜在一买观察",
+            "reason": [
+              "成交额 35.99 亿元，流动性较好",
+              "PE 22.76，估值未进入极端异常区",
+              "归属板块：大消费；命中：消费、食品、饮料、白酒",
+              "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+              "归母净利润同比增长 82.57%"
+            ],
+            "risk": [
+              "经营现金流为负 -25.35 亿元",
+              "跌破 20 日低点 70.52，一买观察失败",
+              "策略否决：趋势阶段：阶段1：筑底观察",
+              "策略否决：相对强度：强度 28.6",
+              "策略否决：资金流：主力净流入 -0.19 亿"
+            ]
+          }
+        ]
+      },
+      {
+        "code": "000333",
+        "name": "美的集团",
+        "sector": "大消费",
+        "active": true,
+        "firstDate": "2026-07-16",
+        "firstPrice": 81.8,
+        "firstState": "暂不交易",
+        "firstScore": 73.1,
+        "firstReason": [
+          "成交额 29.83 亿元，流动性较好",
+          "PE 14.1，估值未进入极端异常区",
+          "归属板块：大消费；命中：芯片、数据中心",
+          "仍在中枢上半区，但趋势延续需要低级别确认和放量"
+        ],
+        "currentPrice": 81.8,
+        "currentState": "暂不交易",
+        "currentScore": 73.1,
+        "lastSeenAtChina": "2026/07/16 18:41:07",
+        "initialPlan": {
+          "buyType": "中枢上半区观察",
+          "entryZone": "76.77-81.29",
+          "stop": 71.41,
+          "takeProfit": 90.13,
+          "riskReward": 0.89
+        },
+        "lastPlan": {
+          "buyType": "中枢上半区观察",
+          "action": "位置不差但低级别未确认，等待 30分钟转强",
+          "nextAction": "当前不建仓，等风险解除或结构修复。",
+          "stop": 71.41,
+          "takeProfit": 90.13,
+          "riskReward": 0.89
+        },
+        "performance": {
+          "currentReturnPct": 0,
+          "maxGainPct": 0,
+          "maxDrawdownPct": 0,
+          "oneWeekPct": null,
+          "oneMonthPct": null,
+          "twoMonthPct": null,
+          "hitStop": false,
+          "hitTakeProfit": false,
+          "latestDate": "2026-07-16",
+          "latestClose": 81.8
+        },
+        "priceHistory": [
+          {
+            "date": "2026-07-16",
+            "at": "2026-07-16T10:41:07.475Z",
+            "close": 81.8,
+            "open": 82.15,
+            "high": 83.45,
+            "low": 81.8,
+            "pct": -1.05,
+            "state": "暂不交易",
+            "score": 73.1,
+            "mainNetInflowYi": -2.26
+          }
+        ],
+        "recommendations": [
+          {
+            "at": "2026-07-16T09:51:08.709Z",
+            "atChina": "2026/07/16 17:51:08",
+            "date": "2026-07-16",
+            "price": 81.8,
+            "pct": -1.05,
+            "state": "暂不交易",
+            "score": 73.1,
+            "sector": "大消费",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 29.83 亿元，流动性较好",
+              "PE 14.1，估值未进入极端异常区",
+              "归属板块：大消费；命中：芯片、数据中心",
+              "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+              "归母净利润同比增长 2.03%"
+            ],
+            "risk": [
+              "主力净流出 2.26 亿元",
+              "跌破 20 日中位 78.53，降级为震荡",
+              "策略否决：资金流：主力净流入 -2.26 亿",
+              "策略否决：风险收益比：按计划价 81.29 计算，约 1:0.89，最大亏损约 12.15%，目标空间约 10.87%",
+              "策略否决：板块权重：大消费"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:20:17.144Z",
+            "atChina": "2026/07/16 18:20:17",
+            "date": "2026-07-16",
+            "price": 81.8,
+            "pct": -1.05,
+            "state": "暂不交易",
+            "score": 87.2,
+            "sector": "大消费",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 29.83 亿元，流动性较好",
+              "PE 14.1，估值未进入极端异常区",
+              "归属板块：大消费；命中：芯片、数据中心",
+              "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点",
+              "归母净利润同比增长 2.03%"
+            ],
+            "risk": [
+              "主力净流出 2.26 亿元",
+              "跌破 20 日中位 77.87，降级为震荡",
+              "策略否决：资金流：主力净流入 -2.26 亿",
+              "策略否决：风险收益比：按计划价 80.99 计算，约 1:0.84，最大亏损约 13.43%，目标空间约 11.29%",
+              "策略否决：板块权重：大消费"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:35:33.751Z",
+            "atChina": "2026/07/16 18:35:33",
+            "date": "2026-07-16",
+            "price": 81.8,
+            "pct": -1.05,
+            "state": "暂不交易",
+            "score": 73.1,
+            "sector": "大消费",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 29.83 亿元，流动性较好",
+              "PE 14.1，估值未进入极端异常区",
+              "归属板块：大消费；命中：芯片、数据中心",
+              "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+              "归母净利润同比增长 2.03%"
+            ],
+            "risk": [
+              "主力净流出 2.26 亿元",
+              "跌破 20 日中位 78.53，降级为震荡",
+              "策略否决：资金流：主力净流入 -2.26 亿",
+              "策略否决：风险收益比：按计划价 81.29 计算，约 1:0.89，最大亏损约 12.15%，目标空间约 10.87%",
+              "策略否决：板块权重：大消费"
+            ]
+          },
+          {
+            "at": "2026-07-16T10:41:07.475Z",
+            "atChina": "2026/07/16 18:41:07",
+            "date": "2026-07-16",
+            "price": 81.8,
+            "pct": -1.05,
+            "state": "暂不交易",
+            "score": 73.1,
+            "sector": "大消费",
+            "buyType": "中枢上半区观察",
+            "reason": [
+              "成交额 29.83 亿元，流动性较好",
+              "PE 14.1，估值未进入极端异常区",
+              "归属板块：大消费；命中：芯片、数据中心",
+              "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+              "归母净利润同比增长 2.03%"
+            ],
+            "risk": [
+              "主力净流出 2.26 亿元",
+              "跌破 20 日中位 78.53，降级为震荡",
+              "策略否决：资金流：主力净流入 -2.26 亿",
+              "策略否决：风险收益比：按计划价 81.29 计算，约 1:0.89，最大亏损约 12.15%，目标空间约 10.87%",
+              "策略否决：板块权重：大消费"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "strategyReview": {
+    "generatedAtChina": "2026/07/16 18:41:07",
+    "sampleCount": 14,
+    "reviewMode": "样本积累期",
+    "cadence": [
+      "每日记录每次刷新",
+      "每周轻复盘",
+      "每月正式复盘",
+      "季度调参建议",
+      "半年框架评估"
+    ],
+    "guardrails": [
+      "不因单日偏差自动改策略",
+      "不自动改变你的行业偏好和风险偏好",
+      "策略调整只生成建议，必须经你确认后执行",
+      "把偏差区分为策略问题、数据问题、市场突发、执行条件未满足和不可归因"
+    ],
+    "currentDistribution": {
+      "重点跟踪池": 5,
+      "暂不交易": 33,
+      "交易准备池": 2,
+      "观察池": 3
+    },
+    "stateMetrics": {
+      "重点跟踪池": {
+        "count": 5,
+        "avgScore": 87.6,
+        "avgRiskReward": 1.86,
+        "avgRelativeStrength": 48.28
+      },
+      "暂不交易": {
+        "count": 33,
+        "avgScore": 45.59,
+        "avgRiskReward": 5.91,
+        "avgRelativeStrength": 52.02
+      },
+      "交易准备池": {
+        "count": 2,
+        "avgScore": 96,
+        "avgRiskReward": 2.53,
+        "avgRelativeStrength": 59.95
+      },
+      "观察池": {
+        "count": 3,
+        "avgScore": 69.17,
+        "avgRiskReward": 1.81,
+        "avgRelativeStrength": 24.1
+      }
+    },
+    "stability": {
+      "previousRefresh": "2026/07/16 18:35:33",
+      "overlapWithPrevious": 43,
+      "currentCount": 43,
+      "previousCount": 43
+    },
+    "observations": [
+      "暂不交易占比 76.7%，说明当前市场或规则偏谨慎，需要后续复盘确认是否过严。",
+      "存在数据源限制，相关字段不会参与硬性加减分，避免用缺失数据推导结论。",
+      "与上次刷新候选重合 43/43，用于观察候选池稳定性。"
+    ],
+    "suggestions": [
+      {
+        "title": "观察风险收益比和趋势阶段门槛是否过严",
+        "reason": "暂不交易占比持续过高会降低选股覆盖度，但短期高占比也可能只是市场结构弱。",
+        "proposedChange": "连续5次刷新暂不交易占比仍高于75%时，再评估是否微调风险收益比门槛或趋势阶段扣分。",
+        "status": "待你确认后才执行"
+      },
+      {
+        "title": "建立后续收益回看",
+        "reason": "当前日志已记录信号，但还需要在1/3/5/10/20个交易日后回看表现，才能判断策略是否真的有效。",
+        "proposedChange": "后续增加收益追踪脚本，统计交易准备池、重点跟踪池、观察池的分层表现。",
+        "status": "待你确认后开发"
+      }
+    ]
+  }
+};

@@ -1,0 +1,60 @@
+name: Trading Assistant Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+  schedule:
+    - cron: "10 1 * * 1-5"
+    - cron: "45 4 * * 1-5"
+    - cron: "40 7 * * 1-5"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: trading-assistant-pages
+  cancel-in-progress: false
+
+jobs:
+  refresh-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Refresh trading assistant data
+        run: node modules/trading-assistant/scripts/refresh-trading-assistant.js
+
+      - name: Update strategy review
+        run: node modules/trading-assistant/scripts/update-strategy-review.js
+
+      - name: Audit trading assistant data
+        run: node modules/trading-assistant/scripts/audit-trading-assistant-data.js
+
+      - name: Build GitHub Pages artifact
+        run: node scripts/build-github-pages.js
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,148 @@
+{
+  "generatedAt": "2026-07-16T07:59:18.401Z",
+  "summary": {
+    "total": 23,
+    "ok": 20,
+    "failed": 3
+  },
+  "results": [
+    {
+      "name": "新浪实时行情 603501",
+      "ok": true,
+      "elapsedMs": 521,
+      "sample": "var hq_str_sh603501=\"��������,108.080,111.120,109.850,113.770,108.000,109.850,109.860,45522722,5082515853.000,43260,109.850,100,109.840,600,109.830,1100,109.820,400,109.810,800,109"
+    },
+    {
+      "name": "腾讯实时行情 603501",
+      "ok": true,
+      "elapsedMs": 330,
+      "sample": "v_sh603501=\"1~��������~603501~109.85~111.12~108.08~455227~211908~243319~109.85~433~109.84~1~109.83~6~109.82~11~109.81~4~109.86~8~109.87~1~109.88~13~109.89~59~109.90~877~~2026071615"
+    },
+    {
+      "name": "新浪日K 603501",
+      "ok": true,
+      "elapsedMs": 240,
+      "sample": "[{\"day\":\"2026-06-04\",\"open\":\"98.000\",\"high\":\"101.900\",\"low\":\"96.170\",\"close\":\"98.860\",\"volume\":\"40553738\"},{\"day\":\"2026-06-05\",\"open\":\"97.500\",\"high\":\"97.830\",\"low\":\"95.350\",\"close"
+    },
+    {
+      "name": "腾讯日K 603501",
+      "ok": true,
+      "elapsedMs": 305,
+      "sample": "{\"code\":0,\"msg\":\"\",\"data\":{\"sh603501\":{\"qfqday\":[[\"2026-06-03\",\"92.320\",\"100.810\",\"101.820\",\"92.260\",\"607468.000\"],[\"2026-06-04\",\"98.000\",\"98.860\",\"101.900\",\"96.170\",\"405537.000\",{"
+    },
+    {
+      "name": "腾讯分钟K 603501",
+      "ok": true,
+      "elapsedMs": 273,
+      "sample": "{\"code\":0,\"msg\":\"\",\"data\":{\"sh603501\":{\"qt\":{\"sh603501\":[\"1\",\"豪威集团\",\"603501\",\"109.85\",\"111.12\",\"108.08\",\"455227\",\"211908\",\"243319\",\"109.85\",\"433\",\"109.84\",\"1\",\"109.83\",\"6\",\"109.82\""
+    },
+    {
+      "name": "巨潮公告 603501",
+      "ok": true,
+      "elapsedMs": 482,
+      "sample": "{\"classifiedAnnouncements\":null,\"totalSecurities\":0,\"totalAnnouncement\":2024,\"totalRecordNum\":2024,\"announcements\":[{\"id\":null,\"secCode\":\"603501\",\"secName\":\"豪威集团\",\"orgId\":\"99000307"
+    },
+    {
+      "name": "东方财富实时资金字段 603501",
+      "ok": false,
+      "elapsedMs": 340,
+      "error": "Command failed: curl.exe -L --retry 2 --retry-delay 1 --connect-timeout 10 --max-time 25 -sS -H Referer: https://quote.eastmoney.com/ -H User-Agent: Mozilla/5.0 https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&secids=1.603501&fields=f12,f14,f2,f3,f6,f8,f9,f23,f62,f184\ncurl: (56) schannel: server closed abruptly (missing close_notify)\r\n"
+    },
+    {
+      "name": "新浪实时行情 000858",
+      "ok": true,
+      "elapsedMs": 65,
+      "sample": "var hq_str_sz000858=\"�� �� Һ,73.330,73.820,73.900,74.590,72.600,73.900,73.910,48892065,3599045958.670,102888,73.900,8400,73.890,3500,73.880,6600,73.870,19000,73.860,11600,73.910,73"
+    },
+    {
+      "name": "腾讯实时行情 000858",
+      "ok": true,
+      "elapsedMs": 75,
+      "sample": "v_sz000858=\"51~�� �� Һ~000858~73.90~73.82~73.33~488921~247886~241035~73.90~1029~73.89~84~73.88~35~73.87~66~73.86~190~73.91~116~73.92~73~73.93~111~73.94~10~73.95~29~~20260716155915~"
+    },
+    {
+      "name": "新浪日K 000858",
+      "ok": true,
+      "elapsedMs": 81,
+      "sample": "[{\"day\":\"2026-06-04\",\"open\":\"82.350\",\"high\":\"82.790\",\"low\":\"81.100\",\"close\":\"81.100\",\"volume\":\"20421067\"},{\"day\":\"2026-06-05\",\"open\":\"81.500\",\"high\":\"82.420\",\"low\":\"81.030\",\"close\""
+    },
+    {
+      "name": "腾讯日K 000858",
+      "ok": true,
+      "elapsedMs": 97,
+      "sample": "{\"code\":0,\"msg\":\"\",\"data\":{\"sz000858\":{\"qfqday\":[[\"2026-06-03\",\"80.022\",\"79.772\",\"80.392\",\"79.042\",\"211544.000\"],[\"2026-06-04\",\"79.772\",\"78.522\",\"80.212\",\"78.522\",\"204211.000\"],[\"2"
+    },
+    {
+      "name": "腾讯分钟K 000858",
+      "ok": true,
+      "elapsedMs": 88,
+      "sample": "{\"code\":0,\"msg\":\"\",\"data\":{\"sz000858\":{\"qt\":{\"sz000858\":[\"51\",\"五 粮 液\",\"000858\",\"73.90\",\"73.82\",\"73.33\",\"488921\",\"247886\",\"241035\",\"73.90\",\"1029\",\"73.89\",\"84\",\"73.88\",\"35\",\"73.87\",\""
+    },
+    {
+      "name": "巨潮公告 000858",
+      "ok": true,
+      "elapsedMs": 185,
+      "sample": "{\"classifiedAnnouncements\":null,\"totalSecurities\":0,\"totalAnnouncement\":1587,\"totalRecordNum\":1587,\"announcements\":[{\"id\":null,\"secCode\":\"000858\",\"secName\":\"五 粮 液\",\"orgId\":\"gssz000"
+    },
+    {
+      "name": "东方财富实时资金字段 000858",
+      "ok": false,
+      "elapsedMs": 355,
+      "error": "Command failed: curl.exe -L --retry 2 --retry-delay 1 --connect-timeout 10 --max-time 25 -sS -H Referer: https://quote.eastmoney.com/ -H User-Agent: Mozilla/5.0 https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&secids=0.000858&fields=f12,f14,f2,f3,f6,f8,f9,f23,f62,f184\ncurl: (56) schannel: server closed abruptly (missing close_notify)\r\n"
+    },
+    {
+      "name": "新浪实时行情 300750",
+      "ok": true,
+      "elapsedMs": 62,
+      "sample": "var hq_str_sz300750=\"����ʱ��,369.480,373.000,366.200,375.020,364.500,366.200,366.230,25186882,9290699880.400,12281,366.200,2300,366.190,900,366.180,100,366.160,200,366.150,200,366."
+    },
+    {
+      "name": "腾讯实时行情 300750",
+      "ok": true,
+      "elapsedMs": 70,
+      "sample": "v_sz300750=\"51~����ʱ��~300750~366.20~373.00~369.48~251869~121738~130131~366.20~123~366.19~23~366.18~9~366.16~1~366.15~2~366.23~2~366.25~2~366.27~2~366.28~12~366.29~13~~202607161558"
+    },
+    {
+      "name": "新浪日K 300750",
+      "ok": true,
+      "elapsedMs": 70,
+      "sample": "[{\"day\":\"2026-06-04\",\"open\":\"426.420\",\"high\":\"426.900\",\"low\":\"407.180\",\"close\":\"408.200\",\"volume\":\"43115462\"},{\"day\":\"2026-06-05\",\"open\":\"407.890\",\"high\":\"412.650\",\"low\":\"402.700\","
+    },
+    {
+      "name": "腾讯日K 300750",
+      "ok": true,
+      "elapsedMs": 81,
+      "sample": "{\"code\":0,\"msg\":\"\",\"data\":{\"sz300750\":{\"qfqday\":[[\"2026-06-03\",\"437.000\",\"426.420\",\"437.000\",\"420.100\",\"385526.000\"],[\"2026-06-04\",\"426.420\",\"408.200\",\"426.900\",\"407.180\",\"431155.0"
+    },
+    {
+      "name": "腾讯分钟K 300750",
+      "ok": true,
+      "elapsedMs": 91,
+      "sample": "{\"code\":0,\"msg\":\"\",\"data\":{\"sz300750\":{\"qt\":{\"sz300750\":[\"51\",\"宁德时代\",\"300750\",\"366.20\",\"373.00\",\"369.48\",\"251869\",\"121738\",\"130131\",\"366.20\",\"123\",\"366.19\",\"23\",\"366.18\",\"9\",\"366.1"
+    },
+    {
+      "name": "巨潮公告 300750",
+      "ok": true,
+      "elapsedMs": 139,
+      "sample": "{\"classifiedAnnouncements\":null,\"totalSecurities\":0,\"totalAnnouncement\":1722,\"totalRecordNum\":1722,\"announcements\":[{\"id\":null,\"secCode\":\"300750\",\"secName\":\"宁德时代\",\"orgId\":\"GD165627"
+    },
+    {
+      "name": "东方财富实时资金字段 300750",
+      "ok": false,
+      "elapsedMs": 338,
+      "error": "Command failed: curl.exe -L --retry 2 --retry-delay 1 --connect-timeout 10 --max-time 25 -sS -H Referer: https://quote.eastmoney.com/ -H User-Agent: Mozilla/5.0 https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&secids=0.300750&fields=f12,f14,f2,f3,f6,f8,f9,f23,f62,f184\ncurl: (56) schannel: server closed abruptly (missing close_notify)\r\n"
+    },
+    {
+      "name": "新浪板块节点",
+      "ok": true,
+      "elapsedMs": 313,
+      "sample": "[\"\\u884c\\u60c5\\u4e2d\\u5fc3\",[[\"A\\u80a1\",[[\"\\u65b0\\u6d6a\\u884c\\u4e1a\",[[\"\\u73bb\\u7483\\u884c\\u4e1a\",\"\",\"new_blhy\"],[\"\\u4f20\\u5a92\\u5a31\\u4e50\",\"\",\"new_cmyl\"],[\"\\u8239\\u8236\\u5236\\u90"
+    },
+    {
+      "name": "新浪半导体板块成分",
+      "ok": true,
+      "elapsedMs": 132,
+      "sample": "[{\"symbol\":\"bj920012\",\"code\":\"920012\",\"name\":\"\\u521b\\u8fbe\\u65b0\\u6750\",\"trade\":\"51.200\",\"pricechange\":-1.3,\"changepercent\":-2.476,\"buy\":\"51.120\",\"sell\":\"51.200\",\"settlement\":\"52.5"
+    }
+  ]
+}

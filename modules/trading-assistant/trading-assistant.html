@@ -1,0 +1,925 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>交易助理 v0.1</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --line: #d9e0ea;
+      --text: #172033;
+      --muted: #667085;
+      --red: #c2410c;
+      --green: #047857;
+      --blue: #1d4ed8;
+      --yellow: #92400e;
+      --shadow: 0 8px 22px rgba(15, 23, 42, .07);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      font: 14px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+    }
+    .app { display: grid; grid-template-columns: 250px 1fr; min-height: 100vh; }
+    aside {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: auto;
+      background: #101828;
+      color: #eef2ff;
+      padding: 18px 14px;
+    }
+    .brand { padding: 8px 10px 14px; border-bottom: 1px solid rgba(255,255,255,.14); margin-bottom: 12px; }
+    .brand h1 { margin: 0 0 6px; font-size: 19px; }
+    .brand p { margin: 0; color: #b9c3d6; font-size: 12px; }
+    nav button {
+      display: block;
+      width: 100%;
+      border: 0;
+      border-radius: 8px;
+      color: #dce7ff;
+      background: transparent;
+      text-align: left;
+      padding: 9px 10px;
+      margin: 4px 0;
+      cursor: pointer;
+      font: inherit;
+    }
+    nav button.active, nav button:hover { background: rgba(255,255,255,.12); color: #fff; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 22px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(245,247,251,.95);
+      backdrop-filter: blur(8px);
+    }
+    h2 { margin: 0; font-size: 20px; }
+    .meta { color: var(--muted); font-size: 12px; }
+    .content { padding: 22px; }
+    .grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 14px; }
+    .card {
+      grid-column: span 4;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      box-shadow: var(--shadow);
+      min-width: 0;
+    }
+    .span-12 { grid-column: span 12; }
+    .span-8 { grid-column: span 8; }
+    .span-6 { grid-column: span 6; }
+    h3 { margin: 0 0 10px; font-size: 15px; }
+    .note { color: var(--muted); font-size: 13px; }
+    .metric { font-size: 28px; font-weight: 750; margin: 4px 0; }
+    .btn {
+      border: 1px solid #cbd5e1;
+      background: #fff;
+      border-radius: 8px;
+      padding: 8px 11px;
+      cursor: pointer;
+      font: inherit;
+    }
+    .btn.primary { background: #111827; color: #fff; border-color: #111827; }
+    .btn.danger { color: #991b1b; border-color: #fecaca; background: #fff7f7; }
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 12px;
+      background: #eef2ff;
+      color: var(--blue);
+      white-space: nowrap;
+    }
+    .pill.red { color: #be123c; background: #fff1f2; }
+    .pill.green { color: var(--green); background: #ecfdf5; }
+    .pill.yellow { color: var(--yellow); background: #fffbeb; }
+    .up { color: var(--red); font-weight: 650; }
+    .down { color: var(--green); font-weight: 650; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border-bottom: 1px solid var(--line); padding: 8px 7px; text-align: left; vertical-align: top; }
+    th { background: #f8fafc; color: #475467; font-weight: 650; }
+    tr:last-child td { border-bottom: 0; }
+    .scroll { overflow: auto; max-height: 520px; }
+    .list { display: grid; gap: 8px; }
+    .item {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      background: #fbfcff;
+    }
+    .item strong { display: block; margin-bottom: 4px; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .kv { display: grid; grid-template-columns: 120px 1fr; gap: 7px 10px; }
+    .kv div:nth-child(odd) { color: #475467; font-weight: 650; }
+    details summary { cursor: pointer; }
+    .tracking-row {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    .tracking-row summary {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 12px;
+      list-style: none;
+    }
+    .tracking-row summary::-webkit-details-marker { display: none; }
+    .tracking-row[open] summary { border-bottom: 1px solid var(--line); background: #f8fafc; }
+    .tracking-row.stopped { opacity: .58; background: #f3f4f6; }
+    .tracking-row.stopped summary { background: #f3f4f6; }
+    .tracking-body { padding: 12px; }
+    .tracking-chart { margin-top: 10px; }
+    pre {
+      max-height: 520px;
+      overflow: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 12px;
+    }
+    input, textarea {
+      width: 100%;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 8px;
+      font: inherit;
+      background: #fff;
+    }
+    textarea { min-height: 70px; resize: vertical; }
+    label { display: grid; gap: 5px; color: #475467; font-size: 12px; }
+    .form-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; align-items: end; }
+    .wide { grid-column: span 2; }
+    .error {
+      border: 1px solid #fecaca;
+      background: #fff1f2;
+      color: #991b1b;
+      border-radius: 8px;
+      padding: 12px;
+      white-space: pre-wrap;
+    }
+    .status-banner {
+      margin: 10px 0 0;
+      border: 1px solid #bfdbfe;
+      background: #eff6ff;
+      color: #1e3a8a;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 13px;
+      display: none;
+      white-space: pre-wrap;
+    }
+    .status-banner.show { display: block; }
+    .status-banner.success { border-color: #bbf7d0; background: #f0fdf4; color: #166534; }
+    .status-banner.error-state { border-color: #fecaca; background: #fff1f2; color: #991b1b; }
+    .status-banner.running { border-color: #fde68a; background: #fffbeb; color: #92400e; }
+    @media (max-width: 1000px) {
+      .app { grid-template-columns: 1fr; }
+      aside { position: relative; height: auto; }
+      .card, .span-8, .span-6 { grid-column: span 12; }
+      .two, .form-grid { grid-template-columns: 1fr; }
+      .wide { grid-column: span 1; }
+      .tracking-row summary { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside>
+      <div class="brand">
+        <h1>交易助理</h1>
+        <p>推荐、参考、分析、交易计划</p>
+      </div>
+      <nav id="nav"></nav>
+    </aside>
+    <main>
+      <header>
+        <div>
+          <h2 id="pageTitle">今日行动清单</h2>
+          <div class="meta" id="meta">等待数据</div>
+          <div class="status-banner" id="refreshStatus"></div>
+        </div>
+        <div class="actions">
+          <button class="btn primary" id="refreshBtn">刷新真实数据</button>
+          <button class="btn" id="reloadBtn">重新载入</button>
+        </div>
+      </header>
+      <section class="content" id="app"></section>
+    </main>
+  </div>
+
+  <script src="data/trading-assistant.js"></script>
+  <script>
+    const pages = [
+      ["overview", "01 今日行动清单"],
+      ["pool", "02 候选池"],
+      ["score", "03 评分排序"],
+      ["trigger", "04 买卖点触发"],
+      ["plans", "05 交易计划"],
+      ["review", "06 数据审计与复盘"],
+      ["continuity", "07 剔除确认"],
+      ["tracking", "08 推荐追踪"],
+      ["raw", "09 全量数据"]
+    ];
+
+    let data = null;
+    let current = "overview";
+
+    const $ = id => document.getElementById(id);
+    const isLocalRuntime = location.protocol === "http:" && /^(127\.0\.0\.1|localhost)(:8765)?$/.test(location.host);
+    const localApiOrigin = isLocalRuntime ? "" : null;
+    const apiUrl = path => `${localApiOrigin}${path}`;
+    const fmt = v => v === null || v === undefined || v === "" ? "缺失" : v;
+    const clsPct = v => Number(v) > 0 ? "up" : Number(v) < 0 ? "down" : "";
+    const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    const formatRefreshTime = value => {
+      const text = String(value || "");
+      const match = text.match(/(\d{4})[/-](\d{1,2})[/-](\d{1,2})\s+(\d{1,2}):(\d{1,2})/);
+      if (match) {
+        const [, y, m, d, h, min] = match;
+        return `${y}年${m.padStart(2, "0")}月${d.padStart(2, "0")}日 ${h.padStart(2, "0")}:${min.padStart(2, "0")}`;
+      }
+      const date = new Date(value);
+      if (!Number.isNaN(date.getTime())) {
+        const parts = new Intl.DateTimeFormat("zh-CN", {
+          timeZone: "Asia/Shanghai",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: false
+        }).formatToParts(date).reduce((acc, part) => {
+          acc[part.type] = part.value;
+          return acc;
+        }, {});
+        return `${parts.year}年${parts.month}月${parts.day}日 ${parts.hour}:${parts.minute}`;
+      }
+      return "缺失";
+    };
+    const setRefreshStatus = (type, message) => {
+      const el = $("refreshStatus");
+      if (!el) return;
+      el.className = `status-banner show ${type || ""}`;
+      el.textContent = message || "";
+    };
+    const clearRefreshStatus = () => {
+      const el = $("refreshStatus");
+      if (!el) return;
+      el.className = "status-banner";
+      el.textContent = "";
+    };
+    const refreshFailureText = () => {
+      const failures = data?.audit?.failures || [];
+      if (!failures.length) return "失败源 0 个。";
+      return `失败源 ${failures.length} 个：\n${failures.map((item, index) => `${index + 1}. ${item.name}${item.error ? `：${item.error}` : ""}`).join("\n")}`;
+    };
+    const list = arr => (arr && arr.length ? arr.map(x => `<li>${esc(x)}</li>`).join("") : "<li>无</li>");
+    const moneyFlowCell = c => {
+      const flow = c.capitalFlow || {};
+      if (c.mainNetInflowYi === null || c.mainNetInflowYi === undefined) {
+        return `<span class="note">资金流缺失</span><br><span class="note">${esc(flow.reason || "公开资金流源未返回；本项不加分也不扣分")}</span>`;
+      }
+      const pct = flow.mainNetInflowPct === null || flow.mainNetInflowPct === undefined ? "" : ` / 占比 ${fmt(flow.mainNetInflowPct)}%`;
+      return `<span class="${clsPct(c.mainNetInflowYi)}">${fmt(c.mainNetInflowYi)}亿</span><br><span class="note">${esc(flow.source || "资金流")} ${esc(flow.date || "")}${esc(pct)}</span>`;
+    };
+    const trackingChart = record => {
+      const points = (record.priceHistory || []).filter(p => Number.isFinite(Number(p.close)));
+      const first = Number(record.firstPrice);
+      if (!first || points.length < 1) return `<div class="note">暂无走势点</div>`;
+      const returns = points.map(p => ({ ...p, r: (Number(p.close) / first - 1) * 100 }));
+      const values = returns.map(p => p.r);
+      const min = Math.min(-5, ...values);
+      const max = Math.max(5, ...values);
+      const width = 520;
+      const height = 150;
+      const pad = 18;
+      const x = i => pad + (returns.length === 1 ? 0 : i * (width - pad * 2) / (returns.length - 1));
+      const y = v => height - pad - ((v - min) / (max - min || 1)) * (height - pad * 2);
+      const path = returns.map((p, i) => `${i ? "L" : "M"}${roundSvg(x(i))},${roundSvg(y(p.r))}`).join(" ");
+      const zeroY = roundSvg(y(0));
+      const last = returns[returns.length - 1];
+      const color = last.r >= 0 ? "#0f8b4c" : "#b42318";
+      return `<svg viewBox="0 0 ${width} ${height}" role="img" style="width:100%;max-width:560px;height:160px;border:1px solid #d9e0ea;border-radius:8px;background:#fff">
+        <line x1="${pad}" y1="${zeroY}" x2="${width - pad}" y2="${zeroY}" stroke="#94a3b8" stroke-dasharray="4 4" />
+        <path d="${path}" fill="none" stroke="${color}" stroke-width="2.4" />
+        ${returns.map((p, i) => `<circle cx="${roundSvg(x(i))}" cy="${roundSvg(y(p.r))}" r="2.8" fill="${color}"><title>${esc(p.date)} ${roundSvg(p.r)}%</title></circle>`).join("")}
+        <text x="${pad}" y="14" fill="#64748b" font-size="11">收益 ${roundSvg(min)}% 至 ${roundSvg(max)}%</text>
+        <text x="${width - pad - 120}" y="${Math.max(14, y(last.r) - 6)}" fill="${color}" font-size="12">最新 ${roundSvg(last.r)}%</text>
+      </svg>`;
+    };
+    const roundSvg = v => Number(Number(v).toFixed(2));
+    const trackingDays = record => {
+      const end = record.performance?.latestDate || record.priceHistory?.at(-1)?.date || "";
+      if (!record.firstDate || !end) return "缺失";
+      const startDate = new Date(`${record.firstDate}T00:00:00+08:00`);
+      const endDate = new Date(`${end}T00:00:00+08:00`);
+      if (Number.isNaN(startDate.getTime()) || Number.isNaN(endDate.getTime())) return "缺失";
+      return `${Math.max(0, Math.round((endDate - startDate) / 86400000)) + 1}天`;
+    };
+    const pill = state => {
+      const type = state === "交易准备池" ? "green" : state === "重点跟踪池" ? "yellow" : state === "暂不交易" ? "red" : "";
+      return `<span class="pill ${type}">${esc(state)}</span>`;
+    };
+    const sectorGroups = () => (data.candidateGroups || []).map(g => ({
+      ...g,
+      rows: g.candidates.map(code => data.candidates.find(c => c.code === code)).filter(Boolean)
+    })).filter(g => g.rows.length);
+    const sectorTitle = g => `${esc(g.name)} <span class="pill">${g.rows.length}只</span>`;
+
+    function renderNav() {
+      $("nav").innerHTML = pages.map(([id, name]) =>
+        `<button class="${id === current ? "active" : ""}" data-id="${id}">${name}</button>`
+      ).join("");
+      document.querySelectorAll("nav button").forEach(btn => {
+        btn.onclick = () => {
+          current = btn.dataset.id;
+          render();
+        };
+      });
+    }
+
+    async function loadData() {
+      try {
+        const res = await fetch(apiUrl("/api/snapshot?_=" + Date.now()));
+        if (!res.ok) throw new Error(await res.text());
+        data = await res.json();
+        data.loadSource = "本地服务接口 /api/snapshot";
+      } catch (error) {
+        if (window.TRADING_ASSISTANT_DATA) {
+          data = JSON.parse(JSON.stringify(window.TRADING_ASSISTANT_DATA));
+          data.loadSource = "静态快照 data/trading-assistant.js";
+          data.loadWarning = `接口加载失败，已自动使用本地静态快照。接口错误：${error.message || error}`;
+          return;
+        }
+        throw new Error(`接口和静态快照都无法加载。请使用 http://127.0.0.1:8765/ 打开页面。原始错误：${error.message || error}`);
+      }
+    }
+
+    async function refreshData() {
+      if (!isLocalRuntime) {
+        $("refreshBtn").disabled = true;
+        $("refreshBtn").textContent = "重新读取中...";
+        setRefreshStatus("running", "GitHub Pages 静态模式：页面按钮只会重新读取已发布的最新数据；真正的数据刷新由 GitHub Actions 定时或手动运行。");
+        try {
+          const res = await fetch(`data/trading-assistant.json?_=${Date.now()}`, { cache: "no-store" });
+          if (!res.ok) throw new Error(await res.text());
+          data = await res.json();
+          data.loadSource = "GitHub Pages 静态数据 data/trading-assistant.json";
+          const completedAt = formatRefreshTime(data.generatedAtChina || data.generatedAt || new Date().toISOString());
+          setRefreshStatus("success", `已重新读取最新发布数据：${completedAt}\n候选股 ${data.candidates.length} 只；推荐追踪 active ${data.recommendationTracking?.active ?? "缺失"} 只。\n${refreshFailureText()}`);
+          render();
+        } catch (error) {
+          setRefreshStatus("error-state", `重新读取已发布数据失败：${error.message || error}`);
+        } finally {
+          $("refreshBtn").disabled = false;
+          $("refreshBtn").textContent = "重新读取最新数据";
+        }
+        return;
+      }
+      $("refreshBtn").disabled = true;
+      $("refreshBtn").textContent = "启动刷新...";
+      setRefreshStatus("running", "刷新已启动，正在获取最新行情、资金流、财报、公告和推荐追踪数据。");
+      try {
+        const res = await fetch(apiUrl("/api/refresh"), { method: "POST" });
+        const text = await res.text();
+        let body = {};
+        try {
+          body = text ? JSON.parse(text) : {};
+        } catch {
+          throw new Error(`刷新接口没有返回有效 JSON。请确认使用的是 http://127.0.0.1:8765/，不要用静态文件方式打开。响应：${text.slice(0, 180)}`);
+        }
+        if (!res.ok || !body.ok) throw new Error(body.error || "刷新启动失败");
+        const status = await waitForRefreshDone();
+        await loadData();
+        const completedAt = formatRefreshTime(data.generatedAtChina || data.generatedAt || status.lastRefresh || new Date().toISOString());
+        setRefreshStatus("success", `刷新完成：${completedAt}\n候选股 ${data.candidates.length} 只；推荐追踪 active ${data.recommendationTracking?.active ?? "缺失"} 只。\n${refreshFailureText()}`);
+        render();
+      } catch (error) {
+        const previous = $("app").innerHTML;
+        let detail = "";
+        try {
+          const statusRes = await fetch(apiUrl("/api/status?_=" + Date.now()));
+          if (statusRes.ok) {
+            const status = await statusRes.json();
+            detail = status.lastRefreshOutput ? `\n最近输出：${status.lastRefreshOutput}` : "";
+          }
+        } catch {}
+        setRefreshStatus("error-state", `刷新失败：${error.message || error}${detail}`);
+        $("app").innerHTML = `<div class="error">刷新失败：${esc(error.message || error)}</div>${previous}`;
+      } finally {
+        $("refreshBtn").disabled = false;
+        $("refreshBtn").textContent = "刷新真实数据";
+      }
+    }
+
+    async function waitForRefreshDone() {
+      const started = Date.now();
+      while (Date.now() - started < 13 * 60 * 1000) {
+        const elapsed = Math.floor((Date.now() - started) / 1000);
+        $("refreshBtn").textContent = `刷新中 ${elapsed}s`;
+        setRefreshStatus("running", `刷新中：已运行 ${elapsed}s。\n正在后台更新数据，完成或失败后会在这里显示结果。`);
+        const res = await fetch(apiUrl("/api/status?_=" + Date.now()));
+        if (!res.ok) throw new Error(await res.text());
+        const status = await res.json();
+        if (!status.refreshing) {
+          if (status.lastRefreshError) throw new Error(status.lastRefreshError);
+          return status;
+        }
+        await new Promise(resolve => setTimeout(resolve, 3000));
+      }
+      throw new Error("刷新超过13分钟仍未完成，请稍后点“重新载入”查看是否已有新快照。");
+    }
+
+    async function decideRemoval(action, item) {
+      if (!isLocalRuntime) {
+        setRefreshStatus("error-state", "GitHub Pages 静态模式不能写入剔除确认；请在本地版本处理确认后再推送到 GitHub。");
+        return;
+      }
+      const endpoint = action === "confirm" ? "/api/removal/confirm" : "/api/removal/keep";
+      const res = await fetch(apiUrl(endpoint), {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(item)
+      });
+      if (!res.ok) throw new Error(await res.text());
+      await loadData();
+      current = "continuity";
+      render();
+    }
+
+    function bindContinuityActions() {
+      document.querySelectorAll(".removal-action").forEach(btn => {
+        btn.onclick = async () => {
+          btn.disabled = true;
+          const original = btn.textContent;
+          btn.textContent = "处理中...";
+          try {
+            await decideRemoval(btn.dataset.action, {
+              code: btn.dataset.code,
+              name: btn.dataset.name,
+              reason: btn.dataset.reason
+            });
+          } catch (error) {
+            btn.disabled = false;
+            btn.textContent = original;
+            alert(error.message || error);
+          }
+        };
+      });
+    }
+
+    function render() {
+      renderNav();
+      const pageName = pages.find(p => p[0] === current)?.[1] || "";
+      $("pageTitle").textContent = pageName;
+      $("meta").textContent = data ? `刷新时间：${formatRefreshTime(data.generatedAtChina || data.generatedAt)} ｜ 候选：${data.candidates.length} ｜ 股票池：${data.universe.stockCount} ｜ 失败源：${data.audit.coverage.failures} ｜ 加载：${data.loadSource || "未知"}` : "等待数据";
+      if (!data) {
+        $("app").innerHTML = `<div class="error">还没有数据，请点击“刷新真实数据”。</div>`;
+        return;
+      }
+      const map = { overview, pool, score, trigger, plans, review, continuity, tracking, raw };
+      $("app").innerHTML = map[current]();
+      bindContinuityActions();
+    }
+
+    function overview() {
+      const states = data.audit.coverage.states || {};
+      return `
+        <div class="grid">
+          <div class="card"><h3>交易准备池</h3><div class="metric">${states["交易准备池"] || 0}</div><div class="note">满足评分与低级别确认，仍需按触发条件执行</div></div>
+          <div class="card"><h3>重点跟踪池</h3><div class="metric">${states["重点跟踪池"] || 0}</div><div class="note">方向较好，但买点或低级别确认仍未完全满足</div></div>
+          <div class="card"><h3>暂不交易</h3><div class="metric">${states["暂不交易"] || 0}</div><div class="note">技术、财报或公告存在硬约束</div></div>
+          <div class="card span-8">
+            <h3>今日行动清单</h3>
+            ${data.loadWarning ? `<div class="error">${esc(data.loadWarning)}</div>` : ""}
+            <div class="list">
+              ${sectorGroups().map(g => {
+                const actions = data.actionList.filter(a => g.rows.some(c => c.code === a.code));
+                if (!actions.length) return "";
+                return `<div class="item"><strong>${sectorTitle(g)}</strong></div>${actions.map(a => `
+                  <div class="item">
+                    <strong>${esc(a.name)} ${esc(a.code)} <span class="pill">${esc(a.level)}</span> <span class="${clsPct(a.score)}">评分 ${fmt(a.score)}</span></strong>
+                    <div>${esc(a.text)}</div>
+                  </div>
+                `).join("")}`;
+              }).join("") || `<div class="item">当前没有可执行清单。先刷新数据或扩大观察池。</div>`}
+            </div>
+          </div>
+          <div class="card">
+            <h3>市场温度参考</h3>
+            <div class="list">
+              ${data.market.indices.map(i => `<div class="item"><strong>${esc(i.name)}</strong><span class="${clsPct(i.pct)}">${fmt(i.current)} / ${fmt(i.pct)}%</span><div class="note">${esc(i.time)}</div></div>`).join("")}
+            </div>
+          </div>
+          <div class="card span-12">
+            <h3>本板块解决什么问题</h3>
+            <p>当前交易助理聚焦你的核心诉求：科技板块保持最高权重，同时覆盖新能源、机器人、低空经济、高端制造、医药、军工、黄金、资源周期、消费等保留板块；每个非科技板块保留约 3 支候选，并输出买卖点、建仓节奏、止损、止盈和后续跟踪条件。</p>
+            <p class="note">数据来自东方财富与新浪财经公开接口。缺失的数据会在审计页显示，不会用虚构数据补齐。</p>
+          </div>
+        </div>`;
+    }
+
+    function pool() {
+      return `
+        <div class="grid">
+          <div class="card span-12">
+            <h3>候选池来源</h3>
+            <div class="kv">
+              <div>方法</div><div>${esc(data.universe.method)}</div>
+              <div>股票池数量</div><div>${data.universe.stockCount}</div>
+              <div>关注方向</div><div>${esc(data.preference.focus.join("、"))}</div>
+              <div>最高权重</div><div>${esc(data.preference.primarySector || "科技")}</div>
+            </div>
+          </div>
+          <div class="card span-6">
+            <h3>命中的板块</h3>
+            <div class="scroll">
+              <table><thead><tr><th>板块</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody>
+                ${data.universe.boards.map(b => `<tr><td>${esc(b.name)}<br><span class="note">${esc(b.source || "")}${b.derived ? " / 成分股聚合" : ""} / ${fmt(b.memberCount)}只</span></td><td class="${clsPct(b.pct)}">${fmt(b.pct)}%</td><td>${fmt(b.amountYi)}亿</td></tr>`).join("")}
+              </tbody></table>
+            </div>
+          </div>
+          ${sectorGroups().map(g => `
+            <div class="card span-6">
+              <h3>${sectorTitle(g)}</h3>
+              <div class="scroll">
+                <table><thead><tr><th>股票</th><th>状态</th><th>理由</th></tr></thead><tbody>
+                  ${g.rows.map(c => `<tr><td>${esc(c.name)}<br><span class="note">${c.code}</span></td><td>${pill(c.tradePlan.state)}</td><td>${esc(c.focus.text)}<br><span class="note">${esc((c.boards || []).map(b => b.name).slice(0, 3).join("、"))}</span></td></tr>`).join("")}
+                </tbody></table>
+              </div>
+            </div>
+          `).join("")}
+        </div>`;
+    }
+
+    function score() {
+      return `
+        <div class="grid">
+          <div class="card span-12">
+            <h3>评分排序</h3>
+            <div class="scroll">
+              <table>
+                <thead><tr><th>排名</th><th>股票</th><th>行情/估值</th><th>趋势/RPS</th><th>资金</th><th>评分</th><th>状态</th><th>策略投票</th><th>加分依据</th><th>扣分/风险</th></tr></thead>
+                <tbody>
+                  ${sectorGroups().map(g => `<tr><th colspan="10">${sectorTitle(g)}</th></tr>${g.rows.map((c, i) => `<tr>
+                    <td>${i + 1}</td>
+                    <td>${esc(c.name)}<br><span class="note">${c.code}</span></td>
+                    <td>${fmt(c.price)}<br><span class="${clsPct(c.pct)}">${fmt(c.pct)}%</span><br><span class="note">成交额 ${fmt(c.amountYi)}亿 / 换手 ${fmt(c.turnover)}% / PE ${fmt(c.pe)} / PB ${fmt(c.pb)}</span></td>
+                    <td>${esc(c.tradePlan.trendStage?.stage || c.technical.trendStage?.stage || "未判断")}<br><span class="note">候选池RPS ${fmt(c.tradePlan.relativeStrength?.score ?? c.technical.relativeStrength?.score)} / 20日 ${fmt(c.technical.momentum?.r20)}%</span></td>
+                    <td>${moneyFlowCell(c)}</td>
+                    <td><strong>${fmt(c.tradePlan.score)}</strong></td>
+                    <td>${pill(c.tradePlan.state)}</td>
+                    <td>通过 ${fmt(c.tradePlan.strategyVotes?.passCount)} / 否决 ${fmt(c.tradePlan.strategyVotes?.failCount)}<br><span class="note">${esc((c.tradePlan.strategyVotes?.failed || [])[0] || (c.tradePlan.strategyVotes?.neutral || [])[0] || "无硬否决")}</span></td>
+                    <td><ul>${list(c.tradePlan.support.slice(0, 5))}</ul></td>
+                    <td><ul>${list(c.tradePlan.risk.slice(0, 5))}</ul></td>
+                  </tr>`).join("")}`).join("")}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    function trigger() {
+      return `
+        <div class="grid">
+          <div class="card span-12">
+            <h3>买卖点触发系统</h3>
+            <div class="scroll">
+              <table>
+                <thead><tr><th>股票</th><th>买点类型</th><th>建仓区间</th><th>首仓</th><th>止损</th><th>止盈观察</th><th>风险收益比</th><th>下一触发</th><th>触发条件</th><th>级别确认</th></tr></thead>
+                <tbody>
+                  ${sectorGroups().map(g => `<tr><th colspan="10">${sectorTitle(g)}</th></tr>${g.rows.map(c => `<tr>
+                    <td>${esc(c.name)}<br><span class="note">${c.code}</span></td>
+                    <td>${esc(c.tradePlan.buyType)}<br>${pill(c.tradePlan.state)}</td>
+                    <td>${esc(c.tradePlan.entryZone)}</td>
+                    <td>${esc(c.tradePlan.firstPosition)}</td>
+                    <td>${fmt(c.tradePlan.stop)}</td>
+                    <td>${fmt(c.tradePlan.takeProfit)}</td>
+                    <td>${esc(c.tradePlan.riskReward?.text || "未计算")}</td>
+                    <td>${esc(c.tradePlan.trigger || c.tradePlan.nextAction)}</td>
+                    <td><ul>${list(c.tradePlan.conditions)}</ul></td>
+                    <td>${esc(c.technical.m30.status)}<br>${esc(c.technical.m5.status)}<br><span class="note">${esc(c.technical.source)}</span></td>
+                  </tr>`).join("")}`).join("")}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    function plans() {
+      return `
+        <div class="grid">
+          ${sectorGroups().map(g => `
+            <div class="card span-12"><h3>${sectorTitle(g)}</h3></div>
+            ${g.rows.map(c => `
+            <div class="card span-6">
+              <h3>${esc(c.name)} ${esc(c.code)} ${pill(c.tradePlan.state)}</h3>
+              <div class="kv">
+                <div>当前价</div><div>${fmt(c.price)} <span class="${clsPct(c.pct)}">${fmt(c.pct)}%</span></div>
+                <div>趋势阶段</div><div>${esc(c.tradePlan.trendStage?.stage || c.technical.trendStage?.stage || "未判断")}<br><span class="note">${esc(c.tradePlan.trendStage?.description || c.technical.trendStage?.description || "")}</span></div>
+                <div>候选池RPS</div><div>${fmt(c.tradePlan.relativeStrength?.score ?? c.technical.relativeStrength?.score)}<br><span class="note">${esc(c.tradePlan.relativeStrength?.source || c.technical.relativeStrength?.source || "")}</span></div>
+                <div>资金流</div><div>${moneyFlowCell(c)}</div>
+                <div>交易动作</div><div>${esc(c.tradePlan.action)}</div>
+                <div>下一步</div><div>${esc(c.tradePlan.nextAction)}</div>
+                <div>下一触发</div><div>${esc(c.tradePlan.trigger || "")}</div>
+                <div>建仓区间</div><div>${esc(c.tradePlan.entryZone)}</div>
+                <div>首仓建议</div><div>${esc(c.tradePlan.firstPosition)}</div>
+                <div>加仓条件</div><div>${esc(c.tradePlan.addCondition)}</div>
+                <div>止损</div><div>${fmt(c.tradePlan.stop)}</div>
+                <div>止盈观察</div><div>${fmt(c.tradePlan.takeProfit)}</div>
+                <div>风险收益比</div><div>${esc(c.tradePlan.riskReward?.text || "未计算")}</div>
+                <div>策略投票</div><div>通过 ${fmt(c.tradePlan.strategyVotes?.passCount)}，否决 ${fmt(c.tradePlan.strategyVotes?.failCount)}，观察 ${fmt(c.tradePlan.strategyVotes?.neutralCount)}</div>
+                <div>跟踪周期</div><div>${esc(c.tradePlan.trackingPeriod)}</div>
+              </div>
+              <div class="two" style="margin-top:10px">
+                <div><strong>依据</strong><ul>${list(c.tradePlan.support.slice(0, 6))}</ul></div>
+                <div><strong>风险</strong><ul>${list(c.tradePlan.risk.slice(0, 6))}</ul></div>
+              </div>
+              <div class="two" style="margin-top:10px">
+                <div><strong>通过策略</strong><ul>${list((c.tradePlan.strategyVotes?.passed || []).slice(0, 6))}</ul></div>
+                <div><strong>否决/观察策略</strong><ul>${list([...(c.tradePlan.strategyVotes?.failed || []), ...(c.tradePlan.strategyVotes?.neutral || [])].slice(0, 6))}</ul></div>
+              </div>
+              <p class="note">${esc(c.tradePlan.caveat)}</p>
+            </div>`).join("")}
+          `).join("")}
+        </div>`;
+    }
+
+    function review() {
+      const c = data.audit.coverage;
+      const sr = data.strategyReview || {};
+      return `
+        <div class="grid">
+          <div class="card span-6">
+            <h3>数据覆盖</h3>
+            <div class="kv">
+              <div>板块数</div><div>${fmt(c.boards)}</div>
+              <div>股票池</div><div>${fmt(c.universeStocks)}</div>
+              <div>候选股</div><div>${fmt(c.candidates)}</div>
+              <div>日K</div><div>${fmt(c.withDailyK)} / ${fmt(c.candidates)}</div>
+              <div>30分钟K</div><div>${fmt(c.with30mK)} / ${fmt(c.candidates)}</div>
+              <div>5分钟K</div><div>${fmt(c.with5mK)} / ${fmt(c.candidates)}</div>
+              <div>财报</div><div>${fmt(c.withFinancial)} / ${fmt(c.candidates)}</div>
+              <div>公告</div><div>${fmt(c.withAnnouncements)} / ${fmt(c.candidates)}</div>
+              <div>失败源</div><div>${fmt(c.failures)}</div>
+            </div>
+          </div>
+          <div class="card span-6">
+            <h3>数据来源</h3>
+            <ul>${list(data.sources.map(s => `${s.name}：${s.url}`))}</ul>
+          </div>
+          <div class="card span-12">
+            <h3>源状态</h3>
+            <div class="scroll">
+              <table><thead><tr><th>来源</th><th>状态</th><th>错误</th></tr></thead><tbody>
+                ${data.audit.sources.map(s => `<tr><td>${esc(s.name)}</td><td>${s.ok ? '<span class="pill green">可用</span>' : '<span class="pill red">失败</span>'}</td><td>${esc(s.error || "")}</td></tr>`).join("")}
+              </tbody></table>
+            </div>
+          </div>
+          <div class="card span-12">
+            <h3>无法填充的数据</h3>
+            ${(data.dataQuality?.unavailable || []).length ? `
+              <table><thead><tr><th>字段</th><th>影响范围</th><th>原因</th><th>处理方式</th></tr></thead><tbody>
+                ${data.dataQuality.unavailable.map(x => `<tr><td>${esc(x.field)}</td><td>${fmt(x.count)} / ${fmt(x.total)}</td><td>${esc(x.reason)}</td><td>${esc(x.impact)}</td></tr>`).join("")}
+              </tbody></table>
+            ` : `<div class="item">当前核心展示字段均已填充。</div>`}
+          </div>
+          <div class="card span-12">
+            <h3>策略自我复盘机制</h3>
+            <div class="kv">
+              <div>复盘状态</div><div>${esc(sr.reviewMode || "样本积累期")}</div>
+              <div>日志样本</div><div>${fmt(sr.sampleCount)} 次刷新</div>
+              <div>本次刷新</div><div>${esc(formatRefreshTime(sr.generatedAtChina || data.generatedAtChina || data.generatedAt))}</div>
+            </div>
+            <div class="two" style="margin-top:10px">
+              <div><strong>复盘节奏</strong><ul>${list(sr.cadence || [])}</ul></div>
+              <div><strong>策略护栏</strong><ul>${list(sr.guardrails || [])}</ul></div>
+            </div>
+          </div>
+          <div class="card span-12">
+            <h3>分层表现基线</h3>
+            <div class="scroll">
+              <table>
+                <thead><tr><th>状态</th><th>数量</th><th>平均评分</th><th>平均风险收益比</th><th>平均候选池RPS</th></tr></thead>
+                <tbody>${Object.entries(sr.stateMetrics || {}).map(([state, m]) => `<tr>
+                  <td>${esc(state)}</td>
+                  <td>${fmt(m.count)}</td>
+                  <td>${fmt(m.avgScore)}</td>
+                  <td>${fmt(m.avgRiskReward)}</td>
+                  <td>${fmt(m.avgRelativeStrength)}</td>
+                </tr>`).join("") || `<tr><td colspan="5">暂无复盘指标</td></tr>`}</tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card span-6">
+            <h3>本次观察</h3>
+            <ul>${list(sr.observations || [])}</ul>
+          </div>
+          <div class="card span-6">
+            <h3>待确认优化建议</h3>
+            ${(sr.suggestions || []).length ? (sr.suggestions || []).map(item => `
+              <div class="item">
+                <strong>${esc(item.title)}</strong>
+                <div>${esc(item.reason)}</div>
+                <div class="note">${esc(item.proposedChange)}</div>
+                <div class="pill yellow">${esc(item.status)}</div>
+              </div>
+            `).join("") : `<div class="item">暂无需要调整的策略建议。</div>`}
+          </div>
+        </div>`;
+    }
+
+    function continuity() {
+      const c = data.continuity || {};
+      const pending = c.pendingRemovals || [];
+      const retained = c.retainedByUser || [];
+      const confirmed = c.confirmedRemoved || [];
+      return `
+        <div class="grid">
+          <div class="card span-12">
+            <h3>候选池连续性与剔除确认</h3>
+            <p class="note">每天刷新后，系统会对比上一轮候选池。本次未再进入候选池的股票不会直接删除，会先进入拟剔除清单；你确认后才写入剔除记录。若选择继续跟踪，后续刷新会保留并重新分析。</p>
+            <div class="kv">
+              <div>上次刷新</div><div>${esc(formatRefreshTime(c.previousRefresh || ""))}</div>
+              <div>待确认剔除</div><div>${fmt(c.pendingRemovalCount || 0)} 只</div>
+              <div>已确认剔除记录</div><div>${fmt(c.confirmedRemovedCount || 0)} 只</div>
+              <div>继续跟踪</div><div>${fmt(retained.length)} 只</div>
+            </div>
+          </div>
+          <div class="card span-12">
+            <h3>待你确认的拟剔除股票</h3>
+            ${pending.length ? `<div class="scroll"><table>
+              <thead><tr><th>股票</th><th>上次状态</th><th>拟剔除理由</th><th>上次关键数据</th><th>操作</th></tr></thead>
+              <tbody>${pending.map(item => `<tr>
+                <td>${esc(item.name)}<br><span class="note">${esc(item.code)} / ${esc(item.previousSector || "")}</span></td>
+                <td>${esc(item.previousState || "")}<br><span class="note">评分 ${fmt(item.previousScore)} / ${esc(item.previousBuyType || "")}</span></td>
+                <td>${esc(item.reason)}<br><span class="note">${esc(item.nextStep || "")}</span></td>
+                <td>价格 ${fmt(item.previousSnapshot?.price)} / 涨跌 ${fmt(item.previousSnapshot?.pct)}%<br>主力净流入 ${fmt(item.previousSnapshot?.mainNetInflowYi)}亿<br>止损 ${fmt(item.previousSnapshot?.stop)} / 止盈 ${fmt(item.previousSnapshot?.takeProfit)}</td>
+                <td>
+                  <button class="btn primary removal-action" data-action="confirm" data-code="${esc(item.code)}" data-name="${esc(item.name)}" data-reason="${esc(item.reason)}">确认剔除</button>
+                  <button class="btn removal-action" data-action="keep" data-code="${esc(item.code)}" data-name="${esc(item.name)}" data-reason="${esc(item.reason)}">继续跟踪</button>
+                </td>
+              </tr>`).join("")}</tbody>
+            </table></div>` : `<div class="item">当前没有待确认剔除股票。</div>`}
+          </div>
+          <div class="card span-6">
+            <h3>继续跟踪池</h3>
+            ${retained.length ? `<ul>${list(retained.map(item => `${item.name || ""} ${item.code}：${item.reason || "用户确认继续跟踪"}`))}</ul>` : `<div class="item">暂无手动保留股票。</div>`}
+          </div>
+          <div class="card span-6">
+            <h3>已确认剔除</h3>
+            ${confirmed.length ? `<ul>${list(confirmed.slice(-12).map(item => `${item.name || ""} ${item.code}：${formatRefreshTime(item.decidedAt || "")}`))}</ul>` : `<div class="item">暂无已确认剔除记录。</div>`}
+          </div>
+        </div>`;
+    }
+
+    function tracking() {
+      const t = data.recommendationTracking || {};
+      const records = [...(t.records || [])].sort((a, b) => {
+        if (a.active !== b.active) return a.active ? -1 : 1;
+        return String(b.lastSeenAtChina || b.firstDate || "").localeCompare(String(a.lastSeenAtChina || a.firstDate || ""));
+      });
+      const calendarEntries = Object.entries(t.calendar || {}).slice(0, 30);
+      const perfClass = v => v === null || v === undefined ? "" : clsPct(v);
+      return `
+        <div class="grid">
+          <div class="card span-12">
+            <h3>推荐追踪</h3>
+            <p class="note">这里记录系统历史推荐过的候选股，从首次推荐日起持续记录价格、状态、评分和交易计划表现。确认剔除后停止更新，但历史记录保留，用于检查推荐准确性和后续策略调整。</p>
+            <div class="kv">
+              <div>追踪股票</div><div>${fmt(t.total || 0)} 只</div>
+              <div>持续追踪</div><div>${fmt(t.active || 0)} 只</div>
+              <div>已停止</div><div>${fmt(t.stopped || 0)} 只</div>
+              <div>最近更新</div><div>${esc(formatRefreshTime(t.updatedAtChina || data.generatedAtChina || ""))}</div>
+            </div>
+          </div>
+          <div class="card span-12">
+            <h3>推荐日历</h3>
+            ${calendarEntries.length ? `<div class="scroll"><table>
+              <thead><tr><th>日期</th><th>当日推荐/跟踪股票</th></tr></thead>
+              <tbody>${calendarEntries.map(([date, codes]) => `<tr>
+                <td>${esc(date)}</td>
+                <td>${(codes || []).map(code => {
+                  const r = records.find(x => x.code === code);
+                  return r ? `${esc(r.name)} ${esc(code)}` : esc(code);
+                }).join("、")}</td>
+              </tr>`).join("")}</tbody>
+            </table></div>` : `<div class="item">暂无推荐日历记录。</div>`}
+          </div>
+          <div class="card span-12">
+            <h3>推荐股票追踪列表</h3>
+            <p class="note">默认折叠为一行；展开后显示从首次推荐日至当前查看日的走势曲线、收益、最大回撤、止损/止盈触发和推荐记录。确认剔除的股票置灰并排在最后。</p>
+            ${records.map(r => {
+              const p = r.performance || {};
+              return `<details class="tracking-row ${r.active ? "" : "stopped"}">
+                <summary>
+                  <div><strong>${esc(r.name)} ${esc(r.code)}</strong><br><span class="note">${esc(r.sector || "")}</span></div>
+                  <div>推荐日<br><strong>${esc(r.firstDate || "")}</strong></div>
+                  <div>推荐价<br><strong>${fmt(r.firstPrice)}</strong></div>
+                  <div>现价<br><strong>${fmt(p.latestClose ?? r.currentPrice)}</strong></div>
+                  <div>累计<br><strong class="${perfClass(p.currentReturnPct)}">${fmt(p.currentReturnPct)}%</strong></div>
+                  <div>${r.active ? '<span class="pill green">持续追踪</span>' : '<span class="pill red">已停止</span>'}</div>
+                </summary>
+                <div class="tracking-body">
+                  <div class="kv">
+                    <div>追踪区间</div><div>${esc(r.firstDate || "")} 至 ${esc(p.latestDate || "")}，共 ${trackingDays(r)}</div>
+                    <div>首次状态</div><div>${esc(r.firstState || "")} / 评分 ${fmt(r.firstScore)}</div>
+                    <div>最近状态</div><div>${esc(r.currentState || "")} / 评分 ${fmt(r.currentScore)}</div>
+                    <div>累计表现</div><div class="${perfClass(p.currentReturnPct)}">${fmt(p.currentReturnPct)}%</div>
+                    <div>最大涨幅</div><div class="${perfClass(p.maxGainPct)}">${fmt(p.maxGainPct)}%</div>
+                    <div>最大回撤</div><div class="${perfClass(p.maxDrawdownPct)}">${fmt(p.maxDrawdownPct)}%</div>
+                    <div>计划检验</div><div>${p.hitStop ? '<span class="pill red">触发止损价</span>' : '<span class="pill">未触发止损</span>'} ${p.hitTakeProfit ? '<span class="pill green">触及止盈观察</span>' : '<span class="pill">未触及止盈</span>'}</div>
+                    <div>停止原因</div><div>${esc(r.stoppedReason || (r.active ? "仍在追踪" : "已停止"))}</div>
+                  </div>
+                  <div class="tracking-chart">${trackingChart(r)}</div>
+                  <div class="two" style="margin-top:10px">
+                    <div><strong>首次推荐理由</strong><ul>${list(r.firstReason || [])}</ul></div>
+                    <div><strong>最近推荐记录</strong><ul>${list((r.recommendations || []).slice(-5).map(x => `${x.date} ${x.state} 评分${x.score} ${x.buyType || ""}`))}</ul></div>
+                  </div>
+                  <div class="kv" style="margin-top:10px">
+                    <div>初始计划</div><div>${esc(r.initialPlan?.buyType || "")} / 建仓 ${esc(r.initialPlan?.entryZone || "")} / 止损 ${fmt(r.initialPlan?.stop)} / 止盈 ${fmt(r.initialPlan?.takeProfit)}</div>
+                    <div>最新计划</div><div>${esc(r.lastPlan?.buyType || "")} / ${esc(r.lastPlan?.nextAction || "")}</div>
+                  </div>
+                </div>
+              </details>`;
+            }).join("") || `<div class="item">暂无追踪记录。</div>`}
+          </div>
+        </div>`;
+    }
+
+    function raw() {
+      return `
+        <div class="grid">
+          <div class="card span-12">
+            <h3>全量数据附录</h3>
+            <p class="note">这里展示每只候选股当前快照中保存的完整结构化数据，包括行情、板块归因、资金流、财报摘要、公告、技术结构、趋势阶段、候选池RPS、策略投票和交易计划。未取得的数据会在“数据质量”里明确列出。</p>
+            <div class="kv">
+              <div>刷新时间</div><div>${esc(formatRefreshTime(data.generatedAtChina || data.generatedAt))}</div>
+              <div>候选股</div><div>${fmt(data.candidates.length)}</div>
+              <div>数据源</div><div>${esc((data.sources || []).map(s => s.name).join("、"))}</div>
+            </div>
+          </div>
+          <div class="card span-12">
+            <h3>数据质量</h3>
+            ${(data.dataQuality?.unavailable || []).length ? `<table>
+              <thead><tr><th>字段</th><th>数量</th><th>原因</th><th>影响</th></tr></thead>
+              <tbody>${(data.dataQuality?.unavailable || []).map(item => `<tr>
+                <td>${esc(item.field)}</td>
+                <td>${fmt(item.count)} / ${fmt(item.total)}</td>
+                <td>${esc(item.reason)}</td>
+                <td>${esc(item.impact)}</td>
+              </tr>`).join("")}</tbody>
+            </table>` : `<p>候选股关键字段无缺失。</p>`}
+          </div>
+          ${sectorGroups().map(g => `
+            <div class="card span-12"><h3>${sectorTitle(g)}</h3></div>
+            ${g.rows.map(c => `
+              <div class="card span-12">
+                <details>
+                  <summary><strong>${esc(c.name)} ${esc(c.code)}</strong> ${pill(c.tradePlan.state)} 评分 ${fmt(c.tradePlan.score)} 风险收益比 ${esc(c.tradePlan.riskReward?.text || "未计算")}</summary>
+                  <pre>${esc(JSON.stringify(c, null, 2))}</pre>
+                </details>
+              </div>
+            `).join("")}
+          `).join("")}
+        </div>`;
+    }
+
+    $("refreshBtn").onclick = refreshData;
+    $("reloadBtn").onclick = async () => { await loadData(); render(); };
+
+    (async function init() {
+      try {
+        await loadData();
+      } catch (error) {
+        data = null;
+      }
+      render();
+    })();
+  </script>
+</body>
+</html>
+
