@@ -1445,6 +1445,147 @@ async function enrichCandidates(stocks, forceCodes = new Set()) {
     });
 }
 
+function findTrackingRecord(previousSnapshot, code) {
+  const records = previousSnapshot?.recommendationTracking?.records || [];
+  if (Array.isArray(records)) return records.find(record => record.code === code) || null;
+  return records[code] || null;
+}
+
+function isConfirmedRemoved(removalState, code) {
+  return Boolean(removalState?.confirmedRemoved?.[code]);
+}
+
+function buildStabilityForceCodes(previousSnapshot, removalState) {
+  const previousCandidates = previousSnapshot?.candidates || [];
+  const protectedRows = [];
+  for (const candidate of previousCandidates) {
+    if (!candidate?.code || isConfirmedRemoved(removalState, candidate.code)) continue;
+    const state = candidate.tradePlan?.state || "";
+    const score = Number(candidate.tradePlan?.score || 0);
+    const record = findTrackingRecord(previousSnapshot, candidate.code);
+    const seenCount = Array.isArray(record?.recommendations) ? record.recommendations.length : 1;
+    const shouldProtect =
+      state === "交易准备池" ||
+      state === "重点跟踪池" ||
+      (state === "观察池" && score >= 58) ||
+      Boolean(removalState?.keepTracking?.[candidate.code]);
+    if (!shouldProtect) continue;
+    protectedRows.push({ code: candidate.code, score, state, seenCount });
+  }
+  protectedRows.sort((a, b) => {
+    const stateRank = { "交易准备池": 5, "重点跟踪池": 4, "观察池": 3 };
+    return (stateRank[b.state] || 0) - (stateRank[a.state] || 0) || b.seenCount - a.seenCount || b.score - a.score;
+  });
+  return new Set(protectedRows.slice(0, 36).map(row => row.code));
+}
+
+function assignStabilityLayers(candidates, previousSnapshot, removalState) {
+  const previousMap = new Map((previousSnapshot?.candidates || []).map(candidate => [candidate.code, candidate]));
+  const layerRank = { "核心跟踪池": 6, "今日机会池": 5, "候选观察池": 4, "待确认剔除": 2, "暂不交易": 1 };
+  const summary = {
+    policy: {
+      name: "稳定推荐策略 v0.2",
+      principle: "推荐池按中期跟踪管理，日内扫描只负责发现新机会，不因单日分数波动频繁换股。",
+      coreRule: "上次已在交易准备池、重点跟踪池或高分观察池的股票，本次刷新会优先保留并重新分析。",
+      opportunityRule: "新进入且满足买点/评分条件的股票标记为今日机会池，先观察触发条件，不直接替代核心跟踪。",
+      removalRule: "只有出现趋势破坏、跌破止损、风险收益比失效、财报公告硬风险或连续弱于预期，才进入待确认剔除；未经确认不停止追踪。"
+    },
+    counts: {},
+    protectedCodes: [],
+    newOpportunityCodes: [],
+    downgradeReviewCodes: []
+  };
+
+  for (const candidate of candidates) {
+    const previous = previousMap.get(candidate.code);
+    const state = candidate.tradePlan?.state || "";
+    const score = Number(candidate.tradePlan?.score || 0);
+    const record = findTrackingRecord(previousSnapshot, candidate.code);
+    const seenCount = Array.isArray(record?.recommendations) ? record.recommendations.length : (previous ? 1 : 0);
+    const rr = candidate.tradePlan?.riskReward?.ratio;
+    const hasHardRisk =
+      state === "暂不交易" ||
+      state === "低优先级" ||
+      String(candidate.technical?.trendStage?.stage || "").startsWith("阶段4") ||
+      (rr !== null && rr !== undefined && Number(rr) < 1.2);
+
+    let layer = "候选观察池";
+    let reason = "进入候选池但尚未形成稳定交易机会，继续等待评分、趋势或买点改善。";
+    if (previous && hasHardRisk) {
+      layer = "待确认剔除";
+      reason = "原候选本次出现硬风险或交易条件失效，先保留在追踪中，需人工确认后才停止跟踪。";
+      summary.downgradeReviewCodes.push(candidate.code);
+    } else if (previous && (state === "交易准备池" || state === "重点跟踪池" || score >= 58)) {
+      layer = "核心跟踪池";
+      reason = `已连续跟踪 ${Math.max(1, seenCount)} 次，本次继续满足中期跟踪条件；不因单日排序波动移出。`;
+      summary.protectedCodes.push(candidate.code);
+    } else if (!previous && (state === "交易准备池" || state === "重点跟踪池") && score >= 70) {
+      layer = "今日机会池";
+      reason = "新入池且买点/评分较强，作为新增机会观察，需等触发条件确认后再执行。";
+      summary.newOpportunityCodes.push(candidate.code);
+    } else if (state === "暂不交易" || state === "低优先级") {
+      layer = "暂不交易";
+      reason = "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。";
+    }
+
+    candidate.stability = {
+      layer,
+      reason,
+      previousState: previous?.tradePlan?.state || "",
+      previousScore: previous?.tradePlan?.score ?? null,
+      trackingRefreshes: seenCount,
+      firstRecommendedAtChina: record?.firstRecommendedAtChina || previousSnapshot?.generatedAtChina || ""
+    };
+    if (candidate.tradePlan) {
+      candidate.tradePlan.trackingLayer = layer;
+      candidate.tradePlan.trackingPeriod = layer === "核心跟踪池"
+        ? "默认按 2-8 周跟踪，中途只根据止损、趋势破坏、重大风险或人工确认剔除。"
+        : layer === "今日机会池"
+          ? "新增机会先跟踪 3-5 个交易日，只有触发买点才进入交易计划。"
+          : layer === "待确认剔除"
+            ? "继续保留但暂停新开仓，等待人工确认是否踢出推荐追踪。"
+            : candidate.tradePlan.trackingPeriod;
+    }
+    summary.counts[layer] = (summary.counts[layer] || 0) + 1;
+  }
+
+  candidates.sort((a, b) => {
+    const layerDelta = (layerRank[b.stability?.layer] || 0) - (layerRank[a.stability?.layer] || 0);
+    const sectorDelta = (b.focus?.sectorPriority || 0) - (a.focus?.sectorPriority || 0);
+    const scoreDelta = Number(b.tradePlan?.score || 0) - Number(a.tradePlan?.score || 0);
+    return layerDelta || sectorDelta || scoreDelta;
+  });
+  return summary;
+}
+
+function buildStableActionList(candidates) {
+  const used = new Set();
+  const take = (rows, level, mapper, limit) => rows
+    .filter(candidate => {
+      if (used.has(candidate.code)) return false;
+      used.add(candidate.code);
+      return true;
+    })
+    .slice(0, limit)
+    .map(candidate => ({
+      level,
+      code: candidate.code,
+      name: candidate.name,
+      text: mapper(candidate),
+      price: candidate.price,
+      score: candidate.tradePlan.score,
+      stabilityLayer: candidate.stability?.layer || candidate.tradePlan?.trackingLayer || ""
+    }));
+  return [
+    ...take(candidates.filter(c => c.stability?.layer === "核心跟踪池"), "核心跟踪", c => `${c.name}：继续按原计划跟踪，${c.tradePlan.nextAction}；${c.stability?.reason || ""}`, 6),
+    ...take(candidates.filter(c => c.stability?.layer === "今日机会池"), "今日机会", c => `${c.name}：${c.tradePlan.buyType}，${c.tradePlan.nextAction}`, 6),
+    ...take(candidates.filter(c => c.stability?.layer === "待确认剔除"), "待确认剔除", c => `${c.name}：${c.stability?.reason || c.tradePlan.risk?.[0] || "交易条件失效"}`, 6),
+    ...take(candidates.filter(c => c.tradePlan.state === "交易准备池"), "可准备", c => `${c.name}：${c.tradePlan.buyType}，${c.tradePlan.nextAction}`, 4),
+    ...take(candidates.filter(c => c.tradePlan.state === "重点跟踪池"), "跟踪", c => `${c.name}：等待触发条件，建仓区间 ${c.tradePlan.entryZone}`, 4),
+    ...take(candidates.filter(c => c.tradePlan.state === "暂不交易"), "回避", c => `${c.name}：${c.tradePlan.risk[0] || "当前风险收益比不合适"}`, 4)
+  ];
+}
+
 function applyRelativeStrength(candidates) {
   const metrics = [
     ["r20", "20日"],
@@ -1569,6 +1710,7 @@ function appendStrategyLog(snapshot) {
     generatedAtChina: snapshot.generatedAtChina,
     candidateCount: snapshot.candidates.length,
     states: snapshot.audit.coverage.states,
+    stability: snapshot.stabilitySummary?.counts || {},
     groups: snapshot.candidateGroups.map(group => ({ name: group.name, count: group.count })),
     dataQuality: snapshot.dataQuality?.unavailable || [],
     candidates: snapshot.candidates.map(candidate => ({
@@ -1578,6 +1720,7 @@ function appendStrategyLog(snapshot) {
       pct: candidate.pct,
       focusArea: candidate.focus?.area,
       state: candidate.tradePlan?.state,
+      layer: candidate.stability?.layer || candidate.tradePlan?.trackingLayer || "",
       score: candidate.tradePlan?.score,
       buyType: candidate.tradePlan?.buyType,
       trendStage: candidate.tradePlan?.trendStage?.stage || candidate.technical?.trendStage?.stage,
@@ -1953,6 +2096,30 @@ function buildContinuity(previousSnapshot, snapshot, removalState) {
       }
     });
   }
+  for (const current of snapshot.candidates || []) {
+    if (current.stability?.layer !== "待确认剔除") continue;
+    if (confirmedRemoved[current.code]) continue;
+    pendingRemovals.push({
+      code: current.code,
+      name: current.name,
+      previousRefresh: previousSnapshot?.generatedAtChina || previousSnapshot?.generatedAt || "",
+      previousState: current.stability?.previousState || "",
+      previousScore: current.stability?.previousScore ?? null,
+      previousBuyType: current.tradePlan?.buyType || "",
+      previousSector: current.focus?.area || "",
+      reason: current.stability?.reason || buildRemovalReason(current),
+      nextStep: "该股仍保留在推荐追踪中，但暂停新开仓。请确认是否踢出；不同意则继续留在核心跟踪/观察池等待修复。",
+      previousSnapshot: {
+        price: current.price,
+        pct: current.pct,
+        mainNetInflowYi: current.mainNetInflowYi,
+        stop: current.tradePlan?.stop,
+        takeProfit: current.tradePlan?.takeProfit,
+        support: (current.tradePlan?.support || []).slice(0, 5),
+        risk: (current.tradePlan?.risk || []).slice(0, 5)
+      }
+    });
+  }
   return {
     previousRefresh: previousSnapshot?.generatedAtChina || previousSnapshot?.generatedAt || "",
     pendingRemovalCount: pendingRemovals.length,
@@ -2036,6 +2203,7 @@ function updateRecommendationTracking(snapshot, removalState) {
       firstPrice: candidate.price,
       firstState: candidate.tradePlan?.state,
       firstScore: candidate.tradePlan?.score,
+      firstLayer: candidate.stability?.layer || candidate.tradePlan?.trackingLayer,
       firstReason: (candidate.tradePlan?.support || []).slice(0, 4),
       sector: candidate.focus?.area || "",
       active: true,
@@ -2055,6 +2223,8 @@ function updateRecommendationTracking(snapshot, removalState) {
     record.lastSeenAtChina = snapshot.generatedAtChina;
     record.currentState = candidate.tradePlan?.state;
     record.currentScore = candidate.tradePlan?.score;
+    record.currentLayer = candidate.stability?.layer || candidate.tradePlan?.trackingLayer || record.currentLayer;
+    record.currentLayerReason = candidate.stability?.reason || "";
     record.currentPrice = candidate.price;
     record.currentSector = candidate.focus?.area || record.sector;
     record.lastPlan = {
@@ -2073,6 +2243,8 @@ function updateRecommendationTracking(snapshot, removalState) {
       pct: candidate.pct,
       state: candidate.tradePlan?.state,
       score: candidate.tradePlan?.score,
+      layer: candidate.stability?.layer || candidate.tradePlan?.trackingLayer || "",
+      layerReason: candidate.stability?.reason || "",
       sector: candidate.focus?.area,
       buyType: candidate.tradePlan?.buyType,
       reason: (candidate.tradePlan?.support || []).slice(0, 5),
@@ -2089,6 +2261,7 @@ function updateRecommendationTracking(snapshot, removalState) {
       pct: candidate.pct,
       state: candidate.tradePlan?.state,
       score: candidate.tradePlan?.score,
+      layer: candidate.stability?.layer || candidate.tradePlan?.trackingLayer || "",
       mainNetInflowYi: candidate.mainNetInflowYi
     };
     const existingIndex = record.priceHistory.findIndex(item => item.date === point.date);
@@ -2141,10 +2314,13 @@ function updateRecommendationTracking(snapshot, removalState) {
       firstPrice: record.firstPrice,
       firstState: record.firstState,
       firstScore: record.firstScore,
+      firstLayer: record.firstLayer,
       firstReason: record.firstReason,
       currentPrice: record.currentPrice,
       currentState: record.currentState,
       currentScore: record.currentScore,
+      currentLayer: record.currentLayer,
+      currentLayerReason: record.currentLayerReason,
       lastSeenAtChina: record.lastSeenAtChina,
       stoppedAt: record.stoppedAt,
       stoppedReason: record.stoppedReason,
@@ -2206,8 +2382,12 @@ async function main() {
     universe = { boards: [], stocks: fallback.map(s => ({ ...s, boards: [{ name: "重点观察池备用", code: "fallback" }] })) };
   }
 
-  const keepCodes = new Set(Object.keys(removalState.keepTracking || {}));
+  const keepCodes = new Set([
+    ...Object.keys(removalState.keepTracking || {}),
+    ...buildStabilityForceCodes(previousSnapshot, removalState)
+  ]);
   const candidates = await enrichCandidates(universe.stocks, keepCodes);
+  const stabilitySummary = assignStabilityLayers(candidates, previousSnapshot, removalState);
   const snapshot = {
     version: "trading-assistant-v0.1",
     generatedAt: new Date().toISOString(),
@@ -2246,9 +2426,11 @@ async function main() {
         : "主数据源不可用，使用新浪财经重点观察池备用。")
     },
     candidates,
+    stabilityPolicy: stabilitySummary.policy,
+    stabilitySummary,
     candidateGroups: groupCandidatesBySector(candidates),
     sectorGroups: groupBoardsBySector(universe.boards),
-    actionList: buildActionList(candidates),
+    actionList: buildStableActionList(candidates),
     continuity: null,
     audit: {
       ...audit,

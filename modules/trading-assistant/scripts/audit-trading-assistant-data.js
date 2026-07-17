@@ -41,7 +41,10 @@ const requiredCandidatePaths = [
   ["tradePlan", "strategyVotes", "passCount"],
   ["tradePlan", "trigger"],
   ["tradePlan", "support"],
-  ["tradePlan", "risk"]
+  ["tradePlan", "risk"],
+  ["tradePlan", "trackingLayer"],
+  ["stability", "layer"],
+  ["stability", "reason"]
 ];
 
 const report = {
@@ -77,12 +80,13 @@ report.trackingConsistency = {
   activeTrackingCount: activeTrackingCodes.length,
   candidateNotInTracking,
   trackingNotInCandidate,
-  ok: !candidateNotInTracking.length && !trackingNotInCandidate.length
+  note: "当前候选必须进入推荐追踪；历史推荐在未经人工确认剔除前可以继续 active，因此 activeTrackingCount 允许大于 candidateCount。",
+  ok: !candidateNotInTracking.length
 };
 if (!report.trackingConsistency.ok) {
   report.warnings.push({
     field: "recommendationTracking.active",
-    reason: "active recommendation tracking pool is not identical to current candidate pool",
+    reason: "current candidate pool has stocks missing from recommendation tracking",
     candidateNotInTracking,
     trackingNotInCandidate
   });

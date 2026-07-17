@@ -396,6 +396,11 @@
       const type = state === "交易准备池" ? "green" : state === "重点跟踪池" ? "yellow" : state === "暂不交易" ? "red" : "";
       return `<span class="pill ${type}">${esc(state)}</span>`;
     };
+    const stabilityPill = candidate => {
+      const layer = candidate?.stability?.layer || candidate?.tradePlan?.trackingLayer || "候选观察池";
+      const type = layer === "核心跟踪池" ? "green" : layer === "今日机会池" ? "yellow" : layer === "待确认剔除" || layer === "暂不交易" ? "red" : "";
+      return `<span class="pill ${type}">${esc(layer)}</span>`;
+    };
     const sectorGroups = () => (data.candidateGroups || []).map(g => ({
       ...g,
       rows: g.candidates.map(code => data.candidates.find(c => c.code === code)).filter(Boolean)
@@ -658,11 +663,23 @@
 
     function overview() {
       const states = data.audit.coverage.states || {};
+      const stability = data.stabilitySummary?.counts || {};
       return `
         <div class="grid">
           <div class="card"><h3>交易准备池</h3><div class="metric">${states["交易准备池"] || 0}</div><div class="note">满足评分与低级别确认，仍需按触发条件执行</div></div>
           <div class="card"><h3>重点跟踪池</h3><div class="metric">${states["重点跟踪池"] || 0}</div><div class="note">方向较好，但买点或低级别确认仍未完全满足</div></div>
           <div class="card"><h3>暂不交易</h3><div class="metric">${states["暂不交易"] || 0}</div><div class="note">技术、财报或公告存在硬约束</div></div>
+          <div class="card"><h3>核心跟踪池</h3><div class="metric">${stability["核心跟踪池"] || 0}</div><div class="note">上一轮已验证价值，默认持续跟踪 2-8 周</div></div>
+          <div class="card"><h3>今日机会池</h3><div class="metric">${stability["今日机会池"] || 0}</div><div class="note">新出现机会，不直接替代核心跟踪</div></div>
+          <div class="card"><h3>待确认剔除</h3><div class="metric">${stability["待确认剔除"] || 0}</div><div class="note">交易条件失效，需你确认后才停止追踪</div></div>
+          ${detailsCard("稳定推荐策略", `
+            <div class="kv">
+              <div>策略原则</div><div>${esc(data.stabilityPolicy?.principle || "推荐池按中期跟踪管理，日内扫描只负责发现新机会。")}</div>
+              <div>核心保留</div><div>${esc(data.stabilityPolicy?.coreRule || "上一轮核心候选优先带入本轮重新分析。")}</div>
+              <div>新机会</div><div>${esc(data.stabilityPolicy?.opportunityRule || "新增机会先观察触发，不直接替代核心跟踪。")}</div>
+              <div>剔除规则</div><div>${esc(data.stabilityPolicy?.removalRule || "未经确认不停止追踪。")}</div>
+            </div>
+          `, "span-12")}
           <div class="card span-8">
             <h3>今日行动清单</h3>
             ${data.loadWarning ? `<div class="error">${esc(data.loadWarning)}</div>` : ""}
@@ -715,10 +732,11 @@
             <div class="card span-12">
               <h3>${sectorTitle(g)}</h3>
               <table>
-                  <thead><tr><th>排名</th><th>股票</th><th>状态/评分</th><th>入池理由</th><th>趋势/RPS</th><th>资金</th><th>买点/下一步</th><th>加分依据</th><th>扣分/风险</th></tr></thead>
+                  <thead><tr><th>排名</th><th>股票</th><th>跟踪层级</th><th>状态/评分</th><th>入池理由</th><th>趋势/RPS</th><th>资金</th><th>买点/下一步</th><th>加分依据</th><th>扣分/风险</th></tr></thead>
                   <tbody>${[...g.rows].sort((a, b) => Number(b.tradePlan?.score || 0) - Number(a.tradePlan?.score || 0)).map((c, i) => `<tr>
                     <td>${i + 1}</td>
                     <td>${esc(c.name)}<br><span class="note">${c.code}</span></td>
+                    <td>${stabilityPill(c)}<br><span class="note">${esc(c.stability?.reason || c.tradePlan?.trackingPeriod || "")}</span></td>
                     <td>${pill(c.tradePlan.state)}<br><strong>${fmt(c.tradePlan.score)}</strong><br><span class="note">策略通过 ${fmt(c.tradePlan.strategyVotes?.passCount)} / 否决 ${fmt(c.tradePlan.strategyVotes?.failCount)}</span></td>
                     <td>${esc(c.focus.text)}<br><span class="note">${esc((c.boards || []).map(b => b.name).slice(0, 3).join("、"))}</span></td>
                     <td>${esc(c.tradePlan.trendStage?.stage || c.technical.trendStage?.stage || "未判断")}<br><span class="note">候选池RPS ${fmt(c.tradePlan.relativeStrength?.score ?? c.technical.relativeStrength?.score)} / 20日 ${fmt(c.technical.momentum?.r20)}%</span></td>
