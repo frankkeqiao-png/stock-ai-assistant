@@ -245,14 +245,13 @@
   <script>
     const pages = [
       ["overview", "01 今日行动清单"],
-      ["pool", "02 候选池"],
-      ["score", "03 评分排序"],
-      ["trigger", "04 买卖点触发"],
-      ["plans", "05 交易计划"],
-      ["review", "06 数据复盘"],
-      ["continuity", "07 剔除确认"],
-      ["tracking", "08 推荐追踪"],
-      ["raw", "09 全量数据"]
+      ["pool", "02 候选股票"],
+      ["trigger", "03 买卖点触发"],
+      ["plans", "04 交易计划"],
+      ["review", "05 数据复盘"],
+      ["continuity", "06 剔除确认"],
+      ["tracking", "07 推荐追踪"],
+      ["raw", "08 全量数据"]
     ];
 
     let data = null;
@@ -651,7 +650,7 @@
         $("app").innerHTML = `<div class="error">还没有数据，请点击“刷新真实数据”。</div>`;
         return;
       }
-      const map = { overview, pool, score, trigger, plans, review, continuity, tracking, raw };
+      const map = { overview, pool, trigger, plans, review, continuity, tracking, raw };
       $("app").innerHTML = map[current]();
       bindContinuityActions();
       bindStrategyUpgradeActions();
@@ -714,43 +713,26 @@
             </div>
           </div>
           ${sectorGroups().map(g => `
-            <div class="card span-6">
+            <div class="card span-12">
               <h3>${sectorTitle(g)}</h3>
               <div class="scroll">
-                <table><thead><tr><th>股票</th><th>状态</th><th>理由</th></tr></thead><tbody>
-                  ${g.rows.map(c => `<tr><td>${esc(c.name)}<br><span class="note">${c.code}</span></td><td>${pill(c.tradePlan.state)}</td><td>${esc(c.focus.text)}<br><span class="note">${esc((c.boards || []).map(b => b.name).slice(0, 3).join("、"))}</span></td></tr>`).join("")}
+                <table>
+                  <thead><tr><th>排名</th><th>股票</th><th>状态/评分</th><th>入池理由</th><th>趋势/RPS</th><th>资金</th><th>买点/下一步</th><th>加分依据</th><th>扣分/风险</th></tr></thead>
+                  <tbody>${[...g.rows].sort((a, b) => Number(b.tradePlan?.score || 0) - Number(a.tradePlan?.score || 0)).map((c, i) => `<tr>
+                    <td>${i + 1}</td>
+                    <td>${esc(c.name)}<br><span class="note">${c.code}</span></td>
+                    <td>${pill(c.tradePlan.state)}<br><strong>${fmt(c.tradePlan.score)}</strong><br><span class="note">策略通过 ${fmt(c.tradePlan.strategyVotes?.passCount)} / 否决 ${fmt(c.tradePlan.strategyVotes?.failCount)}</span></td>
+                    <td>${esc(c.focus.text)}<br><span class="note">${esc((c.boards || []).map(b => b.name).slice(0, 3).join("、"))}</span></td>
+                    <td>${esc(c.tradePlan.trendStage?.stage || c.technical.trendStage?.stage || "未判断")}<br><span class="note">候选池RPS ${fmt(c.tradePlan.relativeStrength?.score ?? c.technical.relativeStrength?.score)} / 20日 ${fmt(c.technical.momentum?.r20)}%</span></td>
+                    <td>${moneyFlowCell(c)}</td>
+                    <td>${esc(c.tradePlan.buyType)}<br><span class="note">${esc(c.tradePlan.nextAction || c.tradePlan.trigger || "")}</span><br><span class="note">风险收益比 ${esc(c.tradePlan.riskReward?.text || "未计算")}</span></td>
+                    <td><ul>${list(c.tradePlan.support.slice(0, 4))}</ul></td>
+                    <td><ul>${list(c.tradePlan.risk.slice(0, 4))}</ul></td>
+                  </tr>`).join("")}
                 </tbody></table>
               </div>
             </div>
           `).join("")}
-        </div>`;
-    }
-
-    function score() {
-      return `
-        <div class="grid">
-          <div class="card span-12">
-            <h3>评分排序</h3>
-            <div class="scroll">
-              <table>
-                <thead><tr><th>排名</th><th>股票</th><th>行情/估值</th><th>趋势/RPS</th><th>资金</th><th>评分</th><th>状态</th><th>策略投票</th><th>加分依据</th><th>扣分/风险</th></tr></thead>
-                <tbody>
-                  ${sectorGroups().map(g => `<tr><th colspan="10">${sectorTitle(g)}</th></tr>${g.rows.map((c, i) => `<tr>
-                    <td>${i + 1}</td>
-                    <td>${esc(c.name)}<br><span class="note">${c.code}</span></td>
-                    <td>${fmt(c.price)}<br><span class="${clsPct(c.pct)}">${fmt(c.pct)}%</span><br><span class="note">成交额 ${fmt(c.amountYi)}亿 / 换手 ${fmt(c.turnover)}% / PE ${fmt(c.pe)} / PB ${fmt(c.pb)}</span></td>
-                    <td>${esc(c.tradePlan.trendStage?.stage || c.technical.trendStage?.stage || "未判断")}<br><span class="note">候选池RPS ${fmt(c.tradePlan.relativeStrength?.score ?? c.technical.relativeStrength?.score)} / 20日 ${fmt(c.technical.momentum?.r20)}%</span></td>
-                    <td>${moneyFlowCell(c)}</td>
-                    <td><strong>${fmt(c.tradePlan.score)}</strong></td>
-                    <td>${pill(c.tradePlan.state)}</td>
-                    <td>通过 ${fmt(c.tradePlan.strategyVotes?.passCount)} / 否决 ${fmt(c.tradePlan.strategyVotes?.failCount)}<br><span class="note">${esc((c.tradePlan.strategyVotes?.failed || [])[0] || (c.tradePlan.strategyVotes?.neutral || [])[0] || "无硬否决")}</span></td>
-                    <td><ul>${list(c.tradePlan.support.slice(0, 5))}</ul></td>
-                    <td><ul>${list(c.tradePlan.risk.slice(0, 5))}</ul></td>
-                  </tr>`).join("")}`).join("")}
-                </tbody>
-              </table>
-            </div>
-          </div>
         </div>`;
     }
 
