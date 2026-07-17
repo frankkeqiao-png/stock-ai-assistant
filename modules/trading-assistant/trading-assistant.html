@@ -697,15 +697,14 @@
     function pool() {
       return `
         <div class="grid">
-          <div class="card span-12">
-            <h3>候选池来源</h3>
+          ${detailsCard("候选池来源", `
             <div class="kv">
               <div>方法</div><div>${esc(data.universe.method)}</div>
               <div>股票池数量</div><div>${data.universe.stockCount}</div>
               <div>关注方向</div><div>${esc(data.preference.focus.join("、"))}</div>
               <div>最高权重</div><div>${esc(data.preference.primarySector || "科技")}</div>
             </div>
-          </div>
+          `, "span-12")}
           <div class="card span-6">
             <h3>命中的板块</h3>
             <div class="scroll">
