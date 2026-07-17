@@ -704,19 +704,17 @@
               <div>最高权重</div><div>${esc(data.preference.primarySector || "科技")}</div>
             </div>
           `, "span-12")}
-          <div class="card span-6">
-            <h3>命中的板块</h3>
+          ${detailsCard("命中的板块", `
             <div class="scroll">
               <table><thead><tr><th>板块</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody>
                 ${data.universe.boards.map(b => `<tr><td>${esc(b.name)}<br><span class="note">${esc(b.source || "")}${b.derived ? " / 成分股聚合" : ""} / ${fmt(b.memberCount)}只</span></td><td class="${clsPct(b.pct)}">${fmt(b.pct)}%</td><td>${fmt(b.amountYi)}亿</td></tr>`).join("")}
               </tbody></table>
             </div>
-          </div>
+          `, "span-12")}
           ${sectorGroups().map(g => `
             <div class="card span-12">
               <h3>${sectorTitle(g)}</h3>
-              <div class="scroll">
-                <table>
+              <table>
                   <thead><tr><th>排名</th><th>股票</th><th>状态/评分</th><th>入池理由</th><th>趋势/RPS</th><th>资金</th><th>买点/下一步</th><th>加分依据</th><th>扣分/风险</th></tr></thead>
                   <tbody>${[...g.rows].sort((a, b) => Number(b.tradePlan?.score || 0) - Number(a.tradePlan?.score || 0)).map((c, i) => `<tr>
                     <td>${i + 1}</td>
@@ -730,7 +728,6 @@
                     <td><ul>${list(c.tradePlan.risk.slice(0, 4))}</ul></td>
                   </tr>`).join("")}
                 </tbody></table>
-              </div>
             </div>
           `).join("")}
         </div>`;
