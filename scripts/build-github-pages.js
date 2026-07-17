@@ -34,13 +34,14 @@ write(path.join(dist, "index.html"), `<!doctype html>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="refresh" content="0; url=trading-assistant.html" />
   <title>股票 AI 决策助手</title>
 </head>
 <body>
   <p>正在打开交易助理页面...</p>
   <p><a href="trading-assistant.html">如果没有自动跳转，点击这里进入交易助理</a></p>
-  <script>location.replace("trading-assistant.html");</script>
+  <script>
+    location.replace("trading-assistant.html?v=" + Date.now());
+  </script>
 </body>
 </html>
 `);
