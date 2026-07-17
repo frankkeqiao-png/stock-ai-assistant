@@ -293,13 +293,40 @@
     const refreshFailureText = () => {
       const failures = data?.audit?.failures || [];
       if (!failures.length) return "失败源 0 个。";
-      return `失败源 ${failures.length} 个：\n${failures.map((item, index) => `${index + 1}. ${item.name}${item.error ? `：${item.error}` : ""}`).join("\n")}`;
+      return `失败源 ${failures.length} 个：\n${failures.map((item, index) => {
+        const recovery = failureRecoveryText(item);
+        return `${index + 1}. ${item.name}${item.error ? `：${item.error}` : ""}${recovery ? `\n   替代处理：${recovery}` : ""}`;
+      }).join("\n")}`;
+    };
+    const failureRecoveryText = item => {
+      const name = String(item?.name || "");
+      const method = data?.universe?.method || "";
+      const unavailable = data?.dataQuality?.unavailable || [];
+      const boardQuality = unavailable.find(x => String(x.field || "").includes("新浪板块"));
+      const hasSinaBoards = (data?.universe?.boards || []).some(board => String(board.source || "").includes("新浪财经"));
+      if (name.includes("东方财富行业板块") || name.includes("东方财富概念板块") || name.includes("东方财富科技/能源板块股票池")) {
+        if (hasSinaBoards || method.includes("新浪财经")) {
+          const quality = boardQuality ? `；影响：${boardQuality.impact}` : "";
+          return `已用新浪财经行业/概念节点补齐板块股票池。${method}${quality}`;
+        }
+        return "未找到可用板块替代源；本次将使用缓存或备用观察池，具体影响见数据审计页。";
+      }
+      if (name.includes("K线") && (data?.sources || []).some(s => String(s.name || "").includes("新浪财经K线备用源") || String(s.name || "").includes("腾讯证券K线第二备用源"))) {
+        return "已配置新浪财经K线备用源和腾讯证券K线第二备用源；个股级别是否补齐见数据审计页K线覆盖。";
+      }
+      if (name.includes("公告") && (data?.sources || []).some(s => String(s.name || "").includes("巨潮资讯公告备用源"))) {
+        return "已配置巨潮资讯公告备用源；个股公告覆盖见数据审计页。";
+      }
+      if (name.includes("资金流") && (data?.sources || []).some(s => String(s.name || "").includes("新浪资金流备用源"))) {
+        return "已配置新浪资金流备用源；若仍无法匹配，资金流不参与加分或扣分，并在个股资金栏显性标注。";
+      }
+      return "";
     };
     const showSnapshotFailureStatus = () => {
       const failures = data?.audit?.failures || [];
       if (!failures.length) return;
       const completedAt = formatRefreshTime(data.generatedAtChina || data.generatedAt || "");
-      setRefreshStatus("warning", `当前快照刷新时间：${completedAt}\n自动刷新已完成，但存在部分数据源失败；系统已使用可用替代源或保留可用数据。\n${refreshFailureText()}`);
+      setRefreshStatus("warning", `最近一次自动更新：${completedAt}\n自动刷新已完成，但存在部分数据源失败；下面列出失败源、替代方案和补齐影响。\n${refreshFailureText()}`);
     };
     const list = arr => (arr && arr.length ? arr.map(x => `<li>${esc(x)}</li>`).join("") : "<li>无</li>");
     const moneyFlowCell = c => {
