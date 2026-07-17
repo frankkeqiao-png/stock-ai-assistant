@@ -1482,6 +1482,7 @@ function buildStabilityForceCodes(previousSnapshot, removalState) {
 function assignStabilityLayers(candidates, previousSnapshot, removalState) {
   const previousMap = new Map((previousSnapshot?.candidates || []).map(candidate => [candidate.code, candidate]));
   const layerRank = { "核心跟踪池": 6, "今日机会池": 5, "候选观察池": 4, "待确认剔除": 2, "暂不交易": 1 };
+  const currentDate = dateOnly(todayChina());
   const summary = {
     policy: {
       name: "稳定推荐策略 v0.2",
@@ -1500,9 +1501,21 @@ function assignStabilityLayers(candidates, previousSnapshot, removalState) {
     const previous = previousMap.get(candidate.code);
     const state = candidate.tradePlan?.state || "";
     const score = Number(candidate.tradePlan?.score || 0);
+    const previousState = previous?.tradePlan?.state || "";
+    const previousScore = Number(previous?.tradePlan?.score || 0);
+    const previousLayer = previous?.stability?.layer || previous?.tradePlan?.trackingLayer || "";
     const record = findTrackingRecord(previousSnapshot, candidate.code);
     const seenCount = Array.isArray(record?.recommendations) ? record.recommendations.length : (previous ? 1 : 0);
+    const firstTrackingDate = dateOnly(record?.firstRecommendedAtChina || previousSnapshot?.generatedAtChina || "");
+    const sameDayNewOpportunity = firstTrackingDate === currentDate && (previousLayer === "今日机会池" || seenCount <= 2);
     const rr = candidate.tradePlan?.riskReward?.ratio;
+    const wasMeaningfulRecommendation =
+      Boolean(removalState?.keepTracking?.[candidate.code]) ||
+      previousLayer === "核心跟踪池" ||
+      previousLayer === "今日机会池" ||
+      previousState === "交易准备池" ||
+      previousState === "重点跟踪池" ||
+      (previousState === "观察池" && previousScore >= 58);
     const hasHardRisk =
       state === "暂不交易" ||
       state === "低优先级" ||
@@ -1511,11 +1524,15 @@ function assignStabilityLayers(candidates, previousSnapshot, removalState) {
 
     let layer = "候选观察池";
     let reason = "进入候选池但尚未形成稳定交易机会，继续等待评分、趋势或买点改善。";
-    if (previous && hasHardRisk) {
+    if (previous && wasMeaningfulRecommendation && hasHardRisk) {
       layer = "待确认剔除";
       reason = "原候选本次出现硬风险或交易条件失效，先保留在追踪中，需人工确认后才停止跟踪。";
       summary.downgradeReviewCodes.push(candidate.code);
-    } else if (previous && (state === "交易准备池" || state === "重点跟踪池" || score >= 58)) {
+    } else if (previous && sameDayNewOpportunity && (state === "交易准备池" || state === "重点跟踪池") && score >= 70) {
+      layer = "今日机会池";
+      reason = "同一交易日内仍按新增机会处理；至少跨交易日继续满足条件后再升级为核心跟踪。";
+      summary.newOpportunityCodes.push(candidate.code);
+    } else if (previous && wasMeaningfulRecommendation && (state === "交易准备池" || state === "重点跟踪池" || score >= 58)) {
       layer = "核心跟踪池";
       reason = `已连续跟踪 ${Math.max(1, seenCount)} 次，本次继续满足中期跟踪条件；不因单日排序波动移出。`;
       summary.protectedCodes.push(candidate.code);
