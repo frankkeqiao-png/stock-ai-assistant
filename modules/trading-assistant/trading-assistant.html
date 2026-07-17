@@ -840,15 +840,7 @@
               <div><strong>策略护栏</strong><ul>${list(sr.guardrails || [])}</ul></div>
             </div>
           </div>
-          <div class="card span-12">
-            <h3>日 / 周 / 月复盘</h3>
-            <p class="note">按日期倒序排列。日复盘展示每次刷新记录；周复盘和月复盘按周期聚合刷新次数、候选池、状态分布、高分候选和数据限制。</p>
-            ${reviewTimelineSection("日复盘", timeline.daily || [])}
-            ${reviewTimelineSection("周复盘", timeline.weekly || [])}
-            ${reviewTimelineSection("月复盘", timeline.monthly || [])}
-          </div>
-          <div class="card span-12">
-            <h3>分层表现基线</h3>
+          ${detailsCard("分层表现基线", `
             <div class="scroll">
               <table>
                 <thead><tr><th>状态</th><th>数量</th><th>平均评分</th><th>平均风险收益比</th><th>平均候选池RPS</th></tr></thead>
@@ -861,10 +853,16 @@
                 </tr>`).join("") || `<tr><td colspan="5">暂无复盘指标</td></tr>`}</tbody>
               </table>
             </div>
-          </div>
-          <div class="card span-6">
-            <h3>本次观察</h3>
+          `, "span-12")}
+          ${detailsCard("本次观察", `
             <ul>${list(sr.observations || [])}</ul>
+          `, "span-12")}
+          <div class="card span-12">
+            <h3>日 / 周 / 月复盘</h3>
+            <p class="note">按日期倒序排列。日复盘展示每次刷新记录；周复盘和月复盘按周期聚合刷新次数、候选池、状态分布、高分候选和数据限制。</p>
+            ${reviewTimelineSection("日复盘", timeline.daily || [])}
+            ${reviewTimelineSection("周复盘", timeline.weekly || [])}
+            ${reviewTimelineSection("月复盘", timeline.monthly || [])}
           </div>
           <div class="card span-6">
             <h3>策略升级确认</h3>
