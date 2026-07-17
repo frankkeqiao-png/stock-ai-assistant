@@ -127,8 +127,89 @@ function buildStrategyReview(logs, snapshot) {
       previousCount: previous.candidateCount
     } : null,
     observations,
-    suggestions
+    suggestions,
+    timeline: buildReviewTimeline(logs)
   };
+}
+
+function buildReviewTimeline(logs) {
+  const safeLogs = (logs || []).filter(entry => entry?.generatedAt || entry?.generatedAtChina);
+  return {
+    daily: groupReviewEntries(safeLogs, dateKey).reverse(),
+    weekly: groupReviewEntries(safeLogs, weekKey).reverse(),
+    monthly: groupReviewEntries(safeLogs, monthKey).reverse()
+  };
+}
+
+function groupReviewEntries(logs, keyFn) {
+  const groups = new Map();
+  for (const entry of logs || []) {
+    const key = keyFn(entry);
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(entry);
+  }
+  return [...groups.entries()].map(([key, entries]) => summarizeReviewEntries(key, entries, "period"));
+}
+
+function summarizeReviewEntries(key, entries, type) {
+  const rows = [...(entries || [])].sort((a, b) => String(a.generatedAt || a.generatedAtChina).localeCompare(String(b.generatedAt || b.generatedAtChina)));
+  const latest = rows[rows.length - 1] || {};
+  const candidateCounts = rows.map(row => Number(row.candidateCount)).filter(Number.isFinite);
+  const avgCandidateCount = candidateCounts.length ? round(candidateCounts.reduce((sum, value) => sum + value, 0) / candidateCounts.length, 1) : null;
+  const stateTotals = {};
+  for (const row of rows) {
+    for (const [state, count] of Object.entries(row.states || {})) {
+      stateTotals[state] = (stateTotals[state] || 0) + Number(count || 0);
+    }
+  }
+  const stateAverages = Object.fromEntries(Object.entries(stateTotals).map(([state, count]) => [state, round(count / Math.max(1, rows.length), 1)]));
+  const topCandidates = [...(latest.candidates || [])]
+    .sort((a, b) => Number(b.score || 0) - Number(a.score || 0))
+    .slice(0, 8)
+    .map(candidate => ({
+      code: candidate.code,
+      name: candidate.name,
+      focusArea: candidate.focusArea,
+      state: candidate.state,
+      score: candidate.score,
+      buyType: candidate.buyType,
+      riskReward: candidate.riskReward
+    }));
+  const dataQuality = [...new Map(rows.flatMap(row => row.dataQuality || []).map(item => [item.field, item])).values()];
+  return {
+    key,
+    type,
+    refreshCount: rows.length,
+    firstRefresh: rows[0]?.generatedAtChina || rows[0]?.generatedAt || "",
+    latestRefresh: latest.generatedAtChina || latest.generatedAt || "",
+    candidateCount: latest.candidateCount ?? null,
+    avgCandidateCount,
+    states: latest.states || {},
+    stateAverages,
+    groups: latest.groups || [],
+    dataQuality,
+    topCandidates
+  };
+}
+
+function dateKey(entry) {
+  const text = String(entry?.generatedAtChina || entry?.generatedAt || "");
+  const match = text.match(/(\d{4})[/-](\d{1,2})[/-](\d{1,2})/);
+  if (match) return `${match[1]}-${String(match[2]).padStart(2, "0")}-${String(match[3]).padStart(2, "0")}`;
+  const date = new Date(text);
+  return Number.isNaN(date.getTime()) ? "unknown-date" : date.toISOString().slice(0, 10);
+}
+
+function monthKey(entry) {
+  return dateKey(entry).slice(0, 7);
+}
+
+function weekKey(entry) {
+  const date = new Date(`${dateKey(entry)}T00:00:00+08:00`);
+  if (Number.isNaN(date.getTime())) return "unknown-week";
+  const day = date.getDay() || 7;
+  date.setDate(date.getDate() - day + 1);
+  return `${date.toISOString().slice(0, 10)}周`;
 }
 
 function round(value, digits = 2) {

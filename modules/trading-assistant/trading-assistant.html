@@ -380,6 +380,49 @@
       rows: g.candidates.map(code => data.candidates.find(c => c.code === code)).filter(Boolean)
     })).filter(g => g.rows.length);
     const sectorTitle = g => `${esc(g.name)} <span class="pill">${g.rows.length}只</span>`;
+    const detailsCard = (title, body, span = "span-12") => `
+      <div class="card ${span}">
+        <details>
+          <summary><strong>${esc(title)}</strong></summary>
+          <div style="margin-top:10px">${body}</div>
+        </details>
+      </div>`;
+    const reviewTimelineSection = (title, rows) => `
+      <details class="tracking-row">
+        <summary>
+          <div><strong>${esc(title)}</strong><br><span class="note">${fmt(rows?.length || 0)} 条记录</span></div>
+          <div>最近<br><strong>${esc(rows?.[0]?.key || "暂无")}</strong></div>
+          <div>刷新次数<br><strong>${fmt((rows || []).reduce((sum, row) => sum + Number(row.refreshCount || 0), 0))}</strong></div>
+          <div></div><div></div><div><span class="pill">点击展开</span></div>
+        </summary>
+        <div class="tracking-body">
+          ${(rows || []).length ? rows.map(reviewTimelineItem).join("") : `<div class="item">暂无${esc(title)}复盘记录。</div>`}
+        </div>
+      </details>`;
+    const reviewTimelineItem = row => `
+      <details class="tracking-row">
+        <summary>
+          <div><strong>${esc(row.key)}</strong><br><span class="note">${esc(formatRefreshTime(row.latestRefresh || row.firstRefresh || ""))}</span></div>
+          <div>刷新<br><strong>${fmt(row.refreshCount)} 次</strong></div>
+          <div>候选<br><strong>${fmt(row.candidateCount)}</strong></div>
+          <div>均值<br><strong>${fmt(row.avgCandidateCount)}</strong></div>
+          <div>缺失项<br><strong>${fmt((row.dataQuality || []).length)}</strong></div>
+          <div><span class="pill">详情</span></div>
+        </summary>
+        <div class="tracking-body">
+          <div class="kv">
+            <div>首次刷新</div><div>${esc(formatRefreshTime(row.firstRefresh || ""))}</div>
+            <div>最近刷新</div><div>${esc(formatRefreshTime(row.latestRefresh || ""))}</div>
+            <div>状态分布</div><div>${esc(Object.entries(row.states || {}).map(([k, v]) => `${k} ${v}`).join("；") || "无")}</div>
+            <div>平均状态</div><div>${esc(Object.entries(row.stateAverages || {}).map(([k, v]) => `${k} ${v}`).join("；") || "无")}</div>
+            <div>板块分布</div><div>${esc((row.groups || []).map(g => `${g.name} ${g.count}`).join("；") || "无")}</div>
+          </div>
+          <div class="two" style="margin-top:10px">
+            <div><strong>高分候选</strong><ul>${list((row.topCandidates || []).map(c => `${c.name} ${c.code}：${c.focusArea || ""} / ${c.state || ""} / 评分${fmt(c.score)} / ${c.buyType || ""} / 风险收益比${fmt(c.riskReward)}`))}</ul></div>
+            <div><strong>数据限制</strong><ul>${list((row.dataQuality || []).map(x => `${x.field}：${x.reason || ""}；${x.impact || ""}`))}</ul></div>
+          </div>
+        </div>
+      </details>`;
 
     function renderNav() {
       $("nav").innerHTML = pages.map(([id, name]) =>
@@ -711,10 +754,10 @@
     function review() {
       const c = data.audit.coverage;
       const sr = data.strategyReview || {};
+      const timeline = sr.timeline || {};
       return `
         <div class="grid">
-          <div class="card span-6">
-            <h3>数据覆盖</h3>
+          ${detailsCard("数据覆盖", `
             <div class="kv">
               <div>板块数</div><div>${fmt(c.boards)}</div>
               <div>股票池</div><div>${fmt(c.universeStocks)}</div>
@@ -726,27 +769,24 @@
               <div>公告</div><div>${fmt(c.withAnnouncements)} / ${fmt(c.candidates)}</div>
               <div>失败源</div><div>${fmt(c.failures)}</div>
             </div>
-          </div>
-          <div class="card span-6">
-            <h3>数据来源</h3>
+          `, "span-12")}
+          ${detailsCard("数据来源", `
             <ul>${list(data.sources.map(s => `${s.name}：${s.url}`))}</ul>
-          </div>
-          <div class="card span-12">
-            <h3>源状态</h3>
+          `, "span-12")}
+          ${detailsCard("源状态", `
             <div class="scroll">
               <table><thead><tr><th>来源</th><th>状态</th><th>错误</th></tr></thead><tbody>
                 ${data.audit.sources.map(s => `<tr><td>${esc(s.name)}</td><td>${s.ok ? '<span class="pill green">可用</span>' : '<span class="pill red">失败</span>'}</td><td>${esc(s.error || "")}</td></tr>`).join("")}
               </tbody></table>
             </div>
-          </div>
-          <div class="card span-12">
-            <h3>无法填充的数据</h3>
+          `, "span-12")}
+          ${detailsCard("无法填充的数据", `
             ${(data.dataQuality?.unavailable || []).length ? `
               <table><thead><tr><th>字段</th><th>影响范围</th><th>原因</th><th>处理方式</th></tr></thead><tbody>
                 ${data.dataQuality.unavailable.map(x => `<tr><td>${esc(x.field)}</td><td>${fmt(x.count)} / ${fmt(x.total)}</td><td>${esc(x.reason)}</td><td>${esc(x.impact)}</td></tr>`).join("")}
               </tbody></table>
             ` : `<div class="item">当前核心展示字段均已填充。</div>`}
-          </div>
+          `, "span-12")}
           <div class="card span-12">
             <h3>策略自我复盘机制</h3>
             <div class="kv">
@@ -758,6 +798,13 @@
               <div><strong>复盘节奏</strong><ul>${list(sr.cadence || [])}</ul></div>
               <div><strong>策略护栏</strong><ul>${list(sr.guardrails || [])}</ul></div>
             </div>
+          </div>
+          <div class="card span-12">
+            <h3>日 / 周 / 月复盘</h3>
+            <p class="note">按日期倒序排列。日复盘展示每次刷新记录；周复盘和月复盘按周期聚合刷新次数、候选池、状态分布、高分候选和数据限制。</p>
+            ${reviewTimelineSection("日复盘", timeline.daily || [])}
+            ${reviewTimelineSection("周复盘", timeline.weekly || [])}
+            ${reviewTimelineSection("月复盘", timeline.monthly || [])}
           </div>
           <div class="card span-12">
             <h3>分层表现基线</h3>

@@ -27447,6 +27447,473 @@ window.TRADING_ASSISTANT_DATA = {
         "proposedChange": "后续增加收益追踪脚本，统计交易准备池、重点跟踪池、观察池的分层表现。",
         "status": "待你确认后开发"
       }
-    ]
+    ],
+    "timeline": {
+      "daily": [
+        {
+          "key": "2026-07-16",
+          "type": "period",
+          "refreshCount": 14,
+          "firstRefresh": "2026/07/16 11:46:14",
+          "latestRefresh": "2026/07/16 18:41:07",
+          "candidateCount": 43,
+          "avgCandidateCount": 39.7,
+          "states": {
+            "重点跟踪池": 5,
+            "暂不交易": 33,
+            "交易准备池": 2,
+            "观察池": 3
+          },
+          "stateAverages": {
+            "观察池": 2.1,
+            "暂不交易": 31.1,
+            "交易准备池": 2.1,
+            "重点跟踪池": 4.4
+          },
+          "groups": [
+            {
+              "name": "科技",
+              "count": 16
+            },
+            {
+              "name": "新能源/电力设备",
+              "count": 3
+            },
+            {
+              "name": "机器人/智能制造",
+              "count": 3
+            },
+            {
+              "name": "低空经济/航空航天",
+              "count": 3
+            },
+            {
+              "name": "高端制造/汽车",
+              "count": 3
+            },
+            {
+              "name": "医药医疗",
+              "count": 3
+            },
+            {
+              "name": "军工国防",
+              "count": 3
+            },
+            {
+              "name": "黄金/贵金属",
+              "count": 3
+            },
+            {
+              "name": "资源周期/化工",
+              "count": 3
+            },
+            {
+              "name": "大消费",
+              "count": 3
+            }
+          ],
+          "dataQuality": [
+            {
+              "field": "候选股主力净流入",
+              "count": 3,
+              "total": 42,
+              "reason": "curl: (56) schannel: server closed abruptly (missing close_notify)",
+              "impact": "不把主力净流入作为本次评分的硬条件；候选和交易计划主要依据行情、K线、财报、公告。"
+            },
+            {
+              "field": "新浪板块官方涨跌幅/成交额",
+              "count": 45,
+              "total": 45,
+              "reason": "新浪行业/概念节点返回成分股行情，但不直接返回板块级汇总指标。",
+              "impact": "已用成分股真实行情聚合计算板块涨跌幅、成交额、平均换手和成分股数量。"
+            }
+          ],
+          "topCandidates": [
+            {
+              "code": "603893",
+              "name": "瑞芯微",
+              "focusArea": "科技",
+              "state": "暂不交易",
+              "score": 96,
+              "buyType": "中枢上半区观察",
+              "riskReward": 0.61
+            },
+            {
+              "code": "603501",
+              "name": "豪威集团",
+              "focusArea": "科技",
+              "state": "暂不交易",
+              "score": 96,
+              "buyType": "中枢上半区观察",
+              "riskReward": 0.61
+            },
+            {
+              "code": "600521",
+              "name": "华海药业",
+              "focusArea": "医药医疗",
+              "state": "交易准备池",
+              "score": 96,
+              "buyType": "类三买观察",
+              "riskReward": 2.61
+            },
+            {
+              "code": "300347",
+              "name": "泰格医药",
+              "focusArea": "医药医疗",
+              "state": "重点跟踪池",
+              "score": 96,
+              "buyType": "类三买观察",
+              "riskReward": 1.55
+            },
+            {
+              "code": "002294",
+              "name": "信立泰",
+              "focusArea": "医药医疗",
+              "state": "暂不交易",
+              "score": 96,
+              "buyType": "类二买/趋势延续观察",
+              "riskReward": 0.94
+            },
+            {
+              "code": "600562",
+              "name": "国睿科技",
+              "focusArea": "军工国防",
+              "state": "交易准备池",
+              "score": 96,
+              "buyType": "类二买/趋势延续观察",
+              "riskReward": 2.44
+            },
+            {
+              "code": "600519",
+              "name": "贵州茅台",
+              "focusArea": "大消费",
+              "state": "重点跟踪池",
+              "score": 90.3,
+              "buyType": "类三买观察",
+              "riskReward": 2.24
+            },
+            {
+              "code": "601899",
+              "name": "紫金矿业",
+              "focusArea": "黄金/贵金属",
+              "state": "重点跟踪池",
+              "score": 86.8,
+              "buyType": "类二买/趋势延续观察",
+              "riskReward": 1.47
+            }
+          ]
+        }
+      ],
+      "weekly": [
+        {
+          "key": "2026-07-12周",
+          "type": "period",
+          "refreshCount": 14,
+          "firstRefresh": "2026/07/16 11:46:14",
+          "latestRefresh": "2026/07/16 18:41:07",
+          "candidateCount": 43,
+          "avgCandidateCount": 39.7,
+          "states": {
+            "重点跟踪池": 5,
+            "暂不交易": 33,
+            "交易准备池": 2,
+            "观察池": 3
+          },
+          "stateAverages": {
+            "观察池": 2.1,
+            "暂不交易": 31.1,
+            "交易准备池": 2.1,
+            "重点跟踪池": 4.4
+          },
+          "groups": [
+            {
+              "name": "科技",
+              "count": 16
+            },
+            {
+              "name": "新能源/电力设备",
+              "count": 3
+            },
+            {
+              "name": "机器人/智能制造",
+              "count": 3
+            },
+            {
+              "name": "低空经济/航空航天",
+              "count": 3
+            },
+            {
+              "name": "高端制造/汽车",
+              "count": 3
+            },
+            {
+              "name": "医药医疗",
+              "count": 3
+            },
+            {
+              "name": "军工国防",
+              "count": 3
+            },
+            {
+              "name": "黄金/贵金属",
+              "count": 3
+            },
+            {
+              "name": "资源周期/化工",
+              "count": 3
+            },
+            {
+              "name": "大消费",
+              "count": 3
+            }
+          ],
+          "dataQuality": [
+            {
+              "field": "候选股主力净流入",
+              "count": 3,
+              "total": 42,
+              "reason": "curl: (56) schannel: server closed abruptly (missing close_notify)",
+              "impact": "不把主力净流入作为本次评分的硬条件；候选和交易计划主要依据行情、K线、财报、公告。"
+            },
+            {
+              "field": "新浪板块官方涨跌幅/成交额",
+              "count": 45,
+              "total": 45,
+              "reason": "新浪行业/概念节点返回成分股行情，但不直接返回板块级汇总指标。",
+              "impact": "已用成分股真实行情聚合计算板块涨跌幅、成交额、平均换手和成分股数量。"
+            }
+          ],
+          "topCandidates": [
+            {
+              "code": "603893",
+              "name": "瑞芯微",
+              "focusArea": "科技",
+              "state": "暂不交易",
+              "score": 96,
+              "buyType": "中枢上半区观察",
+              "riskReward": 0.61
+            },
+            {
+              "code": "603501",
+              "name": "豪威集团",
+              "focusArea": "科技",
+              "state": "暂不交易",
+              "score": 96,
+              "buyType": "中枢上半区观察",
+              "riskReward": 0.61
+            },
+            {
+              "code": "600521",
+              "name": "华海药业",
+              "focusArea": "医药医疗",
+              "state": "交易准备池",
+              "score": 96,
+              "buyType": "类三买观察",
+              "riskReward": 2.61
+            },
+            {
+              "code": "300347",
+              "name": "泰格医药",
+              "focusArea": "医药医疗",
+              "state": "重点跟踪池",
+              "score": 96,
+              "buyType": "类三买观察",
+              "riskReward": 1.55
+            },
+            {
+              "code": "002294",
+              "name": "信立泰",
+              "focusArea": "医药医疗",
+              "state": "暂不交易",
+              "score": 96,
+              "buyType": "类二买/趋势延续观察",
+              "riskReward": 0.94
+            },
+            {
+              "code": "600562",
+              "name": "国睿科技",
+              "focusArea": "军工国防",
+              "state": "交易准备池",
+              "score": 96,
+              "buyType": "类二买/趋势延续观察",
+              "riskReward": 2.44
+            },
+            {
+              "code": "600519",
+              "name": "贵州茅台",
+              "focusArea": "大消费",
+              "state": "重点跟踪池",
+              "score": 90.3,
+              "buyType": "类三买观察",
+              "riskReward": 2.24
+            },
+            {
+              "code": "601899",
+              "name": "紫金矿业",
+              "focusArea": "黄金/贵金属",
+              "state": "重点跟踪池",
+              "score": 86.8,
+              "buyType": "类二买/趋势延续观察",
+              "riskReward": 1.47
+            }
+          ]
+        }
+      ],
+      "monthly": [
+        {
+          "key": "2026-07",
+          "type": "period",
+          "refreshCount": 14,
+          "firstRefresh": "2026/07/16 11:46:14",
+          "latestRefresh": "2026/07/16 18:41:07",
+          "candidateCount": 43,
+          "avgCandidateCount": 39.7,
+          "states": {
+            "重点跟踪池": 5,
+            "暂不交易": 33,
+            "交易准备池": 2,
+            "观察池": 3
+          },
+          "stateAverages": {
+            "观察池": 2.1,
+            "暂不交易": 31.1,
+            "交易准备池": 2.1,
+            "重点跟踪池": 4.4
+          },
+          "groups": [
+            {
+              "name": "科技",
+              "count": 16
+            },
+            {
+              "name": "新能源/电力设备",
+              "count": 3
+            },
+            {
+              "name": "机器人/智能制造",
+              "count": 3
+            },
+            {
+              "name": "低空经济/航空航天",
+              "count": 3
+            },
+            {
+              "name": "高端制造/汽车",
+              "count": 3
+            },
+            {
+              "name": "医药医疗",
+              "count": 3
+            },
+            {
+              "name": "军工国防",
+              "count": 3
+            },
+            {
+              "name": "黄金/贵金属",
+              "count": 3
+            },
+            {
+              "name": "资源周期/化工",
+              "count": 3
+            },
+            {
+              "name": "大消费",
+              "count": 3
+            }
+          ],
+          "dataQuality": [
+            {
+              "field": "候选股主力净流入",
+              "count": 3,
+              "total": 42,
+              "reason": "curl: (56) schannel: server closed abruptly (missing close_notify)",
+              "impact": "不把主力净流入作为本次评分的硬条件；候选和交易计划主要依据行情、K线、财报、公告。"
+            },
+            {
+              "field": "新浪板块官方涨跌幅/成交额",
+              "count": 45,
+              "total": 45,
+              "reason": "新浪行业/概念节点返回成分股行情，但不直接返回板块级汇总指标。",
+              "impact": "已用成分股真实行情聚合计算板块涨跌幅、成交额、平均换手和成分股数量。"
+            }
+          ],
+          "topCandidates": [
+            {
+              "code": "603893",
+              "name": "瑞芯微",
+              "focusArea": "科技",
+              "state": "暂不交易",
+              "score": 96,
+              "buyType": "中枢上半区观察",
+              "riskReward": 0.61
+            },
+            {
+              "code": "603501",
+              "name": "豪威集团",
+              "focusArea": "科技",
+              "state": "暂不交易",
+              "score": 96,
+              "buyType": "中枢上半区观察",
+              "riskReward": 0.61
+            },
+            {
+              "code": "600521",
+              "name": "华海药业",
+              "focusArea": "医药医疗",
+              "state": "交易准备池",
+              "score": 96,
+              "buyType": "类三买观察",
+              "riskReward": 2.61
+            },
+            {
+              "code": "300347",
+              "name": "泰格医药",
+              "focusArea": "医药医疗",
+              "state": "重点跟踪池",
+              "score": 96,
+              "buyType": "类三买观察",
+              "riskReward": 1.55
+            },
+            {
+              "code": "002294",
+              "name": "信立泰",
+              "focusArea": "医药医疗",
+              "state": "暂不交易",
+              "score": 96,
+              "buyType": "类二买/趋势延续观察",
+              "riskReward": 0.94
+            },
+            {
+              "code": "600562",
+              "name": "国睿科技",
+              "focusArea": "军工国防",
+              "state": "交易准备池",
+              "score": 96,
+              "buyType": "类二买/趋势延续观察",
+              "riskReward": 2.44
+            },
+            {
+              "code": "600519",
+              "name": "贵州茅台",
+              "focusArea": "大消费",
+              "state": "重点跟踪池",
+              "score": 90.3,
+              "buyType": "类三买观察",
+              "riskReward": 2.24
+            },
+            {
+              "code": "601899",
+              "name": "紫金矿业",
+              "focusArea": "黄金/贵金属",
+              "state": "重点跟踪池",
+              "score": 86.8,
+              "buyType": "类二买/趋势延续观察",
+              "riskReward": 1.47
+            }
+          ]
+        }
+      ]
+    }
   }
 };
