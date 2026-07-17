@@ -7,6 +7,7 @@ const ROOT = __dirname;
 const PORT = Number(process.env.PORT || 8765);
 const REMOVAL_STATE_FILE = path.join(ROOT, "data", "trading-assistant-removal-state.json");
 const RECOMMENDATION_TRACKING_FILE = path.join(ROOT, "data", "trading-assistant-recommendation-tracking.json");
+const STRATEGY_UPGRADE_STATE_FILE = path.join(ROOT, "data", "trading-assistant-strategy-upgrade-state.json");
 const SNAPSHOT_FILE = path.join(ROOT, "data", "trading-assistant.json");
 let refreshing = false;
 let lastRefresh = null;
@@ -134,6 +135,49 @@ async function updateRemovalState(req, res, mode) {
   }
 }
 
+async function confirmStrategyUpgrade(req, res) {
+  try {
+    const body = JSON.parse(await readBody(req) || "{}");
+    const title = String(body.title || "").trim();
+    if (!title) {
+      send(res, 400, JSON.stringify({ ok: false, error: "missing upgrade title" }));
+      return;
+    }
+    const record = {
+      id: body.id || `${Date.now()}-${Math.random().toString(16).slice(2)}`,
+      title,
+      reason: body.reason || "",
+      proposedChange: body.proposedChange || "",
+      sourceRefresh: body.sourceRefresh || "",
+      decidedAt: new Date().toISOString(),
+      status: "confirmed"
+    };
+    const state = readJson(STRATEGY_UPGRADE_STATE_FILE, { confirmed: [], history: [] });
+    state.confirmed ||= [];
+    state.history ||= [];
+    state.confirmed.push(record);
+    state.history.push({ ...record, action: "confirmStrategyUpgrade" });
+    state.confirmed = state.confirmed.slice(-200);
+    state.history = state.history.slice(-500);
+    writeJson(STRATEGY_UPGRADE_STATE_FILE, state);
+    const snapshot = readJson(SNAPSHOT_FILE, null);
+    if (snapshot) {
+      snapshot.strategyUpgradeState = state;
+      snapshot.strategyReview ||= {};
+      snapshot.strategyReview.confirmedUpgrades = state.confirmed;
+      for (const suggestion of snapshot.strategyReview.suggestions || []) {
+        if (suggestion.title === title) suggestion.status = "已确认升级，等待策略实现";
+      }
+      writeJson(SNAPSHOT_FILE, snapshot);
+      const jsFile = path.join(ROOT, "data", "trading-assistant.js");
+      fs.writeFileSync(jsFile, `window.TRADING_ASSISTANT_DATA = ${JSON.stringify(snapshot, null, 2)};\n`, "utf8");
+    }
+    send(res, 200, JSON.stringify({ ok: true, record, state }));
+  } catch (error) {
+    send(res, 500, JSON.stringify({ ok: false, error: String(error.message || error) }));
+  }
+}
+
 function runRefresh() {
   if (currentRefreshPromise) return currentRefreshPromise;
   currentRefreshPromise = new Promise((resolve, reject) => {
@@ -211,6 +255,10 @@ const server = http.createServer(async (req, res) => {
   }
   if (url.pathname === "/api/removal/keep" && req.method === "POST") {
     await updateRemovalState(req, res, "keep");
+    return;
+  }
+  if (url.pathname === "/api/strategy/confirm-upgrade" && req.method === "POST") {
+    await confirmStrategyUpgrade(req, res);
     return;
   }
 

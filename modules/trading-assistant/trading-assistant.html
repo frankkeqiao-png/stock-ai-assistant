@@ -551,6 +551,23 @@
       render();
     }
 
+    async function confirmStrategyUpgrade(item) {
+      if (!isLocalRuntime) {
+        setRefreshStatus("error-state", "GitHub Pages 静态模式不能写入策略升级确认；请在本地版本点击确认升级，确认后再推送到 GitHub。");
+        return;
+      }
+      const res = await fetch(apiUrl("/api/strategy/confirm-upgrade"), {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(item)
+      });
+      if (!res.ok) throw new Error(await res.text());
+      await loadData();
+      current = "review";
+      render();
+      setRefreshStatus("success", `策略升级建议已确认：${item.title}\n系统已记录确认状态；后续策略代码修改仍需要基于该确认单独实现。`);
+    }
+
     function bindContinuityActions() {
       document.querySelectorAll(".removal-action").forEach(btn => {
         btn.onclick = async () => {
@@ -572,6 +589,29 @@
       });
     }
 
+    function bindStrategyUpgradeActions() {
+      document.querySelectorAll(".strategy-upgrade-action").forEach(btn => {
+        btn.onclick = async () => {
+          btn.disabled = true;
+          const original = btn.textContent;
+          btn.textContent = "确认中...";
+          try {
+            await confirmStrategyUpgrade({
+              id: btn.dataset.id,
+              title: btn.dataset.title,
+              reason: btn.dataset.reason,
+              proposedChange: btn.dataset.change,
+              sourceRefresh: btn.dataset.refresh
+            });
+          } catch (error) {
+            btn.disabled = false;
+            btn.textContent = original;
+            setRefreshStatus("error-state", `策略升级确认失败：${error.message || error}`);
+          }
+        };
+      });
+    }
+
     function render() {
       renderNav();
       const pageName = pages.find(p => p[0] === current)?.[1] || "";
@@ -584,6 +624,7 @@
       const map = { overview, pool, score, trigger, plans, review, continuity, tracking, raw };
       $("app").innerHTML = map[current]();
       bindContinuityActions();
+      bindStrategyUpgradeActions();
     }
 
     function overview() {
@@ -826,15 +867,24 @@
             <ul>${list(sr.observations || [])}</ul>
           </div>
           <div class="card span-6">
-            <h3>待确认优化建议</h3>
-            ${(sr.suggestions || []).length ? (sr.suggestions || []).map(item => `
+            <h3>策略升级确认</h3>
+            <p class="note">复盘只生成建议，不会自动修改选股策略。需要升级时，必须由你点击“确认升级”后才进入待实现状态。</p>
+            ${(sr.suggestions || []).length ? (sr.suggestions || []).map((item, index) => `
               <div class="item">
                 <strong>${esc(item.title)}</strong>
-                <div>${esc(item.reason)}</div>
-                <div class="note">${esc(item.proposedChange)}</div>
-                <div class="pill yellow">${esc(item.status)}</div>
+                <div><strong>为什么需要升级：</strong>${esc(item.reason)}</div>
+                <div class="note"><strong>建议怎么改：</strong>${esc(item.proposedChange)}</div>
+                <div style="margin:8px 0">${item.status === "已确认升级，等待策略实现" ? '<span class="pill green">已确认升级，等待策略实现</span>' : `<span class="pill yellow">${esc(item.status || "待你确认")}</span>`}</div>
+                <button class="btn primary strategy-upgrade-action"
+                  data-id="${esc(`${sr.generatedAtChina || data.generatedAtChina || "review"}-${index}`)}"
+                  data-title="${esc(item.title)}"
+                  data-reason="${esc(item.reason)}"
+                  data-change="${esc(item.proposedChange)}"
+                  data-refresh="${esc(sr.generatedAtChina || data.generatedAtChina || data.generatedAt || "")}"
+                  ${item.status === "已确认升级，等待策略实现" ? "disabled" : ""}>确认升级</button>
+                <div class="note" style="margin-top:6px">${isLocalRuntime ? "点击后会写入本地确认记录。" : "线上GitHub Pages为只读模式；请回到本地版本确认升级。"}</div>
               </div>
-            `).join("") : `<div class="item">暂无需要调整的策略建议。</div>`}
+            `).join("") : `<div class="item">暂无需要升级的策略建议。</div>`}
           </div>
         </div>`;
     }
