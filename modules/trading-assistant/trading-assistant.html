@@ -189,6 +189,18 @@
       display: none;
       white-space: pre-wrap;
     }
+    .status-banner details { white-space: normal; }
+    .status-banner summary { cursor: pointer; font-weight: 650; }
+    .status-banner pre {
+      margin: 8px 0 0;
+      max-height: 260px;
+      background: transparent;
+      color: inherit;
+      border-radius: 0;
+      padding: 0;
+      font: inherit;
+      white-space: pre-wrap;
+    }
     .status-banner.show { display: block; }
     .status-banner.success { border-color: #bbf7d0; background: #f0fdf4; color: #166534; }
     .status-banner.error-state { border-color: #fecaca; background: #fff1f2; color: #991b1b; }
@@ -284,6 +296,12 @@
       el.className = `status-banner show ${type || ""}`;
       el.textContent = message || "";
     };
+    const setCollapsibleRefreshStatus = (type, summary, detail) => {
+      const el = $("refreshStatus");
+      if (!el) return;
+      el.className = `status-banner show ${type || ""}`;
+      el.innerHTML = `<details><summary>${esc(summary)}</summary><pre>${esc(detail || "")}</pre></details>`;
+    };
     const clearRefreshStatus = () => {
       const el = $("refreshStatus");
       if (!el) return;
@@ -326,7 +344,11 @@
       const failures = data?.audit?.failures || [];
       if (!failures.length) return;
       const completedAt = formatRefreshTime(data.generatedAtChina || data.generatedAt || "");
-      setRefreshStatus("warning", `最近一次自动更新：${completedAt}\n自动刷新已完成，但存在部分数据源失败；下面列出失败源、替代方案和补齐影响。\n${refreshFailureText()}`);
+      setCollapsibleRefreshStatus(
+        "warning",
+        `最近一次自动更新：${completedAt}，失败源 ${failures.length} 个，点击展开查看替代方案`,
+        `自动刷新已完成，但存在部分数据源失败；下面列出失败源、替代方案和补齐影响。\n${refreshFailureText()}`
+      );
     };
     const list = arr => (arr && arr.length ? arr.map(x => `<li>${esc(x)}</li>`).join("") : "<li>无</li>");
     const moneyFlowCell = c => {
@@ -470,7 +492,11 @@
           data = await res.json();
           data.loadSource = "GitHub Pages 静态数据 data/trading-assistant.json";
           const completedAt = formatRefreshTime(data.generatedAtChina || data.generatedAt || new Date().toISOString());
-          setRefreshStatus("success", `已重新读取最新发布数据：${completedAt}\n候选股 ${data.candidates.length} 只；推荐追踪 active ${data.recommendationTracking?.active ?? "缺失"} 只。\n${refreshFailureText()}`);
+          setCollapsibleRefreshStatus(
+            "success",
+            `已重新读取最新发布数据：${completedAt}，候选股 ${data.candidates.length} 只，失败源 ${(data.audit?.failures || []).length} 个`,
+            `推荐追踪 active ${data.recommendationTracking?.active ?? "缺失"} 只。\n${refreshFailureText()}`
+          );
           render();
         } catch (error) {
           setRefreshStatus("error-state", `重新读取已发布数据失败：${error.message || error}`);
@@ -496,7 +522,11 @@
         const status = await waitForRefreshDone();
         await loadData();
         const completedAt = formatRefreshTime(data.generatedAtChina || data.generatedAt || status.lastRefresh || new Date().toISOString());
-        setRefreshStatus("success", `刷新完成：${completedAt}\n候选股 ${data.candidates.length} 只；推荐追踪 active ${data.recommendationTracking?.active ?? "缺失"} 只。\n${refreshFailureText()}`);
+        setCollapsibleRefreshStatus(
+          "success",
+          `刷新完成：${completedAt}，候选股 ${data.candidates.length} 只，失败源 ${(data.audit?.failures || []).length} 个`,
+          `推荐追踪 active ${data.recommendationTracking?.active ?? "缺失"} 只。\n${refreshFailureText()}`
+        );
         render();
       } catch (error) {
         const previous = $("app").innerHTML;
