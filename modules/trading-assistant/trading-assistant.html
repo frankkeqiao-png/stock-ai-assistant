@@ -237,7 +237,7 @@
       ["score", "03 评分排序"],
       ["trigger", "04 买卖点触发"],
       ["plans", "05 交易计划"],
-      ["review", "06 数据审计与复盘"],
+      ["review", "06 数据复盘"],
       ["continuity", "07 剔除确认"],
       ["tracking", "08 推荐追踪"],
       ["raw", "09 全量数据"]
@@ -870,6 +870,7 @@
             ${(sr.suggestions || []).length ? (sr.suggestions || []).map((item, index) => `
               <div class="item">
                 <strong>${esc(item.title)}</strong>
+                <div class="note">列出日期：${esc(formatRefreshTime(sr.generatedAtChina || data.generatedAtChina || data.generatedAt).slice(0, 11))}</div>
                 <div><strong>为什么需要升级：</strong>${esc(item.reason)}</div>
                 <div class="note"><strong>建议怎么改：</strong>${esc(item.proposedChange)}</div>
                 <div style="margin:8px 0">${item.status === "已确认升级，等待策略实现" ? '<span class="pill green">已确认升级，等待策略实现</span>' : `<span class="pill yellow">${esc(item.status || "待你确认")}</span>`}</div>
