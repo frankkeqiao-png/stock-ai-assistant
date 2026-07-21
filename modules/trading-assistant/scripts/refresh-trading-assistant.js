@@ -8,6 +8,7 @@ const SNAPSHOT_JSON = path.join(DATA_DIR, "trading-assistant.json");
 const SNAPSHOT_JS = path.join(DATA_DIR, "trading-assistant.js");
 const UNIVERSE_CACHE_JSON = path.join(DATA_DIR, "trading-assistant-universe-cache.json");
 const STRATEGY_LOG_JSON = path.join(DATA_DIR, "trading-assistant-strategy-log.json");
+const STRATEGY_UPGRADE_STATE_JSON = path.join(DATA_DIR, "trading-assistant-strategy-upgrade-state.json");
 const REMOVAL_STATE_JSON = path.join(DATA_DIR, "trading-assistant-removal-state.json");
 const RECOMMENDATION_TRACKING_JSON = path.join(DATA_DIR, "trading-assistant-recommendation-tracking.json");
 
@@ -1712,6 +1713,21 @@ function buildUnavailableData(snapshot) {
   return unavailable;
 }
 
+function applyStrategyUpgradeState(snapshot) {
+  const state = readJsonFile(STRATEGY_UPGRADE_STATE_JSON, { confirmed: [], history: [] });
+  const confirmed = state.confirmed || [];
+  snapshot.strategyUpgradeState = state;
+  snapshot.strategyReview ||= {};
+  snapshot.strategyReview.confirmedUpgrades = confirmed;
+  for (const suggestion of snapshot.strategyReview.suggestions || []) {
+    const record = confirmed.find(item => item.title === suggestion.title);
+    if (record) {
+      suggestion.status = "已升级";
+      suggestion.confirmedAt = record.decidedAt || "";
+    }
+  }
+}
+
 function appendStrategyLog(snapshot) {
   let logs = [];
   try {
@@ -2476,6 +2492,7 @@ async function main() {
   snapshot.recommendationTracking = updateRecommendationTracking(snapshot, removalState);
   const strategyLogs = appendStrategyLog(snapshot);
   snapshot.strategyReview = buildStrategyReview(strategyLogs, snapshot);
+  applyStrategyUpgradeState(snapshot);
 
   fs.writeFileSync(SNAPSHOT_JSON, JSON.stringify(snapshot, null, 2), "utf8");
   fs.writeFileSync(SNAPSHOT_JS, `window.TRADING_ASSISTANT_DATA = ${JSON.stringify(snapshot, null, 2)};\n`, "utf8");

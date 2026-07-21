@@ -34923,7 +34923,7 @@ window.TRADING_ASSISTANT_DATA = {
       "交易准备池": {
         "count": 2,
         "avgScore": 90.4,
-        "avgRiskReward": 2.75,
+        "avgRiskReward": 2.76,
         "avgRelativeStrength": 68.55
       },
       "暂不交易": {
@@ -35570,6 +35570,11 @@ window.TRADING_ASSISTANT_DATA = {
           ]
         }
       ]
-    }
+    },
+    "confirmedUpgrades": []
+  },
+  "strategyUpgradeState": {
+    "confirmed": [],
+    "history": []
   }
 };

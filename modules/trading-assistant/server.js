@@ -51,6 +51,31 @@ function writeJson(file, data) {
   fs.writeFileSync(file, JSON.stringify(data, null, 2), "utf8");
 }
 
+function writeSnapshot(snapshot) {
+  writeJson(SNAPSHOT_FILE, snapshot);
+  const jsFile = path.join(ROOT, "data", "trading-assistant.js");
+  fs.writeFileSync(jsFile, `window.TRADING_ASSISTANT_DATA = ${JSON.stringify(snapshot, null, 2)};\n`, "utf8");
+}
+
+function applyStrategyUpgradeState(snapshot, state) {
+  if (!snapshot) return snapshot;
+  const confirmed = state?.confirmed || [];
+  snapshot.strategyUpgradeState = state || { confirmed: [], history: [] };
+  snapshot.strategyReview ||= {};
+  snapshot.strategyReview.confirmedUpgrades = confirmed;
+  for (const suggestion of snapshot.strategyReview.suggestions || []) {
+    const record = confirmed.find(item => item.title === suggestion.title);
+    if (record) {
+      suggestion.status = "已升级";
+      suggestion.confirmedAt = record.decidedAt || "";
+    } else if (suggestion.status === "已升级" || suggestion.status === "confirmed") {
+      suggestion.status = "待你确认";
+      delete suggestion.confirmedAt;
+    }
+  }
+  return snapshot;
+}
+
 function readBody(req) {
   return new Promise((resolve, reject) => {
     let body = "";
@@ -155,6 +180,7 @@ async function confirmStrategyUpgrade(req, res) {
     const state = readJson(STRATEGY_UPGRADE_STATE_FILE, { confirmed: [], history: [] });
     state.confirmed ||= [];
     state.history ||= [];
+    state.confirmed = state.confirmed.filter(item => item.title !== title);
     state.confirmed.push(record);
     state.history.push({ ...record, action: "confirmStrategyUpgrade" });
     state.confirmed = state.confirmed.slice(-200);
@@ -168,9 +194,45 @@ async function confirmStrategyUpgrade(req, res) {
       for (const suggestion of snapshot.strategyReview.suggestions || []) {
         if (suggestion.title === title) suggestion.status = "已确认升级，等待策略实现";
       }
-      writeJson(SNAPSHOT_FILE, snapshot);
-      const jsFile = path.join(ROOT, "data", "trading-assistant.js");
-      fs.writeFileSync(jsFile, `window.TRADING_ASSISTANT_DATA = ${JSON.stringify(snapshot, null, 2)};\n`, "utf8");
+      applyStrategyUpgradeState(snapshot, state);
+      writeSnapshot(snapshot);
+    }
+    send(res, 200, JSON.stringify({ ok: true, record, state }));
+  } catch (error) {
+    send(res, 500, JSON.stringify({ ok: false, error: String(error.message || error) }));
+  }
+}
+
+async function rollbackStrategyUpgrade(req, res) {
+  try {
+    const body = JSON.parse(await readBody(req) || "{}");
+    const title = String(body.title || "").trim();
+    const id = String(body.id || "").trim();
+    if (!title && !id) {
+      send(res, 400, JSON.stringify({ ok: false, error: "missing upgrade title or id" }));
+      return;
+    }
+    const state = readJson(STRATEGY_UPGRADE_STATE_FILE, { confirmed: [], history: [] });
+    state.confirmed ||= [];
+    state.history ||= [];
+    const removed = state.confirmed.filter(item => (id && item.id === id) || (title && item.title === title));
+    state.confirmed = state.confirmed.filter(item => !((id && item.id === id) || (title && item.title === title)));
+    const record = {
+      id: id || removed[0]?.id || `${Date.now()}-${Math.random().toString(16).slice(2)}`,
+      title: title || removed[0]?.title || "",
+      reason: body.reason || removed[0]?.reason || "",
+      proposedChange: body.proposedChange || removed[0]?.proposedChange || "",
+      sourceRefresh: body.sourceRefresh || removed[0]?.sourceRefresh || "",
+      decidedAt: new Date().toISOString(),
+      status: "rolledBack"
+    };
+    state.history.push({ ...record, action: "rollbackStrategyUpgrade" });
+    state.history = state.history.slice(-500);
+    writeJson(STRATEGY_UPGRADE_STATE_FILE, state);
+    const snapshot = readJson(SNAPSHOT_FILE, null);
+    if (snapshot) {
+      applyStrategyUpgradeState(snapshot, state);
+      writeSnapshot(snapshot);
     }
     send(res, 200, JSON.stringify({ ok: true, record, state }));
   } catch (error) {
@@ -259,6 +321,10 @@ const server = http.createServer(async (req, res) => {
   }
   if (url.pathname === "/api/strategy/confirm-upgrade" && req.method === "POST") {
     await confirmStrategyUpgrade(req, res);
+    return;
+  }
+  if (url.pathname === "/api/strategy/rollback-upgrade" && req.method === "POST") {
+    await rollbackStrategyUpgrade(req, res);
     return;
   }
 

@@ -374,7 +374,7 @@
       const path = returns.map((p, i) => `${i ? "L" : "M"}${roundSvg(x(i))},${roundSvg(y(p.r))}`).join(" ");
       const zeroY = roundSvg(y(0));
       const last = returns[returns.length - 1];
-      const color = last.r >= 0 ? "#0f8b4c" : "#b42318";
+      const color = last.r >= 0 ? "#b42318" : "#0f8b4c";
       return `<svg viewBox="0 0 ${width} ${height}" role="img" style="width:100%;max-width:560px;height:160px;border:1px solid #d9e0ea;border-radius:8px;background:#fff">
         <line x1="${pad}" y1="${zeroY}" x2="${width - pad}" y2="${zeroY}" stroke="#94a3b8" stroke-dasharray="4 4" />
         <path d="${path}" fill="none" stroke="${color}" stroke-width="2.4" />
@@ -602,6 +602,23 @@
       setRefreshStatus("success", `策略升级建议已确认：${item.title}\n系统已记录确认状态；后续策略代码修改仍需要基于该确认单独实现。`);
     }
 
+    async function rollbackStrategyUpgrade(item) {
+      if (!isLocalRuntime) {
+        setRefreshStatus("error-state", "GitHub Pages 静态模式不能写入策略升级回退；请在本地版本处理后再推送到 GitHub。");
+        return;
+      }
+      const res = await fetch(apiUrl("/api/strategy/rollback-upgrade"), {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(item)
+      });
+      if (!res.ok) throw new Error(await res.text());
+      await loadData();
+      current = "review";
+      render();
+      setRefreshStatus("success", `策略升级已回退：${item.title}\n该建议已恢复为待确认状态。`);
+    }
+
     function bindContinuityActions() {
       document.querySelectorAll(".removal-action").forEach(btn => {
         btn.onclick = async () => {
@@ -630,13 +647,15 @@
           const original = btn.textContent;
           btn.textContent = "确认中...";
           try {
-            await confirmStrategyUpgrade({
+            const item = {
               id: btn.dataset.id,
               title: btn.dataset.title,
               reason: btn.dataset.reason,
               proposedChange: btn.dataset.change,
               sourceRefresh: btn.dataset.refresh
-            });
+            };
+            if (btn.dataset.action === "rollback") await rollbackStrategyUpgrade(item);
+            else await confirmStrategyUpgrade(item);
           } catch (error) {
             btn.disabled = false;
             btn.textContent = original;
@@ -822,6 +841,8 @@
       const c = data.audit.coverage;
       const sr = data.strategyReview || {};
       const timeline = sr.timeline || {};
+      const confirmedUpgrades = data.strategyUpgradeState?.confirmed || sr.confirmedUpgrades || [];
+      const confirmedUpgradeFor = item => confirmedUpgrades.find(record => record.title === item.title);
       return `
         <div class="grid">
           ${detailsCard("数据覆盖", `
@@ -893,23 +914,26 @@
           <div class="card span-6">
             <h3>策略升级确认</h3>
             <p class="note">复盘只生成建议，不会自动修改选股策略。需要升级时，必须由你点击“确认升级”后才进入待实现状态。</p>
-            ${(sr.suggestions || []).length ? (sr.suggestions || []).map((item, index) => `
+            ${(sr.suggestions || []).length ? (sr.suggestions || []).map((item, index) => {
+              const confirmed = confirmedUpgradeFor(item);
+              const upgradeId = confirmed?.id || `${sr.generatedAtChina || data.generatedAtChina || "review"}-${index}`;
+              return `
               <div class="item">
                 <strong>${esc(item.title)}</strong>
                 <div class="note">列出日期：${esc(formatRefreshTime(sr.generatedAtChina || data.generatedAtChina || data.generatedAt).slice(0, 11))}</div>
                 <div><strong>为什么需要升级：</strong>${esc(item.reason)}</div>
                 <div class="note"><strong>建议怎么改：</strong>${esc(item.proposedChange)}</div>
-                <div style="margin:8px 0">${item.status === "已确认升级，等待策略实现" ? '<span class="pill green">已确认升级，等待策略实现</span>' : `<span class="pill yellow">${esc(item.status || "待你确认")}</span>`}</div>
-                <button class="btn primary strategy-upgrade-action"
-                  data-id="${esc(`${sr.generatedAtChina || data.generatedAtChina || "review"}-${index}`)}"
+                <div style="margin:8px 0">${confirmed ? `<span class="pill green">已升级</span> <span class="note">确认时间：${esc(formatRefreshTime(confirmed.decidedAt || ""))}</span>` : `<span class="pill yellow">${esc(item.status || "待你确认")}</span>`}</div>
+                <button class="btn ${confirmed ? "" : "primary"} strategy-upgrade-action"
+                  data-action="${confirmed ? "rollback" : "confirm"}"
+                  data-id="${esc(upgradeId)}"
                   data-title="${esc(item.title)}"
                   data-reason="${esc(item.reason)}"
                   data-change="${esc(item.proposedChange)}"
-                  data-refresh="${esc(sr.generatedAtChina || data.generatedAtChina || data.generatedAt || "")}"
-                  ${item.status === "已确认升级，等待策略实现" ? "disabled" : ""}>确认升级</button>
-                <div class="note" style="margin-top:6px">${isLocalRuntime ? "点击后会写入本地确认记录。" : "线上GitHub Pages为只读模式；请回到本地版本确认升级。"}</div>
+                  data-refresh="${esc(sr.generatedAtChina || data.generatedAtChina || data.generatedAt || "")}">${confirmed ? "升级回退" : "确认升级"}</button>
+                <div class="note" style="margin-top:6px">${isLocalRuntime ? (confirmed ? "点击后会回退本地确认记录，恢复为待确认。" : "点击后会写入本地确认记录。") : "线上GitHub Pages为只读模式；请回到本地版本处理升级确认或回退。"}</div>
               </div>
-            `).join("") : `<div class="item">暂无需要升级的策略建议。</div>`}
+            `}).join("") : `<div class="item">暂无需要升级的策略建议。</div>`}
           </div>
         </div>`;
     }
