@@ -34942,7 +34942,8 @@ window.TRADING_ASSISTANT_DATA = {
     "observations": [
       "暂不交易占比 84.4%，说明当前市场或规则偏谨慎，需要后续复盘确认是否过严。",
       "存在数据源限制，相关字段不会参与硬性加减分，避免用缺失数据推导结论。",
-      "与上次刷新候选重合 45/45，用于观察候选池稳定性。"
+      "与上次刷新候选重合 45/45，用于观察候选池稳定性。",
+      "风险收益比/趋势阶段门槛复核已触发：最近5次刷新暂不交易占比均高于75%，需要进入下一轮参数调整讨论。"
     ],
     "suggestions": [
       {
@@ -34950,7 +34951,9 @@ window.TRADING_ASSISTANT_DATA = {
         "title": "观察风险收益比和趋势阶段门槛是否过严",
         "reason": "暂不交易占比持续过高会降低选股覆盖度，但短期高占比也可能只是市场结构弱。",
         "proposedChange": "连续5次刷新暂不交易占比仍高于75%时，再评估是否微调风险收益比门槛或趋势阶段扣分。",
-        "status": "待你确认后才执行"
+        "status": "已升级",
+        "confirmedAt": "2026-07-21T08:03:23.385Z",
+        "executionMessage": "已启用门槛复核，并检测到最近5次刷新均超过75%，后续应进入参数调整讨论。"
       },
       {
         "upgradeKey": "horizonReturnReview",
@@ -35573,18 +35576,135 @@ window.TRADING_ASSISTANT_DATA = {
         }
       ]
     },
-    "confirmedUpgrades": []
+    "confirmedUpgrades": [
+      {
+        "id": "1784621003385-d2dc75ae01f438",
+        "upgradeKey": "riskRewardGateReview",
+        "title": "观察风险收益比和趋势阶段门槛是否过严",
+        "reason": "暂不交易占比持续过高会降低选股覆盖度，但短期高占比也可能只是市场结构弱。",
+        "proposedChange": "连续5次刷新暂不交易占比仍高于75%时，再评估是否微调风险收益比门槛或趋势阶段扣分。",
+        "sourceRefresh": "2026/07/17 20:12:40",
+        "decidedAt": "2026-07-21T08:03:23.385Z",
+        "status": "applied",
+        "executionMessage": "已启用门槛复核，并检测到最近5次刷新均超过75%，后续应进入参数调整讨论。",
+        "executionError": ""
+      }
+    ]
   },
   "strategyUpgradeState": {
-    "confirmed": [],
-    "effects": {},
+    "confirmed": [
+      {
+        "id": "1784621003385-d2dc75ae01f438",
+        "upgradeKey": "riskRewardGateReview",
+        "title": "观察风险收益比和趋势阶段门槛是否过严",
+        "reason": "暂不交易占比持续过高会降低选股覆盖度，但短期高占比也可能只是市场结构弱。",
+        "proposedChange": "连续5次刷新暂不交易占比仍高于75%时，再评估是否微调风险收益比门槛或趋势阶段扣分。",
+        "sourceRefresh": "2026/07/17 20:12:40",
+        "decidedAt": "2026-07-21T08:03:23.385Z",
+        "status": "applied",
+        "executionMessage": "已启用门槛复核，并检测到最近5次刷新均超过75%，后续应进入参数调整讨论。",
+        "executionError": ""
+      }
+    ],
+    "effects": {
+      "riskRewardGateReview": {
+        "active": true,
+        "appliedAt": "2026-07-21T08:03:23.385Z",
+        "rule": "连续5次刷新暂不交易占比高于75%时，触发风险收益比/趋势阶段门槛复核。",
+        "recent": [
+          {
+            "generatedAtChina": "2026/07/16 18:35:33",
+            "blockedRatio": 76.7,
+            "total": 43,
+            "blocked": 33
+          },
+          {
+            "generatedAtChina": "2026/07/16 18:41:07",
+            "blockedRatio": 76.7,
+            "total": 43,
+            "blocked": 33
+          },
+          {
+            "generatedAtChina": "2026/07/17 19:44:02",
+            "blockedRatio": 83.7,
+            "total": 49,
+            "blocked": 41
+          },
+          {
+            "generatedAtChina": "2026/07/17 20:05:34",
+            "blockedRatio": 84.4,
+            "total": 45,
+            "blocked": 38
+          },
+          {
+            "generatedAtChina": "2026/07/17 20:12:40",
+            "blockedRatio": 84.4,
+            "total": 45,
+            "blocked": 38
+          }
+        ],
+        "triggered": true
+      }
+    },
     "history": [
       {
         "action": "repairInvalidStrategyUpgradeState",
         "decidedAt": "2026-07-21T07:40:00.000Z",
         "reason": "旧版确认升级只记录状态且可能写入不可解析 JSON；已清空未实际执行的确认记录，恢复为合法空状态。"
+      },
+      {
+        "id": "1784621003385-d2dc75ae01f438",
+        "upgradeKey": "riskRewardGateReview",
+        "title": "观察风险收益比和趋势阶段门槛是否过严",
+        "reason": "暂不交易占比持续过高会降低选股覆盖度，但短期高占比也可能只是市场结构弱。",
+        "proposedChange": "连续5次刷新暂不交易占比仍高于75%时，再评估是否微调风险收益比门槛或趋势阶段扣分。",
+        "sourceRefresh": "2026/07/17 20:12:40",
+        "decidedAt": "2026-07-21T08:03:23.385Z",
+        "status": "applied",
+        "executionMessage": "已启用门槛复核，并检测到最近5次刷新均超过75%，后续应进入参数调整讨论。",
+        "executionError": "",
+        "action": "confirmStrategyUpgrade"
       }
     ]
   },
-  "strategyUpgradeEffects": {}
+  "strategyUpgradeEffects": {
+    "riskRewardGateReview": {
+      "active": true,
+      "appliedAt": "2026-07-21T08:03:23.385Z",
+      "rule": "连续5次刷新暂不交易占比高于75%时，触发风险收益比/趋势阶段门槛复核。",
+      "recent": [
+        {
+          "generatedAtChina": "2026/07/16 18:35:33",
+          "blockedRatio": 76.7,
+          "total": 43,
+          "blocked": 33
+        },
+        {
+          "generatedAtChina": "2026/07/16 18:41:07",
+          "blockedRatio": 76.7,
+          "total": 43,
+          "blocked": 33
+        },
+        {
+          "generatedAtChina": "2026/07/17 19:44:02",
+          "blockedRatio": 83.7,
+          "total": 49,
+          "blocked": 41
+        },
+        {
+          "generatedAtChina": "2026/07/17 20:05:34",
+          "blockedRatio": 84.4,
+          "total": 45,
+          "blocked": 38
+        },
+        {
+          "generatedAtChina": "2026/07/17 20:12:40",
+          "blockedRatio": 84.4,
+          "total": 45,
+          "blocked": 38
+        }
+      ],
+      "triggered": true
+    }
+  }
 };
