@@ -590,16 +590,34 @@
         setRefreshStatus("error-state", "GitHub Pages 静态模式不能写入策略升级确认；请在本地版本点击确认升级，确认后再推送到 GitHub。");
         return;
       }
-      const res = await fetch(apiUrl("/api/strategy/confirm-upgrade"), {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(item)
-      });
-      if (!res.ok) throw new Error(await res.text());
+      const { res, body, text } = await postJsonWithTimeout(apiUrl("/api/strategy/confirm-upgrade"), item, 30000);
+      if (!res.ok || body.ok === false) throw new Error(body.error || text || "策略升级执行失败");
       await loadData();
       current = "review";
       render();
-      setRefreshStatus("success", `策略升级建议已确认：${item.title}\n系统已记录确认状态；后续策略代码修改仍需要基于该确认单独实现。`);
+      setRefreshStatus("success", `策略升级已执行：${item.title}\n${body.message || "执行成功，代码策略状态已生效。"}`);
+    }
+
+    async function postJsonWithTimeout(url, item, timeoutMs) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), timeoutMs);
+      try {
+        const res = await fetch(url, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(item),
+          signal: controller.signal
+        });
+        const text = await res.text();
+        let body = {};
+        try { body = text ? JSON.parse(text) : {}; } catch { body = {}; }
+        return { res, body, text };
+      } catch (error) {
+        if (error.name === "AbortError") throw new Error("请求超过30秒未返回，已取消。请确认本地服务是否仍在运行。");
+        throw error;
+      } finally {
+        clearTimeout(timer);
+      }
     }
 
     async function rollbackStrategyUpgrade(item) {
@@ -607,16 +625,12 @@
         setRefreshStatus("error-state", "GitHub Pages 静态模式不能写入策略升级回退；请在本地版本处理后再推送到 GitHub。");
         return;
       }
-      const res = await fetch(apiUrl("/api/strategy/rollback-upgrade"), {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(item)
-      });
-      if (!res.ok) throw new Error(await res.text());
+      const { res, body, text } = await postJsonWithTimeout(apiUrl("/api/strategy/rollback-upgrade"), item, 30000);
+      if (!res.ok || body.ok === false) throw new Error(body.error || text || "策略升级回退失败");
       await loadData();
       current = "review";
       render();
-      setRefreshStatus("success", `策略升级已回退：${item.title}\n该建议已恢复为待确认状态。`);
+      setRefreshStatus("success", `策略升级已回退：${item.title}\n${body.message || "回退成功，已恢复原有策略状态。"}`);
     }
 
     function bindContinuityActions() {
@@ -649,6 +663,7 @@
           try {
             const item = {
               id: btn.dataset.id,
+              upgradeKey: btn.dataset.upgradeKey,
               title: btn.dataset.title,
               reason: btn.dataset.reason,
               proposedChange: btn.dataset.change,
@@ -842,7 +857,7 @@
       const sr = data.strategyReview || {};
       const timeline = sr.timeline || {};
       const confirmedUpgrades = data.strategyUpgradeState?.confirmed || sr.confirmedUpgrades || [];
-      const confirmedUpgradeFor = item => confirmedUpgrades.find(record => record.title === item.title);
+      const confirmedUpgradeFor = item => confirmedUpgrades.find(record => record.title === item.title || (record.upgradeKey && record.upgradeKey === item.upgradeKey));
       return `
         <div class="grid">
           ${detailsCard("数据覆盖", `
@@ -913,7 +928,7 @@
           </div>
           <div class="card span-6">
             <h3>策略升级确认</h3>
-            <p class="note">复盘只生成建议，不会自动修改选股策略。需要升级时，必须由你点击“确认升级”后才进入待实现状态。</p>
+            <p class="note">复盘只生成建议。点击“确认升级”后，系统必须执行对应升级处理器；执行成功才显示已升级，执行失败会返回错误。已升级后可点击“升级回退”恢复原策略状态。</p>
             ${(sr.suggestions || []).length ? (sr.suggestions || []).map((item, index) => {
               const confirmed = confirmedUpgradeFor(item);
               const upgradeId = confirmed?.id || `${sr.generatedAtChina || data.generatedAtChina || "review"}-${index}`;
@@ -923,15 +938,17 @@
                 <div class="note">列出日期：${esc(formatRefreshTime(sr.generatedAtChina || data.generatedAtChina || data.generatedAt).slice(0, 11))}</div>
                 <div><strong>为什么需要升级：</strong>${esc(item.reason)}</div>
                 <div class="note"><strong>建议怎么改：</strong>${esc(item.proposedChange)}</div>
-                <div style="margin:8px 0">${confirmed ? `<span class="pill green">已升级</span> <span class="note">确认时间：${esc(formatRefreshTime(confirmed.decidedAt || ""))}</span>` : `<span class="pill yellow">${esc(item.status || "待你确认")}</span>`}</div>
+                <div style="margin:8px 0">${confirmed ? `<span class="pill green">已升级</span> <span class="note">执行时间：${esc(formatRefreshTime(confirmed.decidedAt || ""))}</span>` : `<span class="pill yellow">${esc(item.status || "待你确认")}</span>`}</div>
+                ${confirmed?.executionMessage ? `<div class="note"><strong>执行结果：</strong>${esc(confirmed.executionMessage)}</div>` : ""}
                 <button class="btn ${confirmed ? "" : "primary"} strategy-upgrade-action"
                   data-action="${confirmed ? "rollback" : "confirm"}"
                   data-id="${esc(upgradeId)}"
+                  data-upgrade-key="${esc(item.upgradeKey || "")}"
                   data-title="${esc(item.title)}"
                   data-reason="${esc(item.reason)}"
                   data-change="${esc(item.proposedChange)}"
                   data-refresh="${esc(sr.generatedAtChina || data.generatedAtChina || data.generatedAt || "")}">${confirmed ? "升级回退" : "确认升级"}</button>
-                <div class="note" style="margin-top:6px">${isLocalRuntime ? (confirmed ? "点击后会回退本地确认记录，恢复为待确认。" : "点击后会写入本地确认记录。") : "线上GitHub Pages为只读模式；请回到本地版本处理升级确认或回退。"}</div>
+                <div class="note" style="margin-top:6px">${isLocalRuntime ? (confirmed ? "点击后会执行回退处理器，成功后恢复为待确认。" : "点击后会执行升级处理器，成功后才写入已升级。") : "线上GitHub Pages为只读模式；请回到本地版本处理升级确认或回退。"}</div>
               </div>
             `}).join("") : `<div class="item">暂无需要升级的策略建议。</div>`}
           </div>

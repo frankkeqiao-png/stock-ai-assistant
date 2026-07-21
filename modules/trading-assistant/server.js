@@ -8,6 +8,7 @@ const PORT = Number(process.env.PORT || 8765);
 const REMOVAL_STATE_FILE = path.join(ROOT, "data", "trading-assistant-removal-state.json");
 const RECOMMENDATION_TRACKING_FILE = path.join(ROOT, "data", "trading-assistant-recommendation-tracking.json");
 const STRATEGY_UPGRADE_STATE_FILE = path.join(ROOT, "data", "trading-assistant-strategy-upgrade-state.json");
+const STRATEGY_LOG_FILE = path.join(ROOT, "data", "trading-assistant-strategy-log.json");
 const SNAPSHOT_FILE = path.join(ROOT, "data", "trading-assistant.json");
 let refreshing = false;
 let lastRefresh = null;
@@ -61,19 +62,183 @@ function applyStrategyUpgradeState(snapshot, state) {
   if (!snapshot) return snapshot;
   const confirmed = state?.confirmed || [];
   snapshot.strategyUpgradeState = state || { confirmed: [], history: [] };
+  snapshot.strategyUpgradeEffects = state?.effects || {};
   snapshot.strategyReview ||= {};
   snapshot.strategyReview.confirmedUpgrades = confirmed;
   for (const suggestion of snapshot.strategyReview.suggestions || []) {
-    const record = confirmed.find(item => item.title === suggestion.title);
+    const key = inferStrategyUpgradeKey(suggestion);
+    const record = confirmed.find(item => sameStrategyUpgrade(item, suggestion) || (key && inferStrategyUpgradeKey(item) === key));
     if (record) {
       suggestion.status = "已升级";
       suggestion.confirmedAt = record.decidedAt || "";
+      suggestion.executionMessage = record.executionMessage || "";
     } else if (suggestion.status === "已升级" || suggestion.status === "confirmed") {
       suggestion.status = "待你确认";
       delete suggestion.confirmedAt;
+      delete suggestion.executionMessage;
     }
   }
   return snapshot;
+}
+
+function inferStrategyUpgradeKey(record) {
+  const explicit = String(record?.upgradeKey || record?.strategyUpgradeKey || record?.type || "").trim();
+  if (explicit) return explicit;
+  const id = String(record?.id || "").toLowerCase();
+  if (id.includes("horizon") || id.includes("return-review")) return "horizonReturnReview";
+  if (id.includes("risk") || id.includes("gate")) return "riskRewardGateReview";
+  const text = String(record?.title || "");
+  if (text.includes("后续收益回看") || text.includes("收益回看")) return "horizonReturnReview";
+  if (text.includes("风险收益比") || text.includes("趋势阶段门槛")) return "riskRewardGateReview";
+  return "";
+}
+
+function sameStrategyUpgrade(a, b) {
+  const aKey = inferStrategyUpgradeKey(a);
+  const bKey = inferStrategyUpgradeKey(b);
+  if (aKey && bKey && aKey === bKey) return true;
+  return String(a?.title || "") === String(b?.title || "");
+}
+
+function dateOnly(value) {
+  const text = String(value || "");
+  const match = text.match(/\d{4}[-/]\d{2}[-/]\d{2}/);
+  if (match) return match[0].replace(/\//g, "-");
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? "" : date.toISOString().slice(0, 10);
+}
+
+function addDays(dateText, days) {
+  const date = new Date(`${dateText}T00:00:00+08:00`);
+  date.setDate(date.getDate() + days);
+  return date.toISOString().slice(0, 10);
+}
+
+function firstPointOnOrAfter(points, targetDate) {
+  return points.find(point => point.date >= targetDate) || null;
+}
+
+function round(value, digits = 2) {
+  if (!Number.isFinite(Number(value))) return null;
+  const factor = 10 ** digits;
+  return Math.round(Number(value) * factor) / factor;
+}
+
+function calculateHorizonReturns(record) {
+  const points = (record.priceHistory || [])
+    .filter(point => Number.isFinite(Number(point.close)))
+    .sort((a, b) => String(a.date).localeCompare(String(b.date)));
+  const firstPrice = Number(record.firstPrice);
+  if (!firstPrice || !points.length) return {};
+  const horizons = [1, 3, 5, 10, 20];
+  return Object.fromEntries(horizons.map(days => {
+    const point = firstPointOnOrAfter(points, addDays(record.firstDate || dateOnly(record.firstRecommendedAtChina), days));
+    return [`d${days}`, point ? {
+      date: point.date,
+      close: point.close,
+      returnPct: round((Number(point.close) / firstPrice - 1) * 100, 2)
+    } : null];
+  }));
+}
+
+function executeStrategyUpgrade(record, state) {
+  const snapshot = readJson(SNAPSHOT_FILE, null);
+  if (!snapshot) throw new Error("snapshot missing; cannot execute strategy upgrade");
+  state.effects ||= {};
+  const upgradeKey = inferStrategyUpgradeKey(record);
+  if (upgradeKey === "horizonReturnReview") {
+    const tracking = readJson(RECOMMENDATION_TRACKING_FILE, { records: {} });
+    let updated = 0;
+    for (const item of Object.values(tracking.records || {})) {
+      item.performance ||= {};
+      item.performance.horizonReturns = calculateHorizonReturns(item);
+      updated += 1;
+    }
+    writeJson(RECOMMENDATION_TRACKING_FILE, tracking);
+    if (snapshot.recommendationTracking?.records) {
+      for (const item of snapshot.recommendationTracking.records) {
+        item.performance ||= {};
+        item.performance.horizonReturns = calculateHorizonReturns(item);
+      }
+    }
+    state.effects.horizonReturnReview = {
+      active: true,
+      appliedAt: record.decidedAt,
+      horizons: [1, 3, 5, 10, 20],
+      updatedRecords: updated
+    };
+    snapshot.strategyUpgradeEffects ||= {};
+    snapshot.strategyUpgradeEffects.horizonReturnReview = state.effects.horizonReturnReview;
+    writeSnapshot(applyStrategyUpgradeState(snapshot, state));
+    return `已启用后续收益回看，并为 ${updated} 条推荐追踪记录补充 1/3/5/10/20 日表现字段。`;
+  }
+  if (upgradeKey === "riskRewardGateReview") {
+    const logs = readJson(STRATEGY_LOG_FILE, []);
+    const recent = logs.slice(-5).map(entry => {
+      const total = Number(entry.candidateCount || 0);
+      const blocked = Number(entry.states?.["暂不交易"] || entry.states?.["鏆備笉浜ゆ槗"] || 0);
+      return {
+        generatedAtChina: entry.generatedAtChina,
+        blockedRatio: total ? round((blocked / total) * 100, 1) : null,
+        total,
+        blocked
+      };
+    });
+    const triggered = recent.length >= 5 && recent.every(item => Number(item.blockedRatio) > 75);
+    state.effects.riskRewardGateReview = {
+      active: true,
+      appliedAt: record.decidedAt,
+      rule: "连续5次刷新暂不交易占比高于75%时，触发风险收益比/趋势阶段门槛复核。",
+      recent,
+      triggered
+    };
+    snapshot.strategyUpgradeEffects ||= {};
+    snapshot.strategyUpgradeEffects.riskRewardGateReview = state.effects.riskRewardGateReview;
+    snapshot.strategyReview ||= {};
+    snapshot.strategyReview.observations ||= [];
+    snapshot.strategyReview.observations.push(triggered
+      ? "风险收益比/趋势阶段门槛复核已触发：最近5次刷新暂不交易占比均高于75%，需要进入下一轮参数调整讨论。"
+      : "风险收益比/趋势阶段门槛复核已启用：当前仅监控，不立即放松交易门槛。");
+    writeSnapshot(applyStrategyUpgradeState(snapshot, state));
+    return triggered
+      ? "已启用门槛复核，并检测到最近5次刷新均超过75%，后续应进入参数调整讨论。"
+      : "已启用门槛复核监控；当前不直接修改选股阈值，等待连续样本触发。";
+  }
+  throw new Error(`没有找到可执行的策略升级处理器：${record.title || record.id || upgradeKey || "unknown"}`);
+}
+
+function rollbackStrategyUpgradeEffect(record, state) {
+  const snapshot = readJson(SNAPSHOT_FILE, null);
+  if (!snapshot) throw new Error("snapshot missing; cannot rollback strategy upgrade");
+  state.effects ||= {};
+  const upgradeKey = inferStrategyUpgradeKey(record);
+  if (upgradeKey === "horizonReturnReview") {
+    delete state.effects.horizonReturnReview;
+    const tracking = readJson(RECOMMENDATION_TRACKING_FILE, { records: {} });
+    let cleaned = 0;
+    for (const item of Object.values(tracking.records || {})) {
+      if (item.performance?.horizonReturns) {
+        delete item.performance.horizonReturns;
+        cleaned += 1;
+      }
+    }
+    writeJson(RECOMMENDATION_TRACKING_FILE, tracking);
+    if (snapshot.recommendationTracking?.records) {
+      for (const item of snapshot.recommendationTracking.records) {
+        if (item.performance?.horizonReturns) delete item.performance.horizonReturns;
+      }
+    }
+    if (snapshot.strategyUpgradeEffects) delete snapshot.strategyUpgradeEffects.horizonReturnReview;
+    writeSnapshot(applyStrategyUpgradeState(snapshot, state));
+    return `已回退后续收益回看升级，并清理 ${cleaned} 条推荐追踪记录中的 1/3/5/10/20 日回看字段。`;
+  }
+  if (upgradeKey === "riskRewardGateReview") {
+    delete state.effects.riskRewardGateReview;
+    if (snapshot.strategyUpgradeEffects) delete snapshot.strategyUpgradeEffects.riskRewardGateReview;
+    writeSnapshot(applyStrategyUpgradeState(snapshot, state));
+    return "已回退风险收益比/趋势阶段门槛复核升级；恢复为原有复盘观察逻辑。";
+  }
+  throw new Error(`没有找到可执行的策略回退处理器：${record.title || record.id || upgradeKey || "unknown"}`);
 }
 
 function readBody(req) {
@@ -164,12 +329,14 @@ async function confirmStrategyUpgrade(req, res) {
   try {
     const body = JSON.parse(await readBody(req) || "{}");
     const title = String(body.title || "").trim();
-    if (!title) {
-      send(res, 400, JSON.stringify({ ok: false, error: "missing upgrade title" }));
+    const upgradeKey = inferStrategyUpgradeKey(body);
+    if (!title && !upgradeKey) {
+      send(res, 400, JSON.stringify({ ok: false, error: "missing upgrade title or key" }));
       return;
     }
     const record = {
       id: body.id || `${Date.now()}-${Math.random().toString(16).slice(2)}`,
+      upgradeKey,
       title,
       reason: body.reason || "",
       proposedChange: body.proposedChange || "",
@@ -180,7 +347,11 @@ async function confirmStrategyUpgrade(req, res) {
     const state = readJson(STRATEGY_UPGRADE_STATE_FILE, { confirmed: [], history: [] });
     state.confirmed ||= [];
     state.history ||= [];
-    state.confirmed = state.confirmed.filter(item => item.title !== title);
+    state.confirmed = state.confirmed.filter(item => !sameStrategyUpgrade(item, record));
+    const executionMessage = executeStrategyUpgrade(record, state);
+    record.status = "applied";
+    record.executionMessage = executionMessage;
+    record.executionError = "";
     state.confirmed.push(record);
     state.history.push({ ...record, action: "confirmStrategyUpgrade" });
     state.confirmed = state.confirmed.slice(-200);
@@ -192,12 +363,12 @@ async function confirmStrategyUpgrade(req, res) {
       snapshot.strategyReview ||= {};
       snapshot.strategyReview.confirmedUpgrades = state.confirmed;
       for (const suggestion of snapshot.strategyReview.suggestions || []) {
-        if (suggestion.title === title) suggestion.status = "已确认升级，等待策略实现";
+        if (sameStrategyUpgrade(suggestion, record)) suggestion.status = "已确认升级，等待策略实现";
       }
       applyStrategyUpgradeState(snapshot, state);
       writeSnapshot(snapshot);
     }
-    send(res, 200, JSON.stringify({ ok: true, record, state }));
+    send(res, 200, JSON.stringify({ ok: true, record, state, message: executionMessage }));
   } catch (error) {
     send(res, 500, JSON.stringify({ ok: false, error: String(error.message || error) }));
   }
@@ -208,17 +379,20 @@ async function rollbackStrategyUpgrade(req, res) {
     const body = JSON.parse(await readBody(req) || "{}");
     const title = String(body.title || "").trim();
     const id = String(body.id || "").trim();
-    if (!title && !id) {
-      send(res, 400, JSON.stringify({ ok: false, error: "missing upgrade title or id" }));
+    const upgradeKey = inferStrategyUpgradeKey(body);
+    if (!title && !id && !upgradeKey) {
+      send(res, 400, JSON.stringify({ ok: false, error: "missing upgrade title, id or key" }));
       return;
     }
     const state = readJson(STRATEGY_UPGRADE_STATE_FILE, { confirmed: [], history: [] });
     state.confirmed ||= [];
     state.history ||= [];
-    const removed = state.confirmed.filter(item => (id && item.id === id) || (title && item.title === title));
-    state.confirmed = state.confirmed.filter(item => !((id && item.id === id) || (title && item.title === title)));
+    const target = { id, title, upgradeKey };
+    const removed = state.confirmed.filter(item => (id && item.id === id) || sameStrategyUpgrade(item, target));
+    state.confirmed = state.confirmed.filter(item => !((id && item.id === id) || sameStrategyUpgrade(item, target)));
     const record = {
       id: id || removed[0]?.id || `${Date.now()}-${Math.random().toString(16).slice(2)}`,
+      upgradeKey: upgradeKey || inferStrategyUpgradeKey(removed[0]),
       title: title || removed[0]?.title || "",
       reason: body.reason || removed[0]?.reason || "",
       proposedChange: body.proposedChange || removed[0]?.proposedChange || "",
@@ -226,6 +400,9 @@ async function rollbackStrategyUpgrade(req, res) {
       decidedAt: new Date().toISOString(),
       status: "rolledBack"
     };
+    const executionMessage = rollbackStrategyUpgradeEffect(record, state);
+    record.executionMessage = executionMessage;
+    record.executionError = "";
     state.history.push({ ...record, action: "rollbackStrategyUpgrade" });
     state.history = state.history.slice(-500);
     writeJson(STRATEGY_UPGRADE_STATE_FILE, state);
@@ -234,7 +411,7 @@ async function rollbackStrategyUpgrade(req, res) {
       applyStrategyUpgradeState(snapshot, state);
       writeSnapshot(snapshot);
     }
-    send(res, 200, JSON.stringify({ ok: true, record, state }));
+    send(res, 200, JSON.stringify({ ok: true, record, state, message: executionMessage }));
   } catch (error) {
     send(res, 500, JSON.stringify({ ok: false, error: String(error.message || error) }));
   }

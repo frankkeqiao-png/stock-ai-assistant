@@ -1,4 +1,11 @@
 {
   "confirmed": [],
-  "history": []
+  "effects": {},
+  "history": [
+    {
+      "action": "repairInvalidStrategyUpgradeState",
+      "decidedAt": "2026-07-21T07:40:00.000Z",
+      "reason": "旧版确认升级只记录状态且可能写入不可解析 JSON；已清空未实际执行的确认记录，恢复为合法空状态。"
+    }
+  ]
 }

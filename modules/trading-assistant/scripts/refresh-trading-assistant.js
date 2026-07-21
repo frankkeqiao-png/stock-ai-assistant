@@ -1720,7 +1720,7 @@ function applyStrategyUpgradeState(snapshot) {
   snapshot.strategyReview ||= {};
   snapshot.strategyReview.confirmedUpgrades = confirmed;
   for (const suggestion of snapshot.strategyReview.suggestions || []) {
-    const record = confirmed.find(item => item.title === suggestion.title);
+    const record = confirmed.find(item => item.title === suggestion.title || (item.upgradeKey && item.upgradeKey === suggestion.upgradeKey));
     if (record) {
       suggestion.status = "已升级";
       suggestion.confirmedAt = record.decidedAt || "";
@@ -1803,6 +1803,7 @@ function buildStrategyReview(logs, snapshot) {
   if (blockedRatio > 0.75) {
     observations.push(`暂不交易占比 ${round(blockedRatio * 100, 1)}%，说明当前市场或规则偏谨慎，需要后续复盘确认是否过严。`);
     suggestions.push({
+      upgradeKey: "riskRewardGateReview",
       title: "观察风险收益比和趋势阶段门槛是否过严",
       reason: "暂不交易占比持续过高会降低选股覆盖度，但短期高占比也可能只是市场结构弱。",
       proposedChange: "连续5次刷新暂不交易占比仍高于75%时，再评估是否微调风险收益比门槛或趋势阶段扣分。",
@@ -1820,6 +1821,7 @@ function buildStrategyReview(logs, snapshot) {
   }
 
   suggestions.push({
+    upgradeKey: "horizonReturnReview",
     title: "建立后续收益回看",
     reason: "当前日志已记录信号，但还需要在1/3/5/10/20个交易日后回看表现，才能判断策略是否真的有效。",
     proposedChange: "后续增加收益追踪脚本，统计交易准备池、重点跟踪池、观察池的分层表现。",
@@ -2181,6 +2183,23 @@ function firstPointOnOrAfter(points, targetDate) {
   return points.find(point => point.date >= targetDate) || null;
 }
 
+function isStrategyUpgradeActive(titleFragment) {
+  const state = readJsonFile(STRATEGY_UPGRADE_STATE_JSON, { confirmed: [] });
+  return (state.confirmed || []).some(item => String(item.title || "").includes(titleFragment));
+}
+
+function calculateHorizonReturns(record, points, firstPrice) {
+  const horizons = [1, 3, 5, 10, 20];
+  return Object.fromEntries(horizons.map(days => {
+    const point = firstPointOnOrAfter(points, addDays(record.firstDate, days));
+    return [`d${days}`, point ? {
+      date: point.date,
+      close: point.close,
+      returnPct: round((Number(point.close) / firstPrice - 1) * 100, 2)
+    } : null];
+  }));
+}
+
 function calculateTrackingPerformance(record) {
   const points = (record.priceHistory || []).filter(point => Number.isFinite(Number(point.close))).sort((a, b) => String(a.date).localeCompare(String(b.date)));
   const firstPrice = Number(record.firstPrice);
@@ -2204,7 +2223,7 @@ function calculateTrackingPerformance(record) {
     const point = firstPointOnOrAfter(points, addDays(record.firstDate, days));
     return point ? round((Number(point.close) / firstPrice - 1) * 100, 2) : null;
   };
-  return {
+  const performance = {
     currentReturnPct: round((Number(latest.close) / firstPrice - 1) * 100, 2),
     maxGainPct: Math.max(...returns),
     maxDrawdownPct: Math.min(...returns),
@@ -2216,6 +2235,10 @@ function calculateTrackingPerformance(record) {
     latestDate: latest.date,
     latestClose: latest.close
   };
+  if (isStrategyUpgradeActive("收益回看")) {
+    performance.horizonReturns = calculateHorizonReturns(record, points, firstPrice);
+  }
+  return performance;
 }
 
 function updateRecommendationTracking(snapshot, removalState) {

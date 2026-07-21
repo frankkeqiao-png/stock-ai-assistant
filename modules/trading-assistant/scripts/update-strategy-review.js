@@ -36,7 +36,7 @@ function applyStrategyUpgradeState(snapshot) {
   snapshot.strategyReview ||= {};
   snapshot.strategyReview.confirmedUpgrades = confirmed;
   for (const suggestion of snapshot.strategyReview.suggestions || []) {
-    const record = confirmed.find(item => item.title === suggestion.title);
+    const record = confirmed.find(item => item.title === suggestion.title || (item.upgradeKey && item.upgradeKey === suggestion.upgradeKey));
     if (record) {
       suggestion.status = "已升级";
       suggestion.confirmedAt = record.decidedAt || "";
@@ -116,6 +116,7 @@ function buildStrategyReview(logs, snapshot) {
   if (blockedRatio > 0.75) {
     observations.push(`暂不交易占比 ${round(blockedRatio * 100, 1)}%，说明当前市场或规则偏谨慎，需要后续复盘确认是否过严。`);
     suggestions.push({
+      upgradeKey: "riskRewardGateReview",
       title: "观察风险收益比和趋势阶段门槛是否过严",
       reason: "暂不交易占比持续过高会降低选股覆盖度，但短期高占比也可能只是市场结构弱。",
       proposedChange: "连续5次刷新暂不交易占比仍高于75%时，再评估是否微调风险收益比门槛或趋势阶段扣分。",
@@ -127,6 +128,7 @@ function buildStrategyReview(logs, snapshot) {
   if (previous && overlap !== null) observations.push(`与上次刷新候选重合 ${overlap}/${current.candidateCount}，用于观察候选池稳定性。`);
 
   suggestions.push({
+    upgradeKey: "horizonReturnReview",
     title: "建立后续收益回看",
     reason: "当前日志已记录信号，但还需要在1/3/5/10/20个交易日后回看表现，才能判断策略是否真的有效。",
     proposedChange: "后续增加收益追踪脚本，统计交易准备池、重点跟踪池、观察池的分层表现。",

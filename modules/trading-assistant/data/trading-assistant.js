@@ -34946,12 +34946,14 @@ window.TRADING_ASSISTANT_DATA = {
     ],
     "suggestions": [
       {
+        "upgradeKey": "riskRewardGateReview",
         "title": "观察风险收益比和趋势阶段门槛是否过严",
         "reason": "暂不交易占比持续过高会降低选股覆盖度，但短期高占比也可能只是市场结构弱。",
         "proposedChange": "连续5次刷新暂不交易占比仍高于75%时，再评估是否微调风险收益比门槛或趋势阶段扣分。",
         "status": "待你确认后才执行"
       },
       {
+        "upgradeKey": "horizonReturnReview",
         "title": "建立后续收益回看",
         "reason": "当前日志已记录信号，但还需要在1/3/5/10/20个交易日后回看表现，才能判断策略是否真的有效。",
         "proposedChange": "后续增加收益追踪脚本，统计交易准备池、重点跟踪池、观察池的分层表现。",
@@ -35575,6 +35577,14 @@ window.TRADING_ASSISTANT_DATA = {
   },
   "strategyUpgradeState": {
     "confirmed": [],
-    "history": []
-  }
+    "effects": {},
+    "history": [
+      {
+        "action": "repairInvalidStrategyUpgradeState",
+        "decidedAt": "2026-07-21T07:40:00.000Z",
+        "reason": "旧版确认升级只记录状态且可能写入不可解析 JSON；已清空未实际执行的确认记录，恢复为合法空状态。"
+      }
+    ]
+  },
+  "strategyUpgradeEffects": {}
 };
