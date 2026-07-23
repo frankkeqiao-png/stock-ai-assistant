@@ -58,6 +58,35 @@ function writeSnapshot(snapshot) {
   fs.writeFileSync(jsFile, `window.TRADING_ASSISTANT_DATA = ${JSON.stringify(snapshot, null, 2)};\n`, "utf8");
 }
 
+function runDurableStateSync(mode) {
+  return new Promise(resolve => {
+    const args = [path.join(ROOT, "scripts", "sync-trading-assistant-state.js"), "--mode", mode];
+    if (mode === "restore") args.push("--allow-missing");
+    const child = spawn(process.execPath, args, { cwd: ROOT, windowsHide: true });
+    let stdout = "";
+    let stderr = "";
+    const timer = setTimeout(() => {
+      stderr += "state sync timeout after 130 seconds";
+      child.kill();
+    }, 130000);
+    child.stdout.on("data", chunk => { stdout += chunk.toString(); });
+    child.stderr.on("data", chunk => { stderr += chunk.toString(); });
+    child.on("error", error => {
+      clearTimeout(timer);
+      resolve({ ok: false, mode, error: String(error.message || error) });
+    });
+    child.on("close", code => {
+      clearTimeout(timer);
+      try {
+        const parsed = JSON.parse((stdout || stderr || "{}").trim());
+        resolve({ ...parsed, mode, ok: code === 0 && parsed.ok !== false });
+      } catch {
+        resolve({ ok: false, mode, error: (stderr || stdout || `state sync exited with ${code}`).slice(-1000) });
+      }
+    });
+  });
+}
+
 function applyStrategyUpgradeState(snapshot, state) {
   if (!snapshot) return snapshot;
   const confirmed = state?.confirmed || [];
@@ -282,6 +311,7 @@ async function updateRemovalState(req, res, mode) {
       send(res, 400, JSON.stringify({ ok: false, error: "invalid code" }));
       return;
     }
+    const preSync = await runDurableStateSync("restore");
     const state = readJson(REMOVAL_STATE_FILE, { confirmedRemoved: {}, keepTracking: {}, history: [] });
     state.confirmedRemoved ||= {};
     state.keepTracking ||= {};
@@ -319,7 +349,8 @@ async function updateRemovalState(req, res, mode) {
     }
     state.history = state.history.slice(-500);
     writeJson(REMOVAL_STATE_FILE, state);
-    send(res, 200, JSON.stringify({ ok: true, state }));
+    const cloudSync = await runDurableStateSync("publish");
+    send(res, 200, JSON.stringify({ ok: true, state, preSync, cloudSync }));
   } catch (error) {
     send(res, 500, JSON.stringify({ ok: false, error: String(error.message || error) }));
   }
@@ -334,6 +365,7 @@ async function confirmStrategyUpgrade(req, res) {
       send(res, 400, JSON.stringify({ ok: false, error: "missing upgrade title or key" }));
       return;
     }
+    const preSync = await runDurableStateSync("restore");
     const record = {
       id: body.id || `${Date.now()}-${Math.random().toString(16).slice(2)}`,
       upgradeKey,
@@ -368,7 +400,8 @@ async function confirmStrategyUpgrade(req, res) {
       applyStrategyUpgradeState(snapshot, state);
       writeSnapshot(snapshot);
     }
-    send(res, 200, JSON.stringify({ ok: true, record, state, message: executionMessage }));
+    const cloudSync = await runDurableStateSync("publish");
+    send(res, 200, JSON.stringify({ ok: true, record, state, message: executionMessage, preSync, cloudSync }));
   } catch (error) {
     send(res, 500, JSON.stringify({ ok: false, error: String(error.message || error) }));
   }
@@ -384,6 +417,7 @@ async function rollbackStrategyUpgrade(req, res) {
       send(res, 400, JSON.stringify({ ok: false, error: "missing upgrade title, id or key" }));
       return;
     }
+    const preSync = await runDurableStateSync("restore");
     const state = readJson(STRATEGY_UPGRADE_STATE_FILE, { confirmed: [], history: [] });
     state.confirmed ||= [];
     state.history ||= [];
@@ -411,7 +445,8 @@ async function rollbackStrategyUpgrade(req, res) {
       applyStrategyUpgradeState(snapshot, state);
       writeSnapshot(snapshot);
     }
-    send(res, 200, JSON.stringify({ ok: true, record, state, message: executionMessage }));
+    const cloudSync = await runDurableStateSync("publish");
+    send(res, 200, JSON.stringify({ ok: true, record, state, message: executionMessage, preSync, cloudSync }));
   } catch (error) {
     send(res, 500, JSON.stringify({ ok: false, error: String(error.message || error) }));
   }

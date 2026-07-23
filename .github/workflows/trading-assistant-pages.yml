@@ -6,13 +6,14 @@ on:
     branches:
       - main
       - master
+      - trading-assistant-state
   schedule:
     - cron: "10 1 * * 1-5"
     - cron: "45 4 * * 1-5"
     - cron: "40 7 * * 1-5"
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -22,18 +23,25 @@ concurrency:
 
 jobs:
   refresh-and-deploy:
+    if: github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip trading-state-refresh]')
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout
+      - name: Checkout application code
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+
+      - name: Restore durable trading state
+        run: node modules/trading-assistant/scripts/sync-trading-assistant-state.js --mode restore --allow-missing
 
       - name: Refresh trading assistant data
         run: node modules/trading-assistant/scripts/refresh-trading-assistant.js
@@ -43,6 +51,9 @@ jobs:
 
       - name: Audit trading assistant data
         run: node modules/trading-assistant/scripts/audit-trading-assistant-data.js
+
+      - name: Persist durable trading state
+        run: node modules/trading-assistant/scripts/sync-trading-assistant-state.js --mode publish --skip-workflow
 
       - name: Build GitHub Pages artifact
         run: node scripts/build-github-pages.js

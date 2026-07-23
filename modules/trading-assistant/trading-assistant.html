@@ -579,10 +579,14 @@
         headers: { "content-type": "application/json" },
         body: JSON.stringify(item)
       });
-      if (!res.ok) throw new Error(await res.text());
+      const text = await res.text();
+      let body = {};
+      try { body = text ? JSON.parse(text) : {}; } catch { body = {}; }
+      if (!res.ok || body.ok === false) throw new Error(body.error || text || "候选股票确认失败");
       await loadData();
       current = "continuity";
       render();
+      setRefreshStatus(body.cloudSync?.ok ? "success" : "error-state", durableStateSyncText(body.cloudSync, "候选股票状态已在本地更新"));
     }
 
     async function confirmStrategyUpgrade(item) {
@@ -590,12 +594,12 @@
         setRefreshStatus("error-state", "GitHub Pages 静态模式不能写入策略升级确认；请在本地版本点击确认升级，确认后再推送到 GitHub。");
         return;
       }
-      const { res, body, text } = await postJsonWithTimeout(apiUrl("/api/strategy/confirm-upgrade"), item, 30000);
+      const { res, body, text } = await postJsonWithTimeout(apiUrl("/api/strategy/confirm-upgrade"), item, 75000);
       if (!res.ok || body.ok === false) throw new Error(body.error || text || "策略升级执行失败");
       await loadData();
       current = "review";
       render();
-      setRefreshStatus("success", `策略升级已执行：${item.title}\n${body.message || "执行成功，代码策略状态已生效。"}`);
+      setRefreshStatus(body.cloudSync?.ok ? "success" : "error-state", `策略升级已执行：${item.title}\n${body.message || "执行成功，代码策略状态已生效。"}\n${durableStateSyncText(body.cloudSync, "策略状态已在本地更新")}`);
     }
 
     async function postJsonWithTimeout(url, item, timeoutMs) {
@@ -625,12 +629,19 @@
         setRefreshStatus("error-state", "GitHub Pages 静态模式不能写入策略升级回退；请在本地版本处理后再推送到 GitHub。");
         return;
       }
-      const { res, body, text } = await postJsonWithTimeout(apiUrl("/api/strategy/rollback-upgrade"), item, 30000);
+      const { res, body, text } = await postJsonWithTimeout(apiUrl("/api/strategy/rollback-upgrade"), item, 75000);
       if (!res.ok || body.ok === false) throw new Error(body.error || text || "策略升级回退失败");
       await loadData();
       current = "review";
       render();
-      setRefreshStatus("success", `策略升级已回退：${item.title}\n${body.message || "回退成功，已恢复原有策略状态。"}`);
+      setRefreshStatus(body.cloudSync?.ok ? "success" : "error-state", `策略升级已回退：${item.title}\n${body.message || "回退成功，已恢复原有策略状态。"}\n${durableStateSyncText(body.cloudSync, "策略状态已在本地更新")}`);
+    }
+
+    function durableStateSyncText(sync, localMessage) {
+      if (!sync) return `${localMessage}；云端同步状态未知。`;
+      if (sync.ok && sync.published) return `${localMessage}；完整业务状态已同步到 GitHub，线上将在自动部署后更新。`;
+      if (sync.ok) return `${localMessage}；云端状态已是最新，无需重复提交。`;
+      return `${localMessage}；云端同步失败，尚未影响本地结果。原因：${sync.error || "未知"}`;
     }
 
     function bindContinuityActions() {
