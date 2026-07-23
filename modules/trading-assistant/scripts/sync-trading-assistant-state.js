@@ -81,10 +81,11 @@ function writeDerivedSnapshotJs() {
   );
 }
 
-function fetchStateBranch({ allowMissing = false } = {}) {
+function fetchStateBranch({ allowMissing = false, allowCached = false } = {}) {
   const result = tryGit(["fetch", "origin", STATE_BRANCH, "--prune"], { timeout: 120000 });
   if (result.ok) return true;
   if (allowMissing && /couldn't find remote ref|not found|does not appear to be a git repository/i.test(result.error)) return false;
+  if (allowCached && hasRemoteStateBranch()) return "cached";
   throw new Error(`unable to fetch cloud state: ${result.error}`);
 }
 
@@ -92,10 +93,77 @@ function hasRemoteStateBranch() {
   return tryGit(["rev-parse", "--verify", `refs/remotes/origin/${STATE_BRANCH}`]).ok;
 }
 
-function restore({ allowMissing = false } = {}) {
+function githubRawStateBase() {
+  const remote = tryGit(["config", "--get", "remote.origin.url"]);
+  if (!remote.ok) return "";
+  const match = remote.output.match(/github\.com[/:]([^/]+)\/([^/.]+?)(?:\.git)?$/i);
+  return match ? `https://raw.githubusercontent.com/${match[1]}/${match[2]}/${STATE_BRANCH}` : "";
+}
+
+async function restoreFromGitHubRaw() {
+  const base = githubRawStateBase();
+  if (!base) return [];
+  if (process.platform === "win32") {
+    const restored = [];
+    for (const file of DURABLE_FILES) {
+      const url = `${base}/${DATA_RELATIVE_DIR.replace(/\\/g, "/")}/${file}`;
+      const script = [
+        "$ProgressPreference='SilentlyContinue'",
+        `$url=${JSON.stringify(url)}`,
+        "$headers=@{'User-Agent'='stock-ai-assistant-state-sync'}",
+        "(Invoke-WebRequest -UseBasicParsing -Uri $url -Headers $headers -TimeoutSec 60).Content"
+      ].join("; ");
+      try {
+        const body = run("powershell.exe", ["-NoProfile", "-Command", script], { timeout: 75000 });
+        JSON.parse(body);
+        fs.writeFileSync(path.join(DATA_DIR, file), `${body}\n`, "utf8");
+        restored.push(file);
+      } catch {
+        // A missing optional state file is normal on a newly initialized assistant.
+      }
+    }
+    return restored;
+  }
+  const results = await Promise.all(DURABLE_FILES.map(async file => {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 45000);
+    try {
+      const url = `${base}/${DATA_RELATIVE_DIR.replace(/\\/g, "/")}/${file}`;
+      const response = await fetch(url, { signal: controller.signal, headers: { "user-agent": "stock-ai-assistant-state-sync" } });
+      if (!response.ok) return null;
+      const body = await response.text();
+      JSON.parse(body);
+      return { file, body };
+    } catch {
+      return null;
+    } finally {
+      clearTimeout(timer);
+    }
+  }));
+  const restored = [];
+  for (const result of results) {
+    if (!result) continue;
+    fs.writeFileSync(path.join(DATA_DIR, result.file), `${result.body}\n`, "utf8");
+    restored.push(result.file);
+  }
+  return restored;
+}
+
+async function restore({ allowMissing = false } = {}) {
   ensureRepository();
   ensureDataDirectory();
-  const fetched = fetchStateBranch({ allowMissing });
+  let fetched;
+  try {
+    fetched = fetchStateBranch({ allowMissing, allowCached: false });
+  } catch (error) {
+    const restoredFromRaw = await restoreFromGitHubRaw();
+    if (restoredFromRaw.length) {
+      writeDerivedSnapshotJs();
+      return { ok: true, restored: true, branch: STATE_BRANCH, files: restoredFromRaw, source: "GitHub raw state branch" };
+    }
+    if (hasRemoteStateBranch()) fetched = "cached";
+    else throw error;
+  }
   if (!fetched || !hasRemoteStateBranch()) {
     return { ok: true, restored: false, branch: STATE_BRANCH, files: [], reason: "cloud state branch has not been created yet" };
   }
@@ -109,7 +177,7 @@ function restore({ allowMissing = false } = {}) {
     restored.push(file);
   }
   writeDerivedSnapshotJs();
-  return { ok: true, restored: restored.length > 0, branch: STATE_BRANCH, files: restored };
+  return { ok: true, restored: restored.length > 0, branch: STATE_BRANCH, files: restored, source: fetched === "cached" ? "last fetched cloud state" : "remote" };
 }
 
 function cleanupWorktree(worktreeDir) {
@@ -201,17 +269,15 @@ function publish({ skipWorkflow = false } = {}) {
   }
 }
 
-function main() {
+async function main() {
   const mode = process.argv.includes("--mode") ? process.argv[process.argv.indexOf("--mode") + 1] : "restore";
   const allowMissing = process.argv.includes("--allow-missing");
   const skipWorkflow = process.argv.includes("--skip-workflow");
-  const result = mode === "publish" ? publish({ skipWorkflow }) : restore({ allowMissing });
+  const result = mode === "publish" ? publish({ skipWorkflow }) : await restore({ allowMissing });
   process.stdout.write(`${JSON.stringify(result)}${os.EOL}`);
 }
 
-try {
-  main();
-} catch (error) {
+main().catch(error => {
   process.stderr.write(`${JSON.stringify({ ok: false, error: String(error.message || error) })}${os.EOL}`);
   process.exit(1);
-}
+});
