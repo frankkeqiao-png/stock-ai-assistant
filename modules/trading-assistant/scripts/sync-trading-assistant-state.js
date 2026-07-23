@@ -151,6 +151,10 @@ function publish({ skipWorkflow = false } = {}) {
     runGit(["add", "--", ...relativeFiles], { cwd: WORKTREE_DIR });
     const changed = tryGit(["diff", "--cached", "--quiet", "--", ...relativeFiles], { cwd: WORKTREE_DIR });
     if (changed.ok) {
+      if (!remoteExists) {
+        runGit(["push", "origin", `HEAD:refs/heads/${STATE_BRANCH}`], { cwd: WORKTREE_DIR, timeout: 120000 });
+        return { ok: true, published: true, branch: STATE_BRANCH, files: copied, created: true, reason: "created cloud state branch from current baseline" };
+      }
       return { ok: true, published: false, branch: STATE_BRANCH, files: copied, reason: "cloud state already matches local state" };
     }
     runGit(["config", "user.name", "Trading Assistant Local Sync"], { cwd: WORKTREE_DIR });
