@@ -9,7 +9,10 @@ const DATA_DIR = path.join(MODULE_ROOT, "data");
 const STATE_BRANCH = "trading-assistant-state";
 const TEMP_BRANCH = "trading-assistant-state-publish";
 const WORKTREE_DIR = path.join(PROJECT_ROOT, ".trading-state-worktree");
+const SIGNAL_BRANCH = "trading-assistant-state-signal";
+const SIGNAL_WORKTREE_DIR = path.join(PROJECT_ROOT, ".trading-state-signal-worktree");
 const DATA_RELATIVE_DIR = path.join("modules", "trading-assistant", "data");
+const SIGNAL_RELATIVE_FILE = path.join(DATA_RELATIVE_DIR, "trading-assistant-state-signal.json");
 
 // These files describe user decisions and the assistant's accumulated history.
 // Market caches are deliberately excluded because they can be regenerated.
@@ -109,13 +112,13 @@ function restore({ allowMissing = false } = {}) {
   return { ok: true, restored: restored.length > 0, branch: STATE_BRANCH, files: restored };
 }
 
-function cleanupWorktree() {
-  tryGit(["worktree", "remove", "--force", WORKTREE_DIR]);
-  if (fs.existsSync(WORKTREE_DIR)) fs.rmSync(WORKTREE_DIR, { recursive: true, force: true });
+function cleanupWorktree(worktreeDir) {
+  tryGit(["worktree", "remove", "--force", worktreeDir]);
+  if (fs.existsSync(worktreeDir)) fs.rmSync(worktreeDir, { recursive: true, force: true });
 }
 
 function prepareWorktree() {
-  cleanupWorktree();
+  cleanupWorktree(WORKTREE_DIR);
   const remoteExists = hasRemoteStateBranch();
   if (remoteExists) {
     runGit(["worktree", "add", "--force", "-B", TEMP_BRANCH, WORKTREE_DIR, `origin/${STATE_BRANCH}`]);
@@ -123,6 +126,32 @@ function prepareWorktree() {
     runGit(["worktree", "add", "--force", "-B", TEMP_BRANCH, WORKTREE_DIR, "HEAD"]);
   }
   return remoteExists;
+}
+
+function requestMainDeployment(stateResult) {
+  const fetched = tryGit(["fetch", "origin", "main", "--prune"], { timeout: 120000 });
+  if (!fetched.ok) return { ok: false, error: `unable to fetch main before deployment signal: ${fetched.error}` };
+  cleanupWorktree(SIGNAL_WORKTREE_DIR);
+  try {
+    runGit(["worktree", "add", "--force", "-B", SIGNAL_BRANCH, SIGNAL_WORKTREE_DIR, "origin/main"]);
+    const signalFile = path.join(SIGNAL_WORKTREE_DIR, SIGNAL_RELATIVE_FILE);
+    fs.mkdirSync(path.dirname(signalFile), { recursive: true });
+    fs.writeFileSync(signalFile, JSON.stringify({
+      requestedAt: new Date().toISOString(),
+      stateBranch: STATE_BRANCH,
+      files: stateResult.files || []
+    }, null, 2), "utf8");
+    runGit(["add", "--", SIGNAL_RELATIVE_FILE.replace(/\\/g, "/")], { cwd: SIGNAL_WORKTREE_DIR });
+    runGit(["config", "user.name", "Trading Assistant Local Sync"], { cwd: SIGNAL_WORKTREE_DIR });
+    runGit(["config", "user.email", "trading-assistant@local.invalid"], { cwd: SIGNAL_WORKTREE_DIR });
+    runGit(["commit", "-m", "chore(trading-state): request deployment"], { cwd: SIGNAL_WORKTREE_DIR });
+    runGit(["push", "origin", "HEAD:refs/heads/main"], { cwd: SIGNAL_WORKTREE_DIR, timeout: 120000 });
+    return { ok: true, branch: "main" };
+  } catch (error) {
+    return { ok: false, error: String(error.message || error) };
+  } finally {
+    cleanupWorktree(SIGNAL_WORKTREE_DIR);
+  }
 }
 
 function copyDurableFiles(targetDataDir) {
@@ -153,7 +182,8 @@ function publish({ skipWorkflow = false } = {}) {
     if (changed.ok) {
       if (!remoteExists) {
         runGit(["push", "origin", `HEAD:refs/heads/${STATE_BRANCH}`], { cwd: WORKTREE_DIR, timeout: 120000 });
-        return { ok: true, published: true, branch: STATE_BRANCH, files: copied, created: true, reason: "created cloud state branch from current baseline" };
+        const result = { ok: true, published: true, branch: STATE_BRANCH, files: copied, created: true, reason: "created cloud state branch from current baseline" };
+        return skipWorkflow ? result : { ...result, deploymentSignal: requestMainDeployment(result) };
       }
       return { ok: true, published: false, branch: STATE_BRANCH, files: copied, reason: "cloud state already matches local state" };
     }
@@ -164,9 +194,10 @@ function publish({ skipWorkflow = false } = {}) {
       : "chore(trading-state): sync durable state";
     runGit(["commit", "-m", message], { cwd: WORKTREE_DIR });
     runGit(["push", "origin", `HEAD:refs/heads/${STATE_BRANCH}`], { cwd: WORKTREE_DIR, timeout: 120000 });
-    return { ok: true, published: true, branch: STATE_BRANCH, files: copied, created: !remoteExists };
+    const result = { ok: true, published: true, branch: STATE_BRANCH, files: copied, created: !remoteExists };
+    return skipWorkflow ? result : { ...result, deploymentSignal: requestMainDeployment(result) };
   } finally {
-    cleanupWorktree();
+    cleanupWorktree(WORKTREE_DIR);
   }
 }
 

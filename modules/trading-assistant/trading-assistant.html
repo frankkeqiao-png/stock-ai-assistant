@@ -639,7 +639,8 @@
 
     function durableStateSyncText(sync, localMessage) {
       if (!sync) return `${localMessage}；云端同步状态未知。`;
-      if (sync.ok && sync.published) return `${localMessage}；完整业务状态已同步到 GitHub，线上将在自动部署后更新。`;
+      if (sync.ok && sync.published && sync.deploymentSignal?.ok === false) return `${localMessage}；完整业务状态已同步到 GitHub，但触发线上部署失败。原因：${sync.deploymentSignal.error || "未知"}`;
+      if (sync.ok && sync.published) return `${localMessage}；完整业务状态已同步到 GitHub，线上刷新与部署已触发。`;
       if (sync.ok) return `${localMessage}；云端状态已是最新，无需重复提交。`;
       return `${localMessage}；云端同步失败，尚未影响本地结果。原因：${sync.error || "未知"}`;
     }
