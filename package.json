@@ -11,6 +11,7 @@
     "strategy:trade": "node modules/trading-assistant/scripts/update-strategy-review.js",
     "state:pull:trade": "node modules/trading-assistant/scripts/sync-trading-assistant-state.js --mode restore --allow-missing",
     "state:push:trade": "node modules/trading-assistant/scripts/sync-trading-assistant-state.js --mode publish",
+    "state:sync-local:trade": "node modules/trading-assistant/scripts/sync-local-trading-assistant-state.js",
     "build:pages": "node scripts/build-github-pages.js"
   },
   "modules": {

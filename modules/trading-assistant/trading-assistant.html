@@ -1126,6 +1126,23 @@
     $("refreshBtn").onclick = refreshData;
     $("reloadBtn").onclick = async () => { await loadData(); render(); showSnapshotFailureStatus(); };
 
+    async function reloadStaticSnapshotIfChanged() {
+      if (isLocalRuntime || !data) return;
+      try {
+        const res = await fetch(`data/trading-assistant.json?_=${Date.now()}`, { cache: "no-store" });
+        if (!res.ok) return;
+        const next = await res.json();
+        if ((next.generatedAt || next.generatedAtChina) === (data.generatedAt || data.generatedAtChina)) return;
+        data = next;
+        data.loadSource = "自动重新读取静态快照";
+        data.loadWarning = "";
+        render();
+        showSnapshotFailureStatus();
+      } catch {
+        // Keep the visible snapshot when a temporary static-file read fails.
+      }
+    }
+
     (async function init() {
       try {
         await loadData();
@@ -1134,6 +1151,7 @@
       }
       render();
       showSnapshotFailureStatus();
+      setInterval(reloadStaticSnapshotIfChanged, 2 * 60 * 1000);
     })();
   </script>
 </body>
