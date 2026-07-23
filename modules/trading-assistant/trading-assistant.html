@@ -485,6 +485,16 @@
       }
     }
 
+    async function syncLocalStateBeforeLoad() {
+      if (!isLocalRuntime) return null;
+      const res = await fetch(apiUrl("/api/state/restore"), { method: "POST" });
+      const text = await res.text();
+      let body = {};
+      try { body = text ? JSON.parse(text) : {}; } catch { body = {}; }
+      if (!res.ok || body.ok === false) throw new Error(body.error || text || "本地状态同步失败");
+      return body;
+    }
+
     async function refreshData() {
       if (!isLocalRuntime) {
         $("refreshBtn").disabled = true;
@@ -1124,7 +1134,12 @@
     }
 
     $("refreshBtn").onclick = refreshData;
-    $("reloadBtn").onclick = async () => { await loadData(); render(); showSnapshotFailureStatus(); };
+    $("reloadBtn").onclick = async () => {
+      if (isLocalRuntime) await syncLocalStateBeforeLoad();
+      await loadData();
+      render();
+      showSnapshotFailureStatus();
+    };
 
     async function reloadStaticSnapshotIfChanged() {
       if (isLocalRuntime || !data) return;
@@ -1145,6 +1160,10 @@
 
     (async function init() {
       try {
+        if (isLocalRuntime) {
+          setRefreshStatus("running", "正在同步云端候选、推荐追踪、复盘和策略状态...");
+          await syncLocalStateBeforeLoad();
+        }
         await loadData();
       } catch (error) {
         data = null;

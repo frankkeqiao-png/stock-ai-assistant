@@ -16,9 +16,6 @@ let lastRefreshError = null;
 let lastRefreshStartedAt = null;
 let lastRefreshOutput = "";
 let currentRefreshPromise = null;
-let lastCloudStateSync = null;
-let lastCloudStateSyncError = null;
-let cloudStateSyncing = false;
 
 const contentTypes = {
   ".html": "text/html; charset=utf-8",
@@ -88,21 +85,6 @@ function runDurableStateSync(mode) {
       }
     });
   });
-}
-
-async function refreshCloudStateInBackground() {
-  if (cloudStateSyncing || refreshing) return;
-  cloudStateSyncing = true;
-  try {
-    const result = await runDurableStateSync("restore");
-    lastCloudStateSync = new Date().toISOString();
-    lastCloudStateSyncError = result.ok ? null : (result.error || "cloud state sync failed");
-  } catch (error) {
-    lastCloudStateSync = new Date().toISOString();
-    lastCloudStateSyncError = String(error.message || error);
-  } finally {
-    cloudStateSyncing = false;
-  }
 }
 
 function applyStrategyUpgradeState(snapshot, state) {
@@ -524,7 +506,12 @@ const server = http.createServer(async (req, res) => {
     return;
   }
   if (url.pathname === "/api/status") {
-    send(res, 200, JSON.stringify({ refreshing, lastRefresh, lastRefreshStartedAt, lastRefreshError, lastRefreshOutput, cloudStateSyncing, lastCloudStateSync, lastCloudStateSyncError }));
+    send(res, 200, JSON.stringify({ refreshing, lastRefresh, lastRefreshStartedAt, lastRefreshError, lastRefreshOutput }));
+    return;
+  }
+  if (url.pathname === "/api/state/restore" && req.method === "POST") {
+    const state = await runDurableStateSync("restore");
+    send(res, state.ok ? 200 : 502, JSON.stringify(state));
     return;
   }
   if (url.pathname === "/api/snapshot") {
@@ -573,6 +560,4 @@ const server = http.createServer(async (req, res) => {
 
 server.listen(PORT, "127.0.0.1", () => {
   console.log(`Trading assistant server running at http://127.0.0.1:${PORT}/`);
-  refreshCloudStateInBackground();
-  setInterval(refreshCloudStateInBackground, 15 * 60 * 1000);
 });
