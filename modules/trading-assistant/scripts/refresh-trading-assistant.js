@@ -18,6 +18,7 @@ const {
   readArchive,
   writeArchive
 } = require("./recommendation-history");
+const { buildArchiveOutcomeReview } = require("./archive-outcome-review");
 
 const audit = {
   generatedAt: new Date().toISOString(),
@@ -340,10 +341,12 @@ async function fetchSinaQuotes(symbols) {
 }
 
 function sinaSymbol(code) {
+  if (/^(sh|sz)\d{6}$/i.test(code)) return code.toLowerCase();
   return `${code.startsWith("6") ? "sh" : "sz"}${code}`;
 }
 
 function tencentSymbol(code) {
+  if (/^(sh|sz)\d{6}$/i.test(code)) return code.toLowerCase();
   return `${code.startsWith("6") ? "sh" : "sz"}${code}`;
 }
 
@@ -586,6 +589,8 @@ function normalizeSinaNodeStock(row) {
 }
 
 function secid(code) {
+  if (/^sh\d{6}$/i.test(code)) return `1.${code.slice(2)}`;
+  if (/^sz\d{6}$/i.test(code)) return `0.${code.slice(2)}`;
   return `${code.startsWith("6") ? "1" : "0"}.${code}`;
 }
 
@@ -2375,6 +2380,7 @@ async function main() {
 
   const indicesRows = await guarded("新浪财经A股指数", () => fetchSinaQuotes(["sh000001", "sz399001", "sz399006", "sh000300", "sh000688"]), []);
   const indices = indicesRows.map(normalizeIndex);
+  const benchmarkRows = await guarded("沪深300基准日K", () => fetchKlineWithFallback("sh000300", 101, 240), []);
 
   let universe = await guarded("东方财富科技/能源板块股票池", buildFocusUniverse, { boards: [], stocks: [] });
   let universeMethodNote = "";
@@ -2453,6 +2459,12 @@ async function main() {
       indices,
       note: "宏观与全市场模块暂不展开，本页只保留交易助理需要的市场温度参考。"
     },
+    benchmark: {
+      name: "沪深300",
+      code: "sh000300",
+      history: benchmarkRows,
+      status: benchmarkRows.length ? "已取得" : "未取得"
+    },
     universe: {
       boards: universe.boards.slice(0, 80),
       stockCount: universe.stocks.length,
@@ -2492,6 +2504,7 @@ async function main() {
   };
   snapshot.continuity = buildContinuity(previousSnapshot, snapshot, removalState);
   snapshot.recommendationTracking = updateRecommendationTracking(snapshot, removalState);
+  snapshot.archiveOutcomeReview = buildArchiveOutcomeReview(snapshot.recommendationTracking, snapshot.generatedAtChina, snapshot.benchmark);
   const strategyLogs = appendStrategyLog(snapshot);
   snapshot.strategyReview = buildStrategyReview(strategyLogs, snapshot);
   applyStrategyUpgradeState(snapshot);

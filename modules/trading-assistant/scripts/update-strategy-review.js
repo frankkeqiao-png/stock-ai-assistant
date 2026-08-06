@@ -7,10 +7,12 @@ const SNAPSHOT_JSON = path.join(DATA_DIR, "trading-assistant.json");
 const SNAPSHOT_JS = path.join(DATA_DIR, "trading-assistant.js");
 const STRATEGY_LOG_JSON = path.join(DATA_DIR, "trading-assistant-strategy-log.json");
 const STRATEGY_UPGRADE_STATE_JSON = path.join(DATA_DIR, "trading-assistant-strategy-upgrade-state.json");
+const { buildArchiveOutcomeReview } = require("./archive-outcome-review");
 
 const snapshot = JSON.parse(fs.readFileSync(SNAPSHOT_JSON, "utf8"));
 const logs = appendStrategyLog(snapshot);
 snapshot.strategyReview = buildStrategyReview(logs, snapshot);
+snapshot.archiveOutcomeReview = buildArchiveOutcomeReview(snapshot.recommendationTracking, snapshot.generatedAtChina, snapshot.benchmark);
 applyStrategyUpgradeState(snapshot);
 fs.writeFileSync(SNAPSHOT_JSON, JSON.stringify(snapshot, null, 2), "utf8");
 fs.writeFileSync(SNAPSHOT_JS, `window.TRADING_ASSISTANT_DATA = ${JSON.stringify(snapshot, null, 2)};\n`, "utf8");

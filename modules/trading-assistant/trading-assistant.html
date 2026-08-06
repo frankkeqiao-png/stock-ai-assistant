@@ -877,6 +877,7 @@
     function review() {
       const c = data.audit.coverage;
       const sr = data.strategyReview || {};
+      const archiveReview = data.archiveOutcomeReview || {};
       const timeline = sr.timeline || {};
       const confirmedUpgrades = data.strategyUpgradeState?.confirmed || sr.confirmedUpgrades || [];
       const confirmedUpgradeFor = item => confirmedUpgrades.find(record => record.title === item.title || (record.upgradeKey && record.upgradeKey === item.upgradeKey));
@@ -922,6 +923,32 @@
             <div class="two" style="margin-top:10px">
               <div><strong>复盘节奏</strong><ul>${list(sr.cadence || [])}</ul></div>
               <div><strong>策略护栏</strong><ul>${list(sr.guardrails || [])}</ul></div>
+            </div>
+          </div>
+          <div class="card span-12">
+            <h3>历史结果归因 <span class="pill green">${esc(archiveReview.status || "已启用")}</span></h3>
+            <p class="note">基于推荐历史档案统计首次入池后的实际价格轨迹。只有满足样本门槛时，系统才会提出交易参数调整建议；当前不自动改动选股、买点或止损规则。</p>
+            <div class="kv">
+              <div>历史推荐</div><div>${fmt(archiveReview.coverage?.records)} 只</div>
+              <div>有效轨迹</div><div>${fmt(archiveReview.coverage?.matureRecords)} 只</div>
+              <div>价格范围</div><div>${esc(archiveReview.coverage?.firstPriceDate || "")} 至 ${esc(archiveReview.coverage?.latestPriceDate || "")}</div>
+              <div>比较基准</div><div>${esc(archiveReview.benchmark?.name || "沪深300")} / ${esc(archiveReview.benchmark?.status || "未取得")}（${fmt(archiveReview.benchmark?.points)} 条日线）</div>
+              <div>参数调节</div><div>${archiveReview.adjustmentGate?.ready ? '<span class="pill green">样本达标，可评估</span>' : '<span class="pill yellow">继续积累，不调参</span>'}</div>
+              <div>10日样本</div><div>${fmt(archiveReview.adjustmentGate?.current10DaySamples)} / ${fmt(archiveReview.adjustmentGate?.min10DaySamples)}</div>
+              <div>20日样本</div><div>${fmt(archiveReview.adjustmentGate?.current20DaySamples)} / ${fmt(archiveReview.adjustmentGate?.min20DaySamples)}</div>
+            </div>
+            <div class="scroll" style="margin-top:10px"><table>
+              <thead><tr><th>首次分层</th><th>历史记录</th><th>有效轨迹</th><th>5日结果</th><th>10日结果 / 超额</th><th>20日结果</th></tr></thead>
+              <tbody>${(archiveReview.byState || []).map(row => `<tr>
+                <td>${esc(row.name)}</td><td>${fmt(row.records)}</td><td>${fmt(row.matureRecords)}</td>
+                <td>${fmt(row.horizons?.d5?.averagePct)}% / 胜率 ${fmt(row.horizons?.d5?.winRatePct)}%（${fmt(row.horizons?.d5?.samples)}）</td>
+                <td>${fmt(row.horizons?.d10?.averagePct)}% / 超额 ${fmt(row.horizons?.d10?.excess?.averagePct)}% / 胜率 ${fmt(row.horizons?.d10?.winRatePct)}%（${fmt(row.horizons?.d10?.samples)}）</td>
+                <td>${fmt(row.horizons?.d20?.averagePct)}% / 胜率 ${fmt(row.horizons?.d20?.winRatePct)}%（${fmt(row.horizons?.d20?.samples)}）</td>
+              </tr>`).join("") || `<tr><td colspan="6">历史结果尚在积累。</td></tr>`}</tbody>
+            </table></div>
+            <div class="two" style="margin-top:10px">
+              <div><strong>复盘结论</strong><ul>${list(archiveReview.observations || [])}</ul></div>
+              <div><strong>调参护栏</strong><p class="note">${esc(archiveReview.adjustmentGate?.rule || "历史档案尚未形成足够样本。")}<br>${(archiveReview.adjustmentGate?.stateGate || []).map(item => `${esc(item.name)}：10日 ${fmt(item.samples10)} / 20日 ${fmt(item.samples20)} ${item.ready ? "已达标" : "继续积累"}`).join("<br>")}</p></div>
             </div>
           </div>
           ${detailsCard("分层表现基线", `
