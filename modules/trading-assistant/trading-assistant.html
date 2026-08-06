@@ -1027,7 +1027,7 @@
         if (a.active !== b.active) return a.active ? -1 : 1;
         return String(b.lastSeenAtChina || b.firstDate || "").localeCompare(String(a.lastSeenAtChina || a.firstDate || ""));
       });
-      const calendarEntries = Object.entries(t.calendar || {}).slice(0, 30);
+      const calendarEntries = Object.entries(t.calendar || {});
       const perfClass = v => v === null || v === undefined ? "" : clsPct(v);
       return `
         <div class="grid">
@@ -1038,6 +1038,7 @@
               <div>追踪股票</div><div>${fmt(t.total || 0)} 只</div>
               <div>持续追踪</div><div>${fmt(t.active || 0)} 只</div>
               <div>已停止</div><div>${fmt(t.stopped || 0)} 只</div>
+              <div>历史保存</div><div>${esc(t.archiveRetention || "追加式历史档案")}</div>
               <div>最近更新</div><div>${esc(formatRefreshTime(t.updatedAtChina || data.generatedAtChina || ""))}</div>
             </div>
           </div>

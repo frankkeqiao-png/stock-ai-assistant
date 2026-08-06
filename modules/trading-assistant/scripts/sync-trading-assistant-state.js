@@ -19,6 +19,7 @@ const SIGNAL_RELATIVE_FILE = path.join(DATA_RELATIVE_DIR, "trading-assistant-sta
 const DURABLE_FILES = [
   "trading-assistant.json",
   "trading-assistant-recommendation-tracking.json",
+  "trading-assistant-recommendation-archive.json",
   "trading-assistant-strategy-log.json",
   "trading-assistant-strategy-upgrade-state.json",
   "trading-assistant-removal-state.json"
@@ -35,7 +36,8 @@ function run(command, args, options = {}) {
     cwd: options.cwd || PROJECT_ROOT,
     encoding: "utf8",
     windowsHide: true,
-    timeout: options.timeout || 90000
+    timeout: options.timeout || 90000,
+    maxBuffer: options.maxBuffer || 50 * 1024 * 1024
   });
   const stdout = String(result.stdout || "").trim();
   const stderr = String(result.stderr || "").trim();
@@ -82,7 +84,12 @@ function writeDerivedSnapshotJs() {
 }
 
 function fetchStateBranch({ allowMissing = false, allowCached = false } = {}) {
-  const result = tryGit(["fetch", "origin", STATE_BRANCH, "--prune"], { timeout: 120000 });
+  // A branch-name-only fetch can leave the commit solely in FETCH_HEAD on a
+  // clean runner. Restore and publish both require a stable remote-tracking
+  // ref, otherwise a scheduled refresh could mistake existing cloud state for
+  // an uninitialized assistant and overwrite its history.
+  const refspec = `+refs/heads/${STATE_BRANCH}:refs/remotes/origin/${STATE_BRANCH}`;
+  const result = tryGit(["fetch", "origin", refspec, "--prune"], { timeout: 120000 });
   if (result.ok) return true;
   if (allowMissing && /couldn't find remote ref|not found|does not appear to be a git repository/i.test(result.error)) return false;
   if (allowCached && hasRemoteStateBranch()) return "cached";
@@ -245,7 +252,10 @@ function publish({ skipWorkflow = false } = {}) {
   try {
     const copied = copyDurableFiles(path.join(WORKTREE_DIR, DATA_RELATIVE_DIR));
     const relativeFiles = copied.map(file => path.posix.join(DATA_RELATIVE_DIR.replace(/\\/g, "/"), file));
-    runGit(["add", "--", ...relativeFiles], { cwd: WORKTREE_DIR });
+    // Durable files are ignored on main by design. Force-add lets the separate
+    // state branch retain newly introduced durable files such as the append-only
+    // recommendation archive without reintroducing runtime data into main.
+    runGit(["add", "--force", "--", ...relativeFiles], { cwd: WORKTREE_DIR });
     const changed = tryGit(["diff", "--cached", "--quiet", "--", ...relativeFiles], { cwd: WORKTREE_DIR });
     if (changed.ok) {
       if (!remoteExists) {

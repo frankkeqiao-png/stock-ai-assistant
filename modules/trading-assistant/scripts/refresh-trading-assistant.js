@@ -11,6 +11,13 @@ const STRATEGY_LOG_JSON = path.join(DATA_DIR, "trading-assistant-strategy-log.js
 const STRATEGY_UPGRADE_STATE_JSON = path.join(DATA_DIR, "trading-assistant-strategy-upgrade-state.json");
 const REMOVAL_STATE_JSON = path.join(DATA_DIR, "trading-assistant-removal-state.json");
 const RECOMMENDATION_TRACKING_JSON = path.join(DATA_DIR, "trading-assistant-recommendation-tracking.json");
+const {
+  buildPresentation,
+  finalizeArchive,
+  mergeRecord,
+  readArchive,
+  writeArchive
+} = require("./recommendation-history");
 
 const audit = {
   generatedAt: new Date().toISOString(),
@@ -2244,6 +2251,9 @@ function calculateTrackingPerformance(record) {
 function updateRecommendationTracking(snapshot, removalState) {
   const existing = readJsonFile(RECOMMENDATION_TRACKING_JSON, { version: "recommendation-tracking-v0.1", records: {}, calendar: {} });
   const records = existing.records || {};
+  const archive = readArchive();
+  // Preserve the previous rolling data while moving to an append-only archive.
+  for (const record of Object.values(records)) mergeRecord(archive, record);
   const now = snapshot.generatedAt;
   const today = dateOnly(snapshot.generatedAtChina || snapshot.generatedAt);
   const confirmedRemoved = removalState.confirmedRemoved || {};
@@ -2328,6 +2338,7 @@ function updateRecommendationTracking(snapshot, removalState) {
       .slice(-260);
     record.performance = calculateTrackingPerformance(record);
     records[candidate.code] = record;
+    mergeRecord(archive, record);
   }
 
   for (const [code, removal] of Object.entries(confirmedRemoved)) {
@@ -2336,6 +2347,7 @@ function updateRecommendationTracking(snapshot, removalState) {
     records[code].stoppedAt = removal.decidedAt || records[code].stoppedAt || now;
     records[code].stoppedReason = removal.reason || records[code].stoppedReason || "已确认剔除";
     records[code].performance = calculateTrackingPerformance(records[code]);
+    mergeRecord(archive, records[code]);
   }
 
   const calendar = existing.calendar || {};
@@ -2351,42 +2363,9 @@ function updateRecommendationTracking(snapshot, removalState) {
   };
   fs.writeFileSync(RECOMMENDATION_TRACKING_JSON, JSON.stringify(output, null, 2), "utf8");
 
-  const recordList = Object.values(records).sort((a, b) => {
-    if (a.active !== b.active) return a.active ? -1 : 1;
-    return String(b.lastSeenAt || b.firstRecommendedAt).localeCompare(String(a.lastSeenAt || a.firstRecommendedAt));
-  });
-  return {
-    updatedAtChina: output.updatedAtChina,
-    total: recordList.length,
-    active: recordList.filter(record => record.active).length,
-    stopped: recordList.filter(record => !record.active).length,
-    calendar: Object.fromEntries(Object.entries(calendar).sort((a, b) => b[0].localeCompare(a[0])).slice(0, 90)),
-    records: recordList.map(record => ({
-      code: record.code,
-      name: record.name,
-      sector: record.sector,
-      active: record.active,
-      firstDate: record.firstDate,
-      firstPrice: record.firstPrice,
-      firstState: record.firstState,
-      firstScore: record.firstScore,
-      firstLayer: record.firstLayer,
-      firstReason: record.firstReason,
-      currentPrice: record.currentPrice,
-      currentState: record.currentState,
-      currentScore: record.currentScore,
-      currentLayer: record.currentLayer,
-      currentLayerReason: record.currentLayerReason,
-      lastSeenAtChina: record.lastSeenAtChina,
-      stoppedAt: record.stoppedAt,
-      stoppedReason: record.stoppedReason,
-      initialPlan: record.initialPlan,
-      lastPlan: record.lastPlan,
-      performance: record.performance,
-      priceHistory: record.priceHistory,
-      recommendations: record.recommendations.slice(-12)
-    }))
-  };
+  finalizeArchive(archive, { updatedAt: now, updatedAtChina: snapshot.generatedAtChina });
+  writeArchive(archive);
+  return buildPresentation(archive, output.updatedAtChina);
 }
 
 async function main() {
