@@ -1,7 +1,7 @@
 {
   "version": "recommendation-tracking-v0.1",
-  "updatedAt": "2026-08-24T05:27:06.117Z",
-  "updatedAtChina": "2026/08/24 13:27:06",
+  "updatedAt": "2026-08-24T08:25:57.544Z",
+  "updatedAtChina": "2026/08/24 16:25:57",
   "records": {
     "300006": {
       "code": "300006",
@@ -7218,6 +7218,32 @@
             "策略否决：相对强度：强度 55.8",
             "策略否决：风险收益比：按计划价 34.4 计算，约 1:1.48，最大亏损约 15.7%，目标空间约 23.17%"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 35.16,
+          "pct": -1.43,
+          "state": "暂不交易",
+          "score": 74.4,
+          "layer": "待确认剔除",
+          "layerReason": "原候选本次出现硬风险或交易条件失效，先保留在追踪中，需人工确认后才停止跟踪。",
+          "sector": "科技",
+          "buyType": "中枢上半区观察",
+          "reason": [
+            "成交额 8.6 亿元，具备跟踪流动性",
+            "PE 49.52，估值未进入极端异常区",
+            "归属板块：科技；命中：半导体、芯片、电子、存储、先进封装",
+            "趋势阶段不够清晰，等待方向选择",
+            "归母净利润同比增长 9.57%"
+          ],
+          "risk": [
+            "跌破 20 日中位 34.56，降级为震荡",
+            "策略否决：趋势阶段：震荡过渡",
+            "策略否决：相对强度：强度 45.2",
+            "策略否决：风险收益比：按计划价 35.16 计算，约 1:1.17，最大亏损约 17.52%，目标空间约 20.51%"
+          ]
         }
       ],
       "priceHistory": [
@@ -7353,16 +7379,16 @@
         },
         {
           "date": "2026-08-24",
-          "at": "2026-08-24T02:41:54.217Z",
-          "close": 35,
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 35.16,
           "open": 35.5,
           "high": 35.58,
-          "low": 34.38,
-          "pct": -1.88,
-          "state": "观察池",
-          "score": 75,
-          "layer": "候选观察池",
-          "mainNetInflowYi": 0.08
+          "low": 33.9,
+          "pct": -1.43,
+          "state": "暂不交易",
+          "score": 74.4,
+          "layer": "待确认剔除",
+          "mainNetInflowYi": null
         }
       ],
       "initialPlan": {
@@ -7372,24 +7398,24 @@
         "takeProfit": 57.09,
         "riskReward": 2.72
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
-      "currentState": "观察池",
-      "currentScore": 76.3,
-      "currentLayer": "核心跟踪池",
-      "currentLayerReason": "已连续跟踪 32 次，本次继续满足中期跟踪条件；不因单日排序波动移出。",
-      "currentPrice": 34.4,
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
+      "currentState": "暂不交易",
+      "currentScore": 74.4,
+      "currentLayer": "待确认剔除",
+      "currentLayerReason": "原候选本次出现硬风险或交易条件失效，先保留在追踪中，需人工确认后才停止跟踪。",
+      "currentPrice": 35.16,
       "currentSector": "科技",
       "lastPlan": {
         "buyType": "中枢上半区观察",
         "action": "位置不差但低级别未确认，等待 30分钟转强",
-        "nextAction": "保留观察，等待评分或买点改善。",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
         "stop": 29,
         "takeProfit": 42.37,
-        "riskReward": 1.48
+        "riskReward": 1.17
       },
       "performance": {
-        "currentReturnPct": -1.66,
+        "currentReturnPct": -1.21,
         "maxGainPct": 10.14,
         "maxDrawdownPct": -3.34,
         "oneWeekPct": 3.4,
@@ -7398,7 +7424,7 @@
         "hitStop": false,
         "hitTakeProfit": false,
         "latestDate": "2026-08-24",
-        "latestClose": 35,
+        "latestClose": 35.16,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-05",
@@ -7422,8 +7448,8 @@
           },
           "d20": {
             "date": "2026-08-24",
-            "close": 35,
-            "returnPct": -1.66
+            "close": 35.16,
+            "returnPct": -1.21
           }
         }
       }
@@ -14932,6 +14958,33 @@
             "策略否决：趋势阶段：震荡过渡",
             "策略否决：相对强度：强度 39.4"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 102.9,
+          "pct": 4.71,
+          "state": "暂不交易",
+          "score": 72.4,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "科技",
+          "buyType": "中枢上半区观察",
+          "reason": [
+            "成交额 18.56 亿元，流动性较好",
+            "当日涨幅 4.71%，短线强于市场",
+            "主力净流入 0.62 亿元",
+            "归属板块：科技；命中：半导体、电子、存储、半导体材料、半导体设备",
+            "趋势阶段不够清晰，等待方向选择"
+          ],
+          "risk": [
+            "PE 155.91，估值风险偏高",
+            "归母净利润同比下降 42.83%",
+            "跌破 20 日中位 96，降级为震荡",
+            "策略否决：趋势阶段：震荡过渡",
+            "策略否决：相对强度：强度 52.8"
+          ]
         }
       ],
       "priceHistory": [
@@ -14950,16 +15003,16 @@
         },
         {
           "date": "2026-08-24",
-          "at": "2026-08-24T02:41:54.217Z",
-          "close": 105.01,
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 102.9,
           "open": 103.61,
-          "high": 105.68,
+          "high": 106,
           "low": 97.76,
-          "pct": 6.86,
+          "pct": 4.71,
           "state": "暂不交易",
-          "score": 71.4,
+          "score": 72.4,
           "layer": "暂不交易",
-          "mainNetInflowYi": -0.66
+          "mainNetInflowYi": 0.62
         }
       ],
       "initialPlan": {
@@ -14969,13 +15022,13 @@
         "takeProfit": 124.73,
         "riskReward": 0.64
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 64.6,
+      "currentScore": 72.4,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 102,
+      "currentPrice": 102.9,
       "currentSector": "科技",
       "lastPlan": {
         "buyType": "中枢上半区观察",
@@ -14983,11 +15036,11 @@
         "nextAction": "当前不建仓，等风险解除或结构修复。",
         "stop": 74.2,
         "takeProfit": 124.73,
-        "riskReward": 0.82
+        "riskReward": 0.76
       },
       "performance": {
-        "currentReturnPct": 0,
-        "maxGainPct": 0,
+        "currentReturnPct": -2.01,
+        "maxGainPct": -2.01,
         "maxDrawdownPct": -2.87,
         "oneWeekPct": null,
         "oneMonthPct": null,
@@ -14995,12 +15048,12 @@
         "hitStop": false,
         "hitTakeProfit": false,
         "latestDate": "2026-08-24",
-        "latestClose": 105.01,
+        "latestClose": 102.9,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-24",
-            "close": 105.01,
-            "returnPct": 0
+            "close": 102.9,
+            "returnPct": -2.01
           },
           "d3": null,
           "d5": null,
@@ -15081,6 +15134,33 @@
             "策略否决：缠论买点：无买点/风险段",
             "策略否决：相对强度：强度 36.2"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 18.61,
+          "pct": -1.01,
+          "state": "暂不交易",
+          "score": 72.7,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "机器人/智能制造",
+          "buyType": "无买点/风险段",
+          "reason": [
+            "成交额 10.15 亿元，流动性较好",
+            "PE 18.92，估值未进入极端异常区",
+            "主力净流入 0.4 亿元",
+            "归属板块：机器人/智能制造；命中：互联网、机器人概念",
+            "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+          ],
+          "risk": [
+            "收盘低于 MA20，买点需要降级",
+            "有效跌破 20 日低点 18.44，技术面继续减分",
+            "策略否决：趋势阶段：阶段1：筑底观察",
+            "策略否决：缠论买点：无买点/风险段",
+            "策略否决：相对强度：强度 35.4"
+          ]
         }
       ],
       "priceHistory": [
@@ -15109,6 +15189,19 @@
           "score": 72.4,
           "layer": "暂不交易",
           "mainNetInflowYi": 0.26
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 18.61,
+          "open": 18.8,
+          "high": 19.19,
+          "low": 18.6,
+          "pct": -1.01,
+          "state": "暂不交易",
+          "score": 72.7,
+          "layer": "暂不交易",
+          "mainNetInflowYi": 0.4
         }
       ],
       "initialPlan": {
@@ -15118,33 +15211,33 @@
         "takeProfit": 22.51,
         "riskReward": 1.28
       },
-      "lastSeenAt": "2026-08-13T08:55:05.057Z",
-      "lastSeenAtChina": "2026/08/13 16:55:05",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 72.4,
+      "currentScore": 72.7,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 18.72,
+      "currentPrice": 18.61,
       "currentSector": "机器人/智能制造",
       "lastPlan": {
         "buyType": "无买点/风险段",
         "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
         "nextAction": "当前不建仓，等风险解除或结构修复。",
-        "stop": 17.76,
+        "stop": 17.89,
         "takeProfit": 22.51,
-        "riskReward": 3.95
+        "riskReward": 5.42
       },
       "performance": {
-        "currentReturnPct": -5.12,
+        "currentReturnPct": -5.68,
         "maxGainPct": 0,
-        "maxDrawdownPct": -5.12,
+        "maxDrawdownPct": -5.68,
         "oneWeekPct": -5.12,
         "oneMonthPct": null,
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-13",
-        "latestClose": 18.72,
+        "latestDate": "2026-08-24",
+        "latestClose": 18.61,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-07",
@@ -15161,7 +15254,11 @@
             "close": 18.72,
             "returnPct": -5.12
           },
-          "d10": null,
+          "d10": {
+            "date": "2026-08-24",
+            "close": 18.61,
+            "returnPct": -5.68
+          },
           "d20": null
         }
       }
@@ -17840,6 +17937,33 @@
             "策略否决：缠论买点：无买点/风险段",
             "策略否决：相对强度：强度 34.7"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 33.8,
+          "pct": 0.36,
+          "state": "暂不交易",
+          "score": 37.3,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "军工国防",
+          "buyType": "无买点/风险段",
+          "reason": [
+            "成交额 21.14 亿元，流动性较好",
+            "PE 27.26，估值未进入极端异常区",
+            "归属板块：军工国防；命中：船舶、国防军工",
+            "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+            "归母净利润同比增长 251.64%"
+          ],
+          "risk": [
+            "收盘低于 MA20，买点需要降级",
+            "有效跌破 20 日低点 32.59，技术面继续减分",
+            "策略否决：趋势阶段：阶段4：下降趋势",
+            "策略否决：缠论买点：无买点/风险段",
+            "策略否决：相对强度：强度 38.9"
+          ]
         }
       ],
       "priceHistory": [
@@ -17962,16 +18086,16 @@
         },
         {
           "date": "2026-08-24",
-          "at": "2026-08-24T02:41:54.217Z",
-          "close": 33.84,
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 33.8,
           "open": 33.59,
           "high": 34.39,
           "low": 33.58,
-          "pct": 0.47,
+          "pct": 0.36,
           "state": "暂不交易",
-          "score": 41.6,
+          "score": 37.3,
           "layer": "暂不交易",
-          "mainNetInflowYi": null
+          "mainNetInflowYi": -0.33
         }
       ],
       "initialPlan": {
@@ -17981,13 +18105,13 @@
         "takeProfit": 41.32,
         "riskReward": 1.66
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 47.9,
+      "currentScore": 37.3,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 33.83,
+      "currentPrice": 33.8,
       "currentSector": "军工国防",
       "lastPlan": {
         "buyType": "无买点/风险段",
@@ -17995,10 +18119,10 @@
         "nextAction": "当前不建仓，等风险解除或结构修复。",
         "stop": 31.61,
         "takeProfit": 38.19,
-        "riskReward": 1.96
+        "riskReward": 2
       },
       "performance": {
-        "currentReturnPct": -3.2,
+        "currentReturnPct": -3.32,
         "maxGainPct": 0,
         "maxDrawdownPct": -5.32,
         "oneWeekPct": -3.29,
@@ -18007,7 +18131,7 @@
         "hitStop": false,
         "hitTakeProfit": false,
         "latestDate": "2026-08-24",
-        "latestClose": 33.84,
+        "latestClose": 33.8,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-06",
@@ -18970,6 +19094,33 @@
             "跌回 20 日中位 7.32 下方，类三买观察失效",
             "策略否决：趋势阶段：震荡过渡"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 7.85,
+          "pct": 5.09,
+          "state": "交易准备池",
+          "score": 73.8,
+          "layer": "今日机会池",
+          "layerReason": "新入池且买点/评分较强，作为新增机会观察，需等触发条件确认后再执行。",
+          "sector": "低空经济/航空航天",
+          "buyType": "类二买/趋势延续观察",
+          "reason": [
+            "成交额 3.9 亿元，具备跟踪流动性",
+            "当日涨幅 5.09%，短线强于市场",
+            "主力净流入 0.2 亿元",
+            "归属板块：低空经济/航空航天；命中：半导体、芯片、集成电路、电子、北斗导航",
+            "趋势阶段不够清晰，等待方向选择"
+          ],
+          "risk": [
+            "经营现金流为负 -2.2 亿元",
+            "资产负债率 78.86%，财务压力偏高",
+            "跌破 MA20 且 30分钟转弱，取消买点",
+            "策略否决：趋势阶段：震荡过渡",
+            "策略否决：相对强度：强度 52.1"
+          ]
         }
       ],
       "priceHistory": [
@@ -19011,6 +19162,19 @@
           "score": 41.6,
           "layer": "暂不交易",
           "mainNetInflowYi": 1.71
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 7.85,
+          "open": 7.46,
+          "high": 8.22,
+          "low": 7.4,
+          "pct": 5.09,
+          "state": "交易准备池",
+          "score": 73.8,
+          "layer": "今日机会池",
+          "mainNetInflowYi": 0.2
         }
       ],
       "initialPlan": {
@@ -19020,33 +19184,33 @@
         "takeProfit": 7.95,
         "riskReward": 1.88
       },
-      "lastSeenAt": "2026-08-17T05:23:40.298Z",
-      "lastSeenAtChina": "2026/08/17 13:23:40",
-      "currentState": "暂不交易",
-      "currentScore": 41.6,
-      "currentLayer": "暂不交易",
-      "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 8.09,
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
+      "currentState": "交易准备池",
+      "currentScore": 73.8,
+      "currentLayer": "今日机会池",
+      "currentLayerReason": "新入池且买点/评分较强，作为新增机会观察，需等触发条件确认后再执行。",
+      "currentPrice": 7.85,
       "currentSector": "低空经济/航空航天",
       "lastPlan": {
-        "buyType": "类三买观察",
-        "action": "不追高，等待突破后回踩不破再试仓",
-        "nextAction": "当前不建仓，等风险解除或结构修复。",
-        "stop": 7.18,
-        "takeProfit": 8.83,
-        "riskReward": 1.66
+        "buyType": "类二买/趋势延续观察",
+        "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+        "nextAction": "只在回踩不破触发条件时试仓；高开急拉不追。",
+        "stop": 7.03,
+        "takeProfit": 8.88,
+        "riskReward": 1.26
       },
       "performance": {
-        "currentReturnPct": 3.19,
+        "currentReturnPct": 0.13,
         "maxGainPct": 3.19,
         "maxDrawdownPct": 0,
-        "oneWeekPct": null,
+        "oneWeekPct": 0.13,
         "oneMonthPct": null,
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": true,
-        "latestDate": "2026-08-17",
-        "latestClose": 8.09,
+        "latestDate": "2026-08-24",
+        "latestClose": 7.85,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-13",
@@ -19063,7 +19227,11 @@
             "close": 8.09,
             "returnPct": 3.19
           },
-          "d10": null,
+          "d10": {
+            "date": "2026-08-24",
+            "close": 7.85,
+            "returnPct": 0.13
+          },
           "d20": null
         }
       }
@@ -20692,6 +20860,33 @@
             "策略否决：趋势阶段：阶段1：筑底观察",
             "策略否决：缠论买点：无买点/风险段"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 46.76,
+          "pct": -2.05,
+          "state": "暂不交易",
+          "score": 35.4,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "医药医疗",
+          "buyType": "无买点/风险段",
+          "reason": [
+            "成交额 40.48 亿元，流动性较好",
+            "PE 39.29，估值未进入极端异常区",
+            "归属板块：医药医疗；命中：医药、医疗、生物、创新药、中药",
+            "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+            "归母净利润同比增长 0.34%"
+          ],
+          "risk": [
+            "主力净流出 3.25 亿元",
+            "营业收入同比下降 1.94%",
+            "收盘低于 MA20，买点需要降级",
+            "有效跌破 20 日低点 46.47，技术面继续减分",
+            "策略否决：趋势阶段：阶段1：筑底观察"
+          ]
         }
       ],
       "priceHistory": [
@@ -20707,6 +20902,19 @@
           "score": 44.5,
           "layer": "暂不交易",
           "mainNetInflowYi": null
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 46.76,
+          "open": 47.54,
+          "high": 48.08,
+          "low": 46.47,
+          "pct": -2.05,
+          "state": "暂不交易",
+          "score": 35.4,
+          "layer": "暂不交易",
+          "mainNetInflowYi": -3.25
         }
       ],
       "initialPlan": {
@@ -20716,40 +20924,44 @@
         "takeProfit": 60.35,
         "riskReward": 7.79
       },
-      "lastSeenAt": "2026-08-24T02:41:54.217Z",
-      "lastSeenAtChina": "2026/08/24 10:41:54",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 44.5,
+      "currentScore": 35.4,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 46.96,
+      "currentPrice": 46.76,
       "currentSector": "医药医疗",
       "lastPlan": {
         "buyType": "无买点/风险段",
         "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
         "nextAction": "当前不建仓，等风险解除或结构修复。",
-        "stop": 46.12,
+        "stop": 45.08,
         "takeProfit": 60.35,
-        "riskReward": 15.93
+        "riskReward": 8.09
       },
       "performance": {
-        "currentReturnPct": -1.63,
+        "currentReturnPct": -2.05,
         "maxGainPct": -1.63,
-        "maxDrawdownPct": -1.63,
+        "maxDrawdownPct": -2.05,
         "oneWeekPct": null,
         "oneMonthPct": null,
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-21",
-        "latestClose": 46.96,
+        "latestDate": "2026-08-24",
+        "latestClose": 46.76,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-21",
             "close": 46.96,
             "returnPct": -1.63
           },
-          "d3": null,
+          "d3": {
+            "date": "2026-08-24",
+            "close": 46.76,
+            "returnPct": -2.05
+          },
           "d5": null,
           "d10": null,
           "d20": null
@@ -21862,6 +22074,33 @@
             "策略否决：趋势阶段：阶段1：筑底观察",
             "策略否决：缠论买点：无买点/风险段"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 73.19,
+          "pct": -1.07,
+          "state": "暂不交易",
+          "score": 40.5,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "资源周期/化工",
+          "buyType": "无买点/风险段",
+          "reason": [
+            "成交额 17.13 亿元，流动性较好",
+            "PE 18.34，估值未进入极端异常区",
+            "归属板块：资源周期/化工；命中：锂、锂电、电池",
+            "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+            "归母净利润同比增长 20.62%"
+          ],
+          "risk": [
+            "主力净流出 2.08 亿元",
+            "收盘低于 MA20，买点需要降级",
+            "有效跌破 20 日低点 72.48，技术面继续减分",
+            "策略否决：趋势阶段：阶段1：筑底观察",
+            "策略否决：缠论买点：无买点/风险段"
+          ]
         }
       ],
       "priceHistory": [
@@ -22046,6 +22285,19 @@
           "score": 40.7,
           "layer": "待确认剔除",
           "mainNetInflowYi": -1.59
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 73.19,
+          "open": 73.95,
+          "high": 74.74,
+          "low": 72.6,
+          "pct": -1.07,
+          "state": "暂不交易",
+          "score": 40.5,
+          "layer": "暂不交易",
+          "mainNetInflowYi": -2.08
         }
       ],
       "initialPlan": {
@@ -22055,24 +22307,24 @@
         "takeProfit": 82.7,
         "riskReward": 0.99
       },
-      "lastSeenAt": "2026-08-21T08:22:04.656Z",
-      "lastSeenAtChina": "2026/08/21 16:22:04",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 40.7,
-      "currentLayer": "待确认剔除",
-      "currentLayerReason": "原候选本次出现硬风险或交易条件失效，先保留在追踪中，需人工确认后才停止跟踪。",
-      "currentPrice": 73.98,
+      "currentScore": 40.5,
+      "currentLayer": "暂不交易",
+      "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+      "currentPrice": 73.19,
       "currentSector": "资源周期/化工",
       "lastPlan": {
         "buyType": "无买点/风险段",
         "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
         "nextAction": "当前不建仓，等风险解除或结构修复。",
-        "stop": 70.2,
+        "stop": 70.31,
         "takeProfit": 85.43,
-        "riskReward": 3.03
+        "riskReward": 4.25
       },
       "performance": {
-        "currentReturnPct": 0.46,
+        "currentReturnPct": -0.61,
         "maxGainPct": 5.69,
         "maxDrawdownPct": -0.81,
         "oneWeekPct": 3.6,
@@ -22080,8 +22332,8 @@
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-21",
-        "latestClose": 73.98,
+        "latestDate": "2026-08-24",
+        "latestClose": 73.19,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-04",
@@ -22103,7 +22355,11 @@
             "close": 73.14,
             "returnPct": -0.68
           },
-          "d20": null
+          "d20": {
+            "date": "2026-08-24",
+            "close": 73.19,
+            "returnPct": -0.61
+          }
         }
       }
     },
@@ -26350,6 +26606,30 @@
             "策略否决：资金流：主力净流入 -4.12 亿",
             "策略否决：风险收益比：按计划价 26.3 计算，约 1:0.6，最大亏损约 24.71%，目标空间约 14.83%"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 27.26,
+          "pct": 0.29,
+          "state": "重点跟踪池",
+          "score": 96,
+          "layer": "候选观察池",
+          "layerReason": "进入候选池但尚未形成稳定交易机会，继续等待评分、趋势或买点改善。",
+          "sector": "黄金/贵金属",
+          "buyType": "类三买观察",
+          "reason": [
+            "成交额 42.55 亿元，流动性较好",
+            "PE 21.06，估值未进入极端异常区",
+            "主力净流入 1.88 亿元",
+            "归属板块：黄金/贵金属；命中：黄金、贵金属",
+            "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点"
+          ],
+          "risk": [
+            "经营现金流为负 -21.68 亿元",
+            "跌回 20 日中位 24.41 下方，类三买观察失效"
+          ]
         }
       ],
       "priceHistory": [
@@ -26537,16 +26817,16 @@
         },
         {
           "date": "2026-08-24",
-          "at": "2026-08-24T05:27:06.117Z",
-          "close": 26.96,
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 27.26,
           "open": 27.59,
           "high": 27.96,
           "low": 26.81,
-          "pct": -0.81,
-          "state": "暂不交易",
-          "score": 83.1,
-          "layer": "待确认剔除",
-          "mainNetInflowYi": -4.12
+          "pct": 0.29,
+          "state": "重点跟踪池",
+          "score": 96,
+          "layer": "候选观察池",
+          "mainNetInflowYi": 1.88
         }
       ],
       "initialPlan": {
@@ -26556,25 +26836,25 @@
         "takeProfit": 25.14,
         "riskReward": 0.7
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
-      "currentState": "暂不交易",
-      "currentScore": 83.1,
-      "currentLayer": "待确认剔除",
-      "currentLayerReason": "原候选本次出现硬风险或交易条件失效，先保留在追踪中，需人工确认后才停止跟踪。",
-      "currentPrice": 26.96,
-      "currentSector": "资源周期/化工",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
+      "currentState": "重点跟踪池",
+      "currentScore": 96,
+      "currentLayer": "候选观察池",
+      "currentLayerReason": "进入候选池但尚未形成稳定交易机会，继续等待评分、趋势或买点改善。",
+      "currentPrice": 27.26,
+      "currentSector": "黄金/贵金属",
       "lastPlan": {
-        "buyType": "中枢上半区观察",
-        "action": "位置不差但低级别未确认，等待 30分钟转强",
-        "nextAction": "当前不建仓，等风险解除或结构修复。",
-        "stop": 19.8,
+        "buyType": "类三买观察",
+        "action": "不追高，等待突破后回踩不破再试仓",
+        "nextAction": "加入盘中观察，等待 5分钟确认或回踩关键位。",
+        "stop": 24.69,
         "takeProfit": 30.2,
-        "riskReward": 0.6
+        "riskReward": 2.22
       },
       "performance": {
-        "currentReturnPct": 21.11,
-        "maxGainPct": 22.1,
+        "currentReturnPct": 22.46,
+        "maxGainPct": 22.46,
         "maxDrawdownPct": 0,
         "oneWeekPct": 17.03,
         "oneMonthPct": null,
@@ -26582,7 +26862,7 @@
         "hitStop": false,
         "hitTakeProfit": true,
         "latestDate": "2026-08-24",
-        "latestClose": 26.96,
+        "latestClose": 27.26,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-04",
@@ -26606,8 +26886,8 @@
           },
           "d20": {
             "date": "2026-08-24",
-            "close": 26.96,
-            "returnPct": 21.11
+            "close": 27.26,
+            "returnPct": 22.46
           }
         }
       }
@@ -27746,6 +28026,33 @@
             "策略否决：趋势阶段：阶段1：筑底观察",
             "策略否决：缠论买点：无买点/风险段"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 1304.66,
+          "pct": 2.5,
+          "state": "暂不交易",
+          "score": 39.2,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "大消费",
+          "buyType": "无买点/风险段",
+          "reason": [
+            "成交额 63 亿元，流动性较好",
+            "PE 20.03，估值未进入极端异常区",
+            "归属板块：大消费；命中：消费、食品、饮料、白酒",
+            "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+            "营业收入同比增长 1.3%"
+          ],
+          "risk": [
+            "归母净利润同比下降 1.95%",
+            "收盘低于 MA20，买点需要降级",
+            "有效跌破 20 日低点 1270.33，技术面继续减分",
+            "策略否决：趋势阶段：阶段1：筑底观察",
+            "策略否决：缠论买点：无买点/风险段"
+          ]
         }
       ],
       "priceHistory": [
@@ -27933,16 +28240,16 @@
         },
         {
           "date": "2026-08-24",
-          "at": "2026-08-24T05:27:06.117Z",
-          "close": 1309.99,
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 1304.66,
           "open": 1271.01,
           "high": 1313.8,
           "low": 1270.33,
-          "pct": 2.92,
+          "pct": 2.5,
           "state": "暂不交易",
-          "score": 50,
+          "score": 39.2,
           "layer": "暂不交易",
-          "mainNetInflowYi": 13.62
+          "mainNetInflowYi": -0.19
         }
       ],
       "initialPlan": {
@@ -27952,13 +28259,13 @@
         "takeProfit": 1472.42,
         "riskReward": 0.82
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 50,
+      "currentScore": 39.2,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 1309.99,
+      "currentPrice": 1304.66,
       "currentSector": "大消费",
       "lastPlan": {
         "buyType": "无买点/风险段",
@@ -27966,10 +28273,10 @@
         "nextAction": "当前不建仓，等风险解除或结构修复。",
         "stop": 1232.22,
         "takeProfit": 1472.42,
-        "riskReward": 2.09
+        "riskReward": 2.32
       },
       "performance": {
-        "currentReturnPct": -1.38,
+        "currentReturnPct": -1.78,
         "maxGainPct": 2.16,
         "maxDrawdownPct": -3.87,
         "oneWeekPct": 0.84,
@@ -27978,7 +28285,7 @@
         "hitStop": false,
         "hitTakeProfit": false,
         "latestDate": "2026-08-24",
-        "latestClose": 1309.99,
+        "latestClose": 1304.66,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-04",
@@ -28002,8 +28309,8 @@
           },
           "d20": {
             "date": "2026-08-24",
-            "close": 1309.99,
-            "returnPct": -1.38
+            "close": 1304.66,
+            "returnPct": -1.78
           }
         }
       }
@@ -28695,6 +29002,33 @@
             "策略否决：相对强度：强度 35.5",
             "策略否决：风险收益比：按计划价 32.84 计算，约 1:1.04，最大亏损约 20.19%，目标空间约 21.01%"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 32.53,
+          "pct": -2.69,
+          "state": "暂不交易",
+          "score": 56.8,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "新能源/电力设备",
+          "buyType": "中枢上半区观察",
+          "reason": [
+            "成交额 49.72 亿元，流动性较好",
+            "PE 37.96，估值未进入极端异常区",
+            "归属板块：新能源/电力设备；命中：锂、锂电、电池、储能、新能源",
+            "趋势阶段不够清晰，等待方向选择",
+            "归母净利润同比增长 46.42%"
+          ],
+          "risk": [
+            "主力净流出 5.47 亿元",
+            "经营现金流为负 -19.49 亿元",
+            "跌破 20 日中位 31.91，降级为震荡",
+            "策略否决：趋势阶段：震荡过渡",
+            "策略否决：相对强度：强度 32.6"
+          ]
         }
       ],
       "priceHistory": [
@@ -28853,6 +29187,19 @@
           "score": 72.9,
           "layer": "暂不交易",
           "mainNetInflowYi": 4.62
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 32.53,
+          "open": 33.42,
+          "high": 33.43,
+          "low": 31.78,
+          "pct": -2.69,
+          "state": "暂不交易",
+          "score": 56.8,
+          "layer": "暂不交易",
+          "mainNetInflowYi": -5.47
         }
       ],
       "initialPlan": {
@@ -28862,13 +29209,13 @@
         "takeProfit": 53.76,
         "riskReward": 6.39
       },
-      "lastSeenAt": "2026-08-20T08:10:26.152Z",
-      "lastSeenAtChina": "2026/08/20 16:10:26",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 72.9,
+      "currentScore": 56.8,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 32.84,
+      "currentPrice": 32.53,
       "currentSector": "新能源/电力设备",
       "lastPlan": {
         "buyType": "中枢上半区观察",
@@ -28876,10 +29223,10 @@
         "nextAction": "当前不建仓，等风险解除或结构修复。",
         "stop": 26.21,
         "takeProfit": 39.74,
-        "riskReward": 1.04
+        "riskReward": 1.14
       },
       "performance": {
-        "currentReturnPct": 9.69,
+        "currentReturnPct": 8.65,
         "maxGainPct": 19.91,
         "maxDrawdownPct": 0,
         "oneWeekPct": 8.12,
@@ -28887,8 +29234,8 @@
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-20",
-        "latestClose": 32.84,
+        "latestDate": "2026-08-24",
+        "latestClose": 32.53,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-04",
@@ -28910,7 +29257,11 @@
             "close": 34.44,
             "returnPct": 15.03
           },
-          "d20": null
+          "d20": {
+            "date": "2026-08-24",
+            "close": 32.53,
+            "returnPct": 8.65
+          }
         }
       }
     },
@@ -28985,6 +29336,32 @@
             "策略否决：相对强度：强度 38.1",
             "策略否决：风险收益比：按计划价 11.7 计算，约 1:1.48，最大亏损约 9.15%，目标空间约 13.5%"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 11.78,
+          "pct": -0.34,
+          "state": "观察池",
+          "score": 69.8,
+          "layer": "核心跟踪池",
+          "layerReason": "已连续跟踪 6 次，本次继续满足中期跟踪条件；不因单日排序波动移出。",
+          "sector": "低空经济/航空航天",
+          "buyType": "中枢上半区观察",
+          "reason": [
+            "PE 24.54，估值未进入极端异常区",
+            "归属板块：低空经济/航空航天；命中：储能、新能源、低空经济、航空工业集团",
+            "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点",
+            "归母净利润同比增长 18.02%",
+            "营业收入同比增长 5.76%"
+          ],
+          "risk": [
+            "成交额偏低，实盘滑点和波动风险更高",
+            "跌破 20 日中位 11.63，降级为震荡",
+            "策略否决：相对强度：强度 44.4",
+            "策略否决：风险收益比：按计划价 11.78 计算，约 1:1.3，最大亏损约 9.76%，目标空间约 12.73%"
+          ]
         }
       ],
       "priceHistory": [
@@ -29013,6 +29390,19 @@
           "score": 80.1,
           "layer": "候选观察池",
           "mainNetInflowYi": 0.04
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 11.78,
+          "open": 11.8,
+          "high": 11.85,
+          "low": 11.61,
+          "pct": -0.34,
+          "state": "观察池",
+          "score": 69.8,
+          "layer": "核心跟踪池",
+          "mainNetInflowYi": null
         }
       ],
       "initialPlan": {
@@ -29022,13 +29412,13 @@
         "takeProfit": 13.28,
         "riskReward": 0.99
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "观察池",
-      "currentScore": 80.1,
-      "currentLayer": "候选观察池",
-      "currentLayerReason": "进入候选池但尚未形成稳定交易机会，继续等待评分、趋势或买点改善。",
-      "currentPrice": 11.7,
+      "currentScore": 69.8,
+      "currentLayer": "核心跟踪池",
+      "currentLayerReason": "已连续跟踪 6 次，本次继续满足中期跟踪条件；不因单日排序波动移出。",
+      "currentPrice": 11.78,
       "currentSector": "低空经济/航空航天",
       "lastPlan": {
         "buyType": "中枢上半区观察",
@@ -29036,19 +29426,19 @@
         "nextAction": "保留观察，等待评分或买点改善。",
         "stop": 10.63,
         "takeProfit": 13.28,
-        "riskReward": 1.48
+        "riskReward": 1.3
       },
       "performance": {
-        "currentReturnPct": -1.76,
+        "currentReturnPct": -1.09,
         "maxGainPct": 0,
         "maxDrawdownPct": -1.76,
-        "oneWeekPct": null,
+        "oneWeekPct": -1.09,
         "oneMonthPct": null,
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-21",
-        "latestClose": 11.7,
+        "latestDate": "2026-08-24",
+        "latestClose": 11.78,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-17",
@@ -30262,6 +30652,32 @@
             "跌破 20 日中位 31.9，降级为震荡",
             "策略否决：风险收益比：按计划价 35.39 计算，约 1:0.55，最大亏损约 29.67%，目标空间约 16.39%"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 36.5,
+          "pct": -1.48,
+          "state": "暂不交易",
+          "score": 78.2,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "黄金/贵金属",
+          "buyType": "中枢上半区观察",
+          "reason": [
+            "成交额 67.44 亿元，流动性较好",
+            "PE 32.62，估值未进入极端异常区",
+            "归属板块：黄金/贵金属；命中：黄金、贵金属",
+            "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点",
+            "归母净利润同比增长 40.87%"
+          ],
+          "risk": [
+            "主力净流出 1.06 亿元",
+            "跌破 20 日中位 31.95，降级为震荡",
+            "策略否决：资金流：主力净流入 -1.06 亿",
+            "策略否决：风险收益比：按计划价 35.42 计算，约 1:0.55，最大亏损约 29.45%，目标空间约 16.29%"
+          ]
         }
       ],
       "priceHistory": [
@@ -30449,16 +30865,16 @@
         },
         {
           "date": "2026-08-24",
-          "at": "2026-08-24T02:41:54.217Z",
-          "close": 36.6,
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 36.5,
           "open": 37.8,
           "high": 38.14,
-          "low": 36.2,
-          "pct": -1.21,
+          "low": 35.9,
+          "pct": -1.48,
           "state": "暂不交易",
-          "score": 96,
-          "layer": "待确认剔除",
-          "mainNetInflowYi": 4.9
+          "score": 78.2,
+          "layer": "暂不交易",
+          "mainNetInflowYi": -1.06
         }
       ],
       "initialPlan": {
@@ -30468,24 +30884,24 @@
         "takeProfit": 31.03,
         "riskReward": 0.87
       },
-      "lastSeenAt": "2026-08-24T02:41:54.217Z",
-      "lastSeenAtChina": "2026/08/24 10:41:54",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 96,
-      "currentLayer": "待确认剔除",
-      "currentLayerReason": "原候选本次出现硬风险或交易条件失效，先保留在追踪中，需人工确认后才停止跟踪。",
-      "currentPrice": 36.6,
+      "currentScore": 78.2,
+      "currentLayer": "暂不交易",
+      "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+      "currentPrice": 36.5,
       "currentSector": "黄金/贵金属",
       "lastPlan": {
         "buyType": "中枢上半区观察",
         "action": "位置不差但低级别未确认，等待 30分钟转强",
         "nextAction": "当前不建仓，等风险解除或结构修复。",
-        "stop": 24.89,
+        "stop": 24.99,
         "takeProfit": 41.19,
         "riskReward": 0.55
       },
       "performance": {
-        "currentReturnPct": 35.16,
+        "currentReturnPct": 34.79,
         "maxGainPct": 36.82,
         "maxDrawdownPct": 0,
         "oneWeekPct": 13.88,
@@ -30494,7 +30910,7 @@
         "hitStop": false,
         "hitTakeProfit": true,
         "latestDate": "2026-08-24",
-        "latestClose": 36.6,
+        "latestClose": 36.5,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-04",
@@ -30518,8 +30934,8 @@
           },
           "d20": {
             "date": "2026-08-24",
-            "close": 36.6,
-            "returnPct": 35.16
+            "close": 36.5,
+            "returnPct": 34.79
           }
         }
       }
@@ -33689,6 +34105,33 @@
             "跌回 20 日中位 7.02 下方，类三买观察失效",
             "策略否决：相对强度：强度 38.4"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 8.66,
+          "pct": 10.04,
+          "state": "交易准备池",
+          "score": 96,
+          "layer": "今日机会池",
+          "layerReason": "新入池且买点/评分较强，作为新增机会观察，需等触发条件确认后再执行。",
+          "sector": "高端制造/汽车",
+          "buyType": "类三买观察",
+          "reason": [
+            "成交额 6.97 亿元，具备跟踪流动性",
+            "当日涨幅 10.04%，短线强于市场",
+            "主力净流入 1.59 亿元",
+            "归属板块：高端制造/汽车；命中：机械、纺织机械",
+            "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点"
+          ],
+          "risk": [
+            "PE 183.09，估值风险偏高",
+            "归母净利润同比下降 12.15%",
+            "资产负债率 85.65%，财务压力偏高",
+            "跌回 20 日中位 7.53 下方，类三买观察失效",
+            "策略否决：相对强度：强度 59.8"
+          ]
         }
       ],
       "priceHistory": [
@@ -33704,6 +34147,19 @@
           "score": 52.3,
           "layer": "候选观察池",
           "mainNetInflowYi": -0.58
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 8.66,
+          "open": 7.73,
+          "high": 8.66,
+          "low": 7.67,
+          "pct": 10.04,
+          "state": "交易准备池",
+          "score": 96,
+          "layer": "今日机会池",
+          "mainNetInflowYi": 1.59
         }
       ],
       "initialPlan": {
@@ -33713,41 +34169,49 @@
         "takeProfit": 8.42,
         "riskReward": 1.67
       },
-      "lastSeenAt": "2026-08-20T02:25:54.198Z",
-      "lastSeenAtChina": "2026/08/20 10:25:54",
-      "currentState": "观察池",
-      "currentScore": 52.3,
-      "currentLayer": "候选观察池",
-      "currentLayerReason": "进入候选池但尚未形成稳定交易机会，继续等待评分、趋势或买点改善。",
-      "currentPrice": 7.75,
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
+      "currentState": "交易准备池",
+      "currentScore": 96,
+      "currentLayer": "今日机会池",
+      "currentLayerReason": "新入池且买点/评分较强，作为新增机会观察，需等触发条件确认后再执行。",
+      "currentPrice": 8.66,
       "currentSector": "高端制造/汽车",
       "lastPlan": {
         "buyType": "类三买观察",
         "action": "不追高，等待突破后回踩不破再试仓",
-        "nextAction": "保留观察，等待评分或买点改善。",
-        "stop": 6.87,
-        "takeProfit": 8.42,
-        "riskReward": 1.67
+        "nextAction": "只在回踩不破触发条件时试仓；高开急拉不追。",
+        "stop": 7.42,
+        "takeProfit": 9.35,
+        "riskReward": 1.61
       },
       "performance": {
-        "currentReturnPct": -0.64,
-        "maxGainPct": -0.64,
+        "currentReturnPct": 11.03,
+        "maxGainPct": 11.03,
         "maxDrawdownPct": -0.64,
         "oneWeekPct": null,
         "oneMonthPct": null,
         "twoMonthPct": null,
         "hitStop": false,
-        "hitTakeProfit": false,
-        "latestDate": "2026-08-19",
-        "latestClose": 7.75,
+        "hitTakeProfit": true,
+        "latestDate": "2026-08-24",
+        "latestClose": 8.66,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-19",
             "close": 7.75,
             "returnPct": -0.64
           },
-          "d3": null,
-          "d5": null,
+          "d3": {
+            "date": "2026-08-24",
+            "close": 8.66,
+            "returnPct": 11.03
+          },
+          "d5": {
+            "date": "2026-08-24",
+            "close": 8.66,
+            "returnPct": 11.03
+          },
           "d10": null,
           "d20": null
         }
@@ -34798,6 +35262,32 @@
             "策略否决：趋势阶段：震荡过渡",
             "策略否决：资金流：主力净流入 -1.01 亿"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 32.17,
+          "pct": -1.17,
+          "state": "暂不交易",
+          "score": 82.8,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "科技",
+          "buyType": "中枢上半区观察",
+          "reason": [
+            "成交额 20.07 亿元，流动性较好",
+            "主力净流入 0.48 亿元",
+            "归属板块：科技；命中：半导体、芯片、电子、存储、半导体材料",
+            "趋势阶段不够清晰，等待方向选择",
+            "归母净利润同比增长 414.95%"
+          ],
+          "risk": [
+            "经营现金流为负 -11.52 亿元",
+            "跌破 20 日中位 30.18，降级为震荡",
+            "策略否决：趋势阶段：震荡过渡",
+            "策略否决：风险收益比：按计划价 32.17 计算，约 1:0.85，最大亏损约 32.61%，目标空间约 27.57%"
+          ]
         }
       ],
       "priceHistory": [
@@ -34985,16 +35475,16 @@
         },
         {
           "date": "2026-08-24",
-          "at": "2026-08-24T02:41:54.217Z",
-          "close": 31.87,
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 32.17,
           "open": 32.44,
           "high": 32.77,
-          "low": 31.63,
-          "pct": -2.09,
+          "low": 31.13,
+          "pct": -1.17,
           "state": "暂不交易",
-          "score": 64.1,
+          "score": 82.8,
           "layer": "暂不交易",
-          "mainNetInflowYi": -0.12
+          "mainNetInflowYi": 0.48
         }
       ],
       "initialPlan": {
@@ -35004,13 +35494,13 @@
         "takeProfit": 50.2,
         "riskReward": 9.45
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 66.4,
+      "currentScore": 82.8,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 31.68,
+      "currentPrice": 32.17,
       "currentSector": "科技",
       "lastPlan": {
         "buyType": "中枢上半区观察",
@@ -35018,10 +35508,10 @@
         "nextAction": "当前不建仓，等风险解除或结构修复。",
         "stop": 21.68,
         "takeProfit": 41.04,
-        "riskReward": 0.94
+        "riskReward": 0.85
       },
       "performance": {
-        "currentReturnPct": 30.56,
+        "currentReturnPct": 31.79,
         "maxGainPct": 46.33,
         "maxDrawdownPct": 0,
         "oneWeekPct": 36.21,
@@ -35030,7 +35520,7 @@
         "hitStop": false,
         "hitTakeProfit": false,
         "latestDate": "2026-08-24",
-        "latestClose": 31.87,
+        "latestClose": 32.17,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-04",
@@ -35054,8 +35544,8 @@
           },
           "d20": {
             "date": "2026-08-24",
-            "close": 31.87,
-            "returnPct": 30.56
+            "close": 32.17,
+            "returnPct": 31.79
           }
         }
       }
@@ -37061,6 +37551,33 @@
             "收盘低于 MA20，买点需要降级",
             "有效跌破 20 日低点 6.28，技术面继续减分"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 6.85,
+          "pct": -1.01,
+          "state": "暂不交易",
+          "score": 0,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "高端制造/汽车",
+          "buyType": "无买点/风险段",
+          "reason": [
+            "主力净流入 0.01 亿元",
+            "归属板块：高端制造/汽车；命中：互联网、纺织服装设备、纺织机械",
+            "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+            "归母净利润同比增长 104.52%",
+            "资产负债率 53.34%，财务压力可控"
+          ],
+          "risk": [
+            "成交额偏低，实盘滑点和波动风险更高",
+            "营业收入同比下降 3.9%",
+            "经营现金流为负 -3.22 亿元",
+            "收盘低于 MA20，买点需要降级",
+            "有效跌破 20 日低点 6.45，技术面继续减分"
+          ]
         }
       ],
       "priceHistory": [
@@ -37232,6 +37749,19 @@
           "score": 0,
           "layer": "暂不交易",
           "mainNetInflowYi": -0.01
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 6.85,
+          "open": 6.9,
+          "high": 6.98,
+          "low": 6.76,
+          "pct": -1.01,
+          "state": "暂不交易",
+          "score": 0,
+          "layer": "暂不交易",
+          "mainNetInflowYi": 0.01
         }
       ],
       "initialPlan": {
@@ -37241,24 +37771,24 @@
         "takeProfit": 8.33,
         "riskReward": 1.02
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
       "currentScore": 0,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 6.79,
+      "currentPrice": 6.85,
       "currentSector": "高端制造/汽车",
       "lastPlan": {
         "buyType": "无买点/风险段",
         "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
         "nextAction": "当前不建仓，等风险解除或结构修复。",
-        "stop": 6.09,
+        "stop": 6.26,
         "takeProfit": 7.84,
-        "riskReward": 1.5
+        "riskReward": 1.68
       },
       "performance": {
-        "currentReturnPct": -3.55,
+        "currentReturnPct": -2.7,
         "maxGainPct": 2.7,
         "maxDrawdownPct": -3.55,
         "oneWeekPct": 2.7,
@@ -37266,8 +37796,8 @@
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-21",
-        "latestClose": 6.79,
+        "latestDate": "2026-08-24",
+        "latestClose": 6.85,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-05",
@@ -37289,7 +37819,11 @@
             "close": 7.08,
             "returnPct": 0.57
           },
-          "d20": null
+          "d20": {
+            "date": "2026-08-24",
+            "close": 6.85,
+            "returnPct": -2.7
+          }
         }
       }
     },
@@ -38559,6 +39093,32 @@
             "有效跌破 20 日低点 94.12，技术面继续减分",
             "策略否决：趋势阶段：阶段1：筑底观察"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 97.53,
+          "pct": 1.33,
+          "state": "重点跟踪池",
+          "score": 96,
+          "layer": "今日机会池",
+          "layerReason": "新入池且买点/评分较强，作为新增机会观察，需等触发条件确认后再执行。",
+          "sector": "机器人/智能制造",
+          "buyType": "类三买观察",
+          "reason": [
+            "成交额 12.46 亿元，流动性较好",
+            "PE 15.36，估值未进入极端异常区",
+            "主力净流入 1.22 亿元",
+            "归属板块：机器人/智能制造；命中：电子、通信、数据中心、网络安全、互联网",
+            "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点"
+          ],
+          "risk": [
+            "归母净利润同比下降 6.3%",
+            "营业收入同比下降 1.05%",
+            "跌回 20 日中位 96.82 下方，类三买观察失效",
+            "策略否决：相对强度：强度 53.5"
+          ]
         }
       ],
       "priceHistory": [
@@ -38652,6 +39212,19 @@
           "score": 48.6,
           "layer": "待确认剔除",
           "mainNetInflowYi": 0.21
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 97.53,
+          "open": 96.05,
+          "high": 98.04,
+          "low": 96.05,
+          "pct": 1.33,
+          "state": "重点跟踪池",
+          "score": 96,
+          "layer": "今日机会池",
+          "mainNetInflowYi": 1.22
         }
       ],
       "initialPlan": {
@@ -38661,33 +39234,33 @@
         "takeProfit": 107.36,
         "riskReward": 1.35
       },
-      "lastSeenAt": "2026-08-21T08:22:04.656Z",
-      "lastSeenAtChina": "2026/08/21 16:22:04",
-      "currentState": "暂不交易",
-      "currentScore": 48.6,
-      "currentLayer": "待确认剔除",
-      "currentLayerReason": "原候选本次出现硬风险或交易条件失效，先保留在追踪中，需人工确认后才停止跟踪。",
-      "currentPrice": 96.25,
-      "currentSector": "科技",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
+      "currentState": "重点跟踪池",
+      "currentScore": 96,
+      "currentLayer": "今日机会池",
+      "currentLayerReason": "新入池且买点/评分较强，作为新增机会观察，需等触发条件确认后再执行。",
+      "currentPrice": 97.53,
+      "currentSector": "机器人/智能制造",
       "lastPlan": {
-        "buyType": "无买点/风险段",
-        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
-        "nextAction": "当前不建仓，等风险解除或结构修复。",
-        "stop": 91.3,
+        "buyType": "类三买观察",
+        "action": "不追高，等待突破后回踩不破再试仓",
+        "nextAction": "加入盘中观察，等待 5分钟确认或回踩关键位。",
+        "stop": 94.88,
         "takeProfit": 107.36,
-        "riskReward": 2.25
+        "riskReward": 3.71
       },
       "performance": {
-        "currentReturnPct": 0.79,
-        "maxGainPct": 1.26,
+        "currentReturnPct": 2.13,
+        "maxGainPct": 2.13,
         "maxDrawdownPct": 0,
         "oneWeekPct": 0.34,
         "oneMonthPct": null,
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-21",
-        "latestClose": 96.25,
+        "latestDate": "2026-08-24",
+        "latestClose": 97.53,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-07",
@@ -41532,7 +42105,7 @@
     },
     "601899": {
       "code": "601899",
-      "name": "XD紫金矿",
+      "name": "紫金矿业",
       "firstRecommendedAt": "2026-08-04T10:20:02.067Z",
       "firstRecommendedAtChina": "2026/08/04 18:20:02",
       "firstDate": "2026-08-04",
@@ -42372,6 +42945,32 @@
             "策略否决：相对强度：强度 59.2",
             "策略否决：公告事件：公告风险待核查"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 34.54,
+          "pct": -0.58,
+          "state": "暂不交易",
+          "score": 90,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "黄金/贵金属",
+          "buyType": "中枢上半区观察",
+          "reason": [
+            "成交额 117.51 亿元，流动性较好",
+            "PE 13.58，估值未进入极端异常区",
+            "归属板块：黄金/贵金属；命中：锂",
+            "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点",
+            "归母净利润同比增长 68.17%"
+          ],
+          "risk": [
+            "主力净流出 1.11 亿元",
+            "跌破 20 日中位 33.41，降级为震荡",
+            "策略否决：资金流：主力净流入 -1.11 亿",
+            "策略否决：风险收益比：按计划价 34.54 计算，约 1:0.93，最大亏损约 12.85%，目标空间约 11.93%"
+          ]
         }
       ],
       "priceHistory": [
@@ -42556,6 +43155,19 @@
           "score": 96,
           "layer": "暂不交易",
           "mainNetInflowYi": 1.05
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 34.54,
+          "open": 35.4,
+          "high": 35.47,
+          "low": 34.16,
+          "pct": -0.58,
+          "state": "暂不交易",
+          "score": 90,
+          "layer": "暂不交易",
+          "mainNetInflowYi": -1.11
         }
       ],
       "initialPlan": {
@@ -42565,24 +43177,24 @@
         "takeProfit": 36.37,
         "riskReward": 0.67
       },
-      "lastSeenAt": "2026-08-21T08:22:04.656Z",
-      "lastSeenAtChina": "2026/08/21 16:22:04",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 96,
+      "currentScore": 90,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 34.74,
+      "currentPrice": 34.54,
       "currentSector": "黄金/贵金属",
       "lastPlan": {
-        "buyType": "类三买观察",
-        "action": "不追高，等待突破后回踩不破再试仓",
+        "buyType": "中枢上半区观察",
+        "action": "位置不差但低级别未确认，等待 30分钟转强",
         "nextAction": "当前不建仓，等风险解除或结构修复。",
-        "stop": 32.75,
+        "stop": 30.1,
         "takeProfit": 38.66,
-        "riskReward": 1.97
+        "riskReward": 0.93
       },
       "performance": {
-        "currentReturnPct": 8.16,
+        "currentReturnPct": 7.53,
         "maxGainPct": 9.96,
         "maxDrawdownPct": 0,
         "oneWeekPct": 5.2,
@@ -42590,8 +43202,8 @@
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-21",
-        "latestClose": 34.74,
+        "latestDate": "2026-08-24",
+        "latestClose": 34.54,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-04",
@@ -42613,6 +43225,117 @@
             "close": 32.47,
             "returnPct": 1.09
           },
+          "d20": {
+            "date": "2026-08-24",
+            "close": 34.54,
+            "returnPct": 7.53
+          }
+        }
+      }
+    },
+    "601918": {
+      "code": "601918",
+      "name": "新集能源",
+      "firstRecommendedAt": "2026-08-24T08:25:57.544Z",
+      "firstRecommendedAtChina": "2026/08/24 16:25:57",
+      "firstDate": "2026-08-24",
+      "firstPrice": 10.92,
+      "firstState": "交易准备池",
+      "firstScore": 96,
+      "firstLayer": "今日机会池",
+      "firstReason": [
+        "成交额 10.04 亿元，流动性较好",
+        "当日涨幅 8.12%，短线强于市场",
+        "PE 13.24，估值未进入极端异常区",
+        "归属板块：新能源/电力设备；命中：储能"
+      ],
+      "sector": "新能源/电力设备",
+      "active": true,
+      "recommendations": [
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 10.92,
+          "pct": 8.12,
+          "state": "交易准备池",
+          "score": 96,
+          "layer": "今日机会池",
+          "layerReason": "新入池且买点/评分较强，作为新增机会观察，需等触发条件确认后再执行。",
+          "sector": "新能源/电力设备",
+          "buyType": "类三买观察",
+          "reason": [
+            "成交额 10.04 亿元，流动性较好",
+            "当日涨幅 8.12%，短线强于市场",
+            "PE 13.24，估值未进入极端异常区",
+            "归属板块：新能源/电力设备；命中：储能",
+            "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点"
+          ],
+          "risk": [
+            "跌回 20 日中位 10.04 下方，类三买观察失效",
+            "策略否决：资金流：主力净流入 -0.7 亿",
+            "策略否决：风险收益比：按计划价 10.57 计算，约 1:1.77，最大亏损约 6.91%，目标空间约 12.2%"
+          ]
+        }
+      ],
+      "priceHistory": [
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 10.92,
+          "open": 10.42,
+          "high": 10.98,
+          "low": 10.42,
+          "pct": 8.12,
+          "state": "交易准备池",
+          "score": 96,
+          "layer": "今日机会池",
+          "mainNetInflowYi": -0.7
+        }
+      ],
+      "initialPlan": {
+        "buyType": "类三买观察",
+        "entryZone": "9.71-10.57",
+        "stop": 9.84,
+        "takeProfit": 11.86,
+        "riskReward": 1.77
+      },
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
+      "currentState": "交易准备池",
+      "currentScore": 96,
+      "currentLayer": "今日机会池",
+      "currentLayerReason": "新入池且买点/评分较强，作为新增机会观察，需等触发条件确认后再执行。",
+      "currentPrice": 10.92,
+      "currentSector": "新能源/电力设备",
+      "lastPlan": {
+        "buyType": "类三买观察",
+        "action": "不追高，等待突破后回踩不破再试仓",
+        "nextAction": "只在回踩不破触发条件时试仓；高开急拉不追。",
+        "stop": 9.84,
+        "takeProfit": 11.86,
+        "riskReward": 1.77
+      },
+      "performance": {
+        "currentReturnPct": 0,
+        "maxGainPct": 0,
+        "maxDrawdownPct": 0,
+        "oneWeekPct": null,
+        "oneMonthPct": null,
+        "twoMonthPct": null,
+        "hitStop": false,
+        "hitTakeProfit": false,
+        "latestDate": "2026-08-24",
+        "latestClose": 10.92,
+        "horizonReturns": {
+          "d1": {
+            "date": "2026-08-24",
+            "close": 10.92,
+            "returnPct": 0
+          },
+          "d3": null,
+          "d5": null,
+          "d10": null,
           "d20": null
         }
       }
@@ -46004,6 +46727,33 @@
             "策略否决：相对强度：强度 23.9",
             "策略否决：风险收益比：按计划价 41.28 计算，约 1:1.38，最大亏损约 16.21%，目标空间约 22.29%"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 38.08,
+          "pct": 3.67,
+          "state": "暂不交易",
+          "score": 30,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "机器人/智能制造",
+          "buyType": "无买点/风险段",
+          "reason": [
+            "成交额 10.74 亿元，流动性较好",
+            "当日涨幅 3.67%，短线强于市场",
+            "PE 22.94，估值未进入极端异常区",
+            "主力净流入 1.76 亿元",
+            "归属板块：机器人/智能制造；命中：新能源、机器人概念"
+          ],
+          "risk": [
+            "归母净利润同比下降 1.9%",
+            "收盘低于 MA20，买点需要降级",
+            "有效跌破 20 日低点 34.48，技术面继续减分",
+            "策略否决：趋势阶段：阶段4：下降趋势",
+            "策略否决：缠论买点：无买点/风险段"
+          ]
         }
       ],
       "priceHistory": [
@@ -46045,6 +46795,19 @@
           "score": 41.3,
           "layer": "待确认剔除",
           "mainNetInflowYi": 2.19
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 38.08,
+          "open": 37.57,
+          "high": 38.4,
+          "low": 36,
+          "pct": 3.67,
+          "state": "暂不交易",
+          "score": 30,
+          "layer": "暂不交易",
+          "mainNetInflowYi": 1.76
         }
       ],
       "initialPlan": {
@@ -46054,42 +46817,54 @@
         "takeProfit": 50.48,
         "riskReward": 1.96
       },
-      "lastSeenAt": "2026-08-12T06:06:16.486Z",
-      "lastSeenAtChina": "2026/08/12 14:06:16",
-      "currentState": "低优先级",
-      "currentScore": 41.3,
-      "currentLayer": "待确认剔除",
-      "currentLayerReason": "原候选本次出现硬风险或交易条件失效，先保留在追踪中，需人工确认后才停止跟踪。",
-      "currentPrice": 41.28,
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
+      "currentState": "暂不交易",
+      "currentScore": 30,
+      "currentLayer": "暂不交易",
+      "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+      "currentPrice": 38.08,
       "currentSector": "机器人/智能制造",
       "lastPlan": {
-        "buyType": "中枢上半区观察",
-        "action": "位置不差但低级别未确认，等待 30分钟转强",
-        "nextAction": "保留观察，等待评分或买点改善。",
-        "stop": 34.59,
-        "takeProfit": 50.48,
-        "riskReward": 1.38
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "stop": 33.45,
+        "takeProfit": 46.62,
+        "riskReward": 1.84
       },
       "performance": {
-        "currentReturnPct": 3.33,
+        "currentReturnPct": -4.68,
         "maxGainPct": 4.73,
-        "maxDrawdownPct": 3.33,
-        "oneWeekPct": null,
+        "maxDrawdownPct": -4.68,
+        "oneWeekPct": -4.68,
         "oneMonthPct": null,
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-12",
-        "latestClose": 41.28,
+        "latestDate": "2026-08-24",
+        "latestClose": 38.08,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-11",
             "close": 41.84,
             "returnPct": 4.73
           },
-          "d3": null,
-          "d5": null,
-          "d10": null,
+          "d3": {
+            "date": "2026-08-24",
+            "close": 38.08,
+            "returnPct": -4.68
+          },
+          "d5": {
+            "date": "2026-08-24",
+            "close": 38.08,
+            "returnPct": -4.68
+          },
+          "d10": {
+            "date": "2026-08-24",
+            "close": 38.08,
+            "returnPct": -4.68
+          },
           "d20": null
         }
       }
@@ -51530,6 +52305,33 @@
             "跌破 20 日中位 24.67，降级为震荡",
             "策略否决：趋势阶段：震荡过渡"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 25.5,
+          "pct": 0.35,
+          "state": "暂不交易",
+          "score": 26.1,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "科技",
+          "buyType": "中枢上半区观察",
+          "reason": [
+            "成交额 5.67 亿元，具备跟踪流动性",
+            "主力净流入 0.26 亿元",
+            "归属板块：科技；命中：半导体、芯片、电子、通信、存储",
+            "趋势阶段不够清晰，等待方向选择",
+            "毛利率约 27.06%"
+          ],
+          "risk": [
+            "归母净利润同比下降 232.76%",
+            "营业收入同比下降 14.7%",
+            "经营现金流为负 -0.3 亿元",
+            "跌破 20 日中位 24.67，降级为震荡",
+            "策略否决：趋势阶段：震荡过渡"
+          ]
         }
       ],
       "priceHistory": [
@@ -51701,6 +52503,19 @@
           "score": 9.9,
           "layer": "暂不交易",
           "mainNetInflowYi": -0.17
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 25.5,
+          "open": 25.4,
+          "high": 25.8,
+          "low": 24.92,
+          "pct": 0.35,
+          "state": "暂不交易",
+          "score": 26.1,
+          "layer": "暂不交易",
+          "mainNetInflowYi": 0.26
         }
       ],
       "initialPlan": {
@@ -51710,13 +52525,13 @@
         "takeProfit": 39.94,
         "riskReward": 6.12
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 9.9,
+      "currentScore": 26.1,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 25.26,
+      "currentPrice": 25.5,
       "currentSector": "科技",
       "lastPlan": {
         "buyType": "中枢上半区观察",
@@ -51724,10 +52539,10 @@
         "nextAction": "当前不建仓，等风险解除或结构修复。",
         "stop": 20.15,
         "takeProfit": 30.87,
-        "riskReward": 1.1
+        "riskReward": 1
       },
       "performance": {
-        "currentReturnPct": 15.66,
+        "currentReturnPct": 16.76,
         "maxGainPct": 26.65,
         "maxDrawdownPct": 0,
         "oneWeekPct": 14.84,
@@ -51735,8 +52550,8 @@
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-21",
-        "latestClose": 25.26,
+        "latestDate": "2026-08-24",
+        "latestClose": 25.5,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-04",
@@ -51758,7 +52573,11 @@
             "close": 25.98,
             "returnPct": 18.96
           },
-          "d20": null
+          "d20": {
+            "date": "2026-08-24",
+            "close": 25.5,
+            "returnPct": 16.76
+          }
         }
       }
     },
@@ -53036,6 +53855,33 @@
             "策略否决：缠论买点：无买点/风险段",
             "策略否决：相对强度：强度 15"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 40.2,
+          "pct": -0.96,
+          "state": "暂不交易",
+          "score": 25.3,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "资源周期/化工",
+          "buyType": "无买点/风险段",
+          "reason": [
+            "成交额 21.19 亿元，流动性较好",
+            "PE 12.04，估值未进入极端异常区",
+            "归属板块：资源周期/化工；命中：锂、锂电、电池、储能、新能源",
+            "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+            "归母净利润同比增长 29.38%"
+          ],
+          "risk": [
+            "收盘低于 MA20，买点需要降级",
+            "有效跌破 20 日低点 38.41，技术面继续减分",
+            "策略否决：趋势阶段：阶段4：下降趋势",
+            "策略否决：缠论买点：无买点/风险段",
+            "策略否决：相对强度：强度 13.2"
+          ]
         }
       ],
       "priceHistory": [
@@ -53220,6 +54066,19 @@
           "score": 49.6,
           "layer": "暂不交易",
           "mainNetInflowYi": 3.78
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 40.2,
+          "open": 40.6,
+          "high": 41.77,
+          "low": 39.91,
+          "pct": -0.96,
+          "state": "暂不交易",
+          "score": 25.3,
+          "layer": "暂不交易",
+          "mainNetInflowYi": -0.18
         }
       ],
       "initialPlan": {
@@ -53229,13 +54088,13 @@
         "takeProfit": 48.17,
         "riskReward": 3.06
       },
-      "lastSeenAt": "2026-08-21T08:22:04.656Z",
-      "lastSeenAtChina": "2026/08/21 16:22:04",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 49.6,
+      "currentScore": 25.3,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 40.59,
+      "currentPrice": 40.2,
       "currentSector": "资源周期/化工",
       "lastPlan": {
         "buyType": "无买点/风险段",
@@ -53243,10 +54102,10 @@
         "nextAction": "当前不建仓，等风险解除或结构修复。",
         "stop": 37.26,
         "takeProfit": 50.94,
-        "riskReward": 3.11
+        "riskReward": 3.66
       },
       "performance": {
-        "currentReturnPct": -0.47,
+        "currentReturnPct": -1.42,
         "maxGainPct": 11.28,
         "maxDrawdownPct": -3.02,
         "oneWeekPct": 8.75,
@@ -53254,8 +54113,8 @@
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-21",
-        "latestClose": 40.59,
+        "latestDate": "2026-08-24",
+        "latestClose": 40.2,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-04",
@@ -53277,7 +54136,11 @@
             "close": 42.14,
             "returnPct": 3.33
           },
-          "d20": null
+          "d20": {
+            "date": "2026-08-24",
+            "close": 40.2,
+            "returnPct": -1.42
+          }
         }
       }
     },
@@ -56011,6 +56874,33 @@
             "策略否决：相对强度：强度 59.2",
             "策略否决：风险收益比：按计划价 59.16 计算，约 1:0.75，最大亏损约 25.07%，目标空间约 18.85%"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 59.5,
+          "pct": -2.54,
+          "state": "暂不交易",
+          "score": 63,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "科技",
+          "buyType": "中枢上半区观察",
+          "reason": [
+            "成交额 13.39 亿元，流动性较好",
+            "PE 62.63，估值未进入极端异常区",
+            "归属板块：科技；命中：半导体、芯片、电子、第三代半导体",
+            "趋势阶段不够清晰，等待方向选择",
+            "营业收入同比增长 15.14%"
+          ],
+          "risk": [
+            "归母净利润同比下降 12.68%",
+            "跌破 20 日中位 55.4，降级为震荡",
+            "策略否决：趋势阶段：震荡过渡",
+            "策略否决：相对强度：强度 57",
+            "策略否决：资金流：主力净流入 -0.01 亿"
+          ]
         }
       ],
       "priceHistory": [
@@ -56198,16 +57088,16 @@
         },
         {
           "date": "2026-08-24",
-          "at": "2026-08-24T02:41:54.217Z",
-          "close": 59.99,
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 59.5,
           "open": 61.08,
           "high": 63.4,
-          "low": 59.91,
-          "pct": -1.74,
+          "low": 58,
+          "pct": -2.54,
           "state": "暂不交易",
-          "score": 72.5,
-          "layer": "待确认剔除",
-          "mainNetInflowYi": 0.76
+          "score": 63,
+          "layer": "暂不交易",
+          "mainNetInflowYi": -0.01
         }
       ],
       "initialPlan": {
@@ -56217,13 +57107,13 @@
         "takeProfit": 89.1,
         "riskReward": 6.96
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 68.3,
+      "currentScore": 63,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 59.16,
+      "currentPrice": 59.5,
       "currentSector": "科技",
       "lastPlan": {
         "buyType": "中枢上半区观察",
@@ -56231,10 +57121,10 @@
         "nextAction": "当前不建仓，等风险解除或结构修复。",
         "stop": 44.33,
         "takeProfit": 70.31,
-        "riskReward": 0.75
+        "riskReward": 0.71
       },
       "performance": {
-        "currentReturnPct": 21.24,
+        "currentReturnPct": 20.25,
         "maxGainPct": 27.22,
         "maxDrawdownPct": 0,
         "oneWeekPct": 15.99,
@@ -56243,7 +57133,7 @@
         "hitStop": false,
         "hitTakeProfit": false,
         "latestDate": "2026-08-24",
-        "latestClose": 59.99,
+        "latestClose": 59.5,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-04",
@@ -56267,8 +57157,8 @@
           },
           "d20": {
             "date": "2026-08-24",
-            "close": 59.99,
-            "returnPct": 21.24
+            "close": 59.5,
+            "returnPct": 20.25
           }
         }
       }
@@ -57848,6 +58738,32 @@
             "策略否决：相对强度：强度 38.1",
             "策略否决：风险收益比：按计划价 43.7 计算，约 1:1.27，最大亏损约 20.98%，目标空间约 26.66%"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 44.47,
+          "pct": 0.84,
+          "state": "暂不交易",
+          "score": 83.3,
+          "layer": "待确认剔除",
+          "layerReason": "原候选本次出现硬风险或交易条件失效，先保留在追踪中，需人工确认后才停止跟踪。",
+          "sector": "科技",
+          "buyType": "中枢上半区观察",
+          "reason": [
+            "成交额 19.03 亿元，流动性较好",
+            "主力净流入 0.41 亿元",
+            "归属板块：科技；命中：半导体、芯片、电子、人工智能、存储",
+            "趋势阶段不够清晰，等待方向选择",
+            "归母净利润同比增长 166.11%"
+          ],
+          "risk": [
+            "跌破 20 日中位 43.42，降级为震荡",
+            "策略否决：趋势阶段：震荡过渡",
+            "策略否决：相对强度：强度 41",
+            "策略否决：风险收益比：按计划价 44.47 计算，约 1:1.09，最大亏损约 22.35%，目标空间约 24.47%"
+          ]
         }
       ],
       "priceHistory": [
@@ -58032,6 +58948,19 @@
           "score": 73.7,
           "layer": "候选观察池",
           "mainNetInflowYi": 0.19
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 44.47,
+          "open": 44.53,
+          "high": 45.2,
+          "low": 42.69,
+          "pct": 0.84,
+          "state": "暂不交易",
+          "score": 83.3,
+          "layer": "待确认剔除",
+          "mainNetInflowYi": 0.41
         }
       ],
       "initialPlan": {
@@ -58041,24 +58970,24 @@
         "takeProfit": 73.63,
         "riskReward": 9.38
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
-      "currentState": "观察池",
-      "currentScore": 73.7,
-      "currentLayer": "候选观察池",
-      "currentLayerReason": "进入候选池但尚未形成稳定交易机会，继续等待评分、趋势或买点改善。",
-      "currentPrice": 43.7,
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
+      "currentState": "暂不交易",
+      "currentScore": 83.3,
+      "currentLayer": "待确认剔除",
+      "currentLayerReason": "原候选本次出现硬风险或交易条件失效，先保留在追踪中，需人工确认后才停止跟踪。",
+      "currentPrice": 44.47,
       "currentSector": "科技",
       "lastPlan": {
         "buyType": "中枢上半区观察",
         "action": "位置不差但低级别未确认，等待 30分钟转强",
-        "nextAction": "保留观察，等待评分或买点改善。",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
         "stop": 34.53,
         "takeProfit": 55.35,
-        "riskReward": 1.27
+        "riskReward": 1.09
       },
       "performance": {
-        "currentReturnPct": 14.1,
+        "currentReturnPct": 16.11,
         "maxGainPct": 29.56,
         "maxDrawdownPct": 0,
         "oneWeekPct": 15.74,
@@ -58066,8 +58995,8 @@
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-21",
-        "latestClose": 43.7,
+        "latestDate": "2026-08-24",
+        "latestClose": 44.47,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-04",
@@ -58089,7 +59018,11 @@
             "close": 44.79,
             "returnPct": 16.95
           },
-          "d20": null
+          "d20": {
+            "date": "2026-08-24",
+            "close": 44.47,
+            "returnPct": 16.11
+          }
         }
       }
     },
@@ -59711,6 +60644,31 @@
             "策略否决：资金流：主力净流入 -0.12 亿",
             "策略否决：风险收益比：按计划价 160.41 计算，约 1:0.93，最大亏损约 21.98%，目标空间约 20.52%"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 158.4,
+          "pct": -1.25,
+          "state": "暂不交易",
+          "score": 96,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "科技",
+          "buyType": "中枢上半区观察",
+          "reason": [
+            "成交额 16.41 亿元，流动性较好",
+            "PE 63.36，估值未进入极端异常区",
+            "归属板块：科技；命中：半导体、芯片、电子、人工智能、互联网",
+            "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+            "归母净利润同比增长 258.78%"
+          ],
+          "risk": [
+            "跌破 20 日中位 154.01，降级为震荡",
+            "策略否决：资金流：主力净流入 -0.35 亿",
+            "策略否决：风险收益比：按计划价 158.4 计算，约 1:1.05，最大亏损约 20.99%，目标空间约 22.05%"
+          ]
         }
       ],
       "priceHistory": [
@@ -59895,6 +60853,19 @@
           "score": 92,
           "layer": "暂不交易",
           "mainNetInflowYi": -0.12
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 158.4,
+          "open": 160.45,
+          "high": 162.85,
+          "low": 155.35,
+          "pct": -1.25,
+          "state": "暂不交易",
+          "score": 96,
+          "layer": "暂不交易",
+          "mainNetInflowYi": -0.35
         }
       ],
       "initialPlan": {
@@ -59904,24 +60875,24 @@
         "takeProfit": 181.93,
         "riskReward": 1.78
       },
-      "lastSeenAt": "2026-08-21T08:22:04.656Z",
-      "lastSeenAtChina": "2026/08/21 16:22:04",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 92,
+      "currentScore": 96,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 160.41,
-      "currentSector": "军工国防",
+      "currentPrice": 158.4,
+      "currentSector": "科技",
       "lastPlan": {
         "buyType": "中枢上半区观察",
         "action": "位置不差但低级别未确认，等待 30分钟转强",
         "nextAction": "当前不建仓，等风险解除或结构修复。",
         "stop": 125.15,
         "takeProfit": 193.32,
-        "riskReward": 0.93
+        "riskReward": 1.05
       },
       "performance": {
-        "currentReturnPct": 13.32,
+        "currentReturnPct": 11.9,
         "maxGainPct": 21.84,
         "maxDrawdownPct": 0,
         "oneWeekPct": 20.36,
@@ -59929,8 +60900,8 @@
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-21",
-        "latestClose": 160.41,
+        "latestDate": "2026-08-24",
+        "latestClose": 158.4,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-04",
@@ -59952,7 +60923,11 @@
             "close": 166.25,
             "returnPct": 17.44
           },
-          "d20": null
+          "d20": {
+            "date": "2026-08-24",
+            "close": 158.4,
+            "returnPct": 11.9
+          }
         }
       }
     },
@@ -60830,6 +61805,33 @@
             "策略否决：公告事件：公告风险待核查",
             "策略否决：风险收益比：按计划价 261.1 计算，约 1:1.64，最大亏损约 8.09%，目标空间约 13.27%"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 242.32,
+          "pct": 0.52,
+          "state": "暂不交易",
+          "score": 8.8,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "科技",
+          "buyType": "无买点/风险段",
+          "reason": [
+            "成交额 14.42 亿元，流动性较好",
+            "PE 52，估值未进入极端异常区",
+            "归属板块：科技；命中：半导体、芯片、电子、存储、半导体材料",
+            "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+            "归母净利润同比增长 23.01%"
+          ],
+          "risk": [
+            "收盘低于 MA20，买点需要降级",
+            "2026-07-16 安集科技:部分董事及高级管理人员减持股份结果公告",
+            "有效跌破 20 日低点 215.88，技术面继续减分",
+            "策略否决：趋势阶段：阶段4：下降趋势",
+            "策略否决：缠论买点：无买点/风险段"
+          ]
         }
       ],
       "priceHistory": [
@@ -60884,6 +61886,19 @@
           "score": 96,
           "layer": "暂不交易",
           "mainNetInflowYi": 0.45
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 242.32,
+          "open": 241.9,
+          "high": 243.78,
+          "low": 231.02,
+          "pct": 0.52,
+          "state": "暂不交易",
+          "score": 8.8,
+          "layer": "暂不交易",
+          "mainNetInflowYi": -0.46
         }
       ],
       "initialPlan": {
@@ -60893,24 +61908,24 @@
         "takeProfit": 391.49,
         "riskReward": 8.11
       },
-      "lastSeenAt": "2026-08-18T08:08:59.407Z",
-      "lastSeenAtChina": "2026/08/18 16:08:59",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 96,
+      "currentScore": 8.8,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 272.98,
+      "currentPrice": 242.32,
       "currentSector": "科技",
       "lastPlan": {
-        "buyType": "类三买观察",
-        "action": "不追高，等待突破后回踩不破再试仓",
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
         "nextAction": "当前不建仓，等风险解除或结构修复。",
-        "stop": 239.97,
+        "stop": 209.4,
         "takeProfit": 295.76,
-        "riskReward": 1.64
+        "riskReward": 1.62
       },
       "performance": {
-        "currentReturnPct": 19.91,
+        "currentReturnPct": 6.44,
         "maxGainPct": 19.91,
         "maxDrawdownPct": 0,
         "oneWeekPct": 15.05,
@@ -60918,8 +61933,8 @@
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-18",
-        "latestClose": 272.98,
+        "latestDate": "2026-08-24",
+        "latestClose": 242.32,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-04",
@@ -60941,7 +61956,11 @@
             "close": 261.92,
             "returnPct": 15.05
           },
-          "d20": null
+          "d20": {
+            "date": "2026-08-24",
+            "close": 242.32,
+            "returnPct": 6.44
+          }
         }
       }
     },
@@ -63264,6 +64283,32 @@
             "策略否决：趋势阶段：震荡过渡",
             "策略否决：风险收益比：按计划价 297.57 计算，约 1:1.14，最大亏损约 20.14%，目标空间约 23.01%"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 301.4,
+          "pct": 0.1,
+          "state": "暂不交易",
+          "score": 82.3,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "科技",
+          "buyType": "中枢上半区观察",
+          "reason": [
+            "成交额 14.86 亿元，流动性较好",
+            "归属板块：科技；命中：半导体、电子、存储、半导体设备、存储概念",
+            "趋势阶段不够清晰，等待方向选择",
+            "归母净利润同比增长 42.14%",
+            "营业收入同比增长 13.87%"
+          ],
+          "risk": [
+            "跌破 20 日中位 291.96，降级为震荡",
+            "策略否决：趋势阶段：震荡过渡",
+            "策略否决：资金流：主力净流入 -0.21 亿",
+            "策略否决：风险收益比：按计划价 301.4 计算，约 1:1.01，最大亏损约 21.15%，目标空间约 21.44%"
+          ]
         }
       ],
       "priceHistory": [
@@ -63435,6 +64480,19 @@
           "score": 96,
           "layer": "暂不交易",
           "mainNetInflowYi": 0.08
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 301.4,
+          "open": 302.2,
+          "high": 307,
+          "low": 291,
+          "pct": 0.1,
+          "state": "暂不交易",
+          "score": 82.3,
+          "layer": "暂不交易",
+          "mainNetInflowYi": -0.21
         }
       ],
       "initialPlan": {
@@ -63444,13 +64502,13 @@
         "takeProfit": 481.3,
         "riskReward": 11.59
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 96,
+      "currentScore": 82.3,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 297.57,
+      "currentPrice": 301.4,
       "currentSector": "科技",
       "lastPlan": {
         "buyType": "中枢上半区观察",
@@ -63458,10 +64516,10 @@
         "nextAction": "当前不建仓，等风险解除或结构修复。",
         "stop": 237.65,
         "takeProfit": 366.03,
-        "riskReward": 1.14
+        "riskReward": 1.01
       },
       "performance": {
-        "currentReturnPct": 15.79,
+        "currentReturnPct": 17.28,
         "maxGainPct": 31.28,
         "maxDrawdownPct": 0,
         "oneWeekPct": 25.69,
@@ -63469,8 +64527,8 @@
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-21",
-        "latestClose": 297.57,
+        "latestDate": "2026-08-24",
+        "latestClose": 301.4,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-04",
@@ -63492,7 +64550,11 @@
             "close": 304.13,
             "returnPct": 18.34
           },
-          "d20": null
+          "d20": {
+            "date": "2026-08-24",
+            "close": 301.4,
+            "returnPct": 17.28
+          }
         }
       }
     },
@@ -65125,6 +66187,32 @@
             "策略否决：相对强度：强度 58.5",
             "策略否决：风险收益比：按计划价 271.7 计算，约 1:0.94，最大亏损约 20.67%，目标空间约 19.52%"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 266.66,
+          "pct": -1.85,
+          "state": "暂不交易",
+          "score": 90.3,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "科技",
+          "buyType": "中枢上半区观察",
+          "reason": [
+            "成交额 21.84 亿元，流动性较好",
+            "归属板块：科技；命中：半导体、芯片、电子、存储、半导体设备",
+            "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+            "归母净利润同比增长 11.44%",
+            "营业收入同比增长 35.58%"
+          ],
+          "risk": [
+            "主力净流出 1.85 亿元",
+            "跌破 20 日中位 261.44，降级为震荡",
+            "策略否决：资金流：主力净流入 -1.85 亿",
+            "策略否决：风险收益比：按计划价 266.66 计算，约 1:1.14，最大亏损约 19.17%，目标空间约 21.78%"
+          ]
         }
       ],
       "priceHistory": [
@@ -65283,6 +66371,19 @@
           "score": 90.9,
           "layer": "暂不交易",
           "mainNetInflowYi": 0.4
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 266.66,
+          "open": 273,
+          "high": 275,
+          "low": 261,
+          "pct": -1.85,
+          "state": "暂不交易",
+          "score": 90.3,
+          "layer": "暂不交易",
+          "mainNetInflowYi": -1.85
         }
       ],
       "initialPlan": {
@@ -65292,13 +66393,13 @@
         "takeProfit": 404.84,
         "riskReward": 4.83
       },
-      "lastSeenAt": "2026-08-21T08:22:04.656Z",
-      "lastSeenAtChina": "2026/08/21 16:22:04",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 90.9,
+      "currentScore": 90.3,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 271.7,
+      "currentPrice": 266.66,
       "currentSector": "科技",
       "lastPlan": {
         "buyType": "中枢上半区观察",
@@ -65306,10 +66407,10 @@
         "nextAction": "当前不建仓，等风险解除或结构修复。",
         "stop": 215.53,
         "takeProfit": 324.73,
-        "riskReward": 0.94
+        "riskReward": 1.14
       },
       "performance": {
-        "currentReturnPct": 11.81,
+        "currentReturnPct": 9.74,
         "maxGainPct": 14.88,
         "maxDrawdownPct": 0.66,
         "oneWeekPct": 11.79,
@@ -65317,8 +66418,8 @@
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-21",
-        "latestClose": 271.7,
+        "latestDate": "2026-08-24",
+        "latestClose": 266.66,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-05",
@@ -65340,7 +66441,11 @@
             "close": 279.17,
             "returnPct": 14.88
           },
-          "d20": null
+          "d20": {
+            "date": "2026-08-24",
+            "close": 266.66,
+            "returnPct": 9.74
+          }
         }
       }
     },
@@ -66209,6 +67314,32 @@
             "跌回 20 日中位 20.83 下方，类三买观察失效",
             "策略否决：风险收益比：按计划价 22.97 计算，约 1:1.43，最大亏损约 11.14%，目标空间约 15.93%"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 23.6,
+          "pct": 14.84,
+          "state": "暂不交易",
+          "score": 96,
+          "layer": "待确认剔除",
+          "layerReason": "原候选本次出现硬风险或交易条件失效，先保留在追踪中，需人工确认后才停止跟踪。",
+          "sector": "医药医疗",
+          "buyType": "类二买/趋势延续观察",
+          "reason": [
+            "成交额 7.13 亿元，具备跟踪流动性",
+            "当日涨幅 14.84%，短线强于市场",
+            "PE 29.87，估值未进入极端异常区",
+            "主力净流入 0.97 亿元",
+            "归属板块：医药医疗；命中：医药、生物、创新药、疫苗、动物疫苗"
+          ],
+          "risk": [
+            "换手率 15.06%，短线分歧偏大",
+            "营业收入同比下降 13.33%",
+            "跌破 MA20 且 30分钟转弱，取消买点",
+            "策略否决：风险收益比：按计划价 22.97 计算，约 1:0.91，最大亏损约 17.54%，目标空间约 15.93%"
+          ]
         }
       ],
       "priceHistory": [
@@ -66227,16 +67358,16 @@
         },
         {
           "date": "2026-08-24",
-          "at": "2026-08-24T05:27:06.117Z",
-          "close": 24.66,
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 23.6,
           "open": 21.22,
           "high": 24.66,
           "low": 21.22,
-          "pct": 20,
-          "state": "交易准备池",
+          "pct": 14.84,
+          "state": "暂不交易",
           "score": 96,
-          "layer": "今日机会池",
-          "mainNetInflowYi": 0.01
+          "layer": "待确认剔除",
+          "mainNetInflowYi": 0.97
         }
       ],
       "initialPlan": {
@@ -66246,25 +67377,25 @@
         "takeProfit": 24.28,
         "riskReward": 1.16
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
-      "currentState": "交易准备池",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
+      "currentState": "暂不交易",
       "currentScore": 96,
-      "currentLayer": "今日机会池",
-      "currentLayerReason": "同一交易日内仍按新增机会处理；至少跨交易日继续满足条件后再升级为核心跟踪。",
-      "currentPrice": 24.66,
+      "currentLayer": "待确认剔除",
+      "currentLayerReason": "原候选本次出现硬风险或交易条件失效，先保留在追踪中，需人工确认后才停止跟踪。",
+      "currentPrice": 23.6,
       "currentSector": "医药医疗",
       "lastPlan": {
-        "buyType": "类三买观察",
-        "action": "不追高，等待突破后回踩不破再试仓",
-        "nextAction": "只在回踩不破触发条件时试仓；高开急拉不追。",
-        "stop": 20.41,
+        "buyType": "类二买/趋势延续观察",
+        "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "stop": 18.94,
         "takeProfit": 26.63,
-        "riskReward": 1.43
+        "riskReward": 0.91
       },
       "performance": {
-        "currentReturnPct": 8.54,
-        "maxGainPct": 8.54,
+        "currentReturnPct": 3.87,
+        "maxGainPct": 3.87,
         "maxDrawdownPct": 0,
         "oneWeekPct": null,
         "oneMonthPct": null,
@@ -66272,7 +67403,7 @@
         "hitStop": false,
         "hitTakeProfit": true,
         "latestDate": "2026-08-24",
-        "latestClose": 24.66,
+        "latestClose": 23.6,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-21",
@@ -66281,8 +67412,8 @@
           },
           "d3": {
             "date": "2026-08-24",
-            "close": 24.66,
-            "returnPct": 8.54
+            "close": 23.6,
+            "returnPct": 3.87
           },
           "d5": null,
           "d10": null,
@@ -71950,6 +73081,32 @@
             "跌回 20 日中位 84.73 下方，类三买观察失效",
             "策略否决：风险收益比：按计划价 97.39 计算，约 1:1.29，最大亏损约 14.73%，目标空间约 19.04%"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 124,
+          "pct": 15.52,
+          "state": "暂不交易",
+          "score": 96,
+          "layer": "待确认剔除",
+          "layerReason": "原候选本次出现硬风险或交易条件失效，先保留在追踪中，需人工确认后才停止跟踪。",
+          "sector": "医药医疗",
+          "buyType": "类二买/趋势延续观察",
+          "reason": [
+            "成交额 18.9 亿元，流动性较好",
+            "当日涨幅 15.52%，短线强于市场",
+            "归属板块：医药医疗；命中：医药、医疗、生物、创新药、化学制药",
+            "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点",
+            "归母净利润同比增长 88.67%"
+          ],
+          "risk": [
+            "换手率 24.96%，短线分歧偏大",
+            "PE 121.57，估值风险偏高",
+            "跌破 MA20 且 30分钟转弱，取消买点",
+            "策略否决：风险收益比：按计划价 114.14 计算，约 1:0.64，最大亏损约 34.31%，目标空间约 21.88%"
+          ]
         }
       ],
       "priceHistory": [
@@ -71981,15 +73138,15 @@
         },
         {
           "date": "2026-08-24",
-          "at": "2026-08-24T02:41:54.217Z",
-          "close": 125.85,
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 124,
           "open": 116.32,
           "high": 128.81,
           "low": 116.32,
-          "pct": 17.24,
-          "state": "重点跟踪池",
+          "pct": 15.52,
+          "state": "暂不交易",
           "score": 96,
-          "layer": "核心跟踪池",
+          "layer": "待确认剔除",
           "mainNetInflowYi": null
         }
       ],
@@ -72000,25 +73157,25 @@
         "takeProfit": 96.61,
         "riskReward": 1.8
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
-      "currentState": "重点跟踪池",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
+      "currentState": "暂不交易",
       "currentScore": 96,
-      "currentLayer": "核心跟踪池",
-      "currentLayerReason": "已连续跟踪 4 次，本次继续满足中期跟踪条件；不因单日排序波动移出。",
-      "currentPrice": 123.97,
+      "currentLayer": "待确认剔除",
+      "currentLayerReason": "原候选本次出现硬风险或交易条件失效，先保留在追踪中，需人工确认后才停止跟踪。",
+      "currentPrice": 124,
       "currentSector": "医药医疗",
       "lastPlan": {
-        "buyType": "类三买观察",
-        "action": "不追高，等待突破后回踩不破再试仓",
-        "nextAction": "加入盘中观察，等待 5分钟确认或回踩关键位。",
-        "stop": 83.04,
-        "takeProfit": 115.93,
-        "riskReward": 1.29
+        "buyType": "类二买/趋势延续观察",
+        "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "stop": 74.98,
+        "takeProfit": 139.11,
+        "riskReward": 0.64
       },
       "performance": {
-        "currentReturnPct": 17.24,
-        "maxGainPct": 17.24,
+        "currentReturnPct": 15.52,
+        "maxGainPct": 15.52,
         "maxDrawdownPct": 0,
         "oneWeekPct": null,
         "oneMonthPct": null,
@@ -72026,7 +73183,7 @@
         "hitStop": false,
         "hitTakeProfit": true,
         "latestDate": "2026-08-24",
-        "latestClose": 125.85,
+        "latestClose": 124,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-20",
@@ -72035,13 +73192,13 @@
           },
           "d3": {
             "date": "2026-08-24",
-            "close": 125.85,
-            "returnPct": 17.24
+            "close": 124,
+            "returnPct": 15.52
           },
           "d5": {
             "date": "2026-08-24",
-            "close": 125.85,
-            "returnPct": 17.24
+            "close": 124,
+            "returnPct": 15.52
           },
           "d10": null,
           "d20": null
@@ -72980,6 +74137,32 @@
             "策略否决：相对强度：强度 40.8",
             "策略否决：风险收益比：按计划价 40.81 计算，约 1:1.43，最大亏损约 19.87%，目标空间约 28.35%"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 41.49,
+          "pct": -1.4,
+          "state": "观察池",
+          "score": 68.3,
+          "layer": "核心跟踪池",
+          "layerReason": "已连续跟踪 2 次，本次继续满足中期跟踪条件；不因单日排序波动移出。",
+          "sector": "科技",
+          "buyType": "中枢上半区观察",
+          "reason": [
+            "成交额 5.54 亿元，具备跟踪流动性",
+            "PE 58.44，估值未进入极端异常区",
+            "归属板块：科技；命中：半导体、芯片、集成电路、电子、消费电子",
+            "趋势阶段不够清晰，等待方向选择",
+            "归母净利润同比增长 98.48%"
+          ],
+          "risk": [
+            "跌破 20 日中位 41.11，降级为震荡",
+            "策略否决：趋势阶段：震荡过渡",
+            "策略否决：相对强度：强度 47.3",
+            "策略否决：风险收益比：按计划价 41.49 计算，约 1:1.24，最大亏损约 21.19%，目标空间约 26.25%"
+          ]
         }
       ],
       "priceHistory": [
@@ -73008,6 +74191,19 @@
           "score": 73.7,
           "layer": "候选观察池",
           "mainNetInflowYi": 0.07
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 41.49,
+          "open": 42.28,
+          "high": 42.93,
+          "low": 40.21,
+          "pct": -1.4,
+          "state": "观察池",
+          "score": 68.3,
+          "layer": "核心跟踪池",
+          "mainNetInflowYi": null
         }
       ],
       "initialPlan": {
@@ -73017,13 +74213,13 @@
         "takeProfit": 51.26,
         "riskReward": 1.43
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "观察池",
-      "currentScore": 73.7,
-      "currentLayer": "候选观察池",
-      "currentLayerReason": "进入候选池但尚未形成稳定交易机会，继续等待评分、趋势或买点改善。",
-      "currentPrice": 40.81,
+      "currentScore": 68.3,
+      "currentLayer": "核心跟踪池",
+      "currentLayerReason": "已连续跟踪 2 次，本次继续满足中期跟踪条件；不因单日排序波动移出。",
+      "currentPrice": 41.49,
       "currentSector": "科技",
       "lastPlan": {
         "buyType": "中枢上半区观察",
@@ -73031,19 +74227,19 @@
         "nextAction": "保留观察，等待评分或买点改善。",
         "stop": 32.7,
         "takeProfit": 52.38,
-        "riskReward": 1.43
+        "riskReward": 1.24
       },
       "performance": {
-        "currentReturnPct": -13.26,
+        "currentReturnPct": -11.82,
         "maxGainPct": 0,
         "maxDrawdownPct": -13.26,
-        "oneWeekPct": null,
+        "oneWeekPct": -11.82,
         "oneMonthPct": null,
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-21",
-        "latestClose": 40.81,
+        "latestDate": "2026-08-24",
+        "latestClose": 41.49,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-17",
@@ -74703,6 +75899,30 @@
             "策略否决：相对强度：强度 51",
             "策略否决：风险收益比：按计划价 49.68 计算，约 1:1.22，最大亏损约 15.56%，目标空间约 19.06%"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 56.78,
+          "pct": 16.28,
+          "state": "交易准备池",
+          "score": 96,
+          "layer": "核心跟踪池",
+          "layerReason": "已连续跟踪 6 次，本次继续满足中期跟踪条件；不因单日排序波动移出。",
+          "sector": "科技",
+          "buyType": "类三买观察",
+          "reason": [
+            "成交额 5.97 亿元，具备跟踪流动性",
+            "当日涨幅 16.28%，短线强于市场",
+            "归属板块：科技；命中：半导体、电子、存储、半导体设备、存储概念",
+            "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+            "归母净利润同比增长 18.2%"
+          ],
+          "risk": [
+            "跌回 20 日中位 45.08 下方，类三买观察失效",
+            "策略否决：资金流：主力净流入 -0.22 亿"
+          ]
         }
       ],
       "priceHistory": [
@@ -74747,16 +75967,16 @@
         },
         {
           "date": "2026-08-24",
-          "at": "2026-08-24T02:41:54.217Z",
-          "close": 55.96,
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 56.78,
           "open": 52.85,
           "high": 58.5,
           "low": 50.61,
-          "pct": 14.6,
-          "state": "暂不交易",
+          "pct": 16.28,
+          "state": "交易准备池",
           "score": 96,
-          "layer": "暂不交易",
-          "mainNetInflowYi": 0.12
+          "layer": "核心跟踪池",
+          "mainNetInflowYi": -0.22
         }
       ],
       "initialPlan": {
@@ -74766,25 +75986,25 @@
         "takeProfit": 82.81,
         "riskReward": 1.75
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "交易准备池",
       "currentScore": 96,
-      "currentLayer": "候选观察池",
-      "currentLayerReason": "进入候选池但尚未形成稳定交易机会，继续等待评分、趋势或买点改善。",
-      "currentPrice": 55.77,
+      "currentLayer": "核心跟踪池",
+      "currentLayerReason": "已连续跟踪 6 次，本次继续满足中期跟踪条件；不因单日排序波动移出。",
+      "currentPrice": 56.78,
       "currentSector": "科技",
       "lastPlan": {
-        "buyType": "类二买/趋势延续观察",
-        "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+        "buyType": "类三买观察",
+        "action": "不追高，等待突破后回踩不破再试仓",
         "nextAction": "只在回踩不破触发条件时试仓；高开急拉不追。",
-        "stop": 41.95,
-        "takeProfit": 59.15,
-        "riskReward": 1.22
+        "stop": 47.75,
+        "takeProfit": 63.18,
+        "riskReward": 2.19
       },
       "performance": {
-        "currentReturnPct": 12.66,
-        "maxGainPct": 12.66,
+        "currentReturnPct": 14.31,
+        "maxGainPct": 14.31,
         "maxDrawdownPct": -2.38,
         "oneWeekPct": -2.38,
         "oneMonthPct": null,
@@ -74792,7 +76012,7 @@
         "hitStop": false,
         "hitTakeProfit": false,
         "latestDate": "2026-08-24",
-        "latestClose": 55.96,
+        "latestClose": 56.78,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-06",
@@ -75264,6 +76484,31 @@
             "跌破 20 日中位 38.48，降级为震荡",
             "策略否决：风险收益比：按计划价 45.44 计算，约 1:0.47，最大亏损约 44.39%，目标空间约 20.99%"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 48.29,
+          "pct": 9.25,
+          "state": "暂不交易",
+          "score": 96,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "科技",
+          "buyType": "中枢上半区观察",
+          "reason": [
+            "成交额 30.5 亿元，流动性较好",
+            "当日涨幅 9.25%，短线强于市场",
+            "主力净流入 2.72 亿元",
+            "归属板块：科技；命中：半导体、芯片、电子、存储、半导体材料",
+            "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点"
+          ],
+          "risk": [
+            "PE 287.1，估值风险偏高",
+            "跌破 20 日中位 38.48，降级为震荡",
+            "策略否决：风险收益比：按计划价 45.44 计算，约 1:0.47，最大亏损约 44.39%，目标空间约 20.99%"
+          ]
         }
       ],
       "priceHistory": [
@@ -75383,6 +76628,19 @@
           "score": 96,
           "layer": "待确认剔除",
           "mainNetInflowYi": 1.15
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 48.29,
+          "open": 44,
+          "high": 48.5,
+          "low": 42.35,
+          "pct": 9.25,
+          "state": "暂不交易",
+          "score": 96,
+          "layer": "暂不交易",
+          "mainNetInflowYi": 2.72
         }
       ],
       "initialPlan": {
@@ -75392,13 +76650,13 @@
         "takeProfit": 65.64,
         "riskReward": 2.87
       },
-      "lastSeenAt": "2026-08-19T05:10:22.940Z",
-      "lastSeenAtChina": "2026/08/19 13:10:22",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
       "currentScore": 96,
-      "currentLayer": "待确认剔除",
-      "currentLayerReason": "原候选本次出现硬风险或交易条件失效，先保留在追踪中，需人工确认后才停止跟踪。",
-      "currentPrice": 48.25,
+      "currentLayer": "暂不交易",
+      "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+      "currentPrice": 48.29,
       "currentSector": "科技",
       "lastPlan": {
         "buyType": "中枢上半区观察",
@@ -75409,7 +76667,7 @@
         "riskReward": 0.47
       },
       "performance": {
-        "currentReturnPct": 35.19,
+        "currentReturnPct": 35.3,
         "maxGainPct": 36.9,
         "maxDrawdownPct": 0,
         "oneWeekPct": 14.63,
@@ -75417,8 +76675,8 @@
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-19",
-        "latestClose": 48.25,
+        "latestDate": "2026-08-24",
+        "latestClose": 48.29,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-06",
@@ -77952,6 +79210,33 @@
             "有效跌破 20 日低点 113.85，技术面继续减分",
             "策略否决：趋势阶段：阶段4：下降趋势"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 148.58,
+          "pct": 3.56,
+          "state": "暂不交易",
+          "score": 76.8,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "科技",
+          "buyType": "中枢上半区观察",
+          "reason": [
+            "成交额 10.63 亿元，流动性较好",
+            "当日涨幅 3.56%，短线强于市场",
+            "主力净流入 0.35 亿元",
+            "归属板块：科技；命中：半导体、芯片、电子、存储、半导体设备",
+            "趋势阶段不够清晰，等待方向选择"
+          ],
+          "risk": [
+            "PE 168.84，估值风险偏高",
+            "经营现金流为负 -0.37 亿元",
+            "跌破 20 日中位 140.43，降级为震荡",
+            "策略否决：趋势阶段：震荡过渡",
+            "策略否决：相对强度：强度 52.8"
+          ]
         }
       ],
       "priceHistory": [
@@ -78006,6 +79291,19 @@
           "score": 30.6,
           "layer": "暂不交易",
           "mainNetInflowYi": 0.17
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 148.58,
+          "open": 149.7,
+          "high": 153.88,
+          "low": 145.25,
+          "pct": 3.56,
+          "state": "暂不交易",
+          "score": 76.8,
+          "layer": "暂不交易",
+          "mainNetInflowYi": 0.35
         }
       ],
       "initialPlan": {
@@ -78015,24 +79313,24 @@
         "takeProfit": 228.96,
         "riskReward": 1.4
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 30.6,
+      "currentScore": 76.8,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 147.98,
+      "currentPrice": 148.58,
       "currentSector": "科技",
       "lastPlan": {
-        "buyType": "无买点/风险段",
-        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "buyType": "中枢上半区观察",
+        "action": "位置不差但低级别未确认，等待 30分钟转强",
         "nextAction": "当前不建仓，等风险解除或结构修复。",
         "stop": 110.43,
         "takeProfit": 180.36,
-        "riskReward": 0.86
+        "riskReward": 0.83
       },
       "performance": {
-        "currentReturnPct": -7.42,
+        "currentReturnPct": -7.04,
         "maxGainPct": 0.07,
         "maxDrawdownPct": -7.42,
         "oneWeekPct": -7.42,
@@ -78040,8 +79338,8 @@
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-21",
-        "latestClose": 147.98,
+        "latestDate": "2026-08-24",
+        "latestClose": 148.58,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-07",
@@ -80896,6 +82194,31 @@
             "策略否决：趋势阶段：震荡过渡",
             "策略否决：相对强度：强度 28.6"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 55.63,
+          "pct": 2.79,
+          "state": "重点跟踪池",
+          "score": 96,
+          "layer": "核心跟踪池",
+          "layerReason": "已连续跟踪 64 次，本次继续满足中期跟踪条件；不因单日排序波动移出。",
+          "sector": "资源周期/化工",
+          "buyType": "类三买观察",
+          "reason": [
+            "成交额 36.24 亿元，流动性较好",
+            "PE 69.54，估值未进入极端异常区",
+            "主力净流入 1.39 亿元",
+            "归属板块：资源周期/化工；命中：锂、锂电、电池、储能、新能源",
+            "趋势阶段不够清晰，等待方向选择"
+          ],
+          "risk": [
+            "跌回 20 日中位 52.18 下方，类三买观察失效",
+            "策略否决：趋势阶段：震荡过渡",
+            "策略否决：相对强度：强度 37.5"
+          ]
         }
       ],
       "priceHistory": [
@@ -81067,6 +82390,19 @@
           "score": 96,
           "layer": "核心跟踪池",
           "mainNetInflowYi": 3.18
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 55.63,
+          "open": 54.99,
+          "high": 56.89,
+          "low": 54.99,
+          "pct": 2.79,
+          "state": "重点跟踪池",
+          "score": 96,
+          "layer": "核心跟踪池",
+          "mainNetInflowYi": 1.39
         }
       ],
       "initialPlan": {
@@ -81076,33 +82412,33 @@
         "takeProfit": 66.01,
         "riskReward": 1.82
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "重点跟踪池",
       "currentScore": 96,
       "currentLayer": "核心跟踪池",
-      "currentLayerReason": "已连续跟踪 63 次，本次继续满足中期跟踪条件；不因单日排序波动移出。",
-      "currentPrice": 55.49,
+      "currentLayerReason": "已连续跟踪 64 次，本次继续满足中期跟踪条件；不因单日排序波动移出。",
+      "currentPrice": 55.63,
       "currentSector": "资源周期/化工",
       "lastPlan": {
         "buyType": "类三买观察",
         "action": "不追高，等待突破后回踩不破再试仓",
         "nextAction": "加入盘中观察，等待 5分钟确认或回踩关键位。",
-        "stop": 50.3,
-        "takeProfit": 59.59,
-        "riskReward": 1.92
+        "stop": 51.14,
+        "takeProfit": 61.44,
+        "riskReward": 1.8
       },
       "performance": {
-        "currentReturnPct": 7.33,
-        "maxGainPct": 7.33,
+        "currentReturnPct": 7.6,
+        "maxGainPct": 7.6,
         "maxDrawdownPct": 0,
         "oneWeekPct": 3.91,
         "oneMonthPct": null,
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-21",
-        "latestClose": 55.49,
+        "latestDate": "2026-08-24",
+        "latestClose": 55.63,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-04",
@@ -81124,7 +82460,11 @@
             "close": 53.45,
             "returnPct": 3.38
           },
-          "d20": null
+          "d20": {
+            "date": "2026-08-24",
+            "close": 55.63,
+            "returnPct": 7.6
+          }
         }
       }
     },
@@ -82399,6 +83739,30 @@
             "策略否决：资金流：主力净流入 -0.27 亿",
             "策略否决：板块权重：大消费"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 85.99,
+          "pct": 2,
+          "state": "重点跟踪池",
+          "score": 96,
+          "layer": "今日机会池",
+          "layerReason": "新入池且买点/评分较强，作为新增机会观察，需等触发条件确认后再执行。",
+          "sector": "大消费",
+          "buyType": "类二买/趋势延续观察",
+          "reason": [
+            "成交额 23.69 亿元，流动性较好",
+            "PE 14.84，估值未进入极端异常区",
+            "归属板块：大消费；命中：芯片、数据中心、互联网",
+            "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点",
+            "归母净利润同比增长 2.03%"
+          ],
+          "risk": [
+            "跌破 MA20 且 30分钟转弱，取消买点",
+            "策略否决：板块权重：大消费"
+          ]
         }
       ],
       "priceHistory": [
@@ -82586,16 +83950,16 @@
         },
         {
           "date": "2026-08-24",
-          "at": "2026-08-24T02:41:54.217Z",
-          "close": 85.4,
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 85.99,
           "open": 84.11,
-          "high": 85.74,
+          "high": 86.35,
           "low": 84.05,
-          "pct": 1.3,
-          "state": "交易准备池",
+          "pct": 2,
+          "state": "重点跟踪池",
           "score": 96,
-          "layer": "候选观察池",
-          "mainNetInflowYi": -0.27
+          "layer": "今日机会池",
+          "mainNetInflowYi": null
         }
       ],
       "initialPlan": {
@@ -82605,25 +83969,25 @@
         "takeProfit": 96.66,
         "riskReward": 1.2
       },
-      "lastSeenAt": "2026-08-24T02:41:54.217Z",
-      "lastSeenAtChina": "2026/08/24 10:41:54",
-      "currentState": "交易准备池",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
+      "currentState": "重点跟踪池",
       "currentScore": 96,
-      "currentLayer": "候选观察池",
-      "currentLayerReason": "进入候选池但尚未形成稳定交易机会，继续等待评分、趋势或买点改善。",
-      "currentPrice": 85.4,
+      "currentLayer": "今日机会池",
+      "currentLayerReason": "新入池且买点/评分较强，作为新增机会观察，需等触发条件确认后再执行。",
+      "currentPrice": 85.99,
       "currentSector": "大消费",
       "lastPlan": {
-        "buyType": "潜在一买观察",
-        "action": "只观察，不提前抄底；等待底分型与低级别转强",
-        "nextAction": "只在回踩不破触发条件时试仓；高开急拉不追。",
-        "stop": 79.92,
+        "buyType": "类二买/趋势延续观察",
+        "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+        "nextAction": "加入盘中观察，等待 5分钟确认或回踩关键位。",
+        "stop": 81.76,
         "takeProfit": 96.66,
-        "riskReward": 2.05
+        "riskReward": 2.52
       },
       "performance": {
-        "currentReturnPct": 0.31,
-        "maxGainPct": 0.42,
+        "currentReturnPct": 1,
+        "maxGainPct": 1,
         "maxDrawdownPct": -2.97,
         "oneWeekPct": 0.34,
         "oneMonthPct": null,
@@ -82631,7 +83995,7 @@
         "hitStop": false,
         "hitTakeProfit": false,
         "latestDate": "2026-08-24",
-        "latestClose": 85.4,
+        "latestClose": 85.99,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-04",
@@ -82655,8 +84019,8 @@
           },
           "d20": {
             "date": "2026-08-24",
-            "close": 85.4,
-            "returnPct": 0.31
+            "close": 85.99,
+            "returnPct": 1
           }
         }
       }
@@ -83364,6 +84728,33 @@
             "策略否决：趋势阶段：阶段4：下降趋势",
             "策略否决：缠论买点：无买点/风险段"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 707.9,
+          "pct": -0.91,
+          "state": "暂不交易",
+          "score": 26.4,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "科技",
+          "buyType": "无买点/风险段",
+          "reason": [
+            "成交额 55.27 亿元，流动性较好",
+            "归属板块：科技；命中：半导体、芯片、电子、存储、半导体设备",
+            "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+            "归母净利润同比增长 3.42%",
+            "营业收入同比增长 25.8%"
+          ],
+          "risk": [
+            "主力净流出 6.12 亿元",
+            "收盘低于 MA20，买点需要降级",
+            "有效跌破 20 日低点 632.01，技术面继续减分",
+            "策略否决：趋势阶段：阶段4：下降趋势",
+            "策略否决：缠论买点：无买点/风险段"
+          ]
         }
       ],
       "priceHistory": [
@@ -83509,6 +84900,19 @@
           "score": 30.2,
           "layer": "暂不交易",
           "mainNetInflowYi": -1.39
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 707.9,
+          "open": 714,
+          "high": 725.8,
+          "low": 695.87,
+          "pct": -0.91,
+          "state": "暂不交易",
+          "score": 26.4,
+          "layer": "暂不交易",
+          "mainNetInflowYi": -6.12
         }
       ],
       "initialPlan": {
@@ -83518,13 +84922,13 @@
         "takeProfit": 977.4,
         "riskReward": 3.93
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 30.2,
+      "currentScore": 26.4,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 703.39,
+      "currentPrice": 707.9,
       "currentSector": "科技",
       "lastPlan": {
         "buyType": "无买点/风险段",
@@ -83532,10 +84936,10 @@
         "nextAction": "当前不建仓，等风险解除或结构修复。",
         "stop": 613.05,
         "takeProfit": 848.77,
-        "riskReward": 1.61
+        "riskReward": 1.49
       },
       "performance": {
-        "currentReturnPct": 2.39,
+        "currentReturnPct": 3.04,
         "maxGainPct": 10.83,
         "maxDrawdownPct": 0,
         "oneWeekPct": 10.71,
@@ -83543,8 +84947,8 @@
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-21",
-        "latestClose": 703.39,
+        "latestDate": "2026-08-24",
+        "latestClose": 707.9,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-04",
@@ -83566,7 +84970,11 @@
             "close": 738.27,
             "returnPct": 7.46
           },
-          "d20": null
+          "d20": {
+            "date": "2026-08-24",
+            "close": 707.9,
+            "returnPct": 3.04
+          }
         }
       }
     },
@@ -85115,6 +86523,33 @@
             "收盘低于 MA20，买点需要降级",
             "有效跌破 20 日低点 118.94，技术面继续减分"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 140.59,
+          "pct": 1.51,
+          "state": "暂不交易",
+          "score": 39.7,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "科技",
+          "buyType": "无买点/风险段",
+          "reason": [
+            "成交额 33.81 亿元，流动性较好",
+            "PE 66.89，估值未进入极端异常区",
+            "主力净流入 1.74 亿元",
+            "归属板块：科技；命中：半导体、芯片、电子、存储、半导体材料",
+            "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓"
+          ],
+          "risk": [
+            "营业收入同比下降 6.85%",
+            "经营现金流为负 -0.42 亿元",
+            "收盘低于 MA20，买点需要降级",
+            "有效跌破 20 日低点 118.94，技术面继续减分",
+            "策略否决：趋势阶段：阶段4：下降趋势"
+          ]
         }
       ],
       "priceHistory": [
@@ -85289,16 +86724,16 @@
         },
         {
           "date": "2026-08-24",
-          "at": "2026-08-24T02:41:54.217Z",
-          "close": 140.52,
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 140.59,
           "open": 139.3,
           "high": 144.01,
-          "low": 138.6,
-          "pct": 1.46,
+          "low": 136.6,
+          "pct": 1.51,
           "state": "暂不交易",
-          "score": 34.6,
+          "score": 39.7,
           "layer": "暂不交易",
-          "mainNetInflowYi": -2.35
+          "mainNetInflowYi": 1.74
         }
       ],
       "initialPlan": {
@@ -85308,13 +86743,13 @@
         "takeProfit": 247.32,
         "riskReward": 7.58
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 29.5,
+      "currentScore": 39.7,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 137.48,
+      "currentPrice": 140.59,
       "currentSector": "科技",
       "lastPlan": {
         "buyType": "无买点/风险段",
@@ -85322,10 +86757,10 @@
         "nextAction": "当前不建仓，等风险解除或结构修复。",
         "stop": 115.37,
         "takeProfit": 189.32,
-        "riskReward": 2.35
+        "riskReward": 1.93
       },
       "performance": {
-        "currentReturnPct": 8.53,
+        "currentReturnPct": 8.58,
         "maxGainPct": 20.95,
         "maxDrawdownPct": 0,
         "oneWeekPct": 19.08,
@@ -85334,7 +86769,7 @@
         "hitStop": false,
         "hitTakeProfit": false,
         "latestDate": "2026-08-24",
-        "latestClose": 140.52,
+        "latestClose": 140.59,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-04",
@@ -85358,8 +86793,8 @@
           },
           "d20": {
             "date": "2026-08-24",
-            "close": 140.52,
-            "returnPct": 8.53
+            "close": 140.59,
+            "returnPct": 8.58
           }
         }
       }
@@ -86228,6 +87663,33 @@
             "策略否决：缠论买点：无买点/风险段",
             "策略否决：相对强度：强度 59.3"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 16.88,
+          "pct": -3.1,
+          "state": "暂不交易",
+          "score": 21.5,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "科技",
+          "buyType": "无买点/风险段",
+          "reason": [
+            "成交额 33.52 亿元，流动性较好",
+            "PE 76.73，估值未进入极端异常区",
+            "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+            "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+            "归母净利润同比增长 259.15%"
+          ],
+          "risk": [
+            "主力净流出 2.49 亿元",
+            "收盘低于 MA20，买点需要降级",
+            "有效跌破 20 日低点 14.7，技术面继续减分",
+            "策略否决：趋势阶段：阶段4：下降趋势",
+            "策略否决：缠论买点：无买点/风险段"
+          ]
         }
       ],
       "priceHistory": [
@@ -86269,6 +87731,19 @@
           "score": 79.6,
           "layer": "暂不交易",
           "mainNetInflowYi": 1.56
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 16.88,
+          "open": 17.52,
+          "high": 17.68,
+          "low": 16.47,
+          "pct": -3.1,
+          "state": "暂不交易",
+          "score": 21.5,
+          "layer": "暂不交易",
+          "mainNetInflowYi": -2.49
         }
       ],
       "initialPlan": {
@@ -86278,33 +87753,33 @@
         "takeProfit": 28.95,
         "riskReward": 10.56
       },
-      "lastSeenAt": "2026-08-06T10:18:21.964Z",
-      "lastSeenAtChina": "2026/08/06 18:18:21",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 79.6,
+      "currentScore": 21.5,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 17.26,
+      "currentPrice": 16.88,
       "currentSector": "科技",
       "lastPlan": {
         "buyType": "无买点/风险段",
         "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
         "nextAction": "当前不建仓，等风险解除或结构修复。",
         "stop": 14.26,
-        "takeProfit": 28.95,
-        "riskReward": 3.9
+        "takeProfit": 20.76,
+        "riskReward": 1.48
       },
       "performance": {
-        "currentReturnPct": 11.14,
+        "currentReturnPct": 8.69,
         "maxGainPct": 11.14,
         "maxDrawdownPct": 0,
-        "oneWeekPct": null,
+        "oneWeekPct": 8.69,
         "oneMonthPct": null,
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-06",
-        "latestClose": 17.26,
+        "latestDate": "2026-08-24",
+        "latestClose": 16.88,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-04",
@@ -86316,9 +87791,21 @@
             "close": 17.26,
             "returnPct": 11.14
           },
-          "d5": null,
-          "d10": null,
-          "d20": null
+          "d5": {
+            "date": "2026-08-24",
+            "close": 16.88,
+            "returnPct": 8.69
+          },
+          "d10": {
+            "date": "2026-08-24",
+            "close": 16.88,
+            "returnPct": 8.69
+          },
+          "d20": {
+            "date": "2026-08-24",
+            "close": 16.88,
+            "returnPct": 8.69
+          }
         }
       }
     },
@@ -88298,6 +89785,33 @@
             "策略否决：趋势阶段：阶段1：筑底观察",
             "策略否决：缠论买点：无买点/风险段"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 71.48,
+          "pct": 0.41,
+          "state": "暂不交易",
+          "score": 45.7,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "大消费",
+          "buyType": "无买点/风险段",
+          "reason": [
+            "成交额 15.19 亿元，流动性较好",
+            "PE 22.02，估值未进入极端异常区",
+            "归属板块：大消费；命中：消费、食品、饮料、白酒",
+            "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强",
+            "归母净利润同比增长 82.57%"
+          ],
+          "risk": [
+            "经营现金流为负 -25.35 亿元",
+            "收盘低于 MA20，买点需要降级",
+            "有效跌破 20 日低点 70.88，技术面继续减分",
+            "策略否决：趋势阶段：阶段1：筑底观察",
+            "策略否决：缠论买点：无买点/风险段"
+          ]
         }
       ],
       "priceHistory": [
@@ -88485,14 +89999,14 @@
         },
         {
           "date": "2026-08-24",
-          "at": "2026-08-24T02:41:54.217Z",
-          "close": 71.56,
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 71.48,
           "open": 71.2,
           "high": 71.74,
           "low": 70.88,
-          "pct": 0.52,
+          "pct": 0.41,
           "state": "暂不交易",
-          "score": 39.7,
+          "score": 45.7,
           "layer": "暂不交易",
           "mainNetInflowYi": null
         }
@@ -88504,13 +90018,13 @@
         "takeProfit": 85.15,
         "riskReward": 0.98
       },
-      "lastSeenAt": "2026-08-24T02:41:54.217Z",
-      "lastSeenAtChina": "2026/08/24 10:41:54",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 39.7,
+      "currentScore": 45.7,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 71.56,
+      "currentPrice": 71.48,
       "currentSector": "大消费",
       "lastPlan": {
         "buyType": "无买点/风险段",
@@ -88518,10 +90032,10 @@
         "nextAction": "当前不建仓，等风险解除或结构修复。",
         "stop": 68.75,
         "takeProfit": 85.15,
-        "riskReward": 4.83
+        "riskReward": 5.01
       },
       "performance": {
-        "currentReturnPct": -6.92,
+        "currentReturnPct": -7.02,
         "maxGainPct": 0,
         "maxDrawdownPct": -7.4,
         "oneWeekPct": -2.13,
@@ -88530,7 +90044,7 @@
         "hitStop": false,
         "hitTakeProfit": false,
         "latestDate": "2026-08-24",
-        "latestClose": 71.56,
+        "latestClose": 71.48,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-04",
@@ -88554,8 +90068,8 @@
           },
           "d20": {
             "date": "2026-08-24",
-            "close": 71.56,
-            "returnPct": -6.92
+            "close": 71.48,
+            "returnPct": -7.02
           }
         }
       }
@@ -90752,6 +92266,33 @@
             "策略否决：趋势阶段：阶段4：下降趋势",
             "策略否决：缠论买点：无买点/风险段"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 60.99,
+          "pct": -2.65,
+          "state": "暂不交易",
+          "score": 15,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "科技",
+          "buyType": "无买点/风险段",
+          "reason": [
+            "成交额 10.35 亿元，流动性较好",
+            "PE 35.73，估值未进入极端异常区",
+            "归属板块：科技；命中：半导体、芯片、集成电路、电子、人工智能",
+            "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+            "归母净利润同比增长 15.29%"
+          ],
+          "risk": [
+            "主力净流出 1.99 亿元",
+            "收盘低于 MA20，买点需要降级",
+            "2026-08-18 紫光国微:关于延期回复《关于紫光国芯微电子股份有限公司发行股份及支付现金购买资产并募集配套资金申请的审核问询函》的公告",
+            "有效跌破 20 日低点 60.49，技术面继续减分",
+            "策略否决：趋势阶段：阶段4：下降趋势"
+          ]
         }
       ],
       "priceHistory": [
@@ -90910,6 +92451,19 @@
           "score": 13.3,
           "layer": "暂不交易",
           "mainNetInflowYi": -0.39
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 60.99,
+          "open": 62.65,
+          "high": 62.65,
+          "low": 60.49,
+          "pct": -2.65,
+          "state": "暂不交易",
+          "score": 15,
+          "layer": "暂不交易",
+          "mainNetInflowYi": -1.99
         }
       ],
       "initialPlan": {
@@ -90919,33 +92473,33 @@
         "takeProfit": 97.42,
         "riskReward": 3.22
       },
-      "lastSeenAt": "2026-08-21T05:18:11.225Z",
-      "lastSeenAtChina": "2026/08/21 13:18:11",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 13.3,
+      "currentScore": 15,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 62.58,
+      "currentPrice": 60.99,
       "currentSector": "科技",
       "lastPlan": {
         "buyType": "无买点/风险段",
         "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
         "nextAction": "当前不建仓，等风险解除或结构修复。",
-        "stop": 60.14,
+        "stop": 58.68,
         "takeProfit": 73.96,
-        "riskReward": 4.66
+        "riskReward": 5.61
       },
       "performance": {
-        "currentReturnPct": -7.1,
+        "currentReturnPct": -9.46,
         "maxGainPct": 0.95,
-        "maxDrawdownPct": -7.1,
+        "maxDrawdownPct": -9.46,
         "oneWeekPct": -0.3,
         "oneMonthPct": null,
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-20",
-        "latestClose": 62.58,
+        "latestDate": "2026-08-24",
+        "latestClose": 60.99,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-05",
@@ -90967,7 +92521,11 @@
             "close": 67.89,
             "returnPct": 0.79
           },
-          "d20": null
+          "d20": {
+            "date": "2026-08-24",
+            "close": 60.99,
+            "returnPct": -9.46
+          }
         }
       }
     },
@@ -94011,6 +95569,32 @@
             "策略否决：相对强度：强度 58.5",
             "策略否决：风险收益比：按计划价 45.8 计算，约 1:1.27，最大亏损约 14.15%，目标空间约 17.9%"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 48.8,
+          "pct": 3.9,
+          "state": "暂不交易",
+          "score": 96,
+          "layer": "待确认剔除",
+          "layerReason": "原候选本次出现硬风险或交易条件失效，先保留在追踪中，需人工确认后才停止跟踪。",
+          "sector": "科技",
+          "buyType": "类二买/趋势延续观察",
+          "reason": [
+            "成交额 41.09 亿元，流动性较好",
+            "当日涨幅 3.9%，短线强于市场",
+            "归属板块：科技；命中：半导体、芯片、服务器",
+            "仍在中枢上半区，但趋势延续需要低级别确认和放量",
+            "营业收入同比增长 2.03%"
+          ],
+          "risk": [
+            "换手率 15.13%，短线分歧偏大",
+            "归母净利润同比下降 64.02%",
+            "跌破 MA20 且 30分钟转弱，取消买点",
+            "策略否决：风险收益比：按计划价 47.1 计算，约 1:1.11，最大亏损约 16.65%，目标空间约 18.47%"
+          ]
         }
       ],
       "priceHistory": [
@@ -94052,6 +95636,19 @@
           "score": 95,
           "layer": "今日机会池",
           "mainNetInflowYi": 3.56
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 48.8,
+          "open": 50.73,
+          "high": 51.67,
+          "low": 47.61,
+          "pct": 3.9,
+          "state": "暂不交易",
+          "score": 96,
+          "layer": "待确认剔除",
+          "mainNetInflowYi": null
         }
       ],
       "initialPlan": {
@@ -94061,33 +95658,33 @@
         "takeProfit": 63.49,
         "riskReward": 3.09
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
-      "currentState": "重点跟踪池",
-      "currentScore": 95,
-      "currentLayer": "今日机会池",
-      "currentLayerReason": "同一交易日内仍按新增机会处理；至少跨交易日继续满足条件后再升级为核心跟踪。",
-      "currentPrice": 48.19,
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
+      "currentState": "暂不交易",
+      "currentScore": 96,
+      "currentLayer": "待确认剔除",
+      "currentLayerReason": "原候选本次出现硬风险或交易条件失效，先保留在追踪中，需人工确认后才停止跟踪。",
+      "currentPrice": 48.8,
       "currentSector": "科技",
       "lastPlan": {
         "buyType": "类二买/趋势延续观察",
         "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
-        "nextAction": "加入盘中观察，等待 5分钟确认或回踩关键位。",
-        "stop": 39.32,
-        "takeProfit": 54,
-        "riskReward": 1.27
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "stop": 39.26,
+        "takeProfit": 55.8,
+        "riskReward": 1.11
       },
       "performance": {
-        "currentReturnPct": 26.25,
-        "maxGainPct": 26.25,
+        "currentReturnPct": 27.85,
+        "maxGainPct": 27.85,
         "maxDrawdownPct": 0,
         "oneWeekPct": 18.6,
         "oneMonthPct": null,
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-21",
-        "latestClose": 48.19,
+        "latestDate": "2026-08-24",
+        "latestClose": 48.8,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-05",
@@ -94109,7 +95706,11 @@
             "close": 45.27,
             "returnPct": 18.6
           },
-          "d20": null
+          "d20": {
+            "date": "2026-08-24",
+            "close": 48.8,
+            "returnPct": 27.85
+          }
         }
       }
     },
@@ -101487,6 +103088,33 @@
             "策略否决：资金流：主力净流入 -0.02 亿",
             "策略否决：风险收益比：按计划价 12.76 计算，约 1:1.47，最大亏损约 10.27%，目标空间约 15.13%"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 12.8,
+          "pct": -0.47,
+          "state": "观察池",
+          "score": 65.7,
+          "layer": "核心跟踪池",
+          "layerReason": "已连续跟踪 31 次，本次继续满足中期跟踪条件；不因单日排序波动移出。",
+          "sector": "高端制造/汽车",
+          "buyType": "中枢上半区观察",
+          "reason": [
+            "PE 17.53，估值未进入极端异常区",
+            "归属板块：高端制造/汽车；命中：人工智能、AI、纺织服装设备、纺织机械",
+            "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点",
+            "归母净利润同比增长 41.04%",
+            "营业收入同比增长 11.33%"
+          ],
+          "risk": [
+            "成交额偏低，实盘滑点和波动风险更高",
+            "跌破 20 日中位 12.7，降级为震荡",
+            "策略否决：相对强度：强度 46.5",
+            "策略否决：资金流：主力净流入 -0.01 亿",
+            "策略否决：风险收益比：按计划价 12.8 计算，约 1:1.4，最大亏损约 10.55%，目标空间约 14.77%"
+          ]
         }
       ],
       "priceHistory": [
@@ -101622,16 +103250,16 @@
         },
         {
           "date": "2026-08-24",
-          "at": "2026-08-24T05:27:06.117Z",
-          "close": 12.76,
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 12.8,
           "open": 12.87,
           "high": 13,
-          "low": 12.73,
-          "pct": -0.78,
+          "low": 12.72,
+          "pct": -0.47,
           "state": "观察池",
-          "score": 65.4,
-          "layer": "候选观察池",
-          "mainNetInflowYi": -0.02
+          "score": 65.7,
+          "layer": "核心跟踪池",
+          "mainNetInflowYi": -0.01
         }
       ],
       "initialPlan": {
@@ -101641,13 +103269,13 @@
         "takeProfit": 14,
         "riskReward": 2.03
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "观察池",
-      "currentScore": 65.4,
-      "currentLayer": "候选观察池",
-      "currentLayerReason": "进入候选池但尚未形成稳定交易机会，继续等待评分、趋势或买点改善。",
-      "currentPrice": 12.76,
+      "currentScore": 65.7,
+      "currentLayer": "核心跟踪池",
+      "currentLayerReason": "已连续跟踪 31 次，本次继续满足中期跟踪条件；不因单日排序波动移出。",
+      "currentPrice": 12.8,
       "currentSector": "高端制造/汽车",
       "lastPlan": {
         "buyType": "中枢上半区观察",
@@ -101655,10 +103283,10 @@
         "nextAction": "保留观察，等待评分或买点改善。",
         "stop": 11.45,
         "takeProfit": 14.69,
-        "riskReward": 1.47
+        "riskReward": 1.4
       },
       "performance": {
-        "currentReturnPct": 0.55,
+        "currentReturnPct": 0.87,
         "maxGainPct": 3.7,
         "maxDrawdownPct": 0,
         "oneWeekPct": 1.5,
@@ -101667,7 +103295,7 @@
         "hitStop": false,
         "hitTakeProfit": false,
         "latestDate": "2026-08-24",
-        "latestClose": 12.76,
+        "latestClose": 12.8,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-06",
@@ -103055,6 +104683,33 @@
             "收盘低于 MA20，买点需要降级",
             "有效跌破 20 日低点 38.68，技术面继续减分"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 39.1,
+          "pct": -1.88,
+          "state": "暂不交易",
+          "score": 0,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "军工国防",
+          "buyType": "无买点/风险段",
+          "reason": [
+            "成交额 3.61 亿元，具备跟踪流动性",
+            "PE 21.13，估值未进入极端异常区",
+            "归属板块：军工国防；命中：半导体、芯片、电子、国防军工",
+            "价格低于 MA20 且 MA20 低于 MA60，原则上不建新仓",
+            "资产负债率 16.96%，财务压力可控"
+          ],
+          "risk": [
+            "归母净利润同比下降 72.81%",
+            "营业收入同比下降 7.86%",
+            "经营现金流为负 -2.01 亿元",
+            "收盘低于 MA20，买点需要降级",
+            "有效跌破 20 日低点 38.59，技术面继续减分"
+          ]
         }
       ],
       "priceHistory": [
@@ -103174,6 +104829,19 @@
           "score": 0,
           "layer": "暂不交易",
           "mainNetInflowYi": 0.02
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 39.1,
+          "open": 39.84,
+          "high": 40.08,
+          "low": 38.59,
+          "pct": -1.88,
+          "state": "暂不交易",
+          "score": 0,
+          "layer": "暂不交易",
+          "mainNetInflowYi": -0.29
         }
       ],
       "initialPlan": {
@@ -103183,33 +104851,33 @@
         "takeProfit": 53.76,
         "riskReward": 2.29
       },
-      "lastSeenAt": "2026-08-20T08:10:26.152Z",
-      "lastSeenAtChina": "2026/08/20 16:10:26",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
       "currentScore": 0,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 39.16,
+      "currentPrice": 39.1,
       "currentSector": "军工国防",
       "lastPlan": {
         "buyType": "无买点/风险段",
         "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
         "nextAction": "当前不建仓，等风险解除或结构修复。",
-        "stop": 37.52,
+        "stop": 37.43,
         "takeProfit": 46.57,
-        "riskReward": 4.52
+        "riskReward": 4.47
       },
       "performance": {
-        "currentReturnPct": -5.32,
+        "currentReturnPct": -5.46,
         "maxGainPct": 2.37,
-        "maxDrawdownPct": -5.32,
+        "maxDrawdownPct": -5.46,
         "oneWeekPct": 0,
         "oneMonthPct": null,
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-20",
-        "latestClose": 39.16,
+        "latestDate": "2026-08-24",
+        "latestClose": 39.1,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-06",
@@ -109387,6 +111055,33 @@
             "收盘低于 MA20，买点需要降级",
             "有效跌破 20 日低点 20.01，技术面继续减分"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 21.36,
+          "pct": 1.91,
+          "state": "暂不交易",
+          "score": 64.7,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "军工国防",
+          "buyType": "类三买观察",
+          "reason": [
+            "成交额 5.26 亿元，具备跟踪流动性",
+            "PE 51.48，估值未进入极端异常区",
+            "归属板块：军工国防；命中：低空经济、航空、航天、商业航天、国防军工",
+            "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点",
+            "日线 MA5 高于 MA20，短线趋势偏强"
+          ],
+          "risk": [
+            "归母净利润同比下降 14.73%",
+            "营业收入同比下降 17.02%",
+            "经营现金流为负 -12.89 亿元",
+            "跌回 20 日中位 21.2 下方，类三买观察失效",
+            "策略否决：相对强度：强度 34.8"
+          ]
         }
       ],
       "priceHistory": [
@@ -109441,6 +111136,19 @@
           "score": 0,
           "layer": "暂不交易",
           "mainNetInflowYi": 0.61
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 21.36,
+          "open": 20.93,
+          "high": 21.65,
+          "low": 20.78,
+          "pct": 1.91,
+          "state": "暂不交易",
+          "score": 64.7,
+          "layer": "暂不交易",
+          "mainNetInflowYi": -0.05
         }
       ],
       "initialPlan": {
@@ -109450,24 +111158,24 @@
         "takeProfit": 23.37,
         "riskReward": 1.77
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
       "currentState": "暂不交易",
-      "currentScore": 0,
+      "currentScore": 64.7,
       "currentLayer": "暂不交易",
       "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 21.34,
+      "currentPrice": 21.36,
       "currentSector": "军工国防",
       "lastPlan": {
-        "buyType": "无买点/风险段",
-        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "buyType": "类三买观察",
+        "action": "不追高，等待突破后回踩不破再试仓",
         "nextAction": "当前不建仓，等风险解除或结构修复。",
-        "stop": 19.41,
+        "stop": 20.78,
         "takeProfit": 23.76,
-        "riskReward": 1.25
+        "riskReward": 4.13
       },
       "performance": {
-        "currentReturnPct": -1.34,
+        "currentReturnPct": -1.25,
         "maxGainPct": 0,
         "maxDrawdownPct": -1.34,
         "oneWeekPct": -1.34,
@@ -109475,8 +111183,8 @@
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-21",
-        "latestClose": 21.34,
+        "latestDate": "2026-08-24",
+        "latestClose": 21.36,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-13",
@@ -109493,7 +111201,11 @@
             "close": 21.56,
             "returnPct": -0.32
           },
-          "d10": null,
+          "d10": {
+            "date": "2026-08-24",
+            "close": 21.36,
+            "returnPct": -1.25
+          },
           "d20": null
         }
       }
@@ -111934,6 +113646,30 @@
             "跌回 20 日中位 41.05 下方，类三买观察失效",
             "策略否决：相对强度：强度 59.2"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 41.45,
+          "pct": 0.51,
+          "state": "重点跟踪池",
+          "score": 96,
+          "layer": "核心跟踪池",
+          "layerReason": "已连续跟踪 13 次，本次继续满足中期跟踪条件；不因单日排序波动移出。",
+          "sector": "科技",
+          "buyType": "类三买观察",
+          "reason": [
+            "成交额 23.04 亿元，流动性较好",
+            "PE 7.97，估值未进入极端异常区",
+            "归属板块：科技；命中：锂、锂电、电池、储能、新能源",
+            "价格位于 MA20/MA60 上方，且接近 20 日高位，优先寻找回踩买点",
+            "归母净利润同比增长 3.01%"
+          ],
+          "risk": [
+            "跌回 20 日中位 41.05 下方，类三买观察失效",
+            "策略否决：相对强度：强度 56.2"
+          ]
         }
       ],
       "priceHistory": [
@@ -111988,6 +113724,19 @@
           "score": 96,
           "layer": "核心跟踪池",
           "mainNetInflowYi": 1.51
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 41.45,
+          "open": 41.26,
+          "high": 41.69,
+          "low": 41.04,
+          "pct": 0.51,
+          "state": "重点跟踪池",
+          "score": 96,
+          "layer": "核心跟踪池",
+          "mainNetInflowYi": null
         }
       ],
       "initialPlan": {
@@ -111997,24 +113746,24 @@
         "takeProfit": 45.88,
         "riskReward": 1.89
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
-      "currentState": "交易准备池",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
+      "currentState": "重点跟踪池",
       "currentScore": 96,
       "currentLayer": "核心跟踪池",
-      "currentLayerReason": "已连续跟踪 12 次，本次继续满足中期跟踪条件；不因单日排序波动移出。",
-      "currentPrice": 41.59,
+      "currentLayerReason": "已连续跟踪 13 次，本次继续满足中期跟踪条件；不因单日排序波动移出。",
+      "currentPrice": 41.45,
       "currentSector": "科技",
       "lastPlan": {
         "buyType": "类三买观察",
         "action": "不追高，等待突破后回踩不破再试仓",
-        "nextAction": "只在回踩不破触发条件时试仓；高开急拉不追。",
+        "nextAction": "加入盘中观察，等待 5分钟确认或回踩关键位。",
         "stop": 40.22,
         "takeProfit": 45.88,
-        "riskReward": 3.13
+        "riskReward": 3.6
       },
       "performance": {
-        "currentReturnPct": 1.44,
+        "currentReturnPct": 1.1,
         "maxGainPct": 1.44,
         "maxDrawdownPct": 0.78,
         "oneWeekPct": null,
@@ -112022,8 +113771,8 @@
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-21",
-        "latestClose": 41.59,
+        "latestDate": "2026-08-24",
+        "latestClose": 41.45,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-19",
@@ -112035,7 +113784,11 @@
             "close": 41.59,
             "returnPct": 1.44
           },
-          "d5": null,
+          "d5": {
+            "date": "2026-08-24",
+            "close": 41.45,
+            "returnPct": 1.1
+          },
           "d10": null,
           "d20": null
         }
@@ -113114,6 +114867,32 @@
             "有效跌破 20 日低点 12.21，技术面继续减分",
             "策略否决：趋势阶段：阶段4：下降趋势"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 15.98,
+          "pct": 9.98,
+          "state": "交易准备池",
+          "score": 96,
+          "layer": "今日机会池",
+          "layerReason": "新入池且买点/评分较强，作为新增机会观察，需等触发条件确认后再执行。",
+          "sector": "低空经济/航空航天",
+          "buyType": "类三买观察",
+          "reason": [
+            "成交额 6.84 亿元，具备跟踪流动性",
+            "当日涨幅 9.98%，短线强于市场",
+            "PE 56.85，估值未进入极端异常区",
+            "主力净流入 0.64 亿元",
+            "归属板块：低空经济/航空航天；命中：通信、网络安全、信创、低空经济"
+          ],
+          "risk": [
+            "经营现金流为负 -0.3 亿元",
+            "跌回 20 日中位 14.35 下方，类三买观察失效",
+            "策略否决：相对强度：强度 46.5",
+            "策略否决：风险收益比：按计划价 15.26 计算，约 1:1.67，最大亏损约 7.86%，目标空间约 13.11%"
+          ]
         }
       ],
       "priceHistory": [
@@ -113129,6 +114908,19 @@
           "score": 0,
           "layer": "暂不交易",
           "mainNetInflowYi": 1.91
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 15.98,
+          "open": 15.24,
+          "high": 15.98,
+          "low": 15.09,
+          "pct": 9.98,
+          "state": "交易准备池",
+          "score": 96,
+          "layer": "今日机会池",
+          "mainNetInflowYi": 0.64
         }
       ],
       "initialPlan": {
@@ -113138,41 +114930,49 @@
         "takeProfit": 16.03,
         "riskReward": 0.56
       },
-      "lastSeenAt": "2026-08-21T05:18:11.225Z",
-      "lastSeenAtChina": "2026/08/21 13:18:11",
-      "currentState": "暂不交易",
-      "currentScore": 0,
-      "currentLayer": "暂不交易",
-      "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
-      "currentPrice": 14.53,
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
+      "currentState": "交易准备池",
+      "currentScore": 96,
+      "currentLayer": "今日机会池",
+      "currentLayerReason": "新入池且买点/评分较强，作为新增机会观察，需等触发条件确认后再执行。",
+      "currentPrice": 15.98,
       "currentSector": "低空经济/航空航天",
       "lastPlan": {
-        "buyType": "无买点/风险段",
-        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
-        "nextAction": "当前不建仓，等风险解除或结构修复。",
-        "stop": 11.84,
-        "takeProfit": 16.03,
-        "riskReward": 0.56
+        "buyType": "类三买观察",
+        "action": "不追高，等待突破后回踩不破再试仓",
+        "nextAction": "只在回踩不破触发条件时试仓；高开急拉不追。",
+        "stop": 14.06,
+        "takeProfit": 17.26,
+        "riskReward": 1.67
       },
       "performance": {
-        "currentReturnPct": 0,
-        "maxGainPct": 0,
+        "currentReturnPct": 9.98,
+        "maxGainPct": 9.98,
         "maxDrawdownPct": 0,
         "oneWeekPct": null,
         "oneMonthPct": null,
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-20",
-        "latestClose": 14.53,
+        "latestDate": "2026-08-24",
+        "latestClose": 15.98,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-20",
             "close": 14.53,
             "returnPct": 0
           },
-          "d3": null,
-          "d5": null,
+          "d3": {
+            "date": "2026-08-24",
+            "close": 15.98,
+            "returnPct": 9.98
+          },
+          "d5": {
+            "date": "2026-08-24",
+            "close": 15.98,
+            "returnPct": 9.98
+          },
           "d10": null,
           "d20": null
         }
@@ -114354,6 +116154,30 @@
             "有效跌破 20 日低点 16.18，技术面继续减分",
             "策略否决：趋势阶段：阶段4：下降趋势"
           ]
+        },
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 21.05,
+          "pct": 9.98,
+          "state": "重点跟踪池",
+          "score": 96,
+          "layer": "今日机会池",
+          "layerReason": "同一交易日内仍按新增机会处理；至少跨交易日继续满足条件后再升级为核心跟踪。",
+          "sector": "新能源/电力设备",
+          "buyType": "类二买/趋势延续观察",
+          "reason": [
+            "成交额 12.06 亿元，流动性较好",
+            "当日涨幅 9.98%，短线强于市场",
+            "PE 51.34，估值未进入极端异常区",
+            "主力净流入 6.32 亿元",
+            "归属板块：新能源/电力设备；命中：锂、锂电、电池、储能、新能源"
+          ],
+          "risk": [
+            "经营现金流为负 -1.37 亿元",
+            "跌破 MA20 且 30分钟转弱，取消买点"
+          ]
         }
       ],
       "priceHistory": [
@@ -114369,6 +116193,19 @@
           "score": 23.5,
           "layer": "暂不交易",
           "mainNetInflowYi": -1.18
+        },
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 21.05,
+          "open": 19.09,
+          "high": 21.05,
+          "low": 19.05,
+          "pct": 9.98,
+          "state": "重点跟踪池",
+          "score": 96,
+          "layer": "今日机会池",
+          "mainNetInflowYi": 6.32
         }
       ],
       "initialPlan": {
@@ -114378,21 +116215,21 @@
         "takeProfit": 25.08,
         "riskReward": 0.75
       },
-      "lastSeenAt": "2026-08-24T05:27:06.117Z",
-      "lastSeenAtChina": "2026/08/24 13:27:06",
-      "currentState": "暂不交易",
-      "currentScore": 23.5,
-      "currentLayer": "暂不交易",
-      "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
+      "currentState": "重点跟踪池",
+      "currentScore": 96,
+      "currentLayer": "今日机会池",
+      "currentLayerReason": "同一交易日内仍按新增机会处理；至少跨交易日继续满足条件后再升级为核心跟踪。",
       "currentPrice": 21.05,
       "currentSector": "新能源/电力设备",
       "lastPlan": {
-        "buyType": "无买点/风险段",
-        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
-        "nextAction": "当前不建仓，等风险解除或结构修复。",
-        "stop": 15.69,
+        "buyType": "类二买/趋势延续观察",
+        "action": "等待回踩 MA20 或中枢上沿附近企稳，轻仓试错",
+        "nextAction": "加入盘中观察，等待 5分钟确认或回踩关键位。",
+        "stop": 19.21,
         "takeProfit": 25.08,
-        "riskReward": 0.75
+        "riskReward": 2.19
       },
       "performance": {
         "currentReturnPct": 0,
@@ -114403,12 +116240,234 @@
         "twoMonthPct": null,
         "hitStop": false,
         "hitTakeProfit": false,
-        "latestDate": "2026-08-21",
+        "latestDate": "2026-08-24",
         "latestClose": 21.05,
         "horizonReturns": {
           "d1": {
             "date": "2026-08-21",
             "close": 21.05,
+            "returnPct": 0
+          },
+          "d3": {
+            "date": "2026-08-24",
+            "close": 21.05,
+            "returnPct": 0
+          },
+          "d5": null,
+          "d10": null,
+          "d20": null
+        }
+      }
+    },
+    "002115": {
+      "code": "002115",
+      "name": "三维通信",
+      "firstRecommendedAt": "2026-08-24T08:25:57.544Z",
+      "firstRecommendedAtChina": "2026/08/24 16:25:57",
+      "firstDate": "2026-08-24",
+      "firstPrice": 10.82,
+      "firstState": "暂不交易",
+      "firstScore": 46.9,
+      "firstLayer": "暂不交易",
+      "firstReason": [
+        "成交额 10.21 亿元，流动性较好",
+        "当日涨幅 4.04%，短线强于市场",
+        "主力净流入 0.99 亿元",
+        "归属板块：低空经济/航空航天；命中：通信、人工智能、互联网、北斗导航"
+      ],
+      "sector": "低空经济/航空航天",
+      "active": true,
+      "recommendations": [
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 10.82,
+          "pct": 4.04,
+          "state": "暂不交易",
+          "score": 46.9,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "低空经济/航空航天",
+          "buyType": "无买点/风险段",
+          "reason": [
+            "成交额 10.21 亿元，流动性较好",
+            "当日涨幅 4.04%，短线强于市场",
+            "主力净流入 0.99 亿元",
+            "归属板块：低空经济/航空航天；命中：通信、人工智能、互联网、北斗导航",
+            "接近区间低位或仍在中枢下半区，只观察底分型和低级别转强"
+          ],
+          "risk": [
+            "经营现金流为负 -0.19 亿元",
+            "毛利率约 3.05%，盈利弹性偏弱",
+            "收盘低于 MA20，买点需要降级",
+            "有效跌破 20 日低点 10.16，技术面继续减分",
+            "策略否决：趋势阶段：阶段1：筑底观察"
+          ]
+        }
+      ],
+      "priceHistory": [
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 10.82,
+          "open": 10.46,
+          "high": 11.38,
+          "low": 10.46,
+          "pct": 4.04,
+          "state": "暂不交易",
+          "score": 46.9,
+          "layer": "暂不交易",
+          "mainNetInflowYi": 0.99
+        }
+      ],
+      "initialPlan": {
+        "buyType": "无买点/风险段",
+        "entryZone": "暂无",
+        "stop": 9.86,
+        "takeProfit": 13.9,
+        "riskReward": 3.21
+      },
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
+      "currentState": "暂不交易",
+      "currentScore": 46.9,
+      "currentLayer": "暂不交易",
+      "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+      "currentPrice": 10.82,
+      "currentSector": "低空经济/航空航天",
+      "lastPlan": {
+        "buyType": "无买点/风险段",
+        "action": "不建新仓，等待重新站回 MA20 且低级别结构转强",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "stop": 9.86,
+        "takeProfit": 13.9,
+        "riskReward": 3.21
+      },
+      "performance": {
+        "currentReturnPct": 0,
+        "maxGainPct": 0,
+        "maxDrawdownPct": 0,
+        "oneWeekPct": null,
+        "oneMonthPct": null,
+        "twoMonthPct": null,
+        "hitStop": false,
+        "hitTakeProfit": false,
+        "latestDate": "2026-08-24",
+        "latestClose": 10.82,
+        "horizonReturns": {
+          "d1": {
+            "date": "2026-08-24",
+            "close": 10.82,
+            "returnPct": 0
+          },
+          "d3": null,
+          "d5": null,
+          "d10": null,
+          "d20": null
+        }
+      }
+    },
+    "002412": {
+      "code": "002412",
+      "name": "汉森制药",
+      "firstRecommendedAt": "2026-08-24T08:25:57.544Z",
+      "firstRecommendedAtChina": "2026/08/24 16:25:57",
+      "firstDate": "2026-08-24",
+      "firstPrice": 11.21,
+      "firstState": "暂不交易",
+      "firstScore": 86.4,
+      "firstLayer": "暂不交易",
+      "firstReason": [
+        "成交额 4.04 亿元，具备跟踪流动性",
+        "当日涨幅 10.01%，短线强于市场",
+        "PE 28.47，估值未进入极端异常区",
+        "主力净流入 0.57 亿元"
+      ],
+      "sector": "医药医疗",
+      "active": true,
+      "recommendations": [
+        {
+          "at": "2026-08-24T08:25:57.544Z",
+          "atChina": "2026/08/24 16:25:57",
+          "date": "2026-08-24",
+          "price": 11.21,
+          "pct": 10.01,
+          "state": "暂不交易",
+          "score": 86.4,
+          "layer": "暂不交易",
+          "layerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+          "sector": "医药医疗",
+          "buyType": "类三买观察",
+          "reason": [
+            "成交额 4.04 亿元，具备跟踪流动性",
+            "当日涨幅 10.01%，短线强于市场",
+            "PE 28.47，估值未进入极端异常区",
+            "主力净流入 0.57 亿元",
+            "归属板块：医药医疗；命中：医药、生物、创新药、中药"
+          ],
+          "risk": [
+            "营业收入同比下降 2.25%",
+            "经营现金流为负 -0.1 亿元",
+            "2026-07-29 汉森制药:关于投资项目拟终止的公告",
+            "跌回 20 日中位 8.86 下方，类三买观察失效",
+            "策略否决：公告事件：公告风险待核查"
+          ]
+        }
+      ],
+      "priceHistory": [
+        {
+          "date": "2026-08-24",
+          "at": "2026-08-24T08:25:57.544Z",
+          "close": 11.21,
+          "open": 10.9,
+          "high": 11.21,
+          "low": 10.89,
+          "pct": 10.01,
+          "state": "暂不交易",
+          "score": 86.4,
+          "layer": "暂不交易",
+          "mainNetInflowYi": 0.57
+        }
+      ],
+      "initialPlan": {
+        "buyType": "类三买观察",
+        "entryZone": "8.01-10.18",
+        "stop": 8.79,
+        "takeProfit": 12.11,
+        "riskReward": 1.39
+      },
+      "lastSeenAt": "2026-08-24T08:25:57.544Z",
+      "lastSeenAtChina": "2026/08/24 16:25:57",
+      "currentState": "暂不交易",
+      "currentScore": 86.4,
+      "currentLayer": "暂不交易",
+      "currentLayerReason": "当前风险收益比、趋势阶段或基本面/公告条件不支持交易。",
+      "currentPrice": 11.21,
+      "currentSector": "医药医疗",
+      "lastPlan": {
+        "buyType": "类三买观察",
+        "action": "不追高，等待突破后回踩不破再试仓",
+        "nextAction": "当前不建仓，等风险解除或结构修复。",
+        "stop": 8.79,
+        "takeProfit": 12.11,
+        "riskReward": 1.39
+      },
+      "performance": {
+        "currentReturnPct": 0,
+        "maxGainPct": 0,
+        "maxDrawdownPct": 0,
+        "oneWeekPct": null,
+        "oneMonthPct": null,
+        "twoMonthPct": null,
+        "hitStop": false,
+        "hitTakeProfit": false,
+        "latestDate": "2026-08-24",
+        "latestClose": 11.21,
+        "horizonReturns": {
+          "d1": {
+            "date": "2026-08-24",
+            "close": 11.21,
             "returnPct": 0
           },
           "d3": null,
@@ -115746,7 +117805,27 @@
       "300006",
       "000768",
       "000426",
-      "600887"
+      "600887",
+      "601918",
+      "600941",
+      "002017",
+      "600198",
+      "600610",
+      "688432",
+      "688002",
+      "688120",
+      "002185",
+      "002049",
+      "688019",
+      "600522",
+      "600031",
+      "603179",
+      "002115",
+      "002412",
+      "000733",
+      "601899",
+      "600309",
+      "603799"
     ]
   }
 }
